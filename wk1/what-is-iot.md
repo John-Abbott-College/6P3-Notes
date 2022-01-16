@@ -32,7 +32,7 @@ This data can create quick feedback loops for automation. Data from one object c
 
 The use of IoT can be organised in two fields of application: **Industrial and Consumer IoT**.
 
-![Examples of industrial and consumer iot applications](iot-intro-industrial-vs-consumer.png)
+![Examples of industrial and consumer iot applications](assets/iot-intro-industrial-vs-consumer.png)
 [The Internet of Things and its Benefit to U.S. Water Customer](https://www.kuritaamerica.com/the-splash/the-internet-of-things-and-its-benefit-to-us-water-customers) - kuritaamerica.com
 
 ### Consumer IoT
@@ -47,20 +47,25 @@ Some examples of consumer IoT are:
 Most people tend to first thing of IoT as consumer devices. However, their main value added happens in industrial applications. 
 
 ![](https://miro.medium.com/max/1400/1*VKScdttTvAJZ7n663OwGPw.jpeg)
-[How Industrial Internet of Things are impacting our lives](https://medium.com/@jaydev_21091/how-industrial-internet-of-things-are-impacting-our-lives-8af4163530ce) by Bluechip Infocorp Pvt Ltd via Medium.
 
+<p class=img-info>
+<a href="https://medium.com/@jaydev_21091/how-industrial-internet-of-things-are-impacting-our-lives-8af4163530ce">How Industrial Internet of Things are impacting our lives</a> by Bluechip Infocorp Pvt Ltd via Medium.
+</p>
 
 Some examples of Industrial IoT:
 
 - **Equipment Maintenance:** [Rolls-Royce’s Total Care](https://www.rolls-royce.com/media/press-releases/2016/11-07-2016-rr-takes-totalcare-digital-with-microsoft-and-singapore-airlines.aspx) provides a suite of predictive maintenance and repair services for its jet engines, including monitoring engine health, and modifying engines to increase reliability and durability.
+
 - **Farming:** [John Deere](https://www.iotforall.com/ces-2021-john-deere) is building intelligence into its large tractors and sprayers through sensors that make the machines into mobile platforms capable of self-driving.
+
 - **Heavy Machinery & Transportation:** [Rio Tinto](https://www.iotforall.com/iot-is-reshaping-heavy-industry), a global mining company uses a remote command center to orchestrate the actions of huge drills, excavators, trains, and trucks across multiple mining sites.
+
 - **Renewable Energies:** [Iberdrola and Siemens](https://www.nsenergybusiness.com/features/iot-wind-power/) are using IoT to optimize the operation and maintenance of offshore wind power farms, the lifetime extension of wind turbines and the reducing the cost of energy.
+
 - **Facilities Management:** Monitoring of buildings, infrastructure, and other spaces, allow to improve energy efficiency, space utilization, productivity, and safety. These insights may help:
 	- save money by automating lighting or optimizing heating and cooling cycles.
 	- Increase employee or occupant satisfaction by keep equipment running or ensuring that supplies are stocked.
 
-There are many other examples.
 
 ### High-level Components of an IoT System
 
@@ -71,8 +76,7 @@ An IoT system is compromised of four main conceptual components:
 3.  **Data Processing:** once the data is received by the cloud infrastructure, it can then be processed (eg. check if the data received adhere to the requirements and if its not alert the user).
 4.  **User Interface:** Once the data is processed, the results are then given to the and user.
 
-
-![Icons for the four main components of an IoT System](iot-intro-four-main-components.png)
+![Icons for the four main components of an IoT System](assets/iot-intro-four-main-components.png)
 [An Introduction to the Internet of Things](https://www.freecodecamp.org/news/introduction-to-iot-internet-of-things/) by Pier Paolo Ippolito via freeCodeCamp.org
 
 In this course we will learn how to setup, connect and control each one of these components.
@@ -87,18 +91,14 @@ Most companies do not want to deal with setting-up the physical infrastructure a
 It is typically far more practical and cost-effective to use the services of an established IoT Cloud Service Provider.
 
 The three main Cloud Service Providers in the IoT space are: 
-- **Amazon Web Services (AWS)
+- **Amazon Web Services (AWS)**
 - **Microsoft Azure**
 - **Google Cloud**
-
-![](iot-intro-cloud-service-providers.png)
-
-There are other Cloud providers such as [IBM Cloud IoT](https://www.ibm.com/cloud/internet-of-things), 
+![](assets/iot-intro-cloud-service-providers.png)
+There are many other Cloud providers such as [IBM Cloud IoT](https://www.ibm.com/cloud/internet-of-things) and [Oracle IoT](https://www.oracle.com/internet-of-things/).
 
 > In this course we will focus on **Microsoft Azure**.
 > However, all three platforms offer similar functionality.
-
-
 
 ## References
 [What is IoT](https://azure.microsoft.com/en-us/overview/internet-of-things-iot/what-is-the-internet-of-things/) by Microsoft Azure.
