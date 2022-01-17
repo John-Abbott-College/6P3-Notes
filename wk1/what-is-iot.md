@@ -33,7 +33,8 @@ This data can create quick feedback loops for automation. Data from one object c
 The use of IoT can be organised in two fields of application: **Industrial and Consumer IoT**.
 
 ![Examples of industrial and consumer iot applications](assets/iot-intro-industrial-vs-consumer.png)
-[The Internet of Things and its Benefit to U.S. Water Customer](https://www.kuritaamerica.com/the-splash/the-internet-of-things-and-its-benefit-to-us-water-customers) - kuritaamerica.com
+<p class=img-info>
+<a href="https://www.kuritaamerica.com/the-splash/the-internet-of-things-and-its-benefit-to-us-water-customers"> The Internet of Things and its Benefit to U.S. Water Customer </a> &nbsp; in kuritaamerica.com</p>
 
 ### Consumer IoT
 Some examples of consumer IoT are:
@@ -77,7 +78,10 @@ An IoT system is compromised of four main conceptual components:
 4.  **User Interface:** Once the data is processed, the results are then given to the and user.
 
 ![Icons for the four main components of an IoT System](assets/iot-intro-four-main-components.png)
-[An Introduction to the Internet of Things](https://www.freecodecamp.org/news/introduction-to-iot-internet-of-things/) by Pier Paolo Ippolito via freeCodeCamp.org
+<p class=img-info>
+<a href="https://www.freecodecamp.org/news/introduction-to-iot-internet-of-things"> An Introduction to the Internet of Things </a>&nbsp; by Pier Paolo Ippolito via freeCodeCamp.org
+</p>
+
 
 In this course we will learn how to setup, connect and control each one of these components.
 
@@ -101,6 +105,6 @@ There are many other Cloud providers such as [IBM Cloud IoT](https://www.ibm.com
 > However, all three platforms offer similar functionality.
 
 ## References
-[What is IoT](https://azure.microsoft.com/en-us/overview/internet-of-things-iot/what-is-the-internet-of-things/) by Microsoft Azure.
-[How Industrial Internet of Things are impacting our lives](https://medium.com/@jaydev_21091/how-industrial-internet-of-things-are-impacting-our-lives-8af4163530ce) by Bluechip Infocorp Pvt Ltd via Medium.
-[An Introduction to the Internet of Things](https://www.freecodecamp.org/news/introduction-to-iot-internet-of-things/) by Pier Paolo Ippolito via FreeCodeCamp Blog.
+1. [What is IoT](https://azure.microsoft.com/en-us/overview/internet-of-things-iot/what-is-the-internet-of-things/) by Microsoft Azure.
+2. [How Industrial Internet of Things are impacting our lives](https://medium.com/@jaydev_21091/how-industrial-internet-of-things-are-impacting-our-lives-8af4163530ce) by Bluechip Infocorp Pvt Ltd via Medium.
+3. [An Introduction to the Internet of Things](https://www.freecodecamp.org/news/introduction-to-iot-internet-of-things/) by Pier Paolo Ippolito via FreeCodeCamp Blog.

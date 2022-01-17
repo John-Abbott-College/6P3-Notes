@@ -11,12 +11,15 @@
 > - exercises
 > - references & resources
 
+## Course Outline
+The course outline is available in LEA and Moodle (Moodle link).
 
+## Late Work Policy
+All assignments and projects are expected to be submitted by the required due date. A student can use a total of 3 cumulative “late days” during the semester in order to extent a deadline without penalties. Any work submitted after the maximum number of allowed late days has been reached will not be graded.
 
 ## How is this page made?
 
 This webpage is written in [Markdown](https://www.markdownguide.org/), built with [Docsify](https://docsify.js.org/) and deployed via [GitHub Pages](https://pages.github.com/) .
-
 
 
 ## Source Code
