@@ -12,7 +12,7 @@
 > - references & resources
 
 ## Course Outline
-The course outline is available in LEA and Moodle (Moodle link).
+The course outline is available in LEA and Moodle ([Moodle link](https://moodle.johnabbott.qc.ca/mod/resource/view.php?id=87004)).
 
 ## Late Work Policy
 All assignments and projects are expected to be submitted by the required due date. A student can use a total of 3 cumulative “late days” during the semester in order to extent a deadline without penalties. Any work submitted after the maximum number of allowed late days has been reached will not be graded.
