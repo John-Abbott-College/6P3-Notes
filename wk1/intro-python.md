@@ -620,13 +620,25 @@ Notes:
 
 
 ## Exercises
+1. Write a program which repeatedly reads numbers until the user enters “done”. Once “done” is entered, print out the total, count, and average of the numbers. If the user enters anything other than a number, detect their mistake using try and except and print an error message and skip to the next number.
 
-1. Using the provided Vehicle class, create two vehicles called car1 and car2. Set car1 to be a red convertible worth $60,000.00 with a name of Fer, and car2 to be a blue van named Jump worth $10,000.00. Complete the missing `desc_str` so that the final output for car1 is "Fer is a red convertible worth $60000.0"
+```
+Enter a number: 4
+Enter a number: 5
+Enter a number: bad data
+Invalid input
+Enter a number: 7
+Enter a number: done
+16 3 5.333333333333333
+```
+*(Exercise from [python for everybody](https://www.py4e.com/))*
+
+2. Using the provided Vehicle class, create two vehicles called car1 and car2. Set car1 to be a red convertible worth $60,000.00 with a name of Fer, and car2 to be a blue van named Jump worth $10,000.00. Complete the missing `desc_str` so that the final output for car1 is "Fer is a red convertible worth $60000.0"
 
 ```python
 class Vehicle:
     name = ""
-    kind = "car"
+    kind = "hatchback"
     color = ""
     value = 100.00
 
@@ -642,5 +654,6 @@ class Vehicle:
 print(car1.description())
 print(car2.description())
 ```
+*(Exercise from [learnpython.org](https://www.learnpython.org/))*
 
-2. 
+
