@@ -380,6 +380,13 @@ This will help you with:
 - IntelliSence
 - Some libraries like FastAPI can automatically create APIs based on Typings.
 
+To inform Python of your data types:
+
+```py
+def function(name: str, age: int, valid: bool) -> bool:
+```
+
+See [Python Type Checking (Guide)](https://realpython.com/python-type-checking/) from realpython.com for more.
 
 ## Control Flow: if, for, range()
 
@@ -414,7 +421,7 @@ The iteration loop `for in` works similarly as other languages:
 
 cat 3
 window 6
-dog 12
+dog 3
 ```
 
 
@@ -442,7 +449,7 @@ cat 3
 
 >>> for w in words:
 	    if w=='window':
-			break
+			continue
 		print(w, len(w))
 
 cat 3
