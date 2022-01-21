@@ -1,4 +1,4 @@
-# Python Setup for VS Code
+# VS Code Setup
 
 Below are the recommended steps to setup your VS Code for this course.
 
