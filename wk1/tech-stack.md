@@ -36,7 +36,7 @@ The stacks will be divided into beginner and advances level.
 
 ![python™](https://www.python.org/static/img/python-logo.png)
 
-This course will  be using Python as it's main programming language in order to:
+This course will  be using Python as its main programming language in order to:
 - Run programs inside the Raspberry Pi (reTerminal) in order to read and control sensors.
 - Communicate with the API of the Cloud Platform.
 

@@ -22,7 +22,7 @@ The internet of things (IoT) is a comprised of equipment, machines, products, an
 
 ## Why collect all this data?
 
-By analysing the data collected by these connected objects, users and organisations can make informed decisions in near real-time and automate tightly integrated processes.
+By analyzing the data collected by these connected objects, users and organisations can make informed decisions in near real-time and automate tightly integrated processes.
 
 Decision making that is based on little or out-dated data can be skewed or biased. The real-time information from devices that are "in the field" can address this problem.
 
@@ -45,7 +45,7 @@ Some examples of consumer IoT are:
 
 ### Industrial IoT
 
-Most people tend to first thing of IoT as consumer devices. However, their main value added happens in industrial applications. 
+Most people tend to first think of IoT as consumer devices. However, their main value added happens in industrial applications. 
 
 ![](https://miro.medium.com/max/1400/1*VKScdttTvAJZ7n663OwGPw.jpeg)
 
@@ -75,7 +75,7 @@ An IoT system is compromised of four main conceptual components:
 1.  **Sensors:** enables the devices to collect data from the environment surrounding the device (eg. velocity, GPS coordinates, temperature, etc...).
 2.  **Connectivity:** successively the data collected is sent to the cloud (through either WiFi or Bluetooth connection).
 3.  **Data Processing:** once the data is received by the cloud infrastructure, it can then be processed (eg. check if the data received adhere to the requirements and if its not alert the user).
-4.  **User Interface:** Once the data is processed, the results are then given to the and user.
+4.  **User Interface:** Once the data is processed, the results are then given to the end-user.
 
 ![Icons for the four main components of an IoT System](assets/iot-intro-four-main-components.png)
 <p class=img-info>
