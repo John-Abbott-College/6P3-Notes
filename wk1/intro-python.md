@@ -110,10 +110,10 @@ False
 ### Numbers
 Can be of type `integer`, `float`, or `complex`.
 
-When a binary arithmetic operator has operands of different numeric types, the following rule apply:
+When a binary arithmetic operator has operands of different numeric types, the following rule applies:
 
 - The operand with the “narrower” type is widened to that of the other
-	(from narrower to wider: `interger` < `float` < `complex`)
+	(from narrower to wider: `integer` < `float` < `complex`)
 
 See the [official docs on Numeric Types](https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex) for:
 
@@ -166,7 +166,7 @@ C:\win32\game
 ew
 ```
 
-To avoid interpreting special characters such as `\` , use raw strings by adding `r` fore the first quote:
+To avoid interpreting special characters such as `\` , use raw strings by adding `r` before the first quote:
 
 ```py
 >>> print(r'C:\win32\new')
@@ -316,7 +316,7 @@ Tuples are like Lists, however, **they are immutable**.
 See docs for [Tuple data type](https://docs.python.org/3/library/stdtypes.html#tuples) and additional notes on [Tuples and Sequences](https://docs.python.org/3/tutorial/datastructures.html#tuples-and-sequences).
 
 ```py
->>> a_tuple = (example', True, 3.1416, 123)
+>>> a_tuple = ('example', True, 3.1416, 123)
 ('example', True, 3.1416, 123)
 
 >>> a_tuple[-1]
@@ -459,7 +459,7 @@ dog 3
 
 ### range() -> for loop
 
-Python does not have a "traditional" for loop. Instead, it used the `for in` combined with the `range()` function. 
+Python does not have a "traditional" for loop. Instead, it uses the `for in` combined with the `range()` function. 
 
 The `range()` function returns an iterable arithmetic progression (a sequence of numbers).
 
@@ -525,7 +525,7 @@ def play_game(game, players=1):
 	if players == 1:
 		print(f'Playing {game} by myself')
 	else:
-		print(f'{game} is a lot more fun with more people)		
+		print(f'{game} is a lot more fun with more people')		
 ```
 
 Above, the argument `game` is mandatory, however, if `players` is not provided, the default value of 1 will be used.
