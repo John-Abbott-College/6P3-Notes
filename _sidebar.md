@@ -7,3 +7,7 @@
 - [What is IoT](wk1/what-is-iot.md)
 - [Tech Stack](wk1/tech-stack.md)
 - [Intro to Python](wk1/intro-python.md)
+
+**Week 3**
+- [reTerminal Sensors](wk3/reterminal-sensors.md)
+
