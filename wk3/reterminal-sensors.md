@@ -234,3 +234,87 @@ See the official `seeed-python-reterminal` [Github repo](https://github.com/Seee
 - Programmable Buttons
 - Light Sensor (requires manual updating)
 
+
+### ModuleNotFoundError
+
+When trying to import the  `seeed-python-reterminal`  library, you might get the following error:
+
+```bash
+ModuleNotFoundError: No module named 'seeed_python_reterminal'
+```
+
+The python interpreter is not able to find the module even though it is installed.
+
+#### Check library location
+
+Check the location of where the module was installed with `pip3 show <module-name>`:
+```bash
+pi@raspberrypi:~ $ pip3 show seeed-python-reterminal
+
+Name: seeed-python-reterminal
+Version: 0.2
+Summary: seeed-python-reterminal
+Home-page: https://github.com/Seeed-Studio/Seeed_Python_ReTerminal
+Author: Takashi Matsuoka (matsujirushi)
+Author-email: matsujirushi@live.jp
+License: MIT License
+Location: /usr/local/lib/python3.7/dist-packages      # Library location
+Requires: evdev
+Required-by: 
+```
+
+The library is installed at: `Location: /usr/local/lib/python3.7/dist-packages`
+
+
+#### Check python's library paths
+
+Similarly to Linux, there are environmental variables that determine where python will look for installed modules/libraries.
+
+See the paths where python is looking for libraries with `sys.path`.
+
+```python
+pi@raspberrypi:~ $ python3
+
+>>> import sys      # This module exposes configuration used by the python interpreter.
+>>> sys.path        # Lists all paths where interpreter looks for modules.
+[
+ '',
+ '/usr/lib/python37.zip',
+ '/usr/lib/python3.7',
+ '/usr/lib/python3.7/lib-dynload',
+ '/home/pi/.local/lib/python3.7/site-packages',
+ '/usr/local/lib/python3.7/dist-packages',
+ '/usr/lib/python3/dist-packages'
+]
+```
+
+If the output of `pip3 show seeed-python-reterminal` is not in this list, python will not find it when you import it.
+
+> **Note:** the python shell above was started as the user `pi`.
+> If you start python as **root**, `sys.path` might have different paths.
+
+Below, python was started as **root**:
+
+```python
+pi@raspberrypi:~ $ sudo -i
+root@raspberrypi:~# python3
+
+>>> import sys
+>>> sys.path
+[
+'',
+'/usr/lib/python37.zip',
+'/usr/lib/python3.7',
+'/usr/lib/python3.7/lib-dynload',
+'/usr/local/lib/python3.7/dist-packages',
+'/usr/lib/python3/dist-packages'
+]
+```
+
+**Conclusion:** if you install a python library as `root`, it might go to a different directory compared to installing it as the regular user `pi`.
+
+#### Related articles
+
+- [How to change default install location for pip](https://stackoverflow.com/questions/24174821/how-to-change-default-install-location-for-pip), stackoverflow.com
+- [Where does pip install its packages?](https://stackoverflow.com/questions/29980798/where-does-pip-install-its-packages), stackoverflow.com
+- [Pip documentation: Configuration](https://pip.pypa.io/en/stable/topics/configuration/), pip.pypa.io
