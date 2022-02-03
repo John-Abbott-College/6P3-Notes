@@ -194,8 +194,14 @@ Seeed Studio provided a python library to access most of the sensors and actuato
 Install the library `seeed-python-reterminal` (see official [Github repo](https://github.com/Seeed-Studio/Seeed_Python_ReTerminal)) using `pip`:
 
 ```bash
-pip3 install seeed-python-reterminal
+sudo pip3 install seeed-python-reterminal
 ```
+
+> **Installing pip libraries as root is not recommended.**
+>
+> **However**, this library needs to access system files (see previous section) and will have to be executed as root.
+>
+> There are workarounds, however, for simplicity we will install this package as root. See section *ModuleNotFoundError* below for more context.
 
 Now you can import it to a test script (eg. *buzz.py*)
 
@@ -235,7 +241,7 @@ See the official `seeed-python-reterminal` [Github repo](https://github.com/Seee
 - Light Sensor (requires manual updating)
 
 
-### ModuleNotFoundError
+### ModuleNotFoundError (optional)
 
 When trying to import the  `seeed-python-reterminal`  library, you might get the following error:
 
@@ -311,7 +317,12 @@ root@raspberrypi:~# python3
 ]
 ```
 
+Note that the user `pi` does not have permission to add content inside `/usr`.
+Thus, all `pip` installations as the regular user go into `/home/pi/.local/lib/python3.7/site-packages`.
+
 **Conclusion:** if you install a python library as `root`, it might go to a different directory compared to installing it as the regular user `pi`.
+
+This is the main reason why we chose to install the `seeed-python-reterminal` as root, rather than the regular user `pi`.
 
 #### Related articles
 
