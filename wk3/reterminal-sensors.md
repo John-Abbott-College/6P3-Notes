@@ -324,6 +324,24 @@ Thus, all `pip` installations as the regular user go into `/home/pi/.local/lib/p
 
 This is the main reason why we chose to install the `seeed-python-reterminal` as root, rather than the regular user `pi`.
 
+### Making user's library available to root
+
+If you would like to make a library installed as the user `pi` available when running the script as `root`, you will need to export an environmental variable named `PYTHONPATH` pointing to the library location.
+
+For example, assuming that a library installed under the user `pi` is located in `/home/pi/.local/lib/python3.7/site-packages`, do the following:
+
+```bash
+# Elevate the shell to the root user
+pi@raspberrypi:~ $ sudo -i
+root@raspberrypi:~#
+
+# Export the PYTHONPATH environment variable
+root@raspberrypi:~# export PYTHONPATH="/home/pi/.local/lib/python3.7/site-packages"
+
+# Start python as root and run the script that imports the library
+root@raspberrypi:~# python3 my_script.py
+```
+
 #### Related articles
 
 - [How to change default install location for pip](https://stackoverflow.com/questions/24174821/how-to-change-default-install-location-for-pip), stackoverflow.com
