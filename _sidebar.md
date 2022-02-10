@@ -11,3 +11,6 @@
 **Week 3**
 - [reTerminal Sensors](wk3/reterminal-sensors.md)
 
+**Week 4**
+- [Arduino vs Pi](wk4/arduino-vs-raspberry-pi.md)
+- [Analog & Digital Signals](wk4/analog-vs-digital.md)
