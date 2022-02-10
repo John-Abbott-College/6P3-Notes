@@ -296,10 +296,10 @@ What are the numbers being stored as the digital signal before they are converte
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/64FSgQdWHrE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-
-%%## Diving Deeper
+<!-- 
+## Diving Deeper
 
 ### Is digital better?
 
-#### Noise: digital can handle it%%
+#### Noise: digital can handle it -->
 
