@@ -41,7 +41,7 @@ The Raspberry Pi is not the only SBC available for purchase. There are many othe
 
 A microcontroller board is a "bare-bones" form of a computing module.
 
-> At it's core, a microcontroller is a single chip capable of executing the **fetch-decode-execute cycle of a program**.
+> At its core, a microcontroller is a single chip capable of executing the **fetch-decode-execute cycle of a program**.
 
 
 ![block diagram for fetch-decode-execute-loop](assets/arduino-vs-pi-code-loop.png)
@@ -51,7 +51,7 @@ A microcontroller board is a "bare-bones" form of a computing module.
 
 One of the most well known microcontrollers today is the Arduino platform. It became popular with the introduction of the Arduino UNO (see image below) in 2003.
 
-The heard of the Arduino UNO is the microcontroller Atmel328, which functions as both the CPU, the RAM (for run-time memory) and the Flash memory (for storing program instructions).
+The heart of the Arduino UNO is the microcontroller Atmel328, which functions as both the CPU, the RAM (for run-time memory) and the Flash memory (for storing program instructions).
 
 ![basic atmel mcu besides a arduino uno](assets/arduino-uno-vs-atmel-328.jpg)
 <p class=img-info>
@@ -101,7 +101,7 @@ Let's compare microcontrollers and single board computers using the Arduino plat
 ### Raspberry Pi Pros
 
 - Full Linux based OS.
-- Lot's of computing power (32 bit and 64 bit).
+- Lots of computing power (32 bit and 64 bit).
 - Video and USB controllers onboard.
 - 40 GPIOs (but none are analog).
 - Integrated wifi, bluetooth and ethernet connectivity.
