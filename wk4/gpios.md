@@ -48,9 +48,8 @@ These digital communication protocols are:
 
 Some digital functions are available on all pins, others on specific pins.
 
-**We will explore some of these protocols in future lessons**.
 
-### Sorry, No Analog Pins
+### Sorry, No Analog
 
 > **The Raspberry Pi does not have an ADC.** 
 > 
@@ -72,3 +71,6 @@ In this course we will use the integrate ADC of the [Grove Base Hat](https://wik
 In addition to the 4 ADC connectors, the Base Hat also exposes the original 40-pin header and other digital connectors.
 
 ![Connectors of the Grove Base Hat](https://files.seeedstudio.com/wiki/Grove_Base_Hat_for_Raspberry_Pi/img/pin-out/overview.jpg)
+<p class=img-info>
+	<a href="https://wiki.seeedstudio.com/Grove_Base_Hat_for_Raspberry_Pi/"> Specialized connectors of the Raspberry Pi available via the Base Hat </a>&nbsp; Base Hat official wiki, Seeed.
+</p>
