@@ -14,6 +14,7 @@
 **Week 4**
 - [Arduino vs Pi](wk4/arduino-vs-raspberry-pi.md)
 - [Analog & Digital Signals](wk4/analog-vs-digital.md)
+- [GPIO's](wk4/gpios.md)
 
 **Week 5**
-- [GPIO's](wk4/gpios.md)
+- [Serial Protocols](wk5/serial-protocols.md)
