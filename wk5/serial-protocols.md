@@ -197,9 +197,9 @@ While the signal can only be high (usually 3.3V or 5V) or low (ground) at any ti
 
 The **duty cycle** describes the amount of "ON time" as a percentage over an interval or period of time.
 
-![](assets/serial-pwm-duty-cycle.png)
+![Duty Cycle Examples.png](https://upload.wikimedia.org/wikipedia/commons/b/b8/Duty_Cycle_Examples.png)
 <p class=img-info>
-	<a href="https://learn.sparkfun.com/tutorials/pulse-width-modulation"> Examples of duty cycles as a percentage of the total "High" signal </a>&nbsp; Pulse Width Modulation, Sparkfun.
+	<a href="https://learn.sparkfun.com/tutorials/pulse-width-modulation"> Examples of duty cycles as a percentage of the total "High" signal </a>&nbsp; Pulse Width Modulation, Wikipedia.
 </p>
 
 PWM is most commonly used in:
