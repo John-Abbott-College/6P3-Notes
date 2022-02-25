@@ -18,3 +18,4 @@
 
 **Week 5**
 - [Serial Protocols](wk5/serial-protocols.md)
+- [Ohm's Law](wk5/ohms-law.md)
