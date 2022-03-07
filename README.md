@@ -1,4 +1,4 @@
-<!-- ![Banner](assets/Banner.svg) -->
+ ![Banner](assets/art_title_path_only.svg ':size=75%') 
 
 # Welcome to 420-6P3: Connected Objects
 
