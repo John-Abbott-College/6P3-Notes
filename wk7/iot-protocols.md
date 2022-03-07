@@ -29,7 +29,7 @@ print(f'Received value: {data.value}')
 ```
 
 
-HTTP is a common protocol for the web, however, some of it's characteristics make it not ideal for IoT applications.
+HTTP is a common protocol for the web, however, some of its characteristics make it not ideal for IoT applications.
 
 
 > See Adafruit IO HTTP [API documentation](https://io.adafruit.com/api/docs/#adafruit-io-http-api).
@@ -149,7 +149,7 @@ This IoT system has two types of actors:
 
 > **A cloud service is an example of a client**.
 > 
-> It connects to the broker and subscribe to all the telemetry messages and publish commands either to specific devices, or to groups of devices.
+> It connects to the broker and subscribes to all the telemetry messages and publishes commands either to specific devices, or to groups of devices.
 
 
 The client performs two operations:
@@ -237,13 +237,13 @@ Using the previous factory temperature example, an application could monitor mul
 
 Like to HTTP, MQTT is built on top of TCP/IP and can also be used over websockets.
 
-MQTT messages can be as short as 2 bytes (eg. acknowledgement or disconnect messages), as as big as 256Mb (eg. publishing a picture or firmware update).
+MQTT messages can be as short as 2 bytes (eg. acknowledgement or disconnect messages), as big as 256Mb (eg. publishing a picture or firmware update).
 
 A typical telemetry message with payload data such as `value=40` to a topic `/assign1-temp` has a size around  20 to 40 bytes.
 
 > Message headers and topic names are text encoded (UTF-8).
 >
-> Message payload encoding is specific to the application (ei. plain text, JSON, binary, etc)
+> Message payload encoding is specific to the application (eg. plain text, JSON, binary, etc)
 
 
 MQTT connections can be **public and open, or encrypted and secured** using usernames and passwords, or certificates.
@@ -354,7 +354,7 @@ For the client implementation we will use the [Eclipse Paho MQTT Python Client](
 
 Documentation for the `paho-mqtt` client is available at the [Pypi page](https://pypi.org/project/paho-mqtt/#constructor-reinitialise).
 
-However, there are lot's of other implementation options.
+However, there are lots of other implementation options.
 
 > This [link compiles a list](https://mqtt.org/software/) of open-source MQTT client and broker implementations you can use in your projects.
 
@@ -369,7 +369,7 @@ The first example will only publish random data to the broker every 2 seconds.
 pip install paho-python
 ```
 
-2. Create you script file. A few notes:
+2. Create your script file. A few notes:
 
 - Create a unique client ID to avoid conflicts with other users (this is a public broker).
 	- Use this [Online GUID generator](https://www.guidgen.com/) to generate a unique ID.
