@@ -361,7 +361,7 @@ However, there are lots of other implementation options.
 
 ### Publishing only
 
-The first example will only publish random data to the broker every 2 seconds.
+The first example will only publish random data to the broker every 3 seconds.
 
 1. Install the `paho-python` library.
 
