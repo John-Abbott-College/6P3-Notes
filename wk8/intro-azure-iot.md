@@ -1,5 +1,5 @@
 # Intro to Azure IoT
-From now on, we will deploy and manage our IoT solutions using Microsoft Azure and it's Azure IoT platform as a service (PaaS).
+From now on, we will deploy and manage our IoT solutions using Microsoft Azure and its Azure IoT platform as a service (PaaS).
 
 ## Platform as a Service (PaaS)
 
@@ -52,7 +52,7 @@ We can further describe each one of these components as a **subsystems** and exp
 
 **IoT Devices**: The physical devices where data originates.
 
-**Cloud Gateway**: The Cloud Gateway provides a cloud hub for secure connectivity, telemetry, and event ingestion and device management (including command and control) capabilities.
+**Cloud Gateway**: The Cloud Gateway provides a cloud hub for secure connectivity, telemetry, event ingestion and device management (including command and control) capabilities.
 
 **Stream Processing**: Processes large streams of data records, evaluates rules for those streams, and further routes the data.
 
@@ -85,11 +85,11 @@ Microsoft Azure has two service offers for deploying and managing IoT systems: *
 
 ### IoT Central
 
-Azure IoT Central is a software-as-a-service (SaaS) application that provides a complete platform for hosting IoT applications. It's main feature is a web UI that streamlines the lifecycle of creating and managing IoT applications.
+Azure IoT Central is a software-as-a-service (SaaS) application that provides a complete platform for hosting IoT applications. Its main feature is a web UI that streamlines the lifecycle of creating and managing IoT applications.
 
 The web UI simplifies the tasks of creating applications, and connecting and managing from a few up to millions of devices.
 
-This service is has a limited free plan (2 devices with 5000 messages per month). Pricing available [here](https://azure.microsoft.com/en-us/pricing/details/iot-central/).
+This service has a limited free plan (2 devices with 5000 messages per month). Pricing available [here](https://azure.microsoft.com/en-us/pricing/details/iot-central/).
 
 > We will revisit IoT Central later in the course.
 
@@ -119,7 +119,7 @@ See [official site for details](https://azure.microsoft.com/en-us/pricing/detail
 
 A resource group is a container that holds related resources for an Azure solution (such as your IoT system).
 
-The resource group can include all or a subset of the resources for the solution. You decide how to  allocate resources to resource groups based on what makes sense for your organization. Generally, group resources that share the same lifecycle (deploy, update, and delete).
+The resource group can include all or a subset of the resources for the solution. You decide how to  allocate resources to resource groups based on what makes sense for your organization. Generally, group resources share the same lifecycle (deploy, update, and delete).
 
 > Azure resources and their groups must be deployed to a particular region.
 > 
@@ -167,7 +167,8 @@ Tolerance to failures is achieved because of redundancy and logical isolation of
 
 ## Azure IoT Tools
 
-Azure offers several developer tools to connect to the IoT Hub platform, and to create and manage applications a
+Azure offers several developer tools to connect to the IoT Hub platform, and to create and manage applications.
+
 Many of these tools have **nearly the same functionality**. It comes down to developer preference and workflow.
 
 
@@ -182,9 +183,9 @@ Many of these tools have **nearly the same functionality**. It comes down to dev
 
 ### Azure CLI & Cloud Shell
 
-Azure CLI is a terminal tool to manage Azure services. It's offered as a Bash and PowerShell shells.
+Azure CLI is a terminal tool to manage Azure services. It's offered as Bash and PowerShell shells.
 
-Azure CLI can be installed in your local machine or run from the browse. It is not recommended to use it on a Raspberry Pi (although theoretically possible).
+Azure CLI can be installed in your local machine or run from the browser. It is not recommended to use it on a Raspberry Pi (although theoretically possible).
 
 > To use in your local machine, see [Install Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli). 
 

@@ -273,7 +273,7 @@ Below is an example of **QoS 1**:
 
 When setting QoS, there are two sides of message delivery:
 
-1.  Message delivery form the publishing client to the broker.
+1.  Message delivery from the publishing client to the broker.
 2.  Message delivery from the broker to the subscribing client.
 
 The client that publishes the message to the broker defines the QoS level of the message when it sends the message to the broker.
@@ -392,7 +392,7 @@ import paho.mqtt.client as mqtt
 import json
 ```
 
-- All network operations (incoming and outgoing data) are processed with the `loop()` method every 3 seconds
+- All network operations (incoming and outgoing data) are processed with the `loop()` method every 3 seconds.
 
 Complete code:
 
