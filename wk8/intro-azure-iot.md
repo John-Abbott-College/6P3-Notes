@@ -203,6 +203,23 @@ The first time you start the Azure Cloud Shell you will be asked to setup an acc
 > - Note that creating a resource group or a Linux VM is not necessary at this point.
 
 
+## Checking your balance 💸
+
+As you experiment with Azure you might want to know your current balance.
+
+**TL:DR**
+1. Sign in to the Azure portal.
+2. Search for ***Cost Management***  ![](assets/intro-azure-cost-management.png ':class=inline-img') 
+
+3. Select ***Payment methods***
+
+4. Check your ***Azure credits*** panel.
+
+![Credit check panel in Azure](assets/intro-azure-credit-check.png)
+
+For details check [Track Microsoft Customer Agreement Azure credit balance](https://docs.microsoft.com/en-us/azure/cost-management-billing/manage/mca-check-azure-credits-balance?tabs=portal#main)
+
+
 ## Demo: IoT Hub & Device telemetry data
 
 In-class demo to illustrate the process of:
@@ -217,3 +234,4 @@ In-class demo to illustrate the process of:
 This demo is based on the following guides:
 - [Quickstart: Send telemetry from a device to an IoT hub and monitor it with the Azure CLI](https://docs.microsoft.com/en-us/azure/iot-hub/quickstart-send-telemetry-cli)
 - [Quickstart: Send telemetry from an IoT Plug and Play device to Azure IoT Hub](https://docs.microsoft.com/en-us/azure/iot-develop/quickstart-send-telemetry-iot-hub?toc=%2Fazure%2Fiot-hub%2Ftoc.json&bc=%2Fazure%2Fiot-hub%2Fbreadcrumb%2Ftoc.json&pivots=programming-language-python)
+

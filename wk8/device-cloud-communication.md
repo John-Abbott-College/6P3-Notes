@@ -1,0 +1,190 @@
+# Communication: Device & Cloud
+
+Communication for IoT system should be bi-directional:
+
+- Device to Cloud (D2C)
+- Cloud to Device (C2D)
+
+Azure offers a variety of ways of exchanging information in both directions. In this lesson we'll look at the specifics of how these messaging systems work.
+
+![Communication options between IoT Hub and devices](assets/iot-hub-communication.drawio.svg)
+
+
+## Azure IoT Protocols
+IoT Hub allows devices to use the following protocols for device-side communications:
+
+-   [MQTT](https://docs.oasis-open.org/mqtt/mqtt/v3.1.1/mqtt-v3.1.1.pdf) (including over WebSockets)
+-   [AMQP](https://docs.oasis-open.org/amqp/core/v1.0/os/amqp-core-complete-v1.0-os.pdf) (including over WebSockets)
+-   HTTPS
+
+By now you are well familiar with MQTT and HTTPS.
+
+AMQP is not covered in this course, however, is also a popular protocol for IoT communication. It is used for most of Azure IoT internal communication.
+
+AMQP is more complex and has slightly more over head than MQTT, thus consuming more bandwidth and device memory. However, it does not requires a broker (although one can be used) and has extra features for security and flow control.
+
+> The choice of protocol is a design choice that is **implemented when using  libraries from the [Azure IoT SDKs](https://github.com/Azure/azure-iot-sdks)** (ex.: when instantiation a client or a connection object).
+> 
+> For example, the **Azure IoT SDK for python uses MQTT by default**.
+
+If you would like to know more about AMQP and how it differs from MQTT, see the video on "Diving Deeper".
+
+
+## Device to Cloud (D2C) Communication
+
+IoT Hub exposes three options for sending information from the device to the cloud or solution back end:
+
+- [Device-to-cloud messages](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-messages-d2c) for time series telemetry and alerts.
+        
+- [File uploads](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-file-upload) for media files and large telemetry batches uploaded by intermittently connected devices.
+
+- [Device twin's reported properties](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-device-twins) for reporting device state information such as configuration or last know state. More on Device twins later in the course.
+
+
+## Cloud to Device (C2D) Communication
+
+IoT Hub provides three options for devices to receive information and commands from the cloud or back-end app:
+
+- [Cloud-to-device messages](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-messages-c2d) for one-way notifications to the device.
+
+- [Direct methods](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-direct-methods) follow a request-response pattern and are meant for communications that require immediate confirmation of their result. For example, interactive control of the device, such as turning on a fan.
+    
+- [Twin's desired properties](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-device-twins) for long-running commands intended to put the device into a certain desired state. For example, set the telemetry send interval to 30 minutes. More on Device twins later in the course.
+
+
+## End-points
+
+IoT Hub also exposes multiple end-points that act as data input and output to various other actors.
+
+For example, all messages receive from a device are also forwarded to a "device to cloud message" end-point. An external client such as VS Code or Azure CLI can connect to this end-point and read the D2C messages sent to IoT Hub.
+
+> You can think of **IoT Hub as a broker** and the **end-points as topics**.
+> A client can subscribe to a topic and receive forwarded messages.
+
+By default, messages are routed to the built-in service-facing endpoint (**messages/events**). IoT Hub allows data retention in the built-in end-points for a maximum of 7 days (1 day by default).
+
+For a list of all build-in end-points see [IoT Hub endpoints reference](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-endpoints).
+
+The [Azure IoT SDKs](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-sdks) article describes the various ways to access these endpoints.
+
+
+## Message Anatomy
+
+As previously mentioned, IoT Hub messages can be used for both D2C or C2D communication.
+
+**An IoT Hub message consists of:**
+
+- A predetermined set of **system properties**.
+
+- A set of **application properties**: A dictionary of string properties that the application can define and access, without needing to deserialize the message body.
+
+- An opaque binary body (the payload / application data).
+    
+(Property names and values can only contain ASCII alphanumeric characters).
+
+IoT Hub message assumes the following JSON representation of the message:
+
+```json
+{ 
+  "message": { 
+    "systemProperties": { 
+      "contentType": "application/json", 
+      "contentEncoding": "UTF-8", 
+      "iothub-message-source": "deviceMessages", 
+      "iothub-enqueuedtime": "2017-05-08T18:55:31.8514657Z" 
+    }, 
+    "appProperties": { 
+      "processingPath": "{cold | warm | hot}", 
+      "verbose": "{true, false}", 
+      "severity": 1-5, 
+      "testDevice": "{true | false}" 
+    }, 
+    "body": "{\"Weather\":{\"Temperature\":50}}" 
+  } 
+} 
+```
+
+
+System properties are added for all users and identify content of the message.
+Users can selectively add application properties to the message.
+
+For a list of system and application properties that can be read or set on messages, see:
+
+- [System Properties of D2C IoT Hub messages](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-messages-construct#system-properties-of-d2c-iot-hub-messages)
+- [Application Properties of D2C IoT Hub messages](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-messages-construct#application-properties-of-d2c-iot-hub-messages)
+- [System Properties of C2D IoT Hub messages](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-messages-construct#system-properties-of-c2d-iot-hub-messages)
+
+
+## IoT Hub SDKs
+
+Although it's possible to connect a generic MQTT client (ex.: the `paho-mqtt` client) to the IoT Hub, it it recommended to use one of the provided Device SDKs.
+
+>  A **software development kit (SDK)** is a programming "package" that enables a programmer to develop applications for a specific platform.
+>  
+>  Typically an SDK includes one or more APIs, programming tools, and documentation.
+
+
+Azure IoT provides SDKs for several languages such as Python, Java, .NET, C and Node.js.
+
+The Azure IoT SDK for python is organized in two libraries, each controlling a different sides of the IoT System:
+
+- **Device SDK** -  provides functionality for **devices** to communicate with the Azure IoT Hub.
+- **Service SDK** - provides functionality for **applications and services** to communicate and manage the Azure IoT Hub.
+
+> [Github repository](https://github.com/Azure/azure-iot-sdk-python) for python Azure IoT SDK
+
+
+Remember that IoT Hub is only taking care of the "pluming and "piping" of your IoT solution.
+
+
+
+### Device SDK
+
+Installation is available via Pypi.
+
+```bash
+pip install azure-iot-device
+```
+
+[**API documentation** ](https://docs.microsoft.com/en-us/python/api/azure-iot-device/azure.iot.device?view=azure-python)available in docs.microsoft.com
+
+The SDK provides the following clients:
+
+1. **Provisioning Device Client**
+
+	- Creates a device identity on the Azure IoT Hub
+
+2. **IoT Hub Device Client**
+
+	- Send telemetry messages to Azure IoT Hub
+	- Receive Cloud-to-Device (C2D) messages from the Azure IoT Hub
+	- Receive and respond to direct method invocations from the Azure IoT Hub
+
+3. **IoT Hub Module Client**
+	- Used for communicating with Edge devices (not covered in this course). See [here](https://azure.microsoft.com/en-us/services/iot-edge/#iotedge-overview) for more.
+
+These clients are available with an asynchronous API, as well as a blocking synchronous API.
+
+By default, the python device SDKs connect to an IoT Hub over MQTT with the **CleanSession** flag set to **0** and use **QoS 1** for message exchange with the IoT hub.
+
+
+
+## Direct Methods
+
+Direct methods enables us to trigger an action on the device by invoking it "on the cloud".
+
+Direct methods are similar to a regular cloud-to-device message but with a special payload (specific keys and values).
+
+Behind the scenes, the SDK running on the device can inspect this payload and trigger a call back function.
+
+
+## Diving Deeper 🤿
+
+If you would like to have a "bigger picture" view of how the different Azure IoT services fit together the video below by Blaize Stewart.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/UA15WTgZlYs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+To learn more about AMQT and how it differs from MQTT, see the presentation below by Ken Giusti.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/g3e9lDlMn5M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

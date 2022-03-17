@@ -5,6 +5,7 @@
 
 **Week 8**
 - [Intro to Azure](wk8/intro-azure-iot.md)
+- [Device-Cloud Communication](wk8/device-cloud-communication.md)
 
 **Week 7**
 - [IoT Protocols](wk7/iot-protocols.md)
