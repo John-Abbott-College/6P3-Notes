@@ -3,6 +3,9 @@
 - [Dev Setup](wk1/vscode-python-setup.md)
 - [Hardware List ](wk2/hardware-list.md)
 
+**Week 9**
+- [Python Extras](wk9/python-extras.md)
+
 **Week 8**
 - [Intro to Azure](wk8/intro-azure-iot.md)
 - [Device-Cloud Communication](wk8/device-cloud-communication.md)
