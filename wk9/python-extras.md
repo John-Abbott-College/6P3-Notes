@@ -1,6 +1,6 @@
 # Python Extras
 
-This section explores intermediate level topics in Python that will help us write better IoT application.
+This section explores intermediate level topics in Python that will help us write better IoT applications.
 
 We'll explore:
 - __main__ and top-level code environment
@@ -24,7 +24,7 @@ All of the code that is at indentation level 0 gets executed. This level is call
 
 There is a special built-in variable called `__name__` that is set to the name of the currenly executing module.
 
-However, if a module is being run directly (as in `myscript.py` above), then `__name__` instead is set to the string `"__main__"`.
+However, if a module is being run directly (as in `myscript.py` above), then `__name__` is instead set to the string `"__main__"`.
 
 ```python
 # myscript.py
@@ -35,7 +35,7 @@ print('Variable __name__: ', __name__)
 Value of variable __name__: __main__
 ```
 
-You can test whether your script is being run directly or being imported by something else by testing what `__name__`  evaluated to:
+You can test whether your script is being run directly or being imported by something else by testing what `__name__`  evaluates to:
 
 ```python
 # myscript.py
@@ -60,7 +60,7 @@ The arguments passed are `first`, `2` and `True` .
 
 ### `sys.argv`
 
-The Python `sys` module provides access these arguments via  `sys.argv`:
+The Python `sys` module provides access to these arguments via  `sys.argv`:
 
 - `sys.argv` is a **Python list** of arguments. 
 
@@ -91,11 +91,11 @@ Fortunately, there is a built-in module that can help us do that.
 
 [`argparse`](https://docs.python.org/3.10/library/argparse.html#module-argparse "argparse: Command-line option and argument parsing library.") is a built-in module that  makes it easy to write user-friendly command-line interfaces.
 
-Once the script defines what arguments are required, `argparse` will figure out how to parse those out of [`sys.argv`](https://docs.python.org/3.10/library/sys.html#sys.argv "sys.argv"). The [`argparse`](https://docs.python.org/3.10/library/argparse.html#module-argparse "argparse: Command-line option and argument parsing library.") module also automatically generates help and usage messages and issues errors when users give the program invalid arguments.
+Once the script defines what arguments are required, `argparse` will figure out how to parse those out of [`sys.argv`](https://docs.python.org/3.10/library/sys.html#sys.argv "sys.argv"). The [`argparse`](https://docs.python.org/3.10/library/argparse.html#module-argparse "argparse: Command-line option and argument parsing library.") module also automatically generates help and usage messages, and issues errors when users give the program invalid arguments.
 
-> For a basic tutorial of `argparse`, see [this page](https://docs.python.org/3.10/howto/argparse.html#id1)
+> For a basic tutorial of `argparse`, see [this page](https://docs.python.org/3.10/howto/argparse.html#id1).
 
-In it's simplest form, `argparse` must be imported and a parser must be instantiated:
+In its simplest form, `argparse` must be imported and a parser must be instantiated:
 
 ```python
 # myscript.py
@@ -103,7 +103,7 @@ In it's simplest form, `argparse` must be imported and a parser must be instanti
 import argparse
 parser = argparse.ArgumentParser()
 args = parser.parse_args()
-pring(args)
+print(args)
 ```
 
 However, this will generate an error because we must tell argparse what argument flags and what data types to parse.
@@ -144,7 +144,7 @@ True
 ```
 
 Notice how in the example above, **all arguments were positional**, which makes them  **mandatory**.
-In other words, the order in which they were passed determined  which variable they were being assigned to.
+In other words, the order in which they are passed determines which variable they were being assigned to.
 
 It's also possible to make arguments optional. In this case, they must be specified with the correct "Flag".
 
