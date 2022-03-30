@@ -186,6 +186,8 @@ In this case:
 - 010 is assigned to the voltages from -0.25 V to -0.49999 V,
 - and so on.
 
+> Note how the sample points are always rounded up to fit into their "digital bracket".
+
 The binary representation of the above signal is:
 
 110 101 100 011 011 100 110 110 100 010 000 000 001
@@ -209,11 +211,21 @@ ADCs can vary greatly between microcontrollers. The ADC on the Arduino UNO (see 
 ## Exercises
 
 ### Exercise 1
-Considering the analog signal below. The signal is being sampled at 2Hz (2 times/sec) with a signed 4-bit resolution (we can represent the numbers -8 to +7).
+Considering the analog signal below. The signal is being sampled in a program at 2Hz (2 times/sec) with the help of an ADC that has 6-bit resolution. The ADC can handle up to 8V signals.
 
-What are the numbers being stored as the digital signal before they are converted to binary? What is the final binary representation of the signal?
+A) What are the voltages being sampled by the ADC?
 
-![Graph for exercise 1](assets/analog-digital-ex1.png)
+B) If the signal reached max voltage, what would be the integer number passed to the program by the ADC?
+
+
+![Graph for exercise 1](assets/analog-digital-exercise1.png)
+
+
+<details>  
+<summary>Solution</summary>
+<p>a) Sampled voltages: 4, 6, 6, 0, 2, 2, 2, 5, 6, 4</p>
+<p>b) Since the ADC has a 6-bit resolution, it can represent values up to 63 (all 6 bits ON at the same time). Max voltage would result in the integer 63.</p>
+</details>
 
 ## References
 - [Analog vs. Digital](https://learn.sparkfun.com/tutorials/analog-vs-digital/all) by Sparkfun.
