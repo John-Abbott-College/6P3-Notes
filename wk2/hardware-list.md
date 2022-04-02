@@ -57,7 +57,23 @@ To facilitate connections of the Grove sensors, this "Hat" (term for an add-on b
 ![](https://files.seeedstudio.com/wiki/Grove-AHT20_I2C_Industrial_Grade_Temperature_and_Humidity_Sensor/101990644_4_.png ':size=300')
 See [AHT20 I2C Industrial Grade Temperature & Humidity Sensor wiki](https://wiki.seeedstudio.com/Grove-AHT20-I2C-Industrial-Grade-Temperature&Humidity-Sensor/) for details.
 -   Temperature measurement range -40 ~ 85°C, Humidity measurement range 0 ~ 100% RH.
--   Digital output, Grove I2C interface
+-   Digital output, Grove I2C interface.
+
+**AHT20 Libraries**
+The main module for this sensor is provided by Seeed in [this Github repository](https://github.com/Seeed-Studio/grove.py/blob/master/grove/grove_temperature_humidity_aht20.py) and can be installed with the `grove.py` library.
+
+Follow official [Step by step installation](https://wiki.seeedstudio.com/Grove_Base_Hat_for_Raspberry_Pi/#installation) for python 3 (see below).
+Don't use the one-click installation or it will install to the wrong location
+
+```bash
+git clone [https://github.com/Seeed-Studio/grove.py](https://github.com/Seeed-Studio/grove.py)
+cd grove.py  
+sudo pip3 install .
+```
+
+Alternatively, it's also possible to use Adafruit's `adafruit-circuitpython-ahtx0` library to communicate with the sensor (see [library's Pypi page](https://pypi.org/project/adafruit-circuitpython-ahtx0/)).
+However, to instantiate the provided sensor class, you will need to pass it an I2C bus instance. To instantiate an I2C bus instance, install and use the `adafruit-extended-bus` library (see [Pypi page](https://pypi.org/project/adafruit-extended-bus/)).
+
 
  ### Actuators & Motors
 
