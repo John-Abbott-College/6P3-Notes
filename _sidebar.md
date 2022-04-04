@@ -3,6 +3,9 @@
 - [Dev Setup](wk1/vscode-python-setup.md)
 - [Hardware List ](wk2/hardware-list.md)
 
+**Week 10**
+- [Device Twins](wk10/device-twins.md)
+
 **Week 9**
 - [Python Extras](wk9/python-extras.md)
 
