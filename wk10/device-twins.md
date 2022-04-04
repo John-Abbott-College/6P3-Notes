@@ -5,15 +5,16 @@ Azure IoT Hub maintains a device twin for each device that you connect to IoT Hu
 
 Device twins store device-related information that:
 
--   Store device metadata from your solution back end.    
+-   Contains device metadata from your solution back end.    
 
--   Report current state information such as available capabilities and conditions, for example, the connectivity method used, from your device app.
+-   Reports current state information such as available capabilities and conditions, for example, the connectivity method used from your device app.
 
--   Synchronize the state of long-running workflows, such as firmware and configuration updates, between a device app and a back-end app.
--   Query your device metadata, configuration, or state.
+-   Synchronizes the state of long-running workflows, such as firmware and configuration updates, between a device app and a back-end app.
+
+-   Querys your device metadata, configuration, or state.
 
 
-Note that **Device Twins is not appropriate for high-frequency communication** such as sending telemetry data from device to cloud. For this, use D2C messages.
+Note that **Device Twins are not appropriate for high-frequency communication** such as sending telemetry data from device to cloud. For this, use D2C messages.
 
 >Device twins are automatically created and deleted when a device identity is added or removed from the IoT Hub.
 
@@ -96,7 +97,7 @@ In this case we have the following information flow:
 
 1. A desired property is set by a back-end application into the IoT Hub.
 2. The desired property is read by a device.
-3. The device processes the desired property
+3. The device processes the desired property.
 4. The device sets a reported property into the IoT Hub.
 5. The device's reported property is read by the back-end application.
  
@@ -128,11 +129,11 @@ Consider the property `telemetryConfig` which is used to configure telemetry col
 
 **Step 2a:** If the device is connected, it is notified of the change immediately.
 
-**Step 2b:** If the device is not connected, the must follow the [device reconnection flow](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-device-twins#device-reconnection-flow) to receive the full desired properties document and to subscribe to new notifications.
+**Step 2b:** If the device is not connected, it must follow the [device reconnection flow](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-device-twins#device-reconnection-flow) to receive the full desired properties document and to subscribe to new notifications.
 
-**Step 3:** the device processes the desired property according to the application logic.
+**Step 3:** The device processes the desired property according to the application logic.
 
-**Step 4:** the device reports the updated configuration as a reported property (or an error condition using the `status` property). Below is the portion of the document with the reported property:
+**Step 4:** The device reports the updated configuration as a reported property (or an error condition using the `status` property). Below is the portion of the document with the reported property:
 
 ```json
 "reported": {
@@ -144,7 +145,7 @@ Consider the property `telemetryConfig` which is used to configure telemetry col
 }
 ```
 
-**Step 5:** the back-end reads and tracks the results of the configuration operation. 
+**Step 5:** The back-end reads and tracks the results of the configuration operation. 
 
 > Note that a back-end service can set and track device twin properties across many devices at once by [querying](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-query-language) device twins (more on querying later).
 
@@ -160,12 +161,12 @@ Consider the property `telemetryConfig` which is used to configure telemetry col
 
 #### Implementation Summary
 
-1. Install the Azure IoT Hub Device SDK for Python:
+1. Install the Azure IoT Hub Device SDK for Python.
 ```bash
 pip install azure-iot-device
 ```
 
-2. Import the class `IoTHubDeviceClient`
+2. Import the class `IoTHubDeviceClient`.
 ```python
 from azure.iot.hub import IoTHubDeviceClient
 ```
@@ -216,20 +217,22 @@ The connection string required for the Device Twins back-end is specific to a sh
 
 #### Implementation Summary
 
-1. Install the Azure IoT Hub Service SDK for Python:
+1. Install the Azure IoT Hub Service SDK for Python.
 ```bash
 pip install azure-iot-hub
 ```
 
-2. Import the classes `IoTHubRegistryManager`, `Twin` , and `TwinProperties`
+2. Import the classes `IoTHubRegistryManager`, `Twin` , and `TwinProperties`.
 ```python
 from azure.iot.hub import IoTHubRegistryManager
 from azure.iot.hub.models import Twin, TwinProperties
 ```
 
-3. Instantiate a `IoTHubRegistryManager` from the IoT Hub connection string and get the Device Twin reference from the device is:
+3. Instantiate a `IoTHubRegistryManager` from the IoT Hub connection string and get the Device Twin reference from the device id.
 ```python
-iothub_registry_manager = IoTHubRegistryManager(IOTHUB_CONNECTION_STRING)        twin = iothub_registry_manager.get_twin(DEVICE_ID)
+iothub_registry_manager = IoTHubRegistryManager(IOTHUB_CONNECTION_STRING)
+
+twin = iothub_registry_manager.get_twin(DEVICE_ID)
 ```
 
 4. Create a `TwinProperties` object with the `desired` attribute set to a dictionary of your desired properties.
@@ -243,7 +246,7 @@ desired_properties= TwinProperties(desired={'fan_speed' : 3000, 'telemtry_interv
 twin_patch = Twin(properties = desired_properties)
 ```
 
-6. Send the Device Twin update
+6. Send the Device Twin update.
 ```python
 twin = iothub_registry_manager.update_twin(DEVICE_ID, twin_patch)
 ```
@@ -255,12 +258,12 @@ IoT Hub provides a powerful SQL-like language to retrieve information about devi
 
 > This query language is particularly useful for **back-end applications** when managing multiple devices.
 
-To use queries inside a back-end application, importing the following classes:
+To use queries inside a back-end application, import the following classes.
 ```python
 from azure.iot.hub.models import QuerySpecification, QueryResult
 ```
 
-A query would then be performed in the following way:
+A query would then be performed in the following way.
 ```python
 query_spec = QuerySpecification(query="SELECT * FROM devices WHERE tags.location.plant = 'Redmond43'")
 
@@ -276,7 +279,7 @@ You can experiment by using the *Queries* tool in the *Device Management* menu.
 ![](assets/device-twins-query-tool.png)
 
 
-For example, to retrieve device twins located in the US and configured to send telemetry less than every minute, use the following query:
+For example, to retrieve device twins located in the US and configured to send telemetry greater than or equal to every minute, use the following query:
 ```sql
 SELECT * FROM devices
   WHERE tags.location.region = 'US'
