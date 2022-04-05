@@ -177,12 +177,7 @@ device_client = IoTHubDeviceClient.create_from_connection_string(conn_str)
 device_client.connect()
 ```
 
-4. Get the Device Twin document from the device instance and parse it if connecting for the first time (see the [device reconnection flow](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-device-twins#device-reconnection-flow)).
-```python
-twin = device_client.get_twin()
-```
-
-5. Define a callback function for newly received Device Twin updates (patches).
+4. Define a callback function for newly received Device Twin updates (patches).
 ```python
 def twin_patch_handler(twin_patch):
 	print(f"Twin patch received: {twin_patch}")
@@ -190,13 +185,21 @@ def twin_patch_handler(twin_patch):
 device_client.on_twin_desired_properties_patch_received = twin_patch_handler
 ```
 
-6. Prepare your Reported Properties dictionary and send it to the IoT Hub
+5. Get the Device Twin document from the device instance and parse it if connecting for the first time (see the [device reconnection flow](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-device-twins#device-reconnection-flow)).
+```python
+twin = device_client.get_twin()
+```
+
+6. Parse your twin update by inspecting the requested properties.
+> This is were the magic happens 🧙
+
+7. Prepare your Reported Properties dictionary and send it to the IoT Hub
 ```python
 reported_patch = {"telemetry_interval": 20}
 device_client.patch_twin_reported_properties(reported_patch)
 ```
 
-7. Disconnect the client.
+8. Disconnect the client.
 ```python
 device_client.shuthdown()
 ```
@@ -228,29 +231,35 @@ from azure.iot.hub import IoTHubRegistryManager
 from azure.iot.hub.models import Twin, TwinProperties
 ```
 
-3. Instantiate a `IoTHubRegistryManager` from the IoT Hub connection string and get the Device Twin reference from the device id.
+3. Instantiate a `IoTHubRegistryManager` from the IoT Hub connection string.
 ```python
 iothub_registry_manager = IoTHubRegistryManager(IOTHUB_CONNECTION_STRING)
+```
 
+4. Get the Device Twin reference from the device id.
+```python
 twin = iothub_registry_manager.get_twin(DEVICE_ID)
 ```
 
-4. Create a `TwinProperties` object with the `desired` attribute set to a dictionary of your desired properties.
+5. Parse the Device Twin object if necessary by inspecting its `desired` and `reported` properties.
+
+6. Create a `TwinProperties` object with the `desired` attribute set to a dictionary containing your desired properties.
 ```python
 desired_properties= TwinProperties(desired={'fan_speed' : 3000, 'telemtry_interval': 5})
 ```
 
-5. Create a Device Twin patch. A patch is a section of the Device Twin document that you want to update with your desired properties (created above).
+7. Create a Device Twin patch. A patch is a section of the Device Twin document that you want to update with your desired properties (created above).
 	Note: You can also include any new Tags as a dictionary in this step.
 ```python
 twin_patch = Twin(properties = desired_properties)
 ```
 
-6. Send the Device Twin update.
+8. Send the Device Twin update and capture the updated Device Twin document in a new object.
 ```python
-twin = iothub_registry_manager.update_twin(DEVICE_ID, twin_patch)
+updated_twin = iothub_registry_manager.update_twin(DEVICE_ID, twin_patch)
 ```
 
+9. Repeat steps 4 to 8 if necessary.
 
 ## Query Language for Device Twins
 
