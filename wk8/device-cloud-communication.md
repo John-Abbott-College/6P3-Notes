@@ -85,7 +85,9 @@ As previously mentioned, IoT Hub messages can be used for both D2C or C2D commun
 (Property names and values can only contain ASCII alphanumeric characters).
 
 <br>
-Below is an example an IoT Hub message.
+Below is an example of a message **as they are received by the IoT Hub**.
+
+> Note that creating and manipulation of the message on the device-side will look different. Many properties are automatically set on message by the SDK.
 
 ```json
 { 
