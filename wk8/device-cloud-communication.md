@@ -120,6 +120,14 @@ For a list of system and application properties that can be read or set on messa
 - [Application Properties of D2C IoT Hub messages](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-messages-construct#application-properties-of-d2c-iot-hub-messages)
 - [System Properties of C2D IoT Hub messages](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-messages-construct#system-properties-of-c2d-iot-hub-messages)
 
+### Application Properties in Python
+
+To send device-to-cloud messages the method `IoTHubDeviceClient.send_message(message)` is used. This method can receive a string or a `Message` object. Typically we've been passing a json string with the telemetry payload and the `Message` object is created automatically for you ([as per the docs](https://docs.microsoft.com/en-us/python/api/azure-iot-device/azure.iot.device.iothubdeviceclient?view=azure-python#azure-iot-device-iothubdeviceclient-send-message "https://docs.microsoft.com/en-us/python/api/azure-iot-device/azure.iot.device.iothubdeviceclient?view=azure-python#azure-iot-device-iothubdeviceclient-send-message")).
+    
+You can, however, have more control over the properties of the `Message` object to be sent. As mention in [Application Properties of D2C IoT Hub messages](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-messages-construct#application-properties-of-d2c-iot-hub-messages), there are many properties you can set yourself, including **custom application properties**. See the [docs for the `Message` class](https://docs.microsoft.com/en-us/python/api/azure-iot-device/azure.iot.device.message?view=azure-python "https://docs.microsoft.com/en-us/python/api/azure-iot-device/azure.iot.device.message?view=azure-python").
+    
+See the example in [azure-iot-sdk-python](https://github.com/Azure/azure-iot-sdk-python "https://github.com/Azure/azure-iot-sdk-python")/[azure-iot-device](https://github.com/Azure/azure-iot-sdk-python/tree/main/azure-iot-device "https://github.com/Azure/azure-iot-sdk-python/tree/main/azure-iot-device")/[samples](https://github.com/Azure/azure-iot-sdk-python/tree/main/azure-iot-device/samples "https://github.com/Azure/azure-iot-sdk-python/tree/main/azure-iot-device/samples")/[sync-samples](https://github.com/Azure/azure-iot-sdk-python/tree/main/azure-iot-device/samples/sync-samples "https://github.com/Azure/azure-iot-sdk-python/tree/main/azure-iot-device/samples/sync-samples")/**send_message.py** to understand how to set message properties.
+
 
 ## IoT Hub SDKs
 
