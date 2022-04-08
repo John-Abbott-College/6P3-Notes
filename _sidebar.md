@@ -5,6 +5,7 @@
 
 **Week 10**
 - [Device Twins](wk10/device-twins.md)
+- [Message Storage & Routing](wk10/message-routing-storage.md)
 
 **Week 9**
 - [Python Extras](wk9/python-extras.md)
