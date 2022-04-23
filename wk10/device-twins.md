@@ -162,44 +162,54 @@ Consider the property `telemetryConfig` which is used to configure telemetry col
 #### Implementation Summary
 
 1. Install the Azure IoT Hub Device SDK for Python.
+
 ```bash
 pip install azure-iot-device
 ```
 
 2. Import the class `IoTHubDeviceClient`.
+
 ```python
 from azure.iot.hub import IoTHubDeviceClient
 ```
 
 3. Instantiate a `IoTHubDeviceClient` from the Device connection string and connect to the IoT Hub.
+
 ```python
 device_client = IoTHubDeviceClient.create_from_connection_string(conn_str)
 device_client.connect()
 ```
 
 4. Define a callback function for newly received Device Twin updates (patches).
+
 ```python
 def twin_patch_handler(twin_patch):
-	print(f"Twin patch received: {twin_patch}")
-
+    print(f"Twin patch received: {twin_patch}")
+    
 device_client.on_twin_desired_properties_patch_received = twin_patch_handler
 ```
 
 5. Get the Device Twin document from the device instance and parse it if connecting for the first time (see the [device reconnection flow](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-device-twins#device-reconnection-flow)).
+
 ```python
 twin = device_client.get_twin()
 ```
 
 6. Parse your twin update by inspecting the requested properties.
+
 > This is were the magic happens 🧙
+> 
+> ⚠ Remember that any property starting with "$" is set by Azure. You cannot set or modify them. Trying to do so will result in an error.
 
 7. Prepare your Reported Properties dictionary and send it to the IoT Hub
+
 ```python
 reported_patch = {"telemetry_interval": 20}
 device_client.patch_twin_reported_properties(reported_patch)
 ```
 
 8. Disconnect the client.
+
 ```python
 device_client.shuthdown()
 ```
