@@ -3,6 +3,9 @@
 - [Dev Setup](wk1/vscode-python-setup.md)
 - [Hardware List ](wk2/hardware-list.md)
 
+**Week 13**
+- [EventHubs with .NET](wk13/eventhub-dotnet.md)
+
 **Week 10**
 - [Device Twins](wk10/device-twins.md)
 - [Message Storage & Routing](wk10/message-routing-storage.md)
