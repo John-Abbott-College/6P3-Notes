@@ -2,12 +2,12 @@
 
 ## Storage Accounts
 
-As one can image, there are many types of storage accounts in Azure. The ones we'll explore in this course are:
+As one can imagine, there are many types of storage accounts in Azure. The ones we'll explore in this course are:
 
 - Blob Storage (object storage).
 - Table Storage (NoSQL database).
 
-> To know more about the other storage services offered by Azure see **[Introduction to Azure Storage](https://docs.microsoft.com/en-us/azure/storage/common/storage-introduction#main)**
+> To know more about the other storage services offered by Azure see **[Introduction to Azure Storage](https://docs.microsoft.com/en-us/azure/storage/common/storage-introduction#main)**.
 
 ### Blob Storage
 
@@ -20,7 +20,7 @@ Blob storage is designed for:
 -   Streaming video and audio.
 -   Writing to log files.
 -   Storing data for backup and restore, disaster recovery, and archiving.
--   Storing data for analysis by an on-premises or Aszure-hosted service.
+-   Storing data for analysis by an on-premises or Azure-hosted service.
 
 Blob storage has the following structure:
 
@@ -36,7 +36,7 @@ Blob storage has the following structure:
     <a href="https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction"> Structure of Blob storage </a>&nbsp; Introduction to Azure Blob storage.
 </p>
 
-> For details on how to create a storage account see **[Create a storage account](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create?toc=%2Fazure%2Fstorage%2Fblobs%2Ftoc.json&tabs=azure-portal)**
+> For details on how to create a storage account see **[Create a storage account](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create?toc=%2Fazure%2Fstorage%2Fblobs%2Ftoc.json&tabs=azure-portal)**.
 
 #### Data Lake Storage & Hierarchical Directories
 
@@ -58,7 +58,7 @@ As usual, Azure provides a SDK to interact with blob storage.
 #### Python SDK
 > Python SDK **[documentation overview](https://docs.microsoft.com/en-us/python/api/overview/azure/storage-blob-readme?view=azure-python)** for:
 > 	- Getting started.
-> 	- Key concepts
+> 	- Key concepts.
 > 	- Examples.
 
 **Quick Links**
@@ -67,7 +67,7 @@ As usual, Azure provides a SDK to interact with blob storage.
 #### .NET SDK
 > .NET SDK **[documentation overview](https://docs.microsoft.com/en-us/dotnet/api/overview/azure/storage.files.datalake-readme?view=azure-dotnet)** for:
 > 	- Getting started.
-> 	- Key concepts
+> 	- Key concepts.
 > 	- Examples.
 
 **Quick Links**
@@ -89,7 +89,7 @@ It is possible to route messages to different end-points according to the type o
 Message routing involves the following steps:
 
 1. Create a custom endpoint (if not using the built-in  `events` endpoint which catches all events).
-	- Choose between a Storage or Event Hubs (the Service Buses are not covered in this course).
+	- Choose between Storage or Event Hubs (the Service Buses are not covered in this course).
 	- Create a Storage account if necessary.
 2. Add a new route and associate it with the endpoint created above.
 3. Set a routing query that will "catch" the message into the route.
@@ -98,18 +98,18 @@ Message routing involves the following steps:
  > See **[Azure Storage as a routing endpoint](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-messages-d2c#azure-storage-as-a-routing-endpoint)** for details on how to to configure an endpoint with a storage account.
  > 
  > Additionally, you can follow the tutorial [**Set up message routing**](https://docs.microsoft.com/en-us/azure/iot-hub/tutorial-routing#set-up-message-routing) for a step by step guide.
- >- Skip the steps for the Service Bus (not covered in this course).
+ >- Skip the steps for the Service Buses (not covered in this course).
 
 
 ### Free Account Limitation
-Unfortunately the free tier of the IoT Hub is limited to **only one additional endpoints** (see [Quotas and throttling](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-quotas-throttling)).
+Unfortunately the free tier of the IoT Hub is limited to **only one additional endpoint** (see [Quotas and throttling](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-quotas-throttling)).
 
 In this lesson we will create and delete multiple endpoints to illustrate their capabilities.
 
 
 ### Routing Queries
 
-A message event be routed according to it's type. Messages can be of the following types:
+A message event can be routed according to its type. Messages can be of the following types:
 
 - device life-cycle events,
 - device telemetry messages,
@@ -118,7 +118,7 @@ A message event be routed according to it's type. Messages can be of the followi
 For telemetry messages, it's possible to query on:
 - System properties,
 - Application properties,
-- Message body
+- Message body.
 
 > See [**Create and read IoT Hub messages**](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-messages-construct#system-properties-of-d2c-iot-hub-messages) for a list of message properties.
 
@@ -160,3 +160,4 @@ processingPath = 'hot' AND $connectionModuleId = 'myDevice-1'
 ## References
 
 - [Introduction to Azure Blob storage](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction) by Microsoft.
+
