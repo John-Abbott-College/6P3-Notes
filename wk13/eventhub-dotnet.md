@@ -40,6 +40,8 @@ When going through the sample code, the following order is recommended:
 	1. [Sample01_HelloWorld.md](https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/eventhub/Azure.Messaging.EventHubs/samples)
 	2. [Sample05_ReadingEvents.md](https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/eventhub/Azure.Messaging.EventHubs/samples)
 
+3. Run the "Quickstart" code [Read device-to-cloud messages](https://github.com/Azure-Samples/azure-iot-samples-csharp/tree/main/iot-hub/Quickstarts/ReadD2cMessages)
+
 
 ## Cancellation Tokens
 
