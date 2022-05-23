@@ -157,6 +157,21 @@ processingPath = 'hot' AND $connectionModuleId = 'myDevice-1'
 > See [**IoT Hub message routing query syntax**](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-routing-query-syntax#main) for the query syntax and examples.
 
 
+Note that in order for the message body to be stored in plain text, the following properties must be set on the message prior to sending the message:
+
+```json
+"contentType": "application/json", 
+"contentEncoding": "UTF-8"
+```
+
+With the Python SDK, these properties would be set with:
+
+```python
+msg = Message(payload)
+msg.content_encoding = 'utf-8'
+msg.content_type = 'application/json'
+```
+
 ## References
 
 - [Introduction to Azure Blob storage](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction) by Microsoft.
