@@ -1,14 +1,5 @@
 # Technology Stack
 
-Throughout the course we will explore two technology stacks to achieve similar goals:
-
-- Connect an object to the cloud in order to read data from a sensor
-- Monitor device data in near-real time
-- Control device actuators from the cloud
-- Create a user interface in order to monitor and control device
-
-The stacks will be divided into beginner and advances level.
-
 ## Hardware
 
 ### reTerminal from Seeed
@@ -36,7 +27,7 @@ The stacks will be divided into beginner and advances level.
 
 ![python™](https://www.python.org/static/img/python-logo.png)
 
-This course will  be using Python as its main programming language in order to:
+This course will  be using **Python version 3.10** to:
 - Run programs inside the Raspberry Pi (reTerminal) in order to read and control sensors.
 - Communicate with the API of the Cloud Platform.
 
