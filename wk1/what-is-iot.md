@@ -3,11 +3,11 @@
 ![Artificial intelligence can revolutionize the Internet of Things.](https://d3i2s57s2jetfw.cloudfront.net/wp-content/uploads/2022/01/98273dcb77c1fbf47f9cfe09a939fc4f-1200x0-c-default.jpeg)
 Image: © Irina Strelnikova / Adobe Stock
 
-## What's the Internet of Things?
+## Internet of Things (IoT)
 
-The internet of things (IoT) is a comprised of equipment, machines, products, and devices that are connected to the cloud and periodically collect, send and/or receive data.
+The **Internet of Things (IoT)** is comprised of equipment, machines, products, and devices that are connected to the cloud and **periodically collect, send and/or receive data.**
 
-> Internet of Things (IoT) refers to the **entire network** of:
+> **IoT** refers to the **entire network** of:
 > 
 > - physical devices,
 > - tools,
@@ -18,34 +18,43 @@ The internet of things (IoT) is a comprised of equipment, machines, products, an
 > 
 > - how they are used
 > - the environment around them
+>
+> IoT devices can also **receive commands or updates** via the cloud.
 
 
 ## Why collect all this data?
 
-By analyzing the data collected by these connected objects, users and organisations can make informed decisions in near real-time and automate tightly integrated processes.
-
-Decision making that is based on little or out-dated data can be skewed or biased. The real-time information from devices that are "in the field" can address this problem.
+By analyzing the data collected by these connected objects, users and organisations can make informed decisions in near real-time and automate tightly integrated processes. This avoids decision making based on limited or out-dated data. 
 
 This data can create quick feedback loops for automation. Data from one object can trigger actions or control several other objects with timing and precision that could not be achieved by humans.  
 
 ## IoT Examples
 
-The use of IoT can be organised in two fields of application: **Industrial and Consumer IoT**.
+The use of IoT can be organised in two fields of application:
+
+- **Industrial IoT (IIoT)**
+- **Consumer IoT**
 
 ![Examples of industrial and consumer iot applications](assets/iot-intro-industrial-vs-consumer.png)
 <p class=img-info>
 <a href="https://www.kuritaamerica.com/the-splash/the-internet-of-things-and-its-benefit-to-us-water-customers"> The Internet of Things and its Benefit to U.S. Water Customer </a> &nbsp; in kuritaamerica.com</p>
 
 ### Consumer IoT
-Some examples of consumer IoT are:
+
+Examples of consumer IoT are:
+
 - **Home Security**: Sensors, alarms, cameras, lights, and microphones provide 24/7 security and surveillance. All of which can be controlled from a smart phone.
+
 - **Smart Home**: Smart lighting, heating and sound systems can be automated to detect human present or receive instructions remotely. Voice Assistants can also control house appliances or and provide information.
+
 - **Wearables:** Smartwatches and fitness trackers can monitor blood pressure or heart rate, and physical activity and suggest workouts, breaks or medical assistance.
+
 - **Appliances:** Smart fridges can keep track of food quantities and expiry dates and create shopping lists accordingly. Smart outlet plugs can measure electrical consumption and turn other appliances on/off.
 
-### Industrial IoT
 
-Most people tend to first think of IoT as consumer devices. However, their main value added happens in industrial applications. 
+### Industrial IoT (IIoT)
+
+Most people tend to first think of IoT as consumer devices. However, **their main value added happens in industrial applications.** 
 
 ![](https://miro.medium.com/max/1400/1*VKScdttTvAJZ7n663OwGPw.jpeg)
 
@@ -53,7 +62,7 @@ Most people tend to first think of IoT as consumer devices. However, their main 
 <a href="https://medium.com/@jaydev_21091/how-industrial-internet-of-things-are-impacting-our-lives-8af4163530ce">How Industrial Internet of Things are impacting our lives</a> by Bluechip Infocorp Pvt Ltd via Medium.
 </p>
 
-Some examples of Industrial IoT:
+Industrial IoT Examples:
 
 - **Equipment Maintenance:** [Rolls-Royce’s Total Care](https://www.rolls-royce.com/media/press-releases/2016/11-07-2016-rr-takes-totalcare-digital-with-microsoft-and-singapore-airlines.aspx) provides a suite of predictive maintenance and repair services for its jet engines, including monitoring engine health, and modifying engines to increase reliability and durability.
 
@@ -68,41 +77,73 @@ Some examples of Industrial IoT:
 	- Increase employee or occupant satisfaction by keep equipment running or ensuring that supplies are stocked.
 
 
-### High-level Components of an IoT System
+## High-level Components of an IoT System
 
-An IoT system is compromised of four main conceptual components:
+IoT systems are compromised of five high-level components:
 
-1.  **Sensors:** enables the devices to collect data from the environment surrounding the device (eg. velocity, GPS coordinates, temperature, etc...).
-2.  **Connectivity:** successively the data collected is sent to the cloud (through either WiFi or Bluetooth connection).
-3.  **Data Processing:** once the data is received by the cloud infrastructure, it can then be processed (eg. check if the data received adhere to the requirements and if its not alert the user).
-4.  **User Interface:** Once the data is processed, the results are then given to the end-user.
+1.  **Sensors**:
+	- Collect data from the device's environment (eg. velocity, GPS coordinates, temperature, etc).
+	- Sensors might use different communication protocols.
 
-![Icons for the four main components of an IoT System](assets/iot-intro-four-main-components.png)
-<p class=img-info>
-<a href="https://www.freecodecamp.org/news/introduction-to-iot-internet-of-things"> An Introduction to the Internet of Things </a>&nbsp; by Pier Paolo Ippolito via freeCodeCamp.org
-</p>
+2. **IoT Devices** are computing devices that have:
+	- Ability to securely register with the cloud;
+	- Connectivity options for sending and receiving data with the cloud.
+
+3. **Cloud Gateway / Hub**:
+	- Securely ingests and sends data or commands to devices;
+	- Offers device management (provisioning) services (add, remove, update, group, etc).
+
+4. **Data Processing:** 
+	- Data validation;
+	- Integrate with **business processes** (check thresholds, send alerts, trigger action)
+	- Place data in **Storage**;
+	- Retrieve data from **Storage** for deeper / long-term analysis;
+
+5.  **User Interface:**
+	- Data visualization;
+	- Trigger manual actions;
+	- Configure automatic actions;
+	- Facilitate device management.
 
 
-In this course we will learn how to setup, connect and control each one of these components.
+![Icons of IoT High level components](../assets/iot-high-components.png)
 
 
 ## IoT Cloud Service Providers
 
 Since IoT objects typically move around, connectivity and data collection need to happen over wide geographical areas.
 
-Most companies do not want to deal with setting-up the physical infrastructure and software required to have this level of distributed connectivity and reliability (servers, databases, backup systems, networking, container orchestration, etc).
+Most companies do not want to deal with setting-up the **physical infrastructure and software** required to have this level of distributed connectivity and reliability (servers, databases, backup systems, networking, container orchestration, etc).
 
 It is typically far more practical and cost-effective to use the services of an established IoT Cloud Service Provider.
 
 The three main Cloud Service Providers in the IoT space are: 
+
 - **Amazon Web Services (AWS)**
 - **Microsoft Azure**
 - **Google Cloud**
+
 ![](assets/iot-intro-cloud-service-providers.png)
+
 There are many other Cloud providers such as [IBM Cloud IoT](https://www.ibm.com/cloud/internet-of-things) and [Oracle IoT](https://www.oracle.com/internet-of-things/).
 
 > In this course we will focus on **Microsoft Azure**.
 > However, all three platforms offer similar functionality.
+
+
+## Exercises
+
+1. Read the Microsoft training module [**Examine the architecture of an IoT solution**](https://learn.microsoft.com/en-us/training/modules/introduction-iot-solution-architecture/)  and complete the Moodle quiz on the module.
+
+
+## Diving Deeper
+
+Video (15:19): **The 7 Principles of the IoT by Tom Bradicich**
+
+- In depth explanation of the integration between IoT sub-systems and opportunities from a technical and business perspective.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/u3IaXvjDiOE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 
 ## References
 1. [What is IoT](https://azure.microsoft.com/en-us/overview/internet-of-things-iot/what-is-the-internet-of-things/) by Microsoft Azure.
