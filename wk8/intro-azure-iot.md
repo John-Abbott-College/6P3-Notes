@@ -66,6 +66,12 @@ We can further describe each one of these components as a **subsystems** and exp
 > We will use Microsoft Azure to manage each sub-system individually.
 
 
+## Azure IoT Services
+
+Azure offers many IoT-related services (see image below). We'll only explore a few.
+
+![Azure IoT-related architecture](https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/iot/images/iot-refarch.svg#lightbox#lightbox)
+
 ## Azure Account
 Students get $100 of credit for 12 months and free [developer tools](https://portal.azure.com/#blade/Microsoft_Azure_Billing/FreeServicesBlade) without a credit card. 
 
