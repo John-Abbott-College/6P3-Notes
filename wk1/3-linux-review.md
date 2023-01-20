@@ -52,3 +52,10 @@ Manipulation of the Raspberry Pi will require familiarity with the following tas
 1. A great set of exercises to get started is the game [**Bandit** from *OverTheWire.org*](https://overthewire.org/wargames/bandit/)
 
 	- Try to reach at least level 4
+
+2. Use a Linux machine and come-up with one example for each of the commands above.
+	As a Linux box you can use:
+	- WSL2 in Windows
+	- [JSLinux Terminal](https://bellard.org/jslinux/)
+	- [Copy.sh Terminal](https://copy.sh/v86/?profile=linux26)
+	- [JS/UIX Terminal](http://www.masswerk.at/jsuix/index.html)
