@@ -1,12 +1,24 @@
-# VS Code Setup
+# Dev Setup
+
+The software below will be used for development during the course.
+
+## VS Code
 
 Below are the recommended steps to setup your VS Code for this course.
 
 You can [download VS Code from this link](https://code.visualstudio.com/Download)
 
+### VS Code Extensions
+
+1. [Remote - SSH by Microsoft](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh): Open any folder on a remote machine using SSH and take advantage of VS Code's full feature set.
+
+(the Python dev setup will required additional VS Code extensions, see below)
+
+
 ## Python Development
 
 ### Base Setup
+
 Follow the official guide [Getting Started with Python in VS Code](https://code.visualstudio.com/docs/python/python-tutorial)
 
 The guide covers the following steps:

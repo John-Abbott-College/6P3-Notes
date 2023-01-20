@@ -4,9 +4,10 @@
 - [Hardware List ](wk2/hardware-list.md)
 
 **Week 1**
-- [What is IoT](wk1/what-is-iot.md)
+- [What is IoT](wk1/1-what-is-iot.md)
 - [Tech Stack](wk1/tech-stack.md)
-- [Intro to Python](wk1/intro-python.md)
+- [Intro to Python](wk1/2-intro-python.md)
+- [Linux Review](wk1/3-linux-review.md)
 
 <!--
 **Week 13**
