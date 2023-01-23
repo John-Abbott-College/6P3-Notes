@@ -109,5 +109,7 @@ The following cables are included in the base kit:
 
 - [Grove Universal 4 Pin Buckled 5cm Cable](https://www.seeedstudio.com/Grove-Universal-4-Pin-Buckled-5cm-Cable-5-PCs-Pack.html).
 - [Grove Universal 4 Pin Buckled 20cm Cable](https://www.seeedstudio.com/Grove-Universal-4-Pin-20cm-Unbuckled-Cable-5-PCs-Pack-p-749.html).
+- [Grove 4 pin Female Jumper to Grove 4 pin Cable](https://www.seeedstudio.com/Grove-4-pin-Female-Jumper-to-Grove-4-pin-Conversion-Cable-5-PCs-per-PAck.html?queryID=7204536b9cc818771ed75f0d099829e7&objectID=2221&indexName=bazaar_retailer_products)
+- [Grove 4 pin Male Jumper to Grove 4 pin Cable](https://www.seeedstudio.com/Grove-4-pin-Male-Jumper-to-Grove-4-pin-Conversion-Cable-5-PCs-per-Pack.html?queryID=9549a08ce2a46dc2ad12c0730ae087dd&objectID=1321&indexName=bazaar_retailer_products)
 - 40-pin flat ribbon cable 20cm (female-female).
 - [2-pin JST SM Plug](https://abra-electronics.com/interconnects/connectors/jst-connectors/sm/con-jst-sm-2a-2-pin-jst-sm-plug-receptacle-cable-set.html), one end open.
