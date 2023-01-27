@@ -54,6 +54,8 @@ Note: `apt` is a newer package manager API meant to replace the older API  `apt-
 
 [`pip`](https://pip.pypa.io/en/stable/) is python's own package manager, which is independent from `apt`. 
 
+> Pip installs packages from the [Python Package Index repository (pypi.org)](https://pypi.org/)
+
 To use it for python 3, call the command `pip3`
 
 ```bash
