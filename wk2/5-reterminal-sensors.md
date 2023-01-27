@@ -1,43 +1,43 @@
-# Reading Built-in Sensors
+# Using reTerminal's Sensors
+
 
 ## reTerminal connection w/ hostname
 
-During labs 1 and 2 you connected to the reTerminal via SSH using its IP address.
+During lab 1, you could connect to the reTerminal via SSH using two "addresses":
 
-> It's also possible to connect to the reTerminal using it's default hostname: **raspberrypi.local**.
+- Device's IP address.
+- Device's hostname (*eg. my-pi.local*)
 
-```bash
-$ ping raspberrypi.local
-PING raspberrypi.local (192.168.2.128) 56(84) bytes of data.
-64 bytes from raspberrypi (192.168.2.128): icmp_seq=1 ttl=64 time=90.0 ms
-64 bytes from raspberrypi (192.168.2.128): icmp_seq=3 ttl=64 time=147 ms
-^C
---- raspberrypi.local ping statistics ---
-3 packets transmitted, 3 received, 0% packet loss, time 2003ms
-rtt min/avg/max/mdev = 90.028/120.890/147.486/23.650 ms
-```
+> If you use the **hostname**, you don't need to know the device's IP address, which can change every time you connect to the network.
+> 
+> - Hostnames **must be unique**, otherwise you might connect to the wrong device.
 
-Note that this method only works if your device is the only `raspberrypi.local` in the network. Otherwise you might be connecting to a different device.
 
-This will save you from having to look-up the reTerminal's IP address if you are at home.
+## Raspberry Pi OS and Debian
+
+The Raspberry Pi OS (previously called *Raspbian OS*) used in the reTerminal is a variation of the **Debian OS**, with optimizations for the Raspberry Pi hardware.
+
+> **Debian OS** is the base Linux system for many other distributions such as:
+> - Ubuntu, Mint, PopOS, KDE, etc.
+
+
+Many of the commands and configuration for Raspberry Pi OS can be taken directly from Debian's documentation.
 
 
 ## Package Managers
 
 ### Apt: Debian Package Manger
 
-So far we have updated, upgraded and installed some packages in the Raspberry Pi OS.
+During [Lab 1](https://docs.google.com/document/d/1bCz4dMqU0cIyYCnULchFBm_1WU4uRC4tVO-DC2QWZ3U/edit?usp=sharing), you updated, upgraded and installed some packages in the Raspberry Pi OS using the **apt command**
 
-> The **Raspberry Pi OS is a modified version of Debian Linux**.
-> Debian is the base Linux system from which Ubuntu, Mint, PopOS, and many other distributions are made.
 
-For example, the commands:
+For example:
 
-```bash
-sudo apt update         // Update all packages within the same major version (eg v2.1 -> v2.2)
-sudo apt full-upgrade   // Upgrade major versions of all packages (eg. v2.1 -> v3.0)
-sudo apt install code   // Install the package VS Code
-```
+| Command                 | Description                                                        |
+| ----------------------- | ------------------------------------------------------------------ |
+| `sudo apt update`       | Update all packages within the same major version (eg v2.1 -> v2.2) |
+| `sudo apt full-upgrade` | Upgrade major versions of all packages (eg. v2.1 -> v3.0)          |
+| `sudo apt install vim`  | Install package Vim                                                |
 
 
 The command `apt` is the default package manager of Debian.
@@ -45,7 +45,7 @@ The command `apt` is the default package manager of Debian.
 > A **package manager** is a software tool responsible for automating the installation, removal, configuration and removal of computer programs.
 
 
-The same tasks could technically be done manually, however, it is very time consuming and error prone. For example, tracking package dependencies and compatibility with the current system. 
+Managing packages could technically be done manually, however, it is very time consuming and error prone: tracking package dependencies and compatibility with the current system. 
 
 Note: `apt` is a newer package manager API meant to replace the older API  `apt-get`. However, they both accomplish the same. See [Debian docs](https://www.debian.org/doc/manuals/debian-handbook/sect.apt-get.en.html) for details.
 
@@ -75,11 +75,13 @@ print(message)
 ```
 
 Output:
+
 ```bash
 Howdy 🌞
 ```
 
 It is also possible to give an alias to the newly imported module:
+
 ```python
 import emoji as em
 
@@ -88,6 +90,7 @@ print(message)
 ```
 
 Finally, you can import only a specific function and give it an alias:
+
 ```python
 from emoji import emojize as emz
 message = emz('Howdy :sun_with_face:')
@@ -95,20 +98,34 @@ print(message)
 ```
 
 
-## Reading sensor data from Linux
+## Reading sensor data in Linux
+
 *This section is based on the official documentation for the reTerminal: [Hardware and Interfaces Usage](https://wiki.seeedstudio.com/reTerminal-hardware-interfaces-usage/#3-user-programmable-leds)*
 
-> In Linux, everything is a file that can be read and/or written.
+> In Linux, everything is a file stream that can be read and/or written to.
 
-For example, keyboard inputs and communication over web-sockets are all read as a file.
+For example, keyboard inputs and communication over web-sockets are all read as a file streams.
 
-The reTerminal has 3 programmable LED's and a light sensor that can be controlled like a regular file
+The reTerminal has 3 programmable LED's and a light sensor that can be **controlled like a regular file**.
 
 ![](assets/reterminal-buttons-light-sensor.png)
+
+
+### Missing Files Bug
+
+The latest release of the Raspberry Pi OS for the reTerminal has a bug where the LEDs and Buzzer files are missing in the file system 🐞
+
+A GitHub issue about this bug can be [found here](https://github.com/Seeed-Studio/seeed-linux-dtoverlays/issues/42).
+
+> Before we can control the LEDs and Buzzer, we change the reTerminal's configuration:
+>
+> - Wiki FAQ - [Q12: LEDs and Buzzer do not work after installing reTerminal drivers](https://wiki.seeedstudio.com/reTerminal-FAQ/#q12-leds-and-buzzer-do-not-work-after-installing-reterminal-drivers)
+
 
 ### Programmable LEDs
 
 There are 3 programmable LEDs in the reTerminal:
+
 - **STA** light can be turned on as **red or green**.
 - **USR** light can only be turned on as **green**.
 
@@ -129,7 +146,27 @@ cd /sys/class/leds
 cd usr_led0
 ```
 
-3. Enable root account privileges
+
+We will need to write to file `brightness`. Listing the permissions for this file we get:
+
+```bash
+pi16@pi16:/sys/class/leds/usr_led0 $ ls -all
+total 0            
+drwxr-xr-x 3 root root    0 Jan 25 20:33 .               
+drwxr-xr-x 8 root root    0 Jan 25 20:33 ..                                                                                                                                                                         
+-rw-r--r-- 1 root root 4096 Jan 26 22:02 brightness                                                                                                                                                                 
+```
+
+![Unix Permissions cheatsheet py Julia Evans](assets/5-unix-permissions-cheatsheet.png)
+<p class=img-info>
+    <a href="https://drawings.jvns.ca/permissions/"> Unix File Permissions,</a>&nbsp; Julia Evans.
+</p>
+
+> We are about to modify a system file located in `/sys/class/leds/urs_led0`
+> 
+> **Note:** We'll run the next command as root because the file we want to write belongs the system (`root` user, rather than to the user `pi`.
+
+3. Enable root account privileges (take the identity of the root user)
 
 ```bash
 sudo -i
@@ -137,17 +174,11 @@ sudo -i
 
 Your shell should now display `root@raspberrypi:~# `
 
-> **Note:** We'll run the next command as root because the file we want to write to belongs the system rather than to the user `pi`.
-> 
-> We are about to modify a system file located in `/sys/class/leds/urs_led0`
-
 4. Turn on the LED with maximum brightness
 
 ```bash
 echo 255 > brightness
 ```
-
-**Note:** You can enter values from 1 - 255 to adjust the brightness levels
 
 5. Turn off the LED
 
@@ -155,7 +186,7 @@ echo 255 > brightness
 echo 0 > brightness
 ```
 
-Similarly, you can control  `usr_led1` and `usr_led2`.
+Similarly, you can control  `usr_led1` and `usr_led2` and even the buzzer on `/sys/class/leds/usr_buzzer`
 
 
 ### Luminosity Sensor
@@ -235,13 +266,14 @@ root@raspberrypi:~# python3 buzz.py
 
 
 See the official `seeed-python-reterminal` [Github repo](https://github.com/Seeed-Studio/Seeed_Python_ReTerminal) for API reference on how to control:
+
 - LED's
 - Accelerometer
 - Programmable Buttons
 - Light Sensor (requires manual updating)
 
 
-### ModuleNotFoundError (optional)
+### ModuleNotFoundError
 
 When trying to import the  `seeed-python-reterminal`  library, you might get the following error:
 
@@ -251,9 +283,12 @@ ModuleNotFoundError: No module named 'seeed_python_reterminal'
 
 The python interpreter is not able to find the module even though it is installed.
 
+You can run the checks described below.
+
 #### Check library location
 
 Check the location of where the module was installed with `pip3 show <module-name>`:
+
 ```bash
 pi@raspberrypi:~ $ pip3 show seeed-python-reterminal
 
@@ -281,7 +316,7 @@ See the paths where python is looking for libraries with `sys.path`.
 ```python
 pi@raspberrypi:~ $ python3
 
->>> import sys      # This module exposes configuration used by the python interpreter.
+>>> import sys      # Exposes configuration used by the python interpreter.
 >>> sys.path        # Lists all paths where interpreter looks for modules.
 [
  '',
@@ -324,7 +359,7 @@ Thus, all `pip` installations as the regular user go into `/home/pi/.local/lib/p
 
 This is the main reason why we chose to install the `seeed-python-reterminal` as root, rather than the regular user `pi`.
 
-### Making user's library available to root
+### Making user's library available to root (optional)
 
 If you would like to make a library installed as the user `pi` available when running the script as `root`, you will need to export an environmental variable named `PYTHONPATH` pointing to the library location.
 

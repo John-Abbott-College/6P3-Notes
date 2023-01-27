@@ -1,13 +1,16 @@
 **Home**
 - [About](/)
 - [Dev Setup](wk1/vscode-python-setup.md)
-- [Hardware List ](wk2/hardware-list.md)
+- [Hardware List ](wk1/4-hardware-list.md)
+
+**Week 2**
+- [5-reTerminal Sensors](wk2/5-reterminal-sensors.md)
 
 **Week 1**
-- [What is IoT](wk1/1-what-is-iot.md)
-- [Tech Stack](wk1/tech-stack.md)
-- [Intro to Python](wk1/2-intro-python.md)
-- [Linux Review](wk1/3-linux-review.md)
+- [4-Linux Review](wk1/3-linux-review.md)
+- [3-Intro to Python](wk1/2-intro-python.md)
+- [2-Tech Stack](wk1/tech-stack.md)
+- [1-What is IoT](wk1/1-what-is-iot.md)
 
 <!--
 **Week 13**
@@ -36,7 +39,5 @@
 - [Analog & Digital Signals](wk4/analog-vs-digital.md)
 - [GPIO's](wk4/gpios.md)
 
-**Week 3**
-- [reTerminal Sensors](wk3/reterminal-sensors.md)
 
 -->
