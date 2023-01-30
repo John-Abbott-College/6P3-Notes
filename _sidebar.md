@@ -3,6 +3,9 @@
 - [Dev Setup](wk1/vscode-python-setup.md)
 - [Hardware List ](wk1/4-hardware-list.md)
 
+**Week 3**
+- [6-analog-vs-digital](wk3/6-analog-vs-digital.md)
+
 **Week 2**
 - [5-reTerminal Sensors](wk2/5-reterminal-sensors.md)
 
