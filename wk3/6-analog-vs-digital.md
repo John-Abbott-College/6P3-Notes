@@ -32,7 +32,7 @@ The A/C and heating systems in a house are typically activated once the temperat
 
 The chart below is tracking the temperature in a room as the A/C and heating systems are activated over a few days.
 
-![](assets/analog-digital-analog-temperature.png)
+![](assets/6-analog-digital-analog-temperature.png)
 <p class=img-info>
 	<a href="https://info.sparkfun.com/hubfs/Poster%20Downloads/Analog%20vs%20Digital/Concept%20Poster%20Analog%20vs%20Digital%20WEB.pdf"> Temperature changes over time </a>&nbsp; Adapted from poster: Analog and Digital Signals by Digikey.
 </p>
@@ -119,7 +119,7 @@ ADC's are specific to the type of analog signal they are trying to read (sound, 
 
 Referring to the room temperature example used earlier, if we used a digital thermometer to record the temperature, our graph might look like the following:
 
-![](assets/analog-digital-temp-sampling.png)
+![](assets/6-analog-digital-temp-sampling.png)
 <p class=img-info>
 	<a href="https://info.sparkfun.com/hubfs/Poster%20Downloads/Analog%20vs%20Digital/Concept%20Poster%20Analog%20vs%20Digital%20WEB.pdf"> Temperature represented as a digital reading </a>&nbsp; Poster: Analog and Digital Signals by Digikey.
 </p>
@@ -150,14 +150,14 @@ The time between samples is the **sample period** (T, in seconds), and the numbe
 
 Basically, **sampling is taking snap-shot values of the analog signal at regular time intervals.** 
 
-![Analog signal showing sample period and sample frequency](assets/analog-digital-sample-period.png)
+![Analog signal showing sample period and sample frequency](assets/6-analog-digital-sample-period.png)
 <p class=img-info>
 	<a href="https://www.usna.edu/ECE/ec312/Lessons/wireless/EC312_Lesson_20_Analog_to_Digital_Course_Notes.pdf"> Sample period and fequency for an electric signal </a>&nbsp; - US Naval Academy.
 </p>
 
 As you can imagine, the higher the sample rate, the more accurate the digital signal is.
 
-![Signals of increasing sample rate](assets/analog-digital-increasing-sample-rate.png)
+![Signals of increasing sample rate](assets/6-analog-digital-increasing-sample-rate.png)
 <p class=img-info>
 	<a href="https://www.usna.edu/ECE/ec312/Lessons/wireless/EC312_Lesson_20_Analog_to_Digital_Course_Notes.pdf"> Same signal sampled with different sample rates </a>&nbsp; - US Naval Academy.
 </p>
@@ -175,7 +175,7 @@ If the sampling period is every 0.5 milliseconds (0.0005 secs), the sample frequ
 
 Assuming the ADC has a resolution of 3 bits, all voltage values (-1V to 1V) must be represented with at most 3 bits, or 2^3 = 8 unique values (0 is a unique value).
 
-![voltage signal converted to a bit resolution of 3 bits](assets/analog-digital-bit-resolution.png)
+![voltage signal converted to a bit resolution of 3 bits](assets/6-analog-digital-bit-resolution.png)
 <p class=img-info>
 	<a href="https://www.usna.edu/ECE/ec312/Lessons/wireless/EC312_Lesson_20_Analog_to_Digital_Course_Notes.pdf"> Voltage signal between -1V and 1V converted to digital with a 3 bit resolution </a>&nbsp; - US Naval Academy.
 </p>
@@ -218,7 +218,7 @@ A) What are the voltages being sampled by the ADC?
 B) If the signal reached max voltage, what would be the integer number passed to the program by the ADC?
 
 
-![Graph for exercise 1](assets/analog-digital-exercise1.png)
+![Graph for exercise 1](assets/6-analog-digital-exercise1.png)
 
 
 <details>  

@@ -7,14 +7,14 @@ The Raspberry Pi can read and generate digital signals using **General Purpose I
 
 Any of the GPIO pins can be designated (in software) as an input or output pin and used for a wide range of purposes.
 
-![Diagram of Pi's 40 GPIO pins](assets/analog-digital-pi-40-pin-reference.png)
+![Diagram of Pi's 40 GPIO pins](../wk3/assets/6-analog-digital-pi-40-pin-reference.png)
 <p class=img-info>
 	<a href="https://www.raspberrypi.com/documentation/computers/os.html#gpio-and-the-40-pin-header"> GPIO and the 40-pin headers of the Raspberry Pi </a>&nbsp; - Official docs, Raspberry Pi Foundation.
 </p>
 
 The reTerminal exposes the same 40-pin header as the Pi on it's side:
 
-![Breakout of 40-pin header for reTerminal](assets/analog-digital-reterminal-40-pin-header.png)
+![Breakout of 40-pin header for reTerminal](../wk3/assets/6-analog-digital-reterminal-40-pin-header.png)
 <p class=img-info>
 	<a href="https://wiki.seeedstudio.com/reTerminal/#pinout-diagram"> GPIO and pin diagram of the reTerminal </a>&nbsp; - reTerminal Official Wiki, Seeed.
 </p>
