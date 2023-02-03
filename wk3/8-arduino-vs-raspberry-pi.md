@@ -44,7 +44,7 @@ A microcontroller board is a "bare-bones" form of a computing module.
 > At its core, a microcontroller is a single chip capable of executing the **fetch-decode-execute cycle of a program**.
 
 
-![block diagram for fetch-decode-execute-loop](assets/arduino-vs-pi-code-loop.png)
+![block diagram for fetch-decode-execute-loop](assets/8-arduino-vs-pi-code-loop.png)
 <p class=img-info>
 	<a href="https://github.com/microsoft/IoT-For-Beginners/blob/main/1-getting-started/lessons/2-deeper-dive/README.md"> Fetch-decode-execute cycle of a program </a>&nbsp; - Microsoft, IoT for Beginners.
 </p>
@@ -53,7 +53,7 @@ One of the most well known microcontrollers today is the Arduino platform. It be
 
 The heart of the Arduino UNO is the microcontroller Atmel328, which functions as both the CPU, the RAM (for run-time memory) and the Flash memory (for storing program instructions).
 
-![basic atmel mcu besides a arduino uno](assets/arduino-uno-vs-atmel-328.jpg)
+![basic atmel mcu besides a arduino uno](assets/8-arduino-uno-vs-atmel-328.jpg)
 <p class=img-info>
 	<a href="https://lifehacker.com/diy-shrimp-microcontroller-replicates-an-arduino-uno-at-5965010"> Microcontroller Atmel328 in a basic setup compared to the Arduino UNO </a>&nbsp; The ShrimpingIt Projects.
 </p>
@@ -71,7 +71,7 @@ The basic program structure is a `setup()` function that initializes pins and va
 
 The code needs to be compiled before it is flashed to the chip's flash memory.
 
-![](assets/arduino-vs-pi-arduino-code.png)
+![](assets/8-arduino-vs-pi-arduino-code.png)
 
 
 ## MCUs vs SBCs

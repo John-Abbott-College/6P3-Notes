@@ -4,6 +4,8 @@
 - [Hardware List ](wk1/4-hardware-list.md)
 
 **Week 3**
+- [8-Arduino vs Pi](wk3/8-arduino-vs-raspberry-pi.md)
+- [7-GPIOs](wk3/7-gpios.md)
 - [6-analog-vs-digital](wk3/6-analog-vs-digital.md)
 
 **Week 2**

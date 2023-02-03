@@ -37,7 +37,7 @@ The chart below is tracking the temperature in a room as the A/C and heating sys
 	<a href="https://info.sparkfun.com/hubfs/Poster%20Downloads/Analog%20vs%20Digital/Concept%20Poster%20Analog%20vs%20Digital%20WEB.pdf"> Temperature changes over time </a>&nbsp; Adapted from poster: Analog and Digital Signals by Digikey.
 </p>
 
-Let's say the maximum temperature reached in the room is 30C and the minimum temperature is 15C. A person in the room would have observed every possible temperature in between that range (15.01C, 15.0101C, 15.0102C, 15.01021C, etc).
+Let's say the maximum temperature reached in the room is 30C and the minimum temperature is 15C. A person in the room would have observed every possible temperature in between that range (15.01, 15.0101, 15.0102, 15.01021, etc).
 
 The change in temperature produces analog information since it is changing over an infinite range of values.
 
@@ -82,14 +82,20 @@ For example, the analog voltage coming out of your wall socket oscillates betwee
 
 Digital signals are discrete, which means that at any given moment, the signal strength must be represented by a integer number. There are no half numbers.
 
-Most commonly, digital signals will be one of **two values**, a high voltage and a low voltage (eg. either 0V or 5V).
+Typically, digital signals will be one of **two values**, a high voltage and a low voltage.
 
-Timing graphs of these signals look like **square waves**.
+> The specific values of the **high** and **low** voltages depend on the hardware being used.
+
+Below is a the timing graph of a signal whose **low voltage is 0 volts** and **high voltage is 5 volts**.
+
+This type of signal is also known as a **square waves**.
 
 [![Square wave signal. Two values, either 0V or 5V.](https://cdn.sparkfun.com/assets/c/8/5/b/e/51c495ebce395f1b5a000000.png)](https://cdn.sparkfun.com/assets/c/8/5/b/e/51c495ebce395f1b5a000000.png)
 <p class=img-info>
 	<a href="https://learn.sparkfun.com/tutorials/analog-vs-digital/all"> 0 to 5 volt "pulses" forming a square ware </a>&nbsp; - Analog vs. Digital by Digikey.
 </p>
+
+### Digital Simulating Analogue
 
 A digital signal might be a discrete representation of an analog waveform.
 
@@ -139,10 +145,21 @@ The process of reading an analog signal over time to generate its digital repres
 
 Sampling is the process of inspecting the value of an analog signal at regular time intervals.
 
+
 When an ADC is sampling an analog signal, there are two variables that will characterize the digital output:
 
 - Sampling rate.
 - Bit resolution.
+
+
+> **Music sampling**
+> Some music genres like rap and hip-hop commonly sample song segments from other artists to play in the background.
+> 
+> - The term **sampling** is used because traditionally song segments were extracted from vinyl records which produce analog sound and saved in digital formats.
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hT_2kUx0AcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 
 ### Sampling rate
 
@@ -155,7 +172,12 @@ Basically, **sampling is taking snap-shot values of the analog signal at regular
 	<a href="https://www.usna.edu/ECE/ec312/Lessons/wireless/EC312_Lesson_20_Analog_to_Digital_Course_Notes.pdf"> Sample period and fequency for an electric signal </a>&nbsp; - US Naval Academy.
 </p>
 
-As you can imagine, the higher the sample rate, the more accurate the digital signal is.
+**Sampling period examples:**
+
+- If a signal is sampled every half second (0.5s sampling period, ***T***), the sample frequency (***f****) is 1/0.5s = 2 Hz (times per second).
+- If the sample frequency (***f***) is 2000 Hz, the sampling period (***T***) is = 1/2000Hz = 0.0005 secs (0.5 milliseconds).
+
+The higher the sample rate, the more accurate the digital signal is.
 
 ![Signals of increasing sample rate](assets/6-analog-digital-increasing-sample-rate.png)
 <p class=img-info>
@@ -168,10 +190,26 @@ Encoding is the process of mapping the sampled analog signal value to discrete b
 
 > ADC devices are characterized by the **number of bits available** to represent a signal.
 
+For example, consider an electrical signal that ranges **from -1 volts to to +1 volts** and must be converted to a **3 bit number**.
 
-For example, consider an audio signal coming into your computer. The signal oscillates between -1 and 1 volt (typical range for your audio input jack).
+### Encoding Procedure
 
-If the sampling period is every 0.5 milliseconds (0.0005 secs), the sample frequency is 1/0.0005s = 2000 Hz (times per second).
+To approximate the numeric conversion from a voltage signal to a digital output, follow the steps below:
+
+1. Identify the minimum and maximum voltage values that can be observed in the input.
+	- Example: -1 to +1 volts (2 volt range)
+
+ 
+2. Identify the minimum and maximum binary values that can generated as the output. Note the amount of unique numbers represented by this range
+	- Example: For a 3-bit number: 000 (decimal 0) is the minimum and 111 (decimal 7) is the maximum, making a total of 8 unique numbers. 
+
+ 
+3. Divide the voltage range that will be observed (max voltage - min voltage) by the amount of unique binary numbers available. This will determine the voltage increment that each binary number represents.
+	- Example: (+1V - (-1V)) / 8 = 2V/8 = 0.25V
+
+ 
+4. Layout each binary number and their increments and read where the voltage values lie.
+
 
 Assuming the ADC has a resolution of 3 bits, all voltage values (-1V to 1V) must be represented with at most 3 bits, or 2^3 = 8 unique values (0 is a unique value).
 
@@ -182,11 +220,9 @@ Assuming the ADC has a resolution of 3 bits, all voltage values (-1V to 1V) must
 
 In this case:
 - 000 is assigned to the voltages from -0.75 V to -1.0 V,
-- 001 is assigned to the voltages from -0.5 V to -0.74999 V,
-- 010 is assigned to the voltages from -0.25 V to -0.49999 V,
+- 001 is assigned to the voltages from -0.5 V to -0.749 V,
+- 010 is assigned to the voltages from -0.25 V to -0.49 V,
 - and so on.
-
-> Note how the sample points are always rounded up to fit into their "digital bracket".
 
 The binary representation of the above signal is:
 
@@ -203,14 +239,15 @@ What is the [bitrate of music on Spotify](https://www.tunefab.com/tutorials/spot
 
 IoT systems typically work with electrical signals encoded in voltage levels.
 
-Microcontrollers are often used to process these signals because they often have an integrated ACD.
+Every hardware that converts from analog to digital (and vice-versa) needs to have an appropriate ACD device.
 
-ADCs can vary greatly between microcontrollers. The ADC on the Arduino UNO (see previous lesson) is a 10-bit ADC meaning it has the ability to detect 1,024 (2^10) discrete analog levels. Some microcontrollers have 8-bit ADCs (2^8 = 256 discrete levels) and some have 16-bit ADCs (2^16 = 65,536 discrete levels).
+Microcontrollers are often used to process these signals because they often have an integrated ACD and they are very inexpensive.
 
 
 ## Exercises
 
 ### Exercise 1
+
 Considering the analog signal below. The signal is being sampled in a program at 2Hz (2 times/sec) with the help of an ADC that has 6-bit resolution. The ADC can handle up to 8V signals.
 
 A) What are the voltages being sampled by the ADC?
