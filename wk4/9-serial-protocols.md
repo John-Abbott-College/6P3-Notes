@@ -1,13 +1,8 @@
 # Serial Protocols
 
-We have previously seen that the Raspberry Pi and the reTerminal have several GPIO pins that can be set as digital inputs or outputs:
+Many of the reTerminal's General Purpose Input and Output (GPIO) pins also have specialized functions.
 
-![Breakout of 40-pin header for reTerminal](assets/serial-digital-reterminal-40-pin-header.png)
-<p class=img-info>
-	<a href="https://wiki.seeedstudio.com/reTerminal/#pinout-diagram"> GPIO and pin diagram of the reTerminal </a>&nbsp; - reTerminal Official Wiki, Seeed.
-</p>
-
-In addition to simple input and output signals, the GPIO pins can be used with a variety of specific digital communication protocols:
+These specialized functions typically include **specific digital communication protocols**:
 
 - **Serial**
 - **SPI** (serial peripheral interface)
@@ -15,29 +10,38 @@ In addition to simple input and output signals, the GPIO pins can be used with a
 - **PWM** (pulse-width modulation)
 - **PCM** (pulse-code modulation)
 
+Below is the **pin out diagram illustrating the specialized pins**:
+
+
+![Breakout of 40-pin header for reTerminal](assets/9-serial-digital-reterminal-40-pin-header.png)
+<p class=img-info>
+	<a href="https://wiki.seeedstudio.com/reTerminal/#pinout-diagram"> GPIO and pin diagram of the reTerminal </a>&nbsp; - reTerminal Official Wiki, Seeed.
+</p>
+
 
 ## Serial Communication
 
 In order for two devices to exchange information, they must share a common communication protocol.
 
-Serial interfaces stream their data, one single bit at a time. These interfaces can operate with as little as one wire (for unidirectional communication), however they typically use 2 to 4 wires.
+Serial interfaces stream their data, **one bit at a time**. These interfaces can operate with as little as one wire (for unidirectional communication), however they typically use 2 to 4 wires.
 
 Serial communication can be either: **synchronous** and **asynchronous**.
 
 ### Synchronous Serial
 
-A synchronous serial interface always pairs its data line(s) with a clock signal, so all devices on a synchronous serial bus share a common clock.
+A synchronous serial interface always pairs its data line(s) with a clock signal. Therefore, all devices on the same data bus share a common clock.
 
-![Synonymous unidirectional serial communication with a clock line](assets/serial-sync-unidirectional.png)
+![Synonymous unidirectional serial communication with a clock line](assets/9-serial-sync-unidirectional.png)
 <p class=img-info>
 	<a href="https://learn.sparkfun.com/tutorials/serial-communication"> Serial interface unidirectionally transmitting one bit at every clock pulse </a>&nbsp; Serial Communication, Sparkfun.
 </p>
 
 > How many wires are used in the image above? Can information flow in both directions?
 
-This makes for faster serial transfer, but it also requires at least one extra wire between communicating devices.
+Having a line dedicated to a clock makes for faster serial transfer, however, it also requires an extra wire between communicating devices.
 
-Examples of synchronous interfaces:
+Below are examples of synchronous digital protocols:
+
 - SPI
 - I2C
 - USB (uses clock-synchronization)
@@ -50,7 +54,7 @@ This transmission method minimizes wires and I/O pins, however, extra effort is 
 
 Asynchronous serial communication is typically intended for **only two devices** to communicate
 
-![Wiring diagram of two serial communication devices](assets/serial-wiring.png)
+![Wiring diagram of two serial communication devices](assets/9-serial-wiring.png)
 <p class=img-info>
 	<a href="https://learn.sparkfun.com/tutorials/serial-communication"> Wiring diagram for two devices communicating with the Serial protocol </a>&nbsp; Serial Communication, Sparkfun.
 </p>
@@ -63,7 +67,7 @@ In order to communicate reliably, both devices have to adhere to a number of rul
 
 For example, when using the serial monitor of the Arduino IDE, it's necessary to properly select the Baud Rate so that both the client device (the Arduino) and the host (your PC) know the exactly clock frequency of the serial communication.
 
-![Selecting the Baud rate in the Arduino serial monitor](assets/serial-arduino-baud-rate.png)
+![Selecting the Baud rate in the Arduino serial monitor](assets/9-serial-arduino-baud-rate.png)
 <p class=img-info>
 	<a href=#></a>&nbsp; Selecting the baud rate of the Arduino IDE's serial monitor.
 </p>
@@ -101,14 +105,14 @@ The following nomenclature is typically used:
 - **CIPO: Controller-In Peripheral-Out**. Information flows from peripheral to controller.
 - **CS: Chip Select**. Every peripheral device has a unique connection to the controller. The controller uses this line to enable (wake-up) the  peripheral when it wants to communicate by setting it low.
 
-![Wiring and bit exchange between SPI devices](assets/serial-spi-wiring.png)
+![Wiring and bit exchange between SPI devices](assets/9-serial-spi-wiring.png)
 <p class=img-info>
 	<a href="https://learn.sparkfun.com/tutorials/serial-peripheral-interface-spi"> Wiring diagram for two devices communicating over SPI</a>&nbsp; Serial Peripheral Interface (SPI), Sparkfun.
 </p>
 
 Each peripheral device connected to the controller will need a separate CS line. To talk to a particular peripheral, the controller makes that peripheral's CS line low and keep the rest of them high.
 
-![](assets/serial-spi-multi-peripherals.png)
+![](assets/9-serial-spi-multi-peripherals.png)
 <p class=img-info>
 	<a href="https://learn.sparkfun.com/tutorials/serial-peripheral-interface-spi"> Multiple peripheral devices with unique CS lines talking to the same controller </a>&nbsp; Serial Peripheral Interface (SPI), Sparkfun.
 </p>
@@ -153,7 +157,7 @@ When communicating, messages are broken up into two types of frame:
 - One or more data frames, which are 8-bit data messages passed from controller to peripheral or vice versa.
 
 
-![](assets/serial-i2c-frames.png)
+![](assets/9-serial-i2c-frames.png)
 <p class=img-info>
 	<a href="https://learn.sparkfun.com/tutorials/i2c/all"> Clock and data lines for I2C, showing address and data frames </a>&nbsp; I2C, Sparkfun.
 </p>

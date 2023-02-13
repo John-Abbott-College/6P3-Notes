@@ -3,6 +3,9 @@
 - [Dev Setup](wk1/vscode-python-setup.md)
 - [Hardware List ](wk1/4-hardware-list.md)
 
+**Week 4**
+- [9-Serial Protocols](wk4/9-serial-protocols.md)
+
 **Week 3**
 - [8-Arduino vs Pi](wk3/8-arduino-vs-raspberry-pi.md)
 - [7-GPIOs](wk3/7-gpios.md)
