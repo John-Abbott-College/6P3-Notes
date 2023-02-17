@@ -90,6 +90,50 @@ ser.write(b'hello')     # write a string
 ser.close()             # close port
 ```
 
+
+### Serial Demo
+
+The demo below will show a reTerminal device devices communicating with a [Raspberry Pi Pico](https://www.raspberrypi.com/documentation/microcontrollers/raspberry-pi-pico.html) over the asynchronous serial protocol.
+
+The Rx port of the reTerminal is connected to the Tx port of the Pico and vice-versa.
+
+Below is the code being run on the Pico using MicroPython:
+
+```python
+from time import sleep
+from machine import UART, Pin
+
+uart0 = UART(0, baudrate=9600, tx=Pin(0), rx=Pin(1))
+uart0.write('hello\n')
+
+sleep(0.01)
+
+line = uart0.read()
+print(f'My line: {line}')
+```
+
+And this is the code running inside the reTerminal:
+
+```python
+import serial
+
+with serial.Serial('/dev/serial0', 9600) as ser:
+
+    while True:
+        line = ser.readline()   # read a '\n' terminated line
+        print(f'Line: {line}')
+
+        if line == b'hello\n':
+            break
+
+    ser.write(b'there\n')
+```
+
+Once both scripts are run simultaneously, the signal observed would look the following:
+
+![](assets/9-serial-demo.png)
+
+
 ## Serial Peripheral Interface (SPI)
 
 Serial Peripheral Interface (SPI) is commonly used to send data between microcontrollers and small peripherals (ei. shift registers, sensors, SD cards).
@@ -117,8 +161,25 @@ Each peripheral device connected to the controller will need a separate CS line.
 	<a href="https://learn.sparkfun.com/tutorials/serial-peripheral-interface-spi"> Multiple peripheral devices with unique CS lines talking to the same controller </a>&nbsp; Serial Peripheral Interface (SPI), Sparkfun.
 </p>
 
+## Problematic Technical Terminology
+
+Historically, the relationship between the Controller and Peripheral devices used to be called Master and Slave. This is incredibly problematic since the Master-Slave analogy is based on an extreme and violent power relationship between two individuals.
+
+The Open Source Hardware Association (OSHA) has passed a [resolution asking hardware manufactures to redefine SPI signal names](https://www.oshwa.org/a-resolution-to-redefine-spi-signal-names/). However, some legacy documentation and references still include the outdated terminology below.
+
+**Deprecated signal names:**
+
+- MOSI – Master Out Slave In
+- MISO – Master In Slave Out
+- SS – Slave Select
+- MOMI – Master Out Master In
+- SOSI – Slave Out Slave In
+
+Problematic technical terminology is not unique to the SPI protocol and exists in many other technical domains. In 2022, Wire magazine published a nuanced article presenting multiple sides of the terminology debate: [Tech Confronts Its Use of the Labels ‘Master’ and ‘Slave’](https://www.wired.com/story/tech-confronts-use-labels-master-slave/).
+
 
 ## I2C
+
 The Inter-Integrated Circuit (I2C) Protocol is a protocol intended to allow multiple "peripheral" digital devices (chips) to communicate with one or more "controller" chip.
 
 I2C requires only two wires, however, those two wires can support up to 1008 peripheral devices.
@@ -206,18 +267,33 @@ The **duty cycle** describes the amount of "ON time" as a percentage over an int
 	<a href="https://learn.sparkfun.com/tutorials/pulse-width-modulation"> Examples of duty cycles as a percentage of the total "High" signal </a>&nbsp; Pulse Width Modulation, Wikipedia.
 </p>
 
-PWM is most commonly used in:
+![Animation of signal duty cycle increasing from 10% to 100% ](https://images.squarespace-cdn.com/content/v1/59b037304c0dbfb092fbe894/1584899744421-MB7HGAMATU8BVNVJAGID/PWM_duty_cycle_animation_compressed.gif?format=1500w)
+*Signal with a constant amplitude (voltage) but duty cycle changing from 10% to 100%. [MakerPortal.com](https://makersportal.com/blog/2020/3/21/raspberry-pi-servo-panning-camera)*
 
-- LED brightness control.
-- Servo motor positioning.
-- Fan speed control.
 
-For servo motors, the width of the pulse indicates the position where the servo should be.
+### Common PWM Applications
 
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Servomotor_Timing_Diagram.svg/1280px-Servomotor_Timing_Diagram.svg.png)
-<p class=img-info>
-	<a href="https://learn.sparkfun.com/tutorials/pulse-width-modulation"> A diagram showing typical PWM timing for a servomotor </a>&nbsp; Pulse Width Modulation, Wikipedia.
-</p>
+#### Servo Motors
+
+For [servo motor positioning](https://www.14core.com/how-servo-motor-work-and-how-to-control-theme-using-arduino/) the width of the pulse indicates the position where the servo arm should be.
+
+![](https://www.14core.com/wp-content/uploads/2015/07/Servo_Animation.gif)
+*Servo arm position changing according to the duty cycle of a PWM signal. [14Core.com](https://www.14core.com/how-servo-motor-work-and-how-to-control-theme-using-arduino/)*
+
+#### LED Dimming
+
+LEDs are make to work with constant voltage (approximately 2 volts). It is not possible to dim their brightness by lowering the voltage (like in incandescent light bulb).
+
+However, with PWM, it is possible to change the amount of "ON time" to give the illusion that the LED is dimmer.
+
+![signal duty cycle affecting LED brightness](http://www.pyroelectro.com/tutorials/fading_led_pwm/img/pwm_fade.gif)
+*Signal duty cycle affecting LED brightness. [Pyroelectro.com](http://www.pyroelectro.com/tutorials/fading_led_pwm/theory.html)*
+
+In reality, the LED is simply blinking so fast that the human eye cannot notice it.
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QWbNz_O1rT0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 
 ### PWM Python Library
 
