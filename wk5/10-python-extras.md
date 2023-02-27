@@ -61,8 +61,8 @@ print('Inside my_script.py, variable `__name__` is: ', __name__)
 
 Executing this file with the Python interpreter:
 
-```python
-python my_script.py
+```bash
+$ python my_script.py
 
 # Output
 # Inside my_script, variable `__name__` is: __main__
@@ -93,8 +93,8 @@ print('Inside my_script.py, variable `__name__` is: ', __name__)
 
 When we execute `my_script.py` again using the Python interpreter:
 
-```python
-python my_script.py
+```bash
+$ python my_script.py
 
 # Output
 # Inside your_script, variable `__name__` is: your_script
@@ -347,12 +347,24 @@ A Future in Asyncio is the equivalent of a Promise in JavaScript.
 > It is rare that developers need to use a Future directly.
 
 
-### Diving Further
+### Diving Further & References
 
 The following are excellent resources for learning more about Asyncio:
 
 - [Async IO in Python: A Complete Walkthrough](https://realpython.com/async-io-python/) by RealPython.com
-- 
+
+### Asyncio Exercises
+
+1. Create a program with asyncio that used two function to display information "at the same time". Call the functions with the arguments of your choice.
+	- `countdown()`:
+		- Take it from the examples above.
+	- `blink()`:
+		- **Arguments**:
+			- A message that will be displayed periodically. Defaults to "Blink"
+			- The number of seconds to flash the message.
+			- How many times per second the message should be flashed.
+		- **Return**:
+			- The number of times the message was flashed.
 
 
 ## Passing Script Arguments
@@ -455,7 +467,6 @@ In other words, the order in which they are passed determines which variable the
 
 It's also possible to make arguments optional. In this case, they must be specified with the correct "Flag".
 
-
 ```python
 # myscript.py
 import argparse
@@ -482,5 +493,10 @@ first
 None
 ```
 
-See article [10 tips for passing arguments to Python script](https://www.codeforests.com/2020/10/18/passing-arguments-to-python-script/) for more information.
+
+
+### `argparse` References
+
+- Article [10 tips for passing arguments to Python script](https://www.codeforests.com/2020/10/18/passing-arguments-to-python-script/) 
+
 
