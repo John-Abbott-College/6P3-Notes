@@ -22,7 +22,9 @@ We'll explore:
 
 Alternatively, use the VS Code configuration UI:
 
-![](assets/python-pylance-type-check.png)
+
+![](../assets/python-pylance-type-check.png)
+
 
 
 ## `__main__` & top-level environment
@@ -290,8 +292,8 @@ async def main():
 
 	# Awaiting for tasks to complete before ending main()
 	# Try running this code without awaiting
-	await task1
-	await task2
+	await taskA
+	await taskB
 
 asyncio.run(main())
 
@@ -307,6 +309,10 @@ done!
 """
 ```
 
+The scheduling and execution of each task is illustrated in the diagram below:
+![](assets/10-python-create-task.png)
+
+Order of task execution. From [Qiita.com](https://qiita.com/everylittle/items/57da997d9e0507050085)
 
 Instead of creating Tasks and awaiting them individually, it's possible to run multiple coroutines concurrently and wait for all of them:
 
@@ -355,7 +361,7 @@ The following are excellent resources for learning more about Asyncio:
 
 ### Asyncio Exercises
 
-1. Create a program with asyncio that used two function to display information "at the same time". Call the functions with the arguments of your choice.
+1. Create a program with *asyncio* that uses two function to display information "at the same time". Call the functions with arguments of your choice.
 	- `countdown()`:
 		- Take it from the examples above.
 	- `blink()`:
@@ -365,6 +371,25 @@ The following are excellent resources for learning more about Asyncio:
 			- How many times per second the message should be flashed.
 		- **Return**:
 			- The number of times the message was flashed.
+		- Example:
+			- calling `blink("Hello", 5, 2)` should return 10
+
+2. Use the [library `requests`](https://docs.python-requests.org/en/latest/) to fetch 5 random pokemon names from the [Pokemon API](https://pokeapi.co/docs/v2#info).
+	- Use a random number between 1 and 251 as the **pokemon id**.
+	- Use the [API endpoint: `https://pokeapi.co/api/v2/pokemon/{id or name}/`](https://pokeapi.co/docs/v2#pokemon).
+	- Use the `requests` built-in json decoder: [JSON Response Content](https://docs.python-requests.org/en/latest/user/quickstart/#json-response-content) 
+	- Send 5 GET requests.
+	- For each request, display the name of the randomly selected pokemon.
+	- Time the total script execution with [`time.perf_counter()`](https://docs.python.org/3/library/time.html#time.perf_counter)
+
+
+3. Use the [library `aiohttp`](https://docs.aiohttp.org/en/stable/client_quickstart.html) to fetch 5 "simultaneous" random pokemon names from the [Pokemon API](https://pokeapi.co/docs/v2#info).
+	- Use a random number between 1 and 251 as the **pokemon id**.
+	- Use the [API endpoint: `https://pokeapi.co/api/v2/pokemon/{id or name}/`](https://pokeapi.co/docs/v2#pokemon).
+	- Use the `aiohttp` built-in json decoder: [JSON Response Content](https://docs.aiohttp.org/en/stable/client_quickstart.html#json-response-content)
+	- Send 5 get requests at the same time using `asyncio`
+	- For each request, display the name of the randomly selected pokemon.
+	- Time the total script execution with [`time.perf_counter()`](https://docs.python.org/3/library/time.html#time.perf_counter)
 
 
 ## Passing Script Arguments
