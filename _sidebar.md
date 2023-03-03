@@ -3,8 +3,11 @@
 - [Dev Setup](wk1/vscode-python-setup.md)
 - [Hardware List ](wk1/4-hardware-list.md)
 
+**Week 6**
+- [11-IoT Protocols & MQTT](wk6/11-iot-protocols.md)
+
 **Week 5**
-- [Python Extras](wk5/10-python-extras.md)
+- [10-Python Extras](wk5/10-python-extras.md)
 
 **Week 4**
 - [9-Serial Protocols](wk4/9-serial-protocols.md)

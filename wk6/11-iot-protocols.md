@@ -1,10 +1,10 @@
 # IoT Communication Protocols
 
-IoT devices typically connect to and exchange data with a single cloud IoT service over a specific communication protocol. That service in turn is connected to the rest of the IoT infrastructure.
+IoT devices typically exchange data with a cloud service using a specific **communication protocol**.
 
 > Data gathered from sensors and sent to the cloud is called **telemetry**.
 
-We will look at common communication protocols used in IoT with a focus on MQTT.
+This section looks at common communication protocols used in IoT with a focus on **MQTT**.
 
 
 ## HTTP
@@ -372,7 +372,7 @@ pip install paho-python
 2. Create your script file. A few notes:
 
 - Create a unique client ID to avoid conflicts with other users (this is a public broker).
-	- Use this [Online GUID generator](https://www.guidgen.com/) to generate a unique ID.
+	- https://test.mosquitto.org/.
 	
 ```python
 key = 'd5a4d5e6-d597-4bd4-8196-5f51d12345'
@@ -512,6 +512,21 @@ Connectivity is not always guaranteed. Things to think about when coding your ap
 **How to make sure that:**
 - The broker has received the most up to date telemetry data?
 - Client has the most recent command/data?
+
+## Exercises
+
+1. Use a Graphical MQTT client such as [MQTT Explorer](https://mqtt-explorer.com/) or the VS Code [Extension VSMqtt](https://marketplace.visualstudio.com/items?itemName=rpdswtk.vsmqtt) to publish and subscribe telemetry data to/from one of our Adafruit IO (AIO) feeds.
+	1. See the [AIO MQTT API](https://io.adafruit.com/api/docs/mqtt.html#adafruit-io-mqtt-api) documentation.
+	2. Publish a MQTT message with a random value to one of your feeds.
+	3. Subscribe to one of your AIO feeds.
+	4. Using the AIO Web interface, write a value to feed you subscribed in the previous step. Your MQTT client should receive the new value as a published message
+
+
+2. Use a Graphical MQTT client (see previous question) to publish and subscribe to topics using the public [MQTT Mosquitto broker](https://test.mosquitto.org/).
+	1. Use the [Online GUID generator](https://www.guidgen.com/) to generate a unique prefix to your username.
+	2. Come-up with new topics and post new messages to them.
+	3. Subscribe to the same topics and see the new messages appear.
+
 
 
 ## References & Resources
