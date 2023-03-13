@@ -360,7 +360,13 @@ The broker stores only one retained message per topic.
 
 In this course you will write your own MQTT client. The next sections show an example of a simple MQTT client using Python that publishes and subscribes to messages.
 
-Since a broker is necessary, we will use the publicly available MQTT broker from Eclipse Foundation, hosted at [test.mosquitto.org](https://test.mosquitto.org).
+### Public Brokers
+
+Since a broker is necessary, we can use the following publicly available MQTT brokers:
+
+- [test.mosquitto.org](https://test.mosquitto.org) by Eclipse Foundation.
+- [broker.emqx.io](https://www.emqx.com/en/mqtt/public-mqtt5-broker) by EMQX.
+
 
 >For the client implementation we will use the [Eclipse Paho MQTT Python Client](https://github.com/eclipse/paho.mqtt.python). It is a popular choice for many IoT Cloud services such as Adafruit IO.
 >
@@ -378,7 +384,7 @@ The first example will only publish random data to the broker every 3 seconds.
 1. Install the `paho-python` library.
 
 ```bash
-pip install paho-python
+pip install paho-mqtt
 ```
 
 2. Create your script file. A few notes:
@@ -420,7 +426,7 @@ import random
 
 rnd = random.Random()
 
-key = 'd5a4d5e6-d597-4bd4-8196-5f51d12345'
+common_key = 'd5a4d5e6-d597-4bd4-8196-5f51d12345'
 topic_name = common_key + '/temperature'
 client_name = common_key + 'publisher'
 
@@ -457,7 +463,7 @@ A few notes:
 - The subscriber used the same unique key as the publisher in order to subscribe to the same topics. However, the subscriber has its own client name.
 
 ```python
-key = 'd5a4d5e6-d597-4bd4-8196-5f51d12345'
+common_key = 'd5a4d5e6-d597-4bd4-8196-5f51d12345'
 topic_name = common_key + '/temperature'
 client_name = common_key + 'subscriber'
 ```
@@ -486,9 +492,9 @@ import json
 import time
 import random
 
-key = 'd5a4d5e6-d597-4bd4-8196-5f51d12345'
-client_name = key + 'subscriber'
-topic_name = key + '/temperature'
+common_key = 'd5a4d5e6-d597-4bd4-8196-5f51d12345'
+client_name = common_key + 'subscriber'
+topic_name = common_key + '/temperature'
 
 mqtt_client = mqtt.Client(client_name)
 mqtt_client.connect('test.mosquitto.org')
