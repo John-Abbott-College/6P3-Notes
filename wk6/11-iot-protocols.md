@@ -137,6 +137,13 @@ This IoT system has two types of actors:
 - One or more **Clients**
 - One **Broker**
 
+In the image below, a client device is publishing messages to the topic `/telemetry` while a client in the cloud is subscribed to the same topic.
+
+![IoT device publishing telemetry on the /telemetry topic, and the cloud service subscribing to that topic](https://github.com/microsoft/IoT-For-Beginners/raw/main/images/mqtt.png)](https://github.com/microsoft/IoT-For-Beginners/blob/main/images/mqtt.png)
+
+
+It's very typical that any particular client is both the publisher and the subscriber.
+
 
 [![IoT devices connect to a broker and publish telemetry and subscribe to commands. Cloud services connect to the broker and subscribe to all telemetry and send commands to specific devices.](https://github.com/microsoft/IoT-For-Beginners/raw/main/images/pub-sub.png)](https://github.com/microsoft/IoT-For-Beginners/blob/main/images/pub-sub.png)
 <p class=img-info>
@@ -303,7 +310,7 @@ This is longest period of time that the broker and client can go without **pingi
 
 When a client connects, it can provide the broker with a Last Will and Testament (LWT) message and topic.
 
-If the client disconnects ungracefully, the broker sends the LWT message on behalf of the client.
+If the client disconnects unexpectedly, the broker sends the LWT message on behalf of the client.
 
 **This message notifies other clients when a client disconnects unexpectedly.**
 
@@ -346,7 +353,12 @@ The broker stores only one retained message per topic.
 
 ## MQTT Client Examples
 
-Let's write a simple MQTT client that publishes and subscribes to messages.
+> Examples of **graphical** MQTT clients:
+> - [MQTT X](https://mqttx.app/) (supports `cleanSession = False`)
+> - [MQTT Explorer](https://mqtt-explorer.com/) 
+> - VS Code [Extension VSMqtt](https://marketplace.visualstudio.com/items?itemName=rpdswtk.vsmqtt) t
+
+In this course you will write your own MQTT client. The next sections show an example of a simple MQTT client using Python that publishes and subscribes to messages.
 
 Since a broker is necessary, we will use the publicly available MQTT broker from Eclipse Foundation, hosted at [test.mosquitto.org](https://test.mosquitto.org).
 
@@ -359,7 +371,7 @@ However, there are lots of other implementation options.
 > This [link compiles a list](https://mqtt.org/software/) of open-source MQTT client and broker implementations you can use in your projects.
 
 
-### Publishing only
+### Publisher Code
 
 The first example will only publish random data to the broker every 3 seconds.
 
@@ -372,17 +384,18 @@ pip install paho-python
 2. Create your script file. A few notes:
 
 - Create a unique client ID to avoid conflicts with other users (this is a public broker).
-	- https://test.mosquitto.org/.
+	- https://test.mosquitto.org/
+	- Create a unique ID using the [Online GUID generator](https://www.guidgen.com/)
 	
 ```python
-key = 'd5a4d5e6-d597-4bd4-8196-5f51d12345'
+common_key = '329adb05-8b85-4ebe-8309-15c564503a1f'
 ```
 
 - To have a unique client name and topic, we will combine the key from above with the desired name and topic.
 
 ```python
-client_name = key + 'publisher'
-topic_name = key + '/temperature'
+client_name = common_key + 'publisher'
+topic_name = common_key + '/temperature'
 ```
 
 - Import `paho-python` and the built-in `json` library (we'll encode our data as JSON).
@@ -397,7 +410,7 @@ import json
 Complete code:
 
 ```python
-# Blindly publish data topic
+# Publish to data topic (fire & forget)
 
 import paho.mqtt.client as mqtt
 import json
@@ -408,8 +421,8 @@ import random
 rnd = random.Random()
 
 key = 'd5a4d5e6-d597-4bd4-8196-5f51d12345'
-topic_name = key + '/temperature'
-client_name = key + 'publisher'
+topic_name = common_key + '/temperature'
+client_name = common_key + 'publisher'
 
 mqtt_client = mqtt.Client(client_name)
 mqtt_client.connect('test.mosquitto.org')
@@ -435,7 +448,7 @@ while True:
 ```
 
 
-### Subscribing only
+### Subscriber Code
 
 The MQTT client below subscribes to data from the publisher using the **library's default values**.
 
@@ -445,8 +458,8 @@ A few notes:
 
 ```python
 key = 'd5a4d5e6-d597-4bd4-8196-5f51d12345'
-topic_name = key + '/temperature'
-client_name = key + 'subscriber'
+topic_name = common_key + '/temperature'
+client_name = common_key + 'subscriber'
 ```
 
 - Once the client receives a message from the broker, the method `on_message` is called. This is used as a hook to define our own callback function.
@@ -515,7 +528,7 @@ Connectivity is not always guaranteed. Things to think about when coding your ap
 
 ## Exercises
 
-1. Use a Graphical MQTT client such as [MQTT Explorer](https://mqtt-explorer.com/) or the VS Code [Extension VSMqtt](https://marketplace.visualstudio.com/items?itemName=rpdswtk.vsmqtt) to publish and subscribe telemetry data to/from one of our Adafruit IO (AIO) feeds.
+1. Use a Graphical MQTT client such as [MQTT X](https://mqttx.app/),  [MQTT Explorer](https://mqtt-explorer.com/) or the VS Code [Extension VSMqtt](https://marketplace.visualstudio.com/items?itemName=rpdswtk.vsmqtt) to publish and subscribe telemetry data to/from one of our Adafruit IO (AIO) feeds.
 	1. See the [AIO MQTT API](https://io.adafruit.com/api/docs/mqtt.html#adafruit-io-mqtt-api) documentation.
 	2. Publish a MQTT message with a random value to one of your feeds.
 	3. Subscribe to one of your AIO feeds.
