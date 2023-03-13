@@ -362,9 +362,9 @@ In this course you will write your own MQTT client. The next sections show an ex
 
 Since a broker is necessary, we will use the publicly available MQTT broker from Eclipse Foundation, hosted at [test.mosquitto.org](https://test.mosquitto.org).
 
-For the client implementation we will use the [Eclipse Paho MQTT Python Client](https://github.com/eclipse/paho.mqtt.python). It is a popular choice for many IoT Cloud services such as Adafruit IO.
-
-Documentation for the `paho-mqtt` client is available at the [Pypi page](https://pypi.org/project/paho-mqtt/#constructor-reinitialise).
+>For the client implementation we will use the [Eclipse Paho MQTT Python Client](https://github.com/eclipse/paho.mqtt.python). It is a popular choice for many IoT Cloud services such as Adafruit IO.
+>
+>- Documentation for the `paho-mqtt` client is available at the [Pypi page](https://pypi.org/project/paho-mqtt/#constructor-reinitialise).
 
 However, there are lots of other implementation options.
 
