@@ -3,6 +3,10 @@
 - [Dev Setup](wk1/vscode-python-setup.md)
 - [Hardware List ](wk1/4-hardware-list.md)
 
+**Linux Notes*
+- [Git & GitHub](linux-reterminal/git-github.md)
+- [Remote Access](linux-reterminal/linux-bash.md)
+
 **Week 8**
 - [Intro to Azure IoT](wk8/12-intro-azure-iot.md)
 - [Device to Cloud Communication](wk8/13-device-cloud-communication.md)
