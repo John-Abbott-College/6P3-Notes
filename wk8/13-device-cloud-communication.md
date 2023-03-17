@@ -181,7 +181,7 @@ The SDK provides the following clients:
 	- Receive and respond to direct method invocations from the Azure IoT Hub
 
 3. **IoT Hub Module Client**
-	- Mostly intended for communicating with Edge devices (not covered in this course). See [here](https://azure.microsoft.com/en-us/services/iot-edge/#iotedge-overview) for more.
+	- Mostly intended for communicating with Edge devices (**not covered in this course**). See [here](https://azure.microsoft.com/en-us/services/iot-edge/#iotedge-overview) for more.
 
 
 These clients are available with an asynchronous API, as well as a blocking synchronous API.
