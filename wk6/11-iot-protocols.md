@@ -315,7 +315,7 @@ If the client disconnects unexpectedly, the broker sends the LWT message on beha
 **This message notifies other clients when a client disconnects unexpectedly.**
 
 
-![](assets/iot-protocols-last-will.png)
+![](assets/11-iot-protocols-last-will.png)
 <p class=img-info>
 	<a href="https://www.youtube.com/watch?v=LKz1jYngpcU"> Last Will & Testament  </a>&nbsp; Why HTTP isn't the King of the IoT, Robert Bird, Akamai.
 </p>
@@ -333,7 +333,7 @@ The broker stores only one retained message per topic.
 > Retained messages help newly-subscribed clients get a status update immediately after they subscribe to a topic.
 
 
-![](assets/iot-protocols-retained.png)
+![](assets/11-iot-protocols-retained.png)
 <p class=img-info>
 	<a href="https://www.youtube.com/watch?v=LKz1jYngpcU"> Message with Retained Flag </a>&nbsp; Why HTTP isn't the King of the IoT, Robert Bird, Akamai.
 </p>
