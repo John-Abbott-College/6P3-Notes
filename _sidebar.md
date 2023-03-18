@@ -3,7 +3,10 @@
 - [Dev Setup](wk1/vscode-python-setup.md)
 - [Hardware List ](wk1/4-hardware-list.md)
 
-**Linux Notes*
+**Lessons**
+- [Changelog](lesson-changelog.md)
+
+**Linux Notes**
 - [Git & GitHub](linux-reterminal/git-github.md)
 - [Remote Access](linux-reterminal/linux-bash.md)
 
