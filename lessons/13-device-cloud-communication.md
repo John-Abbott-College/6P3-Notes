@@ -131,107 +131,12 @@ You can, however, have more control over the properties of the `Message` object
 See the example in [azure-iot-sdk-python](https://github.com/Azure/azure-iot-sdk-python "https://github.com/Azure/azure-iot-sdk-python")/[azure-iot-device](https://github.com/Azure/azure-iot-sdk-python/tree/main/azure-iot-device "https://github.com/Azure/azure-iot-sdk-python/tree/main/azure-iot-device")/[samples](https://github.com/Azure/azure-iot-sdk-python/tree/main/azure-iot-device/samples "https://github.com/Azure/azure-iot-sdk-python/tree/main/azure-iot-device/samples")/[sync-samples](https://github.com/Azure/azure-iot-sdk-python/tree/main/azure-iot-device/samples/sync-samples "https://github.com/Azure/azure-iot-sdk-python/tree/main/azure-iot-device/samples/sync-samples")/**send_message.py** to understand how to set message properties.
 
 
-## IoT Hub SDKs
+> The messages described above (D2C and C2D communication) are typically created at the device or application with the help of a SDK (Software Development Kit) library.
 
-The messages described above (used for both D2C and C2D communication) are typically created at the device of a service application with the help of a SDK library.
-
-
->  A **software development kit (SDK)** is a programming "package" that enables a programmer to develop applications for a specific platform.
->  
->  Typically a SDK includes one or more APIs, programming tools, and documentation.
+> See notes on Azure IoT SDKs for references to libraries and examples provided by Azure.
 
 
-Azure IoT provides SDKs for several languages such as Python, Java, .NET, C and Node.js.
 
-The Azure IoT SDK for Python is organized in two types of libraries, each controlling a different side of the IoT System:
-
-- **Device SDK** -  provides functionality for **devices** to communicate with the Azure IoT Hub.
-- **Service SDK** - provides functionality for **applications and services** to communicate with and manage the Azure IoT Hub.
-
-[**Github repository**](https://github.com/Azure/azure-iot-sdk-python) for Python Azure IoT SDK
-
->Remember that IoT Hub is only managing the device registration and connections of the IoT solution.
->
->The application logic and device control is typically done by a **back-end** service and **user applications** via the IoT Hub end-points.
-
-
-![](assets/iot-hub-architecture.svg)
-
-
-### Device SDK
-
-Installation is available via Pypi.
-
-```bash
-pip install azure-iot-device
-```
-
-[**API documentation** ](https://docs.microsoft.com/en-us/python/api/azure-iot-device/azure.iot.device?view=azure-python)available in docs.microsoft.com
-
-The SDK provides the following clients:
-
-1. **Provisioning Device Client**
-
-	- Creates a device identity on the Azure IoT Hub
-
-2. **IoT Hub Device Client**
-
-	- Send telemetry messages to Azure IoT Hub
-	- Receive Cloud-to-Device (C2D) messages from the Azure IoT Hub
-	- Receive and respond to direct method invocations from the Azure IoT Hub
-
-3. **IoT Hub Module Client**
-	- Mostly intended for communicating with Edge devices (**not covered in this course**). See [here](https://azure.microsoft.com/en-us/services/iot-edge/#iotedge-overview) for more.
-
-
-These clients are available with an asynchronous API, as well as a blocking synchronous API.
-
-By default, the Python device SDKs connect to an IoT Hub over MQTT with the **CleanSession** flag set to **0** and use **QoS 1** for message exchange with the IoT hub.
-
-Although it's possible to connect a generic MQTT client (ex.: the `paho-mqtt` client) to the IoT Hub, it is recommended to use one of the provided Device SDKs. For a manual MQTT connection, see [Communicate with your IoT hub using the MQTT protocol](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-mqtt-support#main).
-
-
-### IoT Hub Service SDK
-
-Installation also available via Pypi.
-
-```bash
-pip install azure-iot-hub
-```
-
-[**API documentation** ](https://docs.microsoft.com/en-us/python/api/azure-iot-hub/azure.iot.hub?view=azure-python)available in docs.microsoft.com.
-Details on the `azure.eventhub` package API can be found [here](https://azuresdkdocs.blob.core.windows.net/$web/python/azure-eventhub/latest/azure.eventhub.html#).
-
-The SDK provides the following clients:
-
-1. **IoT Hub Registry Manager**
-
--   Provides CRUD operations for device on IoTHub
--   Get statistics about the IoTHub service and devices
-
-Since this is a SDK to manage a cloud service (IoT Hub), it assumes bandwidth is not constrained and most calls are made over HTTPS.
-
-
-### Event Hubs Service SDK
-
-Behind the scenes, IoT Hubs is an instance of another Azure service called [Event Hubs](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-about).
-
-Event Hubs is a highly scalable publish-subscribe service that can ingest millions of events per second and stream them to multiple clients and services.
-
-*More on Event Hubs in a later chapter.*
-
-Azure provides a Python SDK for publishing and consuming Event Hubs events. These events include device telemetry, state changes, new device registrations, etc.
-
-Installation also available via Pypi.
-
-```bash
-pip install azure-eventhub
-```
-
-
-[**API documentation** ](https://docs.microsoft.com/en-us/python/api/overview/azure/eventhub-readme?view=azure-python) available in docs.microsoft.com
-
-- See the specifics of how to [Use EventHubConsumerClient to work with IoT Hub](https://docs.microsoft.com/en-us/python/api/overview/azure/eventhub-readme?view=azure-python#use-eventhubconsumerclient-to-work-with-iot-hub).
 
 
 ## Direct Methods

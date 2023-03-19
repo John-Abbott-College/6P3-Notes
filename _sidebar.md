@@ -10,12 +10,13 @@
 - [Git & GitHub](linux-reterminal/git-github.md)
 - [Remote Access](linux-reterminal/linux-bash.md)
 
-**Week 8**
-- [Intro to Azure IoT](wk8/12-intro-azure-iot.md)
-- [Device to Cloud Communication](wk8/13-device-cloud-communication.md)
+**Azure IoT**
+- [Intro to Azure IoT](lessons/12-intro-azure-iot.md)
+- [Device to Cloud Communication](lessons/13-device-cloud-communication.md)
+- [Azure IoT SDKs](lessons/14-azure-sdks.md)
 
 **Week 6**
-- [11-IoT Protocols & MQTT](wk6/11-iot-protocols.md)
+- [11-IoT Protocols & MQTT](lessons/11-iot-protocols.md)
 
 **Week 5**
 - [10-Python Extras](wk5/10-python-extras.md)
