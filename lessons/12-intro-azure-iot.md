@@ -271,7 +271,8 @@ There are two approaches to setting up a Budget in the Azure Portal:
 
 The first approach involves a few less steps so it is described below.
 
-For more information on creating a budget from the Cost Management blade, see [How to set up Azure budget alerts](https://www.techtarget.com/searchcloudcomputing/tutorial/How-to-set-up-Azure-budget-alerts) by TechTarget.com. 
+> - For information on creating a budget from the Cost Management blade, see [How to set up Azure budget alerts](https://www.techtarget.com/searchcloudcomputing/tutorial/How-to-set-up-Azure-budget-alerts) by TechTarget.com.
+> - For details on using and managing budgets, see official tutorial: [Create and manage Azure budgets](https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/tutorial-acm-create-budgets).
 
 
 #### Create a Budget for a Resource Group
