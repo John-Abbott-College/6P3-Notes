@@ -1,4 +1,5 @@
-# Intro to Azure IoT
+# Intro to Azure IoT & Tools
+
 From now on, we will deploy and manage our IoT solutions using Microsoft Azure and its Azure IoT platform as a service (PaaS).
 
 ## Platform as a Service (PaaS)
@@ -60,8 +61,8 @@ We can breakdown an IoT solution into **subsystems** and explore how information
 
 Azure offers many IoT-related services (see image below). In this course we'll only explore a few.
 
-![Azure IoT-related architecture](https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/iot/images/iot-refarch.svg#lightbox#lightbox)
-[*Azure IoT Reference Architecture](https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/iot), Microsoft learn*
+![Azure IoT-related architecture](https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/iot/images/iot-refarch.svg)
+[*Azure IoT Reference Architecture*](https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/iot), *Microsoft learn*
 
 
 ## IoT Hub & IoT Central

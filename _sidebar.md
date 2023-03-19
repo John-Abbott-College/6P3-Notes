@@ -11,7 +11,7 @@
 - [Remote Access](linux-reterminal/linux-bash.md)
 
 **Azure IoT**
-- [Intro to Azure IoT](lessons/12-intro-azure-iot.md)
+- [Intro to Azure IoT & Tools](lessons/12-intro-azure-iot.md)
 - [Device to Cloud Communication](lessons/13-device-cloud-communication.md)
 - [Azure IoT SDKs](lessons/14-azure-sdks.md)
 
