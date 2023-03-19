@@ -259,6 +259,39 @@ As you experiment with Azure you might want to know your current balance.
 For details check [Track Microsoft Customer Agreement Azure credit balance](https://docs.microsoft.com/en-us/azure/cost-management-billing/manage/mca-check-azure-credits-balance?tabs=portal#main)
 
 
+### Budget Alerts
+
+It's possible to setup email alerts when your Azure spending exceeds a dollar threshold. This avoids unexpected spending of Azure credits.
+
+There are two approaches to setting up a Budget in the Azure Portal:
+
+1. Open the panel (aka "blade") for the Resource Group in question, and then create a new Budget for that group.
+
+2. Create a Budget for your account under ***Cost Management + Billing*** and then **apply a filter** according to *ResourceGroupName* in order to target a specific Resource Group.
+
+The first approach involves a few less steps so it is described below.
+
+For more information on creating a budget from the Cost Management blade, see [How to set up Azure budget alerts](https://www.techtarget.com/searchcloudcomputing/tutorial/How-to-set-up-Azure-budget-alerts) by TechTarget.com. 
+
+
+#### Create a Budget for a Resource Group
+
+1. In the Azure Portal Home, select the ***Resource groups*** service.
+2. Select the resource group you want to monitor with a budget.
+3. In the left panel, select ***Budgets*** under the *Cost Management* group and select ***Add***.
+
+![Menu for creating a budget for a resource group](assets/12-budget-resource-group.png)
+
+4. Give your budget a name and an amount.
+
+![](assets/12-budget-name-ammount.png)
+
+5. Select the **percent spending** for the alert and the **email** to receive the notification.
+6. Click ***Create***.
+
+![](assets/12-budget-alert-percent-email.png)
+
+
 ## Demo: IoT Hub & Device telemetry data
 
 In-class demo to illustrate the process of:
