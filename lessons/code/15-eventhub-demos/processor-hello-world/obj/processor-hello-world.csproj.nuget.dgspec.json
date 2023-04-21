@@ -1,0 +1,85 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/mau/Insync/mau.jac.cs@gmail.com/Google Drive/JAC G/Courses/420-6P3/6P3-Notes/lessons/15-eventhub-demos/processor-hello-world/processor-hello-world.csproj": {}
+  },
+  "projects": {
+    "/home/mau/Insync/mau.jac.cs@gmail.com/Google Drive/JAC G/Courses/420-6P3/6P3-Notes/lessons/15-eventhub-demos/processor-hello-world/processor-hello-world.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/mau/Insync/mau.jac.cs@gmail.com/Google Drive/JAC G/Courses/420-6P3/6P3-Notes/lessons/15-eventhub-demos/processor-hello-world/processor-hello-world.csproj",
+        "projectName": "processor-hello-world",
+        "projectPath": "/home/mau/Insync/mau.jac.cs@gmail.com/Google Drive/JAC G/Courses/420-6P3/6P3-Notes/lessons/15-eventhub-demos/processor-hello-world/processor-hello-world.csproj",
+        "packagesPath": "/home/mau/.nuget/packages/",
+        "outputPath": "/home/mau/Insync/mau.jac.cs@gmail.com/Google Drive/JAC G/Courses/420-6P3/6P3-Notes/lessons/15-eventhub-demos/processor-hello-world/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/mau/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Azure.Messaging.EventHubs": {
+              "target": "Package",
+              "version": "[5.9.0, )"
+            },
+            "Azure.Messaging.EventHubs.Processor": {
+              "target": "Package",
+              "version": "[5.9.0, )"
+            },
+            "Azure.Storage.Blobs": {
+              "target": "Package",
+              "version": "[12.16.0, )"
+            },
+            "Microsoft.Azure.Amqp": {
+              "target": "Package",
+              "version": "[2.6.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Host.linux-x64",
+              "version": "[6.0.15, 6.0.15]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/7.0.104/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -163,6 +163,9 @@ The life-cycle of a Direct Method is as follows:
 
 For details see [Understand and invoke direct methods from IoT Hub](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-direct-methods)
 
+For examples of how to use Direct Methods, see [Quickstart: Control a device connected to an IoT hub](https://learn.microsoft.com/en-us/azure/iot-hub/quickstart-control-device?pivots=programming-language-csharp).
+
+
 ## Diving Deeper 🤿
 
 If you would like to have a "bigger picture" view of how the different Azure IoT services fit together, watch the video below by Blaize Stewart.

@@ -1,0 +1,28 @@
+{
+  "version": 2,
+  "dgSpecHash": "+eXmaCSm9dfQu25rnJbG3IdfMflcsTb9BpRpX0mcINw2KoHIViOMVPk5+V0Kfnaf1+OsRWuo0mnDokSfqItxHQ==",
+  "success": true,
+  "projectFilePath": "/home/mau/Insync/mau.jac.cs@gmail.com/Google Drive/JAC G/Courses/420-6P3/6P3-Notes/lessons/15-eventhub-demos/processor-hello-world/processor-hello-world.csproj",
+  "expectedPackageFiles": [
+    "/home/mau/.nuget/packages/azure.core/1.31.0/azure.core.1.31.0.nupkg.sha512",
+    "/home/mau/.nuget/packages/azure.core.amqp/1.3.0/azure.core.amqp.1.3.0.nupkg.sha512",
+    "/home/mau/.nuget/packages/azure.messaging.eventhubs/5.9.0/azure.messaging.eventhubs.5.9.0.nupkg.sha512",
+    "/home/mau/.nuget/packages/azure.messaging.eventhubs.processor/5.9.0/azure.messaging.eventhubs.processor.5.9.0.nupkg.sha512",
+    "/home/mau/.nuget/packages/azure.storage.blobs/12.16.0/azure.storage.blobs.12.16.0.nupkg.sha512",
+    "/home/mau/.nuget/packages/azure.storage.common/12.15.0/azure.storage.common.12.15.0.nupkg.sha512",
+    "/home/mau/.nuget/packages/microsoft.azure.amqp/2.6.2/microsoft.azure.amqp.2.6.2.nupkg.sha512",
+    "/home/mau/.nuget/packages/microsoft.bcl.asyncinterfaces/1.1.1/microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
+    "/home/mau/.nuget/packages/system.diagnostics.diagnosticsource/4.6.0/system.diagnostics.diagnosticsource.4.6.0.nupkg.sha512",
+    "/home/mau/.nuget/packages/system.io.hashing/6.0.0/system.io.hashing.6.0.0.nupkg.sha512",
+    "/home/mau/.nuget/packages/system.memory/4.5.4/system.memory.4.5.4.nupkg.sha512",
+    "/home/mau/.nuget/packages/system.memory.data/1.0.2/system.memory.data.1.0.2.nupkg.sha512",
+    "/home/mau/.nuget/packages/system.numerics.vectors/4.5.0/system.numerics.vectors.4.5.0.nupkg.sha512",
+    "/home/mau/.nuget/packages/system.reflection.typeextensions/4.7.0/system.reflection.typeextensions.4.7.0.nupkg.sha512",
+    "/home/mau/.nuget/packages/system.text.encodings.web/4.7.2/system.text.encodings.web.4.7.2.nupkg.sha512",
+    "/home/mau/.nuget/packages/system.text.json/4.7.2/system.text.json.4.7.2.nupkg.sha512",
+    "/home/mau/.nuget/packages/system.threading.channels/4.7.1/system.threading.channels.4.7.1.nupkg.sha512",
+    "/home/mau/.nuget/packages/system.threading.tasks.extensions/4.5.4/system.threading.tasks.extensions.4.5.4.nupkg.sha512",
+    "/home/mau/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.15/microsoft.netcore.app.host.linux-x64.6.0.15.nupkg.sha512"
+  ],
+  "logs": []
+}

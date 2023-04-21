@@ -1,6 +1,6 @@
 **Home**
 - [About](/)
-- [Dev Setup](wk1/vscode-python-setup.md)
+- [Dev Setup](wk1/0-vscode-python-setup.md)
 - [Hardware List ](wk1/4-hardware-list.md)
 
 **Lessons**
@@ -14,28 +14,31 @@
 - [Intro to Azure IoT & Tools](lessons/12-intro-azure-iot.md)
 - [Device to Cloud Communication](lessons/13-device-cloud-communication.md)
 - [Azure IoT SDKs](lessons/14-azure-sdks.md)
+- [EventHub & Service Clients](lessons/15-eventhub-dotnet.md)
+- [Azure CLI Cheatsheet](lessons/15-azure-cli-cheatsheet.md)
+- [Blob Storage](lessons/16-storage-message-routing.md)
 
 **Week 6**
 - [11-IoT Protocols & MQTT](lessons/11-iot-protocols.md)
 
 **Week 5**
-- [10-Python Extras](wk5/10-python-extras.md)
+- [10-Python Extras](lessons/10-python-extras.md)
 
 **Week 4**
-- [9-Serial Protocols](wk4/9-serial-protocols.md)
+- [9-Serial Protocols](lessons/9-serial-protocols.md)
 
 **Week 3**
-- [8-Arduino vs Pi](wk3/8-arduino-vs-raspberry-pi.md)
-- [7-GPIOs](wk3/7-gpios.md)
-- [6-analog-vs-digital](wk3/6-analog-vs-digital.md)
+- [8-Arduino vs Pi](lessons/8-arduino-vs-raspberry-pi.md)
+- [7-GPIOs](lessons/7-gpios.md)
+- [6-analog-vs-digital](lessons/6-analog-vs-digital.md)
 
 **Week 2**
-- [5-reTerminal Sensors](wk2/5-reterminal-sensors.md)
+- [5-reTerminal Sensors](lessons/5-reterminal-sensors.md)
 
 **Week 1**
 - [4-Linux Review](wk1/3-linux-review.md)
 - [3-Intro to Python](wk1/2-intro-python.md)
-- [2-Tech Stack](wk1/tech-stack.md)
+- [2-Tech Stack](wk1/0-tech-stack.md)
 - [1-What is IoT](wk1/1-what-is-iot.md)
 
 <!--
