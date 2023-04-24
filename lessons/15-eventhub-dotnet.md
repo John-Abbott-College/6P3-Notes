@@ -205,7 +205,7 @@ When you use Event Hubs SDKs or product integrations that are unaware of IoT Hub
     
     -   The **Cloud to device messaging** section contains the following values: **Default TTL**, **Feedback retention time**, and **Maximum delivery count**.
     
-    [![Screen capture showing device-to-cloud settings.](https://learn.microsoft.com/en-us/azure/iot-hub/media/iot-hub-devguide-messages-read-builtin/eventhubcompatible.png)](https://learn.microsoft.com/en-us/azure/iot-hub/media/iot-hub-devguide-messages-read-builtin/eventhubcompatible.png#lightbox)
+    ![Screen capture showing device-to-cloud settings.](https://learn.microsoft.com/en-us/azure/iot-hub/media/iot-hub-devguide-messages-read-builtin/eventhubcompatible.png)](https://learn.microsoft.com/en-us/azure/iot-hub/media/iot-hub-devguide-messages-read-builtin/eventhubcompatible.png#lightbox)
     
 
 In the working pane, the **Event Hub-compatible endpoint** field contains a complete Event Hubs connection string that looks like the following example:
