@@ -16,7 +16,7 @@
 - [Azure IoT SDKs](lessons/14-azure-sdks.md)
 - [EventHub & Service Clients](lessons/15-eventhub-dotnet.md)
 - [Azure CLI Cheatsheet](lessons/15-azure-cli-cheatsheet.md)
-- [Blob Storage](lessons/16-storage-message-routing.md)
+- [Blob Storage](lessons/16-blob-storage.md)
 
 **Week 6**
 - [11-IoT Protocols & MQTT](lessons/11-iot-protocols.md)

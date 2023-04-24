@@ -14,7 +14,7 @@ namespace eventhub_demo
         static async Task Main(string[] args)
         {
             Console.WriteLine("Hello, World!");
-            var storageConnectionString = "BlobEndpoint=https://blogstoragedemo2.blob.core.windows.net/;QueueEndpoint=https://blogstoragedemo2.queue.core.windows.net/;FileEndpoint=https://blogstoragedemo2.file.core.windows.net/;TableEndpoint=https://blogstoragedemo2.table.core.windows.net/;SharedAccessSignature=sv=2021-12-02&ss=bfqt&srt=sc&sp=rwdlacupiytfx&se=2023-04-23T02:23:27Z&st=2023-04-21T18:23:27Z&spr=https&sig=NdO8cL4ygPpxBCJtayOWFh8dU8K%2F7qyt5gOcipV9AVc%3D";
+            var storageConnectionString = "DefaultEndpointsProtocol=https;AccountName=blogstoragedemo2;AccountKey=BDBRxegVCGNlIPbZcbRdcFh1ntUKMdGpe6Q0bw4aC6CUnDp8iPPCLt96Dj+ITczhahUcQhjm+1rn+AStnwGdZw==;EndpointSuffix=core.windows.net";
             var blobContainerName = "checkpoint-blob";
 
             var eventHubsConnectionString = "Endpoint=sb://ihsuprodytres013dednamespace.servicebus.windows.net/;SharedAccessKeyName=service;SharedAccessKey=Xi3+S4JNsum6Bl7EFWF86jXrfh2FKsf5VeD0J9lu+Ik=;EntityPath=iothub-ehub-hub-w23-24963020-33d371f2d6";
