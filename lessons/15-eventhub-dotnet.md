@@ -199,16 +199,17 @@ When you use Event Hubs SDKs or product integrations that are unaware of IoT Hub
     
 3.  The **Built-in endpoints** working pane contains three sections:
     
-    -   The **Event Hub Details** section contains the following values: **Partitions**, **Event Hub-compatible name**, **Retain for**, and **Consumer Groups**.
+    -   The **Event Hub Details** section contains the following values:
+	    - **Event Hub-compatible name**
+	    - **Consumer Groups**.
     
-    -   The **Event Hub compatible endpoint** section contains the following values: **Shared access policy** and **Event Hub-compatible endpoint**.
+    -   The **Event Hub compatible endpoint** section contains the following values:
+	    - **Shared access policy** (the default is `"$Default"`)
+	    - **Event Hub-compatible endpoint**.
     
-    -   The **Cloud to device messaging** section contains the following values: **Default TTL**, **Feedback retention time**, and **Maximum delivery count**.
-    
-    ![Screen capture showing device-to-cloud settings.](https://learn.microsoft.com/en-us/azure/iot-hub/media/iot-hub-devguide-messages-read-builtin/eventhubcompatible.png)](https://learn.microsoft.com/en-us/azure/iot-hub/media/iot-hub-devguide-messages-read-builtin/eventhubcompatible.png#lightbox)
-    
-
+  
 In the working pane, the **Event Hub-compatible endpoint** field contains a complete Event Hubs connection string that looks like the following example:
 
-**Note that the default consumer group name is `"$Default"`**.
+**Note that the default consumer group name is `"$Default"`** (might required including double quotes).
 
+![Screen capture showing device-to-cloud settings.](https://learn.microsoft.com/en-us/azure/iot-hub/media/iot-hub-devguide-messages-read-builtin/eventhubcompatible.png)
