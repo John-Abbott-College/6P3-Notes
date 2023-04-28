@@ -5,6 +5,7 @@ Course notes organized according to when they were covered in class.
 ## Week 13
 Apr 24th to 28th
 - [Device Twin Properties](lessons/17-device-twins.md)
+- [Python Project Imports](lessons/19-python-projects-imports.md)
 
 ## Week 12
 Apr 17th to 21st

@@ -155,7 +155,6 @@ attempted relative import with no known parent package
 **Solution**
 
 When running `myothermodule.py` as a stand-alone script, run Python using the `-m` option to run the file as a module.
-
 This will execute all the `__init__.py` files and load the module dependency.
 
 ```python

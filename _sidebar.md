@@ -3,12 +3,17 @@
 - [Dev Setup](wk1/0-vscode-python-setup.md)
 - [Hardware List ](wk1/4-hardware-list.md)
 
-**Lessons**
+**Lessons Changelog**
 - [Changelog](lesson-changelog.md)
 
 **Linux Notes**
 - [Git & GitHub](linux-reterminal/git-github.md)
 - [Remote Access](linux-reterminal/linux-bash.md)
+
+**Python**
+- [Python Project Imports](lessons/19-python-projects-imports.md)
+- [Python Extras](lessons/10-python-extras.md)
+- [Intro to Python](wk1/2-intro-python.md)
 
 **Azure IoT**
 - [Intro to Azure IoT & Tools](lessons/12-intro-azure-iot.md)
@@ -21,9 +26,6 @@
 
 **Week 6**
 - [11-IoT Protocols & MQTT](lessons/11-iot-protocols.md)
-
-**Week 5**
-- [10-Python Extras](lessons/10-python-extras.md)
 
 **Week 4**
 - [9-Serial Protocols](lessons/9-serial-protocols.md)
@@ -38,7 +40,6 @@
 
 **Week 1**
 - [4-Linux Review](wk1/3-linux-review.md)
-- [3-Intro to Python](wk1/2-intro-python.md)
 - [2-Tech Stack](wk1/0-tech-stack.md)
 - [1-What is IoT](wk1/1-what-is-iot.md)
 
