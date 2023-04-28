@@ -89,18 +89,8 @@ Since this is a SDK to manage a cloud service (IoT Hub), it assumes bandwidth is
 
 ### Event Hubs Service SDK
 
-> Behind the scenes, IoT Hubs is an instance of another Azure service called [Event Hubs](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-about).
-
-Event Hubs is a highly scalable publish-subscribe service that can ingest millions of events per second and stream them to multiple destinations (clients and services).
-
-Azure provides a Python SDK for publishing and consuming Event Hubs events. These events include device telemetry, state changes, new device registrations, etc.
-
-| Language | Package | Samples                                                                                                                                                                                          | Reference Docs                                                                                                  |
-| -------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------- |
-| Python   | [pip](https://pypi.org/project/azure-eventhub/) | [Use EventHubConsumerClient to work with IoT Hub](https://learn.microsoft.com/en-us/python/api/overview/azure/eventhub-readme?view=azure-python#use-eventhubconsumerclient-to-work-with-iot-hub) | [Reference Docs](https://learn.microsoft.com/en-us/python/api/overview/azure/eventhub-readme?view=azure-python) | 
-
-Details on the `azure.eventhub` package API can be found [here](https://azuresdkdocs.blob.core.windows.net/$web/python/azure-eventhub/latest/azure.eventhub.html#).
-*More on Event Hubs in a later chapter.*
+> Behind the scenes, IoT Hubs is an instance of another Azure service called [Event Hubs.](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-about)
+> Please see the chapter on [Reading D2C Messages with the EventHub SDK](https://john-abbott-college.github.io/6P3-Notes/#/lessons/15-eventhub-dotnet).
 
 
 ## IoT Hub Management

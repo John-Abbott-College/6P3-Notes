@@ -2,6 +2,10 @@
 
 Course notes organized according to when they were covered in class. 
 
+## Week 13
+Apr 24th to 28th
+- [Device Twin Properties](lessons/17-device-twins.md)
+
 ## Week 12
 Apr 17th to 21st
 - [Direct Methods with service and client SDKs](lessons/13-device-cloud-communications.md)

@@ -1,34 +1,42 @@
 # Device Twins
-_Device twins_ are **JSON documents** that store device state information including metadata, configurations, and conditions.
+
+> _Device twins_ are **JSON documents stored online**  that contain information about the state of a device, including metadata, configurations, and conditions.
 
 Azure IoT Hub maintains a device twin for each device that you connect to IoT Hub.
 
-Device twins store device-related information that:
+**Device twins store device-related information that:**
 
 -   Contains device metadata from your solution back end.    
 
--   Reports current state information such as available capabilities and conditions, for example, the connectivity method used from your device app.
+-   Reports current state information such as available capabilities and conditions.
 
 -   Synchronizes the state of long-running workflows, such as firmware and configuration updates, between a device app and a back-end app.
-
--   Querys your device metadata, configuration, or state.
 
 
 Note that **Device Twins are not appropriate for high-frequency communication** such as sending telemetry data from device to cloud. For this, use D2C messages.
 
->Device twins are automatically created and deleted when a device identity is added or removed from the IoT Hub.
-
+ 
 ## Device Twin Anatomy
 
 The device twin JSON document has the following structure:
 
--   **Device identity properties**. Read-only properties from the corresponding device identity stored in the [identity registry](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-identity-registry).
+### Device identity properties
 
--   **Tags**. The solution back end can read from and write to. Tags are not visible to device apps.
+- Read-only properties from the corresponding device identity.
 
--   **Desired properties**. Used along with reported properties to synchronize device configuration or conditions. **The solution back end can set desired properties, and the device app can read them.** The device app can also receive notifications of changes in the desired properties.
+### Tags
+
+- The solution back end can read from and write to. Tags are not visible to device apps.
+
+### Desired properties
+
+- Used along with reported properties to synchronize device configuration or conditions.
+- **The solution back end can set desired properties, and the device app can read them.**
+- The device app can also receive notifications of changes in the desired properties.
    
--   **Reported properties**. Used along with desired properties to synchronize device configuration or conditions. **The device app can set reported properties, and the solution back end can read and query them.**
+### Reported properties
+
+- Used along with desired properties to synchronize device configuration or conditions. **The device app can set reported properties, and the solution back end can read and query them.**
    
 
 ![Screenshot of device twin properties](https://docs.microsoft.com/en-us/azure/iot-hub/media/iot-hub-devguide-device-twins/twin.png)
@@ -131,7 +139,7 @@ Consider the property `telemetryConfig` which is used to configure telemetry col
 
 **Step 2b:** If the device is not connected, it must follow the [device reconnection flow](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-device-twins#device-reconnection-flow) to receive the full desired properties document and to subscribe to new notifications.
 
-**Step 3:** The device processes the desired property according to the application logic.
+**Step 3:** The device parses the desired property and triggers an action according to the application logic.
 
 **Step 4:** The device reports the updated configuration as a reported property (or an error condition using the `status` property). Below is the portion of the document with the reported property:
 
@@ -195,7 +203,7 @@ device_client.on_twin_desired_properties_patch_received = twin_patch_handler
 twin = device_client.get_twin()
 ```
 
-6. Parse your twin update by inspecting the requested properties.
+6. **Parse your twin update** by inspecting the requested properties.
 
 > This is were the magic happens 🧙
 > 
@@ -217,100 +225,18 @@ device_client.shuthdown()
 
 ### Back-end Implementation
 
-> An excellent tutorial is provided in [Get started with device twins (Python) - Create the service app](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-python-twin-getstarted#create-the-service-app)
+> An excellent tutorial is provided in [# Get started with device twins (.NET) - Create a service app](https://learn.microsoft.com/en-us/azure/iot-hub/device-twins-dotnet#create-a-service-app-that-updates-desired-properties-and-queries-twins)
 
 #### Shared Access Policy
 
-The connection string required for the Device Twins back-end is specific to a shared access policy that has *Registry Read* and *Service Connect* permissions.
+The connection string required for the Device Twins back-end is specific to a shared access policy that has the permissions to:
+
+- *Registry Read*
+- *Service Connect*
 
 >This is not your Event Hub compatible endpoint connection string.
 
 ![](assets/17-device-twins-access-permission.png)
-
-
-#### Implementation Summary
-
-1. Install the Azure IoT Hub Service SDK for Python.
-```bash
-pip install azure-iot-hub
-```
-
-2. Import the classes `IoTHubRegistryManager`, `Twin` , and `TwinProperties`.
-```python
-from azure.iot.hub import IoTHubRegistryManager
-from azure.iot.hub.models import Twin, TwinProperties
-```
-
-3. Instantiate a `IoTHubRegistryManager` from the IoT Hub connection string.
-```python
-iothub_registry_manager = IoTHubRegistryManager(IOTHUB_CONNECTION_STRING)
-```
-
-4. Get the Device Twin reference from the device id.
-```python
-twin = iothub_registry_manager.get_twin(DEVICE_ID)
-```
-
-5. Parse the Device Twin object if necessary by inspecting its `desired` and `reported` properties.
-
-6. Create a `TwinProperties` object with the `desired` attribute set to a dictionary containing your desired properties.
-```python
-desired_properties= TwinProperties(desired={'fan_speed' : 3000, 'telemtry_interval': 5})
-```
-
-7. Create a Device Twin patch. A patch is a section of the Device Twin document that you want to update with your desired properties (created above).
-	Note: You can also include any new Tags as a dictionary in this step.
-```python
-twin_patch = Twin(properties = desired_properties)
-```
-
-8. Send the Device Twin update and capture the updated Device Twin document in a new object.
-```python
-updated_twin = iothub_registry_manager.update_twin(DEVICE_ID, twin_patch)
-```
-
-9. Repeat steps 4 to 8 if necessary.
-
-## Query Language for Device Twins
-
-IoT Hub provides a powerful SQL-like language to retrieve information about device twins.
-
-> This query language is particularly useful for **back-end applications** when managing multiple devices.
-
-To use queries inside a back-end application, import the following classes.
-```python
-from azure.iot.hub.models import QuerySpecification, QueryResult
-```
-
-A query would then be performed in the following way.
-```python
-query_spec = QuerySpecification(query="SELECT * FROM devices WHERE tags.location.plant = 'Redmond43'")
-
-query_result = iothub_registry_manager.query_iot_hub(query_spec, None, 100)
-```
-
-
-> The guide [IoT Hub query language for device and module twins, jobs, and message routing](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-query-language) provides a detailed introduction to the query syntax.
-
-
-You can experiment by using the *Queries* tool in the *Device Management* menu.
-
-![](assets/17-device-twins-query-tool.png)
-
-
-For example, to retrieve device twins located in the US and configured to send telemetry greater than or equal to every minute, use the following query:
-```sql
-SELECT * FROM devices
-  WHERE tags.location.region = 'US'
-    AND properties.reported.telemetryConfig.sendFrequencyInSecs >= 60
-```
-
-
-For instance, to retrieve device twins that define the `connectivity` property use the following query:
-```sql
-SELECT * FROM devices
-  WHERE is_defined(properties.reported.connectivity)
-```
 
 
 ## References
