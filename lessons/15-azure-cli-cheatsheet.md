@@ -45,6 +45,13 @@ az iot hub device-identity connection-string show --device-id {YourDevice}
 az iot device simulate -d simDevice -n {YourIoTHubName}
 ```
 
+By default, this command will:
+
+- Send D2C messages with a payload of `Ping from Az CLI IoT Extension`
+- Automatically receive and acknowledge C2D messages.
+
+See `az iot device simulate` [documentation for details](https://learn.microsoft.com/en-us/cli/azure/iot/device?view=azure-cli-latest#az-iot-device-simulate).
+
 ## Messages
 
 ### Monitor C2D Messages
