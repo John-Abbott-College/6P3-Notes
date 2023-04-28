@@ -162,10 +162,13 @@ Consider the property `telemetryConfig` which is used to configure telemetry col
 
 > An excellent tutorial is provided in [Get started with device twins (Python) - Create the device app](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-python-twin-getstarted#create-the-device-app)
 > 
-> Additionally, there are two examples in the Github repository:
-> *azure-iot-sdk-python/azure-iot-device/samples/*[*sync-samples*](https://github.com/Azure/azure-iot-sdk-python/tree/main/azure-iot-device/samples/sync-samples)
-> - [get_twin.py](https://github.com/Azure/azure-iot-sdk-python/blob/main/azure-iot-device/samples/sync-samples/get_twin.py "get_twin.py")
-> - [update_twin_reported_properties.py](https://github.com/Azure/azure-iot-sdk-python/blob/main/azure-iot-device/samples/sync-samples/update_twin_reported_properties.py "update_twin_reported_properties.py")
+> Additionally, there are two examples in the Github repository (use `v2` branch):
+> 
+> *`azure-iot-sdk-python/azure-iot-device/samples/`*[*sync-samples*](https://github.com/Azure/azure-iot-sdk-python/tree/main/azure-iot-device/samples/sync-samples)
+> 
+> - [get_twin.py](https://github.com/Azure/azure-iot-sdk-python/blob/v2/samples/async-hub-scenarios/get_twin.py)
+> - [update_twin_reported_properties.py](https://github.com/Azure/azure-iot-sdk-python/blob/v2/samples/async-hub-scenarios/update_twin_reported_properties.py)
+
 
 #### Implementation Summary
 
