@@ -2,7 +2,10 @@ desktop.ini
 node_modules/
 __pycache__
 
-#csharp stuff
+# For Python demo code
+.env
+
+# For .NET demo code
 bin/
 obj/
 
