@@ -232,14 +232,36 @@ device_client.shuthdown()
 
 #### Shared Access Policy
 
-The connection string required for the Device Twins back-end is specific to a shared access policy that has the permissions to:
+The connection string for the Device Twins back-end operations requires a **specific shared access policy** that has the permissions to:
 
 - *Registry Read*
 - *Service Connect*
 
 >This is not your Event Hub compatible endpoint connection string.
 
+See image below for setting up a new shared access polity:
+
 ![](assets/17-device-twins-access-permission.png)
+
+### .NET Service Client for Device Twin Updates
+
+The .NET Azure IoT SDK includes two clients for device twin operations:
+
+- `DigitalTwinClient` *(recommended but slightly more complex)*
+- `RegistryManager`
+
+**SDK references:**
+
+| .NET Class        | Documentation                                                                                                                                                         | GitHub Samples                                                                                                                                                                                                              |
+| ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| DigitalTwinClient | [DigitalTwinClient Class](https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.devices.digitaltwinclient?view=azure-dotnet)  | service/samples/ solutions/DigitalTwinClientSamples/[Thermostat/](https://github.com/Azure/azure-iot-sdk-csharp/tree/main/iothub/service/samples/solutions/DigitalTwinClientSamples/Thermostat) |
+| RegistryManager   | [RegistryManager Class](https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.devices.registrymanager?view=azure-dotnet&viewFallbackFrom=azure-dotnet-preview) | service/samples/ how to guides/[RegistryManagerSample](https://github.com/Azure/azure-iot-sdk-csharp/tree/main/iothub/service/samples/how%20to%20guides/RegistryManagerSample)                   | 
+
+
+**Notes:**
+
+- The Twin class has the properties `Twin.Properties.Desired` and `Twin.Properties.Reported`, which returns a [`TwinCollection Class`](https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.devices.shared.twincollection?view=azure-dotnet).
+	- `TwinCollection` class has helper methods to access and manipulate Device Twin properties.
 
 
 ## References

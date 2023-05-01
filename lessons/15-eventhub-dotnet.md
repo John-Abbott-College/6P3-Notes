@@ -37,7 +37,7 @@ A partition can be thought of as a "commit log". Partitions hold event data that
 - Sequence number (number in the stream sequence),
 - User-defined custom properties,
 - System properties,
-	- Such as service-side timestamp at which it was accepted.
+	- Such as service-side timestamp at which the event was accepted.
 
 
 ### Stream offsets
