@@ -29,12 +29,6 @@ By the end of the course, students build and deploy an IoT product that is secur
 - A Microsoft Azure account (create a free [Azure for Students account](https://azure.microsoft.com/en-us/free/students/) if necessary).
 - VS Code configured for Python programming and remote development (see page [Dev Setup](1-vscode-python-setup.md)).
 
-<br>
-
-![Python language logo](./assets/index-python-logo.png ':class=inline-img-fixheight')
-![Raspberry Pi Computer module circuit board](https://images.prismic.io/rpf-products/bfe15853-d10f-4ed9-b9f0-32540bd76e55_CM4%20Featured%20Image.jpg?ixlib=gatsbyFP&auto=compress%2Cformat&fit=max&q=50&w=600&h=400 ':class=inline-img-fixheight')
-![Microsoft Azure logo](./assets/index-azure-logo-400.png ':class=inline-img-fixheight')
-
 ## Source Code
 
 This webpage is written in [Markdown](https://www.markdownguide.org/), built with [Docsify](https://docsify.js.org/) and deployed via [GitHub Pages](https://pages.github.com/) 
