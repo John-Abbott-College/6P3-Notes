@@ -1,6 +1,6 @@
 **Home**
 - [About](/)
-- [Dev Setup](wk1/0-vscode-python-setup.md)
+- [Dev Setup](wk1/vscode-python-setup.md)
 - [Hardware List ](wk1/4-hardware-list.md)
 
 **Lessons Changelog**
