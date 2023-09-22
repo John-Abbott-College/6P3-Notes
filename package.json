@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/maujac/6P3-W22#readme",
   "dependencies": {
-    "docsify-cli": "^4.4.3"
+    "docsify-cli": "^4.4.2"
   }
 }
