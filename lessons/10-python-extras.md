@@ -8,23 +8,6 @@ We'll explore:
 - Asynchronous programming with `asyncio`
 - Passing terminal arguments to a script
 
-## Enable Static Type Checking with Pylance
-
-[Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance) is the default language support for [Python in Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-python.python) extension. Pylance uses the [Pyright](https://github.com/microsoft/pyright) static type checker under the hood to supercharge Python IntelliSense in VS Code.
-
-**Type checking is not enabled by default in Pylance**. To enable it, set the following VS Code configuration:
-
-```json
-{
-  "python.analysis.typeCheckingMode": "basic"
-}
-```
-
-Alternatively, use the VS Code configuration UI:
-
-
-![](../assets/python-pylance-type-check.png)
-
 
 
 ## `__main__` & top-level environment

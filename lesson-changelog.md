@@ -36,7 +36,7 @@ Mar
 - [5-reTerminal Sensors](lessons/5-reterminal-sensors.md)
 
 ## Week 1
-- [4-Linux Review](wk1/3-linux-review.md)
-- [3-Intro to Python](wk1/2-intro-python.md)
+- [4-Linux Review](3-linux-review.md)
+- [3-Intro to Python](1-intro-python.md)
 - [2-Tech Stack](wk1/0-tech-stack.md)
-- [1-What is IoT](wk1/1-what-is-iot.md)
+- [1-What is IoT](1-what-is-iot.md)

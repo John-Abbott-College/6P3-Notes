@@ -1,19 +1,18 @@
 **Home**
 - [About](/)
-- [Dev Setup](wk1/vscode-python-setup.md)
-- [Hardware List ](wk1/4-hardware-list.md)
-
-**Lessons Changelog**
-- [Changelog](lesson-changelog.md)
-
-**Linux Notes**
-- [Git & GitHub](linux-reterminal/git-github.md)
-- [Remote Access](linux-reterminal/linux-bash.md)
+- [Tech Stack](lessons/1-tech-stack.md)
+- [Dev Setup](lessons/1-vscode-python-setup.md)
+- [Hardware List ](lessons/1-hardware-list.md)
 
 **Python**
 - [Python Project Imports](lessons/19-python-projects-imports.md)
 - [Python Extras](lessons/10-python-extras.md)
-- [Intro to Python](wk1/2-intro-python.md)
+- [Intro to Python](https://colab.research.google.com/drive/1w6pGQI2jMATej6Uxg9OmNbOXSZu8moTM?usp=sharing)
+
+**Linux Notes**
+- [Linux Review](lessons/3-linux-review.md)
+- [Git & GitHub](linux-reterminal/git-github.md)
+- [Remote Access](linux-reterminal/linux-bash.md)
 
 **Azure IoT**
 - [Intro to Azure IoT & Tools](lessons/12-intro-azure-iot.md)
@@ -24,24 +23,19 @@
 - [Blob Storage](lessons/16-blob-storage.md)
 - [Device Twin Properties](lessons/17-device-twins.md)
 
-**Week 6**
-- [11-IoT Protocols & MQTT](lessons/11-iot-protocols.md)
+**Sensors & Hardware**
+- [reTerminal Sensors](lessons/5-reterminal-sensors.md)
+- [Analog vs Digital](lessons/6-analog-vs-digital.md)
+- [GPIOs](lessons/7-gpios.md)
+- [Arduino vs Pi](lessons/8-arduino-vs-raspberry-pi.md)
+- [Serial Protocols](lessons/9-serial-protocols.md)
 
-**Week 4**
-- [9-Serial Protocols](lessons/9-serial-protocols.md)
+**Intro to IoT** 
+- [What is IoT](lessons/1-what-is-iot.md)
+- [IoT Protocols & MQTT](lessons/11-iot-protocols.md)
 
-**Week 3**
-- [8-Arduino vs Pi](lessons/8-arduino-vs-raspberry-pi.md)
-- [7-GPIOs](lessons/7-gpios.md)
-- [6-analog-vs-digital](lessons/6-analog-vs-digital.md)
-
-**Week 2**
-- [5-reTerminal Sensors](lessons/5-reterminal-sensors.md)
-
-**Week 1**
-- [4-Linux Review](wk1/3-linux-review.md)
-- [2-Tech Stack](wk1/0-tech-stack.md)
-- [1-What is IoT](wk1/1-what-is-iot.md)
+**Lessons Timeline**
+- [Changelog](lesson-changelog.md)
 
 <!--
 **Week 13**
