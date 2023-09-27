@@ -28,7 +28,7 @@
 - [Analog vs Digital](lessons/6-analog-vs-digital.md)
 - [GPIOs](lessons/7-gpios.md)
 - [Arduino vs Pi](lessons/8-arduino-vs-raspberry-pi.md)
-- [Serial Protocols](lessons/9-serial-protocols.md)
+- [Digital Protocols](lessons/9-serial-protocols.md)
 
 **Intro to IoT** 
 - [What is IoT](lessons/1-what-is-iot.md)
