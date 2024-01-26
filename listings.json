@@ -1,0 +1,46 @@
+[
+  {
+    "listing": "/about/index.html",
+    "items": [
+      "/about/calendar.html",
+      "/about/syllabus.html"
+    ]
+  },
+  {
+    "listing": "/lessons/index.html",
+    "items": [
+      "/lessons/getting-started/hardware-list.html",
+      "/lessons/getting-started/tech-stack.html",
+      "/lessons/getting-started/vscode-python-setup.html",
+      "/lessons/intro-to-iot/what-is-iot.html",
+      "/lessons/linux/linux-review.html",
+      "/lessons/python/intro-python.html"
+    ]
+  },
+  {
+    "listing": "/lessons/getting-started/index.html",
+    "items": [
+      "/lessons/getting-started/tech-stack.html",
+      "/lessons/getting-started/hardware-list.html",
+      "/lessons/getting-started/vscode-python-setup.html"
+    ]
+  },
+  {
+    "listing": "/lessons/intro-to-iot/index.html",
+    "items": [
+      "/lessons/intro-to-iot/what-is-iot.html"
+    ]
+  },
+  {
+    "listing": "/lessons/linux/index.html",
+    "items": [
+      "/lessons/linux/linux-review.html"
+    ]
+  },
+  {
+    "listing": "/lessons/python/index.html",
+    "items": [
+      "/lessons/python/intro-python.html"
+    ]
+  }
+]
