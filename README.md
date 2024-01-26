@@ -1,12 +1,10 @@
-![Banner](assets/art_title_path_only.svg ':size=75%')
- 
-[![CC BY-NC 4.0][cc-by-nc-shield]][cc-by-nc]
+[![][cc-by-nc-shield]][cc-by-nc]
 
-# Welcome to Connected Objects 📡
+# Welcome 📡
 
-> This companion site for the 420-6P3 course includes:
->
-> - Notes
+This companion site for the 420-6P3 course includes:
+
+> - Lecture slides / documents
 > - Exercises
 > - References & Resources
 

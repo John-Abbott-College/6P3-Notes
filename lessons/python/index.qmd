@@ -1,0 +1,7 @@
+---
+title: "Python"
+listing: default
+format:
+  html: default
+format-links: false
+---

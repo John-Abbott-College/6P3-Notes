@@ -1,0 +1,34 @@
+project:
+  type: website
+
+website:
+  title: "Connected Objects"
+  image: "assets/art_title_path_only.svg"
+  favicon: "assets/favicon_io/favicon.ico"
+  site-url: "https://john-abbott-college.github.io/6P3-Notes/"
+  repo-url: "https://github.com/John-Abbott-College/6P3-Notes/"
+  repo-actions: [source, issue]
+  open-graph: true
+  page-navigation: true
+  back-to-top-navigation: true
+  page-footer:
+    center: |
+      &copy; Mauricio Buschinelli 2022-2023; &copy; Michael Haaf 2024
+  sidebar:
+    style: "docked"
+    align: center
+    contents: auto
+
+  navbar: 
+    search: true
+    logo: "assets/favicon_io/favicon-32x32.png"
+
+format:
+  html:
+    css: styles.css
+    toc: true
+    theme:
+      light: flatly
+      dark: darkly
+    date: today
+    date-modified: last-modified
