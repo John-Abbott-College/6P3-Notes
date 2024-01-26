@@ -1,5 +1,3 @@
-[![][cc-by-nc-shield]][cc-by-nc]
-
 # Welcome 📡
 
 This companion site for the 420-6P3 course includes:

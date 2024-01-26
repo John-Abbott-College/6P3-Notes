@@ -7,6 +7,7 @@ website:
   favicon: "assets/favicon_io/favicon.ico"
   site-url: "https://john-abbott-college.github.io/6P3-Notes/"
   repo-url: "https://github.com/John-Abbott-College/6P3-Notes/"
+  repo-branch: winter2024
   repo-actions: [source, issue]
   open-graph: true
   page-navigation: true
