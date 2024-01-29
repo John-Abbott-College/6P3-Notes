@@ -1,5 +1,6 @@
 ---
 title: Intro to the Internet of Things
+order: 1
 ---
 
 ![The Interconnection of communicating devices defines the "Internet of Things"](./assets/iot-banner.webp)
@@ -135,8 +136,9 @@ There are many other Cloud providers such as [IBM Cloud IoT](https://www.ibm.com
 
 ## Exercises
 
-1. Read the Microsoft training module [**Examine the architecture of an IoT solution**](https://learn.microsoft.com/en-us/training/modules/introduction-iot-solution-architecture/)  and complete the Moodle quiz on the module.
+**NOTE:** The exercise below is out of date. We will see IOT learning material later in the course.
 
+1. ~~Read the Microsoft training module [**Examine the architecture of an IoT solution**](https://learn.microsoft.com/en-us/training/modules/introduction-iot-solution-architecture/) and complete the Moodle quiz on the module.~~
 
 ## Diving Deeper
 
