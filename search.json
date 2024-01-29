@@ -523,7 +523,7 @@
     "href": "lessons/intro-to-iot/what-is-iot.html#exercises",
     "title": "Intro to the Internet of Things",
     "section": "6 Exercises",
-    "text": "6 Exercises\n\nRead the Microsoft training module Examine the architecture of an IoT solution and complete the Moodle quiz on the module.",
+    "text": "6 Exercises\nNOTE: The exercise below is out of date. We will see IOT learning material later in the course.\n\nRead the Microsoft training module Examine the architecture of an IoT solution and complete the Moodle quiz on the module.",
     "crumbs": [
       "Lessons",
       "Intro to IoT",
@@ -594,7 +594,7 @@
     "href": "lessons/intro-to-iot/what-is-iot.slides.html#exercises",
     "title": "Intro to the Internet of Things",
     "section": "Exercises",
-    "text": "Exercises\n\nRead the Microsoft training module Examine the architecture of an IoT solution and complete the Moodle quiz on the module."
+    "text": "Exercises\nNOTE: The exercise below is out of date. We will see IOT learning material later in the course.\n\nRead the Microsoft training module Examine the architecture of an IoT solution and complete the Moodle quiz on the module."
   },
   {
     "objectID": "lessons/intro-to-iot/what-is-iot.slides.html#diving-deeper",
@@ -708,7 +708,7 @@
     "href": "lessons/intro-to-iot/index.html",
     "title": "Intro to IoT",
     "section": "",
-    "text": "Intro to Azure IoT & Tools\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIntro to the Internet of Things\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n Back to top",
+    "text": "Intro to the Internet of Things\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIntro to Azure IoT & Tools\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n Back to top",
     "crumbs": [
       "Lessons",
       "Intro to IoT"
