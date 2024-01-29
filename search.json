@@ -264,164 +264,187 @@
     "text": "Review Exercises\n\nA great set of exercises to get started is the game Bandit from OverTheWire.org\n\nTry to reach at least level 5"
   },
   {
-    "objectID": "lessons/intro-to-iot/index.html",
-    "href": "lessons/intro-to-iot/index.html",
-    "title": "Intro to IoT",
+    "objectID": "lessons/intro-to-iot/intro-azure-iot.html",
+    "href": "lessons/intro-to-iot/intro-azure-iot.html",
+    "title": "Intro to Azure IoT & Tools",
     "section": "",
-    "text": "Intro to the Internet of Things\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n Back to top",
+    "text": "From now on, we will deploy and manage our IoT solutions using Microsoft Azure and its Azure IoT platform as a service (PaaS).",
     "crumbs": [
       "Lessons",
-      "Intro to IoT"
+      "Intro to IoT",
+      "Intro to Azure IoT & Tools"
     ]
   },
   {
-    "objectID": "lessons/python/intro-python.html",
-    "href": "lessons/python/intro-python.html",
-    "title": "Intro to Python for Developers",
-    "section": "",
-    "text": "Notes provided on a different platform,\n\nSee Interactive notes in Google Colab.\n\n\n\n\n Back to top",
+    "objectID": "lessons/intro-to-iot/intro-azure-iot.html#platform-as-a-service-paas",
+    "href": "lessons/intro-to-iot/intro-azure-iot.html#platform-as-a-service-paas",
+    "title": "Intro to Azure IoT & Tools",
+    "section": "1 Platform as a Service (PaaS)",
+    "text": "1 Platform as a Service (PaaS)\nPlatform as a service (PaaS) is a complete development and deployment environment in the cloud.\nPaaS Includes: - Infrastructure: - servers, storage, and networking, - Platforms: - development tools, business intelligence services (BI), database management systems, and more.\n\nPaaS is designed to support the complete web application life-cycle: building, testing, deploying, managing, and updating.\n\n\n\n\nCompasion of SaaS, PaaS and IaaS platforms\n\n\n\n SaaS vs PaaS vs IaaS   What is PaaS?, Microsoft.\n\nAdafruit IO (AIO) is a complete software solution but it also included a Python library used for developing a device specific application. AIO is between a software as a service (SaaS) and a PaaS. We did not need to worry about data storage, application logic, authentication, etc.\n\nMoving forward, we will be implementing our IoT solutions using Microsoft Azure as PaaS.\n\nSee more in What is PaaS by azure.microsoft.com",
     "crumbs": [
       "Lessons",
-      "Python",
-      "Intro to Python for Developers"
+      "Intro to IoT",
+      "Intro to Azure IoT & Tools"
     ]
   },
   {
-    "objectID": "lessons/index.html",
-    "href": "lessons/index.html",
-    "title": "Lessons",
-    "section": "",
-    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\nTitle\n\n\nSubtitle\n\n\n\n\n\n\n \n\n\nIntro to Python for Developers\n\n\nPython exercises\n\n\n\n\n \n\n\nIntro to the Internet of Things\n\n\n \n\n\n\n\n \n\n\nLinux review\n\n\nResources and references to brush up linux knowledge.\n\n\n\n\n \n\n\nHardware List\n\n\nList of hardware available for the course as well as their respective specifications and documentation.\n\n\n\n\n \n\n\nTechnology Stack\n\n\nTechnologies used in this class\n\n\n\n\n \n\n\nDeveloper setup\n\n\nHere’s how to set up the software that will be used for development during the course.\n\n\n\n\n\nNo matching items\n\n Back to top",
-    "crumbs": [
-      "Lessons"
-    ]
-  },
-  {
-    "objectID": "about/calendar.html",
-    "href": "about/calendar.html",
-    "title": "Calendar",
-    "section": "",
-    "text": "Coming soon!\n\n\n\n Back to top",
-    "crumbs": [
-      "About",
-      "Calendar"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Home",
-    "section": "",
-    "text": "This companion site for the 420-6P3 course includes:\n\n\nLecture slides / documents\nExercises\nReferences & Resources\n\n\nWebsite accessible at john-abbott-college.github.io/6P3-Notes\n\n\nThis course will introduce students to the principles of the Internet of Things (IoT). Students will use Linux and Python to program a Raspberry Pi in order to read data from sensors and control actuators.\nBy the end of the course, students build and deploy an IoT product that is securely connected to the Azure ecosystem in order to collect and analyse telemetry data as well as respond to remote commands.\n\n\n\n\nExperience using Object Oriented Programming to create applications in any language.\nFamiliarity using the Bash shell and basic Linux CLI.\nFamiliarity with Python.\nA Raspberry Pi with various sensors and actuators (see page Hardware List).\nA Microsoft Azure account (create a free Azure for Students account if necessary).\nVS Code configured for Python programming and remote development (see page Dev Setup).\n\n\n\n\nThis webpage is written in Markdown, built with Docsify and deployed via GitHub Pages\nSource code is open source and available on GitHub.\n\n\nCreate a local copy of these notes:\n\nClone the GitHub repository listed above\nFrom the command-line, navigate to the repository folder named 6P3-Notes\nStart a simple python web-server inside the 6P3-Notes folder (make sure python3 is installed)\npython -m http.server\n\n\nThis work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.\n\n\n\nCC BY-NC 4.0"
-  },
-  {
-    "objectID": "index.html#description",
-    "href": "index.html#description",
-    "title": "Home",
-    "section": "",
-    "text": "This course will introduce students to the principles of the Internet of Things (IoT). Students will use Linux and Python to program a Raspberry Pi in order to read data from sensors and control actuators.\nBy the end of the course, students build and deploy an IoT product that is securely connected to the Azure ecosystem in order to collect and analyse telemetry data as well as respond to remote commands."
-  },
-  {
-    "objectID": "index.html#requirements",
-    "href": "index.html#requirements",
-    "title": "Home",
-    "section": "",
-    "text": "Experience using Object Oriented Programming to create applications in any language.\nFamiliarity using the Bash shell and basic Linux CLI.\nFamiliarity with Python.\nA Raspberry Pi with various sensors and actuators (see page Hardware List).\nA Microsoft Azure account (create a free Azure for Students account if necessary).\nVS Code configured for Python programming and remote development (see page Dev Setup)."
-  },
-  {
-    "objectID": "index.html#source-code",
-    "href": "index.html#source-code",
-    "title": "Home",
-    "section": "",
-    "text": "This webpage is written in Markdown, built with Docsify and deployed via GitHub Pages\nSource code is open source and available on GitHub.\n\n\nCreate a local copy of these notes:\n\nClone the GitHub repository listed above\nFrom the command-line, navigate to the repository folder named 6P3-Notes\nStart a simple python web-server inside the 6P3-Notes folder (make sure python3 is installed)\npython -m http.server\n\n\nThis work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.\n\n\n\nCC BY-NC 4.0"
-  },
-  {
-    "objectID": "about/index.html",
-    "href": "about/index.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site\n\n\n\n\n\n\n\n\n\n\n\n\nCalendar\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSyllabus\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n Back to top",
-    "crumbs": [
-      "About"
-    ]
-  },
-  {
-    "objectID": "about/syllabus.html",
-    "href": "about/syllabus.html",
-    "title": "Syllabus",
-    "section": "",
-    "text": "Coming soon!\n\n\n\n Back to top",
-    "crumbs": [
-      "About",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "lessons/python/index.html",
-    "href": "lessons/python/index.html",
-    "title": "Python",
-    "section": "",
-    "text": "Intro to Python for Developers\n\n\nPython exercises\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n Back to top",
+    "objectID": "lessons/intro-to-iot/intro-azure-iot.html#iot-subsystems",
+    "href": "lessons/intro-to-iot/intro-azure-iot.html#iot-subsystems",
+    "title": "Intro to Azure IoT & Tools",
+    "section": "2 IoT Subsystems",
+    "text": "2 IoT Subsystems\nWe can breakdown an IoT solution into subsystems and explore how information flows between them: \n\n Subsystems of IoT architecture   Examine systems of an IoT architecture, Microsoft.\n\nIoT Devices: - The physical devices and sensors where data originates.\nCloud Gateway: - The Cloud Gateway provides a cloud hub for secure connectivity, telemetry, event ingestion and device management (including command and control) capabilities.\nStream Processing: - Processes large streams of data records, evaluates rules for those streams, and further routes the data.\nStorage: - Storage can be divided into warm path (data that is required to be available for reporting and visualization immediately from devices), and cold path (data that is stored longer term and used for batch processing).\nUser Interface and Reporting: - The user interface for an IoT application can be delivered on a wide array of device types, in native applications, and browsers.\nBusiness Process Integration: - Facilitates executing actions based on insights garnered from device telemetry data during stream processing. Integration could include storage of informational messages, alarms, sending email or SMS, integration with CRM, and more.\n\nWe will use Microsoft Azure to manage each sub-system individually.",
     "crumbs": [
       "Lessons",
-      "Python"
+      "Intro to IoT",
+      "Intro to Azure IoT & Tools"
     ]
   },
   {
-    "objectID": "lessons/intro-to-iot/what-is-iot.slides.html#internet-of-things-iot",
-    "href": "lessons/intro-to-iot/what-is-iot.slides.html#internet-of-things-iot",
-    "title": "Intro to the Internet of Things",
-    "section": "Internet of Things (IoT)",
-    "text": "Internet of Things (IoT)\nThe Internet of Things (IoT) is comprised of equipment, machines, products, and devices that are connected to the cloud and periodically collect, send and/or receive data.\n\nIoT refers to the entire network of:\n\nphysical devices,\ntools,\nequipment, and\nsmart objects\n\nThese objects have the capability to collect and share data about:\n\nhow they are used\nthe environment around them\n\nIoT devices can also receive commands or updates via the cloud."
+    "objectID": "lessons/intro-to-iot/intro-azure-iot.html#azure-iot-services",
+    "href": "lessons/intro-to-iot/intro-azure-iot.html#azure-iot-services",
+    "title": "Intro to Azure IoT & Tools",
+    "section": "3 Azure IoT Services",
+    "text": "3 Azure IoT Services\nAzure offers many IoT-related services (see image below). In this course we’ll only explore a few.\n Azure IoT Reference Architecture, Microsoft learn",
+    "crumbs": [
+      "Lessons",
+      "Intro to IoT",
+      "Intro to Azure IoT & Tools"
+    ]
   },
   {
-    "objectID": "lessons/intro-to-iot/what-is-iot.slides.html#why-collect-all-this-data",
-    "href": "lessons/intro-to-iot/what-is-iot.slides.html#why-collect-all-this-data",
-    "title": "Intro to the Internet of Things",
-    "section": "Why collect all this data?",
-    "text": "Why collect all this data?\nBy analyzing the data collected by these connected objects, users and organisations can make informed decisions in near real-time and automate tightly integrated processes. This avoids decision making based on limited or out-dated data.\nThis data can create quick feedback loops for automation. Data from one object can trigger actions or control several other objects with timing and precision that could not be achieved by humans."
+    "objectID": "lessons/intro-to-iot/intro-azure-iot.html#iot-hub-iot-central",
+    "href": "lessons/intro-to-iot/intro-azure-iot.html#iot-hub-iot-central",
+    "title": "Intro to Azure IoT & Tools",
+    "section": "4 IoT Hub & IoT Central",
+    "text": "4 IoT Hub & IoT Central\nMicrosoft Azure has two service offers for deploying and managing IoT systems: IoT Hub and IoT Central.\n\nThe page Overview: Connection options for Azure IoT device developers offers a great summary and comparison between IoT Hub and IoT Central.\n\n\n4.1 IoT Central\nAzure IoT Central is a software-as-a-service (SaaS) application that provides a complete platform for hosting IoT applications. Its main feature is a web UI that streamlines the lifecycle of creating and managing IoT applications.\nThe web UI simplifies the tasks of creating applications, and connecting and managing from a few up to millions of devices.\nThis service has a limited free plan (2 devices with 5000 messages per month). Pricing available here.\nSee official site for details or watch the walk-through for an example.\n\nWe will not use IoT Central in this course because we’ll connect the underlying Azure services ourselves.\n\n\n\n4.2 IoT Hub\nIoT Hub is a platform-as-a-service (PaaS) application that also provides a platform for hosting IoT applications. IoT Hub acts as a central message hub for bi-directional communication between IoT applications and connected devices.\nIoT Hub offers greater control and customization over your application design, and more developer tool options for working with the service. However, it requires more development time and slightly more management complexity.\nThis service also offers a more generous free plan (500 devices with 8000 messages per day).\nSee official site for details and pricing.",
+    "crumbs": [
+      "Lessons",
+      "Intro to IoT",
+      "Intro to Azure IoT & Tools"
+    ]
   },
   {
-    "objectID": "lessons/intro-to-iot/what-is-iot.slides.html#iot-examples",
-    "href": "lessons/intro-to-iot/what-is-iot.slides.html#iot-examples",
-    "title": "Intro to the Internet of Things",
-    "section": "IoT Examples",
-    "text": "IoT Examples\nThe use of IoT can be organised in two fields of application:\n\nIndustrial IoT (IIoT)\nConsumer IoT\n\n\n\n\nExamples of industrial and consumer iot applications\n\n\n\n The Internet of Things and its Benefit to U.S. Water Customer    in kuritaamerica.com\n\nConsumer IoT\nExamples of consumer IoT are:\n\nHome Security: Sensors, alarms, cameras, lights, and microphones provide 24/7 security and surveillance. All of which can be controlled from a smart phone.\nSmart Home: Smart lighting, heating and sound systems can be automated to detect human present or receive instructions remotely. Voice Assistants can also control house appliances or and provide information.\nWearables: Smartwatches and fitness trackers can monitor blood pressure or heart rate, and physical activity and suggest workouts, breaks or medical assistance.\nAppliances: Smart fridges can keep track of food quantities and expiry dates and create shopping lists accordingly. Smart outlet plugs can measure electrical consumption and turn other appliances on/off.\n\nIndustrial IoT (IIoT)\nMost people tend to first think of IoT as consumer devices. However, their main value added happens in industrial applications.\n\n\nHow Industrial Internet of Things are impacting our lives by Bluechip Infocorp Pvt Ltd via Medium.\n\nIndustrial IoT Examples:\n\nEquipment Maintenance: Rolls-Royce’s Total Care provides a suite of predictive maintenance and repair services for its jet engines, including monitoring engine health, and modifying engines to increase reliability and durability.\nFarming: John Deere is building intelligence into its large tractors and sprayers through sensors that make the machines into mobile platforms capable of self-driving.\nHeavy Machinery & Transportation: Rio Tinto, a global mining company uses a remote command center to orchestrate the actions of huge drills, excavators, trains, and trucks across multiple mining sites.\nRenewable Energies: Iberdrola and Siemens are using IoT to optimize the operation and maintenance of offshore wind power farms, the lifetime extension of wind turbines and the reducing the cost of energy.\nFacilities Management: Monitoring of buildings, infrastructure, and other spaces, allow to improve energy efficiency, space utilization, productivity, and safety. These insights may help:\n\nsave money by automating lighting or optimizing heating and cooling cycles.\nIncrease employee or occupant satisfaction by keep equipment running or ensuring that supplies are stocked."
+    "objectID": "lessons/intro-to-iot/intro-azure-iot.html#iot-hub-documentation",
+    "href": "lessons/intro-to-iot/intro-azure-iot.html#iot-hub-documentation",
+    "title": "Intro to Azure IoT & Tools",
+    "section": "5 IoT Hub Documentation",
+    "text": "5 IoT Hub Documentation\n\nAzure IoT Hub Documentation hosts most of the documentation we will be using.\nPlease get familiar with the left-hand menu, including the “Quickstarts” and “How-to guides”",
+    "crumbs": [
+      "Lessons",
+      "Intro to IoT",
+      "Intro to Azure IoT & Tools"
+    ]
   },
   {
-    "objectID": "lessons/intro-to-iot/what-is-iot.slides.html#high-level-components-of-an-iot-system",
-    "href": "lessons/intro-to-iot/what-is-iot.slides.html#high-level-components-of-an-iot-system",
-    "title": "Intro to the Internet of Things",
-    "section": "High-level Components of an IoT System",
-    "text": "High-level Components of an IoT System\nIoT systems are compromised of five high-level components:\n\nSensors:\n\nCollect data from the device’s environment (eg. velocity, GPS coordinates, temperature, etc).\nSensors might use different communication protocols.\n\nIoT Devices are computing devices that have:\n\nAbility to securely register with the cloud;\nConnectivity options for sending and receiving data with the cloud.\n\nCloud Gateway / Hub:\n\nSecurely ingests and sends data or commands to devices;\nOffers device management (provisioning) services (add, remove, update, group, etc).\n\nData Processing:\n\nData validation;\nIntegrate with business processes (check thresholds, send alerts, trigger action)\nPlace data in Storage;\nRetrieve data from Storage for deeper / long-term analysis;\n\nUser Interface:\n\nData visualization;\nTrigger manual actions;\nConfigure automatic actions;\nFacilitate device management.\n\n\n\nIcons of IoT High level components"
+    "objectID": "lessons/intro-to-iot/intro-azure-iot.html#azure-resource-group-zones",
+    "href": "lessons/intro-to-iot/intro-azure-iot.html#azure-resource-group-zones",
+    "title": "Intro to Azure IoT & Tools",
+    "section": "6 Azure Resource Group & Zones",
+    "text": "6 Azure Resource Group & Zones\nA resource group is a “container” that holds related resources for an Azure solution (such as your IoT system).\nThe resource group can include all or a subset of the resources for the solution. You decide how to allocate resources to resource groups based on what makes sense for your organization. Generally, group resources share the same lifecycle (deploy, update, and delete).\n\nAzure resources and their groups must be deployed to a particular region.\nTo create a resource group see guide Manage Azure resource groups by using the Azure portal\n\n\n6.1 Azure Regions\nAzure operates in multiple datacenters around the world. These datacenters are grouped in to geographic regions.\nTo see a list of all Azure regions see azure geographies.\n\n\n\nAzure infrastructure map\n\n\n\n Map of Azure Regions (2017)   Thomas Poppelgaard.\n\nCanada has two Azure regions:\n\nCanada Central: located in Toronto (with 3 zones).\nCanada East: located in Quebec City (no zones).\n\n\nSome services are only available in certain regions. For example, Azure IoT Central is not available in the Canada East region.\n\n\n\n6.2 Azure Zones\nAzure availability zones are physically separate locations within each Azure region that are tolerant to local failures.\nTolerance to failures is achieved because of redundancy and logical isolation of Azure services. To ensure resiliency, a minimum of three separate availability zones are present in all availability zone-enabled regions.\n\n\n Azure region with 3 zones and one disaster recovery location.   Regions and availability zones, Mocrosoft.",
+    "crumbs": [
+      "Lessons",
+      "Intro to IoT",
+      "Intro to Azure IoT & Tools"
+    ]
   },
   {
-    "objectID": "lessons/intro-to-iot/what-is-iot.slides.html#iot-cloud-service-providers",
-    "href": "lessons/intro-to-iot/what-is-iot.slides.html#iot-cloud-service-providers",
-    "title": "Intro to the Internet of Things",
-    "section": "IoT Cloud Service Providers",
-    "text": "IoT Cloud Service Providers\nSince IoT objects typically move around, connectivity and data collection need to happen over wide geographical areas.\nMost companies do not want to deal with setting-up the physical infrastructure and software required to have this level of distributed connectivity and reliability (servers, databases, backup systems, networking, container orchestration, etc).\nIt is typically far more practical and cost-effective to use the services of an established IoT Cloud Service Provider.\nThe three main Cloud Service Providers in the IoT space are:\n\nAmazon Web Services (AWS)\nMicrosoft Azure\nGoogle Cloud\n\n\nThere are many other Cloud providers such as IBM Cloud IoT and Oracle IoT.\n\nIn this course we will focus on Microsoft Azure. However, all three platforms offer similar functionality."
+    "objectID": "lessons/intro-to-iot/intro-azure-iot.html#azure-iot-dev-tools",
+    "href": "lessons/intro-to-iot/intro-azure-iot.html#azure-iot-dev-tools",
+    "title": "Intro to Azure IoT & Tools",
+    "section": "7 Azure IoT Dev Tools",
+    "text": "7 Azure IoT Dev Tools\nAzure offers several developer tools to create, manage and connect to the IoT Hub service.\nSome tools have nearly the same functionality. Choose the one that best works for you.\n\n7.1 Azure Portal\nThe Azure Portal is a browser-based portal for IoT Hub and devices. Also works with other Azure resources including IoT Central.\n\n\n\nDocumentation\nQuick Start\nIoT Example\n\n\n\n\n\nAzure portal documentation\nWhat is the Azure portal?\nCreate an IoT hub with Azure portal\n\n\n\n\n\n\n\n7.2 Azure CLI, Cloud Shell & IoT Extension\nAzure CLI is a terminal tool to manage Azure services offered as Bash and PowerShell shells.\n\n\n\nDocumentation\nQuick Start\nIoT Example\n\n\n\n\n\nAzure CLI documentation\nGet started with Azure CLI\nCreate an IoT hub with CLI\n\n\n\n\nAzure CLI can be installed in your local machine or run from the browser via the Cloud Shell (see below).\n\nTo use it locally, see Install Azure CLI.\n\n\n7.2.1 Cloud Shell\nAzure Cloud Shell is the ability to run the Azure CLI directly in the browser (most convenient).\n\n\n\nDocumentation\nQuick Start\nIoT Example\n\n\n\n\nFeatures & tools for Azure Cloud Shell\nQuickstart for Azure Cloud Shell\nSame examples as Azure CLI\n\n\n\nStart the Cloud Shell from anywhere in the Azure portal by clicking on it Cloud Shell icon (below):\n \nThe first time you start the Azure Cloud Shell you will be asked to setup an account.\n\n\n\n7.3 Azure IoT extension for Azure CLI\nAzure CLI uses “extensions” in order to manage different Azure services.\nThe Azure IoT extension uses the sub-command az iot to control IoT related sevices.\n\n\n\nGitHub Repo\nDocumentation\nIoT Examples\n\n\n\n\nazure-iot-cli-extension\nList of az iot hub commands\nSame examples as Azure CLI\n\n\n\n\n\n7.4 Azure IoT Tools for VS Code\nThere is a VS Code extension to test and mange IoT Hub services.\n\n\n\nGitHub Repo\nDocumentation\nIoT Examples\n\n\n\n\nvscode-azure-iot-toolkit\nWiki page\nCreate an IoT hub using the Azure IoT Tools for Visual Studio Code\n\n\n\n\n\n7.5 IoT Explorer & PowerShell\nTwo other tools worth mentioning but less used in this course:\n\n\n\nTool\nDescription\nDocumentation\n\n\n\n\nAzure IoT Explorer\nConnects to an existing IoT hub to manage devices. Cannot create IoT hubs. Often used with CLI or Portal.\nAzure IoT Explorer\n\n\nAzure PowerShell\nPowerShell interface for creating and managing IoT applications\nCreate an IoT hub with PowerShell",
+    "crumbs": [
+      "Lessons",
+      "Intro to IoT",
+      "Intro to Azure IoT & Tools"
+    ]
   },
   {
-    "objectID": "lessons/intro-to-iot/what-is-iot.slides.html#exercises",
-    "href": "lessons/intro-to-iot/what-is-iot.slides.html#exercises",
-    "title": "Intro to the Internet of Things",
-    "section": "Exercises",
-    "text": "Exercises\n\nRead the Microsoft training module Examine the architecture of an IoT solution and complete the Moodle quiz on the module."
+    "objectID": "lessons/intro-to-iot/intro-azure-iot.html#azure-account",
+    "href": "lessons/intro-to-iot/intro-azure-iot.html#azure-account",
+    "title": "Intro to Azure IoT & Tools",
+    "section": "8 Azure Account",
+    "text": "8 Azure Account\nStudents get $100 of credit for 12 months and free developer tools without a credit card.\n\nCreate an account and see details here.\n\nThe student account can be renewed annually (including $100 credits) for as long as you are a student.\nMost things we’ll do with Azure will use free services. We will occasionally use some of your free credits (~$20).\n\n8.1 Checking your balance 💸\nAs you experiment with Azure you might want to know your current balance.\nTL:DR 1. Sign in to the Azure portn in to the Azure portal.al. 2. Search for Cost Management \n\nSelect Payment methods\nCheck your Azure credits panel.\n\n\n\n\nCredit check panel in Azure\n\n\nFor details check Track Microsoft Customer Agreement Azure credit balance\n\n\n8.2 Budget Alerts\nIt’s possible to setup email alerts when your Azure spending exceeds a dollar threshold. This avoids unexpected spending of Azure credits.\nThere are two approaches to setting up a Budget in the Azure Portal:\n\nOpen the panel (aka “blade”) for the Resource Group in question, and then create a new Budget for that group.\nCreate a Budget for your account under Cost Management + Billing and then apply a filter according to ResourceGroupName in order to target a specific Resource Group.\n\nThe first approach involves a few less steps so it is described below.\n\n\nFor information on creating a budget from the Cost Management blade, see How to set up Azure budget alerts by TechTarget.com.\nFor details on using and managing budgets, see official tutorial: Create and manage Azure budgets.\n\n\n\n8.2.1 Create a Budget for a Resource Group\n\nIn the Azure Portal Home, select the Resource groups service.\nSelect the resource group you want to monitor with a budget.\nIn the left panel, select Budgets under the Cost Management group and select Add.\n\n\n\n\nMenu for creating a budget for a resource group\n\n\n\nGive your budget a name and an amount.\n\n\n\nSelect the percent spending for the alert and the email to receive the notification.\nClick Create.",
+    "crumbs": [
+      "Lessons",
+      "Intro to IoT",
+      "Intro to Azure IoT & Tools"
+    ]
   },
   {
-    "objectID": "lessons/intro-to-iot/what-is-iot.slides.html#diving-deeper",
-    "href": "lessons/intro-to-iot/what-is-iot.slides.html#diving-deeper",
-    "title": "Intro to the Internet of Things",
-    "section": "Diving Deeper",
-    "text": "Diving Deeper\nVideo (15:19): The 7 Principles of the IoT by Tom Bradicich\n\nIn depth explanation of the integration between IoT sub-systems and opportunities from a technical and business perspective."
+    "objectID": "lessons/intro-to-iot/intro-azure-iot.html#demo-iot-hub-device-telemetry-data",
+    "href": "lessons/intro-to-iot/intro-azure-iot.html#demo-iot-hub-device-telemetry-data",
+    "title": "Intro to Azure IoT & Tools",
+    "section": "9 Demo: IoT Hub & Device telemetry data",
+    "text": "9 Demo: IoT Hub & Device telemetry data\nIn-class demo to illustrate the process of:\n\nCreating an resource group\nCreating an IoT Hub\nDefining a new device\nUse Azure CLI and Azure IoT Tools for VS Code to:\n\nSimulate device data and send it to IoT Hub\nMonitor data incoming data in IoT Hub\n\n\nThis demo is based on the following guides: - Quickstart: Send telemetry from a device to an IoT hub and monitor it with the Azure CLI - Quickstart: Send telemetry from an IoT Plug and Play device to Azure IoT Hub",
+    "crumbs": [
+      "Lessons",
+      "Intro to IoT",
+      "Intro to Azure IoT & Tools"
+    ]
   },
   {
-    "objectID": "lessons/intro-to-iot/what-is-iot.slides.html#references",
-    "href": "lessons/intro-to-iot/what-is-iot.slides.html#references",
-    "title": "Intro to the Internet of Things",
-    "section": "References",
-    "text": "References\n\nWhat is IoT by Microsoft Azure.\nHow Industrial Internet of Things are impacting our lives by Bluechip Infocorp Pvt Ltd via Medium.\nAn Introduction to the Internet of Things by Pier Paolo Ippolito via FreeCodeCamp Blog."
+    "objectID": "lessons/intro-to-iot/intro-azure-iot.slides.html#platform-as-a-service-paas",
+    "href": "lessons/intro-to-iot/intro-azure-iot.slides.html#platform-as-a-service-paas",
+    "title": "Intro to Azure IoT & Tools",
+    "section": "Platform as a Service (PaaS)",
+    "text": "Platform as a Service (PaaS)\nPlatform as a service (PaaS) is a complete development and deployment environment in the cloud.\nPaaS Includes: - Infrastructure: - servers, storage, and networking, - Platforms: - development tools, business intelligence services (BI), database management systems, and more.\n\nPaaS is designed to support the complete web application life-cycle: building, testing, deploying, managing, and updating.\n\n\nCompasion of SaaS, PaaS and IaaS platforms\n SaaS vs PaaS vs IaaS   What is PaaS?, Microsoft.\n\nAdafruit IO (AIO) is a complete software solution but it also included a Python library used for developing a device specific application. AIO is between a software as a service (SaaS) and a PaaS. We did not need to worry about data storage, application logic, authentication, etc.\n\nMoving forward, we will be implementing our IoT solutions using Microsoft Azure as PaaS.\n\nSee more in What is PaaS by azure.microsoft.com"
+  },
+  {
+    "objectID": "lessons/intro-to-iot/intro-azure-iot.slides.html#iot-subsystems",
+    "href": "lessons/intro-to-iot/intro-azure-iot.slides.html#iot-subsystems",
+    "title": "Intro to Azure IoT & Tools",
+    "section": "IoT Subsystems",
+    "text": "IoT Subsystems\nWe can breakdown an IoT solution into subsystems and explore how information flows between them: \n\n Subsystems of IoT architecture   Examine systems of an IoT architecture, Microsoft.\n\nIoT Devices: - The physical devices and sensors where data originates.\nCloud Gateway: - The Cloud Gateway provides a cloud hub for secure connectivity, telemetry, event ingestion and device management (including command and control) capabilities.\nStream Processing: - Processes large streams of data records, evaluates rules for those streams, and further routes the data.\nStorage: - Storage can be divided into warm path (data that is required to be available for reporting and visualization immediately from devices), and cold path (data that is stored longer term and used for batch processing).\nUser Interface and Reporting: - The user interface for an IoT application can be delivered on a wide array of device types, in native applications, and browsers.\nBusiness Process Integration: - Facilitates executing actions based on insights garnered from device telemetry data during stream processing. Integration could include storage of informational messages, alarms, sending email or SMS, integration with CRM, and more.\n\nWe will use Microsoft Azure to manage each sub-system individually."
+  },
+  {
+    "objectID": "lessons/intro-to-iot/intro-azure-iot.slides.html#azure-iot-services",
+    "href": "lessons/intro-to-iot/intro-azure-iot.slides.html#azure-iot-services",
+    "title": "Intro to Azure IoT & Tools",
+    "section": "Azure IoT Services",
+    "text": "Azure IoT Services\nAzure offers many IoT-related services (see image below). In this course we’ll only explore a few.\n Azure IoT Reference Architecture, Microsoft learn"
+  },
+  {
+    "objectID": "lessons/intro-to-iot/intro-azure-iot.slides.html#iot-hub-iot-central",
+    "href": "lessons/intro-to-iot/intro-azure-iot.slides.html#iot-hub-iot-central",
+    "title": "Intro to Azure IoT & Tools",
+    "section": "IoT Hub & IoT Central",
+    "text": "IoT Hub & IoT Central\nMicrosoft Azure has two service offers for deploying and managing IoT systems: IoT Hub and IoT Central.\n\nThe page Overview: Connection options for Azure IoT device developers offers a great summary and comparison between IoT Hub and IoT Central.\n\nIoT Central\nAzure IoT Central is a software-as-a-service (SaaS) application that provides a complete platform for hosting IoT applications. Its main feature is a web UI that streamlines the lifecycle of creating and managing IoT applications.\nThe web UI simplifies the tasks of creating applications, and connecting and managing from a few up to millions of devices.\nThis service has a limited free plan (2 devices with 5000 messages per month). Pricing available here.\nSee official site for details or watch the walk-through for an example.\n\nWe will not use IoT Central in this course because we’ll connect the underlying Azure services ourselves.\n\nIoT Hub\nIoT Hub is a platform-as-a-service (PaaS) application that also provides a platform for hosting IoT applications. IoT Hub acts as a central message hub for bi-directional communication between IoT applications and connected devices.\nIoT Hub offers greater control and customization over your application design, and more developer tool options for working with the service. However, it requires more development time and slightly more management complexity.\nThis service also offers a more generous free plan (500 devices with 8000 messages per day).\nSee official site for details and pricing."
+  },
+  {
+    "objectID": "lessons/intro-to-iot/intro-azure-iot.slides.html#iot-hub-documentation",
+    "href": "lessons/intro-to-iot/intro-azure-iot.slides.html#iot-hub-documentation",
+    "title": "Intro to Azure IoT & Tools",
+    "section": "IoT Hub Documentation",
+    "text": "IoT Hub Documentation\n\nAzure IoT Hub Documentation hosts most of the documentation we will be using.\nPlease get familiar with the left-hand menu, including the “Quickstarts” and “How-to guides”"
+  },
+  {
+    "objectID": "lessons/intro-to-iot/intro-azure-iot.slides.html#azure-resource-group-zones",
+    "href": "lessons/intro-to-iot/intro-azure-iot.slides.html#azure-resource-group-zones",
+    "title": "Intro to Azure IoT & Tools",
+    "section": "Azure Resource Group & Zones",
+    "text": "Azure Resource Group & Zones\nA resource group is a “container” that holds related resources for an Azure solution (such as your IoT system).\nThe resource group can include all or a subset of the resources for the solution. You decide how to allocate resources to resource groups based on what makes sense for your organization. Generally, group resources share the same lifecycle (deploy, update, and delete).\n\nAzure resources and their groups must be deployed to a particular region.\nTo create a resource group see guide Manage Azure resource groups by using the Azure portal\n\nAzure Regions\nAzure operates in multiple datacenters around the world. These datacenters are grouped in to geographic regions.\nTo see a list of all Azure regions see azure geographies.\n\n\n\nAzure infrastructure map\n\n\n\n Map of Azure Regions (2017)   Thomas Poppelgaard.\n\nCanada has two Azure regions:\n\nCanada Central: located in Toronto (with 3 zones).\nCanada East: located in Quebec City (no zones).\n\n\nSome services are only available in certain regions. For example, Azure IoT Central is not available in the Canada East region.\n\nAzure Zones\nAzure availability zones are physically separate locations within each Azure region that are tolerant to local failures.\nTolerance to failures is achieved because of redundancy and logical isolation of Azure services. To ensure resiliency, a minimum of three separate availability zones are present in all availability zone-enabled regions.\n\n\n Azure region with 3 zones and one disaster recovery location.   Regions and availability zones, Mocrosoft."
+  },
+  {
+    "objectID": "lessons/intro-to-iot/intro-azure-iot.slides.html#azure-iot-dev-tools",
+    "href": "lessons/intro-to-iot/intro-azure-iot.slides.html#azure-iot-dev-tools",
+    "title": "Intro to Azure IoT & Tools",
+    "section": "Azure IoT Dev Tools",
+    "text": "Azure IoT Dev Tools\nAzure offers several developer tools to create, manage and connect to the IoT Hub service.\nSome tools have nearly the same functionality. Choose the one that best works for you.\nAzure Portal\nThe Azure Portal is a browser-based portal for IoT Hub and devices. Also works with other Azure resources including IoT Central.\n\n\n\nDocumentation\nQuick Start\nIoT Example\n\n\n\n\n\nAzure portal documentation\nWhat is the Azure portal?\nCreate an IoT hub with Azure portal\n\n\n\n\n\nAzure CLI, Cloud Shell & IoT Extension\nAzure CLI is a terminal tool to manage Azure services offered as Bash and PowerShell shells.\n\n\n\nDocumentation\nQuick Start\nIoT Example\n\n\n\n\n\nAzure CLI documentation\nGet started with Azure CLI\nCreate an IoT hub with CLI\n\n\n\n\nAzure CLI can be installed in your local machine or run from the browser via the Cloud Shell (see below).\n\nTo use it locally, see Install Azure CLI.\n\nCloud Shell\nAzure Cloud Shell is the ability to run the Azure CLI directly in the browser (most convenient).\n\n\n\nDocumentation\nQuick Start\nIoT Example\n\n\n\n\nFeatures & tools for Azure Cloud Shell\nQuickstart for Azure Cloud Shell\nSame examples as Azure CLI\n\n\n\nStart the Cloud Shell from anywhere in the Azure portal by clicking on it Cloud Shell icon (below):\n \nThe first time you start the Azure Cloud Shell you will be asked to setup an account.\nAzure IoT extension for Azure CLI\nAzure CLI uses “extensions” in order to manage different Azure services.\nThe Azure IoT extension uses the sub-command az iot to control IoT related sevices.\n\n\n\nGitHub Repo\nDocumentation\nIoT Examples\n\n\n\n\nazure-iot-cli-extension\nList of az iot hub commands\nSame examples as Azure CLI\n\n\n\nAzure IoT Tools for VS Code\nThere is a VS Code extension to test and mange IoT Hub services.\n\n\n\nGitHub Repo\nDocumentation\nIoT Examples\n\n\n\n\nvscode-azure-iot-toolkit\nWiki page\nCreate an IoT hub using the Azure IoT Tools for Visual Studio Code\n\n\n\nIoT Explorer & PowerShell\nTwo other tools worth mentioning but less used in this course:\n\n\n\nTool\nDescription\nDocumentation\n\n\n\n\nAzure IoT Explorer\nConnects to an existing IoT hub to manage devices. Cannot create IoT hubs. Often used with CLI or Portal.\nAzure IoT Explorer\n\n\nAzure PowerShell\nPowerShell interface for creating and managing IoT applications\nCreate an IoT hub with PowerShell"
+  },
+  {
+    "objectID": "lessons/intro-to-iot/intro-azure-iot.slides.html#azure-account",
+    "href": "lessons/intro-to-iot/intro-azure-iot.slides.html#azure-account",
+    "title": "Intro to Azure IoT & Tools",
+    "section": "Azure Account",
+    "text": "Azure Account\nStudents get $100 of credit for 12 months and free developer tools without a credit card.\n\nCreate an account and see details here.\n\nThe student account can be renewed annually (including $100 credits) for as long as you are a student.\nMost things we’ll do with Azure will use free services. We will occasionally use some of your free credits (~$20).\nChecking your balance 💸\nAs you experiment with Azure you might want to know your current balance.\nTL:DR 1. Sign in to the Azure portn in to the Azure portal.al. 2. Search for Cost Management \n\nSelect Payment methods\nCheck your Azure credits panel.\n\n\n\n\nCredit check panel in Azure\n\n\nFor details check Track Microsoft Customer Agreement Azure credit balance\nBudget Alerts\nIt’s possible to setup email alerts when your Azure spending exceeds a dollar threshold. This avoids unexpected spending of Azure credits.\nThere are two approaches to setting up a Budget in the Azure Portal:\n\nOpen the panel (aka “blade”) for the Resource Group in question, and then create a new Budget for that group.\nCreate a Budget for your account under Cost Management + Billing and then apply a filter according to ResourceGroupName in order to target a specific Resource Group.\n\nThe first approach involves a few less steps so it is described below.\n\nFor information on creating a budget from the Cost Management blade, see How to set up Azure budget alerts by TechTarget.com.\nFor details on using and managing budgets, see official tutorial: Create and manage Azure budgets.\n\nCreate a Budget for a Resource Group\n\nIn the Azure Portal Home, select the Resource groups service.\nSelect the resource group you want to monitor with a budget.\nIn the left panel, select Budgets under the Cost Management group and select Add.\n\n\n\n\nMenu for creating a budget for a resource group\n\n\n\nGive your budget a name and an amount.\n\n\n\nSelect the percent spending for the alert and the email to receive the notification.\nClick Create."
+  },
+  {
+    "objectID": "lessons/intro-to-iot/intro-azure-iot.slides.html#demo-iot-hub-device-telemetry-data",
+    "href": "lessons/intro-to-iot/intro-azure-iot.slides.html#demo-iot-hub-device-telemetry-data",
+    "title": "Intro to Azure IoT & Tools",
+    "section": "Demo: IoT Hub & Device telemetry data",
+    "text": "Demo: IoT Hub & Device telemetry data\nIn-class demo to illustrate the process of:\n\nCreating an resource group\nCreating an IoT Hub\nDefining a new device\nUse Azure CLI and Azure IoT Tools for VS Code to:\n\nSimulate device data and send it to IoT Hub\nMonitor data incoming data in IoT Hub\n\n\nThis demo is based on the following guides: - Quickstart: Send telemetry from a device to an IoT hub and monitor it with the Azure CLI - Quickstart: Send telemetry from an IoT Plug and Play device to Azure IoT Hub"
   },
   {
     "objectID": "lessons/intro-to-iot/what-is-iot.html",
@@ -529,6 +552,166 @@
       "Lessons",
       "Intro to IoT",
       "Intro to the Internet of Things"
+    ]
+  },
+  {
+    "objectID": "lessons/intro-to-iot/what-is-iot.slides.html#internet-of-things-iot",
+    "href": "lessons/intro-to-iot/what-is-iot.slides.html#internet-of-things-iot",
+    "title": "Intro to the Internet of Things",
+    "section": "Internet of Things (IoT)",
+    "text": "Internet of Things (IoT)\nThe Internet of Things (IoT) is comprised of equipment, machines, products, and devices that are connected to the cloud and periodically collect, send and/or receive data.\n\nIoT refers to the entire network of:\n\nphysical devices,\ntools,\nequipment, and\nsmart objects\n\nThese objects have the capability to collect and share data about:\n\nhow they are used\nthe environment around them\n\nIoT devices can also receive commands or updates via the cloud."
+  },
+  {
+    "objectID": "lessons/intro-to-iot/what-is-iot.slides.html#why-collect-all-this-data",
+    "href": "lessons/intro-to-iot/what-is-iot.slides.html#why-collect-all-this-data",
+    "title": "Intro to the Internet of Things",
+    "section": "Why collect all this data?",
+    "text": "Why collect all this data?\nBy analyzing the data collected by these connected objects, users and organisations can make informed decisions in near real-time and automate tightly integrated processes. This avoids decision making based on limited or out-dated data.\nThis data can create quick feedback loops for automation. Data from one object can trigger actions or control several other objects with timing and precision that could not be achieved by humans."
+  },
+  {
+    "objectID": "lessons/intro-to-iot/what-is-iot.slides.html#iot-examples",
+    "href": "lessons/intro-to-iot/what-is-iot.slides.html#iot-examples",
+    "title": "Intro to the Internet of Things",
+    "section": "IoT Examples",
+    "text": "IoT Examples\nThe use of IoT can be organised in two fields of application:\n\nIndustrial IoT (IIoT)\nConsumer IoT\n\n\n\n\nExamples of industrial and consumer iot applications\n\n\n\n The Internet of Things and its Benefit to U.S. Water Customer    in kuritaamerica.com\n\nConsumer IoT\nExamples of consumer IoT are:\n\nHome Security: Sensors, alarms, cameras, lights, and microphones provide 24/7 security and surveillance. All of which can be controlled from a smart phone.\nSmart Home: Smart lighting, heating and sound systems can be automated to detect human present or receive instructions remotely. Voice Assistants can also control house appliances or and provide information.\nWearables: Smartwatches and fitness trackers can monitor blood pressure or heart rate, and physical activity and suggest workouts, breaks or medical assistance.\nAppliances: Smart fridges can keep track of food quantities and expiry dates and create shopping lists accordingly. Smart outlet plugs can measure electrical consumption and turn other appliances on/off.\n\nIndustrial IoT (IIoT)\nMost people tend to first think of IoT as consumer devices. However, their main value added happens in industrial applications.\n\n\nHow Industrial Internet of Things are impacting our lives by Bluechip Infocorp Pvt Ltd via Medium.\n\nIndustrial IoT Examples:\n\nEquipment Maintenance: Rolls-Royce’s Total Care provides a suite of predictive maintenance and repair services for its jet engines, including monitoring engine health, and modifying engines to increase reliability and durability.\nFarming: John Deere is building intelligence into its large tractors and sprayers through sensors that make the machines into mobile platforms capable of self-driving.\nHeavy Machinery & Transportation: Rio Tinto, a global mining company uses a remote command center to orchestrate the actions of huge drills, excavators, trains, and trucks across multiple mining sites.\nRenewable Energies: Iberdrola and Siemens are using IoT to optimize the operation and maintenance of offshore wind power farms, the lifetime extension of wind turbines and the reducing the cost of energy.\nFacilities Management: Monitoring of buildings, infrastructure, and other spaces, allow to improve energy efficiency, space utilization, productivity, and safety. These insights may help:\n\nsave money by automating lighting or optimizing heating and cooling cycles.\nIncrease employee or occupant satisfaction by keep equipment running or ensuring that supplies are stocked."
+  },
+  {
+    "objectID": "lessons/intro-to-iot/what-is-iot.slides.html#high-level-components-of-an-iot-system",
+    "href": "lessons/intro-to-iot/what-is-iot.slides.html#high-level-components-of-an-iot-system",
+    "title": "Intro to the Internet of Things",
+    "section": "High-level Components of an IoT System",
+    "text": "High-level Components of an IoT System\nIoT systems are compromised of five high-level components:\n\nSensors:\n\nCollect data from the device’s environment (eg. velocity, GPS coordinates, temperature, etc).\nSensors might use different communication protocols.\n\nIoT Devices are computing devices that have:\n\nAbility to securely register with the cloud;\nConnectivity options for sending and receiving data with the cloud.\n\nCloud Gateway / Hub:\n\nSecurely ingests and sends data or commands to devices;\nOffers device management (provisioning) services (add, remove, update, group, etc).\n\nData Processing:\n\nData validation;\nIntegrate with business processes (check thresholds, send alerts, trigger action)\nPlace data in Storage;\nRetrieve data from Storage for deeper / long-term analysis;\n\nUser Interface:\n\nData visualization;\nTrigger manual actions;\nConfigure automatic actions;\nFacilitate device management.\n\n\n\nIcons of IoT High level components"
+  },
+  {
+    "objectID": "lessons/intro-to-iot/what-is-iot.slides.html#iot-cloud-service-providers",
+    "href": "lessons/intro-to-iot/what-is-iot.slides.html#iot-cloud-service-providers",
+    "title": "Intro to the Internet of Things",
+    "section": "IoT Cloud Service Providers",
+    "text": "IoT Cloud Service Providers\nSince IoT objects typically move around, connectivity and data collection need to happen over wide geographical areas.\nMost companies do not want to deal with setting-up the physical infrastructure and software required to have this level of distributed connectivity and reliability (servers, databases, backup systems, networking, container orchestration, etc).\nIt is typically far more practical and cost-effective to use the services of an established IoT Cloud Service Provider.\nThe three main Cloud Service Providers in the IoT space are:\n\nAmazon Web Services (AWS)\nMicrosoft Azure\nGoogle Cloud\n\n\nThere are many other Cloud providers such as IBM Cloud IoT and Oracle IoT.\n\nIn this course we will focus on Microsoft Azure. However, all three platforms offer similar functionality."
+  },
+  {
+    "objectID": "lessons/intro-to-iot/what-is-iot.slides.html#exercises",
+    "href": "lessons/intro-to-iot/what-is-iot.slides.html#exercises",
+    "title": "Intro to the Internet of Things",
+    "section": "Exercises",
+    "text": "Exercises\n\nRead the Microsoft training module Examine the architecture of an IoT solution and complete the Moodle quiz on the module."
+  },
+  {
+    "objectID": "lessons/intro-to-iot/what-is-iot.slides.html#diving-deeper",
+    "href": "lessons/intro-to-iot/what-is-iot.slides.html#diving-deeper",
+    "title": "Intro to the Internet of Things",
+    "section": "Diving Deeper",
+    "text": "Diving Deeper\nVideo (15:19): The 7 Principles of the IoT by Tom Bradicich\n\nIn depth explanation of the integration between IoT sub-systems and opportunities from a technical and business perspective."
+  },
+  {
+    "objectID": "lessons/intro-to-iot/what-is-iot.slides.html#references",
+    "href": "lessons/intro-to-iot/what-is-iot.slides.html#references",
+    "title": "Intro to the Internet of Things",
+    "section": "References",
+    "text": "References\n\nWhat is IoT by Microsoft Azure.\nHow Industrial Internet of Things are impacting our lives by Bluechip Infocorp Pvt Ltd via Medium.\nAn Introduction to the Internet of Things by Pier Paolo Ippolito via FreeCodeCamp Blog."
+  },
+  {
+    "objectID": "lessons/python/index.html",
+    "href": "lessons/python/index.html",
+    "title": "Python",
+    "section": "",
+    "text": "Intro to Python for Developers\n\n\nPython exercises\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n Back to top",
+    "crumbs": [
+      "Lessons",
+      "Python"
+    ]
+  },
+  {
+    "objectID": "about/syllabus.html",
+    "href": "about/syllabus.html",
+    "title": "Syllabus",
+    "section": "",
+    "text": "Coming soon!\n\n\n\n Back to top",
+    "crumbs": [
+      "About",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "about/index.html",
+    "href": "about/index.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n\n\n\n\n\n\n\n\n\n\n\nCalendar\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSyllabus\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n Back to top",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Home",
+    "section": "",
+    "text": "This companion site for the 420-6P3 course includes:\n\n\nLecture slides / documents\nExercises\nReferences & Resources\n\n\nWebsite accessible at john-abbott-college.github.io/6P3-Notes\n\n\nThis course will introduce students to the principles of the Internet of Things (IoT). Students will use Linux and Python to program a Raspberry Pi in order to read data from sensors and control actuators.\nBy the end of the course, students build and deploy an IoT product that is securely connected to the Azure ecosystem in order to collect and analyse telemetry data as well as respond to remote commands.\n\n\n\n\nExperience using Object Oriented Programming to create applications in any language.\nFamiliarity using the Bash shell and basic Linux CLI.\nFamiliarity with Python.\nA Raspberry Pi with various sensors and actuators (see page Hardware List).\nA Microsoft Azure account (create a free Azure for Students account if necessary).\nVS Code configured for Python programming and remote development (see page Dev Setup).\n\n\n\n\nThis webpage is written in Markdown, built with Docsify and deployed via GitHub Pages\nSource code is open source and available on GitHub.\n\n\nCreate a local copy of these notes:\n\nClone the GitHub repository listed above\nFrom the command-line, navigate to the repository folder named 6P3-Notes\nStart a simple python web-server inside the 6P3-Notes folder (make sure python3 is installed)\npython -m http.server\n\n\nThis work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.\n\n\n\nCC BY-NC 4.0"
+  },
+  {
+    "objectID": "index.html#description",
+    "href": "index.html#description",
+    "title": "Home",
+    "section": "",
+    "text": "This course will introduce students to the principles of the Internet of Things (IoT). Students will use Linux and Python to program a Raspberry Pi in order to read data from sensors and control actuators.\nBy the end of the course, students build and deploy an IoT product that is securely connected to the Azure ecosystem in order to collect and analyse telemetry data as well as respond to remote commands."
+  },
+  {
+    "objectID": "index.html#requirements",
+    "href": "index.html#requirements",
+    "title": "Home",
+    "section": "",
+    "text": "Experience using Object Oriented Programming to create applications in any language.\nFamiliarity using the Bash shell and basic Linux CLI.\nFamiliarity with Python.\nA Raspberry Pi with various sensors and actuators (see page Hardware List).\nA Microsoft Azure account (create a free Azure for Students account if necessary).\nVS Code configured for Python programming and remote development (see page Dev Setup)."
+  },
+  {
+    "objectID": "index.html#source-code",
+    "href": "index.html#source-code",
+    "title": "Home",
+    "section": "",
+    "text": "This webpage is written in Markdown, built with Docsify and deployed via GitHub Pages\nSource code is open source and available on GitHub.\n\n\nCreate a local copy of these notes:\n\nClone the GitHub repository listed above\nFrom the command-line, navigate to the repository folder named 6P3-Notes\nStart a simple python web-server inside the 6P3-Notes folder (make sure python3 is installed)\npython -m http.server\n\n\nThis work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.\n\n\n\nCC BY-NC 4.0"
+  },
+  {
+    "objectID": "about/calendar.html",
+    "href": "about/calendar.html",
+    "title": "Calendar",
+    "section": "",
+    "text": "Coming soon!\n\n\n\n Back to top",
+    "crumbs": [
+      "About",
+      "Calendar"
+    ]
+  },
+  {
+    "objectID": "lessons/index.html",
+    "href": "lessons/index.html",
+    "title": "Lessons",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\nTitle\n\n\nSubtitle\n\n\n\n\n\n\n \n\n\nIntro to Python for Developers\n\n\nPython exercises\n\n\n\n\n \n\n\nIntro to the Internet of Things\n\n\n \n\n\n\n\n \n\n\nIntro to Azure IoT & Tools\n\n\n \n\n\n\n\n \n\n\nLinux review\n\n\nResources and references to brush up linux knowledge.\n\n\n\n\n \n\n\nHardware List\n\n\nList of hardware available for the course as well as their respective specifications and documentation.\n\n\n\n\n \n\n\nTechnology Stack\n\n\nTechnologies used in this class\n\n\n\n\n \n\n\nDeveloper setup\n\n\nHere’s how to set up the software that will be used for development during the course.\n\n\n\n\n\nNo matching items\n\n Back to top",
+    "crumbs": [
+      "Lessons"
+    ]
+  },
+  {
+    "objectID": "lessons/python/intro-python.html",
+    "href": "lessons/python/intro-python.html",
+    "title": "Intro to Python for Developers",
+    "section": "",
+    "text": "Notes provided on a different platform,\n\nSee Interactive notes in Google Colab.\n\n\n\n\n Back to top",
+    "crumbs": [
+      "Lessons",
+      "Python",
+      "Intro to Python for Developers"
+    ]
+  },
+  {
+    "objectID": "lessons/intro-to-iot/index.html",
+    "href": "lessons/intro-to-iot/index.html",
+    "title": "Intro to IoT",
+    "section": "",
+    "text": "Intro to Azure IoT & Tools\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIntro to the Internet of Things\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n Back to top",
+    "crumbs": [
+      "Lessons",
+      "Intro to IoT"
     ]
   },
   {

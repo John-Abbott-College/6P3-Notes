@@ -8,7 +8,7 @@
 
 <meta name="dcterms.date" content="2024-01-29">
 
-<title>Connected Objects - Intro to the Internet of Things</title>
+<title>Connected Objects - Intro to Azure IoT &amp; Tools</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,8 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../lessons/linux/index.html" rel="next">
-<link href="../../lessons/intro-to-iot/intro-azure-iot.html" rel="prev">
+<link href="../../lessons/intro-to-iot/what-is-iot.html" rel="next">
+<link href="../../lessons/intro-to-iot/index.html" rel="prev">
 <link href="../../assets/favicon_io/favicon.ico" rel="icon">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -75,7 +75,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="Connected Objects - Intro to the Internet of Things">
+<meta property="og:title" content="Connected Objects - Intro to Azure IoT &amp; Tools">
 <meta property="og:description" content="">
 <meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/lessons/intro-to-iot/assets/art_title_path_only.svg">
 <meta property="og:site_name" content="Connected Objects">
@@ -106,7 +106,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../lessons/index.html">Lessons</a></li><li class="breadcrumb-item"><a href="../../lessons/intro-to-iot/index.html">Intro to IoT</a></li><li class="breadcrumb-item"><a href="../../lessons/intro-to-iot/what-is-iot.html">Intro to the Internet of Things</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../lessons/index.html">Lessons</a></li><li class="breadcrumb-item"><a href="../../lessons/intro-to-iot/index.html">Intro to IoT</a></li><li class="breadcrumb-item"><a href="../../lessons/intro-to-iot/intro-azure-iot.html">Intro to Azure IoT &amp; Tools</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -207,13 +207,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../lessons/intro-to-iot/intro-azure-iot.html" class="sidebar-item-text sidebar-link">
+  <a href="../../lessons/intro-to-iot/intro-azure-iot.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Intro to Azure IoT &amp; Tools</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../lessons/intro-to-iot/what-is-iot.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../lessons/intro-to-iot/what-is-iot.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Intro to the Internet of Things</span></a>
   </div>
 </li>
@@ -248,27 +248,43 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#internet-of-things-iot" id="toc-internet-of-things-iot" class="nav-link active" data-scroll-target="#internet-of-things-iot"><span class="header-section-number">1</span> Internet of Things (IoT)</a></li>
-  <li><a href="#why-collect-all-this-data" id="toc-why-collect-all-this-data" class="nav-link" data-scroll-target="#why-collect-all-this-data"><span class="header-section-number">2</span> Why collect all this data?</a></li>
-  <li><a href="#iot-examples" id="toc-iot-examples" class="nav-link" data-scroll-target="#iot-examples"><span class="header-section-number">3</span> IoT Examples</a>
+  <li><a href="#platform-as-a-service-paas" id="toc-platform-as-a-service-paas" class="nav-link active" data-scroll-target="#platform-as-a-service-paas"><span class="header-section-number">1</span> Platform as a Service (PaaS)</a></li>
+  <li><a href="#iot-subsystems" id="toc-iot-subsystems" class="nav-link" data-scroll-target="#iot-subsystems"><span class="header-section-number">2</span> IoT Subsystems</a></li>
+  <li><a href="#azure-iot-services" id="toc-azure-iot-services" class="nav-link" data-scroll-target="#azure-iot-services"><span class="header-section-number">3</span> Azure IoT Services</a></li>
+  <li><a href="#iot-hub-iot-central" id="toc-iot-hub-iot-central" class="nav-link" data-scroll-target="#iot-hub-iot-central"><span class="header-section-number">4</span> IoT Hub &amp; IoT Central</a>
   <ul class="collapse">
-  <li><a href="#consumer-iot" id="toc-consumer-iot" class="nav-link" data-scroll-target="#consumer-iot"><span class="header-section-number">3.1</span> Consumer IoT</a></li>
-  <li><a href="#industrial-iot-iiot" id="toc-industrial-iot-iiot" class="nav-link" data-scroll-target="#industrial-iot-iiot"><span class="header-section-number">3.2</span> Industrial IoT (IIoT)</a></li>
+  <li><a href="#iot-central" id="toc-iot-central" class="nav-link" data-scroll-target="#iot-central"><span class="header-section-number">4.1</span> IoT Central</a></li>
+  <li><a href="#iot-hub" id="toc-iot-hub" class="nav-link" data-scroll-target="#iot-hub"><span class="header-section-number">4.2</span> IoT Hub</a></li>
   </ul></li>
-  <li><a href="#high-level-components-of-an-iot-system" id="toc-high-level-components-of-an-iot-system" class="nav-link" data-scroll-target="#high-level-components-of-an-iot-system"><span class="header-section-number">4</span> High-level Components of an IoT System</a></li>
-  <li><a href="#iot-cloud-service-providers" id="toc-iot-cloud-service-providers" class="nav-link" data-scroll-target="#iot-cloud-service-providers"><span class="header-section-number">5</span> IoT Cloud Service Providers</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">6</span> Exercises</a></li>
-  <li><a href="#diving-deeper" id="toc-diving-deeper" class="nav-link" data-scroll-target="#diving-deeper"><span class="header-section-number">7</span> Diving Deeper</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">8</span> References</a></li>
+  <li><a href="#iot-hub-documentation" id="toc-iot-hub-documentation" class="nav-link" data-scroll-target="#iot-hub-documentation"><span class="header-section-number">5</span> IoT Hub Documentation</a></li>
+  <li><a href="#azure-resource-group-zones" id="toc-azure-resource-group-zones" class="nav-link" data-scroll-target="#azure-resource-group-zones"><span class="header-section-number">6</span> Azure Resource Group &amp; Zones</a>
+  <ul class="collapse">
+  <li><a href="#azure-regions" id="toc-azure-regions" class="nav-link" data-scroll-target="#azure-regions"><span class="header-section-number">6.1</span> Azure Regions</a></li>
+  <li><a href="#azure-zones" id="toc-azure-zones" class="nav-link" data-scroll-target="#azure-zones"><span class="header-section-number">6.2</span> Azure Zones</a></li>
+  </ul></li>
+  <li><a href="#azure-iot-dev-tools" id="toc-azure-iot-dev-tools" class="nav-link" data-scroll-target="#azure-iot-dev-tools"><span class="header-section-number">7</span> Azure IoT Dev Tools</a>
+  <ul class="collapse">
+  <li><a href="#azure-portal" id="toc-azure-portal" class="nav-link" data-scroll-target="#azure-portal"><span class="header-section-number">7.1</span> Azure Portal</a></li>
+  <li><a href="#azure-cli-cloud-shell-iot-extension" id="toc-azure-cli-cloud-shell-iot-extension" class="nav-link" data-scroll-target="#azure-cli-cloud-shell-iot-extension"><span class="header-section-number">7.2</span> Azure CLI, Cloud Shell &amp; IoT Extension</a></li>
+  <li><a href="#azure-iot-extension-for-azure-cli" id="toc-azure-iot-extension-for-azure-cli" class="nav-link" data-scroll-target="#azure-iot-extension-for-azure-cli"><span class="header-section-number">7.3</span> Azure IoT extension for Azure CLI</a></li>
+  <li><a href="#azure-iot-tools-for-vs-code" id="toc-azure-iot-tools-for-vs-code" class="nav-link" data-scroll-target="#azure-iot-tools-for-vs-code"><span class="header-section-number">7.4</span> Azure IoT Tools for VS Code</a></li>
+  <li><a href="#iot-explorer-powershell" id="toc-iot-explorer-powershell" class="nav-link" data-scroll-target="#iot-explorer-powershell"><span class="header-section-number">7.5</span> IoT Explorer &amp; PowerShell</a></li>
+  </ul></li>
+  <li><a href="#azure-account" id="toc-azure-account" class="nav-link" data-scroll-target="#azure-account"><span class="header-section-number">8</span> Azure Account</a>
+  <ul class="collapse">
+  <li><a href="#checking-your-balance" id="toc-checking-your-balance" class="nav-link" data-scroll-target="#checking-your-balance"><span class="header-section-number">8.1</span> Checking your balance 💸</a></li>
+  <li><a href="#budget-alerts" id="toc-budget-alerts" class="nav-link" data-scroll-target="#budget-alerts"><span class="header-section-number">8.2</span> Budget Alerts</a></li>
+  </ul></li>
+  <li><a href="#demo-iot-hub-device-telemetry-data" id="toc-demo-iot-hub-device-telemetry-data" class="nav-link" data-scroll-target="#demo-iot-hub-device-telemetry-data"><span class="header-section-number">9</span> Demo: IoT Hub &amp; Device telemetry data</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/John-Abbott-College/6P3-Notes/blob/winter2024/lessons/intro-to-iot/what-is-iot.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/John-Abbott-College/6P3-Notes/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="what-is-iot.slides.html"><i class="bi bi-file-slides"></i>RevealJS (clean)</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/John-Abbott-College/6P3-Notes/blob/winter2024/lessons/intro-to-iot/intro-azure-iot.md" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/John-Abbott-College/6P3-Notes/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="intro-azure-iot.slides.html"><i class="bi bi-file-slides"></i>RevealJS (clean)</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../lessons/index.html">Lessons</a></li><li class="breadcrumb-item"><a href="../../lessons/intro-to-iot/index.html">Intro to IoT</a></li><li class="breadcrumb-item"><a href="../../lessons/intro-to-iot/what-is-iot.html">Intro to the Internet of Things</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../lessons/index.html">Lessons</a></li><li class="breadcrumb-item"><a href="../../lessons/intro-to-iot/index.html">Intro to IoT</a></li><li class="breadcrumb-item"><a href="../../lessons/intro-to-iot/intro-azure-iot.html">Intro to Azure IoT &amp; Tools</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Intro to the Internet of Things</h1>
+<h1 class="title">Intro to Azure IoT &amp; Tools</h1>
 </div>
 
 
@@ -297,158 +313,343 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><img src="./assets/iot-banner.webp" class="img-fluid" alt="The Interconnection of communicating devices defines the “Internet of Things”"> Image: © Irina Strelnikova / Adobe Stock</p>
-<section id="internet-of-things-iot" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="internet-of-things-iot"><span class="header-section-number">1</span> Internet of Things (IoT)</h2>
-<p>The <strong>Internet of Things (IoT)</strong> is comprised of equipment, machines, products, and devices that are connected to the cloud and <strong>periodically collect, send and/or receive data.</strong></p>
+<p>From now on, we will deploy and manage our IoT solutions using Microsoft Azure and its Azure IoT platform as a service (PaaS).</p>
+<section id="platform-as-a-service-paas" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="platform-as-a-service-paas"><span class="header-section-number">1</span> Platform as a Service (PaaS)</h2>
+<p>Platform as a service (PaaS) is a complete development and deployment environment in the cloud.</p>
+<p><strong>PaaS Includes:</strong> - Infrastructure: - servers, storage, and networking, - Platforms: - development tools, business intelligence services (BI), database management systems, and more.</p>
 <blockquote class="blockquote">
-<p><strong>IoT</strong> refers to the <strong>entire network</strong> of:</p>
-<ul>
-<li>physical devices,</li>
-<li>tools,</li>
-<li>equipment, and</li>
-<li>smart objects</li>
-</ul>
-<p>These objects have the capability to <strong>collect and share data</strong> about:</p>
-<ul>
-<li>how they are used</li>
-<li>the environment around them</li>
-</ul>
-<p>IoT devices can also <strong>receive commands or updates</strong> via the cloud.</p>
+<p>PaaS is designed to support the complete web application life-cycle: building, testing, deploying, managing, and updating.</p>
 </blockquote>
-</section>
-<section id="why-collect-all-this-data" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="why-collect-all-this-data"><span class="header-section-number">2</span> Why collect all this data?</h2>
-<p>By analyzing the data collected by these connected objects, users and organisations can make informed decisions in near real-time and automate tightly integrated processes. This avoids decision making based on limited or out-dated data.</p>
-<p>This data can create quick feedback loops for automation. Data from one object can trigger actions or control several other objects with timing and precision that could not be achieved by humans.</p>
-</section>
-<section id="iot-examples" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="iot-examples"><span class="header-section-number">3</span> IoT Examples</h2>
-<p>The use of IoT can be organised in two fields of application:</p>
-<ul>
-<li><strong>Industrial IoT (IIoT)</strong></li>
-<li><strong>Consumer IoT</strong></li>
-</ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../assets/1-iot-intro-industrial-vs-consumer.png" class="img-fluid figure-img"></p>
-<figcaption>Examples of industrial and consumer iot applications</figcaption>
+<p><img src="../assets/intro-azure-paas.png" class="img-fluid figure-img"></p>
+<figcaption>Compasion of SaaS, PaaS and IaaS platforms</figcaption>
 </figure>
 </div>
 <p class="img-info">
-<a href="https://www.kuritaamerica.com/the-splash/the-internet-of-things-and-its-benefit-to-us-water-customers"> The Internet of Things and its Benefit to U.S. Water Customer </a> &nbsp; in kuritaamerica.com
+<a href="https://docs.microsoft.com/en-us/learn/modules/introduction-iot-solution-"> SaaS vs PaaS vs IaaS </a>&nbsp; What is PaaS?, Microsoft.
 </p>
-<section id="consumer-iot" class="level3" data-number="3.1">
-<h3 data-number="3.1" class="anchored" data-anchor-id="consumer-iot"><span class="header-section-number">3.1</span> Consumer IoT</h3>
-<p>Examples of consumer IoT are:</p>
-<ul>
-<li><p><strong>Home Security</strong>: Sensors, alarms, cameras, lights, and microphones provide 24/7 security and surveillance. All of which can be controlled from a smart phone.</p></li>
-<li><p><strong>Smart Home</strong>: Smart lighting, heating and sound systems can be automated to detect human present or receive instructions remotely. Voice Assistants can also control house appliances or and provide information.</p></li>
-<li><p><strong>Wearables:</strong> Smartwatches and fitness trackers can monitor blood pressure or heart rate, and physical activity and suggest workouts, breaks or medical assistance.</p></li>
-<li><p><strong>Appliances:</strong> Smart fridges can keep track of food quantities and expiry dates and create shopping lists accordingly. Smart outlet plugs can measure electrical consumption and turn other appliances on/off.</p></li>
-</ul>
+<p>Adafruit IO (AIO) is a complete software solution but it also included a Python library used for developing a device specific application. AIO is between a software as a service (SaaS) and a PaaS. We did not need to worry about data storage, application logic, authentication, etc.</p>
+<blockquote class="blockquote">
+<p>Moving forward, we will be implementing our IoT solutions using Microsoft Azure as PaaS.</p>
+</blockquote>
+<p>See more in <a href="https://azure.microsoft.com/en-us/overview/what-is-paas/">What is PaaS</a> by azure.microsoft.com</p>
 </section>
-<section id="industrial-iot-iiot" class="level3" data-number="3.2">
-<h3 data-number="3.2" class="anchored" data-anchor-id="industrial-iot-iiot"><span class="header-section-number">3.2</span> Industrial IoT (IIoT)</h3>
-<p>Most people tend to first think of IoT as consumer devices. However, <strong>their main value added happens in industrial applications.</strong></p>
-<p><img src="https://miro.medium.com/max/1400/1*VKScdttTvAJZ7n663OwGPw.jpeg" class="img-fluid"></p>
+<section id="iot-subsystems" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="iot-subsystems"><span class="header-section-number">2</span> IoT Subsystems</h2>
+We can breakdown an IoT solution into <strong>subsystems</strong> and explore how information flows between them: <img src="https://docs.microsoft.com/en-us/learn/wwl-azure/introduction-iot-solution-architecture/media/m01-l02-core-subsystems-iot-architecture-8158ad9e.png" class="img-fluid" alt="Diagram that shows the core subsystems of the Azure IoT reference architecture.">
 <p class="img-info">
-<a href="https://medium.com/@jaydev_21091/how-industrial-internet-of-things-are-impacting-our-lives-8af4163530ce">How Industrial Internet of Things are impacting our lives</a> by Bluechip Infocorp Pvt Ltd via Medium.
+<a href="https://docs.microsoft.com/en-us/learn/modules/introduction-iot-solution-architecture/2-subsystems-iot-architecture"> Subsystems of IoT architecture </a>&nbsp; Examine systems of an IoT architecture, Microsoft.
 </p>
-<p>Industrial IoT Examples:</p>
+<p><strong>IoT Devices</strong>: - The physical devices and sensors where data originates.</p>
+<p><strong>Cloud Gateway</strong>: - The Cloud Gateway provides a cloud hub for secure connectivity, telemetry, event ingestion and device management (including command and control) capabilities.</p>
+<p><strong>Stream Processing</strong>: - Processes large streams of data records, evaluates rules for those streams, and further routes the data.</p>
+<p><strong>Storage</strong>: - Storage can be divided into warm path (data that is required to be available for reporting and visualization immediately from devices), and cold path (data that is stored longer term and used for batch processing).</p>
+<p><strong>User Interface and Reporting</strong>: - The user interface for an IoT application can be delivered on a wide array of device types, in native applications, and browsers.</p>
+<p><strong>Business Process Integration</strong>: - Facilitates executing actions based on insights garnered from device telemetry data during stream processing. Integration could include storage of informational messages, alarms, sending email or SMS, integration with CRM, and more.</p>
+<blockquote class="blockquote">
+<p>We will use Microsoft Azure to manage each sub-system individually.</p>
+</blockquote>
+</section>
+<section id="azure-iot-services" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="azure-iot-services"><span class="header-section-number">3</span> Azure IoT Services</h2>
+<p>Azure offers many IoT-related services (see image below). In this course we’ll only explore a few.</p>
+<p><img src="https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/iot/images/iot-refarch.svg" class="img-fluid" alt="Azure IoT-related architecture"> <a href="https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/iot"><em>Azure IoT Reference Architecture</em></a>, <em>Microsoft learn</em></p>
+</section>
+<section id="iot-hub-iot-central" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="iot-hub-iot-central"><span class="header-section-number">4</span> IoT Hub &amp; IoT Central</h2>
+<p>Microsoft Azure has two service offers for deploying and managing IoT systems: <strong>IoT Hub</strong> and <strong>IoT Central</strong>.</p>
+<blockquote class="blockquote">
+<p>The page <a href="https://docs.microsoft.com/en-us/azure/iot-develop/concepts-overview-connection-options#application-platforms-iot-central-and-iot-hub">Overview: Connection options for Azure IoT device developers</a> offers a great summary and comparison between IoT Hub and IoT Central.</p>
+</blockquote>
+<section id="iot-central" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="iot-central"><span class="header-section-number">4.1</span> IoT Central</h3>
+<p>Azure IoT Central is a software-as-a-service (SaaS) application that provides a complete platform for hosting IoT applications. Its main feature is a web UI that streamlines the lifecycle of creating and managing IoT applications.</p>
+<p>The web UI simplifies the tasks of creating applications, and connecting and managing from a few up to millions of devices.</p>
+<p>This service has a limited free plan (2 devices with 5000 messages per month). Pricing available <a href="https://azure.microsoft.com/en-us/pricing/details/iot-central/">here</a>.</p>
+<p>See <a href="https://azure.microsoft.com/en-us/services/iot-central/#overview">official site for details</a> or watch the <a href="https://www.youtube.com/watch?v=G32stXSwtyA">walk-through for an example</a>.</p>
+<blockquote class="blockquote">
+<p>We will not use IoT Central in this course because we’ll connect the underlying Azure services ourselves.</p>
+</blockquote>
+</section>
+<section id="iot-hub" class="level3" data-number="4.2">
+<h3 data-number="4.2" class="anchored" data-anchor-id="iot-hub"><span class="header-section-number">4.2</span> IoT Hub</h3>
+<p>IoT Hub is a platform-as-a-service (PaaS) application that also provides a platform for hosting IoT applications. IoT Hub acts as a central message hub for bi-directional communication between IoT applications and connected devices.</p>
+<p>IoT Hub offers <strong>greater control and customization</strong> over your application design, and <strong>more developer tool options</strong> for working with the service. However, it requires more development time and slightly more management complexity.</p>
+<p>This service also offers a more generous free plan (500 devices with 8000 messages per day).</p>
+<p>See <a href="https://azure.microsoft.com/en-us/pricing/details/iot-hub/#overview">official site for details</a> and <a href="https://azure.microsoft.com/en-us/pricing/details/iot-hub/#pricing">pricing</a>.</p>
+</section>
+</section>
+<section id="iot-hub-documentation" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="iot-hub-documentation"><span class="header-section-number">5</span> IoT Hub Documentation</h2>
+<blockquote class="blockquote">
+<p><a href="https://docs.microsoft.com/en-us/azure/iot-hub/"><strong>Azure IoT Hub Documentation</strong></a> hosts most of the documentation we will be using.</p>
+<p>Please get familiar with the left-hand menu, including the “Quickstarts” and “How-to guides”</p>
+</blockquote>
+<p><img src="../assets/intro-azure-docs-page.png" class="img-fluid"></p>
+</section>
+<section id="azure-resource-group-zones" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="azure-resource-group-zones"><span class="header-section-number">6</span> Azure Resource Group &amp; Zones</h2>
+<p>A resource group is a “container” that holds related resources for an Azure solution (such as your IoT system).</p>
+<p>The resource group can include all or a subset of the resources for the solution. You decide how to allocate resources to resource groups based on what makes sense for your organization. Generally, group resources share the same lifecycle (deploy, update, and delete).</p>
+<blockquote class="blockquote">
+<p>Azure resources and their groups must be deployed to a particular region.</p>
+<p><strong>To create a resource group</strong> see guide <a href="https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal">Manage Azure resource groups by using the Azure portal</a></p>
+</blockquote>
+<section id="azure-regions" class="level3" data-number="6.1">
+<h3 data-number="6.1" class="anchored" data-anchor-id="azure-regions"><span class="header-section-number">6.1</span> Azure Regions</h3>
+<p>Azure operates in multiple datacenters around the world. These datacenters are grouped in to <strong>geographic regions</strong>.</p>
+<p>To see a list of all Azure regions see <a href="https://azure.microsoft.com/en-us/global-infrastructure/geographies/#overview">azure geographies</a>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://www.poppelgaard.com/wp-content/uploads/2017/03/azure_datacenters.png" class="img-fluid figure-img"></p>
+<figcaption>Azure infrastructure map</figcaption>
+</figure>
+</div>
+<p class="img-info">
+<a href="https://www.poppelgaard.com/citrix-xenapp-essentials-microsoft-azure/azure_datacenters"> Map of Azure Regions (2017) </a>&nbsp; Thomas Poppelgaard.
+</p>
+<p>Canada has two Azure regions:</p>
 <ul>
-<li><p><strong>Equipment Maintenance:</strong> <a href="https://www.rolls-royce.com/media/press-releases/2016/11-07-2016-rr-takes-totalcare-digital-with-microsoft-and-singapore-airlines.aspx">Rolls-Royce’s Total Care</a> provides a suite of predictive maintenance and repair services for its jet engines, including monitoring engine health, and modifying engines to increase reliability and durability.</p></li>
-<li><p><strong>Farming:</strong> <a href="https://www.iotforall.com/ces-2021-john-deere">John Deere</a> is building intelligence into its large tractors and sprayers through sensors that make the machines into mobile platforms capable of self-driving.</p></li>
-<li><p><strong>Heavy Machinery &amp; Transportation:</strong> <a href="https://www.iotforall.com/iot-is-reshaping-heavy-industry">Rio Tinto</a>, a global mining company uses a remote command center to orchestrate the actions of huge drills, excavators, trains, and trucks across multiple mining sites.</p></li>
-<li><p><strong>Renewable Energies:</strong> <a href="https://www.nsenergybusiness.com/features/iot-wind-power/">Iberdrola and Siemens</a> are using IoT to optimize the operation and maintenance of offshore wind power farms, the lifetime extension of wind turbines and the reducing the cost of energy.</p></li>
-<li><p><strong>Facilities Management:</strong> Monitoring of buildings, infrastructure, and other spaces, allow to improve energy efficiency, space utilization, productivity, and safety. These insights may help:</p>
-<ul>
-<li>save money by automating lighting or optimizing heating and cooling cycles.</li>
-<li>Increase employee or occupant satisfaction by keep equipment running or ensuring that supplies are stocked.</li>
-</ul></li>
+<li><strong>Canada Central:</strong> located in Toronto (with 3 zones).</li>
+<li><strong>Canada East</strong>: located in Quebec City (no zones).</li>
 </ul>
+<p><br></p>
+<p>Some services are only available in certain regions. For example, Azure IoT Central is not available in the <em>Canada East</em> region.</p>
+<p><img src="../assets/intro-azure-service-availability.png" class="img-fluid"></p>
+</section>
+<section id="azure-zones" class="level3" data-number="6.2">
+<h3 data-number="6.2" class="anchored" data-anchor-id="azure-zones"><span class="header-section-number">6.2</span> Azure Zones</h3>
+<p>Azure <strong>availability zones</strong> are physically separate locations within each Azure region that are tolerant to local failures.</p>
+<p>Tolerance to failures is achieved because of redundancy and logical isolation of Azure services. To ensure resiliency, a minimum of three separate availability zones are present in all availability zone-enabled regions.</p>
+<p><img src="../assets/intro-azure-zone-region.png" class="img-fluid"></p>
+<p class="img-info">
+<a href="https://docs.microsoft.com/en-us/azure/availability-zones/az-overview"> Azure region with 3 zones and one disaster recovery location. </a>&nbsp; Regions and availability zones, Mocrosoft.
+</p>
 </section>
 </section>
-<section id="high-level-components-of-an-iot-system" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="high-level-components-of-an-iot-system"><span class="header-section-number">4</span> High-level Components of an IoT System</h2>
-<p>IoT systems are compromised of five high-level components:</p>
-<ol type="1">
-<li><strong>Sensors</strong>:
-<ul>
-<li>Collect data from the device’s environment (eg. velocity, GPS coordinates, temperature, etc).</li>
-<li>Sensors might use different communication protocols.</li>
-</ul></li>
-<li><strong>IoT Devices</strong> are computing devices that have:
-<ul>
-<li>Ability to securely register with the cloud;</li>
-<li>Connectivity options for sending and receiving data with the cloud.</li>
-</ul></li>
-<li><strong>Cloud Gateway / Hub</strong>:
-<ul>
-<li>Securely ingests and sends data or commands to devices;</li>
-<li>Offers device management (provisioning) services (add, remove, update, group, etc).</li>
-</ul></li>
-<li><strong>Data Processing:</strong>
-<ul>
-<li>Data validation;</li>
-<li>Integrate with <strong>business processes</strong> (check thresholds, send alerts, trigger action)</li>
-<li>Place data in <strong>Storage</strong>;</li>
-<li>Retrieve data from <strong>Storage</strong> for deeper / long-term analysis;</li>
-</ul></li>
-<li><strong>User Interface:</strong>
-<ul>
-<li>Data visualization;</li>
-<li>Trigger manual actions;</li>
-<li>Configure automatic actions;</li>
-<li>Facilitate device management.</li>
-</ul></li>
+<section id="azure-iot-dev-tools" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="azure-iot-dev-tools"><span class="header-section-number">7</span> Azure IoT Dev Tools</h2>
+<p>Azure offers several developer tools to create, manage and connect to the IoT Hub service.</p>
+<p>Some tools have <strong>nearly the same functionality</strong>. Choose the one that best works for you.</p>
+<section id="azure-portal" class="level3" data-number="7.1">
+<h3 data-number="7.1" class="anchored" data-anchor-id="azure-portal"><span class="header-section-number">7.1</span> Azure Portal</h3>
+<p>The Azure Portal is a browser-based portal for IoT Hub and devices. Also works with other Azure resources including IoT Central.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Documentation</th>
+<th>Quick Start</th>
+<th>IoT Example</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://learn.microsoft.com/en-us/azure/azure-portal/">Azure portal documentation</a></td>
+<td><a href="https://learn.microsoft.com/en-us/azure/azure-portal/azure-portal-overview">What is the Azure portal?</a></td>
+<td><a href="https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal">Create an IoT hub with Azure portal</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><img src="../assets/12-azure-portal-example.png" class="img-fluid"></p>
+</section>
+<section id="azure-cli-cloud-shell-iot-extension" class="level3" data-number="7.2">
+<h3 data-number="7.2" class="anchored" data-anchor-id="azure-cli-cloud-shell-iot-extension"><span class="header-section-number">7.2</span> Azure CLI, Cloud Shell &amp; IoT Extension</h3>
+<p><strong>Azure CLI</strong> is a terminal tool to manage Azure services offered as Bash and PowerShell shells.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Documentation</th>
+<th>Quick Start</th>
+<th>IoT Example</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://learn.microsoft.com/en-us/cli/azure/">Azure CLI documentation</a></td>
+<td><a href="https://learn.microsoft.com/en-us/cli/azure/get-started-with-azure-cli">Get started with Azure CLI</a></td>
+<td><a href="https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-using-cli">Create an IoT hub with CLI</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Azure CLI can be installed in your local machine or run from the browser via the Cloud Shell (see below).</p>
+<blockquote class="blockquote">
+<p>To use it locally, see <a href="https://docs.microsoft.com/en-us/cli/azure/install-azure-cli">Install Azure CLI</a>.</p>
+</blockquote>
+<section id="cloud-shell" class="level4" data-number="7.2.1">
+<h4 data-number="7.2.1" class="anchored" data-anchor-id="cloud-shell"><span class="header-section-number">7.2.1</span> Cloud Shell</h4>
+<p>Azure Cloud Shell is the ability to run the Azure CLI directly in the browser (most convenient).</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Documentation</th>
+<th>Quick Start</th>
+<th>IoT Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://learn.microsoft.com/en-us/azure/cloud-shell/features">Features &amp; tools for Azure Cloud Shell</a></td>
+<td><a href="https://learn.microsoft.com/en-us/azure/cloud-shell/quickstart?tabs=azurecli">Quickstart for Azure Cloud Shell</a></td>
+<td>Same examples as Azure CLI</td>
+</tr>
+</tbody>
+</table>
+<p>Start the Cloud Shell from anywhere in the Azure portal by clicking on it Cloud Shell icon (below):</p>
+<p><img src="../assets/intro-azure-cli.png" class="img-fluid"> <img src="../assets/12-azure-cloud-shell-example.png" class="img-fluid"></p>
+<p>The first time you start the Azure Cloud Shell you will be asked to setup an account.</p>
+</section>
+</section>
+<section id="azure-iot-extension-for-azure-cli" class="level3" data-number="7.3">
+<h3 data-number="7.3" class="anchored" data-anchor-id="azure-iot-extension-for-azure-cli"><span class="header-section-number">7.3</span> Azure IoT extension for Azure CLI</h3>
+<p>Azure CLI uses “extensions” in order to manage different Azure services.</p>
+<p>The Azure IoT extension uses the sub-command <code>az iot</code> to control IoT related sevices.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>GitHub Repo</th>
+<th>Documentation</th>
+<th>IoT Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://github.com/Azure/azure-iot-cli-extension">azure-iot-cli-extension</a></td>
+<td><a href="https://learn.microsoft.com/en-us/cli/azure/iot/hub?view=azure-cli-latest">List of <code>az iot hub</code> commands</a></td>
+<td>Same examples as Azure CLI</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="azure-iot-tools-for-vs-code" class="level3" data-number="7.4">
+<h3 data-number="7.4" class="anchored" data-anchor-id="azure-iot-tools-for-vs-code"><span class="header-section-number">7.4</span> Azure IoT Tools for VS Code</h3>
+<p>There is a VS Code extension to test and mange IoT Hub services.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>GitHub Repo</th>
+<th>Documentation</th>
+<th>IoT Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://github.com/microsoft/vscode-azure-iot-toolkit">vscode-azure-iot-toolkit</a></td>
+<td><a href="https://github.com/Microsoft/vscode-azure-iot-toolkit/wiki">Wiki page</a></td>
+<td><a href="https://learn.microsoft.com/en-us/azure/iot-hub/iot-hub-create-use-iot-toolkit">Create an IoT hub using the Azure IoT Tools for Visual Studio Code</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="iot-explorer-powershell" class="level3" data-number="7.5">
+<h3 data-number="7.5" class="anchored" data-anchor-id="iot-explorer-powershell"><span class="header-section-number">7.5</span> IoT Explorer &amp; PowerShell</h3>
+<p>Two other tools worth mentioning but less used in this course:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Tool</th>
+<th>Description</th>
+<th>Documentation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Azure IoT Explorer</td>
+<td>Connects to an existing IoT hub to manage devices. Cannot create IoT hubs. Often used with CLI or Portal.</td>
+<td><a href="https://github.com/Azure/azure-iot-explorer#azure-iot-explorer-preview">Azure IoT Explorer</a></td>
+</tr>
+<tr class="even">
+<td>Azure PowerShell</td>
+<td>PowerShell interface for creating and managing IoT applications</td>
+<td><a href="https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-using-powershell">Create an IoT hub with PowerShell</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="azure-account" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="azure-account"><span class="header-section-number">8</span> Azure Account</h2>
+<p>Students get $100 of credit for 12 months and free <a href="https://portal.azure.com/#blade/Microsoft_Azure_Billing/FreeServicesBlade">developer tools</a> without a credit card.</p>
+<blockquote class="blockquote">
+<p><strong>Create an account</strong> and see details <a href="https://azure.microsoft.com/en-us/free/students/">here</a>.</p>
+</blockquote>
+<p>The student account can be renewed annually (including $100 credits) for as long as you are a student.</p>
+<p>Most things we’ll do with Azure will use <strong>free services</strong>. We will occasionally use some of your free credits (~$20).</p>
+<section id="checking-your-balance" class="level3" data-number="8.1">
+<h3 data-number="8.1" class="anchored" data-anchor-id="checking-your-balance"><span class="header-section-number">8.1</span> Checking your balance 💸</h3>
+<p>As you experiment with Azure you might want to know your current balance.</p>
+<p><strong>TL:DR</strong> 1. Sign in to the Azure portn in to the Azure portal.al. 2. Search for <strong><em>Cost Management</em></strong> <img src="../assets/intro-azure-cost-management.png" title=":class=inline-img" class="img-fluid"></p>
+<ol start="3" type="1">
+<li><p>Select <strong><em>Payment methods</em></strong></p></li>
+<li><p>Check your <strong><em>Azure credits</em></strong> panel.</p></li>
 </ol>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../assets/iot-high-components.png" class="img-fluid figure-img"></p>
-<figcaption>Icons of IoT High level components</figcaption>
+<p><img src="../assets/intro-azure-credit-check.png" class="img-fluid figure-img"></p>
+<figcaption>Credit check panel in Azure</figcaption>
 </figure>
 </div>
+<p>For details check <a href="https://docs.microsoft.com/en-us/azure/cost-management-billing/manage/mca-check-azure-credits-balance?tabs=portal#main">Track Microsoft Customer Agreement Azure credit balance</a></p>
 </section>
-<section id="iot-cloud-service-providers" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="iot-cloud-service-providers"><span class="header-section-number">5</span> IoT Cloud Service Providers</h2>
-<p>Since IoT objects typically move around, connectivity and data collection need to happen over wide geographical areas.</p>
-<p>Most companies do not want to deal with setting-up the <strong>physical infrastructure and software</strong> required to have this level of distributed connectivity and reliability (servers, databases, backup systems, networking, container orchestration, etc).</p>
-<p>It is typically far more practical and cost-effective to use the services of an established IoT Cloud Service Provider.</p>
-<p>The three main Cloud Service Providers in the IoT space are:</p>
-<ul>
-<li><strong>Amazon Web Services (AWS)</strong></li>
-<li><strong>Microsoft Azure</strong></li>
-<li><strong>Google Cloud</strong></li>
-</ul>
-<p><img src="../assets/1-iot-intro-cloud-service-providers.png" class="img-fluid"></p>
-<p>There are many other Cloud providers such as <a href="https://www.ibm.com/cloud/internet-of-things">IBM Cloud IoT</a> and <a href="https://www.oracle.com/internet-of-things/">Oracle IoT</a>.</p>
+<section id="budget-alerts" class="level3" data-number="8.2">
+<h3 data-number="8.2" class="anchored" data-anchor-id="budget-alerts"><span class="header-section-number">8.2</span> Budget Alerts</h3>
+<p>It’s possible to setup email alerts when your Azure spending exceeds a dollar threshold. This avoids unexpected spending of Azure credits.</p>
+<p>There are two approaches to setting up a Budget in the Azure Portal:</p>
+<ol type="1">
+<li><p>Open the panel (aka “blade”) for the Resource Group in question, and then create a new Budget for that group.</p></li>
+<li><p>Create a Budget for your account under <strong><em>Cost Management + Billing</em></strong> and then <strong>apply a filter</strong> according to <em>ResourceGroupName</em> in order to target a specific Resource Group.</p></li>
+</ol>
+<p>The first approach involves a few less steps so it is described below.</p>
 <blockquote class="blockquote">
-<p>In this course we will focus on <strong>Microsoft Azure</strong>. However, all three platforms offer similar functionality.</p>
-</blockquote>
-</section>
-<section id="exercises" class="level2" data-number="6">
-<h2 data-number="6" class="anchored" data-anchor-id="exercises"><span class="header-section-number">6</span> Exercises</h2>
-<ol type="1">
-<li>Read the Microsoft training module <a href="https://learn.microsoft.com/en-us/training/modules/introduction-iot-solution-architecture/"><strong>Examine the architecture of an IoT solution</strong></a> and complete the Moodle quiz on the module.</li>
-</ol>
-</section>
-<section id="diving-deeper" class="level2" data-number="7">
-<h2 data-number="7" class="anchored" data-anchor-id="diving-deeper"><span class="header-section-number">7</span> Diving Deeper</h2>
-<p>Video (15:19): <strong>The 7 Principles of the IoT by Tom Bradicich</strong></p>
 <ul>
-<li>In depth explanation of the integration between IoT sub-systems and opportunities from a technical and business perspective.</li>
+<li>For information on creating a budget from the Cost Management blade, see <a href="https://www.techtarget.com/searchcloudcomputing/tutorial/How-to-set-up-Azure-budget-alerts">How to set up Azure budget alerts</a> by TechTarget.com.</li>
+<li>For details on using and managing budgets, see official tutorial: <a href="https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/tutorial-acm-create-budgets">Create and manage Azure budgets</a>.</li>
 </ul>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/u3IaXvjDiOE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="">
-</iframe>
-</section>
-<section id="references" class="level2" data-number="8">
-<h2 data-number="8" class="anchored" data-anchor-id="references"><span class="header-section-number">8</span> References</h2>
+</blockquote>
+<section id="create-a-budget-for-a-resource-group" class="level4" data-number="8.2.1">
+<h4 data-number="8.2.1" class="anchored" data-anchor-id="create-a-budget-for-a-resource-group"><span class="header-section-number">8.2.1</span> Create a Budget for a Resource Group</h4>
 <ol type="1">
-<li><a href="https://azure.microsoft.com/en-us/overview/internet-of-things-iot/what-is-the-internet-of-things/">What is IoT</a> by Microsoft Azure.</li>
-<li><a href="https://medium.com/@jaydev_21091/how-industrial-internet-of-things-are-impacting-our-lives-8af4163530ce">How Industrial Internet of Things are impacting our lives</a> by Bluechip Infocorp Pvt Ltd via Medium.</li>
-<li><a href="https://www.freecodecamp.org/news/introduction-to-iot-internet-of-things/">An Introduction to the Internet of Things</a> by Pier Paolo Ippolito via FreeCodeCamp Blog.</li>
+<li>In the Azure Portal Home, select the <strong><em>Resource groups</em></strong> service.</li>
+<li>Select the resource group you want to monitor with a budget.</li>
+<li>In the left panel, select <strong><em>Budgets</em></strong> under the <em>Cost Management</em> group and select <strong><em>Add</em></strong>.</li>
 </ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/12-budget-resource-group.png" class="img-fluid figure-img"></p>
+<figcaption>Menu for creating a budget for a resource group</figcaption>
+</figure>
+</div>
+<ol start="4" type="1">
+<li>Give your budget a name and an amount.</li>
+</ol>
+<p><img src="../assets/12-budget-name-ammount.png" class="img-fluid"></p>
+<ol start="5" type="1">
+<li>Select the <strong>percent spending</strong> for the alert and the <strong>email</strong> to receive the notification.</li>
+<li>Click <strong><em>Create</em></strong>.</li>
+</ol>
+<p><img src="../assets/12-budget-alert-percent-email.png" class="img-fluid"></p>
+</section>
+</section>
+</section>
+<section id="demo-iot-hub-device-telemetry-data" class="level2" data-number="9">
+<h2 data-number="9" class="anchored" data-anchor-id="demo-iot-hub-device-telemetry-data"><span class="header-section-number">9</span> Demo: IoT Hub &amp; Device telemetry data</h2>
+<p>In-class demo to illustrate the process of:</p>
+<ol type="1">
+<li>Creating an resource group</li>
+<li>Creating an IoT Hub</li>
+<li>Defining a new device</li>
+<li>Use Azure CLI and Azure IoT Tools for VS Code to:
+<ul>
+<li>Simulate device data and send it to IoT Hub</li>
+<li>Monitor data incoming data in IoT Hub</li>
+</ul></li>
+</ol>
+<p>This demo is based on the following guides: - <a href="https://docs.microsoft.com/en-us/azure/iot-hub/quickstart-send-telemetry-cli">Quickstart: Send telemetry from a device to an IoT hub and monitor it with the Azure CLI</a> - <a href="https://docs.microsoft.com/en-us/azure/iot-develop/quickstart-send-telemetry-iot-hub?toc=%2Fazure%2Fiot-hub%2Ftoc.json&amp;bc=%2Fazure%2Fiot-hub%2Fbreadcrumb%2Ftoc.json&amp;pivots=programming-language-python">Quickstart: Send telemetry from an IoT Plug and Play device to Azure IoT Hub</a></p>
 
 
 </section>
@@ -987,13 +1188,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../lessons/intro-to-iot/intro-azure-iot.html" class="pagination-link  aria-label=" intro="" to="" azure="" iot="" &amp;="" tools"="">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Intro to Azure IoT &amp; Tools</span>
+      <a href="../../lessons/intro-to-iot/index.html" class="pagination-link  aria-label=" intro="" to="" iot"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Intro to IoT</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../lessons/linux/index.html" class="pagination-link" aria-label="Linux">
-        <span class="nav-page-text">Linux</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../lessons/intro-to-iot/what-is-iot.html" class="pagination-link" aria-label="Intro to the Internet of Things">
+        <span class="nav-page-text">Intro to the Internet of Things</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1005,7 +1206,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 <p>© Mauricio Buschinelli 2022-2023; © Michael Haaf 2024</p>
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/John-Abbott-College/6P3-Notes/blob/winter2024/lessons/intro-to-iot/what-is-iot.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/John-Abbott-College/6P3-Notes/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/John-Abbott-College/6P3-Notes/blob/winter2024/lessons/intro-to-iot/intro-azure-iot.md" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/John-Abbott-College/6P3-Notes/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
