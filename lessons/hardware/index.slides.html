@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en"><head>
 <link href="../../assets/favicon_io/favicon.ico" rel="icon">
+<script src="../../site_libs/quarto-listing/list.min.js"></script>
+<script src="../../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-html/tabby.min.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -11,7 +13,7 @@
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.550">
 
-  <title>Connected Objects - Technology Stack</title>
+  <title>Connected Objects - Hardware</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -31,6 +33,35 @@
     }
   </style>
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto.css">
+  <script>
+
+    window.document.addEventListener("DOMContentLoaded", function (_event) {
+      const listingTargetEl = window.document.querySelector('#listing-listing .list');
+      if (!listingTargetEl) {
+        // No listing discovered, do not attach.
+        return; 
+      }
+
+      const options = {
+        valueNames: ['listing-title','listing-author','listing-subtitle','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+        
+        searchColumns: ["listing-title","listing-author","listing-subtitle","listing-image","listing-description"],
+      };
+
+      window['quarto-listings'] = window['quarto-listings'] || {};
+      window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+      if (window['quarto-listing-loaded']) {
+        window['quarto-listing-loaded']();
+      }
+    });
+
+    window.addEventListener('hashchange',() => {
+      if (window['quarto-listing-loaded']) {
+        window['quarto-listing-loaded']();
+      }
+    })
+    </script>
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -320,9 +351,8 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="Connected Objects - Technology Stack">
-<meta property="og:description" content="Technologies used in this class">
-<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/lessons/getting-started/assets/art_title_path_only.svg">
+<meta property="og:title" content="Connected Objects - Hardware">
+<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/lessons/hardware/assets/art_title_path_only.svg">
 <meta property="og:site_name" content="Connected Objects">
 </head>
 <body class="quarto-light">
@@ -330,76 +360,15 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Technology Stack</h1>
-  <p class="subtitle">Technologies used in this class</p>
+  <h1 class="title">Hardware</h1>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="hardware" class="slide level2">
-<h2>Hardware</h2>
-<h3 id="reterminal-from-seeed">reTerminal from Seeed</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../assets/1-tech-stack-reterminal.png" title=":size=500"></p>
-<figcaption>hardware platform used for the course: reTerminal</figcaption>
-</figure>
-</div>
-<ul>
-<li>Open source hardware manufactured by Seeed Studios (Shenzhen, China)</li>
-<li>Built around the Raspberry Pi platform. Uses a Raspberry Pi <a href="https://www.raspberrypi.com/products/compute-module-4/?variant=raspberry-pi-cm4001000">Compute Module 4 (CM4)</a></li>
-<li>See the <a href="https://wiki.seeedstudio.com/reTerminal/">official wiki page</a> for specs and details.</li>
-<li>Runs the Linux based Raspberry PI Operating system</li>
-</ul>
-<h3 id="grove-connection-system">Grove Connection System</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://files.seeedstudio.com/wiki/GroveSystem/images/starter_kit_main.jpg"></p>
-<figcaption>enter image description here</figcaption>
-</figure>
-</div>
-<ul>
-<li>A standard for wiring sensors to a connector.</li>
-<li>Eliminates the need for breadboards and complicated wiring.</li>
-<li>Supported communication protocols: Digital, Analog, UART and I2C.</li>
-<li>See <a href="https://wiki.seeedstudio.com/Grove_System/">official wiki page</a> for details.</li>
-</ul>
-</section>
-<section id="software" class="slide level2">
-<h2>Software</h2>
-<h3 id="python">Python</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://www.python.org/static/img/python-logo.png"></p>
-<figcaption>python™</figcaption>
-</figure>
-</div>
-<p>This course will be using <strong>Python version 3.10</strong> to: - Run programs inside the Raspberry Pi (reTerminal) in order to read and control sensors. - Communicate with the API of the Cloud Platform.</p>
-<h3 id="vs-code-ide">VS Code IDE</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcode.makery.ch%2Flibrary%2Fhtml-css%2Fpart1%2Fvs-code-logo.png&amp;f=1&amp;nofb=1"></p>
-<figcaption>Part 1: Your First Website | HTML &amp; CSS Tutorial | code …</figcaption>
-</figure>
-</div>
-<p>Visual Studio Code IDE will be used with various extensions in order to: - Program in Python (linting, intellisence, debugging, etc) - Remotely connecting to the Respberry Pi. - Connecting to Microsoft Azure.</p>
-<h3 id="linux-raspberry-pi-os">Linux (Raspberry Pi OS)</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../assets/1-tech-stack-raspberry-pi-os.png" title=":size=400"></p>
-<figcaption>Logo for raspberry pi os</figcaption>
-</figure>
-</div>
-<p>The operating system running inside the reTerminal is Raspberry Pi OS. - Linux Debian based. - Requires basic use of BASH shell (eg. ssh, and environmental variables).</p>
-<h3 id="microsoft-azure">Microsoft Azure</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi1.wp.com%2Fbuild5nines.com%2Fwp-content%2Fuploads%2F2019%2F12%2FAzure_IoT_Hub_Featured_Image.jpg%3Fresize%3D1080%252C675%26ssl%3D1&amp;f=1&amp;nofb=1" title=":size=400"></p>
-<figcaption>Azure IoT Hub: Create Using Azure Portal | Build5Nines</figcaption>
-</figure>
-</div>
-<p>Microsoft Azure will be used as the main platform that will: - Register and connect devices. - Store and analyse data. - Manage the security layer. - Provide libraries (SDKs) that can easily be integrated into our code. - For more information see <a href="https://azure.microsoft.com/en-us/overview/iot/">Azure IoT page</a>.</p>
+<section class="slide level2">
+
+
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
@@ -773,4 +742,32 @@
     </script>
     
 
-</body></html>
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1708350583438" data-listing-reading-time-sort="11" data-listing-word-count-sort="2122">
+<div class="thumbnail">
+<p><a href="../../lessons/hardware/reterminal-sensors.html" class="no-external"></a></p><a href="../../lessons/hardware/reterminal-sensors.html" class="no-external">
+<!-- img(9CEB782EFEE6)[progressive=false, height=]:lessons/hardware/reterminal-sensors.html -->
+</a><p><a href="../../lessons/hardware/reterminal-sensors.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../../lessons/hardware/reterminal-sensors.html" class="no-external">reTerminal Sensors</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../../lessons/hardware/reterminal-sensors.html" class="no-external">Installing initial reTerminal packages. Reading and controlling the reTerminal hardware interfaces, e.g.&nbsp;LEDs, light sensor, screen backlight, etc.</a>
+</div>
+<div class="listing-description">
+<a href="../../lessons/hardware/reterminal-sensors.html" class="no-external"><!-- desc(5A0113B34292)[max=175]:lessons/hardware/reterminal-sensors.html --></a>
+</div>
+</div>
+<div class="metadata">
+<p><a href="../../lessons/hardware/reterminal-sensors.html" class="no-external"></a></p><a href="../../lessons/hardware/reterminal-sensors.html" class="no-external">
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div></body></html>

@@ -11,7 +11,7 @@
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.550">
 
-  <title>Connected Objects - Technology Stack</title>
+  <title>Connected Objects - Remote work on Linux</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -29,6 +29,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -320,9 +385,9 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="Connected Objects - Technology Stack">
-<meta property="og:description" content="Technologies used in this class">
-<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/lessons/getting-started/assets/art_title_path_only.svg">
+<meta property="og:title" content="Connected Objects - Remote work on Linux">
+<meta property="og:description" content="Learn how to connect to your Pi with CLI (ssh) and GUI (VNC). Learn how to setup and troubleshoot local connections (LAN) and remote connections (VPN).">
+<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/lessons/linux/assets/art_title_path_only.svg">
 <meta property="og:site_name" content="Connected Objects">
 </head>
 <body class="quarto-light">
@@ -330,76 +395,61 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Technology Stack</h1>
-  <p class="subtitle">Technologies used in this class</p>
+  <h1 class="title">Remote work on Linux</h1>
+  <p class="subtitle">Learn how to connect to your Pi with CLI (ssh) and GUI (VNC). Learn how to setup and troubleshoot local connections (LAN) and remote connections (VPN).</p>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="hardware" class="slide level2">
-<h2>Hardware</h2>
-<h3 id="reterminal-from-seeed">reTerminal from Seeed</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../assets/1-tech-stack-reterminal.png" title=":size=500"></p>
-<figcaption>hardware platform used for the course: reTerminal</figcaption>
-</figure>
-</div>
+<section id="cli" class="slide level2">
+<h2>CLI</h2>
+<h3 id="passwordless-ssh-access">Passwordless SSH Access</h3>
+<p>Login into the R.Pi without password by setting up SSH credentials</p>
 <ul>
-<li>Open source hardware manufactured by Seeed Studios (Shenzhen, China)</li>
-<li>Built around the Raspberry Pi platform. Uses a Raspberry Pi <a href="https://www.raspberrypi.com/products/compute-module-4/?variant=raspberry-pi-cm4001000">Compute Module 4 (CM4)</a></li>
-<li>See the <a href="https://wiki.seeedstudio.com/reTerminal/">official wiki page</a> for specs and details.</li>
-<li>Runs the Linux based Raspberry PI Operating system</li>
-</ul>
-<h3 id="grove-connection-system">Grove Connection System</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://files.seeedstudio.com/wiki/GroveSystem/images/starter_kit_main.jpg"></p>
-<figcaption>enter image description here</figcaption>
-</figure>
-</div>
+<li>Follow guide by Raspberry Pi Foundation:
 <ul>
-<li>A standard for wiring sensors to a connector.</li>
-<li>Eliminates the need for breadboards and complicated wiring.</li>
-<li>Supported communication protocols: Digital, Analog, UART and I2C.</li>
-<li>See <a href="https://wiki.seeedstudio.com/Grove_System/">official wiki page</a> for details.</li>
+<li><a href="https://www.raspberrypi.com/documentation/computers/remote-access.html#passwordless-ssh-access">Passwordless SSH Access</a></li>
+</ul></li>
 </ul>
-</section>
-<section id="software" class="slide level2">
-<h2>Software</h2>
-<h3 id="python">Python</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://www.python.org/static/img/python-logo.png"></p>
-<figcaption>python™</figcaption>
-</figure>
-</div>
-<p>This course will be using <strong>Python version 3.10</strong> to: - Run programs inside the Raspberry Pi (reTerminal) in order to read and control sensors. - Communicate with the API of the Cloud Platform.</p>
-<h3 id="vs-code-ide">VS Code IDE</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcode.makery.ch%2Flibrary%2Fhtml-css%2Fpart1%2Fvs-code-logo.png&amp;f=1&amp;nofb=1"></p>
-<figcaption>Part 1: Your First Website | HTML &amp; CSS Tutorial | code …</figcaption>
-</figure>
-</div>
-<p>Visual Studio Code IDE will be used with various extensions in order to: - Program in Python (linting, intellisence, debugging, etc) - Remotely connecting to the Respberry Pi. - Connecting to Microsoft Azure.</p>
-<h3 id="linux-raspberry-pi-os">Linux (Raspberry Pi OS)</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../assets/1-tech-stack-raspberry-pi-os.png" title=":size=400"></p>
-<figcaption>Logo for raspberry pi os</figcaption>
-</figure>
-</div>
-<p>The operating system running inside the reTerminal is Raspberry Pi OS. - Linux Debian based. - Requires basic use of BASH shell (eg. ssh, and environmental variables).</p>
-<h3 id="microsoft-azure">Microsoft Azure</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi1.wp.com%2Fbuild5nines.com%2Fwp-content%2Fuploads%2F2019%2F12%2FAzure_IoT_Hub_Featured_Image.jpg%3Fresize%3D1080%252C675%26ssl%3D1&amp;f=1&amp;nofb=1" title=":size=400"></p>
-<figcaption>Azure IoT Hub: Create Using Azure Portal | Build5Nines</figcaption>
-</figure>
-</div>
-<p>Microsoft Azure will be used as the main platform that will: - Register and connect devices. - Store and analyse data. - Manage the security layer. - Provide libraries (SDKs) that can easily be integrated into our code. - For more information see <a href="https://azure.microsoft.com/en-us/overview/iot/">Azure IoT page</a>.</p>
+<h3 id="install-neovim-on-rpi">Install NeoVim on RPI</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a></a><span class="co"># Update source repositories -- a good idea any time you are installing a package.</span></span>
+<span id="cb1-2"><a></a><span class="fu">sudo</span> apt update <span class="at">-y</span></span>
+<span id="cb1-3"><a></a><span class="co"># Install xclip for clipboard support with ssh graphical session `-Y`</span></span>
+<span id="cb1-4"><a></a><span class="fu">sudo</span> apt install xclip <span class="at">-y</span></span>
+<span id="cb1-5"><a></a><span class="fu">sudo</span> apt-get install neovim</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h4 id="install-astronvim">Install AstroNVIM</h4>
+<p>After installing nvim:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a></a><span class="co"># Install a Nerd Fonts (FiraCode)</span></span>
+<span id="cb2-2"><a></a><span class="bu">cd</span> ~/Downloads</span>
+<span id="cb2-3"><a></a><span class="fu">wget</span> https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/FiraCode.zip</span>
+<span id="cb2-4"><a></a><span class="fu">unzip</span> FiraCode.zip</span>
+<span id="cb2-5"><a></a></span>
+<span id="cb2-6"><a></a><span class="co"># Font installation according to Debian's docs: https://wiki.debian.org/Fonts</span></span>
+<span id="cb2-7"><a></a><span class="co"># Move to systam-wide font folder</span></span>
+<span id="cb2-8"><a></a><span class="fu">sudo</span> mv <span class="pp">*</span>.ttf /usr/local/share/fonts/</span>
+<span id="cb2-9"><a></a><span class="co"># update the font cache</span></span>
+<span id="cb2-10"><a></a><span class="ex">fc-cache</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a></a><span class="co"># Follow AstroNvim install instructions: https://astronvim.github.io/#%EF%B8%8F-installation</span></span>
+<span id="cb3-2"><a></a></span>
+<span id="cb3-3"><a></a><span class="co"># Make a backup of your current nvim folder</span></span>
+<span id="cb3-4"><a></a><span class="fu">mv</span> ~/.config/nvim ~/.config/nvim.bak</span>
+<span id="cb3-5"><a></a><span class="co"># Clean neovim folders (Optional but recommended)</span></span>
+<span id="cb3-6"><a></a><span class="fu">mv</span> ~/.local/share/nvim ~/.local/share/nvim.bak</span>
+<span id="cb3-7"><a></a><span class="fu">mv</span> ~/.local/state/nvim ~/.local/state/nvim.bak</span>
+<span id="cb3-8"><a></a><span class="fu">mv</span> ~/.cache/nvim ~/.cache/nvim.bak</span>
+<span id="cb3-9"><a></a><span class="co"># Clone the repository</span></span>
+<span id="cb3-10"><a></a><span class="fu">git</span> clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h4 id="install-node">Install Node</h4>
+<p>Installing node is not required but will improve compatibility with modern nvim features:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a></a><span class="co"># Install Node.js using nvm according to https://github.com/nvm-sh/nvm</span></span>
+<span id="cb4-2"><a></a><span class="kw">;</span><span class="fu">wget</span> <span class="at">-qO-</span> https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh <span class="kw">|</span> <span class="fu">bash</span></span>
+<span id="cb4-3"><a></a><span class="co"># source .bashrc to pickup env variables</span></span>
+<span id="cb4-4"><a></a><span class="bu">source</span> ~/.bashrc</span>
+<span id="cb4-5"><a></a><span class="co"># install the latest version of node</span></span>
+<span id="cb4-6"><a></a><span class="ex">nvm</span> install node</span>
+<span id="cb4-7"><a></a><span class="co"># Install Tree-sitter CLI</span></span>
+<span id="cb4-8"><a></a><span class="ex">npm</span> install tree-sitter-cli</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">

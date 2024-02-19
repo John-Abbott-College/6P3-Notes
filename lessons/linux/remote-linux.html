@@ -8,7 +8,7 @@
 
 <meta name="dcterms.date" content="2024-02-19">
 
-<title>Connected Objects - Technology Stack</title>
+<title>Connected Objects - Remote work on Linux</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -31,8 +65,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../lessons/getting-started/hardware-list.html" rel="next">
-<link href="../../lessons/getting-started/index.html" rel="prev">
+<link href="../../lessons/hardware/index.html" rel="next">
+<link href="../../lessons/linux/linux-review.html" rel="prev">
 <link href="../../assets/favicon_io/favicon.ico" rel="icon">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -75,9 +109,9 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="Connected Objects - Technology Stack">
-<meta property="og:description" content="Technologies used in this class">
-<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/lessons/getting-started/assets/art_title_path_only.svg">
+<meta property="og:title" content="Connected Objects - Remote work on Linux">
+<meta property="og:description" content="Learn how to connect to your Pi with CLI (ssh) and GUI (VNC). Learn how to setup and troubleshoot local connections (LAN) and remote connections (VPN).">
+<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/lessons/linux/assets/art_title_path_only.svg">
 <meta property="og:site_name" content="Connected Objects">
 </head>
 
@@ -106,7 +140,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../lessons/index.html">Lessons</a></li><li class="breadcrumb-item"><a href="../../lessons/getting-started/index.html">Getting started</a></li><li class="breadcrumb-item"><a href="../../lessons/getting-started/tech-stack.html">Technology Stack</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../lessons/index.html">Lessons</a></li><li class="breadcrumb-item"><a href="../../lessons/linux/index.html">Linux</a></li><li class="breadcrumb-item"><a href="../../lessons/linux/remote-linux.html">Remote work on Linux</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -131,14 +165,14 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../lessons/getting-started/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Getting started</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../lessons/getting-started/tech-stack.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../lessons/getting-started/tech-stack.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Technology Stack</span></a>
   </div>
 </li>
@@ -160,11 +194,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../lessons/linux/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Linux</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../lessons/linux/linux-review.html" class="sidebar-item-text sidebar-link">
@@ -173,7 +207,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../lessons/linux/remote-linux.html" class="sidebar-item-text sidebar-link">
+  <a href="../../lessons/linux/remote-linux.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Remote work on Linux</span></a>
   </div>
 </li>
@@ -265,28 +299,21 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#hardware" id="toc-hardware" class="nav-link active" data-scroll-target="#hardware">Hardware</a>
+  <li><a href="#cli" id="toc-cli" class="nav-link active" data-scroll-target="#cli">CLI</a>
   <ul class="collapse">
-  <li><a href="#reterminal-from-seeed" id="toc-reterminal-from-seeed" class="nav-link" data-scroll-target="#reterminal-from-seeed">reTerminal from Seeed</a></li>
-  <li><a href="#grove-connection-system" id="toc-grove-connection-system" class="nav-link" data-scroll-target="#grove-connection-system">Grove Connection System</a></li>
-  </ul></li>
-  <li><a href="#software" id="toc-software" class="nav-link" data-scroll-target="#software">Software</a>
-  <ul class="collapse">
-  <li><a href="#python" id="toc-python" class="nav-link" data-scroll-target="#python">Python</a></li>
-  <li><a href="#vs-code-ide" id="toc-vs-code-ide" class="nav-link" data-scroll-target="#vs-code-ide">VS Code IDE</a></li>
-  <li><a href="#linux-raspberry-pi-os" id="toc-linux-raspberry-pi-os" class="nav-link" data-scroll-target="#linux-raspberry-pi-os">Linux (Raspberry Pi OS)</a></li>
-  <li><a href="#microsoft-azure" id="toc-microsoft-azure" class="nav-link" data-scroll-target="#microsoft-azure">Microsoft Azure</a></li>
+  <li><a href="#passwordless-ssh-access" id="toc-passwordless-ssh-access" class="nav-link" data-scroll-target="#passwordless-ssh-access">Passwordless SSH Access</a></li>
+  <li><a href="#install-neovim-on-rpi" id="toc-install-neovim-on-rpi" class="nav-link" data-scroll-target="#install-neovim-on-rpi">Install NeoVim on RPI</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/John-Abbott-College/6P3-Notes/blob/winter2024/lessons/getting-started/tech-stack.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/John-Abbott-College/6P3-Notes/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="tech-stack.slides.html"><i class="bi bi-file-slides"></i>RevealJS (clean)</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/John-Abbott-College/6P3-Notes/blob/winter2024/lessons/linux/remote-linux.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/John-Abbott-College/6P3-Notes/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="remote-linux.slides.html"><i class="bi bi-file-slides"></i>RevealJS (clean)</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../lessons/index.html">Lessons</a></li><li class="breadcrumb-item"><a href="../../lessons/getting-started/index.html">Getting started</a></li><li class="breadcrumb-item"><a href="../../lessons/getting-started/tech-stack.html">Technology Stack</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../lessons/index.html">Lessons</a></li><li class="breadcrumb-item"><a href="../../lessons/linux/index.html">Linux</a></li><li class="breadcrumb-item"><a href="../../lessons/linux/remote-linux.html">Remote work on Linux</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Technology Stack</h1>
-<p class="subtitle lead">Technologies used in this class</p>
+<h1 class="title">Remote work on Linux</h1>
+<p class="subtitle lead">Learn how to connect to your Pi with CLI (ssh) and GUI (VNC). Learn how to setup and troubleshoot local connections (LAN) and remote connections (VPN).</p>
 </div>
 
 
@@ -315,82 +342,63 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="hardware" class="level2">
-<h2 class="anchored" data-anchor-id="hardware">Hardware</h2>
-<section id="reterminal-from-seeed" class="level3">
-<h3 class="anchored" data-anchor-id="reterminal-from-seeed">reTerminal from Seeed</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../assets/1-tech-stack-reterminal.png" title=":size=500" class="img-fluid figure-img"></p>
-<figcaption>hardware platform used for the course: reTerminal</figcaption>
-</figure>
-</div>
+<section id="cli" class="level2">
+<h2 class="anchored" data-anchor-id="cli">CLI</h2>
+<section id="passwordless-ssh-access" class="level3">
+<h3 class="anchored" data-anchor-id="passwordless-ssh-access">Passwordless SSH Access</h3>
+<p>Login into the R.Pi without password by setting up SSH credentials</p>
 <ul>
-<li>Open source hardware manufactured by Seeed Studios (Shenzhen, China)</li>
-<li>Built around the Raspberry Pi platform. Uses a Raspberry Pi <a href="https://www.raspberrypi.com/products/compute-module-4/?variant=raspberry-pi-cm4001000">Compute Module 4 (CM4)</a></li>
-<li>See the <a href="https://wiki.seeedstudio.com/reTerminal/">official wiki page</a> for specs and details.</li>
-<li>Runs the Linux based Raspberry PI Operating system</li>
+<li>Follow guide by Raspberry Pi Foundation:
+<ul>
+<li><a href="https://www.raspberrypi.com/documentation/computers/remote-access.html#passwordless-ssh-access">Passwordless SSH Access</a></li>
+</ul></li>
 </ul>
 </section>
-<section id="grove-connection-system" class="level3">
-<h3 class="anchored" data-anchor-id="grove-connection-system">Grove Connection System</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://files.seeedstudio.com/wiki/GroveSystem/images/starter_kit_main.jpg" class="img-fluid figure-img"></p>
-<figcaption>enter image description here</figcaption>
-</figure>
-</div>
-<ul>
-<li>A standard for wiring sensors to a connector.</li>
-<li>Eliminates the need for breadboards and complicated wiring.</li>
-<li>Supported communication protocols: Digital, Analog, UART and I2C.</li>
-<li>See <a href="https://wiki.seeedstudio.com/Grove_System/">official wiki page</a> for details.</li>
-</ul>
+<section id="install-neovim-on-rpi" class="level3">
+<h3 class="anchored" data-anchor-id="install-neovim-on-rpi">Install NeoVim on RPI</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Update source repositories -- a good idea any time you are installing a package.</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update <span class="at">-y</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Install xclip for clipboard support with ssh graphical session `-Y`</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install xclip <span class="at">-y</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install neovim</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="install-astronvim" class="level4">
+<h4 class="anchored" data-anchor-id="install-astronvim">Install AstroNVIM</h4>
+<p>After installing nvim:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install a Nerd Fonts (FiraCode)</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Downloads</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/FiraCode.zip</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">unzip</span> FiraCode.zip</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Font installation according to Debian's docs: https://wiki.debian.org/Fonts</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Move to systam-wide font folder</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> mv <span class="pp">*</span>.ttf /usr/local/share/fonts/</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># update the font cache</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="ex">fc-cache</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Follow AstroNvim install instructions: https://astronvim.github.io/#%EF%B8%8F-installation</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Make a backup of your current nvim folder</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> ~/.config/nvim ~/.config/nvim.bak</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Clean neovim folders (Optional but recommended)</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> ~/.local/share/nvim ~/.local/share/nvim.bak</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> ~/.local/state/nvim ~/.local/state/nvim.bak</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> ~/.cache/nvim ~/.cache/nvim.bak</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Clone the repository</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-</section>
-<section id="software" class="level2">
-<h2 class="anchored" data-anchor-id="software">Software</h2>
-<section id="python" class="level3">
-<h3 class="anchored" data-anchor-id="python">Python</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://www.python.org/static/img/python-logo.png" class="img-fluid figure-img"></p>
-<figcaption>python™</figcaption>
-</figure>
-</div>
-<p>This course will be using <strong>Python version 3.10</strong> to: - Run programs inside the Raspberry Pi (reTerminal) in order to read and control sensors. - Communicate with the API of the Cloud Platform.</p>
-</section>
-<section id="vs-code-ide" class="level3">
-<h3 class="anchored" data-anchor-id="vs-code-ide">VS Code IDE</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcode.makery.ch%2Flibrary%2Fhtml-css%2Fpart1%2Fvs-code-logo.png&amp;f=1&amp;nofb=1" class="img-fluid figure-img"></p>
-<figcaption>Part 1: Your First Website | HTML &amp; CSS Tutorial | code …</figcaption>
-</figure>
-</div>
-<p>Visual Studio Code IDE will be used with various extensions in order to: - Program in Python (linting, intellisence, debugging, etc) - Remotely connecting to the Respberry Pi. - Connecting to Microsoft Azure.</p>
-</section>
-<section id="linux-raspberry-pi-os" class="level3">
-<h3 class="anchored" data-anchor-id="linux-raspberry-pi-os">Linux (Raspberry Pi OS)</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../assets/1-tech-stack-raspberry-pi-os.png" title=":size=400" class="img-fluid figure-img"></p>
-<figcaption>Logo for raspberry pi os</figcaption>
-</figure>
-</div>
-<p>The operating system running inside the reTerminal is Raspberry Pi OS. - Linux Debian based. - Requires basic use of BASH shell (eg. ssh, and environmental variables).</p>
-</section>
-<section id="microsoft-azure" class="level3">
-<h3 class="anchored" data-anchor-id="microsoft-azure">Microsoft Azure</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi1.wp.com%2Fbuild5nines.com%2Fwp-content%2Fuploads%2F2019%2F12%2FAzure_IoT_Hub_Featured_Image.jpg%3Fresize%3D1080%252C675%26ssl%3D1&amp;f=1&amp;nofb=1" title=":size=400" class="img-fluid figure-img"></p>
-<figcaption>Azure IoT Hub: Create Using Azure Portal | Build5Nines</figcaption>
-</figure>
-</div>
-<p>Microsoft Azure will be used as the main platform that will: - Register and connect devices. - Store and analyse data. - Manage the security layer. - Provide libraries (SDKs) that can easily be integrated into our code. - For more information see <a href="https://azure.microsoft.com/en-us/overview/iot/">Azure IoT page</a>.</p>
+<section id="install-node" class="level4">
+<h4 class="anchored" data-anchor-id="install-node">Install Node</h4>
+<p>Installing node is not required but will improve compatibility with modern nvim features:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install Node.js using nvm according to https://github.com/nvm-sh/nvm</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">;</span><span class="fu">wget</span> <span class="at">-qO-</span> https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh <span class="kw">|</span> <span class="fu">bash</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># source .bashrc to pickup env variables</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> ~/.bashrc</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># install the latest version of node</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="ex">nvm</span> install node</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Install Tree-sitter CLI</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> install tree-sitter-cli</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
+</section>
 </section>
 </section>
 
@@ -928,13 +936,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../lessons/getting-started/index.html" class="pagination-link" aria-label="Getting started">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Getting started</span>
+      <a href="../../lessons/linux/linux-review.html" class="pagination-link" aria-label="Linux review">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Linux review</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../lessons/getting-started/hardware-list.html" class="pagination-link" aria-label="Hardware List">
-        <span class="nav-page-text">Hardware List</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../lessons/hardware/index.html" class="pagination-link" aria-label="Hardware">
+        <span class="nav-page-text">Hardware</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -946,7 +954,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 <p>© Mauricio Buschinelli 2022-2023; © Michael Haaf 2024</p>
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/John-Abbott-College/6P3-Notes/blob/winter2024/lessons/getting-started/tech-stack.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/John-Abbott-College/6P3-Notes/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/John-Abbott-College/6P3-Notes/blob/winter2024/lessons/linux/remote-linux.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/John-Abbott-College/6P3-Notes/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

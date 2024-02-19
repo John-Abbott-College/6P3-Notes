@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.4.550">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-01-29">
+<meta name="dcterms.date" content="2024-02-19">
 
-<title>Connected Objects - Intro to the Internet of Things</title>
+<title>Connected Objects - Hardware</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,9 +31,11 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../lessons/intro-to-iot/intro-azure-iot.html" rel="next">
-<link href="../../lessons/intro-to-iot/index.html" rel="prev">
+<link href="../../lessons/hardware/reterminal-sensors.html" rel="next">
+<link href="../../lessons/linux/remote-linux.html" rel="prev">
 <link href="../../assets/favicon_io/favicon.ico" rel="icon">
+<script src="../../site_libs/quarto-listing/list.min.js"></script>
+<script src="../../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -72,12 +74,69 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-author','listing-subtitle','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-subtitle","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="Connected Objects - Intro to the Internet of Things">
-<meta property="og:description" content="">
-<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/lessons/intro-to-iot/assets/art_title_path_only.svg">
+<meta property="og:title" content="Connected Objects - Hardware">
+<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/lessons/hardware/assets/art_title_path_only.svg">
 <meta property="og:site_name" content="Connected Objects">
 </head>
 
@@ -106,7 +165,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../lessons/index.html">Lessons</a></li><li class="breadcrumb-item"><a href="../../lessons/intro-to-iot/index.html">Intro to IoT</a></li><li class="breadcrumb-item"><a href="../../lessons/intro-to-iot/what-is-iot.html">Intro to the Internet of Things</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../lessons/index.html">Lessons</a></li><li class="breadcrumb-item"><a href="../../lessons/hardware/index.html">Hardware</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -120,45 +179,22 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../about/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">About</span></a>
+            <a href="../../lessons/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lessons</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../about/calendar.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Calendar</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../about/syllabus.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Syllabus</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../lessons/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lessons</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../../lessons/getting-started/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Getting started</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../lessons/getting-started/tech-stack.html" class="sidebar-item-text sidebar-link">
@@ -181,13 +217,70 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../lessons/python/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Python</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+            <a href="../../lessons/linux/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linux</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../lessons/linux/linux-review.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linux review</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../lessons/linux/remote-linux.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Remote work on Linux</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../lessons/hardware/index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Hardware</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../lessons/hardware/reterminal-sensors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">reTerminal Sensors</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../lessons/iot/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">IoT</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../lessons/iot/what-is-iot.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Intro to the Internet of Things</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../lessons/python/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../lessons/python/intro-python.html" class="sidebar-item-text sidebar-link">
@@ -196,46 +289,29 @@ ul.task-list li input[type="checkbox"] {
 </li>
       </ul>
   </li>
-          <li class="sidebar-item sidebar-item-section">
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../lessons/intro-to-iot/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Intro to IoT</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
+            <a href="../../about/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../lessons/intro-to-iot/what-is-iot.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Intro to the Internet of Things</span></a>
+  <a href="../../about/calendar.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Calendar</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../lessons/intro-to-iot/intro-azure-iot.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Intro to Azure IoT &amp; Tools</span></a>
+  <a href="../../about/syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Syllabus</span></a>
   </div>
 </li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../lessons/linux/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Linux</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../lessons/linux/linux-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Linux review</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
       </ul>
   </li>
     </ul>
@@ -244,31 +320,14 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#internet-of-things-iot" id="toc-internet-of-things-iot" class="nav-link active" data-scroll-target="#internet-of-things-iot"><span class="header-section-number">1</span> Internet of Things (IoT)</a></li>
-  <li><a href="#why-collect-all-this-data" id="toc-why-collect-all-this-data" class="nav-link" data-scroll-target="#why-collect-all-this-data"><span class="header-section-number">2</span> Why collect all this data?</a></li>
-  <li><a href="#iot-examples" id="toc-iot-examples" class="nav-link" data-scroll-target="#iot-examples"><span class="header-section-number">3</span> IoT Examples</a>
-  <ul class="collapse">
-  <li><a href="#consumer-iot" id="toc-consumer-iot" class="nav-link" data-scroll-target="#consumer-iot"><span class="header-section-number">3.1</span> Consumer IoT</a></li>
-  <li><a href="#industrial-iot-iiot" id="toc-industrial-iot-iiot" class="nav-link" data-scroll-target="#industrial-iot-iiot"><span class="header-section-number">3.2</span> Industrial IoT (IIoT)</a></li>
-  </ul></li>
-  <li><a href="#high-level-components-of-an-iot-system" id="toc-high-level-components-of-an-iot-system" class="nav-link" data-scroll-target="#high-level-components-of-an-iot-system"><span class="header-section-number">4</span> High-level Components of an IoT System</a></li>
-  <li><a href="#iot-cloud-service-providers" id="toc-iot-cloud-service-providers" class="nav-link" data-scroll-target="#iot-cloud-service-providers"><span class="header-section-number">5</span> IoT Cloud Service Providers</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">6</span> Exercises</a></li>
-  <li><a href="#diving-deeper" id="toc-diving-deeper" class="nav-link" data-scroll-target="#diving-deeper"><span class="header-section-number">7</span> Diving Deeper</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">8</span> References</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/John-Abbott-College/6P3-Notes/blob/winter2024/lessons/intro-to-iot/what-is-iot.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/John-Abbott-College/6P3-Notes/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="what-is-iot.slides.html"><i class="bi bi-file-slides"></i>RevealJS (clean)</a></li></ul></div></nav>
-    </div>
+        
+    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="index.slides.html"><i class="bi bi-file-slides"></i>RevealJS (clean)</a></li></ul></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../lessons/index.html">Lessons</a></li><li class="breadcrumb-item"><a href="../../lessons/intro-to-iot/index.html">Intro to IoT</a></li><li class="breadcrumb-item"><a href="../../lessons/intro-to-iot/what-is-iot.html">Intro to the Internet of Things</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../lessons/index.html">Lessons</a></li><li class="breadcrumb-item"><a href="../../lessons/hardware/index.html">Hardware</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Intro to the Internet of Things</h1>
+<h1 class="title">Hardware</h1>
 </div>
 
 
@@ -279,14 +338,14 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 29, 2024</p>
+      <p class="date">February 19, 2024</p>
     </div>
   </div>
   
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">January 29, 2024</p>
+      <p class="date-modified">February 19, 2024</p>
     </div>
   </div>
     
@@ -297,164 +356,39 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><img src="./assets/iot-banner.webp" class="img-fluid" alt="The Interconnection of communicating devices defines the “Internet of Things”"> Image: © Irina Strelnikova / Adobe Stock</p>
-<section id="internet-of-things-iot" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="internet-of-things-iot"><span class="header-section-number">1</span> Internet of Things (IoT)</h2>
-<p>The <strong>Internet of Things (IoT)</strong> is comprised of equipment, machines, products, and devices that are connected to the cloud and <strong>periodically collect, send and/or receive data.</strong></p>
-<blockquote class="blockquote">
-<p><strong>IoT</strong> refers to the <strong>entire network</strong> of:</p>
-<ul>
-<li>physical devices,</li>
-<li>tools,</li>
-<li>equipment, and</li>
-<li>smart objects</li>
-</ul>
-<p>These objects have the capability to <strong>collect and share data</strong> about:</p>
-<ul>
-<li>how they are used</li>
-<li>the environment around them</li>
-</ul>
-<p>IoT devices can also <strong>receive commands or updates</strong> via the cloud.</p>
-</blockquote>
-</section>
-<section id="why-collect-all-this-data" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="why-collect-all-this-data"><span class="header-section-number">2</span> Why collect all this data?</h2>
-<p>By analyzing the data collected by these connected objects, users and organisations can make informed decisions in near real-time and automate tightly integrated processes. This avoids decision making based on limited or out-dated data.</p>
-<p>This data can create quick feedback loops for automation. Data from one object can trigger actions or control several other objects with timing and precision that could not be achieved by humans.</p>
-</section>
-<section id="iot-examples" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="iot-examples"><span class="header-section-number">3</span> IoT Examples</h2>
-<p>The use of IoT can be organised in two fields of application:</p>
-<ul>
-<li><strong>Industrial IoT (IIoT)</strong></li>
-<li><strong>Consumer IoT</strong></li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../assets/1-iot-intro-industrial-vs-consumer.png" class="img-fluid figure-img"></p>
-<figcaption>Examples of industrial and consumer iot applications</figcaption>
-</figure>
+
+
+
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1708350583438" data-listing-reading-time-sort="11" data-listing-word-count-sort="2122">
+<div class="thumbnail">
+<p><a href="../../lessons/hardware/reterminal-sensors.html" class="no-external"></a></p><a href="../../lessons/hardware/reterminal-sensors.html" class="no-external">
+<!-- img(9CEB782EFEE6)[progressive=false, height=]:lessons/hardware/reterminal-sensors.html -->
+</a><p><a href="../../lessons/hardware/reterminal-sensors.html" class="no-external"></a></p>
 </div>
-<p class="img-info">
-<a href="https://www.kuritaamerica.com/the-splash/the-internet-of-things-and-its-benefit-to-us-water-customers"> The Internet of Things and its Benefit to U.S. Water Customer </a> &nbsp; in kuritaamerica.com
-</p>
-<section id="consumer-iot" class="level3" data-number="3.1">
-<h3 data-number="3.1" class="anchored" data-anchor-id="consumer-iot"><span class="header-section-number">3.1</span> Consumer IoT</h3>
-<p>Examples of consumer IoT are:</p>
-<ul>
-<li><p><strong>Home Security</strong>: Sensors, alarms, cameras, lights, and microphones provide 24/7 security and surveillance. All of which can be controlled from a smart phone.</p></li>
-<li><p><strong>Smart Home</strong>: Smart lighting, heating and sound systems can be automated to detect human present or receive instructions remotely. Voice Assistants can also control house appliances or and provide information.</p></li>
-<li><p><strong>Wearables:</strong> Smartwatches and fitness trackers can monitor blood pressure or heart rate, and physical activity and suggest workouts, breaks or medical assistance.</p></li>
-<li><p><strong>Appliances:</strong> Smart fridges can keep track of food quantities and expiry dates and create shopping lists accordingly. Smart outlet plugs can measure electrical consumption and turn other appliances on/off.</p></li>
-</ul>
-</section>
-<section id="industrial-iot-iiot" class="level3" data-number="3.2">
-<h3 data-number="3.2" class="anchored" data-anchor-id="industrial-iot-iiot"><span class="header-section-number">3.2</span> Industrial IoT (IIoT)</h3>
-<p>Most people tend to first think of IoT as consumer devices. However, <strong>their main value added happens in industrial applications.</strong></p>
-<p><img src="https://miro.medium.com/max/1400/1*VKScdttTvAJZ7n663OwGPw.jpeg" class="img-fluid"></p>
-<p class="img-info">
-<a href="https://medium.com/@jaydev_21091/how-industrial-internet-of-things-are-impacting-our-lives-8af4163530ce">How Industrial Internet of Things are impacting our lives</a> by Bluechip Infocorp Pvt Ltd via Medium.
-</p>
-<p>Industrial IoT Examples:</p>
-<ul>
-<li><p><strong>Equipment Maintenance:</strong> <a href="https://www.rolls-royce.com/media/press-releases/2016/11-07-2016-rr-takes-totalcare-digital-with-microsoft-and-singapore-airlines.aspx">Rolls-Royce’s Total Care</a> provides a suite of predictive maintenance and repair services for its jet engines, including monitoring engine health, and modifying engines to increase reliability and durability.</p></li>
-<li><p><strong>Farming:</strong> <a href="https://www.iotforall.com/ces-2021-john-deere">John Deere</a> is building intelligence into its large tractors and sprayers through sensors that make the machines into mobile platforms capable of self-driving.</p></li>
-<li><p><strong>Heavy Machinery &amp; Transportation:</strong> <a href="https://www.iotforall.com/iot-is-reshaping-heavy-industry">Rio Tinto</a>, a global mining company uses a remote command center to orchestrate the actions of huge drills, excavators, trains, and trucks across multiple mining sites.</p></li>
-<li><p><strong>Renewable Energies:</strong> <a href="https://www.nsenergybusiness.com/features/iot-wind-power/">Iberdrola and Siemens</a> are using IoT to optimize the operation and maintenance of offshore wind power farms, the lifetime extension of wind turbines and the reducing the cost of energy.</p></li>
-<li><p><strong>Facilities Management:</strong> Monitoring of buildings, infrastructure, and other spaces, allow to improve energy efficiency, space utilization, productivity, and safety. These insights may help:</p>
-<ul>
-<li>save money by automating lighting or optimizing heating and cooling cycles.</li>
-<li>Increase employee or occupant satisfaction by keep equipment running or ensuring that supplies are stocked.</li>
-</ul></li>
-</ul>
-</section>
-</section>
-<section id="high-level-components-of-an-iot-system" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="high-level-components-of-an-iot-system"><span class="header-section-number">4</span> High-level Components of an IoT System</h2>
-<p>IoT systems are compromised of five high-level components:</p>
-<ol type="1">
-<li><strong>Sensors</strong>:
-<ul>
-<li>Collect data from the device’s environment (eg. velocity, GPS coordinates, temperature, etc).</li>
-<li>Sensors might use different communication protocols.</li>
-</ul></li>
-<li><strong>IoT Devices</strong> are computing devices that have:
-<ul>
-<li>Ability to securely register with the cloud;</li>
-<li>Connectivity options for sending and receiving data with the cloud.</li>
-</ul></li>
-<li><strong>Cloud Gateway / Hub</strong>:
-<ul>
-<li>Securely ingests and sends data or commands to devices;</li>
-<li>Offers device management (provisioning) services (add, remove, update, group, etc).</li>
-</ul></li>
-<li><strong>Data Processing:</strong>
-<ul>
-<li>Data validation;</li>
-<li>Integrate with <strong>business processes</strong> (check thresholds, send alerts, trigger action)</li>
-<li>Place data in <strong>Storage</strong>;</li>
-<li>Retrieve data from <strong>Storage</strong> for deeper / long-term analysis;</li>
-</ul></li>
-<li><strong>User Interface:</strong>
-<ul>
-<li>Data visualization;</li>
-<li>Trigger manual actions;</li>
-<li>Configure automatic actions;</li>
-<li>Facilitate device management.</li>
-</ul></li>
-</ol>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../assets/iot-high-components.png" class="img-fluid figure-img"></p>
-<figcaption>Icons of IoT High level components</figcaption>
-</figure>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../../lessons/hardware/reterminal-sensors.html" class="no-external">reTerminal Sensors</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../../lessons/hardware/reterminal-sensors.html" class="no-external">Installing initial reTerminal packages. Reading and controlling the reTerminal hardware interfaces, e.g.&nbsp;LEDs, light sensor, screen backlight, etc.</a>
 </div>
-</section>
-<section id="iot-cloud-service-providers" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="iot-cloud-service-providers"><span class="header-section-number">5</span> IoT Cloud Service Providers</h2>
-<p>Since IoT objects typically move around, connectivity and data collection need to happen over wide geographical areas.</p>
-<p>Most companies do not want to deal with setting-up the <strong>physical infrastructure and software</strong> required to have this level of distributed connectivity and reliability (servers, databases, backup systems, networking, container orchestration, etc).</p>
-<p>It is typically far more practical and cost-effective to use the services of an established IoT Cloud Service Provider.</p>
-<p>The three main Cloud Service Providers in the IoT space are:</p>
-<ul>
-<li><strong>Amazon Web Services (AWS)</strong></li>
-<li><strong>Microsoft Azure</strong></li>
-<li><strong>Google Cloud</strong></li>
-</ul>
-<p><img src="../assets/1-iot-intro-cloud-service-providers.png" class="img-fluid"></p>
-<p>There are many other Cloud providers such as <a href="https://www.ibm.com/cloud/internet-of-things">IBM Cloud IoT</a> and <a href="https://www.oracle.com/internet-of-things/">Oracle IoT</a>.</p>
-<blockquote class="blockquote">
-<p>In this course we will focus on <strong>Microsoft Azure</strong>. However, all three platforms offer similar functionality.</p>
-</blockquote>
-</section>
-<section id="exercises" class="level2" data-number="6">
-<h2 data-number="6" class="anchored" data-anchor-id="exercises"><span class="header-section-number">6</span> Exercises</h2>
-<p><strong>NOTE:</strong> The exercise below is out of date. We will see IOT learning material later in the course.</p>
-<ol type="1">
-<li><del>Read the Microsoft training module <a href="https://learn.microsoft.com/en-us/training/modules/introduction-iot-solution-architecture/"><strong>Examine the architecture of an IoT solution</strong></a> and complete the Moodle quiz on the module.</del></li>
-</ol>
-</section>
-<section id="diving-deeper" class="level2" data-number="7">
-<h2 data-number="7" class="anchored" data-anchor-id="diving-deeper"><span class="header-section-number">7</span> Diving Deeper</h2>
-<p>Video (15:19): <strong>The 7 Principles of the IoT by Tom Bradicich</strong></p>
-<ul>
-<li>In depth explanation of the integration between IoT sub-systems and opportunities from a technical and business perspective.</li>
-</ul>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/u3IaXvjDiOE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="">
-</iframe>
-</section>
-<section id="references" class="level2" data-number="8">
-<h2 data-number="8" class="anchored" data-anchor-id="references"><span class="header-section-number">8</span> References</h2>
-<ol type="1">
-<li><a href="https://azure.microsoft.com/en-us/overview/internet-of-things-iot/what-is-the-internet-of-things/">What is IoT</a> by Microsoft Azure.</li>
-<li><a href="https://medium.com/@jaydev_21091/how-industrial-internet-of-things-are-impacting-our-lives-8af4163530ce">How Industrial Internet of Things are impacting our lives</a> by Bluechip Infocorp Pvt Ltd via Medium.</li>
-<li><a href="https://www.freecodecamp.org/news/introduction-to-iot-internet-of-things/">An Introduction to the Internet of Things</a> by Pier Paolo Ippolito via FreeCodeCamp Blog.</li>
-</ol>
-
-
-</section>
-
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<div class="listing-description">
+<a href="../../lessons/hardware/reterminal-sensors.html" class="no-external"><!-- desc(5A0113B34292)[max=175]:lessons/hardware/reterminal-sensors.html --></a>
+</div>
+</div>
+<div class="metadata">
+<p><a href="../../lessons/hardware/reterminal-sensors.html" class="no-external"></a></p><a href="../../lessons/hardware/reterminal-sensors.html" class="no-external">
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -988,13 +922,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../lessons/intro-to-iot/index.html" class="pagination-link  aria-label=" intro="" to="" iot"="">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Intro to IoT</span>
+      <a href="../../lessons/linux/remote-linux.html" class="pagination-link" aria-label="Remote work on Linux">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Remote work on Linux</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../lessons/intro-to-iot/intro-azure-iot.html" class="pagination-link" aria-label="Intro to Azure IoT &amp; Tools">
-        <span class="nav-page-text">Intro to Azure IoT &amp; Tools</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../lessons/hardware/reterminal-sensors.html" class="pagination-link" aria-label="reTerminal Sensors">
+        <span class="nav-page-text">reTerminal Sensors</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1006,7 +940,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 <p>© Mauricio Buschinelli 2022-2023; © Michael Haaf 2024</p>
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/John-Abbott-College/6P3-Notes/blob/winter2024/lessons/intro-to-iot/what-is-iot.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/John-Abbott-College/6P3-Notes/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions"><ul><li><a href="https://github.com/John-Abbott-College/6P3-Notes/blob/winter2024/lessons/hardware/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/John-Abbott-College/6P3-Notes/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

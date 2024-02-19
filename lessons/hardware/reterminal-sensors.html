@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.550">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2024-02-19">
+
+<title>Connected Objects - reTerminal Sensors</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../lessons/iot/index.html" rel="next">
+<link href="../../lessons/hardware/index.html" rel="prev">
+<link href="../../assets/favicon_io/favicon.ico" rel="icon">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Connected Objects - reTerminal Sensors">
+<meta property="og:description" content="Installing initial reTerminal packages. Reading and controlling the reTerminal hardware interfaces, e.g.&nbsp;LEDs, light sensor, screen backlight, etc.">
+<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/lessons/hardware/assets/art_title_path_only.svg">
+<meta property="og:site_name" content="Connected Objects">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../assets/favicon_io/favicon-32x32.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Connected Objects</span>
+    </a>
+  </div>
+        <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+          <div id="quarto-search" class="" title="Search"></div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../lessons/index.html">Lessons</a></li><li class="breadcrumb-item"><a href="../../lessons/hardware/index.html">Hardware</a></li><li class="breadcrumb-item"><a href="../../lessons/hardware/reterminal-sensors.html">reTerminal Sensors</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../lessons/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lessons</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../lessons/getting-started/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Getting started</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../lessons/getting-started/tech-stack.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Technology Stack</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../lessons/getting-started/hardware-list.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Hardware List</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../lessons/getting-started/vscode-python-setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Developer setup</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../lessons/linux/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linux</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../lessons/linux/linux-review.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linux review</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../lessons/linux/remote-linux.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Remote work on Linux</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../lessons/hardware/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Hardware</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../lessons/hardware/reterminal-sensors.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">reTerminal Sensors</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../lessons/iot/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">IoT</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../lessons/iot/what-is-iot.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Intro to the Internet of Things</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../lessons/python/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../lessons/python/intro-python.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Intro to Python for Developers</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../about/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../about/calendar.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Calendar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../about/syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Syllabus</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#lab-1-review" id="toc-lab-1-review" class="nav-link active" data-scroll-target="#lab-1-review">Lab 1 Review</a></li>
+  <li><a href="#raspberry-pi-os-and-debian" id="toc-raspberry-pi-os-and-debian" class="nav-link" data-scroll-target="#raspberry-pi-os-and-debian">Raspberry Pi OS and Debian</a>
+  <ul class="collapse">
+  <li><a href="#apt-debian-package-manger" id="toc-apt-debian-package-manger" class="nav-link" data-scroll-target="#apt-debian-package-manger">Apt: Debian Package Manger</a></li>
+  </ul></li>
+  <li><a href="#reading-sensor-data-in-linux" id="toc-reading-sensor-data-in-linux" class="nav-link" data-scroll-target="#reading-sensor-data-in-linux">Reading sensor data in Linux</a></li>
+  <li><a href="#sensors" id="toc-sensors" class="nav-link" data-scroll-target="#sensors">Sensors</a>
+  <ul class="collapse">
+  <li><a href="#programmable-leds" id="toc-programmable-leds" class="nav-link" data-scroll-target="#programmable-leds">Programmable LEDs</a></li>
+  <li><a href="#luminosity-sensor" id="toc-luminosity-sensor" class="nav-link" data-scroll-target="#luminosity-sensor">Luminosity Sensor</a></li>
+  </ul></li>
+  <li><a href="#python-library-for-reterminal" id="toc-python-library-for-reterminal" class="nav-link" data-scroll-target="#python-library-for-reterminal">Python Library for reTerminal</a>
+  <ul class="collapse">
+  <li><a href="#modulenotfounderror" id="toc-modulenotfounderror" class="nav-link" data-scroll-target="#modulenotfounderror">ModuleNotFoundError</a></li>
+  <li><a href="#making-users-library-available-to-root-optional" id="toc-making-users-library-available-to-root-optional" class="nav-link" data-scroll-target="#making-users-library-available-to-root-optional">Making user’s library available to root (optional)</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/John-Abbott-College/6P3-Notes/blob/winter2024/lessons/hardware/reterminal-sensors.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/John-Abbott-College/6P3-Notes/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="reterminal-sensors.slides.html"><i class="bi bi-file-slides"></i>RevealJS (clean)</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../lessons/index.html">Lessons</a></li><li class="breadcrumb-item"><a href="../../lessons/hardware/index.html">Hardware</a></li><li class="breadcrumb-item"><a href="../../lessons/hardware/reterminal-sensors.html">reTerminal Sensors</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">reTerminal Sensors</h1>
+<p class="subtitle lead">Installing initial reTerminal packages. Reading and controlling the reTerminal hardware interfaces, e.g.&nbsp;LEDs, light sensor, screen backlight, etc.</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">February 19, 2024</p>
+    </div>
+  </div>
+  
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">February 19, 2024</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="lab-1-review" class="level2">
+<h2 class="anchored" data-anchor-id="lab-1-review">Lab 1 Review</h2>
+<p>After Lab 1, you have taken the following steps:</p>
+<ol type="1">
+<li>Install the Raspberry Pi OS image.</li>
+</ol>
+<ul>
+<li>disassemble, flip the memory switch and use <code>usbboot/rpiboot</code> script to prepare internal memory for firmware flash.</li>
+<li>use Raspberry Pi Imager to flash new image 64bit “Bookworm” Raspberry OS with chosen username/password and SSH enabled</li>
+<li>fix the “black screen” issue by installing the latest seeed overlay drivers</li>
+</ul>
+<ol start="2" type="1">
+<li>Update system packages</li>
+</ol>
+<ul>
+<li>update system repositories with <code>sudo apt update</code> and <code>sudo apt upgrade</code></li>
+<li>install kernel headers with <code>sudo apt install raspberrypi-kernel-headers</code></li>
+<li>install <code>git</code> and <code>docker</code>, deploy simple Python webserver docker container</li>
+</ul>
+<ol start="3" type="1">
+<li>Set up remote connection interfaces</li>
+</ol>
+<ul>
+<li>determine your assigned IP address on the class LAN</li>
+<li>determine your device MAC address</li>
+<li>enable VNC interface</li>
+</ul>
+<p>It’s time to take a deeper look at the hardware and software our reTerminal offers.</p>
+</section>
+<section id="raspberry-pi-os-and-debian" class="level2">
+<h2 class="anchored" data-anchor-id="raspberry-pi-os-and-debian">Raspberry Pi OS and Debian</h2>
+<p>The Raspberry Pi OS (previously called <em>Raspbian OS</em>) used in the reTerminal is a variation of the <a href="https://en.wikipedia.org/wiki/Debian"><strong>Debian OS</strong></a>, with optimizations for the Raspberry Pi hardware.</p>
+<blockquote class="blockquote">
+<p><strong>Debian OS</strong> is one of the most commonly used Linux distributions, especially as the “base” for derivative distributions. There are over 100 derivatives of Debian, many of which are themselves very popular distributions. These include:</p>
+<ul>
+<li>Desktop distributions like Ubuntu, Linux Mint, elementaryOS;</li>
+<li>Special-purpose distributions Kali Linux and Backbox (penetration testing)</li>
+<li>Server/Hypervisor distributions like Proxmox, Ubuntu server,</li>
+<li>Many others, you can find a more complete list <a href="https://en.wikipedia.org/wiki/List_of_Linux_distributions#Debian-based">here</a></li>
+</ul>
+</blockquote>
+<p>Debian-derived distributions share the following: - the <code>.deb</code> package format - the <code>dpkg</code> package manager and its frontend <code>apt</code></p>
+<p>For that reason, many of the commands and configuration for Raspberry Pi OS can be taken directly from Debian’s documentation.</p>
+<section id="apt-debian-package-manger" class="level3">
+<h3 class="anchored" data-anchor-id="apt-debian-package-manger">Apt: Debian Package Manger</h3>
+<p>The command <code>apt</code> is the default package manager of Debian.</p>
+<blockquote class="blockquote">
+<p>A <strong>package manager</strong> is a software tool responsible for automating the installation, removal, configuration and removal of computer programs.</p>
+</blockquote>
+<p>Managing packages could technically be done manually, however, it is very time consuming and error prone: tracking package dependencies and compatibility with the current system.</p>
+<p>Note: <code>apt</code> is a newer package manager API meant to replace the older API <code>apt-get</code>. However, they both accomplish the same. See <a href="https://www.debian.org/doc/manuals/debian-handbook/sect.apt-get.en.html">Debian docs</a> for details.</p>
+<p>During Lab 1, you updated, upgraded and installed some packages in the Raspberry Pi OS using <code>apt</code>:</p>
+<table class="table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 74%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>sudo apt update</code></td>
+<td>Update list of available packages</td>
+</tr>
+<tr class="even">
+<td><code>sudo apt upgrade</code></td>
+<td>Upgrade the system by installing/upgrading packages</td>
+</tr>
+</tbody>
+</table>
+<p>Other commonly used commands, as seen from running <code>apt --help</code>:</p>
+<table class="table">
+<colgroup>
+<col style="width: 38%">
+<col style="width: 61%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>apt list</code></td>
+<td>list packages based on package names</td>
+</tr>
+<tr class="even">
+<td><code>apt search</code></td>
+<td>search in package descriptions</td>
+</tr>
+<tr class="odd">
+<td><code>apt show &lt;package&gt;</code></td>
+<td>show package details</td>
+</tr>
+<tr class="even">
+<td><code>apt install &lt;package&gt;</code></td>
+<td>install packages</td>
+</tr>
+<tr class="odd">
+<td><code>apt reinstall &lt;package&gt;</code></td>
+<td>reinstall packages</td>
+</tr>
+<tr class="even">
+<td><code>apt remove &lt;package&gt;</code></td>
+<td>remove packages</td>
+</tr>
+<tr class="odd">
+<td><code>apt autoremove</code></td>
+<td>Remove automatically all unused packages</td>
+</tr>
+<tr class="even">
+<td><code>apt full-upgrade</code></td>
+<td>upgrade the system by removing/installing/upgrading packages</td>
+</tr>
+<tr class="odd">
+<td><code>apt edit-sources</code></td>
+<td>edit the source information file</td>
+</tr>
+</tbody>
+</table>
+<p>Note: documentation will often leave out <code>sudo</code> since the need to run <code>sudo</code> depends on the machine and the user.</p>
+<blockquote class="blockquote">
+<p>In general, commands that <strong>read</strong> data (<code>apt list</code>, <code>apt search</code>, etc.) will generally not require <code>sudo</code>, since most folderst that <code>apt</code> will touch are universally readable.</p>
+<p><code>apt</code> commands that <strong>write</strong> data (<code>apt install</code>, etc.) to a folder not owned by the current user – which is most folders outside of <code>/home/username</code>, but particularly common package install locations like <code>/usr</code>, <code>/bin</code>, etc. – these commands will require <code>sudo</code> to gain the required write permission</p>
+</blockquote>
+<!-- ### Pip: Python Package Manager -->
+<!---->
+<!-- [`pip`](https://pip.pypa.io/en/stable/) is python's own package manager, which is independent from `apt`.  -->
+<!---->
+<!-- > Pip installs packages from the [Python Package Index repository (pypi.org)](https://pypi.org/) -->
+<!---->
+<!-- To use it for python 3, call the command `pip3` -->
+<!---->
+<!-- ```bash -->
+<!-- pip3 install emoji -->
+<!-- ``` -->
+<!---->
+<!-- This will install the a python library emoji which will create emoji from text descriptions. -->
+<!---->
+<!-- Once a python module has been installed, it is available to be imported in your python script: -->
+<!---->
+<!-- ```python -->
+<!-- import emoji -->
+<!---->
+<!-- message = emoji.emojize('Howdy :sun_with_face:') -->
+<!-- print(message) -->
+<!-- ``` -->
+<!---->
+<!-- Output: -->
+<!---->
+<!-- ```bash -->
+<!-- Howdy 🌞 -->
+<!-- ``` -->
+<!---->
+<!-- It is also possible to give an alias to the newly imported module: -->
+<!---->
+<!-- ```python -->
+<!-- import emoji as em -->
+<!---->
+<!-- message = em.emojize('Howdy :sun_with_face:') -->
+<!-- print(message) -->
+<!-- ``` -->
+<!---->
+<!-- Finally, you can import only a specific function and give it an alias: -->
+<!---->
+<!-- ```python -->
+<!-- from emoji import emojize as emz -->
+<!-- message = emz('Howdy :sun_with_face:') -->
+<!-- print(message) -->
+<!-- ``` -->
+<!---->
+<!-- ### apt vs pip: when to use which? -->
+<!---->
+<!-- > Note: do not run `pip` as `sudo` because `pip` could overwrite system files that are managed by `apt`. -->
+<!---->
+</section>
+</section>
+<section id="reading-sensor-data-in-linux" class="level2">
+<h2 class="anchored" data-anchor-id="reading-sensor-data-in-linux">Reading sensor data in Linux</h2>
+<p><em>This section is based on the official documentation for the reTerminal: <a href="https://wiki.seeedstudio.com/reTerminal-hardware-interfaces-usage/#3-user-programmable-leds">Hardware and Interfaces Usage</a></em></p>
+<blockquote class="blockquote">
+<p>In Linux, everything is a file stream that can be read and/or written to.</p>
+</blockquote>
+<p>For example, keyboard inputs and communication over web-sockets are all read as a file streams.</p>
+<p>The reTerminal has 3 programmable LED’s and a light sensor that can be <strong>controlled like a regular file</strong>.</p>
+<p><img src="../assets/5-reterminal-buttons-light-sensor.png" class="img-fluid"></p>
+</section>
+<section id="sensors" class="level2">
+<h2 class="anchored" data-anchor-id="sensors">Sensors</h2>
+<section id="programmable-leds" class="level3">
+<h3 class="anchored" data-anchor-id="programmable-leds">Programmable LEDs</h3>
+<p>There are 3 programmable LEDs in the reTerminal:</p>
+<ul>
+<li><strong>STA</strong> light can be turned on as <strong>red or green</strong>.</li>
+<li><strong>USR</strong> light can only be turned on as <strong>green</strong>.</li>
+</ul>
+<p><img src="../assets/5-reterminal_leds.png" title=":size=400" class="img-fluid"></p>
+<p>The lights can be controlled at the OS level in the following way:</p>
+<ol type="1">
+<li>Enter the following directory</li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /sys/class/leds</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li>Enter the following directory to control the <strong>Green Color USR LED</strong></li>
+</ol>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> usr_led0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>We will need to write to file <code>brightness</code>. Listing the permissions for this file we get:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">username@hostname:/sys/class/leds/usr_led0</span> $ ls <span class="at">-all</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">total</span> 0            </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span> 3 root root    0 Jan 25 20:33 .               </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span> 8 root root    0 Jan 25 20:33 ..                                                                                                                                                                         </span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 root root 4096 Jan 26 22:02 brightness                                                                                                                                                                 </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/5-unix-permissions-cheatsheet.png" class="img-fluid figure-img"></p>
+<figcaption>Unix Permissions cheatsheet py Julia Evans</figcaption>
+</figure>
+</div>
+<p class="img-info">
+<a href="https://drawings.jvns.ca/permissions/"> Unix File Permissions,</a>&nbsp; Julia Evans.
+</p>
+<blockquote class="blockquote">
+<p>We are about to modify a system file located in <code>/sys/class/leds/urs_led0</code></p>
+<p><strong>Note:</strong> We’ll run the next command as root because the file we want to write belongs the system (<code>root</code> user, rather than to the user <code>pi</code>.</p>
+</blockquote>
+<ol start="3" type="1">
+<li>Enable root account privileges (take the identity of the root user)</li>
+</ol>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> <span class="at">-i</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Your shell should now display <code>root@hostname:~#</code></p>
+<ol start="4" type="1">
+<li>Turn on the LED with maximum brightness</li>
+</ol>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> 255 <span class="op">&gt;</span> brightness</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="5" type="1">
+<li>Turn off the LED</li>
+</ol>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> 0 <span class="op">&gt;</span> brightness</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Similarly, you can control <code>usr_led1</code> and <code>usr_led2</code> and even the buzzer on <code>/sys/class/leds/usr_buzzer</code></p>
+</section>
+<section id="luminosity-sensor" class="level3">
+<h3 class="anchored" data-anchor-id="luminosity-sensor">Luminosity Sensor</h3>
+<p>The digital light sensor can read the surrounding light levels.</p>
+<ol type="1">
+<li>Enter the following directory</li>
+</ol>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /sys/bus/iio/devices/iio:device0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li>Read the following file to obtain the light intensity value in <strong>Lux</strong></li>
+</ol>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> in_illuminance_input </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Output:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pi@raspberrypi:/sys/bus/iio/devices/iio:device0</span> $ cat in_illuminance_input </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="ex">2719</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Note:</strong> We don’t need to be root to read this file. Its permissions are set to let all users read it, even-though it belongs to the root user:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rw-r--r--</span> 1 root root 4096 Jan 30 22:16 in_illuminance_input</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="python-library-for-reterminal" class="level2">
+<h2 class="anchored" data-anchor-id="python-library-for-reterminal">Python Library for reTerminal</h2>
+<p>Seeed Studio provided a python library to access most of the sensors and actuators of the reTerminal.</p>
+<p>Install the library <code>seeed-python-reterminal</code> (see official <a href="https://github.com/Seeed-Studio/Seeed_Python_ReTerminal">Github repo</a>) using <code>pip</code>:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> pip3 install seeed-python-reterminal</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<blockquote class="blockquote">
+<p><strong>Installing pip libraries as root is not recommended.</strong></p>
+<p><strong>However</strong>, this library needs to access system files (see previous section) and will have to be executed as root.</p>
+<p>There are workarounds, however, for simplicity we will install this package as root. See section <em>ModuleNotFoundError</em> below for more context.</p>
+</blockquote>
+<p>Now you can import it to a test script (eg. <em>buzz.py</em>)</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seeed_python_reterminal.core <span class="im">as</span> rt</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"BUZZER ON"</span>)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>rt.buzzer <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>time.sleep(<span class="dv">1</span>)</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"BUZZER OFF"</span>)</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>rt.buzzer <span class="op">=</span> <span class="va">False</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This will sound the buzzer of the reTerminal for 1 second.</p>
+<p>To run the script:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> python3 buzz.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Alternatively, first elevate your shell, then execute the script normally:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pi@raspberrypi:~</span> $ sudo <span class="at">-i</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="ex">root@raspberrypi:~#</span> python3 buzz.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<blockquote class="blockquote">
+<p><strong>Note:</strong> this library is simply a wrapper to the OS operations we did in the previous section. Some files need to be accessed by python as root. In this case, it is necessary to run <code>sudo -i</code> <strong>before running</strong> the python script.</p>
+</blockquote>
+<p>See the official <code>seeed-python-reterminal</code> <a href="https://github.com/Seeed-Studio/Seeed_Python_ReTerminal">Github repo</a> for API reference on how to control:</p>
+<ul>
+<li>LED’s</li>
+<li>Accelerometer</li>
+<li>Programmable Buttons</li>
+<li>Light Sensor (requires manual updating)</li>
+</ul>
+<section id="modulenotfounderror" class="level3">
+<h3 class="anchored" data-anchor-id="modulenotfounderror">ModuleNotFoundError</h3>
+<p>When trying to import the <code>seeed-python-reterminal</code> library, you might get the following error:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ModuleNotFoundError:</span> No module named <span class="st">'seeed_python_reterminal'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The python interpreter is not able to find the module even though it is installed.</p>
+<p>You can run the checks described below.</p>
+<section id="check-library-location" class="level4">
+<h4 class="anchored" data-anchor-id="check-library-location">Check library location</h4>
+<p>Check the location of where the module was installed with <code>pip3 show &lt;module-name&gt;</code>:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pi@raspberrypi:~</span> $ pip3 show seeed-python-reterminal</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Name:</span> seeed-python-reterminal</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="ex">Version:</span> 0.2</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="ex">Summary:</span> seeed-python-reterminal</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="ex">Home-page:</span> https://github.com/Seeed-Studio/Seeed_Python_ReTerminal</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="ex">Author:</span> Takashi Matsuoka <span class="er">(</span><span class="ex">matsujirushi</span><span class="kw">)</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="ex">Author-email:</span> matsujirushi@live.jp</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="ex">License:</span> MIT License</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="ex">Location:</span> /usr/local/lib/python3.7/dist-packages      <span class="co"># Library location</span></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="ex">Requires:</span> evdev</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="ex">Required-by:</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The library is installed at: <code>Location: /usr/local/lib/python3.7/dist-packages</code></p>
+</section>
+<section id="check-pythons-library-paths" class="level4">
+<h4 class="anchored" data-anchor-id="check-pythons-library-paths">Check python’s library paths</h4>
+<p>Similarly to Linux, there are environmental variables that determine where python will look for installed modules/libraries.</p>
+<p>See the paths where python is looking for libraries with <code>sys.path</code>.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>pi<span class="op">@</span>raspberrypi:<span class="op">~</span> $ python3</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> sys      <span class="co"># Exposes configuration used by the python interpreter.</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> sys.path        <span class="co"># Lists all paths where interpreter looks for modules.</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>[</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a> <span class="st">''</span>,</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a> <span class="st">'/usr/lib/python37.zip'</span>,</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a> <span class="st">'/usr/lib/python3.7'</span>,</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a> <span class="st">'/usr/lib/python3.7/lib-dynload'</span>,</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a> <span class="st">'/home/pi/.local/lib/python3.7/site-packages'</span>,</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a> <span class="st">'/usr/local/lib/python3.7/dist-packages'</span>,</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a> <span class="st">'/usr/lib/python3/dist-packages'</span></span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If the output of <code>pip3 show seeed-python-reterminal</code> is not in this list, python will not find it when you import it.</p>
+<blockquote class="blockquote">
+<p><strong>Note:</strong> the python shell above was started as the user <code>pi</code>. If you start python as <strong>root</strong>, <code>sys.path</code> might have different paths.</p>
+</blockquote>
+<p>Below, python was started as <strong>root</strong>:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>pi<span class="op">@</span>raspberrypi:<span class="op">~</span> $ sudo <span class="op">-</span>i</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>root<span class="op">@</span>raspberrypi:<span class="op">~</span><span class="co"># python3</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> sys</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> sys.path</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>[</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="st">''</span>,</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="st">'/usr/lib/python37.zip'</span>,</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="st">'/usr/lib/python3.7'</span>,</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="st">'/usr/lib/python3.7/lib-dynload'</span>,</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a><span class="st">'/usr/local/lib/python3.7/dist-packages'</span>,</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a><span class="st">'/usr/lib/python3/dist-packages'</span></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Note that the user <code>pi</code> does not have permission to add content inside <code>/usr</code>. Thus, all <code>pip</code> installations as the regular user go into <code>/home/pi/.local/lib/python3.7/site-packages</code>.</p>
+<p><strong>Conclusion:</strong> if you install a python library as <code>root</code>, it might go to a different directory compared to installing it as the regular user.</p>
+<p>This is the main reason why we chose to install the <code>seeed-python-reterminal</code> as root, rather than the regular user <code>pi</code>.</p>
+</section>
+</section>
+<section id="making-users-library-available-to-root-optional" class="level3">
+<h3 class="anchored" data-anchor-id="making-users-library-available-to-root-optional">Making user’s library available to root (optional)</h3>
+<p>If you would like to make a library installed as the user <code>pi</code> available when running the script as <code>root</code>, you will need to export an environmental variable named <code>PYTHONPATH</code> pointing to the library location.</p>
+<p>For example, assuming that a library installed under the user <code>pi</code> is located in <code>/home/pi/.local/lib/python3.7/site-packages</code>, do the following:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Elevate the shell to the root user</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pi@raspberrypi:~</span> $ sudo <span class="at">-i</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="ex">root@raspberrypi:~#</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Export the PYTHONPATH environment variable</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="ex">root@raspberrypi:~#</span> export PYTHONPATH=<span class="st">"/home/pi/.local/lib/python3.7/site-packages"</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Start python as root and run the script that imports the library</span></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="ex">root@raspberrypi:~#</span> python3 my_script.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+
+</section>
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../lessons/hardware/index.html" class="pagination-link" aria-label="Hardware">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Hardware</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../lessons/iot/index.html" class="pagination-link" aria-label="IoT">
+        <span class="nav-page-text">IoT</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>© Mauricio Buschinelli 2022-2023; © Michael Haaf 2024</p>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/John-Abbott-College/6P3-Notes/blob/winter2024/lessons/hardware/reterminal-sensors.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/John-Abbott-College/6P3-Notes/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
