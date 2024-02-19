@@ -1,6 +1,5 @@
 format:
   html:
-    number-sections: true
     code-overflow: wrap
     page-layout: article
     grid: 

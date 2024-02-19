@@ -1,0 +1,32 @@
+- pi: 32->64 bit explanation
+- any other quality of life changes to the pi to be made?
+- led lab?
+- adafruit notes?
+- calendar?
+
+- adapt linux file system notes from Unix Networking?
+
+In class demo ideas
+
+- mauricio has some py scripts that are probs worth checking out...
+
+
+# https://wiki.archlinux.org/title/Backlight
+# https://man.archlinux.org/man/sysfs.5
+- /sys/class/backlight/display-dir
+display-dir depends on graphics card model (intel or ati or in this case pi)
+
+echo 5 | sudo tee brightness 
+
+- (the reTerminal setup and sensors notes contain the above, let's say "overview of reterminal interfaces/hardware/capabilities/etc.?)
+
+progression: talk about the device, get 'em to think about how it works, get 'em to read some notes, do some demos of /sys/ etc. 
+
+break, then talk about scripting, bash, risks vs rewards, a practical approach (good for reading current state, very fast, native format, remembering steps, make alias, etc.)
+
+cool idea: sxkhd to have hotkey for brightness control?!?! that would be fun lol.
+
+then: download python library to do the same, tease the point of the rest of the circuitry
+
+
+

@@ -1,0 +1,7 @@
+---
+title: "Hardware"
+listing: default
+format:
+  html: default
+format-links: false
+---
