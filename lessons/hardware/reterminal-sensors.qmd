@@ -376,7 +376,7 @@ root@raspberrypi:~# python3
 Note that the user `pi` does not have permission to add content inside `/usr`.
 Thus, all `pip` installations as the regular user go into `/home/pi/.local/lib/python3.7/site-packages`.
 
-**Conclusion:** if you install a python library as `root`, it might go to a different directory compared to installing it as the regular user `pi`.
+**Conclusion:** if you install a python library as `root`, it might go to a different directory compared to installing it as the regular user.
 
 This is the main reason why we chose to install the `seeed-python-reterminal` as root, rather than the regular user `pi`.
 
@@ -397,9 +397,3 @@ root@raspberrypi:~# export PYTHONPATH="/home/pi/.local/lib/python3.7/site-packag
 # Start python as root and run the script that imports the library
 root@raspberrypi:~# python3 my_script.py
 ```
-
-#### Related articles
-
-- [How to change default install location for pip](https://stackoverflow.com/questions/24174821/how-to-change-default-install-location-for-pip), stackoverflow.com
-- [Where does pip install its packages?](https://stackoverflow.com/questions/29980798/where-does-pip-install-its-packages), stackoverflow.com
-- [Pip documentation: Configuration](https://pip.pypa.io/en/stable/topics/configuration/), pip.pypa.io
