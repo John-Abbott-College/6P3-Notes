@@ -431,6 +431,62 @@
 </ul>
 <p>It’s time to take a deeper look at the hardware and software our reTerminal offers.</p>
 </section>
+<section id="hardware" class="slide level2">
+<h2>Hardware</h2>
+<p><em>This section is adapted directly from the reTerminal wiki: <a href="https://wiki.seeedstudio.com/reTerminal/#features">“Getting Started with reTerminal”</a></em></p>
+<p>The reTerminal is powered by a Raspberry Pi Compute Module 4 (CM4) which is a Quad-Core Cortex-A72 CPU running at 1.5GHz and a 5-inch IPS capacitive multi-touch screen with a resolution of 1280 x 720. It has sufficient amount of RAM (4GB) to perform multitasking and also has sufficient amount of eMMC storage (32GB) to install an operating system, enabling fast boot up times and smooth overall experience. It has wireless connectivity with dual-band 2.4GHz/5GHz Wi-Fi and Bluetooth 5.0 BLE.</p>
+<p>reTerminal consists of a high-speed expansion interface and rich I/O for more expandability. This device has security features such as a cryptographic co-processor with secure hardware-based key storage. It also has built-in modules such as an accelerometer, light sensor and an RTC (Real-Time Clock). reTerminal has a Gigabit Ethernet Port for faster network connections and also has dual USB 2.0 Type-A ports. The 40-pin header on the reTerminal opens it for a wide range of IoT applications.</p>
+<h3 id="firmware-version">Firmware &amp; Version</h3>
+<table>
+<colgroup>
+<col style="width: 17%">
+<col style="width: 45%">
+<col style="width: 18%">
+<col style="width: 18%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Released Date</th>
+<th style="text-align: left;">Pre-Installed OS</th>
+<th style="text-align: left;">Pre-Installed STM32 Firmware</th>
+<th style="text-align: left;">Board Version</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">06/15/2021</td>
+<td style="text-align: left;">2021-06-02-Raspbian(modified)-32-bit</td>
+<td style="text-align: left;">V1.0</td>
+<td style="text-align: left;">v1.3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">08/03/2021</td>
+<td style="text-align: left;">2021-06-02-Raspbian(modified)-32-bit</td>
+<td style="text-align: left;">V1.1</td>
+<td style="text-align: left;">v1.4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">09/03/2021</td>
+<td style="text-align: left;">2021-06-02-Raspbian(modified)-32-bit</td>
+<td style="text-align: left;">V1.6</td>
+<td style="text-align: left;">v1.6</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">11/02/2021</td>
+<td style="text-align: left;">2021-09-14-Raspbian(modified)-32-bit</td>
+<td style="text-align: left;">V1.8</td>
+<td style="text-align: left;">v1.6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Winter 2024</strong></td>
+<td style="text-align: left;"><strong>What OS did we install in Lab 1?</strong></td>
+<td style="text-align: left;">V1.8</td>
+<td style="text-align: left;">v1.6</td>
+</tr>
+</tbody>
+</table>
+<p><strong>You can find a complete list of the reTerminal specifications here: <a href="https://wiki.seeedstudio.com/reTerminal/#specifications">reTerminal Specifications</a></strong></p>
+</section>
 <section id="raspberry-pi-os-and-debian" class="slide level2">
 <h2>Raspberry Pi OS and Debian</h2>
 <p>The Raspberry Pi OS (previously called <em>Raspbian OS</em>) used in the reTerminal is a variation of the <a href="https://en.wikipedia.org/wiki/Debian"><strong>Debian OS</strong></a>, with optimizations for the Raspberry Pi hardware.</p>
@@ -601,21 +657,12 @@
 <li><strong>USR</strong> light can only be turned on as <strong>green</strong>.</li>
 </ul>
 <p><img data-src="../assets/5-reterminal_leds.png" title=":size=400"></p>
-<p>The lights can be controlled at the OS level in the following way:</p>
-<ol type="1">
-<li>Enter the following directory</li>
-</ol>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a></a><span class="bu">cd</span> /sys/class/leds</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="2" type="1">
-<li>Enter the following directory to control the <strong>Green Color USR LED</strong></li>
-</ol>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a></a><span class="bu">cd</span> usr_led0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>We will need to write to file <code>brightness</code>. Listing the permissions for this file we get:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a></a><span class="ex">username@hostname:/sys/class/leds/usr_led0</span> $ ls <span class="at">-all</span></span>
-<span id="cb3-2"><a></a><span class="ex">total</span> 0            </span>
-<span id="cb3-3"><a></a><span class="ex">drwxr-xr-x</span> 3 root root    0 Jan 25 20:33 .               </span>
-<span id="cb3-4"><a></a><span class="ex">drwxr-xr-x</span> 8 root root    0 Jan 25 20:33 ..                                                                                                                                                                         </span>
-<span id="cb3-5"><a></a><span class="ex">-rw-r--r--</span> 1 root root 4096 Jan 26 22:02 brightness                                                                                                                                                                 </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The lights can be controlled at the OS level by editing files in the <code>/sys/class/leds/</code> directory. Use <code>ls -al</code> to list the files in this directory:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a></a><span class="ex">username@hostname:/sys/class/leds/usr_led0</span> $ ls <span class="at">-al</span></span>
+<span id="cb1-2"><a></a><span class="ex">total</span> 0            </span>
+<span id="cb1-3"><a></a><span class="ex">drwxr-xr-x</span> 3 root root    0 Jan 25 20:33 .               </span>
+<span id="cb1-4"><a></a><span class="ex">drwxr-xr-x</span> 8 root root    0 Jan 25 20:33 ..                                                                                                                                                                         </span>
+<span id="cb1-5"><a></a><span class="ex">-rw-r--r--</span> 1 root root 4096 Jan 26 22:02 brightness                                                                                                                                                                 </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="../assets/5-unix-permissions-cheatsheet.png"></p>
@@ -625,66 +672,66 @@
 <p class="img-info">
 <a href="https://drawings.jvns.ca/permissions/"> Unix File Permissions,</a>&nbsp; Julia Evans.
 </p>
-<blockquote>
-<p>We are about to modify a system file located in <code>/sys/class/leds/urs_led0</code></p>
-<p><strong>Note:</strong> We’ll run the next command as root because the file we want to write belongs the system (<code>root</code> user, rather than to the user <code>pi</code>.</p>
-</blockquote>
-<ol start="3" type="1">
-<li>Enable root account privileges (take the identity of the root user)</li>
-</ol>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a></a><span class="fu">sudo</span> <span class="at">-i</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The <code>brightness</code> file inide the <code>usr_led0</code> controls the brightness of LED0. But, because only <code>root</code> has write permissions to this file, we will likely run into permissions errors if we try to edit the value directly:</p>
+<pre><code>$ nano /sys/class/leds/usr_led0
+Permission denied
+$ echo 255 &gt; /sys/class/leds/usr_led0
+Permission denied
+$ sudo echo 255 &gt; /sys/class/leds/usr_led0</code></pre>
+<p>There are a few possible approaches to this problem:</p>
+<h3 id="use-sudo-text-editor">Use sudo + text-editor</h3>
+<h3 id="use-sudo-su">Use sudo + su</h3>
+<p>Enable root account privileges (take the identity of the root user)</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a></a><span class="ex">$</span> sudo su</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Your shell should now display <code>root@hostname:~#</code></p>
-<ol start="4" type="1">
-<li>Turn on the LED with maximum brightness</li>
-</ol>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a></a><span class="bu">echo</span> 255 <span class="op">&gt;</span> brightness</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="5" type="1">
-<li>Turn off the LED</li>
-</ol>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a></a><span class="bu">echo</span> 0 <span class="op">&gt;</span> brightness</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Similarly, you can control <code>usr_led1</code> and <code>usr_led2</code> and even the buzzer on <code>/sys/class/leds/usr_buzzer</code></p>
+<p>Turn on the LED with maximum brightness</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a></a><span class="co"># echo 255 &gt; brightness</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Turn off the LED</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a></a><span class="co"># echo 0 &gt; brightness</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Similarly, you can control <code>usr_led1</code> and <code>usr_led2</code> and even the buzzer on <code>/sys/class/leds/usr_buzzer</code> ### Use sudo + <code>tee</code></p>
+<p><strong>Note:</strong> We’ll run the next command as root because the file we want to write belongs the system (<code>root</code> user, rather than to the user <code>pi</code>.</p>
 <h3 id="luminosity-sensor">Luminosity Sensor</h3>
 <p>The digital light sensor can read the surrounding light levels.</p>
 <ol type="1">
 <li>Enter the following directory</li>
 </ol>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a></a><span class="bu">cd</span> /sys/bus/iio/devices/iio:device0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a></a><span class="bu">cd</span> /sys/bus/iio/devices/iio:device0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="2" type="1">
 <li>Read the following file to obtain the light intensity value in <strong>Lux</strong></li>
 </ol>
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a></a><span class="fu">cat</span> in_illuminance_input </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a></a><span class="fu">cat</span> in_illuminance_input </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Output:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a></a><span class="ex">pi@raspberrypi:/sys/bus/iio/devices/iio:device0</span> $ cat in_illuminance_input </span>
-<span id="cb9-2"><a></a><span class="ex">2719</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a></a><span class="ex">pi@raspberrypi:/sys/bus/iio/devices/iio:device0</span> $ cat in_illuminance_input </span>
+<span id="cb8-2"><a></a><span class="ex">2719</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Note:</strong> We don’t need to be root to read this file. Its permissions are set to let all users read it, even-though it belongs to the root user:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a></a><span class="ex">rw-r--r--</span> 1 root root 4096 Jan 30 22:16 in_illuminance_input</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a></a><span class="ex">rw-r--r--</span> 1 root root 4096 Jan 30 22:16 in_illuminance_input</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="python-library-for-reterminal" class="slide level2">
 <h2>Python Library for reTerminal</h2>
 <p>Seeed Studio provided a python library to access most of the sensors and actuators of the reTerminal.</p>
 <p>Install the library <code>seeed-python-reterminal</code> (see official <a href="https://github.com/Seeed-Studio/Seeed_Python_ReTerminal">Github repo</a>) using <code>pip</code>:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a></a><span class="fu">sudo</span> pip3 install seeed-python-reterminal</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a></a><span class="fu">sudo</span> pip3 install seeed-python-reterminal</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <blockquote>
 <p><strong>Installing pip libraries as root is not recommended.</strong></p>
 <p><strong>However</strong>, this library needs to access system files (see previous section) and will have to be executed as root.</p>
 <p>There are workarounds, however, for simplicity we will install this package as root. See section <em>ModuleNotFoundError</em> below for more context.</p>
 </blockquote>
 <p>Now you can import it to a test script (eg. <em>buzz.py</em>)</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a><span class="im">import</span> seeed_python_reterminal.core <span class="im">as</span> rt</span>
-<span id="cb12-2"><a></a><span class="im">import</span> time</span>
-<span id="cb12-3"><a></a></span>
-<span id="cb12-4"><a></a><span class="bu">print</span>(<span class="st">"BUZZER ON"</span>)</span>
-<span id="cb12-5"><a></a>rt.buzzer <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb12-6"><a></a>time.sleep(<span class="dv">1</span>)</span>
-<span id="cb12-7"><a></a></span>
-<span id="cb12-8"><a></a><span class="bu">print</span>(<span class="st">"BUZZER OFF"</span>)</span>
-<span id="cb12-9"><a></a>rt.buzzer <span class="op">=</span> <span class="va">False</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a><span class="im">import</span> seeed_python_reterminal.core <span class="im">as</span> rt</span>
+<span id="cb11-2"><a></a><span class="im">import</span> time</span>
+<span id="cb11-3"><a></a></span>
+<span id="cb11-4"><a></a><span class="bu">print</span>(<span class="st">"BUZZER ON"</span>)</span>
+<span id="cb11-5"><a></a>rt.buzzer <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb11-6"><a></a>time.sleep(<span class="dv">1</span>)</span>
+<span id="cb11-7"><a></a></span>
+<span id="cb11-8"><a></a><span class="bu">print</span>(<span class="st">"BUZZER OFF"</span>)</span>
+<span id="cb11-9"><a></a>rt.buzzer <span class="op">=</span> <span class="va">False</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This will sound the buzzer of the reTerminal for 1 second.</p>
 <p>To run the script:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a></a><span class="fu">sudo</span> python3 buzz.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a></a><span class="fu">sudo</span> python3 buzz.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Alternatively, first elevate your shell, then execute the script normally:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a></a><span class="ex">pi@raspberrypi:~</span> $ sudo <span class="at">-i</span></span>
-<span id="cb14-2"><a></a><span class="ex">root@raspberrypi:~#</span> python3 buzz.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a></a><span class="ex">pi@raspberrypi:~</span> $ sudo <span class="at">-i</span></span>
+<span id="cb13-2"><a></a><span class="ex">root@raspberrypi:~#</span> python3 buzz.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <blockquote>
 <p><strong>Note:</strong> this library is simply a wrapper to the OS operations we did in the previous section. Some files need to be accessed by python as root. In this case, it is necessary to run <code>sudo -i</code> <strong>before running</strong> the python script.</p>
 </blockquote>
@@ -697,73 +744,73 @@
 </ul>
 <h3 id="modulenotfounderror">ModuleNotFoundError</h3>
 <p>When trying to import the <code>seeed-python-reterminal</code> library, you might get the following error:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a></a><span class="ex">ModuleNotFoundError:</span> No module named <span class="st">'seeed_python_reterminal'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a></a><span class="ex">ModuleNotFoundError:</span> No module named <span class="st">'seeed_python_reterminal'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The python interpreter is not able to find the module even though it is installed.</p>
 <p>You can run the checks described below.</p>
 <h4 id="check-library-location">Check library location</h4>
 <p>Check the location of where the module was installed with <code>pip3 show &lt;module-name&gt;</code>:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a></a><span class="ex">pi@raspberrypi:~</span> $ pip3 show seeed-python-reterminal</span>
-<span id="cb16-2"><a></a></span>
-<span id="cb16-3"><a></a><span class="ex">Name:</span> seeed-python-reterminal</span>
-<span id="cb16-4"><a></a><span class="ex">Version:</span> 0.2</span>
-<span id="cb16-5"><a></a><span class="ex">Summary:</span> seeed-python-reterminal</span>
-<span id="cb16-6"><a></a><span class="ex">Home-page:</span> https://github.com/Seeed-Studio/Seeed_Python_ReTerminal</span>
-<span id="cb16-7"><a></a><span class="ex">Author:</span> Takashi Matsuoka <span class="er">(</span><span class="ex">matsujirushi</span><span class="kw">)</span></span>
-<span id="cb16-8"><a></a><span class="ex">Author-email:</span> matsujirushi@live.jp</span>
-<span id="cb16-9"><a></a><span class="ex">License:</span> MIT License</span>
-<span id="cb16-10"><a></a><span class="ex">Location:</span> /usr/local/lib/python3.7/dist-packages      <span class="co"># Library location</span></span>
-<span id="cb16-11"><a></a><span class="ex">Requires:</span> evdev</span>
-<span id="cb16-12"><a></a><span class="ex">Required-by:</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a></a><span class="ex">pi@raspberrypi:~</span> $ pip3 show seeed-python-reterminal</span>
+<span id="cb15-2"><a></a></span>
+<span id="cb15-3"><a></a><span class="ex">Name:</span> seeed-python-reterminal</span>
+<span id="cb15-4"><a></a><span class="ex">Version:</span> 0.2</span>
+<span id="cb15-5"><a></a><span class="ex">Summary:</span> seeed-python-reterminal</span>
+<span id="cb15-6"><a></a><span class="ex">Home-page:</span> https://github.com/Seeed-Studio/Seeed_Python_ReTerminal</span>
+<span id="cb15-7"><a></a><span class="ex">Author:</span> Takashi Matsuoka <span class="er">(</span><span class="ex">matsujirushi</span><span class="kw">)</span></span>
+<span id="cb15-8"><a></a><span class="ex">Author-email:</span> matsujirushi@live.jp</span>
+<span id="cb15-9"><a></a><span class="ex">License:</span> MIT License</span>
+<span id="cb15-10"><a></a><span class="ex">Location:</span> /usr/local/lib/python3.7/dist-packages      <span class="co"># Library location</span></span>
+<span id="cb15-11"><a></a><span class="ex">Requires:</span> evdev</span>
+<span id="cb15-12"><a></a><span class="ex">Required-by:</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The library is installed at: <code>Location: /usr/local/lib/python3.7/dist-packages</code></p>
 <h4 id="check-pythons-library-paths">Check python’s library paths</h4>
 <p>Similarly to Linux, there are environmental variables that determine where python will look for installed modules/libraries.</p>
 <p>See the paths where python is looking for libraries with <code>sys.path</code>.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a></a>pi<span class="op">@</span>raspberrypi:<span class="op">~</span> $ python3</span>
-<span id="cb17-2"><a></a></span>
-<span id="cb17-3"><a></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> sys      <span class="co"># Exposes configuration used by the python interpreter.</span></span>
-<span id="cb17-4"><a></a><span class="op">&gt;&gt;&gt;</span> sys.path        <span class="co"># Lists all paths where interpreter looks for modules.</span></span>
-<span id="cb17-5"><a></a>[</span>
-<span id="cb17-6"><a></a> <span class="st">''</span>,</span>
-<span id="cb17-7"><a></a> <span class="st">'/usr/lib/python37.zip'</span>,</span>
-<span id="cb17-8"><a></a> <span class="st">'/usr/lib/python3.7'</span>,</span>
-<span id="cb17-9"><a></a> <span class="st">'/usr/lib/python3.7/lib-dynload'</span>,</span>
-<span id="cb17-10"><a></a> <span class="st">'/home/pi/.local/lib/python3.7/site-packages'</span>,</span>
-<span id="cb17-11"><a></a> <span class="st">'/usr/local/lib/python3.7/dist-packages'</span>,</span>
-<span id="cb17-12"><a></a> <span class="st">'/usr/lib/python3/dist-packages'</span></span>
-<span id="cb17-13"><a></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a></a>pi<span class="op">@</span>raspberrypi:<span class="op">~</span> $ python3</span>
+<span id="cb16-2"><a></a></span>
+<span id="cb16-3"><a></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> sys      <span class="co"># Exposes configuration used by the python interpreter.</span></span>
+<span id="cb16-4"><a></a><span class="op">&gt;&gt;&gt;</span> sys.path        <span class="co"># Lists all paths where interpreter looks for modules.</span></span>
+<span id="cb16-5"><a></a>[</span>
+<span id="cb16-6"><a></a> <span class="st">''</span>,</span>
+<span id="cb16-7"><a></a> <span class="st">'/usr/lib/python37.zip'</span>,</span>
+<span id="cb16-8"><a></a> <span class="st">'/usr/lib/python3.7'</span>,</span>
+<span id="cb16-9"><a></a> <span class="st">'/usr/lib/python3.7/lib-dynload'</span>,</span>
+<span id="cb16-10"><a></a> <span class="st">'/home/pi/.local/lib/python3.7/site-packages'</span>,</span>
+<span id="cb16-11"><a></a> <span class="st">'/usr/local/lib/python3.7/dist-packages'</span>,</span>
+<span id="cb16-12"><a></a> <span class="st">'/usr/lib/python3/dist-packages'</span></span>
+<span id="cb16-13"><a></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>If the output of <code>pip3 show seeed-python-reterminal</code> is not in this list, python will not find it when you import it.</p>
 <blockquote>
 <p><strong>Note:</strong> the python shell above was started as the user <code>pi</code>. If you start python as <strong>root</strong>, <code>sys.path</code> might have different paths.</p>
 </blockquote>
 <p>Below, python was started as <strong>root</strong>:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a></a>pi<span class="op">@</span>raspberrypi:<span class="op">~</span> $ sudo <span class="op">-</span>i</span>
-<span id="cb18-2"><a></a>root<span class="op">@</span>raspberrypi:<span class="op">~</span><span class="co"># python3</span></span>
-<span id="cb18-3"><a></a></span>
-<span id="cb18-4"><a></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> sys</span>
-<span id="cb18-5"><a></a><span class="op">&gt;&gt;&gt;</span> sys.path</span>
-<span id="cb18-6"><a></a>[</span>
-<span id="cb18-7"><a></a><span class="st">''</span>,</span>
-<span id="cb18-8"><a></a><span class="st">'/usr/lib/python37.zip'</span>,</span>
-<span id="cb18-9"><a></a><span class="st">'/usr/lib/python3.7'</span>,</span>
-<span id="cb18-10"><a></a><span class="st">'/usr/lib/python3.7/lib-dynload'</span>,</span>
-<span id="cb18-11"><a></a><span class="st">'/usr/local/lib/python3.7/dist-packages'</span>,</span>
-<span id="cb18-12"><a></a><span class="st">'/usr/lib/python3/dist-packages'</span></span>
-<span id="cb18-13"><a></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a></a>pi<span class="op">@</span>raspberrypi:<span class="op">~</span> $ sudo <span class="op">-</span>i</span>
+<span id="cb17-2"><a></a>root<span class="op">@</span>raspberrypi:<span class="op">~</span><span class="co"># python3</span></span>
+<span id="cb17-3"><a></a></span>
+<span id="cb17-4"><a></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> sys</span>
+<span id="cb17-5"><a></a><span class="op">&gt;&gt;&gt;</span> sys.path</span>
+<span id="cb17-6"><a></a>[</span>
+<span id="cb17-7"><a></a><span class="st">''</span>,</span>
+<span id="cb17-8"><a></a><span class="st">'/usr/lib/python37.zip'</span>,</span>
+<span id="cb17-9"><a></a><span class="st">'/usr/lib/python3.7'</span>,</span>
+<span id="cb17-10"><a></a><span class="st">'/usr/lib/python3.7/lib-dynload'</span>,</span>
+<span id="cb17-11"><a></a><span class="st">'/usr/local/lib/python3.7/dist-packages'</span>,</span>
+<span id="cb17-12"><a></a><span class="st">'/usr/lib/python3/dist-packages'</span></span>
+<span id="cb17-13"><a></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Note that the user <code>pi</code> does not have permission to add content inside <code>/usr</code>. Thus, all <code>pip</code> installations as the regular user go into <code>/home/pi/.local/lib/python3.7/site-packages</code>.</p>
 <p><strong>Conclusion:</strong> if you install a python library as <code>root</code>, it might go to a different directory compared to installing it as the regular user.</p>
 <p>This is the main reason why we chose to install the <code>seeed-python-reterminal</code> as root, rather than the regular user <code>pi</code>.</p>
 <h3 id="making-users-library-available-to-root-optional">Making user’s library available to root (optional)</h3>
 <p>If you would like to make a library installed as the user <code>pi</code> available when running the script as <code>root</code>, you will need to export an environmental variable named <code>PYTHONPATH</code> pointing to the library location.</p>
 <p>For example, assuming that a library installed under the user <code>pi</code> is located in <code>/home/pi/.local/lib/python3.7/site-packages</code>, do the following:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a></a><span class="co"># Elevate the shell to the root user</span></span>
-<span id="cb19-2"><a></a><span class="ex">pi@raspberrypi:~</span> $ sudo <span class="at">-i</span></span>
-<span id="cb19-3"><a></a><span class="ex">root@raspberrypi:~#</span></span>
-<span id="cb19-4"><a></a></span>
-<span id="cb19-5"><a></a><span class="co"># Export the PYTHONPATH environment variable</span></span>
-<span id="cb19-6"><a></a><span class="ex">root@raspberrypi:~#</span> export PYTHONPATH=<span class="st">"/home/pi/.local/lib/python3.7/site-packages"</span></span>
-<span id="cb19-7"><a></a></span>
-<span id="cb19-8"><a></a><span class="co"># Start python as root and run the script that imports the library</span></span>
-<span id="cb19-9"><a></a><span class="ex">root@raspberrypi:~#</span> python3 my_script.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a></a><span class="co"># Elevate the shell to the root user</span></span>
+<span id="cb18-2"><a></a><span class="ex">pi@raspberrypi:~</span> $ sudo <span class="at">-i</span></span>
+<span id="cb18-3"><a></a><span class="ex">root@raspberrypi:~#</span></span>
+<span id="cb18-4"><a></a></span>
+<span id="cb18-5"><a></a><span class="co"># Export the PYTHONPATH environment variable</span></span>
+<span id="cb18-6"><a></a><span class="ex">root@raspberrypi:~#</span> export PYTHONPATH=<span class="st">"/home/pi/.local/lib/python3.7/site-packages"</span></span>
+<span id="cb18-7"><a></a></span>
+<span id="cb18-8"><a></a><span class="co"># Start python as root and run the script that imports the library</span></span>
+<span id="cb18-9"><a></a><span class="ex">root@raspberrypi:~#</span> python3 my_script.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
