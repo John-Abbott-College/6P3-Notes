@@ -151,13 +151,13 @@ As you experiment with Azure you might want to know your current balance.
 
 **TL:DR**
 1. Sign in to the Azure portn in to the Azure portal.al.
-2. Search for ***Cost Management***  ![](assets/intro-azure-cost-management.png ':class=inline-img') 
+2. Search for ***Cost Management***  ![](../assets/intro-azure-cost-management.png ':class=inline-img') 
 
 3. Select ***Payment methods***
 
 4. Check your ***Azure credits*** panel.
 
-![Credit check panel in Azure](assets/intro-azure-credit-check.png)
+![Credit check panel in Azure](../assets/intro-azure-credit-check.png)
 
 For details check [Track Microsoft Customer Agreement Azure credit balance](https://docs.microsoft.com/en-us/azure/cost-management-billing/manage/mca-check-azure-credits-balance?tabs=portal#main)
 
@@ -184,16 +184,16 @@ The first approach involves a few less steps so it is described below.
 2. Select the resource group you want to monitor with a budget.
 3. In the left panel, select ***Budgets*** under the *Cost Management* group and select ***Add***.
 
-![Menu for creating a budget for a resource group](assets/12-budget-resource-group.png)
+![Menu for creating a budget for a resource group](../assets/12-budget-resource-group.png)
 
 4. Give your budget a name and an amount.
 
-![](assets/12-budget-name-ammount.png)
+![](../assets/12-budget-name-ammount.png)
 
 5. Select the **percent spending** for the alert and the **email** to receive the notification.
 6. Click ***Create***.
 
-![](assets/12-budget-alert-percent-email.png)
+![](../assets/12-budget-alert-percent-email.png)
 
 
 
