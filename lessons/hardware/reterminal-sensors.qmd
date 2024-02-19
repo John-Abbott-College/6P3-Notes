@@ -1,64 +1,48 @@
 ---
-title: "reTerminal Setup & Sensors"
-subtitle: Getting to know our reTerminals through their sensory capabilities.
+title: "reTerminal Sensors"
+subtitle: Installing initial reTerminal packages. Reading and controlling the reTerminal hardware interfaces, e.g. LEDs, light sensor, screen backlight, etc.
 order: 1
 ---
 
-
-## reTerminal Install Guide
+## Lab 1 Review
 
 After Lab 1, you have taken the following steps:
 
-### Lab 1 Review
-
 1. Install the Raspberry Pi OS image.
- - disassemble, flip the memory switch and use `usbboot/rpiboot` script to prepare internal memory.
- - use Raspberry Pi Image Flasher to flash new image.
+ - disassemble, flip the memory switch and use `usbboot/rpiboot` script to prepare internal memory for firmware flash.
+ - use Raspberry Pi Imager to flash new image 64bit "Bookworm" Raspberry OS with chosen username/password and SSH enabled
  - fix the "black screen" issue by installing the latest seeed overlay drivers
 
 2. Update system packages
  - update system repositories with `sudo apt update` and `sudo apt upgrade`
  - install kernel headers with `sudo apt install raspberrypi-kernel-headers`
- - install `git` and `docker`
+ - install `git` and `docker`, deploy simple Python webserver docker container
 
 3. Set up remote connection interfaces
  - determine your assigned IP address on the class LAN
  - determine your device MAC address
- - enable SSH
- - enable VNC connection
+ - enable VNC interface
 
-### After Lab 1
-
-There are some other helpful conveniences we can set up.
-
-It is worth reading the entire Wiki article about the [reSeed Terminal](https://wiki.seeedstudio.com/reTerminal/)
-
-5. Install python and the following system packages
-	1. reTerminal
-	2. gpiozero
+It's time to take a deeper look at the hardware and software our reTerminal offers.
 
 ## Raspberry Pi OS and Debian
 
-The Raspberry Pi OS (previously called *Raspbian OS*) used in the reTerminal is a variation of the **Debian OS**, with optimizations for the Raspberry Pi hardware.
+The Raspberry Pi OS (previously called *Raspbian OS*) used in the reTerminal is a variation of the [**Debian OS**](https://en.wikipedia.org/wiki/Debian), with optimizations for the Raspberry Pi hardware.
 
-> **Debian OS** is the base Linux system for many other distributions such as:
-> - Ubuntu, Mint, PopOS, KDE, etc.
+> **Debian OS** is one of the most commonly used Linux distributions, especially as the "base" for derivative distributions. There are over 100 derivatives of Debian, many of which are themselves very popular distributions. These include:
+>
+> - Desktop distributions like Ubuntu, Linux Mint, elementaryOS;
+> - Special-purpose distributions Kali Linux and Backbox (penetration testing)
+> - Server/Hypervisor distributions like Proxmox, Ubuntu server, 
+> - Many others, you can find a more complete list [here](https://en.wikipedia.org/wiki/List_of_Linux_distributions#Debian-based)
 
-Many of the commands and configuration for Raspberry Pi OS can be taken directly from Debian's documentation.
+Debian-derived distributions share the following:
+- the `.deb` package format 
+- the `dpkg` package manager and its frontend `apt`
 
-## Package Managers
+For that reason, many of the commands and configuration for Raspberry Pi OS can be taken directly from Debian's documentation.
 
 ### Apt: Debian Package Manger
-
-During Lab 1, you updated, upgraded and installed some packages in the Raspberry Pi OS using the **apt command**
-
-For example:
-
-| Command                 | Description                                                        |
-| ----------------------- | ------------------------------------------------------------------ |
-| `sudo apt update`       | Update system packages |
-| `sudo apt upgrade`      | Apply updates from previous command |
-| `sudo apt install vim`  | Install package Vim                                                |
 
 The command `apt` is the default package manager of Debian.
 
@@ -68,55 +52,84 @@ Managing packages could technically be done manually, however, it is very time c
 
 Note: `apt` is a newer package manager API meant to replace the older API  `apt-get`. However, they both accomplish the same. See [Debian docs](https://www.debian.org/doc/manuals/debian-handbook/sect.apt-get.en.html) for details.
 
-### Pip: Python Package Manager
+During Lab 1, you updated, upgraded and installed some packages in the Raspberry Pi OS using `apt`:
 
-[`pip`](https://pip.pypa.io/en/stable/) is python's own package manager, which is independent from `apt`. 
+| Command                 | Description                                                        |
+| ----------------------- | ------------------------------------------------------------------ |
+| `sudo apt update`       | Update list of available packages |
+| `sudo apt upgrade`      | Upgrade the system by installing/upgrading packages |
 
-> Pip installs packages from the [Python Package Index repository (pypi.org)](https://pypi.org/)
+Other commonly used commands, as seen from running `apt --help`:
 
-To use it for python 3, call the command `pip3`
+| Command | Description |
+| ------- | ----------- |
+| `apt list` | list packages based on package names |
+| `apt search` | search in package descriptions |
+| `apt show <package>` | show package details |
+| `apt install <package>` | install packages |
+| `apt reinstall <package>` | reinstall packages |
+| `apt remove <package>` | remove packages |
+| `apt autoremove` | Remove automatically all unused packages |
+| `apt full-upgrade` | upgrade the system by removing/installing/upgrading packages |
+| `apt edit-sources` | edit the source information file |
 
-```bash
-pip3 install emoji
-```
+Note: documentation will often leave out `sudo` since the need to run `sudo` depends on the machine and the user. 
 
-This will install the a python library emoji which will create emoji from text descriptions.
+>
+> In general, commands that **read** data (`apt list`, `apt search`, etc.) will generally not require `sudo`, since most folderst that `apt` will touch are universally readable.
+>
+> `apt` commands that **write** data (`apt install`, etc.) to a folder not owned by the current user -- which is most folders outside of `/home/username`, but particularly common package install locations like `/usr`, `/bin`, etc. -- these commands will require `sudo` to gain the required write permission
 
-Once a python module has been installed, it is available to be imported in your python script:
-
-```python
-import emoji
-
-message = emoji.emojize('Howdy :sun_with_face:')
-print(message)
-```
-
-Output:
-
-```bash
-Howdy 🌞
-```
-
-It is also possible to give an alias to the newly imported module:
-
-```python
-import emoji as em
-
-message = em.emojize('Howdy :sun_with_face:')
-print(message)
-```
-
-Finally, you can import only a specific function and give it an alias:
-
-```python
-from emoji import emojize as emz
-message = emz('Howdy :sun_with_face:')
-print(message)
-```
-
-### apt vs pip: when to use which?
-
-> Note: do not run `pip` as `sudo` because `pip` could overwrite system files that are managed by `apt`.
+<!-- ### Pip: Python Package Manager -->
+<!---->
+<!-- [`pip`](https://pip.pypa.io/en/stable/) is python's own package manager, which is independent from `apt`.  -->
+<!---->
+<!-- > Pip installs packages from the [Python Package Index repository (pypi.org)](https://pypi.org/) -->
+<!---->
+<!-- To use it for python 3, call the command `pip3` -->
+<!---->
+<!-- ```bash -->
+<!-- pip3 install emoji -->
+<!-- ``` -->
+<!---->
+<!-- This will install the a python library emoji which will create emoji from text descriptions. -->
+<!---->
+<!-- Once a python module has been installed, it is available to be imported in your python script: -->
+<!---->
+<!-- ```python -->
+<!-- import emoji -->
+<!---->
+<!-- message = emoji.emojize('Howdy :sun_with_face:') -->
+<!-- print(message) -->
+<!-- ``` -->
+<!---->
+<!-- Output: -->
+<!---->
+<!-- ```bash -->
+<!-- Howdy 🌞 -->
+<!-- ``` -->
+<!---->
+<!-- It is also possible to give an alias to the newly imported module: -->
+<!---->
+<!-- ```python -->
+<!-- import emoji as em -->
+<!---->
+<!-- message = em.emojize('Howdy :sun_with_face:') -->
+<!-- print(message) -->
+<!-- ``` -->
+<!---->
+<!-- Finally, you can import only a specific function and give it an alias: -->
+<!---->
+<!-- ```python -->
+<!-- from emoji import emojize as emz -->
+<!-- message = emz('Howdy :sun_with_face:') -->
+<!-- print(message) -->
+<!-- ``` -->
+<!---->
+<!-- ### apt vs pip: when to use which? -->
+<!---->
+<!-- > Note: do not run `pip` as `sudo` because `pip` could overwrite system files that are managed by `apt`. -->
+<!---->
 
 ## Reading sensor data in Linux
 
