@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
 <link href="../../assets/favicon_io/favicon.ico" rel="icon">
-<script src="../../site_libs/quarto-listing/list.min.js"></script>
-<script src="../../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-html/tabby.min.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -13,7 +11,7 @@
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.550">
 
-  <title>Connected Objects - Python</title>
+  <title>Connected Objects - Package management in Python</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -31,37 +29,73 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto.css">
-  <script>
-
-    window.document.addEventListener("DOMContentLoaded", function (_event) {
-      const listingTargetEl = window.document.querySelector('#listing-listing .list');
-      if (!listingTargetEl) {
-        // No listing discovered, do not attach.
-        return; 
-      }
-
-      const options = {
-        valueNames: ['listing-title','listing-author','listing-subtitle','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-        
-        searchColumns: ["listing-title","listing-author","listing-subtitle","listing-image","listing-description"],
-      };
-
-      window['quarto-listings'] = window['quarto-listings'] || {};
-      window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-      if (window['quarto-listing-loaded']) {
-        window['quarto-listing-loaded']();
-      }
-    });
-
-    window.addEventListener('hashchange',() => {
-      if (window['quarto-listing-loaded']) {
-        window['quarto-listing-loaded']();
-      }
-    })
-    </script>
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -351,7 +385,8 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="Connected Objects - Python">
+<meta property="og:title" content="Connected Objects - Package management in Python">
+<meta property="og:description" content="How to use OS package managers, virtual environments, and pip to manage python applications effectively.">
 <meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/lessons/python/assets/art_title_path_only.svg">
 <meta property="og:site_name" content="Connected Objects">
 </head>
@@ -360,7 +395,8 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Python</h1>
+  <h1 class="title">Package management in Python</h1>
+  <p class="subtitle">How to use OS package managers, virtual environments, and <code>pip</code> to manage python applications effectively.</p>
 
 <div class="quarto-title-authors">
 </div>
@@ -368,7 +404,103 @@
 </section>
 <section class="slide level2">
 
-
+<h3 id="pip-python-package-manager">Pip: Python Package Manager</h3>
+<p><a href="https://pip.pypa.io/en/stable/"><code>pip</code></a> is python’s own package manager, which is independent from <code>apt</code>.</p>
+<blockquote>
+<p>Pip installs packages from the <a href="https://pypi.org/">Python Package Index repository (pypi.org)</a></p>
+</blockquote>
+<p>To use it for python 3, call the command <code>pip3</code></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a></a><span class="ex">pip3</span> install emoji</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This will install the a python library emoji which will create emoji from text descriptions.</p>
+<p>Once a python module has been installed, it is available to be imported in your python script:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="im">import</span> emoji</span>
+<span id="cb2-2"><a></a></span>
+<span id="cb2-3"><a></a>message <span class="op">=</span> emoji.emojize(<span class="st">'Howdy :sun_with_face:'</span>)</span>
+<span id="cb2-4"><a></a><span class="bu">print</span>(message)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Output:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a></a><span class="ex">Howdy</span> 🌞</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>It is also possible to give an alias to the newly imported module:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="im">import</span> emoji <span class="im">as</span> em</span>
+<span id="cb4-2"><a></a></span>
+<span id="cb4-3"><a></a>message <span class="op">=</span> em.emojize(<span class="st">'Howdy :sun_with_face:'</span>)</span>
+<span id="cb4-4"><a></a><span class="bu">print</span>(message)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Finally, you can import only a specific function and give it an alias:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="im">from</span> emoji <span class="im">import</span> emojize <span class="im">as</span> emz</span>
+<span id="cb5-2"><a></a>message <span class="op">=</span> emz(<span class="st">'Howdy :sun_with_face:'</span>)</span>
+<span id="cb5-3"><a></a><span class="bu">print</span>(message)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h3 id="apt-vs-pip-when-to-use-which">apt vs pip: when to use which?</h3>
+<blockquote>
+<p>Note: do not run <code>pip</code> as <code>sudo</code> because <code>pip</code> could overwrite system files that are managed by <code>apt</code>.</p>
+</blockquote>
+<h3 id="modulenotfounderror">ModuleNotFoundError</h3>
+<p>When trying to import the <code>seeed-python-reterminal</code> library, you might get the following error:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a></a><span class="ex">ModuleNotFoundError:</span> No module named <span class="st">'seeed_python_reterminal'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The python interpreter is not able to find the module even though it is installed.</p>
+<p>You can run the checks described below.</p>
+<h4 id="check-library-location">Check library location</h4>
+<p>Check the location of where the module was installed with <code>pip3 show &lt;module-name&gt;</code>:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a></a><span class="ex">pi@raspberrypi:~</span> $ pip3 show seeed-python-reterminal</span>
+<span id="cb7-2"><a></a></span>
+<span id="cb7-3"><a></a><span class="ex">Name:</span> seeed-python-reterminal</span>
+<span id="cb7-4"><a></a><span class="ex">Version:</span> 0.2</span>
+<span id="cb7-5"><a></a><span class="ex">Summary:</span> seeed-python-reterminal</span>
+<span id="cb7-6"><a></a><span class="ex">Home-page:</span> https://github.com/Seeed-Studio/Seeed_Python_ReTerminal</span>
+<span id="cb7-7"><a></a><span class="ex">Author:</span> Takashi Matsuoka <span class="er">(</span><span class="ex">matsujirushi</span><span class="kw">)</span></span>
+<span id="cb7-8"><a></a><span class="ex">Author-email:</span> matsujirushi@live.jp</span>
+<span id="cb7-9"><a></a><span class="ex">License:</span> MIT License</span>
+<span id="cb7-10"><a></a><span class="ex">Location:</span> /usr/local/lib/python3.7/dist-packages      <span class="co"># Library location</span></span>
+<span id="cb7-11"><a></a><span class="ex">Requires:</span> evdev</span>
+<span id="cb7-12"><a></a><span class="ex">Required-by:</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The library is installed at: <code>Location: /usr/local/lib/python3.7/dist-packages</code></p>
+<h4 id="check-pythons-library-paths">Check python’s library paths</h4>
+<p>Similarly to Linux, there are environmental variables that determine where python will look for installed modules/libraries.</p>
+<p>See the paths where python is looking for libraries with <code>sys.path</code>.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a>pi<span class="op">@</span>raspberrypi:<span class="op">~</span> $ python3</span>
+<span id="cb8-2"><a></a></span>
+<span id="cb8-3"><a></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> sys      <span class="co"># Exposes configuration used by the python interpreter.</span></span>
+<span id="cb8-4"><a></a><span class="op">&gt;&gt;&gt;</span> sys.path        <span class="co"># Lists all paths where interpreter looks for modules.</span></span>
+<span id="cb8-5"><a></a>[</span>
+<span id="cb8-6"><a></a> <span class="st">''</span>,</span>
+<span id="cb8-7"><a></a> <span class="st">'/usr/lib/python37.zip'</span>,</span>
+<span id="cb8-8"><a></a> <span class="st">'/usr/lib/python3.7'</span>,</span>
+<span id="cb8-9"><a></a> <span class="st">'/usr/lib/python3.7/lib-dynload'</span>,</span>
+<span id="cb8-10"><a></a> <span class="st">'/home/pi/.local/lib/python3.7/site-packages'</span>,</span>
+<span id="cb8-11"><a></a> <span class="st">'/usr/local/lib/python3.7/dist-packages'</span>,</span>
+<span id="cb8-12"><a></a> <span class="st">'/usr/lib/python3/dist-packages'</span></span>
+<span id="cb8-13"><a></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If the output of <code>pip3 show seeed-python-reterminal</code> is not in this list, python will not find it when you import it.</p>
+<blockquote>
+<p><strong>Note:</strong> the python shell above was started as the user <code>pi</code>. If you start python as <strong>root</strong>, <code>sys.path</code> might have different paths.</p>
+</blockquote>
+<p>Below, python was started as <strong>root</strong>:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a>pi<span class="op">@</span>raspberrypi:<span class="op">~</span> $ sudo <span class="op">-</span>i</span>
+<span id="cb9-2"><a></a>root<span class="op">@</span>raspberrypi:<span class="op">~</span><span class="co"># python3</span></span>
+<span id="cb9-3"><a></a></span>
+<span id="cb9-4"><a></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> sys</span>
+<span id="cb9-5"><a></a><span class="op">&gt;&gt;&gt;</span> sys.path</span>
+<span id="cb9-6"><a></a>[</span>
+<span id="cb9-7"><a></a><span class="st">''</span>,</span>
+<span id="cb9-8"><a></a><span class="st">'/usr/lib/python37.zip'</span>,</span>
+<span id="cb9-9"><a></a><span class="st">'/usr/lib/python3.7'</span>,</span>
+<span id="cb9-10"><a></a><span class="st">'/usr/lib/python3.7/lib-dynload'</span>,</span>
+<span id="cb9-11"><a></a><span class="st">'/usr/local/lib/python3.7/dist-packages'</span>,</span>
+<span id="cb9-12"><a></a><span class="st">'/usr/lib/python3/dist-packages'</span></span>
+<span id="cb9-13"><a></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Note that the user <code>pi</code> does not have permission to add content inside <code>/usr</code>. Thus, all <code>pip</code> installations as the regular user go into <code>/home/pi/.local/lib/python3.7/site-packages</code>.</p>
+<p><strong>Conclusion:</strong> if you install a python library as <code>root</code>, it might go to a different directory compared to installing it as the regular user.</p>
+<p>This is the main reason why we chose to install the <code>seeed-python-reterminal</code> as root, rather than the regular user <code>pi</code>.</p>
+<h3 id="making-users-library-available-to-root-optional">Making user’s library available to root (optional)</h3>
+<p>If you would like to make a library installed as the user <code>pi</code> available when running the script as <code>root</code>, you will need to export an environmental variable named <code>PYTHONPATH</code> pointing to the library location.</p>
+<p>For example, assuming that a library installed under the user <code>pi</code> is located in <code>/home/pi/.local/lib/python3.7/site-packages</code>, do the following:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a></a><span class="co"># Elevate the shell to the root user</span></span>
+<span id="cb10-2"><a></a><span class="ex">pi@raspberrypi:~</span> $ sudo <span class="at">-i</span></span>
+<span id="cb10-3"><a></a><span class="ex">root@raspberrypi:~#</span></span>
+<span id="cb10-4"><a></a></span>
+<span id="cb10-5"><a></a><span class="co"># Export the PYTHONPATH environment variable</span></span>
+<span id="cb10-6"><a></a><span class="ex">root@raspberrypi:~#</span> export PYTHONPATH=<span class="st">"/home/pi/.local/lib/python3.7/site-packages"</span></span>
+<span id="cb10-7"><a></a></span>
+<span id="cb10-8"><a></a><span class="co"># Start python as root and run the script that imports the library</span></span>
+<span id="cb10-9"><a></a><span class="ex">root@raspberrypi:~#</span> python3 my_script.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
@@ -742,54 +874,4 @@
     </script>
     
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1708668516673" data-listing-reading-time-sort="1" data-listing-word-count-sort="12">
-<div class="thumbnail">
-<p><a href="../../lessons/python/intro-python.html" class="no-external"></a></p><a href="../../lessons/python/intro-python.html" class="no-external">
-<!-- img(9CEB782EFEE6)[progressive=false, height=]:lessons/python/intro-python.html -->
-</a><p><a href="../../lessons/python/intro-python.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../../lessons/python/intro-python.html" class="no-external">Intro to Python for Developers</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../../lessons/python/intro-python.html" class="no-external">Python exercises</a>
-</div>
-<div class="listing-description">
-<a href="../../lessons/python/intro-python.html" class="no-external"><!-- desc(5A0113B34292)[max=175]:lessons/python/intro-python.html --></a>
-</div>
-</div>
-<div class="metadata">
-<p><a href="../../lessons/python/intro-python.html" class="no-external"></a></p><a href="../../lessons/python/intro-python.html" class="no-external">
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-listing-file-modified-sort="1708668516673" data-listing-reading-time-sort="3" data-listing-word-count-sort="494">
-<div class="thumbnail">
-<p><a href="../../lessons/python/package-management-python.html" class="no-external"></a></p><a href="../../lessons/python/package-management-python.html" class="no-external">
-<!-- img(9CEB782EFEE6)[progressive=false, height=]:lessons/python/package-management-python.html -->
-</a><p><a href="../../lessons/python/package-management-python.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../../lessons/python/package-management-python.html" class="no-external">Package management in Python</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../../lessons/python/package-management-python.html" class="no-external">How to use OS package managers, virtual environments, and <code>pip</code> to manage python applications effectively.</a>
-</div>
-<div class="listing-description">
-<a href="../../lessons/python/package-management-python.html" class="no-external"><!-- desc(5A0113B34292)[max=175]:lessons/python/package-management-python.html --></a>
-</div>
-</div>
-<div class="metadata">
-<p><a href="../../lessons/python/package-management-python.html" class="no-external"></a></p><a href="../../lessons/python/package-management-python.html" class="no-external">
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></body></html>
+</body></html>

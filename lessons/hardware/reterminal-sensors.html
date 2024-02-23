@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-02-19">
+<meta name="dcterms.date" content="2024-02-23">
 
 <title>Connected Objects - reTerminal Sensors</title>
 <style>
@@ -207,6 +207,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../lessons/linux/package-management-debian.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Raspberry Pi Package Management: apt</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../lessons/linux/remote-linux.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Remote work on Linux</span></a>
   </div>
@@ -262,6 +268,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Intro to Python for Developers</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../lessons/python/package-management-python.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Package management in Python</span></a>
+  </div>
+</li>
       </ul>
   </li>
       </ul>
@@ -304,23 +316,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#firmware-version" id="toc-firmware-version" class="nav-link" data-scroll-target="#firmware-version">Firmware &amp; Version</a></li>
   </ul></li>
-  <li><a href="#raspberry-pi-os-and-debian" id="toc-raspberry-pi-os-and-debian" class="nav-link" data-scroll-target="#raspberry-pi-os-and-debian">Raspberry Pi OS and Debian</a>
-  <ul class="collapse">
-  <li><a href="#apt-debian-package-manger" id="toc-apt-debian-package-manger" class="nav-link" data-scroll-target="#apt-debian-package-manger">Apt: Debian Package Manger</a></li>
-  </ul></li>
+  <li><a href="#raspberry-pi-os" id="toc-raspberry-pi-os" class="nav-link" data-scroll-target="#raspberry-pi-os">Raspberry Pi OS</a></li>
   <li><a href="#reading-sensor-data-in-linux" id="toc-reading-sensor-data-in-linux" class="nav-link" data-scroll-target="#reading-sensor-data-in-linux">Reading sensor data in Linux</a></li>
   <li><a href="#sensors" id="toc-sensors" class="nav-link" data-scroll-target="#sensors">Sensors</a>
   <ul class="collapse">
   <li><a href="#programmable-leds" id="toc-programmable-leds" class="nav-link" data-scroll-target="#programmable-leds">Programmable LEDs</a></li>
   <li><a href="#use-sudo-text-editor" id="toc-use-sudo-text-editor" class="nav-link" data-scroll-target="#use-sudo-text-editor">Use sudo + text-editor</a></li>
   <li><a href="#use-sudo-su" id="toc-use-sudo-su" class="nav-link" data-scroll-target="#use-sudo-su">Use sudo + su</a></li>
+  <li><a href="#use-sudo-tee" id="toc-use-sudo-tee" class="nav-link" data-scroll-target="#use-sudo-tee">Use sudo + <code>tee</code></a></li>
   <li><a href="#luminosity-sensor" id="toc-luminosity-sensor" class="nav-link" data-scroll-target="#luminosity-sensor">Luminosity Sensor</a></li>
   </ul></li>
-  <li><a href="#python-library-for-reterminal" id="toc-python-library-for-reterminal" class="nav-link" data-scroll-target="#python-library-for-reterminal">Python Library for reTerminal</a>
-  <ul class="collapse">
-  <li><a href="#modulenotfounderror" id="toc-modulenotfounderror" class="nav-link" data-scroll-target="#modulenotfounderror">ModuleNotFoundError</a></li>
-  <li><a href="#making-users-library-available-to-root-optional" id="toc-making-users-library-available-to-root-optional" class="nav-link" data-scroll-target="#making-users-library-available-to-root-optional">Making user’s library available to root (optional)</a></li>
-  </ul></li>
+  <li><a href="#python-library-for-reterminal" id="toc-python-library-for-reterminal" class="nav-link" data-scroll-target="#python-library-for-reterminal">Python Library for reTerminal</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/John-Abbott-College/6P3-Notes/blob/winter2024/lessons/hardware/reterminal-sensors.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/John-Abbott-College/6P3-Notes/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="reterminal-sensors.slides.html"><i class="bi bi-file-slides"></i>RevealJS (clean)</a></li></ul></div></nav>
     </div>
@@ -341,14 +347,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">February 19, 2024</p>
+      <p class="date">February 23, 2024</p>
     </div>
   </div>
   
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">February 19, 2024</p>
+      <p class="date-modified">February 23, 2024</p>
     </div>
   </div>
     
@@ -446,158 +452,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>You can find a complete list of the reTerminal specifications here: <a href="https://wiki.seeedstudio.com/reTerminal/#specifications">reTerminal Specifications</a></strong></p>
 </section>
 </section>
-<section id="raspberry-pi-os-and-debian" class="level2">
-<h2 class="anchored" data-anchor-id="raspberry-pi-os-and-debian">Raspberry Pi OS and Debian</h2>
-<p>The Raspberry Pi OS (previously called <em>Raspbian OS</em>) used in the reTerminal is a variation of the <a href="https://en.wikipedia.org/wiki/Debian"><strong>Debian OS</strong></a>, with optimizations for the Raspberry Pi hardware.</p>
-<blockquote class="blockquote">
-<p><strong>Debian OS</strong> is one of the most commonly used Linux distributions, especially as the “base” for derivative distributions. There are over 100 derivatives of Debian, many of which are themselves very popular distributions. These include:</p>
-<ul>
-<li>Desktop distributions like Ubuntu, Linux Mint, elementaryOS;</li>
-<li>Special-purpose distributions Kali Linux and Backbox (penetration testing)</li>
-<li>Server/Hypervisor distributions like Proxmox, Ubuntu server,</li>
-<li>Many others, you can find a more complete list <a href="https://en.wikipedia.org/wiki/List_of_Linux_distributions#Debian-based">here</a></li>
-</ul>
-</blockquote>
-<p>Debian-derived distributions share the following: - the <code>.deb</code> package format - the <code>dpkg</code> package manager and its frontend <code>apt</code></p>
-<p>For that reason, many of the commands and configuration for Raspberry Pi OS can be taken directly from Debian’s documentation.</p>
-<section id="apt-debian-package-manger" class="level3">
-<h3 class="anchored" data-anchor-id="apt-debian-package-manger">Apt: Debian Package Manger</h3>
-<p>The command <code>apt</code> is the default package manager of Debian.</p>
-<blockquote class="blockquote">
-<p>A <strong>package manager</strong> is a software tool responsible for automating the installation, removal, configuration and removal of computer programs.</p>
-</blockquote>
-<p>Managing packages could technically be done manually, however, it is very time consuming and error prone: tracking package dependencies and compatibility with the current system.</p>
-<p>Note: <code>apt</code> is a newer package manager API meant to replace the older API <code>apt-get</code>. However, they both accomplish the same. See <a href="https://www.debian.org/doc/manuals/debian-handbook/sect.apt-get.en.html">Debian docs</a> for details.</p>
-<p>During Lab 1, you updated, upgraded and installed some packages in the Raspberry Pi OS using <code>apt</code>:</p>
-<table class="table">
-<colgroup>
-<col style="width: 25%">
-<col style="width: 74%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Command</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>sudo apt update</code></td>
-<td>Update list of available packages</td>
-</tr>
-<tr class="even">
-<td><code>sudo apt upgrade</code></td>
-<td>Upgrade the system by installing/upgrading packages</td>
-</tr>
-</tbody>
-</table>
-<p>Other commonly used commands, as seen from running <code>apt --help</code>:</p>
-<table class="table">
-<colgroup>
-<col style="width: 38%">
-<col style="width: 61%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Command</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>apt list</code></td>
-<td>list packages based on package names</td>
-</tr>
-<tr class="even">
-<td><code>apt search</code></td>
-<td>search in package descriptions</td>
-</tr>
-<tr class="odd">
-<td><code>apt show &lt;package&gt;</code></td>
-<td>show package details</td>
-</tr>
-<tr class="even">
-<td><code>apt install &lt;package&gt;</code></td>
-<td>install packages</td>
-</tr>
-<tr class="odd">
-<td><code>apt reinstall &lt;package&gt;</code></td>
-<td>reinstall packages</td>
-</tr>
-<tr class="even">
-<td><code>apt remove &lt;package&gt;</code></td>
-<td>remove packages</td>
-</tr>
-<tr class="odd">
-<td><code>apt autoremove</code></td>
-<td>Remove automatically all unused packages</td>
-</tr>
-<tr class="even">
-<td><code>apt full-upgrade</code></td>
-<td>upgrade the system by removing/installing/upgrading packages</td>
-</tr>
-<tr class="odd">
-<td><code>apt edit-sources</code></td>
-<td>edit the source information file</td>
-</tr>
-</tbody>
-</table>
-<p>Note: documentation will often leave out <code>sudo</code> since the need to run <code>sudo</code> depends on the machine and the user.</p>
-<blockquote class="blockquote">
-<p>In general, commands that <strong>read</strong> data (<code>apt list</code>, <code>apt search</code>, etc.) will generally not require <code>sudo</code>, since most folderst that <code>apt</code> will touch are universally readable.</p>
-<p><code>apt</code> commands that <strong>write</strong> data (<code>apt install</code>, etc.) to a folder not owned by the current user – which is most folders outside of <code>/home/username</code>, but particularly common package install locations like <code>/usr</code>, <code>/bin</code>, etc. – these commands will require <code>sudo</code> to gain the required write permission</p>
-</blockquote>
-<!-- ### Pip: Python Package Manager -->
-<!---->
-<!-- [`pip`](https://pip.pypa.io/en/stable/) is python's own package manager, which is independent from `apt`.  -->
-<!---->
-<!-- > Pip installs packages from the [Python Package Index repository (pypi.org)](https://pypi.org/) -->
-<!---->
-<!-- To use it for python 3, call the command `pip3` -->
-<!---->
-<!-- ```bash -->
-<!-- pip3 install emoji -->
-<!-- ``` -->
-<!---->
-<!-- This will install the a python library emoji which will create emoji from text descriptions. -->
-<!---->
-<!-- Once a python module has been installed, it is available to be imported in your python script: -->
-<!---->
-<!-- ```python -->
-<!-- import emoji -->
-<!---->
-<!-- message = emoji.emojize('Howdy :sun_with_face:') -->
-<!-- print(message) -->
-<!-- ``` -->
-<!---->
-<!-- Output: -->
-<!---->
-<!-- ```bash -->
-<!-- Howdy 🌞 -->
-<!-- ``` -->
-<!---->
-<!-- It is also possible to give an alias to the newly imported module: -->
-<!---->
-<!-- ```python -->
-<!-- import emoji as em -->
-<!---->
-<!-- message = em.emojize('Howdy :sun_with_face:') -->
-<!-- print(message) -->
-<!-- ``` -->
-<!---->
-<!-- Finally, you can import only a specific function and give it an alias: -->
-<!---->
-<!-- ```python -->
-<!-- from emoji import emojize as emz -->
-<!-- message = emz('Howdy :sun_with_face:') -->
-<!-- print(message) -->
-<!-- ``` -->
-<!---->
-<!-- ### apt vs pip: when to use which? -->
-<!---->
-<!-- > Note: do not run `pip` as `sudo` because `pip` could overwrite system files that are managed by `apt`. -->
-<!---->
-</section>
+<section id="raspberry-pi-os" class="level2">
+<h2 class="anchored" data-anchor-id="raspberry-pi-os">Raspberry Pi OS</h2>
+<p>In Lab 1, we re-imaged the reTerminal Operating System to run the latest, recommended version of 64-bit Raspberry Pi OS.</p>
+<p>Raspberry Pi OS (previously called <em>Raspbian OS</em>) is a variation of the <a href="https://en.wikipedia.org/wiki/Debian"><strong>Debian OS</strong></a>, with optimizations for the Raspberry Pi hardware.</p>
+<p>You can see more about Raspberry Pi OS and Debian in the <a href="../../lessons/linux/package-management-debian.html">Linux</a> set of lessons.</p>
 </section>
 <section id="reading-sensor-data-in-linux" class="level2">
 <h2 class="anchored" data-anchor-id="reading-sensor-data-in-linux">Reading sensor data in Linux</h2>
@@ -654,7 +513,10 @@ $ sudo echo 255 &gt; /sys/class/leds/usr_led0</code></pre>
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># echo 255 &gt; brightness</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Turn off the LED</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># echo 0 &gt; brightness</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Similarly, you can control <code>usr_led1</code> and <code>usr_led2</code> and even the buzzer on <code>/sys/class/leds/usr_buzzer</code> ### Use sudo + <code>tee</code></p>
+<p>Similarly, you can control <code>usr_led1</code> and <code>usr_led2</code> and even the buzzer on <code>/sys/class/leds/usr_buzzer</code></p>
+</section>
+<section id="use-sudo-tee" class="level3">
+<h3 class="anchored" data-anchor-id="use-sudo-tee">Use sudo + <code>tee</code></h3>
 <p><strong>Note:</strong> We’ll run the next command as root because the file we want to write belongs the system (<code>root</code> user, rather than to the user <code>pi</code>.</p>
 </section>
 <section id="luminosity-sensor" class="level3">
@@ -679,12 +541,8 @@ $ sudo echo 255 &gt; /sys/class/leds/usr_led0</code></pre>
 <h2 class="anchored" data-anchor-id="python-library-for-reterminal">Python Library for reTerminal</h2>
 <p>Seeed Studio provided a python library to access most of the sensors and actuators of the reTerminal.</p>
 <p>Install the library <code>seeed-python-reterminal</code> (see official <a href="https://github.com/Seeed-Studio/Seeed_Python_ReTerminal">Github repo</a>) using <code>pip</code>:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> pip3 install seeed-python-reterminal</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<blockquote class="blockquote">
-<p><strong>Installing pip libraries as root is not recommended.</strong></p>
-<p><strong>However</strong>, this library needs to access system files (see previous section) and will have to be executed as root.</p>
-<p>There are workarounds, however, for simplicity we will install this package as root. See section <em>ModuleNotFoundError</em> below for more context.</p>
-</blockquote>
+<p><strong>NOTE:</strong> See <a href="../../lessons/python/package-management-python.html">Package Management in Python</a> for a clear explanation of how to use <code>venv</code> and <code>pip</code>, particularly for <a href="../../lessons/python/package-management-python.html#root-permissions">apps requiring root permissions</a></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install seeed-python-reterminal</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Now you can import it to a test script (eg. <em>buzz.py</em>)</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seeed_python_reterminal.core <span class="im">as</span> rt</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
@@ -697,99 +555,22 @@ $ sudo echo 255 &gt; /sys/class/leds/usr_led0</code></pre>
 <span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>rt.buzzer <span class="op">=</span> <span class="va">False</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This will sound the buzzer of the reTerminal for 1 second.</p>
 <p>To run the script:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> python3 buzz.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> <span class="va">$(</span><span class="fu">which</span> python<span class="va">)</span> buzz.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Alternatively, first elevate your shell, then execute the script normally:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pi@raspberrypi:~</span> $ sudo <span class="at">-i</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="ex">root@raspberrypi:~#</span> python3 buzz.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">user@hostname:~</span> $ sudo <span class="at">-i</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="ex">root@hostname:~#</span> python buzz.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <blockquote class="blockquote">
-<p><strong>Note:</strong> this library is simply a wrapper to the OS operations we did in the previous section. Some files need to be accessed by python as root. In this case, it is necessary to run <code>sudo -i</code> <strong>before running</strong> the python script.</p>
+<p><strong>Note:</strong> this library is simply a wrapper to the OS operations we did in the previous section.</p>
 </blockquote>
 <p>See the official <code>seeed-python-reterminal</code> <a href="https://github.com/Seeed-Studio/Seeed_Python_ReTerminal">Github repo</a> for API reference on how to control:</p>
 <ul>
 <li>LED’s</li>
 <li>Accelerometer</li>
 <li>Programmable Buttons</li>
-<li>Light Sensor (requires manual updating)</li>
+<li>Light Sensor</li>
 </ul>
-<section id="modulenotfounderror" class="level3">
-<h3 class="anchored" data-anchor-id="modulenotfounderror">ModuleNotFoundError</h3>
-<p>When trying to import the <code>seeed-python-reterminal</code> library, you might get the following error:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ModuleNotFoundError:</span> No module named <span class="st">'seeed_python_reterminal'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The python interpreter is not able to find the module even though it is installed.</p>
-<p>You can run the checks described below.</p>
-<section id="check-library-location" class="level4">
-<h4 class="anchored" data-anchor-id="check-library-location">Check library location</h4>
-<p>Check the location of where the module was installed with <code>pip3 show &lt;module-name&gt;</code>:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pi@raspberrypi:~</span> $ pip3 show seeed-python-reterminal</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Name:</span> seeed-python-reterminal</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="ex">Version:</span> 0.2</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="ex">Summary:</span> seeed-python-reterminal</span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="ex">Home-page:</span> https://github.com/Seeed-Studio/Seeed_Python_ReTerminal</span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="ex">Author:</span> Takashi Matsuoka <span class="er">(</span><span class="ex">matsujirushi</span><span class="kw">)</span></span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="ex">Author-email:</span> matsujirushi@live.jp</span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="ex">License:</span> MIT License</span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="ex">Location:</span> /usr/local/lib/python3.7/dist-packages      <span class="co"># Library location</span></span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="ex">Requires:</span> evdev</span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="ex">Required-by:</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The library is installed at: <code>Location: /usr/local/lib/python3.7/dist-packages</code></p>
-</section>
-<section id="check-pythons-library-paths" class="level4">
-<h4 class="anchored" data-anchor-id="check-pythons-library-paths">Check python’s library paths</h4>
-<p>Similarly to Linux, there are environmental variables that determine where python will look for installed modules/libraries.</p>
-<p>See the paths where python is looking for libraries with <code>sys.path</code>.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>pi<span class="op">@</span>raspberrypi:<span class="op">~</span> $ python3</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> sys      <span class="co"># Exposes configuration used by the python interpreter.</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> sys.path        <span class="co"># Lists all paths where interpreter looks for modules.</span></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>[</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a> <span class="st">''</span>,</span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a> <span class="st">'/usr/lib/python37.zip'</span>,</span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a> <span class="st">'/usr/lib/python3.7'</span>,</span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a> <span class="st">'/usr/lib/python3.7/lib-dynload'</span>,</span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a> <span class="st">'/home/pi/.local/lib/python3.7/site-packages'</span>,</span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a> <span class="st">'/usr/local/lib/python3.7/dist-packages'</span>,</span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a> <span class="st">'/usr/lib/python3/dist-packages'</span></span>
-<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>If the output of <code>pip3 show seeed-python-reterminal</code> is not in this list, python will not find it when you import it.</p>
-<blockquote class="blockquote">
-<p><strong>Note:</strong> the python shell above was started as the user <code>pi</code>. If you start python as <strong>root</strong>, <code>sys.path</code> might have different paths.</p>
-</blockquote>
-<p>Below, python was started as <strong>root</strong>:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>pi<span class="op">@</span>raspberrypi:<span class="op">~</span> $ sudo <span class="op">-</span>i</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>root<span class="op">@</span>raspberrypi:<span class="op">~</span><span class="co"># python3</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> sys</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> sys.path</span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>[</span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="st">''</span>,</span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="st">'/usr/lib/python37.zip'</span>,</span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="st">'/usr/lib/python3.7'</span>,</span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a><span class="st">'/usr/lib/python3.7/lib-dynload'</span>,</span>
-<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a><span class="st">'/usr/local/lib/python3.7/dist-packages'</span>,</span>
-<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a><span class="st">'/usr/lib/python3/dist-packages'</span></span>
-<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Note that the user <code>pi</code> does not have permission to add content inside <code>/usr</code>. Thus, all <code>pip</code> installations as the regular user go into <code>/home/pi/.local/lib/python3.7/site-packages</code>.</p>
-<p><strong>Conclusion:</strong> if you install a python library as <code>root</code>, it might go to a different directory compared to installing it as the regular user.</p>
-<p>This is the main reason why we chose to install the <code>seeed-python-reterminal</code> as root, rather than the regular user <code>pi</code>.</p>
-</section>
-</section>
-<section id="making-users-library-available-to-root-optional" class="level3">
-<h3 class="anchored" data-anchor-id="making-users-library-available-to-root-optional">Making user’s library available to root (optional)</h3>
-<p>If you would like to make a library installed as the user <code>pi</code> available when running the script as <code>root</code>, you will need to export an environmental variable named <code>PYTHONPATH</code> pointing to the library location.</p>
-<p>For example, assuming that a library installed under the user <code>pi</code> is located in <code>/home/pi/.local/lib/python3.7/site-packages</code>, do the following:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Elevate the shell to the root user</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pi@raspberrypi:~</span> $ sudo <span class="at">-i</span></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="ex">root@raspberrypi:~#</span></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Export the PYTHONPATH environment variable</span></span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="ex">root@raspberrypi:~#</span> export PYTHONPATH=<span class="st">"/home/pi/.local/lib/python3.7/site-packages"</span></span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Start python as root and run the script that imports the library</span></span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="ex">root@raspberrypi:~#</span> python3 my_script.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
-</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->

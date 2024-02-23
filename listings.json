@@ -1,22 +1,21 @@
 [
   {
-    "listing": "/lessons/linux/index.html",
+    "listing": "/lessons/python/index.html",
     "items": [
-      "/lessons/linux/linux-review.html",
-      "/lessons/linux/remote-linux.html"
+      "/lessons/python/intro-python.html",
+      "/lessons/python/package-management-python.html"
     ]
   },
   {
-    "listing": "/lessons/index.html",
+    "listing": "/lessons/iot/index.html",
     "items": [
-      "/lessons/linux/remote-linux.html",
-      "/lessons/linux/linux-review.html",
-      "/lessons/getting-started/vscode-python-setup.html",
-      "/lessons/getting-started/tech-stack.html",
-      "/lessons/getting-started/hardware-list.html",
-      "/lessons/hardware/reterminal-sensors.html",
-      "/lessons/iot/what-is-iot.html",
-      "/lessons/python/intro-python.html"
+      "/lessons/iot/what-is-iot.html"
+    ]
+  },
+  {
+    "listing": "/lessons/hardware/index.html",
+    "items": [
+      "/lessons/hardware/reterminal-sensors.html"
     ]
   },
   {
@@ -28,21 +27,26 @@
     ]
   },
   {
-    "listing": "/lessons/hardware/index.html",
+    "listing": "/lessons/index.html",
     "items": [
-      "/lessons/hardware/reterminal-sensors.html"
+      "/lessons/linux/package-management-debian.html",
+      "/lessons/linux/remote-linux.html",
+      "/lessons/linux/linux-review.html",
+      "/lessons/getting-started/vscode-python-setup.html",
+      "/lessons/getting-started/tech-stack.html",
+      "/lessons/getting-started/hardware-list.html",
+      "/lessons/hardware/reterminal-sensors.html",
+      "/lessons/iot/what-is-iot.html",
+      "/lessons/python/intro-python.html",
+      "/lessons/python/package-management-python.html"
     ]
   },
   {
-    "listing": "/lessons/iot/index.html",
+    "listing": "/lessons/linux/index.html",
     "items": [
-      "/lessons/iot/what-is-iot.html"
-    ]
-  },
-  {
-    "listing": "/lessons/python/index.html",
-    "items": [
-      "/lessons/python/intro-python.html"
+      "/lessons/linux/linux-review.html",
+      "/lessons/linux/package-management-debian.html",
+      "/lessons/linux/remote-linux.html"
     ]
   },
   {

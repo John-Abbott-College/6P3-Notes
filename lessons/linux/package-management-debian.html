@@ -8,7 +8,7 @@
 
 <meta name="dcterms.date" content="2024-02-23">
 
-<title>Connected Objects - Linux review</title>
+<title>Connected Objects - Raspberry Pi Package Management: apt</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -31,8 +65,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../lessons/linux/package-management-debian.html" rel="next">
-<link href="../../lessons/linux/index.html" rel="prev">
+<link href="../../lessons/linux/remote-linux.html" rel="next">
+<link href="../../lessons/linux/linux-review.html" rel="prev">
 <link href="../../assets/favicon_io/favicon.ico" rel="icon">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -75,8 +109,8 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="Connected Objects - Linux review">
-<meta property="og:description" content="Resources and references to brush up linux knowledge.">
+<meta property="og:title" content="Connected Objects - Raspberry Pi Package Management: apt">
+<meta property="og:description" content="Installing and configuring Linux packages on Raspberry Pi Debian using the apt package manager.">
 <meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/lessons/linux/assets/art_title_path_only.svg">
 <meta property="og:site_name" content="Connected Objects">
 </head>
@@ -106,7 +140,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../lessons/index.html">Lessons</a></li><li class="breadcrumb-item"><a href="../../lessons/linux/index.html">Linux</a></li><li class="breadcrumb-item"><a href="../../lessons/linux/linux-review.html">Linux review</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../lessons/index.html">Lessons</a></li><li class="breadcrumb-item"><a href="../../lessons/linux/index.html">Linux</a></li><li class="breadcrumb-item"><a href="../../lessons/linux/package-management-debian.html">Raspberry Pi Package Management: apt</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -167,13 +201,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../lessons/linux/linux-review.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../lessons/linux/linux-review.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Linux review</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../lessons/linux/package-management-debian.html" class="sidebar-item-text sidebar-link">
+  <a href="../../lessons/linux/package-management-debian.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Raspberry Pi Package Management: apt</span></a>
   </div>
 </li>
@@ -277,20 +311,22 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#getting-linux-environment" id="toc-getting-linux-environment" class="nav-link active" data-scroll-target="#getting-linux-environment">Getting Linux Environment</a></li>
-  <li><a href="#resources-references" id="toc-resources-references" class="nav-link" data-scroll-target="#resources-references">Resources &amp; References</a></li>
-  <li><a href="#basic-tasks" id="toc-basic-tasks" class="nav-link" data-scroll-target="#basic-tasks">Basic Tasks</a></li>
-  <li><a href="#review-exercises" id="toc-review-exercises" class="nav-link" data-scroll-target="#review-exercises">Review Exercises</a></li>
+  <li><a href="#raspberry-pi-os-and-debian" id="toc-raspberry-pi-os-and-debian" class="nav-link active" data-scroll-target="#raspberry-pi-os-and-debian">Raspberry Pi OS and Debian</a></li>
+  <li><a href="#apt-debian-package-manger" id="toc-apt-debian-package-manger" class="nav-link" data-scroll-target="#apt-debian-package-manger">Apt: Debian Package Manger</a>
+  <ul class="collapse">
+  <li><a href="#common-apt-commands" id="toc-common-apt-commands" class="nav-link" data-scroll-target="#common-apt-commands">Common <code>apt</code> commands</a></li>
+  <li><a href="#apt-source-repositories-explained" id="toc-apt-source-repositories-explained" class="nav-link" data-scroll-target="#apt-source-repositories-explained">Apt source repositories explained</a></li>
+  </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/John-Abbott-College/6P3-Notes/blob/winter2024/lessons/linux/linux-review.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/John-Abbott-College/6P3-Notes/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="linux-review.slides.html"><i class="bi bi-file-slides"></i>RevealJS (clean)</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/John-Abbott-College/6P3-Notes/blob/winter2024/lessons/linux/package-management-debian.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/John-Abbott-College/6P3-Notes/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="package-management-debian.slides.html"><i class="bi bi-file-slides"></i>RevealJS (clean)</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../lessons/index.html">Lessons</a></li><li class="breadcrumb-item"><a href="../../lessons/linux/index.html">Linux</a></li><li class="breadcrumb-item"><a href="../../lessons/linux/linux-review.html">Linux review</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../lessons/index.html">Lessons</a></li><li class="breadcrumb-item"><a href="../../lessons/linux/index.html">Linux</a></li><li class="breadcrumb-item"><a href="../../lessons/linux/package-management-debian.html">Raspberry Pi Package Management: apt</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Linux review</h1>
-<p class="subtitle lead">Resources and references to brush up linux knowledge.</p>
+<h1 class="title">Raspberry Pi Package Management: apt</h1>
+<p class="subtitle lead">Installing and configuring Linux packages on Raspberry Pi Debian using the <code>apt</code> package manager.</p>
 </div>
 
 
@@ -319,122 +355,139 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="getting-linux-environment" class="level2">
-<h2 class="anchored" data-anchor-id="getting-linux-environment">Getting Linux Environment</h2>
-<p>If you don’t have a Unix shell in your system (Linux or Mac), you can get one using the following:</p>
+<section id="raspberry-pi-os-and-debian" class="level2">
+<h2 class="anchored" data-anchor-id="raspberry-pi-os-and-debian">Raspberry Pi OS and Debian</h2>
+<p>The Raspberry Pi OS (previously called <em>Raspbian OS</em>) used in the reTerminal is a variation of the <a href="https://en.wikipedia.org/wiki/Debian"><strong>Debian OS</strong></a>, with optimizations for the Raspberry Pi hardware.</p>
+<blockquote class="blockquote">
+<p><strong>Debian OS</strong> is one of the most commonly used Linux distributions, especially as the “base” for derivative distributions. There are over 100 derivatives of Debian, many of which are themselves very popular distributions. These include:</p>
 <ul>
-<li><a href="https://learn.microsoft.com/en-us/windows/wsl/install">WSL2 in Windows</a></li>
-<li><a href="https://bellard.org/jslinux/">JSLinux Terminal</a></li>
-<li><a href="https://copy.sh/v86/?profile=linux26">Copy.sh Terminal</a></li>
-<li><a href="http://www.masswerk.at/jsuix/index.html">JS/UIX Terminal</a></li>
+<li>Desktop distributions like Ubuntu, Linux Mint, elementaryOS;</li>
+<li>Special-purpose distributions Kali Linux and Backbox (penetration testing)</li>
+<li>Server/Hypervisor distributions like Proxmox, Ubuntu server,</li>
+<li>Many others, you can find a more complete list <a href="https://en.wikipedia.org/wiki/List_of_Linux_distributions#Debian-based">here</a></li>
+</ul>
+</blockquote>
+<p>Debian-derived distributions share the following: - the <code>.deb</code> package format - the <code>dpkg</code> package manager and its frontend <code>apt</code></p>
+<p>For that reason, many of the commands and configuration for Raspberry Pi OS can be taken directly from Debian’s documentation.</p>
+</section>
+<section id="apt-debian-package-manger" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="apt-debian-package-manger">Apt: Debian Package Manger</h2>
+<p>The command <code>apt</code> is the default package manager of Debian.</p>
+<blockquote class="blockquote">
+<p>A <strong>package manager</strong> is a software tool responsible for automating the installation, removal, configuration and removal of computer programs.</p>
+</blockquote>
+<p>Managing packages could technically be done manually, however, it is very time consuming and error prone: tracking package dependencies and compatibility with the current system.</p>
+<section id="common-apt-commands" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="common-apt-commands">Common <code>apt</code> commands</h3>
+<p>There are many <code>apt</code> commands you will find yourself using all the time on a Debian-based OS like Raspberry Pi. It’s worth knowing in a bit more detail how they work.</p>
+<p>Note: Online, you will often see <code>apt-get</code> used instead of <code>apt</code>. <strong><code>apt</code> is a newer package manager API meant to replace the older API <code>apt-get</code></strong>. However, they both do more or less the same things the same ways, and <code>apt</code> is a backwards compatible replacement for <code>apt-get</code> in all cases. See <a href="https://www.debian.org/doc/manuals/debian-handbook/sect.apt-get.en.html">Debian docs</a> for details.</p>
+<p>During Lab 1, you updated, upgraded and installed some packages in the Raspberry Pi OS using <code>apt</code>:</p>
+<table class="table-striped table-hover column-body-outset-right table">
+<caption><code>apt</code>: the difference between <code>update</code> and <code>upgrade</code></caption>
+<colgroup>
+<col style="width: 25%">
+<col style="width: 74%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>sudo apt update</code></td>
+<td>Update list of available packages</td>
+</tr>
+<tr class="even">
+<td><code>sudo apt upgrade</code></td>
+<td>Upgrade the system by installing/upgrading packages</td>
+</tr>
+</tbody>
+</table>
+<p>Combined, these two commands <strong>update and upgrade all of the currently operating system packages</strong> on your system:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sudo apt update <span class="kw">&amp;&amp;</span> <span class="fu">sudo</span> apt upgrade <span class="at">-y</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>There are a few other <code>apt</code> commands worth knowing.</p>
+<table class="table-striped table-hover column-body-outset-right table">
+<caption><code>apt</code>: a variety of other commands I find myself using now and again</caption>
+<colgroup>
+<col style="width: 20%">
+<col style="width: 32%">
+<col style="width: 47%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Command</th>
+<th>Description</th>
+<th>Example use case</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>apt list</code></td>
+<td>list packages installed on your system based on package names.</td>
+<td><code>apt list | grep "package name"</code> Need to remember or check if you successfully installed an app? Combine <code>apt list</code> with <code>grep</code> and a pipe.</td>
+</tr>
+<tr class="even">
+<td><code>apt search &lt;query&gt;</code></td>
+<td>Returns all repository packages search in package descriptions</td>
+<td><code>apt search "package name"</code> Do you know part of the? Run after <code>apt</code></td>
+</tr>
+<tr class="odd">
+<td><code>apt show &lt;package&gt;</code></td>
+<td>show package details</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>apt install &lt;package&gt;</code></td>
+<td>install packages</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>apt reinstall &lt;package&gt;</code></td>
+<td>reinstall packages</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>apt remove &lt;package&gt;</code></td>
+<td>remove packages</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>You can see details about all of these commands and more by running <code>apt --help</code>. Note: documentation will often leave out <code>sudo</code> since the need to run <code>sudo</code> depends on the machine and the user.</p>
+<blockquote class="blockquote">
+<p>In general, commands that <strong>read</strong> data (<code>apt list</code>, <code>apt search</code>, etc.) will generally not require <code>sudo</code>, since most folderst that <code>apt</code> will touch are universally readable.</p>
+<p><code>apt</code> commands that <strong>write</strong> data (<code>apt install</code>, etc.) to a folder not owned by the current user – which is most folders outside of <code>/home/username</code>, but particularly common package install locations like <code>/usr</code>, <code>/bin</code>, etc. – these commands will require <code>sudo</code> to gain the required write permission</p>
+</blockquote>
+</section>
+<section id="apt-source-repositories-explained" class="level3">
+<h3 class="anchored" data-anchor-id="apt-source-repositories-explained">Apt source repositories explained</h3>
+<p><em>This section has been adapted directly from the Debian documentation: see <a href="https://wiki.debian.org/SourcesList">SourcesList</a></em></p>
+<p><code>Apt</code> downloads packages from one or more <a href="https://wiki.debian.org/DebianRepository">software repositories</a> (sources) and installs them onto your computer.</p>
+<p>A repository is generally a network server, such as the official <a href="https://wiki.debian.org/DebianStable">DebianStable</a> repository. Local directories or CD/DVD are also accepted.</p>
+<p>The specific repositories (package sources) configured on your machine affect: - What software packages are available for download - What versions of packages are available - Who packages the software</p>
+<section id="commonly-used-package-sources" class="level4">
+<h4 class="anchored" data-anchor-id="commonly-used-package-sources">Commonly used package sources</h4>
+<ul>
+<li>DebianStable: official Debian repository for the current release</li>
+<li>StableProposedUpdates: official Debian repository for upcoming point releases (security and important bug fixes every ~2 months)</li>
+<li>StableUpdates: official Debian repository for changes that cannot wait for the next point release, packages are also added to StableProposedUpdates for inclusion in the next point release</li>
+<li>DebianSecurity: official Debian repository for frequent security updates</li>
+<li>DebianBackports: more recent versions of some packages, compatible with DebianStable.</li>
+<li>DebianUnstable: rolling development version containing the latest packages</li>
+<li>DebianExperimental: development version containing the experimental/alpha/beta/untested packages</li>
 </ul>
 </section>
-<section id="resources-references" class="level2">
-<h2 class="anchored" data-anchor-id="resources-references">Resources &amp; References</h2>
-<p>These are great references to get up to speed on using a Unix shell:</p>
-<ul>
-<li><a href="https://linuxcommand.org/index.php">LinuxCommand.org</a>
-<ul>
-<li>Short guides on learning bash shell and bash scripting.</li>
-<li>Links to interactive learning games under “Adventures”.</li>
-</ul></li>
-<li><a href="https://ss64.com/bash/">A to Z Linux CLI index</a> by ss64.com
-<ul>
-<li>If you know which command you are looking for, you will find it here.</li>
-</ul></li>
-<li><a href="https://www.digitalocean.com/community/tutorials/linux-commands">Top 50+ Linux Commands You MUST Know</a> by Digital Ocean
-<ul>
-<li>Includes examples for the most common commands.</li>
-</ul></li>
-<li>Bash Online Manual (brief), specially <a href="https://devdocs.io/bash/basic-shell-features">Basic Shell Features</a>
-<ul>
-<li>Complete reference with examples.</li>
-<li>You may treat this as “The Docs”</li>
-</ul></li>
-</ul>
-</section>
-<section id="basic-tasks" class="level2">
-<h2 class="anchored" data-anchor-id="basic-tasks">Basic Tasks</h2>
-<p>Manipulation of the Raspberry Pi will require familiarity with the following tasks:</p>
-<ol type="1">
-<li>SSH into a remote machine
-<ul>
-<li>As a specific user.</li>
-<li>Using a non standard port.</li>
-</ul></li>
-<li>Maintaining system packages with <code>apt</code>
-<ul>
-<li>Update packages.</li>
-<li>List information about a specific package</li>
-</ul></li>
-<li>Manipulating text files and folders with:
-<ul>
-<li>List: <code>ls</code></li>
-<li>Copy: <code>cp</code></li>
-<li>Move: <code>mv</code></li>
-<li>Remove (recursively and not recursively): <code>rm</code></li>
-<li>Fire hierarchy with <code>tree</code></li>
-</ul></li>
-<li>Create files and folders
-<ul>
-<li>Create file: <code>touch</code></li>
-<li>Create folder <code>mkdir</code></li>
-</ul></li>
-<li>Edit, save and exit text files from the command line either:
-<ul>
-<li><code>nano</code></li>
-<li><code>vim</code></li>
-</ul></li>
-<li>File and folder access permissions
-<ul>
-<li>Check user permissions</li>
-<li>Modify access permissions</li>
-</ul></li>
-<li>Controlling tasks and processes:
-<ul>
-<li><code>Ctrl-C</code></li>
-<li><code>Ctrl-Z</code></li>
-<li><code>jobs</code></li>
-<li><code>fg</code></li>
-<li><code>bg</code></li>
-</ul></li>
-<li>Run a Python script from the command line.</li>
-<li>Inspecting and killing processes with:
-<ul>
-<li><code>pgrep</code></li>
-<li><code>pkill</code></li>
-<li><code>kill</code></li>
-</ul></li>
-<li>Moving files from local machine to host and vice-versa.
-<ul>
-<li><code>scp</code></li>
-</ul></li>
-<li>Appending to a file with redirection
-<ul>
-<li><code>&gt;</code></li>
-<li><code>&gt;&gt;</code></li>
-</ul></li>
-<li>Piping command output
-<ul>
-<li><code>|</code></li>
-</ul></li>
-<li>Searching for words in text
-<ul>
-<li><code>grep</code></li>
-<li><code>less</code></li>
-</ul></li>
-</ol>
-</section>
-<section id="review-exercises" class="level2">
-<h2 class="anchored" data-anchor-id="review-exercises">Review Exercises</h2>
-<ol type="1">
-<li><p>A great set of exercises to get started is the game <a href="https://overthewire.org/wargames/bandit/"><strong>Bandit</strong> from <em>OverTheWire.org</em></a></p>
-<ul>
-<li>Try to reach at least level 5</li>
-</ul></li>
-</ol>
+<section id="editing-software-sources" class="level4">
+<h4 class="anchored" data-anchor-id="editing-software-sources">Editing Software Sources</h4>
+<p>Being able to change the repositories used by your package management system is a powerful feature but this power comes with some responsibility.</p>
+<p>Users are cautioned that it is possible to break your system (in a way that could be difficult or impossible to cleanly fix) by adding third-party repositories, or repositories for a Debian version that does not match your current version - these repository create a risk of conflicting package versions, creating what’s sometimes called a “Franken-Debian” system.</p>
+<p>The whole concept behind a Debian stable release is that the Debian developers have picked a set of software and their versions that function nicely together. While this software is patched to fix security issues, the software is frequently not the latest version. It takes some experience to know how the repos may be changed without risk of breaking your system. Users of all levels are advised to change repos cautiously.</p>
 
 
+</section>
+</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
@@ -971,13 +1024,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../lessons/linux/index.html" class="pagination-link" aria-label="Linux">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Linux</span>
+      <a href="../../lessons/linux/linux-review.html" class="pagination-link" aria-label="Linux review">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Linux review</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../lessons/linux/package-management-debian.html" class="pagination-link" aria-label="Raspberry Pi Package Management: apt">
-        <span class="nav-page-text">Raspberry Pi Package Management: apt</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../lessons/linux/remote-linux.html" class="pagination-link" aria-label="Remote work on Linux">
+        <span class="nav-page-text">Remote work on Linux</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -989,7 +1042,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 <p>© Mauricio Buschinelli 2022-2023; © Michael Haaf 2024</p>
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/John-Abbott-College/6P3-Notes/blob/winter2024/lessons/linux/linux-review.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/John-Abbott-College/6P3-Notes/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/John-Abbott-College/6P3-Notes/blob/winter2024/lessons/linux/package-management-debian.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/John-Abbott-College/6P3-Notes/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

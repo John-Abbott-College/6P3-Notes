@@ -8,7 +8,7 @@
 
 <meta name="dcterms.date" content="2024-02-23">
 
-<title>Connected Objects - Linux review</title>
+<title>Connected Objects - Package management in Python</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -31,8 +65,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../lessons/linux/package-management-debian.html" rel="next">
-<link href="../../lessons/linux/index.html" rel="prev">
+<link href="../../about/index.html" rel="next">
+<link href="../../lessons/python/intro-python.html" rel="prev">
 <link href="../../assets/favicon_io/favicon.ico" rel="icon">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -75,9 +109,9 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="Connected Objects - Linux review">
-<meta property="og:description" content="Resources and references to brush up linux knowledge.">
-<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/lessons/linux/assets/art_title_path_only.svg">
+<meta property="og:title" content="Connected Objects - Package management in Python">
+<meta property="og:description" content="How to use OS package managers, virtual environments, and pip to manage python applications effectively.">
+<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/lessons/python/assets/art_title_path_only.svg">
 <meta property="og:site_name" content="Connected Objects">
 </head>
 
@@ -106,7 +140,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../lessons/index.html">Lessons</a></li><li class="breadcrumb-item"><a href="../../lessons/linux/index.html">Linux</a></li><li class="breadcrumb-item"><a href="../../lessons/linux/linux-review.html">Linux review</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../lessons/index.html">Lessons</a></li><li class="breadcrumb-item"><a href="../../lessons/python/index.html">Python</a></li><li class="breadcrumb-item"><a href="../../lessons/python/package-management-python.html">Package management in Python</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -160,14 +194,14 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../lessons/linux/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Linux</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../lessons/linux/linux-review.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../lessons/linux/linux-review.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Linux review</span></a>
   </div>
 </li>
@@ -223,11 +257,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../lessons/python/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Python</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../lessons/python/intro-python.html" class="sidebar-item-text sidebar-link">
@@ -236,7 +270,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../lessons/python/package-management-python.html" class="sidebar-item-text sidebar-link">
+  <a href="../../lessons/python/package-management-python.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Package management in Python</span></a>
   </div>
 </li>
@@ -277,20 +311,20 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#getting-linux-environment" id="toc-getting-linux-environment" class="nav-link active" data-scroll-target="#getting-linux-environment">Getting Linux Environment</a></li>
-  <li><a href="#resources-references" id="toc-resources-references" class="nav-link" data-scroll-target="#resources-references">Resources &amp; References</a></li>
-  <li><a href="#basic-tasks" id="toc-basic-tasks" class="nav-link" data-scroll-target="#basic-tasks">Basic Tasks</a></li>
-  <li><a href="#review-exercises" id="toc-review-exercises" class="nav-link" data-scroll-target="#review-exercises">Review Exercises</a></li>
+  <li><a href="#pip-python-package-manager" id="toc-pip-python-package-manager" class="nav-link active" data-scroll-target="#pip-python-package-manager">Pip: Python Package Manager</a></li>
+  <li><a href="#apt-vs-pip-when-to-use-which" id="toc-apt-vs-pip-when-to-use-which" class="nav-link" data-scroll-target="#apt-vs-pip-when-to-use-which">apt vs pip: when to use which?</a></li>
+  <li><a href="#modulenotfounderror" id="toc-modulenotfounderror" class="nav-link" data-scroll-target="#modulenotfounderror">ModuleNotFoundError</a></li>
+  <li><a href="#making-users-library-available-to-root-optional" id="toc-making-users-library-available-to-root-optional" class="nav-link" data-scroll-target="#making-users-library-available-to-root-optional">Making user’s library available to root (optional)</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/John-Abbott-College/6P3-Notes/blob/winter2024/lessons/linux/linux-review.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/John-Abbott-College/6P3-Notes/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="linux-review.slides.html"><i class="bi bi-file-slides"></i>RevealJS (clean)</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/John-Abbott-College/6P3-Notes/blob/winter2024/lessons/python/package-management-python.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/John-Abbott-College/6P3-Notes/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="package-management-python.slides.html"><i class="bi bi-file-slides"></i>RevealJS (clean)</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../lessons/index.html">Lessons</a></li><li class="breadcrumb-item"><a href="../../lessons/linux/index.html">Linux</a></li><li class="breadcrumb-item"><a href="../../lessons/linux/linux-review.html">Linux review</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../lessons/index.html">Lessons</a></li><li class="breadcrumb-item"><a href="../../lessons/python/index.html">Python</a></li><li class="breadcrumb-item"><a href="../../lessons/python/package-management-python.html">Package management in Python</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Linux review</h1>
-<p class="subtitle lead">Resources and references to brush up linux knowledge.</p>
+<h1 class="title">Package management in Python</h1>
+<p class="subtitle lead">How to use OS package managers, virtual environments, and <code>pip</code> to manage python applications effectively.</p>
 </div>
 
 
@@ -319,120 +353,114 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="getting-linux-environment" class="level2">
-<h2 class="anchored" data-anchor-id="getting-linux-environment">Getting Linux Environment</h2>
-<p>If you don’t have a Unix shell in your system (Linux or Mac), you can get one using the following:</p>
-<ul>
-<li><a href="https://learn.microsoft.com/en-us/windows/wsl/install">WSL2 in Windows</a></li>
-<li><a href="https://bellard.org/jslinux/">JSLinux Terminal</a></li>
-<li><a href="https://copy.sh/v86/?profile=linux26">Copy.sh Terminal</a></li>
-<li><a href="http://www.masswerk.at/jsuix/index.html">JS/UIX Terminal</a></li>
-</ul>
+<section id="pip-python-package-manager" class="level3">
+<h3 class="anchored" data-anchor-id="pip-python-package-manager">Pip: Python Package Manager</h3>
+<p><a href="https://pip.pypa.io/en/stable/"><code>pip</code></a> is python’s own package manager, which is independent from <code>apt</code>.</p>
+<blockquote class="blockquote">
+<p>Pip installs packages from the <a href="https://pypi.org/">Python Package Index repository (pypi.org)</a></p>
+</blockquote>
+<p>To use it for python 3, call the command <code>pip3</code></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip3</span> install emoji</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This will install the a python library emoji which will create emoji from text descriptions.</p>
+<p>Once a python module has been installed, it is available to be imported in your python script:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> emoji</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>message <span class="op">=</span> emoji.emojize(<span class="st">'Howdy :sun_with_face:'</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(message)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Output:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Howdy</span> 🌞</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>It is also possible to give an alias to the newly imported module:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> emoji <span class="im">as</span> em</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>message <span class="op">=</span> em.emojize(<span class="st">'Howdy :sun_with_face:'</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(message)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Finally, you can import only a specific function and give it an alias:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> emoji <span class="im">import</span> emojize <span class="im">as</span> emz</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>message <span class="op">=</span> emz(<span class="st">'Howdy :sun_with_face:'</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(message)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="resources-references" class="level2">
-<h2 class="anchored" data-anchor-id="resources-references">Resources &amp; References</h2>
-<p>These are great references to get up to speed on using a Unix shell:</p>
-<ul>
-<li><a href="https://linuxcommand.org/index.php">LinuxCommand.org</a>
-<ul>
-<li>Short guides on learning bash shell and bash scripting.</li>
-<li>Links to interactive learning games under “Adventures”.</li>
-</ul></li>
-<li><a href="https://ss64.com/bash/">A to Z Linux CLI index</a> by ss64.com
-<ul>
-<li>If you know which command you are looking for, you will find it here.</li>
-</ul></li>
-<li><a href="https://www.digitalocean.com/community/tutorials/linux-commands">Top 50+ Linux Commands You MUST Know</a> by Digital Ocean
-<ul>
-<li>Includes examples for the most common commands.</li>
-</ul></li>
-<li>Bash Online Manual (brief), specially <a href="https://devdocs.io/bash/basic-shell-features">Basic Shell Features</a>
-<ul>
-<li>Complete reference with examples.</li>
-<li>You may treat this as “The Docs”</li>
-</ul></li>
-</ul>
+<section id="apt-vs-pip-when-to-use-which" class="level3">
+<h3 class="anchored" data-anchor-id="apt-vs-pip-when-to-use-which">apt vs pip: when to use which?</h3>
+<blockquote class="blockquote">
+<p>Note: do not run <code>pip</code> as <code>sudo</code> because <code>pip</code> could overwrite system files that are managed by <code>apt</code>.</p>
+</blockquote>
 </section>
-<section id="basic-tasks" class="level2">
-<h2 class="anchored" data-anchor-id="basic-tasks">Basic Tasks</h2>
-<p>Manipulation of the Raspberry Pi will require familiarity with the following tasks:</p>
-<ol type="1">
-<li>SSH into a remote machine
-<ul>
-<li>As a specific user.</li>
-<li>Using a non standard port.</li>
-</ul></li>
-<li>Maintaining system packages with <code>apt</code>
-<ul>
-<li>Update packages.</li>
-<li>List information about a specific package</li>
-</ul></li>
-<li>Manipulating text files and folders with:
-<ul>
-<li>List: <code>ls</code></li>
-<li>Copy: <code>cp</code></li>
-<li>Move: <code>mv</code></li>
-<li>Remove (recursively and not recursively): <code>rm</code></li>
-<li>Fire hierarchy with <code>tree</code></li>
-</ul></li>
-<li>Create files and folders
-<ul>
-<li>Create file: <code>touch</code></li>
-<li>Create folder <code>mkdir</code></li>
-</ul></li>
-<li>Edit, save and exit text files from the command line either:
-<ul>
-<li><code>nano</code></li>
-<li><code>vim</code></li>
-</ul></li>
-<li>File and folder access permissions
-<ul>
-<li>Check user permissions</li>
-<li>Modify access permissions</li>
-</ul></li>
-<li>Controlling tasks and processes:
-<ul>
-<li><code>Ctrl-C</code></li>
-<li><code>Ctrl-Z</code></li>
-<li><code>jobs</code></li>
-<li><code>fg</code></li>
-<li><code>bg</code></li>
-</ul></li>
-<li>Run a Python script from the command line.</li>
-<li>Inspecting and killing processes with:
-<ul>
-<li><code>pgrep</code></li>
-<li><code>pkill</code></li>
-<li><code>kill</code></li>
-</ul></li>
-<li>Moving files from local machine to host and vice-versa.
-<ul>
-<li><code>scp</code></li>
-</ul></li>
-<li>Appending to a file with redirection
-<ul>
-<li><code>&gt;</code></li>
-<li><code>&gt;&gt;</code></li>
-</ul></li>
-<li>Piping command output
-<ul>
-<li><code>|</code></li>
-</ul></li>
-<li>Searching for words in text
-<ul>
-<li><code>grep</code></li>
-<li><code>less</code></li>
-</ul></li>
-</ol>
+<section id="modulenotfounderror" class="level3">
+<h3 class="anchored" data-anchor-id="modulenotfounderror">ModuleNotFoundError</h3>
+<p>When trying to import the <code>seeed-python-reterminal</code> library, you might get the following error:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ModuleNotFoundError:</span> No module named <span class="st">'seeed_python_reterminal'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The python interpreter is not able to find the module even though it is installed.</p>
+<p>You can run the checks described below.</p>
+<section id="check-library-location" class="level4">
+<h4 class="anchored" data-anchor-id="check-library-location">Check library location</h4>
+<p>Check the location of where the module was installed with <code>pip3 show &lt;module-name&gt;</code>:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pi@raspberrypi:~</span> $ pip3 show seeed-python-reterminal</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Name:</span> seeed-python-reterminal</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="ex">Version:</span> 0.2</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="ex">Summary:</span> seeed-python-reterminal</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="ex">Home-page:</span> https://github.com/Seeed-Studio/Seeed_Python_ReTerminal</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="ex">Author:</span> Takashi Matsuoka <span class="er">(</span><span class="ex">matsujirushi</span><span class="kw">)</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="ex">Author-email:</span> matsujirushi@live.jp</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="ex">License:</span> MIT License</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="ex">Location:</span> /usr/local/lib/python3.7/dist-packages      <span class="co"># Library location</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="ex">Requires:</span> evdev</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="ex">Required-by:</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The library is installed at: <code>Location: /usr/local/lib/python3.7/dist-packages</code></p>
 </section>
-<section id="review-exercises" class="level2">
-<h2 class="anchored" data-anchor-id="review-exercises">Review Exercises</h2>
-<ol type="1">
-<li><p>A great set of exercises to get started is the game <a href="https://overthewire.org/wargames/bandit/"><strong>Bandit</strong> from <em>OverTheWire.org</em></a></p>
-<ul>
-<li>Try to reach at least level 5</li>
-</ul></li>
-</ol>
+<section id="check-pythons-library-paths" class="level4">
+<h4 class="anchored" data-anchor-id="check-pythons-library-paths">Check python’s library paths</h4>
+<p>Similarly to Linux, there are environmental variables that determine where python will look for installed modules/libraries.</p>
+<p>See the paths where python is looking for libraries with <code>sys.path</code>.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>pi<span class="op">@</span>raspberrypi:<span class="op">~</span> $ python3</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> sys      <span class="co"># Exposes configuration used by the python interpreter.</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> sys.path        <span class="co"># Lists all paths where interpreter looks for modules.</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>[</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a> <span class="st">''</span>,</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a> <span class="st">'/usr/lib/python37.zip'</span>,</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a> <span class="st">'/usr/lib/python3.7'</span>,</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a> <span class="st">'/usr/lib/python3.7/lib-dynload'</span>,</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a> <span class="st">'/home/pi/.local/lib/python3.7/site-packages'</span>,</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a> <span class="st">'/usr/local/lib/python3.7/dist-packages'</span>,</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a> <span class="st">'/usr/lib/python3/dist-packages'</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If the output of <code>pip3 show seeed-python-reterminal</code> is not in this list, python will not find it when you import it.</p>
+<blockquote class="blockquote">
+<p><strong>Note:</strong> the python shell above was started as the user <code>pi</code>. If you start python as <strong>root</strong>, <code>sys.path</code> might have different paths.</p>
+</blockquote>
+<p>Below, python was started as <strong>root</strong>:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>pi<span class="op">@</span>raspberrypi:<span class="op">~</span> $ sudo <span class="op">-</span>i</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>root<span class="op">@</span>raspberrypi:<span class="op">~</span><span class="co"># python3</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> sys</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> sys.path</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>[</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="st">''</span>,</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="st">'/usr/lib/python37.zip'</span>,</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="st">'/usr/lib/python3.7'</span>,</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="st">'/usr/lib/python3.7/lib-dynload'</span>,</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="st">'/usr/local/lib/python3.7/dist-packages'</span>,</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="st">'/usr/lib/python3/dist-packages'</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Note that the user <code>pi</code> does not have permission to add content inside <code>/usr</code>. Thus, all <code>pip</code> installations as the regular user go into <code>/home/pi/.local/lib/python3.7/site-packages</code>.</p>
+<p><strong>Conclusion:</strong> if you install a python library as <code>root</code>, it might go to a different directory compared to installing it as the regular user.</p>
+<p>This is the main reason why we chose to install the <code>seeed-python-reterminal</code> as root, rather than the regular user <code>pi</code>.</p>
+</section>
+</section>
+<section id="making-users-library-available-to-root-optional" class="level3">
+<h3 class="anchored" data-anchor-id="making-users-library-available-to-root-optional">Making user’s library available to root (optional)</h3>
+<p>If you would like to make a library installed as the user <code>pi</code> available when running the script as <code>root</code>, you will need to export an environmental variable named <code>PYTHONPATH</code> pointing to the library location.</p>
+<p>For example, assuming that a library installed under the user <code>pi</code> is located in <code>/home/pi/.local/lib/python3.7/site-packages</code>, do the following:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Elevate the shell to the root user</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pi@raspberrypi:~</span> $ sudo <span class="at">-i</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="ex">root@raspberrypi:~#</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Export the PYTHONPATH environment variable</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="ex">root@raspberrypi:~#</span> export PYTHONPATH=<span class="st">"/home/pi/.local/lib/python3.7/site-packages"</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Start python as root and run the script that imports the library</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="ex">root@raspberrypi:~#</span> python3 my_script.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>
@@ -971,13 +999,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../lessons/linux/index.html" class="pagination-link" aria-label="Linux">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Linux</span>
+      <a href="../../lessons/python/intro-python.html" class="pagination-link" aria-label="Intro to Python for Developers">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Intro to Python for Developers</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../lessons/linux/package-management-debian.html" class="pagination-link" aria-label="Raspberry Pi Package Management: apt">
-        <span class="nav-page-text">Raspberry Pi Package Management: apt</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../about/index.html" class="pagination-link" aria-label="About">
+        <span class="nav-page-text">About</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -989,7 +1017,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 <p>© Mauricio Buschinelli 2022-2023; © Michael Haaf 2024</p>
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/John-Abbott-College/6P3-Notes/blob/winter2024/lessons/linux/linux-review.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/John-Abbott-College/6P3-Notes/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/John-Abbott-College/6P3-Notes/blob/winter2024/lessons/python/package-management-python.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/John-Abbott-College/6P3-Notes/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

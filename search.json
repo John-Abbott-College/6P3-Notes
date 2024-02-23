@@ -22,16 +22,665 @@
     ]
   },
   {
-    "objectID": "lessons/python/intro-python.html",
-    "href": "lessons/python/intro-python.html",
-    "title": "Intro to Python for Developers",
+    "objectID": "lessons/python/package-management-python.html",
+    "href": "lessons/python/package-management-python.html",
+    "title": "Package management in Python",
     "section": "",
-    "text": "Notes provided on a different platform,\n\nSee Interactive notes in Google Colab.\n\n\n\n\n Back to top",
+    "text": "Pip: Python Package Manager\npip is python’s own package manager, which is independent from apt.\n\nPip installs packages from the Python Package Index repository (pypi.org)\n\nTo use it for python 3, call the command pip3\npip3 install emoji\nThis will install the a python library emoji which will create emoji from text descriptions.\nOnce a python module has been installed, it is available to be imported in your python script:\nimport emoji\n\nmessage = emoji.emojize('Howdy :sun_with_face:')\nprint(message)\nOutput:\nHowdy 🌞\nIt is also possible to give an alias to the newly imported module:\nimport emoji as em\n\nmessage = em.emojize('Howdy :sun_with_face:')\nprint(message)\nFinally, you can import only a specific function and give it an alias:\nfrom emoji import emojize as emz\nmessage = emz('Howdy :sun_with_face:')\nprint(message)\n\n\napt vs pip: when to use which?\n\nNote: do not run pip as sudo because pip could overwrite system files that are managed by apt.\n\n\n\nModuleNotFoundError\nWhen trying to import the seeed-python-reterminal library, you might get the following error:\nModuleNotFoundError: No module named 'seeed_python_reterminal'\nThe python interpreter is not able to find the module even though it is installed.\nYou can run the checks described below.\n\nCheck library location\nCheck the location of where the module was installed with pip3 show &lt;module-name&gt;:\npi@raspberrypi:~ $ pip3 show seeed-python-reterminal\n\nName: seeed-python-reterminal\nVersion: 0.2\nSummary: seeed-python-reterminal\nHome-page: https://github.com/Seeed-Studio/Seeed_Python_ReTerminal\nAuthor: Takashi Matsuoka (matsujirushi)\nAuthor-email: matsujirushi@live.jp\nLicense: MIT License\nLocation: /usr/local/lib/python3.7/dist-packages      # Library location\nRequires: evdev\nRequired-by: \nThe library is installed at: Location: /usr/local/lib/python3.7/dist-packages\n\n\nCheck python’s library paths\nSimilarly to Linux, there are environmental variables that determine where python will look for installed modules/libraries.\nSee the paths where python is looking for libraries with sys.path.\npi@raspberrypi:~ $ python3\n\n&gt;&gt;&gt; import sys      # Exposes configuration used by the python interpreter.\n&gt;&gt;&gt; sys.path        # Lists all paths where interpreter looks for modules.\n[\n '',\n '/usr/lib/python37.zip',\n '/usr/lib/python3.7',\n '/usr/lib/python3.7/lib-dynload',\n '/home/pi/.local/lib/python3.7/site-packages',\n '/usr/local/lib/python3.7/dist-packages',\n '/usr/lib/python3/dist-packages'\n]\nIf the output of pip3 show seeed-python-reterminal is not in this list, python will not find it when you import it.\n\nNote: the python shell above was started as the user pi. If you start python as root, sys.path might have different paths.\n\nBelow, python was started as root:\npi@raspberrypi:~ $ sudo -i\nroot@raspberrypi:~# python3\n\n&gt;&gt;&gt; import sys\n&gt;&gt;&gt; sys.path\n[\n'',\n'/usr/lib/python37.zip',\n'/usr/lib/python3.7',\n'/usr/lib/python3.7/lib-dynload',\n'/usr/local/lib/python3.7/dist-packages',\n'/usr/lib/python3/dist-packages'\n]\nNote that the user pi does not have permission to add content inside /usr. Thus, all pip installations as the regular user go into /home/pi/.local/lib/python3.7/site-packages.\nConclusion: if you install a python library as root, it might go to a different directory compared to installing it as the regular user.\nThis is the main reason why we chose to install the seeed-python-reterminal as root, rather than the regular user pi.\n\n\n\nMaking user’s library available to root (optional)\nIf you would like to make a library installed as the user pi available when running the script as root, you will need to export an environmental variable named PYTHONPATH pointing to the library location.\nFor example, assuming that a library installed under the user pi is located in /home/pi/.local/lib/python3.7/site-packages, do the following:\n# Elevate the shell to the root user\npi@raspberrypi:~ $ sudo -i\nroot@raspberrypi:~#\n\n# Export the PYTHONPATH environment variable\nroot@raspberrypi:~# export PYTHONPATH=\"/home/pi/.local/lib/python3.7/site-packages\"\n\n# Start python as root and run the script that imports the library\nroot@raspberrypi:~# python3 my_script.py\n\n\n\n\n Back to top",
     "crumbs": [
       "Lessons",
       "Python",
-      "Intro to Python for Developers"
+      "Package management in Python"
     ]
+  },
+  {
+    "objectID": "lessons/python/index.html",
+    "href": "lessons/python/index.html",
+    "title": "Python",
+    "section": "",
+    "text": "Intro to Python for Developers\n\n\nPython exercises\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPackage management in Python\n\n\nHow to use OS package managers, virtual environments, and pip to manage python applications effectively.\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n Back to top",
+    "crumbs": [
+      "Lessons",
+      "Python"
+    ]
+  },
+  {
+    "objectID": "lessons/iot/index.html",
+    "href": "lessons/iot/index.html",
+    "title": "IoT",
+    "section": "",
+    "text": "Intro to the Internet of Things\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n Back to top",
+    "crumbs": [
+      "Lessons",
+      "IoT"
+    ]
+  },
+  {
+    "objectID": "lessons/hardware/index.html",
+    "href": "lessons/hardware/index.html",
+    "title": "Hardware",
+    "section": "",
+    "text": "reTerminal Sensors\n\n\nInstalling initial reTerminal packages. Reading and controlling the reTerminal hardware interfaces, e.g. LEDs, light sensor, screen backlight, etc.\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n Back to top",
+    "crumbs": [
+      "Lessons",
+      "Hardware"
+    ]
+  },
+  {
+    "objectID": "lessons/getting-started/tech-stack.html",
+    "href": "lessons/getting-started/tech-stack.html",
+    "title": "Technology Stack",
+    "section": "",
+    "text": "hardware platform used for the course: reTerminal\n\n\n\nOpen source hardware manufactured by Seeed Studios (Shenzhen, China)\nBuilt around the Raspberry Pi platform. Uses a Raspberry Pi Compute Module 4 (CM4)\nSee the official wiki page for specs and details.\nRuns the Linux based Raspberry PI Operating system\n\n\n\n\n\n\n\nenter image description here\n\n\n\nA standard for wiring sensors to a connector.\nEliminates the need for breadboards and complicated wiring.\nSupported communication protocols: Digital, Analog, UART and I2C.\nSee official wiki page for details.",
+    "crumbs": [
+      "Lessons",
+      "Getting started",
+      "Technology Stack"
+    ]
+  },
+  {
+    "objectID": "lessons/getting-started/tech-stack.html#hardware",
+    "href": "lessons/getting-started/tech-stack.html#hardware",
+    "title": "Technology Stack",
+    "section": "",
+    "text": "hardware platform used for the course: reTerminal\n\n\n\nOpen source hardware manufactured by Seeed Studios (Shenzhen, China)\nBuilt around the Raspberry Pi platform. Uses a Raspberry Pi Compute Module 4 (CM4)\nSee the official wiki page for specs and details.\nRuns the Linux based Raspberry PI Operating system\n\n\n\n\n\n\n\nenter image description here\n\n\n\nA standard for wiring sensors to a connector.\nEliminates the need for breadboards and complicated wiring.\nSupported communication protocols: Digital, Analog, UART and I2C.\nSee official wiki page for details.",
+    "crumbs": [
+      "Lessons",
+      "Getting started",
+      "Technology Stack"
+    ]
+  },
+  {
+    "objectID": "lessons/getting-started/tech-stack.html#software",
+    "href": "lessons/getting-started/tech-stack.html#software",
+    "title": "Technology Stack",
+    "section": "Software",
+    "text": "Software\n\nPython\n\n\n\npython™\n\n\nThis course will be using Python version 3.10 to: - Run programs inside the Raspberry Pi (reTerminal) in order to read and control sensors. - Communicate with the API of the Cloud Platform.\n\n\nVS Code IDE\n\n\n\nPart 1: Your First Website | HTML & CSS Tutorial | code …\n\n\nVisual Studio Code IDE will be used with various extensions in order to: - Program in Python (linting, intellisence, debugging, etc) - Remotely connecting to the Respberry Pi. - Connecting to Microsoft Azure.\n\n\nLinux (Raspberry Pi OS)\n\n\n\nLogo for raspberry pi os\n\n\nThe operating system running inside the reTerminal is Raspberry Pi OS. - Linux Debian based. - Requires basic use of BASH shell (eg. ssh, and environmental variables).\n\n\nMicrosoft Azure\n\n\n\nAzure IoT Hub: Create Using Azure Portal | Build5Nines\n\n\nMicrosoft Azure will be used as the main platform that will: - Register and connect devices. - Store and analyse data. - Manage the security layer. - Provide libraries (SDKs) that can easily be integrated into our code. - For more information see Azure IoT page.",
+    "crumbs": [
+      "Lessons",
+      "Getting started",
+      "Technology Stack"
+    ]
+  },
+  {
+    "objectID": "lessons/getting-started/tech-stack.slides.html#hardware",
+    "href": "lessons/getting-started/tech-stack.slides.html#hardware",
+    "title": "Technology Stack",
+    "section": "Hardware",
+    "text": "Hardware\nreTerminal from Seeed\n\n\n\nhardware platform used for the course: reTerminal\n\n\n\nOpen source hardware manufactured by Seeed Studios (Shenzhen, China)\nBuilt around the Raspberry Pi platform. Uses a Raspberry Pi Compute Module 4 (CM4)\nSee the official wiki page for specs and details.\nRuns the Linux based Raspberry PI Operating system\n\nGrove Connection System\n\n\n\nenter image description here\n\n\n\nA standard for wiring sensors to a connector.\nEliminates the need for breadboards and complicated wiring.\nSupported communication protocols: Digital, Analog, UART and I2C.\nSee official wiki page for details."
+  },
+  {
+    "objectID": "lessons/getting-started/tech-stack.slides.html#software",
+    "href": "lessons/getting-started/tech-stack.slides.html#software",
+    "title": "Technology Stack",
+    "section": "Software",
+    "text": "Software\nPython\n\n\n\npython™\n\n\nThis course will be using Python version 3.10 to: - Run programs inside the Raspberry Pi (reTerminal) in order to read and control sensors. - Communicate with the API of the Cloud Platform.\nVS Code IDE\n\n\n\nPart 1: Your First Website | HTML & CSS Tutorial | code …\n\n\nVisual Studio Code IDE will be used with various extensions in order to: - Program in Python (linting, intellisence, debugging, etc) - Remotely connecting to the Respberry Pi. - Connecting to Microsoft Azure.\nLinux (Raspberry Pi OS)\n\n\n\nLogo for raspberry pi os\n\n\nThe operating system running inside the reTerminal is Raspberry Pi OS. - Linux Debian based. - Requires basic use of BASH shell (eg. ssh, and environmental variables).\nMicrosoft Azure\n\n\n\nAzure IoT Hub: Create Using Azure Portal | Build5Nines\n\n\nMicrosoft Azure will be used as the main platform that will: - Register and connect devices. - Store and analyse data. - Manage the security layer. - Provide libraries (SDKs) that can easily be integrated into our code. - For more information see Azure IoT page."
+  },
+  {
+    "objectID": "lessons/getting-started/index.html",
+    "href": "lessons/getting-started/index.html",
+    "title": "Getting started",
+    "section": "",
+    "text": "Technology Stack\n\n\nTechnologies used in this class\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHardware List\n\n\nList of hardware available for the course as well as their respective specifications and documentation.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDeveloper setup\n\n\nHere’s how to set up the software that will be used for development during the course.\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n Back to top",
+    "crumbs": [
+      "Lessons",
+      "Getting started"
+    ]
+  },
+  {
+    "objectID": "lessons/linux/remote-linux.html",
+    "href": "lessons/linux/remote-linux.html",
+    "title": "Remote work on Linux",
+    "section": "",
+    "text": "Login into the R.Pi without password by setting up SSH credentials\n\nFollow guide by Raspberry Pi Foundation:\n\nPasswordless SSH Access\n\n\n\n\n\n# Update source repositories -- a good idea any time you are installing a package.\nsudo apt update -y\n# Install xclip for clipboard support with ssh graphical session `-Y`\nsudo apt install xclip -y\nsudo apt-get install neovim\n\n\nAfter installing nvim:\n# Install a Nerd Fonts (FiraCode)\ncd ~/Downloads\nwget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/FiraCode.zip\nunzip FiraCode.zip\n\n# Font installation according to Debian's docs: https://wiki.debian.org/Fonts\n# Move to systam-wide font folder\nsudo mv *.ttf /usr/local/share/fonts/\n# update the font cache\nfc-cache\n# Follow AstroNvim install instructions: https://astronvim.github.io/#%EF%B8%8F-installation\n\n# Make a backup of your current nvim folder\nmv ~/.config/nvim ~/.config/nvim.bak\n# Clean neovim folders (Optional but recommended)\nmv ~/.local/share/nvim ~/.local/share/nvim.bak\nmv ~/.local/state/nvim ~/.local/state/nvim.bak\nmv ~/.cache/nvim ~/.cache/nvim.bak\n# Clone the repository\ngit clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim\n\n\n\nInstalling node is not required but will improve compatibility with modern nvim features:\n# Install Node.js using nvm according to https://github.com/nvm-sh/nvm\n;wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash\n# source .bashrc to pickup env variables\nsource ~/.bashrc\n# install the latest version of node\nnvm install node\n# Install Tree-sitter CLI\nnpm install tree-sitter-cli",
+    "crumbs": [
+      "Lessons",
+      "Linux",
+      "Remote work on Linux"
+    ]
+  },
+  {
+    "objectID": "lessons/linux/remote-linux.html#cli",
+    "href": "lessons/linux/remote-linux.html#cli",
+    "title": "Remote work on Linux",
+    "section": "",
+    "text": "Login into the R.Pi without password by setting up SSH credentials\n\nFollow guide by Raspberry Pi Foundation:\n\nPasswordless SSH Access\n\n\n\n\n\n# Update source repositories -- a good idea any time you are installing a package.\nsudo apt update -y\n# Install xclip for clipboard support with ssh graphical session `-Y`\nsudo apt install xclip -y\nsudo apt-get install neovim\n\n\nAfter installing nvim:\n# Install a Nerd Fonts (FiraCode)\ncd ~/Downloads\nwget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/FiraCode.zip\nunzip FiraCode.zip\n\n# Font installation according to Debian's docs: https://wiki.debian.org/Fonts\n# Move to systam-wide font folder\nsudo mv *.ttf /usr/local/share/fonts/\n# update the font cache\nfc-cache\n# Follow AstroNvim install instructions: https://astronvim.github.io/#%EF%B8%8F-installation\n\n# Make a backup of your current nvim folder\nmv ~/.config/nvim ~/.config/nvim.bak\n# Clean neovim folders (Optional but recommended)\nmv ~/.local/share/nvim ~/.local/share/nvim.bak\nmv ~/.local/state/nvim ~/.local/state/nvim.bak\nmv ~/.cache/nvim ~/.cache/nvim.bak\n# Clone the repository\ngit clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim\n\n\n\nInstalling node is not required but will improve compatibility with modern nvim features:\n# Install Node.js using nvm according to https://github.com/nvm-sh/nvm\n;wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash\n# source .bashrc to pickup env variables\nsource ~/.bashrc\n# install the latest version of node\nnvm install node\n# Install Tree-sitter CLI\nnpm install tree-sitter-cli",
+    "crumbs": [
+      "Lessons",
+      "Linux",
+      "Remote work on Linux"
+    ]
+  },
+  {
+    "objectID": "lessons/linux/remote-linux.slides.html#cli",
+    "href": "lessons/linux/remote-linux.slides.html#cli",
+    "title": "Remote work on Linux",
+    "section": "CLI",
+    "text": "CLI\nPasswordless SSH Access\nLogin into the R.Pi without password by setting up SSH credentials\n\nFollow guide by Raspberry Pi Foundation:\n\nPasswordless SSH Access\n\n\nInstall NeoVim on RPI\n# Update source repositories -- a good idea any time you are installing a package.\nsudo apt update -y\n# Install xclip for clipboard support with ssh graphical session `-Y`\nsudo apt install xclip -y\nsudo apt-get install neovim\nInstall AstroNVIM\nAfter installing nvim:\n# Install a Nerd Fonts (FiraCode)\ncd ~/Downloads\nwget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/FiraCode.zip\nunzip FiraCode.zip\n\n# Font installation according to Debian's docs: https://wiki.debian.org/Fonts\n# Move to systam-wide font folder\nsudo mv *.ttf /usr/local/share/fonts/\n# update the font cache\nfc-cache\n# Follow AstroNvim install instructions: https://astronvim.github.io/#%EF%B8%8F-installation\n\n# Make a backup of your current nvim folder\nmv ~/.config/nvim ~/.config/nvim.bak\n# Clean neovim folders (Optional but recommended)\nmv ~/.local/share/nvim ~/.local/share/nvim.bak\nmv ~/.local/state/nvim ~/.local/state/nvim.bak\nmv ~/.cache/nvim ~/.cache/nvim.bak\n# Clone the repository\ngit clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim\nInstall Node\nInstalling node is not required but will improve compatibility with modern nvim features:\n# Install Node.js using nvm according to https://github.com/nvm-sh/nvm\n;wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash\n# source .bashrc to pickup env variables\nsource ~/.bashrc\n# install the latest version of node\nnvm install node\n# Install Tree-sitter CLI\nnpm install tree-sitter-cli"
+  },
+  {
+    "objectID": "lessons/linux/package-management-debian.html",
+    "href": "lessons/linux/package-management-debian.html",
+    "title": "Raspberry Pi Package Management: apt",
+    "section": "",
+    "text": "The Raspberry Pi OS (previously called Raspbian OS) used in the reTerminal is a variation of the Debian OS, with optimizations for the Raspberry Pi hardware.\n\nDebian OS is one of the most commonly used Linux distributions, especially as the “base” for derivative distributions. There are over 100 derivatives of Debian, many of which are themselves very popular distributions. These include:\n\nDesktop distributions like Ubuntu, Linux Mint, elementaryOS;\nSpecial-purpose distributions Kali Linux and Backbox (penetration testing)\nServer/Hypervisor distributions like Proxmox, Ubuntu server,\nMany others, you can find a more complete list here\n\n\nDebian-derived distributions share the following: - the .deb package format - the dpkg package manager and its frontend apt\nFor that reason, many of the commands and configuration for Raspberry Pi OS can be taken directly from Debian’s documentation.",
+    "crumbs": [
+      "Lessons",
+      "Linux",
+      "Raspberry Pi Package Management: apt"
+    ]
+  },
+  {
+    "objectID": "lessons/linux/package-management-debian.html#raspberry-pi-os-and-debian",
+    "href": "lessons/linux/package-management-debian.html#raspberry-pi-os-and-debian",
+    "title": "Raspberry Pi Package Management: apt",
+    "section": "",
+    "text": "The Raspberry Pi OS (previously called Raspbian OS) used in the reTerminal is a variation of the Debian OS, with optimizations for the Raspberry Pi hardware.\n\nDebian OS is one of the most commonly used Linux distributions, especially as the “base” for derivative distributions. There are over 100 derivatives of Debian, many of which are themselves very popular distributions. These include:\n\nDesktop distributions like Ubuntu, Linux Mint, elementaryOS;\nSpecial-purpose distributions Kali Linux and Backbox (penetration testing)\nServer/Hypervisor distributions like Proxmox, Ubuntu server,\nMany others, you can find a more complete list here\n\n\nDebian-derived distributions share the following: - the .deb package format - the dpkg package manager and its frontend apt\nFor that reason, many of the commands and configuration for Raspberry Pi OS can be taken directly from Debian’s documentation.",
+    "crumbs": [
+      "Lessons",
+      "Linux",
+      "Raspberry Pi Package Management: apt"
+    ]
+  },
+  {
+    "objectID": "lessons/linux/package-management-debian.html#apt-debian-package-manger",
+    "href": "lessons/linux/package-management-debian.html#apt-debian-package-manger",
+    "title": "Raspberry Pi Package Management: apt",
+    "section": "Apt: Debian Package Manger",
+    "text": "Apt: Debian Package Manger\nThe command apt is the default package manager of Debian.\n\nA package manager is a software tool responsible for automating the installation, removal, configuration and removal of computer programs.\n\nManaging packages could technically be done manually, however, it is very time consuming and error prone: tracking package dependencies and compatibility with the current system.\n\nCommon apt commands\nThere are many apt commands you will find yourself using all the time on a Debian-based OS like Raspberry Pi. It’s worth knowing in a bit more detail how they work.\nNote: Online, you will often see apt-get used instead of apt. apt is a newer package manager API meant to replace the older API apt-get. However, they both do more or less the same things the same ways, and apt is a backwards compatible replacement for apt-get in all cases. See Debian docs for details.\nDuring Lab 1, you updated, upgraded and installed some packages in the Raspberry Pi OS using apt:\n\napt: the difference between update and upgrade\n\n\n\n\n\n\nCommand\nDescription\n\n\n\n\nsudo apt update\nUpdate list of available packages\n\n\nsudo apt upgrade\nUpgrade the system by installing/upgrading packages\n\n\n\nCombined, these two commands update and upgrade all of the currently operating system packages on your system:\n$ sudo apt update && sudo apt upgrade -y\nThere are a few other apt commands worth knowing.\n\napt: a variety of other commands I find myself using now and again\n\n\n\n\n\n\n\nCommand\nDescription\nExample use case\n\n\n\n\napt list\nlist packages installed on your system based on package names.\napt list | grep \"package name\" Need to remember or check if you successfully installed an app? Combine apt list with grep and a pipe.\n\n\napt search &lt;query&gt;\nReturns all repository packages search in package descriptions\napt search \"package name\" Do you know part of the? Run after apt\n\n\napt show &lt;package&gt;\nshow package details\n\n\n\napt install &lt;package&gt;\ninstall packages\n\n\n\napt reinstall &lt;package&gt;\nreinstall packages\n\n\n\napt remove &lt;package&gt;\nremove packages\n\n\n\n\nYou can see details about all of these commands and more by running apt --help. Note: documentation will often leave out sudo since the need to run sudo depends on the machine and the user.\n\nIn general, commands that read data (apt list, apt search, etc.) will generally not require sudo, since most folderst that apt will touch are universally readable.\napt commands that write data (apt install, etc.) to a folder not owned by the current user – which is most folders outside of /home/username, but particularly common package install locations like /usr, /bin, etc. – these commands will require sudo to gain the required write permission\n\n\n\nApt source repositories explained\nThis section has been adapted directly from the Debian documentation: see SourcesList\nApt downloads packages from one or more software repositories (sources) and installs them onto your computer.\nA repository is generally a network server, such as the official DebianStable repository. Local directories or CD/DVD are also accepted.\nThe specific repositories (package sources) configured on your machine affect: - What software packages are available for download - What versions of packages are available - Who packages the software\n\nCommonly used package sources\n\nDebianStable: official Debian repository for the current release\nStableProposedUpdates: official Debian repository for upcoming point releases (security and important bug fixes every ~2 months)\nStableUpdates: official Debian repository for changes that cannot wait for the next point release, packages are also added to StableProposedUpdates for inclusion in the next point release\nDebianSecurity: official Debian repository for frequent security updates\nDebianBackports: more recent versions of some packages, compatible with DebianStable.\nDebianUnstable: rolling development version containing the latest packages\nDebianExperimental: development version containing the experimental/alpha/beta/untested packages\n\n\n\nEditing Software Sources\nBeing able to change the repositories used by your package management system is a powerful feature but this power comes with some responsibility.\nUsers are cautioned that it is possible to break your system (in a way that could be difficult or impossible to cleanly fix) by adding third-party repositories, or repositories for a Debian version that does not match your current version - these repository create a risk of conflicting package versions, creating what’s sometimes called a “Franken-Debian” system.\nThe whole concept behind a Debian stable release is that the Debian developers have picked a set of software and their versions that function nicely together. While this software is patched to fix security issues, the software is frequently not the latest version. It takes some experience to know how the repos may be changed without risk of breaking your system. Users of all levels are advised to change repos cautiously.",
+    "crumbs": [
+      "Lessons",
+      "Linux",
+      "Raspberry Pi Package Management: apt"
+    ]
+  },
+  {
+    "objectID": "lessons/linux/package-management-debian.slides.html#raspberry-pi-os-and-debian",
+    "href": "lessons/linux/package-management-debian.slides.html#raspberry-pi-os-and-debian",
+    "title": "Raspberry Pi Package Management: apt",
+    "section": "Raspberry Pi OS and Debian",
+    "text": "Raspberry Pi OS and Debian\nThe Raspberry Pi OS (previously called Raspbian OS) used in the reTerminal is a variation of the Debian OS, with optimizations for the Raspberry Pi hardware.\n\nDebian OS is one of the most commonly used Linux distributions, especially as the “base” for derivative distributions. There are over 100 derivatives of Debian, many of which are themselves very popular distributions. These include:\n\nDesktop distributions like Ubuntu, Linux Mint, elementaryOS;\nSpecial-purpose distributions Kali Linux and Backbox (penetration testing)\nServer/Hypervisor distributions like Proxmox, Ubuntu server,\nMany others, you can find a more complete list here\n\n\nDebian-derived distributions share the following: - the .deb package format - the dpkg package manager and its frontend apt\nFor that reason, many of the commands and configuration for Raspberry Pi OS can be taken directly from Debian’s documentation."
+  },
+  {
+    "objectID": "lessons/linux/package-management-debian.slides.html#apt-debian-package-manger",
+    "href": "lessons/linux/package-management-debian.slides.html#apt-debian-package-manger",
+    "title": "Raspberry Pi Package Management: apt",
+    "section": "Apt: Debian Package Manger",
+    "text": "Apt: Debian Package Manger\nThe command apt is the default package manager of Debian.\n\nA package manager is a software tool responsible for automating the installation, removal, configuration and removal of computer programs.\n\nManaging packages could technically be done manually, however, it is very time consuming and error prone: tracking package dependencies and compatibility with the current system.\nCommon apt commands\nThere are many apt commands you will find yourself using all the time on a Debian-based OS like Raspberry Pi. It’s worth knowing in a bit more detail how they work.\nNote: Online, you will often see apt-get used instead of apt. apt is a newer package manager API meant to replace the older API apt-get. However, they both do more or less the same things the same ways, and apt is a backwards compatible replacement for apt-get in all cases. See Debian docs for details.\nDuring Lab 1, you updated, upgraded and installed some packages in the Raspberry Pi OS using apt:\n\napt: the difference between update and upgrade\n\n\n\n\n\n\nCommand\nDescription\n\n\n\n\nsudo apt update\nUpdate list of available packages\n\n\nsudo apt upgrade\nUpgrade the system by installing/upgrading packages\n\n\n\nCombined, these two commands update and upgrade all of the currently operating system packages on your system:\n$ sudo apt update && sudo apt upgrade -y\nThere are a few other apt commands worth knowing.\n\napt: a variety of other commands I find myself using now and again\n\n\n\n\n\n\n\nCommand\nDescription\nExample use case\n\n\n\n\napt list\nlist packages installed on your system based on package names.\napt list | grep \"package name\" Need to remember or check if you successfully installed an app? Combine apt list with grep and a pipe.\n\n\napt search &lt;query&gt;\nReturns all repository packages search in package descriptions\napt search \"package name\" Do you know part of the? Run after apt\n\n\napt show &lt;package&gt;\nshow package details\n\n\n\napt install &lt;package&gt;\ninstall packages\n\n\n\napt reinstall &lt;package&gt;\nreinstall packages\n\n\n\napt remove &lt;package&gt;\nremove packages\n\n\n\n\nYou can see details about all of these commands and more by running apt --help. Note: documentation will often leave out sudo since the need to run sudo depends on the machine and the user.\n\nIn general, commands that read data (apt list, apt search, etc.) will generally not require sudo, since most folderst that apt will touch are universally readable.\napt commands that write data (apt install, etc.) to a folder not owned by the current user – which is most folders outside of /home/username, but particularly common package install locations like /usr, /bin, etc. – these commands will require sudo to gain the required write permission\n\nApt source repositories explained\nThis section has been adapted directly from the Debian documentation: see SourcesList\nApt downloads packages from one or more software repositories (sources) and installs them onto your computer.\nA repository is generally a network server, such as the official DebianStable repository. Local directories or CD/DVD are also accepted.\nThe specific repositories (package sources) configured on your machine affect: - What software packages are available for download - What versions of packages are available - Who packages the software\nCommonly used package sources\n\nDebianStable: official Debian repository for the current release\nStableProposedUpdates: official Debian repository for upcoming point releases (security and important bug fixes every ~2 months)\nStableUpdates: official Debian repository for changes that cannot wait for the next point release, packages are also added to StableProposedUpdates for inclusion in the next point release\nDebianSecurity: official Debian repository for frequent security updates\nDebianBackports: more recent versions of some packages, compatible with DebianStable.\nDebianUnstable: rolling development version containing the latest packages\nDebianExperimental: development version containing the experimental/alpha/beta/untested packages\n\nEditing Software Sources\nBeing able to change the repositories used by your package management system is a powerful feature but this power comes with some responsibility.\nUsers are cautioned that it is possible to break your system (in a way that could be difficult or impossible to cleanly fix) by adding third-party repositories, or repositories for a Debian version that does not match your current version - these repository create a risk of conflicting package versions, creating what’s sometimes called a “Franken-Debian” system.\nThe whole concept behind a Debian stable release is that the Debian developers have picked a set of software and their versions that function nicely together. While this software is patched to fix security issues, the software is frequently not the latest version. It takes some experience to know how the repos may be changed without risk of breaking your system. Users of all levels are advised to change repos cautiously."
+  },
+  {
+    "objectID": "lessons/index.html",
+    "href": "lessons/index.html",
+    "title": "Lessons",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\nTitle\n\n\nSubtitle\n\n\n\n\n\n\n \n\n\nRaspberry Pi Package Management: apt\n\n\nInstalling and configuring Linux packages on Raspberry Pi Debian using the apt package manager.\n\n\n\n\n \n\n\nRemote work on Linux\n\n\nLearn how to connect to your Pi with CLI (ssh) and GUI (VNC). Learn how to setup and troubleshoot local connections (LAN) and remote connections (VPN).\n\n\n\n\n \n\n\nLinux review\n\n\nResources and references to brush up linux knowledge.\n\n\n\n\n \n\n\nDeveloper setup\n\n\nHere’s how to set up the software that will be used for development during the course.\n\n\n\n\n \n\n\nTechnology Stack\n\n\nTechnologies used in this class\n\n\n\n\n \n\n\nHardware List\n\n\nList of hardware available for the course as well as their respective specifications and documentation.\n\n\n\n\n \n\n\nreTerminal Sensors\n\n\nInstalling initial reTerminal packages. Reading and controlling the reTerminal hardware interfaces, e.g. LEDs, light sensor, screen backlight, etc.\n\n\n\n\n \n\n\nIntro to the Internet of Things\n\n\n \n\n\n\n\n \n\n\nIntro to Python for Developers\n\n\nPython exercises\n\n\n\n\n \n\n\nPackage management in Python\n\n\nHow to use OS package managers, virtual environments, and pip to manage python applications effectively.\n\n\n\n\n\nNo matching items\n\n Back to top",
+    "crumbs": [
+      "Lessons"
+    ]
+  },
+  {
+    "objectID": "lessons/linux/index.html",
+    "href": "lessons/linux/index.html",
+    "title": "Linux",
+    "section": "",
+    "text": "Linux review\n\n\nResources and references to brush up linux knowledge.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRaspberry Pi Package Management: apt\n\n\nInstalling and configuring Linux packages on Raspberry Pi Debian using the apt package manager.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRemote work on Linux\n\n\nLearn how to connect to your Pi with CLI (ssh) and GUI (VNC). Learn how to setup and troubleshoot local connections (LAN) and remote connections (VPN).\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n Back to top",
+    "crumbs": [
+      "Lessons",
+      "Linux"
+    ]
+  },
+  {
+    "objectID": "lessons/linux/linux-review.slides.html#getting-linux-environment",
+    "href": "lessons/linux/linux-review.slides.html#getting-linux-environment",
+    "title": "Linux review",
+    "section": "Getting Linux Environment",
+    "text": "Getting Linux Environment\nIf you don’t have a Unix shell in your system (Linux or Mac), you can get one using the following:\n\nWSL2 in Windows\nJSLinux Terminal\nCopy.sh Terminal\nJS/UIX Terminal"
+  },
+  {
+    "objectID": "lessons/linux/linux-review.slides.html#resources-references",
+    "href": "lessons/linux/linux-review.slides.html#resources-references",
+    "title": "Linux review",
+    "section": "Resources & References",
+    "text": "Resources & References\nThese are great references to get up to speed on using a Unix shell:\n\nLinuxCommand.org\n\nShort guides on learning bash shell and bash scripting.\nLinks to interactive learning games under “Adventures”.\n\nA to Z Linux CLI index by ss64.com\n\nIf you know which command you are looking for, you will find it here.\n\nTop 50+ Linux Commands You MUST Know by Digital Ocean\n\nIncludes examples for the most common commands.\n\nBash Online Manual (brief), specially Basic Shell Features\n\nComplete reference with examples.\nYou may treat this as “The Docs”"
+  },
+  {
+    "objectID": "lessons/linux/linux-review.slides.html#basic-tasks",
+    "href": "lessons/linux/linux-review.slides.html#basic-tasks",
+    "title": "Linux review",
+    "section": "Basic Tasks",
+    "text": "Basic Tasks\nManipulation of the Raspberry Pi will require familiarity with the following tasks:\n\nSSH into a remote machine\n\nAs a specific user.\nUsing a non standard port.\n\nMaintaining system packages with apt\n\nUpdate packages.\nList information about a specific package\n\nManipulating text files and folders with:\n\nList: ls\nCopy: cp\nMove: mv\nRemove (recursively and not recursively): rm\nFire hierarchy with tree\n\nCreate files and folders\n\nCreate file: touch\nCreate folder mkdir\n\nEdit, save and exit text files from the command line either:\n\nnano\nvim\n\nFile and folder access permissions\n\nCheck user permissions\nModify access permissions\n\nControlling tasks and processes:\n\nCtrl-C\nCtrl-Z\njobs\nfg\nbg\n\nRun a Python script from the command line.\nInspecting and killing processes with:\n\npgrep\npkill\nkill\n\nMoving files from local machine to host and vice-versa.\n\nscp\n\nAppending to a file with redirection\n\n&gt;\n&gt;&gt;\n\nPiping command output\n\n|\n\nSearching for words in text\n\ngrep\nless"
+  },
+  {
+    "objectID": "lessons/linux/linux-review.slides.html#review-exercises",
+    "href": "lessons/linux/linux-review.slides.html#review-exercises",
+    "title": "Linux review",
+    "section": "Review Exercises",
+    "text": "Review Exercises\n\nA great set of exercises to get started is the game Bandit from OverTheWire.org\n\nTry to reach at least level 5"
+  },
+  {
+    "objectID": "lessons/linux/linux-review.html",
+    "href": "lessons/linux/linux-review.html",
+    "title": "Linux review",
+    "section": "",
+    "text": "If you don’t have a Unix shell in your system (Linux or Mac), you can get one using the following:\n\nWSL2 in Windows\nJSLinux Terminal\nCopy.sh Terminal\nJS/UIX Terminal",
+    "crumbs": [
+      "Lessons",
+      "Linux",
+      "Linux review"
+    ]
+  },
+  {
+    "objectID": "lessons/linux/linux-review.html#getting-linux-environment",
+    "href": "lessons/linux/linux-review.html#getting-linux-environment",
+    "title": "Linux review",
+    "section": "",
+    "text": "If you don’t have a Unix shell in your system (Linux or Mac), you can get one using the following:\n\nWSL2 in Windows\nJSLinux Terminal\nCopy.sh Terminal\nJS/UIX Terminal",
+    "crumbs": [
+      "Lessons",
+      "Linux",
+      "Linux review"
+    ]
+  },
+  {
+    "objectID": "lessons/linux/linux-review.html#resources-references",
+    "href": "lessons/linux/linux-review.html#resources-references",
+    "title": "Linux review",
+    "section": "Resources & References",
+    "text": "Resources & References\nThese are great references to get up to speed on using a Unix shell:\n\nLinuxCommand.org\n\nShort guides on learning bash shell and bash scripting.\nLinks to interactive learning games under “Adventures”.\n\nA to Z Linux CLI index by ss64.com\n\nIf you know which command you are looking for, you will find it here.\n\nTop 50+ Linux Commands You MUST Know by Digital Ocean\n\nIncludes examples for the most common commands.\n\nBash Online Manual (brief), specially Basic Shell Features\n\nComplete reference with examples.\nYou may treat this as “The Docs”",
+    "crumbs": [
+      "Lessons",
+      "Linux",
+      "Linux review"
+    ]
+  },
+  {
+    "objectID": "lessons/linux/linux-review.html#basic-tasks",
+    "href": "lessons/linux/linux-review.html#basic-tasks",
+    "title": "Linux review",
+    "section": "Basic Tasks",
+    "text": "Basic Tasks\nManipulation of the Raspberry Pi will require familiarity with the following tasks:\n\nSSH into a remote machine\n\nAs a specific user.\nUsing a non standard port.\n\nMaintaining system packages with apt\n\nUpdate packages.\nList information about a specific package\n\nManipulating text files and folders with:\n\nList: ls\nCopy: cp\nMove: mv\nRemove (recursively and not recursively): rm\nFire hierarchy with tree\n\nCreate files and folders\n\nCreate file: touch\nCreate folder mkdir\n\nEdit, save and exit text files from the command line either:\n\nnano\nvim\n\nFile and folder access permissions\n\nCheck user permissions\nModify access permissions\n\nControlling tasks and processes:\n\nCtrl-C\nCtrl-Z\njobs\nfg\nbg\n\nRun a Python script from the command line.\nInspecting and killing processes with:\n\npgrep\npkill\nkill\n\nMoving files from local machine to host and vice-versa.\n\nscp\n\nAppending to a file with redirection\n\n&gt;\n&gt;&gt;\n\nPiping command output\n\n|\n\nSearching for words in text\n\ngrep\nless",
+    "crumbs": [
+      "Lessons",
+      "Linux",
+      "Linux review"
+    ]
+  },
+  {
+    "objectID": "lessons/linux/linux-review.html#review-exercises",
+    "href": "lessons/linux/linux-review.html#review-exercises",
+    "title": "Linux review",
+    "section": "Review Exercises",
+    "text": "Review Exercises\n\nA great set of exercises to get started is the game Bandit from OverTheWire.org\n\nTry to reach at least level 5",
+    "crumbs": [
+      "Lessons",
+      "Linux",
+      "Linux review"
+    ]
+  },
+  {
+    "objectID": "lessons/getting-started/vscode-python-setup.slides.html#vs-code",
+    "href": "lessons/getting-started/vscode-python-setup.slides.html#vs-code",
+    "title": "Developer setup",
+    "section": "VS Code",
+    "text": "VS Code\nBelow are the recommended steps to setup your VS Code for this course.\nYou can download VS Code from this link\nVS Code Extensions\n\nRemote - SSH by Microsoft: Open any folder on a remote machine using SSH and take advantage of VS Code’s full feature set.\n\n(the Python dev setup will required additional VS Code extensions, see below)"
+  },
+  {
+    "objectID": "lessons/getting-started/vscode-python-setup.slides.html#python-development",
+    "href": "lessons/getting-started/vscode-python-setup.slides.html#python-development",
+    "title": "Developer setup",
+    "section": "Python Development",
+    "text": "Python Development\nBase Setup\nFollow the official guide Getting Started with Python in VS Code\nThe guide covers the following steps:\n\nInstall the VS Code extension Python by Microsoft. This extension includes:\n\nIntelliSense: with Pylance\nLinting: Pylint (default) and Flake8\nCode formatting: autopep (default), black or yapf\nDebugging\nTesting: Test Explorer or pytest\nJupter Notebooks\nVirtual Environment support\n\n\n\n\n\nPython extension in Visual Studio Code’s Marketplace\n\n\n\nInstall a Python interpreter (if not already installed).\nVerify your Python installation.\nCreate a test project with a Hello World Python file.\nRun the Hello World file from VS Code.\nConfigure and run the integrated debugger.\n\nEnable Static Type Checking with Pylance\nPylance is the default language support for Python in Visual Studio Code extension. Pylance uses the Pyright static type checker under the hood to supercharge Python IntelliSense in VS Code.\nType checking is not enabled by default in Pylance. To enable it, set the following VS Code configuration:\n{\n  \"python.analysis.typeCheckingMode\": \"basic\"\n}\nAlternatively, use the VS Code configuration UI:\n\nFormatting & Linting\nFormatting will not fix your code, however, it will help you write more readable code.\nLinting will analyze your code as you save it and tell you about errors before you run the code (remember, Python is an interpreted language, there is no compilation).\nFormatting w/ autopep8\nTo help you write consistent Python, make sure the autopep8 code formatter is enabled.\n\nOpen a Python file and press the code formatting shortcut for your machine: Linux: Ctrl + Shift + I Window: Alt + Shift + F macOS: ⇧⌥F\nFollow instructions to setup autopep8.\n\nFor details, see section “Formatting” of Editing Python in Visual Studio Code\nLinting w/ Pylint\nFollow the first step “Enable linters” in the guide Linting Python in Visual Studio Code\nTo learn more about the benefits of formatting and linting"
+  },
+  {
+    "objectID": "lessons/getting-started/vscode-python-setup.slides.html#resources",
+    "href": "lessons/getting-started/vscode-python-setup.slides.html#resources",
+    "title": "Developer setup",
+    "section": "Resources",
+    "text": "Resources\nTo learn more about the benefits of formatting and linting, see the video below:\n\n\nFor examples of other VS Code extensions that can improve your dev experience, see the video below:"
+  },
+  {
+    "objectID": "lessons/getting-started/vscode-python-setup.html",
+    "href": "lessons/getting-started/vscode-python-setup.html",
+    "title": "Developer setup",
+    "section": "",
+    "text": "Below are the recommended steps to setup your VS Code for this course.\nYou can download VS Code from this link\n\n\n\nRemote - SSH by Microsoft: Open any folder on a remote machine using SSH and take advantage of VS Code’s full feature set.\n\n(the Python dev setup will required additional VS Code extensions, see below)",
+    "crumbs": [
+      "Lessons",
+      "Getting started",
+      "Developer setup"
+    ]
+  },
+  {
+    "objectID": "lessons/getting-started/vscode-python-setup.html#vs-code",
+    "href": "lessons/getting-started/vscode-python-setup.html#vs-code",
+    "title": "Developer setup",
+    "section": "",
+    "text": "Below are the recommended steps to setup your VS Code for this course.\nYou can download VS Code from this link\n\n\n\nRemote - SSH by Microsoft: Open any folder on a remote machine using SSH and take advantage of VS Code’s full feature set.\n\n(the Python dev setup will required additional VS Code extensions, see below)",
+    "crumbs": [
+      "Lessons",
+      "Getting started",
+      "Developer setup"
+    ]
+  },
+  {
+    "objectID": "lessons/getting-started/vscode-python-setup.html#python-development",
+    "href": "lessons/getting-started/vscode-python-setup.html#python-development",
+    "title": "Developer setup",
+    "section": "Python Development",
+    "text": "Python Development\n\nBase Setup\nFollow the official guide Getting Started with Python in VS Code\nThe guide covers the following steps:\n\nInstall the VS Code extension Python by Microsoft. This extension includes:\n\nIntelliSense: with Pylance\nLinting: Pylint (default) and Flake8\nCode formatting: autopep (default), black or yapf\nDebugging\nTesting: Test Explorer or pytest\nJupter Notebooks\nVirtual Environment support\n\n\n\n\n\nPython extension in Visual Studio Code’s Marketplace\n\n\n\nInstall a Python interpreter (if not already installed).\nVerify your Python installation.\nCreate a test project with a Hello World Python file.\nRun the Hello World file from VS Code.\nConfigure and run the integrated debugger.\n\n\n\nEnable Static Type Checking with Pylance\nPylance is the default language support for Python in Visual Studio Code extension. Pylance uses the Pyright static type checker under the hood to supercharge Python IntelliSense in VS Code.\nType checking is not enabled by default in Pylance. To enable it, set the following VS Code configuration:\n{\n  \"python.analysis.typeCheckingMode\": \"basic\"\n}\nAlternatively, use the VS Code configuration UI:\n\n\n\nFormatting & Linting\nFormatting will not fix your code, however, it will help you write more readable code.\nLinting will analyze your code as you save it and tell you about errors before you run the code (remember, Python is an interpreted language, there is no compilation).\n\nFormatting w/ autopep8\nTo help you write consistent Python, make sure the autopep8 code formatter is enabled.\n\nOpen a Python file and press the code formatting shortcut for your machine: Linux: Ctrl + Shift + I Window: Alt + Shift + F macOS: ⇧⌥F\nFollow instructions to setup autopep8.\n\nFor details, see section “Formatting” of Editing Python in Visual Studio Code\n\n\nLinting w/ Pylint\nFollow the first step “Enable linters” in the guide Linting Python in Visual Studio Code\nTo learn more about the benefits of formatting and linting",
+    "crumbs": [
+      "Lessons",
+      "Getting started",
+      "Developer setup"
+    ]
+  },
+  {
+    "objectID": "lessons/getting-started/vscode-python-setup.html#resources",
+    "href": "lessons/getting-started/vscode-python-setup.html#resources",
+    "title": "Developer setup",
+    "section": "Resources",
+    "text": "Resources\nTo learn more about the benefits of formatting and linting, see the video below:\n\n\nFor examples of other VS Code extensions that can improve your dev experience, see the video below:",
+    "crumbs": [
+      "Lessons",
+      "Getting started",
+      "Developer setup"
+    ]
+  },
+  {
+    "objectID": "lessons/getting-started/hardware-list.slides.html#reterminal",
+    "href": "lessons/getting-started/hardware-list.slides.html#reterminal",
+    "title": "Hardware List",
+    "section": "reTerminal",
+    "text": "reTerminal\nThe reTerminal is a development board based on the Raspberry Pi Compute Module 4 (CM4) manufactured by Seeed Studio.\n\nNotable features: - Compute Module 4 with 4GB RAM & 32GB eMMC - 5-Inch IPS capacitive multi-touch screen at 1280 x 720 and 293 PPI - Wireless connectivity with dual-band 2.4GHz/5GHz Wi-Fi and Bluetooth 5.0 BLE - Cryptographic co-processor with secure hardware-based key storage - Built-in modules such as accelerometer, light sensor, and RTC\n\nSee reTerminal Wiki page for detailed specs and documentation\n\nPower Supply\n The reTerminal requires a power supply that can provide a minimum of 3 Amps. The official Raspberry Pi USB-C Power Supply in included in the kit."
+  },
+  {
+    "objectID": "lessons/getting-started/hardware-list.slides.html#compute-module-4",
+    "href": "lessons/getting-started/hardware-list.slides.html#compute-module-4",
+    "title": "Hardware List",
+    "section": "Compute Module 4",
+    "text": "Compute Module 4\n The Compute Module 4 (CM4) made by the Raspberry Pi Foundation is powering the reTerminal.\nNotable features: - Processor: Broadcom BCM2711 quad-core Cortex-A72 (ARM v8) 64-bit SoC @ 1.5GHz\n\nSee CM4 datasheet for details.\n\nSee Difference Between ARM64, ARMel, and ARMhf for more info on the different ARM architectures.\nGrove Base Hat for Raspberry Pi\n\nIn a typical Raspberry Pi, sensors would be connected via the 40-pin GPIO.\nTo facilitate connections of the Grove sensors, this “Hat” (term for an add-on board of the Raspberry Pi) includes the following types of connection: - 6 Digital\n- 4 Analog\n- 3 I2C\n- 1 PWM\n- 1 UART\n\nSee Grove base hat Wiki for details."
+  },
+  {
+    "objectID": "lessons/getting-started/hardware-list.slides.html#sensors",
+    "href": "lessons/getting-started/hardware-list.slides.html#sensors",
+    "title": "Hardware List",
+    "section": "Sensors",
+    "text": "Sensors\nAHT20 I2C Temperature & Humidity\n See AHT20 I2C Industrial Grade Temperature & Humidity Sensor wiki for details. - Temperature measurement range -40 ~ 85°C, Humidity measurement range 0 ~ 100% RH. - Digital output, Grove I2C interface.\nAHT20 Libraries\nThe main module for this sensor is provided by Seeed in this Github repository and can be installed with the grove.py library.\nFollow official Step by step installation for python 3 (see below). Don’t use the one-click installation or it will install to the wrong location\ngit clone [https://github.com/Seeed-Studio/grove.py](https://github.com/Seeed-Studio/grove.py)\ncd grove.py  \nsudo pip3 install .\nAlternatively, it’s also possible to use Adafruit’s adafruit-circuitpython-ahtx0 library to communicate with the sensor (see library’s Pypi page). However, to instantiate the provided sensor class, you will need to pass it an I2C bus instance. To instantiate an I2C bus instance, install and use the adafruit-extended-bus library (see Pypi page)."
+  },
+  {
+    "objectID": "lessons/getting-started/hardware-list.slides.html#actuators-motors",
+    "href": "lessons/getting-started/hardware-list.slides.html#actuators-motors",
+    "title": "Hardware List",
+    "section": "Actuators & Motors",
+    "text": "Actuators & Motors\nLED Socketed\n\nLED in a removable socket and potentiometer for power adjustment. LED can be swapped with different colors.\nSee LED wiki page for details.\n### Cooling Fan  5V Cooling Fan 40mm x 10mm with 2-pin JST connector. - See product page here.\nRelay\n\nA digital switch. Controls the on/off flow of electricity with a small digital signal. - Operate voltage: 3.3V-5V - Input current: 100mA - Rated load: 5A@250VAC 5A@30VDC\nSee relay wiki page for details."
+  },
+  {
+    "objectID": "lessons/getting-started/hardware-list.slides.html#cabling",
+    "href": "lessons/getting-started/hardware-list.slides.html#cabling",
+    "title": "Hardware List",
+    "section": "Cabling",
+    "text": "Cabling\nThe following cables are included in the base kit:\n\nGrove Universal 4 Pin Buckled 5cm Cable.\nGrove Universal 4 Pin Buckled 20cm Cable.\nGrove 4 pin Female Jumper to Grove 4 pin Cable\nGrove 4 pin Male Jumper to Grove 4 pin Cable\n40-pin flat ribbon cable 20cm (female-female).\n2-pin JST SM Plug, one end open."
+  },
+  {
+    "objectID": "lessons/getting-started/hardware-list.html",
+    "href": "lessons/getting-started/hardware-list.html",
+    "title": "Hardware List",
+    "section": "",
+    "text": "The reTerminal is a development board based on the Raspberry Pi Compute Module 4 (CM4) manufactured by Seeed Studio.\n\nNotable features: - Compute Module 4 with 4GB RAM & 32GB eMMC - 5-Inch IPS capacitive multi-touch screen at 1280 x 720 and 293 PPI - Wireless connectivity with dual-band 2.4GHz/5GHz Wi-Fi and Bluetooth 5.0 BLE - Cryptographic co-processor with secure hardware-based key storage - Built-in modules such as accelerometer, light sensor, and RTC\n\nSee reTerminal Wiki page for detailed specs and documentation\n\n\n\n The reTerminal requires a power supply that can provide a minimum of 3 Amps. The official Raspberry Pi USB-C Power Supply in included in the kit.",
+    "crumbs": [
+      "Lessons",
+      "Getting started",
+      "Hardware List"
+    ]
+  },
+  {
+    "objectID": "lessons/getting-started/hardware-list.html#reterminal",
+    "href": "lessons/getting-started/hardware-list.html#reterminal",
+    "title": "Hardware List",
+    "section": "",
+    "text": "The reTerminal is a development board based on the Raspberry Pi Compute Module 4 (CM4) manufactured by Seeed Studio.\n\nNotable features: - Compute Module 4 with 4GB RAM & 32GB eMMC - 5-Inch IPS capacitive multi-touch screen at 1280 x 720 and 293 PPI - Wireless connectivity with dual-band 2.4GHz/5GHz Wi-Fi and Bluetooth 5.0 BLE - Cryptographic co-processor with secure hardware-based key storage - Built-in modules such as accelerometer, light sensor, and RTC\n\nSee reTerminal Wiki page for detailed specs and documentation\n\n\n\n The reTerminal requires a power supply that can provide a minimum of 3 Amps. The official Raspberry Pi USB-C Power Supply in included in the kit.",
+    "crumbs": [
+      "Lessons",
+      "Getting started",
+      "Hardware List"
+    ]
+  },
+  {
+    "objectID": "lessons/getting-started/hardware-list.html#compute-module-4",
+    "href": "lessons/getting-started/hardware-list.html#compute-module-4",
+    "title": "Hardware List",
+    "section": "Compute Module 4",
+    "text": "Compute Module 4\n The Compute Module 4 (CM4) made by the Raspberry Pi Foundation is powering the reTerminal.\nNotable features: - Processor: Broadcom BCM2711 quad-core Cortex-A72 (ARM v8) 64-bit SoC @ 1.5GHz\n\nSee CM4 datasheet for details.\n\nSee Difference Between ARM64, ARMel, and ARMhf for more info on the different ARM architectures.\n\nGrove Base Hat for Raspberry Pi\n\nIn a typical Raspberry Pi, sensors would be connected via the 40-pin GPIO.\nTo facilitate connections of the Grove sensors, this “Hat” (term for an add-on board of the Raspberry Pi) includes the following types of connection: - 6 Digital\n- 4 Analog\n- 3 I2C\n- 1 PWM\n- 1 UART\n\nSee Grove base hat Wiki for details.",
+    "crumbs": [
+      "Lessons",
+      "Getting started",
+      "Hardware List"
+    ]
+  },
+  {
+    "objectID": "lessons/getting-started/hardware-list.html#sensors",
+    "href": "lessons/getting-started/hardware-list.html#sensors",
+    "title": "Hardware List",
+    "section": "Sensors",
+    "text": "Sensors\n\nAHT20 I2C Temperature & Humidity\n See AHT20 I2C Industrial Grade Temperature & Humidity Sensor wiki for details. - Temperature measurement range -40 ~ 85°C, Humidity measurement range 0 ~ 100% RH. - Digital output, Grove I2C interface.\n\n\nAHT20 Libraries\nThe main module for this sensor is provided by Seeed in this Github repository and can be installed with the grove.py library.\nFollow official Step by step installation for python 3 (see below). Don’t use the one-click installation or it will install to the wrong location\ngit clone [https://github.com/Seeed-Studio/grove.py](https://github.com/Seeed-Studio/grove.py)\ncd grove.py  \nsudo pip3 install .\nAlternatively, it’s also possible to use Adafruit’s adafruit-circuitpython-ahtx0 library to communicate with the sensor (see library’s Pypi page). However, to instantiate the provided sensor class, you will need to pass it an I2C bus instance. To instantiate an I2C bus instance, install and use the adafruit-extended-bus library (see Pypi page).",
+    "crumbs": [
+      "Lessons",
+      "Getting started",
+      "Hardware List"
+    ]
+  },
+  {
+    "objectID": "lessons/getting-started/hardware-list.html#actuators-motors",
+    "href": "lessons/getting-started/hardware-list.html#actuators-motors",
+    "title": "Hardware List",
+    "section": "Actuators & Motors",
+    "text": "Actuators & Motors\n\nLED Socketed\n\nLED in a removable socket and potentiometer for power adjustment. LED can be swapped with different colors.\nSee LED wiki page for details.\n### Cooling Fan  5V Cooling Fan 40mm x 10mm with 2-pin JST connector. - See product page here.\n\n\nRelay\n\nA digital switch. Controls the on/off flow of electricity with a small digital signal. - Operate voltage: 3.3V-5V - Input current: 100mA - Rated load: 5A@250VAC 5A@30VDC\nSee relay wiki page for details.",
+    "crumbs": [
+      "Lessons",
+      "Getting started",
+      "Hardware List"
+    ]
+  },
+  {
+    "objectID": "lessons/getting-started/hardware-list.html#cabling",
+    "href": "lessons/getting-started/hardware-list.html#cabling",
+    "title": "Hardware List",
+    "section": "Cabling",
+    "text": "Cabling\nThe following cables are included in the base kit:\n\nGrove Universal 4 Pin Buckled 5cm Cable.\nGrove Universal 4 Pin Buckled 20cm Cable.\nGrove 4 pin Female Jumper to Grove 4 pin Cable\nGrove 4 pin Male Jumper to Grove 4 pin Cable\n40-pin flat ribbon cable 20cm (female-female).\n2-pin JST SM Plug, one end open.",
+    "crumbs": [
+      "Lessons",
+      "Getting started",
+      "Hardware List"
+    ]
+  },
+  {
+    "objectID": "lessons/hardware/reterminal-sensors.slides.html#lab-1-review",
+    "href": "lessons/hardware/reterminal-sensors.slides.html#lab-1-review",
+    "title": "reTerminal Sensors",
+    "section": "Lab 1 Review",
+    "text": "Lab 1 Review\nAfter Lab 1, you have taken the following steps:\n\nInstall the Raspberry Pi OS image.\n\n\ndisassemble, flip the memory switch and use usbboot/rpiboot script to prepare internal memory for firmware flash.\nuse Raspberry Pi Imager to flash new image 64bit “Bookworm” Raspberry OS with chosen username/password and SSH enabled\nfix the “black screen” issue by installing the latest seeed overlay drivers\n\n\nUpdate system packages\n\n\nupdate system repositories with sudo apt update and sudo apt upgrade\ninstall kernel headers with sudo apt install raspberrypi-kernel-headers\ninstall git and docker, deploy simple Python webserver docker container\n\n\nSet up remote connection interfaces\n\n\ndetermine your assigned IP address on the class LAN\ndetermine your device MAC address\nenable VNC interface\n\nIt’s time to take a deeper look at the hardware and software our reTerminal offers."
+  },
+  {
+    "objectID": "lessons/hardware/reterminal-sensors.slides.html#hardware",
+    "href": "lessons/hardware/reterminal-sensors.slides.html#hardware",
+    "title": "reTerminal Sensors",
+    "section": "Hardware",
+    "text": "Hardware\nThis section is adapted directly from the reTerminal wiki: “Getting Started with reTerminal”\nThe reTerminal is powered by a Raspberry Pi Compute Module 4 (CM4) which is a Quad-Core Cortex-A72 CPU running at 1.5GHz and a 5-inch IPS capacitive multi-touch screen with a resolution of 1280 x 720. It has sufficient amount of RAM (4GB) to perform multitasking and also has sufficient amount of eMMC storage (32GB) to install an operating system, enabling fast boot up times and smooth overall experience. It has wireless connectivity with dual-band 2.4GHz/5GHz Wi-Fi and Bluetooth 5.0 BLE.\nreTerminal consists of a high-speed expansion interface and rich I/O for more expandability. This device has security features such as a cryptographic co-processor with secure hardware-based key storage. It also has built-in modules such as an accelerometer, light sensor and an RTC (Real-Time Clock). reTerminal has a Gigabit Ethernet Port for faster network connections and also has dual USB 2.0 Type-A ports. The 40-pin header on the reTerminal opens it for a wide range of IoT applications.\nFirmware & Version\n\n\n\n\n\n\n\n\n\nReleased Date\nPre-Installed OS\nPre-Installed STM32 Firmware\nBoard Version\n\n\n\n\n06/15/2021\n2021-06-02-Raspbian(modified)-32-bit\nV1.0\nv1.3\n\n\n08/03/2021\n2021-06-02-Raspbian(modified)-32-bit\nV1.1\nv1.4\n\n\n09/03/2021\n2021-06-02-Raspbian(modified)-32-bit\nV1.6\nv1.6\n\n\n11/02/2021\n2021-09-14-Raspbian(modified)-32-bit\nV1.8\nv1.6\n\n\nWinter 2024\nWhat OS did we install in Lab 1?\nV1.8\nv1.6\n\n\n\nYou can find a complete list of the reTerminal specifications here: reTerminal Specifications"
+  },
+  {
+    "objectID": "lessons/hardware/reterminal-sensors.slides.html#raspberry-pi-os",
+    "href": "lessons/hardware/reterminal-sensors.slides.html#raspberry-pi-os",
+    "title": "reTerminal Sensors",
+    "section": "Raspberry Pi OS",
+    "text": "Raspberry Pi OS\nIn Lab 1, we re-imaged the reTerminal Operating System to run the latest, recommended version of 64-bit Raspberry Pi OS.\nRaspberry Pi OS (previously called Raspbian OS) is a variation of the Debian OS, with optimizations for the Raspberry Pi hardware.\nYou can see more about Raspberry Pi OS and Debian in the Linux set of lessons."
+  },
+  {
+    "objectID": "lessons/hardware/reterminal-sensors.slides.html#reading-sensor-data-in-linux",
+    "href": "lessons/hardware/reterminal-sensors.slides.html#reading-sensor-data-in-linux",
+    "title": "reTerminal Sensors",
+    "section": "Reading sensor data in Linux",
+    "text": "Reading sensor data in Linux\nThis section is based on the official documentation for the reTerminal: Hardware and Interfaces Usage\n\nIn Linux, everything is a file stream that can be read and/or written to.\n\nFor example, keyboard inputs and communication over web-sockets are all read as a file streams.\nThe reTerminal has 3 programmable LED’s and a light sensor that can be controlled like a regular file."
+  },
+  {
+    "objectID": "lessons/hardware/reterminal-sensors.slides.html#sensors",
+    "href": "lessons/hardware/reterminal-sensors.slides.html#sensors",
+    "title": "reTerminal Sensors",
+    "section": "Sensors",
+    "text": "Sensors\nProgrammable LEDs\nThere are 3 programmable LEDs in the reTerminal:\n\nSTA light can be turned on as red or green.\nUSR light can only be turned on as green.\n\n\nThe lights can be controlled at the OS level by editing files in the /sys/class/leds/ directory. Use ls -al to list the files in this directory:\nusername@hostname:/sys/class/leds/usr_led0 $ ls -al\ntotal 0            \ndrwxr-xr-x 3 root root    0 Jan 25 20:33 .               \ndrwxr-xr-x 8 root root    0 Jan 25 20:33 ..                                                                                                                                                                         \n-rw-r--r-- 1 root root 4096 Jan 26 22:02 brightness                                                                                                                                                                 \n\n\n\nUnix Permissions cheatsheet py Julia Evans\n\n\n\n Unix File Permissions,  Julia Evans.\n\nThe brightness file inide the usr_led0 controls the brightness of LED0. But, because only root has write permissions to this file, we will likely run into permissions errors if we try to edit the value directly:\n$ nano /sys/class/leds/usr_led0\nPermission denied\n$ echo 255 &gt; /sys/class/leds/usr_led0\nPermission denied\n$ sudo echo 255 &gt; /sys/class/leds/usr_led0\nThere are a few possible approaches to this problem:\nUse sudo + text-editor\nUse sudo + su\nEnable root account privileges (take the identity of the root user)\n$ sudo su\nYour shell should now display root@hostname:~#\nTurn on the LED with maximum brightness\n# echo 255 &gt; brightness\nTurn off the LED\n# echo 0 &gt; brightness\nSimilarly, you can control usr_led1 and usr_led2 and even the buzzer on /sys/class/leds/usr_buzzer\nUse sudo + tee\nNote: We’ll run the next command as root because the file we want to write belongs the system (root user, rather than to the user pi.\nLuminosity Sensor\nThe digital light sensor can read the surrounding light levels.\n\nEnter the following directory\n\ncd /sys/bus/iio/devices/iio:device0\n\nRead the following file to obtain the light intensity value in Lux\n\ncat in_illuminance_input \nOutput:\npi@raspberrypi:/sys/bus/iio/devices/iio:device0 $ cat in_illuminance_input \n2719\nNote: We don’t need to be root to read this file. Its permissions are set to let all users read it, even-though it belongs to the root user:\nrw-r--r-- 1 root root 4096 Jan 30 22:16 in_illuminance_input"
+  },
+  {
+    "objectID": "lessons/hardware/reterminal-sensors.slides.html#python-library-for-reterminal",
+    "href": "lessons/hardware/reterminal-sensors.slides.html#python-library-for-reterminal",
+    "title": "reTerminal Sensors",
+    "section": "Python Library for reTerminal",
+    "text": "Python Library for reTerminal\nSeeed Studio provided a python library to access most of the sensors and actuators of the reTerminal.\nInstall the library seeed-python-reterminal (see official Github repo) using pip:\nNOTE: See Package Management in Python for a clear explanation of how to use venv and pip, particularly for apps requiring root permissions\npip install seeed-python-reterminal\nNow you can import it to a test script (eg. buzz.py)\nimport seeed_python_reterminal.core as rt\nimport time\n\nprint(\"BUZZER ON\")\nrt.buzzer = True\ntime.sleep(1)\n\nprint(\"BUZZER OFF\")\nrt.buzzer = False\nThis will sound the buzzer of the reTerminal for 1 second.\nTo run the script:\nsudo $(which python) buzz.py\nAlternatively, first elevate your shell, then execute the script normally:\nuser@hostname:~ $ sudo -i\nroot@hostname:~# python buzz.py\n\nNote: this library is simply a wrapper to the OS operations we did in the previous section.\n\nSee the official seeed-python-reterminal Github repo for API reference on how to control:\n\nLED’s\nAccelerometer\nProgrammable Buttons\nLight Sensor"
+  },
+  {
+    "objectID": "lessons/hardware/reterminal-sensors.html",
+    "href": "lessons/hardware/reterminal-sensors.html",
+    "title": "reTerminal Sensors",
+    "section": "",
+    "text": "After Lab 1, you have taken the following steps:\n\nInstall the Raspberry Pi OS image.\n\n\ndisassemble, flip the memory switch and use usbboot/rpiboot script to prepare internal memory for firmware flash.\nuse Raspberry Pi Imager to flash new image 64bit “Bookworm” Raspberry OS with chosen username/password and SSH enabled\nfix the “black screen” issue by installing the latest seeed overlay drivers\n\n\nUpdate system packages\n\n\nupdate system repositories with sudo apt update and sudo apt upgrade\ninstall kernel headers with sudo apt install raspberrypi-kernel-headers\ninstall git and docker, deploy simple Python webserver docker container\n\n\nSet up remote connection interfaces\n\n\ndetermine your assigned IP address on the class LAN\ndetermine your device MAC address\nenable VNC interface\n\nIt’s time to take a deeper look at the hardware and software our reTerminal offers.",
+    "crumbs": [
+      "Lessons",
+      "Hardware",
+      "reTerminal Sensors"
+    ]
+  },
+  {
+    "objectID": "lessons/hardware/reterminal-sensors.html#lab-1-review",
+    "href": "lessons/hardware/reterminal-sensors.html#lab-1-review",
+    "title": "reTerminal Sensors",
+    "section": "",
+    "text": "After Lab 1, you have taken the following steps:\n\nInstall the Raspberry Pi OS image.\n\n\ndisassemble, flip the memory switch and use usbboot/rpiboot script to prepare internal memory for firmware flash.\nuse Raspberry Pi Imager to flash new image 64bit “Bookworm” Raspberry OS with chosen username/password and SSH enabled\nfix the “black screen” issue by installing the latest seeed overlay drivers\n\n\nUpdate system packages\n\n\nupdate system repositories with sudo apt update and sudo apt upgrade\ninstall kernel headers with sudo apt install raspberrypi-kernel-headers\ninstall git and docker, deploy simple Python webserver docker container\n\n\nSet up remote connection interfaces\n\n\ndetermine your assigned IP address on the class LAN\ndetermine your device MAC address\nenable VNC interface\n\nIt’s time to take a deeper look at the hardware and software our reTerminal offers.",
+    "crumbs": [
+      "Lessons",
+      "Hardware",
+      "reTerminal Sensors"
+    ]
+  },
+  {
+    "objectID": "lessons/hardware/reterminal-sensors.html#hardware",
+    "href": "lessons/hardware/reterminal-sensors.html#hardware",
+    "title": "reTerminal Sensors",
+    "section": "Hardware",
+    "text": "Hardware\nThis section is adapted directly from the reTerminal wiki: “Getting Started with reTerminal”\nThe reTerminal is powered by a Raspberry Pi Compute Module 4 (CM4) which is a Quad-Core Cortex-A72 CPU running at 1.5GHz and a 5-inch IPS capacitive multi-touch screen with a resolution of 1280 x 720. It has sufficient amount of RAM (4GB) to perform multitasking and also has sufficient amount of eMMC storage (32GB) to install an operating system, enabling fast boot up times and smooth overall experience. It has wireless connectivity with dual-band 2.4GHz/5GHz Wi-Fi and Bluetooth 5.0 BLE.\nreTerminal consists of a high-speed expansion interface and rich I/O for more expandability. This device has security features such as a cryptographic co-processor with secure hardware-based key storage. It also has built-in modules such as an accelerometer, light sensor and an RTC (Real-Time Clock). reTerminal has a Gigabit Ethernet Port for faster network connections and also has dual USB 2.0 Type-A ports. The 40-pin header on the reTerminal opens it for a wide range of IoT applications.\n\nFirmware & Version\n\n\n\n\n\n\n\n\n\nReleased Date\nPre-Installed OS\nPre-Installed STM32 Firmware\nBoard Version\n\n\n\n\n06/15/2021\n2021-06-02-Raspbian(modified)-32-bit\nV1.0\nv1.3\n\n\n08/03/2021\n2021-06-02-Raspbian(modified)-32-bit\nV1.1\nv1.4\n\n\n09/03/2021\n2021-06-02-Raspbian(modified)-32-bit\nV1.6\nv1.6\n\n\n11/02/2021\n2021-09-14-Raspbian(modified)-32-bit\nV1.8\nv1.6\n\n\nWinter 2024\nWhat OS did we install in Lab 1?\nV1.8\nv1.6\n\n\n\nYou can find a complete list of the reTerminal specifications here: reTerminal Specifications",
+    "crumbs": [
+      "Lessons",
+      "Hardware",
+      "reTerminal Sensors"
+    ]
+  },
+  {
+    "objectID": "lessons/hardware/reterminal-sensors.html#raspberry-pi-os",
+    "href": "lessons/hardware/reterminal-sensors.html#raspberry-pi-os",
+    "title": "reTerminal Sensors",
+    "section": "Raspberry Pi OS",
+    "text": "Raspberry Pi OS\nIn Lab 1, we re-imaged the reTerminal Operating System to run the latest, recommended version of 64-bit Raspberry Pi OS.\nRaspberry Pi OS (previously called Raspbian OS) is a variation of the Debian OS, with optimizations for the Raspberry Pi hardware.\nYou can see more about Raspberry Pi OS and Debian in the Linux set of lessons.",
+    "crumbs": [
+      "Lessons",
+      "Hardware",
+      "reTerminal Sensors"
+    ]
+  },
+  {
+    "objectID": "lessons/hardware/reterminal-sensors.html#reading-sensor-data-in-linux",
+    "href": "lessons/hardware/reterminal-sensors.html#reading-sensor-data-in-linux",
+    "title": "reTerminal Sensors",
+    "section": "Reading sensor data in Linux",
+    "text": "Reading sensor data in Linux\nThis section is based on the official documentation for the reTerminal: Hardware and Interfaces Usage\n\nIn Linux, everything is a file stream that can be read and/or written to.\n\nFor example, keyboard inputs and communication over web-sockets are all read as a file streams.\nThe reTerminal has 3 programmable LED’s and a light sensor that can be controlled like a regular file.",
+    "crumbs": [
+      "Lessons",
+      "Hardware",
+      "reTerminal Sensors"
+    ]
+  },
+  {
+    "objectID": "lessons/hardware/reterminal-sensors.html#sensors",
+    "href": "lessons/hardware/reterminal-sensors.html#sensors",
+    "title": "reTerminal Sensors",
+    "section": "Sensors",
+    "text": "Sensors\n\nProgrammable LEDs\nThere are 3 programmable LEDs in the reTerminal:\n\nSTA light can be turned on as red or green.\nUSR light can only be turned on as green.\n\n\nThe lights can be controlled at the OS level by editing files in the /sys/class/leds/ directory. Use ls -al to list the files in this directory:\nusername@hostname:/sys/class/leds/usr_led0 $ ls -al\ntotal 0            \ndrwxr-xr-x 3 root root    0 Jan 25 20:33 .               \ndrwxr-xr-x 8 root root    0 Jan 25 20:33 ..                                                                                                                                                                         \n-rw-r--r-- 1 root root 4096 Jan 26 22:02 brightness                                                                                                                                                                 \n\n\n\nUnix Permissions cheatsheet py Julia Evans\n\n\n\n Unix File Permissions,  Julia Evans.\n\nThe brightness file inide the usr_led0 controls the brightness of LED0. But, because only root has write permissions to this file, we will likely run into permissions errors if we try to edit the value directly:\n$ nano /sys/class/leds/usr_led0\nPermission denied\n$ echo 255 &gt; /sys/class/leds/usr_led0\nPermission denied\n$ sudo echo 255 &gt; /sys/class/leds/usr_led0\nThere are a few possible approaches to this problem:\n\n\nUse sudo + text-editor\n\n\nUse sudo + su\nEnable root account privileges (take the identity of the root user)\n$ sudo su\nYour shell should now display root@hostname:~#\nTurn on the LED with maximum brightness\n# echo 255 &gt; brightness\nTurn off the LED\n# echo 0 &gt; brightness\nSimilarly, you can control usr_led1 and usr_led2 and even the buzzer on /sys/class/leds/usr_buzzer\n\n\nUse sudo + tee\nNote: We’ll run the next command as root because the file we want to write belongs the system (root user, rather than to the user pi.\n\n\nLuminosity Sensor\nThe digital light sensor can read the surrounding light levels.\n\nEnter the following directory\n\ncd /sys/bus/iio/devices/iio:device0\n\nRead the following file to obtain the light intensity value in Lux\n\ncat in_illuminance_input \nOutput:\npi@raspberrypi:/sys/bus/iio/devices/iio:device0 $ cat in_illuminance_input \n2719\nNote: We don’t need to be root to read this file. Its permissions are set to let all users read it, even-though it belongs to the root user:\nrw-r--r-- 1 root root 4096 Jan 30 22:16 in_illuminance_input",
+    "crumbs": [
+      "Lessons",
+      "Hardware",
+      "reTerminal Sensors"
+    ]
+  },
+  {
+    "objectID": "lessons/hardware/reterminal-sensors.html#python-library-for-reterminal",
+    "href": "lessons/hardware/reterminal-sensors.html#python-library-for-reterminal",
+    "title": "reTerminal Sensors",
+    "section": "Python Library for reTerminal",
+    "text": "Python Library for reTerminal\nSeeed Studio provided a python library to access most of the sensors and actuators of the reTerminal.\nInstall the library seeed-python-reterminal (see official Github repo) using pip:\nNOTE: See Package Management in Python for a clear explanation of how to use venv and pip, particularly for apps requiring root permissions\npip install seeed-python-reterminal\nNow you can import it to a test script (eg. buzz.py)\nimport seeed_python_reterminal.core as rt\nimport time\n\nprint(\"BUZZER ON\")\nrt.buzzer = True\ntime.sleep(1)\n\nprint(\"BUZZER OFF\")\nrt.buzzer = False\nThis will sound the buzzer of the reTerminal for 1 second.\nTo run the script:\nsudo $(which python) buzz.py\nAlternatively, first elevate your shell, then execute the script normally:\nuser@hostname:~ $ sudo -i\nroot@hostname:~# python buzz.py\n\nNote: this library is simply a wrapper to the OS operations we did in the previous section.\n\nSee the official seeed-python-reterminal Github repo for API reference on how to control:\n\nLED’s\nAccelerometer\nProgrammable Buttons\nLight Sensor",
+    "crumbs": [
+      "Lessons",
+      "Hardware",
+      "reTerminal Sensors"
+    ]
+  },
+  {
+    "objectID": "lessons/iot/what-is-iot.slides.html#internet-of-things-iot",
+    "href": "lessons/iot/what-is-iot.slides.html#internet-of-things-iot",
+    "title": "Intro to the Internet of Things",
+    "section": "Internet of Things (IoT)",
+    "text": "Internet of Things (IoT)\nThe Internet of Things (IoT) is comprised of equipment, machines, products, and devices that are connected to the cloud and periodically collect, send and/or receive data.\n\nIoT refers to the entire network of:\n\nphysical devices,\ntools,\nequipment, and\nsmart objects\n\nThese objects have the capability to collect and share data about:\n\nhow they are used\nthe environment around them\n\nIoT devices can also receive commands or updates via the cloud."
+  },
+  {
+    "objectID": "lessons/iot/what-is-iot.slides.html#why-collect-all-this-data",
+    "href": "lessons/iot/what-is-iot.slides.html#why-collect-all-this-data",
+    "title": "Intro to the Internet of Things",
+    "section": "Why collect all this data?",
+    "text": "Why collect all this data?\nBy analyzing the data collected by these connected objects, users and organisations can make informed decisions in near real-time and automate tightly integrated processes. This avoids decision making based on limited or out-dated data.\nThis data can create quick feedback loops for automation. Data from one object can trigger actions or control several other objects with timing and precision that could not be achieved by humans."
+  },
+  {
+    "objectID": "lessons/iot/what-is-iot.slides.html#iot-examples",
+    "href": "lessons/iot/what-is-iot.slides.html#iot-examples",
+    "title": "Intro to the Internet of Things",
+    "section": "IoT Examples",
+    "text": "IoT Examples\nThe use of IoT can be organised in two fields of application:\n\nIndustrial IoT (IIoT)\nConsumer IoT\n\n\n\n\nExamples of industrial and consumer iot applications\n\n\n\n The Internet of Things and its Benefit to U.S. Water Customer    in kuritaamerica.com\n\nConsumer IoT\nExamples of consumer IoT are:\n\nHome Security: Sensors, alarms, cameras, lights, and microphones provide 24/7 security and surveillance. All of which can be controlled from a smart phone.\nSmart Home: Smart lighting, heating and sound systems can be automated to detect human present or receive instructions remotely. Voice Assistants can also control house appliances or and provide information.\nWearables: Smartwatches and fitness trackers can monitor blood pressure or heart rate, and physical activity and suggest workouts, breaks or medical assistance.\nAppliances: Smart fridges can keep track of food quantities and expiry dates and create shopping lists accordingly. Smart outlet plugs can measure electrical consumption and turn other appliances on/off.\n\nIndustrial IoT (IIoT)\nMost people tend to first think of IoT as consumer devices. However, their main value added happens in industrial applications.\n\n\nHow Industrial Internet of Things are impacting our lives by Bluechip Infocorp Pvt Ltd via Medium.\n\nIndustrial IoT Examples:\n\nEquipment Maintenance: Rolls-Royce’s Total Care provides a suite of predictive maintenance and repair services for its jet engines, including monitoring engine health, and modifying engines to increase reliability and durability.\nFarming: John Deere is building intelligence into its large tractors and sprayers through sensors that make the machines into mobile platforms capable of self-driving.\nHeavy Machinery & Transportation: Rio Tinto, a global mining company uses a remote command center to orchestrate the actions of huge drills, excavators, trains, and trucks across multiple mining sites.\nRenewable Energies: Iberdrola and Siemens are using IoT to optimize the operation and maintenance of offshore wind power farms, the lifetime extension of wind turbines and the reducing the cost of energy.\nFacilities Management: Monitoring of buildings, infrastructure, and other spaces, allow to improve energy efficiency, space utilization, productivity, and safety. These insights may help:\n\nsave money by automating lighting or optimizing heating and cooling cycles.\nIncrease employee or occupant satisfaction by keep equipment running or ensuring that supplies are stocked."
+  },
+  {
+    "objectID": "lessons/iot/what-is-iot.slides.html#high-level-components-of-an-iot-system",
+    "href": "lessons/iot/what-is-iot.slides.html#high-level-components-of-an-iot-system",
+    "title": "Intro to the Internet of Things",
+    "section": "High-level Components of an IoT System",
+    "text": "High-level Components of an IoT System\nIoT systems are compromised of five high-level components:\n\nSensors:\n\nCollect data from the device’s environment (eg. velocity, GPS coordinates, temperature, etc).\nSensors might use different communication protocols.\n\nIoT Devices are computing devices that have:\n\nAbility to securely register with the cloud;\nConnectivity options for sending and receiving data with the cloud.\n\nCloud Gateway / Hub:\n\nSecurely ingests and sends data or commands to devices;\nOffers device management (provisioning) services (add, remove, update, group, etc).\n\nData Processing:\n\nData validation;\nIntegrate with business processes (check thresholds, send alerts, trigger action)\nPlace data in Storage;\nRetrieve data from Storage for deeper / long-term analysis;\n\nUser Interface:\n\nData visualization;\nTrigger manual actions;\nConfigure automatic actions;\nFacilitate device management.\n\n\n\nIcons of IoT High level components"
+  },
+  {
+    "objectID": "lessons/iot/what-is-iot.slides.html#iot-cloud-service-providers",
+    "href": "lessons/iot/what-is-iot.slides.html#iot-cloud-service-providers",
+    "title": "Intro to the Internet of Things",
+    "section": "IoT Cloud Service Providers",
+    "text": "IoT Cloud Service Providers\nSince IoT objects typically move around, connectivity and data collection need to happen over wide geographical areas.\nMost companies do not want to deal with setting-up the physical infrastructure and software required to have this level of distributed connectivity and reliability (servers, databases, backup systems, networking, container orchestration, etc).\nIt is typically far more practical and cost-effective to use the services of an established IoT Cloud Service Provider.\nThe three main Cloud Service Providers in the IoT space are:\n\nAmazon Web Services (AWS)\nMicrosoft Azure\nGoogle Cloud\n\n\nThere are many other Cloud providers such as IBM Cloud IoT and Oracle IoT.\n\nIn this course we will focus on Microsoft Azure. However, all three platforms offer similar functionality."
+  },
+  {
+    "objectID": "lessons/iot/what-is-iot.slides.html#azure-account-check",
+    "href": "lessons/iot/what-is-iot.slides.html#azure-account-check",
+    "title": "Intro to the Internet of Things",
+    "section": "Azure Account Check",
+    "text": "Azure Account Check\nStudents get $100 of credit for 12 months and free developer tools without a credit card.\n\nCreate an account and see details here.\n\nThe student account can be renewed annually (including $100 credits) for as long as you are a student.\nMost things we’ll do with Azure will use free services. We will occasionally use some of your free credits (~$20).\nChecking your balance 💸\nAs you experiment with Azure you might want to know your current balance.\nTL:DR 1. Sign in to the Azure portn in to the Azure portal.al. 2. Search for Cost Management \n\nSelect Payment methods\nCheck your Azure credits panel.\n\n\n\n\nCredit check panel in Azure\n\n\nFor details check Track Microsoft Customer Agreement Azure credit balance\nBudget Alerts\nIt’s possible to setup email alerts when your Azure spending exceeds a dollar threshold. This avoids unexpected spending of Azure credits.\nThere are two approaches to setting up a Budget in the Azure Portal:\n\nOpen the panel (aka “blade”) for the Resource Group in question, and then create a new Budget for that group.\nCreate a Budget for your account under Cost Management + Billing and then apply a filter according to ResourceGroupName in order to target a specific Resource Group.\n\nThe first approach involves a few less steps so it is described below.\n\nFor information on creating a budget from the Cost Management blade, see How to set up Azure budget alerts by TechTarget.com.\nFor details on using and managing budgets, see official tutorial: Create and manage Azure budgets.\n\nCreate a Budget for a Resource Group\n\nIn the Azure Portal Home, select the Resource groups service.\nSelect the resource group you want to monitor with a budget.\nIn the left panel, select Budgets under the Cost Management group and select Add.\n\n\n\n\nMenu for creating a budget for a resource group\n\n\n\nGive your budget a name and an amount.\n\n\n\nSelect the percent spending for the alert and the email to receive the notification.\nClick Create."
+  },
+  {
+    "objectID": "lessons/iot/what-is-iot.slides.html#exercises",
+    "href": "lessons/iot/what-is-iot.slides.html#exercises",
+    "title": "Intro to the Internet of Things",
+    "section": "Exercises",
+    "text": "Exercises\nNOTE: The exercise below is out of date. We will see IOT learning material later in the course.\n\nRead the Microsoft training module Examine the architecture of an IoT solution and complete the Moodle quiz on the module."
+  },
+  {
+    "objectID": "lessons/iot/what-is-iot.slides.html#diving-deeper",
+    "href": "lessons/iot/what-is-iot.slides.html#diving-deeper",
+    "title": "Intro to the Internet of Things",
+    "section": "Diving Deeper",
+    "text": "Diving Deeper\nVideo (15:19): The 7 Principles of the IoT by Tom Bradicich\n\nIn depth explanation of the integration between IoT sub-systems and opportunities from a technical and business perspective."
+  },
+  {
+    "objectID": "lessons/iot/what-is-iot.slides.html#references",
+    "href": "lessons/iot/what-is-iot.slides.html#references",
+    "title": "Intro to the Internet of Things",
+    "section": "References",
+    "text": "References\n\nWhat is IoT by Microsoft Azure.\nHow Industrial Internet of Things are impacting our lives by Bluechip Infocorp Pvt Ltd via Medium.\nAn Introduction to the Internet of Things by Pier Paolo Ippolito via FreeCodeCamp Blog."
   },
   {
     "objectID": "lessons/iot/what-is-iot.html",
@@ -154,602 +803,15 @@
     ]
   },
   {
-    "objectID": "lessons/iot/what-is-iot.slides.html#internet-of-things-iot",
-    "href": "lessons/iot/what-is-iot.slides.html#internet-of-things-iot",
-    "title": "Intro to the Internet of Things",
-    "section": "Internet of Things (IoT)",
-    "text": "Internet of Things (IoT)\nThe Internet of Things (IoT) is comprised of equipment, machines, products, and devices that are connected to the cloud and periodically collect, send and/or receive data.\n\nIoT refers to the entire network of:\n\nphysical devices,\ntools,\nequipment, and\nsmart objects\n\nThese objects have the capability to collect and share data about:\n\nhow they are used\nthe environment around them\n\nIoT devices can also receive commands or updates via the cloud."
-  },
-  {
-    "objectID": "lessons/iot/what-is-iot.slides.html#why-collect-all-this-data",
-    "href": "lessons/iot/what-is-iot.slides.html#why-collect-all-this-data",
-    "title": "Intro to the Internet of Things",
-    "section": "Why collect all this data?",
-    "text": "Why collect all this data?\nBy analyzing the data collected by these connected objects, users and organisations can make informed decisions in near real-time and automate tightly integrated processes. This avoids decision making based on limited or out-dated data.\nThis data can create quick feedback loops for automation. Data from one object can trigger actions or control several other objects with timing and precision that could not be achieved by humans."
-  },
-  {
-    "objectID": "lessons/iot/what-is-iot.slides.html#iot-examples",
-    "href": "lessons/iot/what-is-iot.slides.html#iot-examples",
-    "title": "Intro to the Internet of Things",
-    "section": "IoT Examples",
-    "text": "IoT Examples\nThe use of IoT can be organised in two fields of application:\n\nIndustrial IoT (IIoT)\nConsumer IoT\n\n\n\n\nExamples of industrial and consumer iot applications\n\n\n\n The Internet of Things and its Benefit to U.S. Water Customer    in kuritaamerica.com\n\nConsumer IoT\nExamples of consumer IoT are:\n\nHome Security: Sensors, alarms, cameras, lights, and microphones provide 24/7 security and surveillance. All of which can be controlled from a smart phone.\nSmart Home: Smart lighting, heating and sound systems can be automated to detect human present or receive instructions remotely. Voice Assistants can also control house appliances or and provide information.\nWearables: Smartwatches and fitness trackers can monitor blood pressure or heart rate, and physical activity and suggest workouts, breaks or medical assistance.\nAppliances: Smart fridges can keep track of food quantities and expiry dates and create shopping lists accordingly. Smart outlet plugs can measure electrical consumption and turn other appliances on/off.\n\nIndustrial IoT (IIoT)\nMost people tend to first think of IoT as consumer devices. However, their main value added happens in industrial applications.\n\n\nHow Industrial Internet of Things are impacting our lives by Bluechip Infocorp Pvt Ltd via Medium.\n\nIndustrial IoT Examples:\n\nEquipment Maintenance: Rolls-Royce’s Total Care provides a suite of predictive maintenance and repair services for its jet engines, including monitoring engine health, and modifying engines to increase reliability and durability.\nFarming: John Deere is building intelligence into its large tractors and sprayers through sensors that make the machines into mobile platforms capable of self-driving.\nHeavy Machinery & Transportation: Rio Tinto, a global mining company uses a remote command center to orchestrate the actions of huge drills, excavators, trains, and trucks across multiple mining sites.\nRenewable Energies: Iberdrola and Siemens are using IoT to optimize the operation and maintenance of offshore wind power farms, the lifetime extension of wind turbines and the reducing the cost of energy.\nFacilities Management: Monitoring of buildings, infrastructure, and other spaces, allow to improve energy efficiency, space utilization, productivity, and safety. These insights may help:\n\nsave money by automating lighting or optimizing heating and cooling cycles.\nIncrease employee or occupant satisfaction by keep equipment running or ensuring that supplies are stocked."
-  },
-  {
-    "objectID": "lessons/iot/what-is-iot.slides.html#high-level-components-of-an-iot-system",
-    "href": "lessons/iot/what-is-iot.slides.html#high-level-components-of-an-iot-system",
-    "title": "Intro to the Internet of Things",
-    "section": "High-level Components of an IoT System",
-    "text": "High-level Components of an IoT System\nIoT systems are compromised of five high-level components:\n\nSensors:\n\nCollect data from the device’s environment (eg. velocity, GPS coordinates, temperature, etc).\nSensors might use different communication protocols.\n\nIoT Devices are computing devices that have:\n\nAbility to securely register with the cloud;\nConnectivity options for sending and receiving data with the cloud.\n\nCloud Gateway / Hub:\n\nSecurely ingests and sends data or commands to devices;\nOffers device management (provisioning) services (add, remove, update, group, etc).\n\nData Processing:\n\nData validation;\nIntegrate with business processes (check thresholds, send alerts, trigger action)\nPlace data in Storage;\nRetrieve data from Storage for deeper / long-term analysis;\n\nUser Interface:\n\nData visualization;\nTrigger manual actions;\nConfigure automatic actions;\nFacilitate device management.\n\n\n\nIcons of IoT High level components"
-  },
-  {
-    "objectID": "lessons/iot/what-is-iot.slides.html#iot-cloud-service-providers",
-    "href": "lessons/iot/what-is-iot.slides.html#iot-cloud-service-providers",
-    "title": "Intro to the Internet of Things",
-    "section": "IoT Cloud Service Providers",
-    "text": "IoT Cloud Service Providers\nSince IoT objects typically move around, connectivity and data collection need to happen over wide geographical areas.\nMost companies do not want to deal with setting-up the physical infrastructure and software required to have this level of distributed connectivity and reliability (servers, databases, backup systems, networking, container orchestration, etc).\nIt is typically far more practical and cost-effective to use the services of an established IoT Cloud Service Provider.\nThe three main Cloud Service Providers in the IoT space are:\n\nAmazon Web Services (AWS)\nMicrosoft Azure\nGoogle Cloud\n\n\nThere are many other Cloud providers such as IBM Cloud IoT and Oracle IoT.\n\nIn this course we will focus on Microsoft Azure. However, all three platforms offer similar functionality."
-  },
-  {
-    "objectID": "lessons/iot/what-is-iot.slides.html#azure-account-check",
-    "href": "lessons/iot/what-is-iot.slides.html#azure-account-check",
-    "title": "Intro to the Internet of Things",
-    "section": "Azure Account Check",
-    "text": "Azure Account Check\nStudents get $100 of credit for 12 months and free developer tools without a credit card.\n\nCreate an account and see details here.\n\nThe student account can be renewed annually (including $100 credits) for as long as you are a student.\nMost things we’ll do with Azure will use free services. We will occasionally use some of your free credits (~$20).\nChecking your balance 💸\nAs you experiment with Azure you might want to know your current balance.\nTL:DR 1. Sign in to the Azure portn in to the Azure portal.al. 2. Search for Cost Management \n\nSelect Payment methods\nCheck your Azure credits panel.\n\n\n\n\nCredit check panel in Azure\n\n\nFor details check Track Microsoft Customer Agreement Azure credit balance\nBudget Alerts\nIt’s possible to setup email alerts when your Azure spending exceeds a dollar threshold. This avoids unexpected spending of Azure credits.\nThere are two approaches to setting up a Budget in the Azure Portal:\n\nOpen the panel (aka “blade”) for the Resource Group in question, and then create a new Budget for that group.\nCreate a Budget for your account under Cost Management + Billing and then apply a filter according to ResourceGroupName in order to target a specific Resource Group.\n\nThe first approach involves a few less steps so it is described below.\n\nFor information on creating a budget from the Cost Management blade, see How to set up Azure budget alerts by TechTarget.com.\nFor details on using and managing budgets, see official tutorial: Create and manage Azure budgets.\n\nCreate a Budget for a Resource Group\n\nIn the Azure Portal Home, select the Resource groups service.\nSelect the resource group you want to monitor with a budget.\nIn the left panel, select Budgets under the Cost Management group and select Add.\n\n\n\n\nMenu for creating a budget for a resource group\n\n\n\nGive your budget a name and an amount.\n\n\n\nSelect the percent spending for the alert and the email to receive the notification.\nClick Create."
-  },
-  {
-    "objectID": "lessons/iot/what-is-iot.slides.html#exercises",
-    "href": "lessons/iot/what-is-iot.slides.html#exercises",
-    "title": "Intro to the Internet of Things",
-    "section": "Exercises",
-    "text": "Exercises\nNOTE: The exercise below is out of date. We will see IOT learning material later in the course.\n\nRead the Microsoft training module Examine the architecture of an IoT solution and complete the Moodle quiz on the module."
-  },
-  {
-    "objectID": "lessons/iot/what-is-iot.slides.html#diving-deeper",
-    "href": "lessons/iot/what-is-iot.slides.html#diving-deeper",
-    "title": "Intro to the Internet of Things",
-    "section": "Diving Deeper",
-    "text": "Diving Deeper\nVideo (15:19): The 7 Principles of the IoT by Tom Bradicich\n\nIn depth explanation of the integration between IoT sub-systems and opportunities from a technical and business perspective."
-  },
-  {
-    "objectID": "lessons/iot/what-is-iot.slides.html#references",
-    "href": "lessons/iot/what-is-iot.slides.html#references",
-    "title": "Intro to the Internet of Things",
-    "section": "References",
-    "text": "References\n\nWhat is IoT by Microsoft Azure.\nHow Industrial Internet of Things are impacting our lives by Bluechip Infocorp Pvt Ltd via Medium.\nAn Introduction to the Internet of Things by Pier Paolo Ippolito via FreeCodeCamp Blog."
-  },
-  {
-    "objectID": "lessons/hardware/reterminal-sensors.html",
-    "href": "lessons/hardware/reterminal-sensors.html",
-    "title": "reTerminal Sensors",
+    "objectID": "lessons/python/intro-python.html",
+    "href": "lessons/python/intro-python.html",
+    "title": "Intro to Python for Developers",
     "section": "",
-    "text": "After Lab 1, you have taken the following steps:\n\nInstall the Raspberry Pi OS image.\n\n\ndisassemble, flip the memory switch and use usbboot/rpiboot script to prepare internal memory for firmware flash.\nuse Raspberry Pi Imager to flash new image 64bit “Bookworm” Raspberry OS with chosen username/password and SSH enabled\nfix the “black screen” issue by installing the latest seeed overlay drivers\n\n\nUpdate system packages\n\n\nupdate system repositories with sudo apt update and sudo apt upgrade\ninstall kernel headers with sudo apt install raspberrypi-kernel-headers\ninstall git and docker, deploy simple Python webserver docker container\n\n\nSet up remote connection interfaces\n\n\ndetermine your assigned IP address on the class LAN\ndetermine your device MAC address\nenable VNC interface\n\nIt’s time to take a deeper look at the hardware and software our reTerminal offers.",
+    "text": "Notes provided on a different platform,\n\nSee Interactive notes in Google Colab.\n\n\n\n\n Back to top",
     "crumbs": [
       "Lessons",
-      "Hardware",
-      "reTerminal Sensors"
-    ]
-  },
-  {
-    "objectID": "lessons/hardware/reterminal-sensors.html#lab-1-review",
-    "href": "lessons/hardware/reterminal-sensors.html#lab-1-review",
-    "title": "reTerminal Sensors",
-    "section": "",
-    "text": "After Lab 1, you have taken the following steps:\n\nInstall the Raspberry Pi OS image.\n\n\ndisassemble, flip the memory switch and use usbboot/rpiboot script to prepare internal memory for firmware flash.\nuse Raspberry Pi Imager to flash new image 64bit “Bookworm” Raspberry OS with chosen username/password and SSH enabled\nfix the “black screen” issue by installing the latest seeed overlay drivers\n\n\nUpdate system packages\n\n\nupdate system repositories with sudo apt update and sudo apt upgrade\ninstall kernel headers with sudo apt install raspberrypi-kernel-headers\ninstall git and docker, deploy simple Python webserver docker container\n\n\nSet up remote connection interfaces\n\n\ndetermine your assigned IP address on the class LAN\ndetermine your device MAC address\nenable VNC interface\n\nIt’s time to take a deeper look at the hardware and software our reTerminal offers.",
-    "crumbs": [
-      "Lessons",
-      "Hardware",
-      "reTerminal Sensors"
-    ]
-  },
-  {
-    "objectID": "lessons/hardware/reterminal-sensors.html#hardware",
-    "href": "lessons/hardware/reterminal-sensors.html#hardware",
-    "title": "reTerminal Sensors",
-    "section": "Hardware",
-    "text": "Hardware\nThis section is adapted directly from the reTerminal wiki: “Getting Started with reTerminal”\nThe reTerminal is powered by a Raspberry Pi Compute Module 4 (CM4) which is a Quad-Core Cortex-A72 CPU running at 1.5GHz and a 5-inch IPS capacitive multi-touch screen with a resolution of 1280 x 720. It has sufficient amount of RAM (4GB) to perform multitasking and also has sufficient amount of eMMC storage (32GB) to install an operating system, enabling fast boot up times and smooth overall experience. It has wireless connectivity with dual-band 2.4GHz/5GHz Wi-Fi and Bluetooth 5.0 BLE.\nreTerminal consists of a high-speed expansion interface and rich I/O for more expandability. This device has security features such as a cryptographic co-processor with secure hardware-based key storage. It also has built-in modules such as an accelerometer, light sensor and an RTC (Real-Time Clock). reTerminal has a Gigabit Ethernet Port for faster network connections and also has dual USB 2.0 Type-A ports. The 40-pin header on the reTerminal opens it for a wide range of IoT applications.\n\nFirmware & Version\n\n\n\n\n\n\n\n\n\nReleased Date\nPre-Installed OS\nPre-Installed STM32 Firmware\nBoard Version\n\n\n\n\n06/15/2021\n2021-06-02-Raspbian(modified)-32-bit\nV1.0\nv1.3\n\n\n08/03/2021\n2021-06-02-Raspbian(modified)-32-bit\nV1.1\nv1.4\n\n\n09/03/2021\n2021-06-02-Raspbian(modified)-32-bit\nV1.6\nv1.6\n\n\n11/02/2021\n2021-09-14-Raspbian(modified)-32-bit\nV1.8\nv1.6\n\n\nWinter 2024\nWhat OS did we install in Lab 1?\nV1.8\nv1.6\n\n\n\nYou can find a complete list of the reTerminal specifications here: reTerminal Specifications",
-    "crumbs": [
-      "Lessons",
-      "Hardware",
-      "reTerminal Sensors"
-    ]
-  },
-  {
-    "objectID": "lessons/hardware/reterminal-sensors.html#raspberry-pi-os-and-debian",
-    "href": "lessons/hardware/reterminal-sensors.html#raspberry-pi-os-and-debian",
-    "title": "reTerminal Sensors",
-    "section": "Raspberry Pi OS and Debian",
-    "text": "Raspberry Pi OS and Debian\nThe Raspberry Pi OS (previously called Raspbian OS) used in the reTerminal is a variation of the Debian OS, with optimizations for the Raspberry Pi hardware.\n\nDebian OS is one of the most commonly used Linux distributions, especially as the “base” for derivative distributions. There are over 100 derivatives of Debian, many of which are themselves very popular distributions. These include:\n\nDesktop distributions like Ubuntu, Linux Mint, elementaryOS;\nSpecial-purpose distributions Kali Linux and Backbox (penetration testing)\nServer/Hypervisor distributions like Proxmox, Ubuntu server,\nMany others, you can find a more complete list here\n\n\nDebian-derived distributions share the following: - the .deb package format - the dpkg package manager and its frontend apt\nFor that reason, many of the commands and configuration for Raspberry Pi OS can be taken directly from Debian’s documentation.\n\nApt: Debian Package Manger\nThe command apt is the default package manager of Debian.\n\nA package manager is a software tool responsible for automating the installation, removal, configuration and removal of computer programs.\n\nManaging packages could technically be done manually, however, it is very time consuming and error prone: tracking package dependencies and compatibility with the current system.\nNote: apt is a newer package manager API meant to replace the older API apt-get. However, they both accomplish the same. See Debian docs for details.\nDuring Lab 1, you updated, upgraded and installed some packages in the Raspberry Pi OS using apt:\n\n\n\n\n\n\n\nCommand\nDescription\n\n\n\n\nsudo apt update\nUpdate list of available packages\n\n\nsudo apt upgrade\nUpgrade the system by installing/upgrading packages\n\n\n\nOther commonly used commands, as seen from running apt --help:\n\n\n\n\n\n\n\nCommand\nDescription\n\n\n\n\napt list\nlist packages based on package names\n\n\napt search\nsearch in package descriptions\n\n\napt show &lt;package&gt;\nshow package details\n\n\napt install &lt;package&gt;\ninstall packages\n\n\napt reinstall &lt;package&gt;\nreinstall packages\n\n\napt remove &lt;package&gt;\nremove packages\n\n\napt autoremove\nRemove automatically all unused packages\n\n\napt full-upgrade\nupgrade the system by removing/installing/upgrading packages\n\n\napt edit-sources\nedit the source information file\n\n\n\nNote: documentation will often leave out sudo since the need to run sudo depends on the machine and the user.\n\nIn general, commands that read data (apt list, apt search, etc.) will generally not require sudo, since most folderst that apt will touch are universally readable.\napt commands that write data (apt install, etc.) to a folder not owned by the current user – which is most folders outside of /home/username, but particularly common package install locations like /usr, /bin, etc. – these commands will require sudo to gain the required write permission",
-    "crumbs": [
-      "Lessons",
-      "Hardware",
-      "reTerminal Sensors"
-    ]
-  },
-  {
-    "objectID": "lessons/hardware/reterminal-sensors.html#reading-sensor-data-in-linux",
-    "href": "lessons/hardware/reterminal-sensors.html#reading-sensor-data-in-linux",
-    "title": "reTerminal Sensors",
-    "section": "Reading sensor data in Linux",
-    "text": "Reading sensor data in Linux\nThis section is based on the official documentation for the reTerminal: Hardware and Interfaces Usage\n\nIn Linux, everything is a file stream that can be read and/or written to.\n\nFor example, keyboard inputs and communication over web-sockets are all read as a file streams.\nThe reTerminal has 3 programmable LED’s and a light sensor that can be controlled like a regular file.",
-    "crumbs": [
-      "Lessons",
-      "Hardware",
-      "reTerminal Sensors"
-    ]
-  },
-  {
-    "objectID": "lessons/hardware/reterminal-sensors.html#sensors",
-    "href": "lessons/hardware/reterminal-sensors.html#sensors",
-    "title": "reTerminal Sensors",
-    "section": "Sensors",
-    "text": "Sensors\n\nProgrammable LEDs\nThere are 3 programmable LEDs in the reTerminal:\n\nSTA light can be turned on as red or green.\nUSR light can only be turned on as green.\n\n\nThe lights can be controlled at the OS level by editing files in the /sys/class/leds/ directory. Use ls -al to list the files in this directory:\nusername@hostname:/sys/class/leds/usr_led0 $ ls -al\ntotal 0            \ndrwxr-xr-x 3 root root    0 Jan 25 20:33 .               \ndrwxr-xr-x 8 root root    0 Jan 25 20:33 ..                                                                                                                                                                         \n-rw-r--r-- 1 root root 4096 Jan 26 22:02 brightness                                                                                                                                                                 \n\n\n\nUnix Permissions cheatsheet py Julia Evans\n\n\n\n Unix File Permissions,  Julia Evans.\n\nThe brightness file inide the usr_led0 controls the brightness of LED0. But, because only root has write permissions to this file, we will likely run into permissions errors if we try to edit the value directly:\n$ nano /sys/class/leds/usr_led0\nPermission denied\n$ echo 255 &gt; /sys/class/leds/usr_led0\nPermission denied\n$ sudo echo 255 &gt; /sys/class/leds/usr_led0\nThere are a few possible approaches to this problem:\n\n\nUse sudo + text-editor\n\n\nUse sudo + su\nEnable root account privileges (take the identity of the root user)\n$ sudo su\nYour shell should now display root@hostname:~#\nTurn on the LED with maximum brightness\n# echo 255 &gt; brightness\nTurn off the LED\n# echo 0 &gt; brightness\nSimilarly, you can control usr_led1 and usr_led2 and even the buzzer on /sys/class/leds/usr_buzzer ### Use sudo + tee\nNote: We’ll run the next command as root because the file we want to write belongs the system (root user, rather than to the user pi.\n\n\nLuminosity Sensor\nThe digital light sensor can read the surrounding light levels.\n\nEnter the following directory\n\ncd /sys/bus/iio/devices/iio:device0\n\nRead the following file to obtain the light intensity value in Lux\n\ncat in_illuminance_input \nOutput:\npi@raspberrypi:/sys/bus/iio/devices/iio:device0 $ cat in_illuminance_input \n2719\nNote: We don’t need to be root to read this file. Its permissions are set to let all users read it, even-though it belongs to the root user:\nrw-r--r-- 1 root root 4096 Jan 30 22:16 in_illuminance_input",
-    "crumbs": [
-      "Lessons",
-      "Hardware",
-      "reTerminal Sensors"
-    ]
-  },
-  {
-    "objectID": "lessons/hardware/reterminal-sensors.html#python-library-for-reterminal",
-    "href": "lessons/hardware/reterminal-sensors.html#python-library-for-reterminal",
-    "title": "reTerminal Sensors",
-    "section": "Python Library for reTerminal",
-    "text": "Python Library for reTerminal\nSeeed Studio provided a python library to access most of the sensors and actuators of the reTerminal.\nInstall the library seeed-python-reterminal (see official Github repo) using pip:\nsudo pip3 install seeed-python-reterminal\n\nInstalling pip libraries as root is not recommended.\nHowever, this library needs to access system files (see previous section) and will have to be executed as root.\nThere are workarounds, however, for simplicity we will install this package as root. See section ModuleNotFoundError below for more context.\n\nNow you can import it to a test script (eg. buzz.py)\nimport seeed_python_reterminal.core as rt\nimport time\n\nprint(\"BUZZER ON\")\nrt.buzzer = True\ntime.sleep(1)\n\nprint(\"BUZZER OFF\")\nrt.buzzer = False\nThis will sound the buzzer of the reTerminal for 1 second.\nTo run the script:\nsudo python3 buzz.py\nAlternatively, first elevate your shell, then execute the script normally:\npi@raspberrypi:~ $ sudo -i\nroot@raspberrypi:~# python3 buzz.py\n\nNote: this library is simply a wrapper to the OS operations we did in the previous section. Some files need to be accessed by python as root. In this case, it is necessary to run sudo -i before running the python script.\n\nSee the official seeed-python-reterminal Github repo for API reference on how to control:\n\nLED’s\nAccelerometer\nProgrammable Buttons\nLight Sensor (requires manual updating)\n\n\nModuleNotFoundError\nWhen trying to import the seeed-python-reterminal library, you might get the following error:\nModuleNotFoundError: No module named 'seeed_python_reterminal'\nThe python interpreter is not able to find the module even though it is installed.\nYou can run the checks described below.\n\nCheck library location\nCheck the location of where the module was installed with pip3 show &lt;module-name&gt;:\npi@raspberrypi:~ $ pip3 show seeed-python-reterminal\n\nName: seeed-python-reterminal\nVersion: 0.2\nSummary: seeed-python-reterminal\nHome-page: https://github.com/Seeed-Studio/Seeed_Python_ReTerminal\nAuthor: Takashi Matsuoka (matsujirushi)\nAuthor-email: matsujirushi@live.jp\nLicense: MIT License\nLocation: /usr/local/lib/python3.7/dist-packages      # Library location\nRequires: evdev\nRequired-by: \nThe library is installed at: Location: /usr/local/lib/python3.7/dist-packages\n\n\nCheck python’s library paths\nSimilarly to Linux, there are environmental variables that determine where python will look for installed modules/libraries.\nSee the paths where python is looking for libraries with sys.path.\npi@raspberrypi:~ $ python3\n\n&gt;&gt;&gt; import sys      # Exposes configuration used by the python interpreter.\n&gt;&gt;&gt; sys.path        # Lists all paths where interpreter looks for modules.\n[\n '',\n '/usr/lib/python37.zip',\n '/usr/lib/python3.7',\n '/usr/lib/python3.7/lib-dynload',\n '/home/pi/.local/lib/python3.7/site-packages',\n '/usr/local/lib/python3.7/dist-packages',\n '/usr/lib/python3/dist-packages'\n]\nIf the output of pip3 show seeed-python-reterminal is not in this list, python will not find it when you import it.\n\nNote: the python shell above was started as the user pi. If you start python as root, sys.path might have different paths.\n\nBelow, python was started as root:\npi@raspberrypi:~ $ sudo -i\nroot@raspberrypi:~# python3\n\n&gt;&gt;&gt; import sys\n&gt;&gt;&gt; sys.path\n[\n'',\n'/usr/lib/python37.zip',\n'/usr/lib/python3.7',\n'/usr/lib/python3.7/lib-dynload',\n'/usr/local/lib/python3.7/dist-packages',\n'/usr/lib/python3/dist-packages'\n]\nNote that the user pi does not have permission to add content inside /usr. Thus, all pip installations as the regular user go into /home/pi/.local/lib/python3.7/site-packages.\nConclusion: if you install a python library as root, it might go to a different directory compared to installing it as the regular user.\nThis is the main reason why we chose to install the seeed-python-reterminal as root, rather than the regular user pi.\n\n\n\nMaking user’s library available to root (optional)\nIf you would like to make a library installed as the user pi available when running the script as root, you will need to export an environmental variable named PYTHONPATH pointing to the library location.\nFor example, assuming that a library installed under the user pi is located in /home/pi/.local/lib/python3.7/site-packages, do the following:\n# Elevate the shell to the root user\npi@raspberrypi:~ $ sudo -i\nroot@raspberrypi:~#\n\n# Export the PYTHONPATH environment variable\nroot@raspberrypi:~# export PYTHONPATH=\"/home/pi/.local/lib/python3.7/site-packages\"\n\n# Start python as root and run the script that imports the library\nroot@raspberrypi:~# python3 my_script.py",
-    "crumbs": [
-      "Lessons",
-      "Hardware",
-      "reTerminal Sensors"
-    ]
-  },
-  {
-    "objectID": "lessons/hardware/reterminal-sensors.slides.html#lab-1-review",
-    "href": "lessons/hardware/reterminal-sensors.slides.html#lab-1-review",
-    "title": "reTerminal Sensors",
-    "section": "Lab 1 Review",
-    "text": "Lab 1 Review\nAfter Lab 1, you have taken the following steps:\n\nInstall the Raspberry Pi OS image.\n\n\ndisassemble, flip the memory switch and use usbboot/rpiboot script to prepare internal memory for firmware flash.\nuse Raspberry Pi Imager to flash new image 64bit “Bookworm” Raspberry OS with chosen username/password and SSH enabled\nfix the “black screen” issue by installing the latest seeed overlay drivers\n\n\nUpdate system packages\n\n\nupdate system repositories with sudo apt update and sudo apt upgrade\ninstall kernel headers with sudo apt install raspberrypi-kernel-headers\ninstall git and docker, deploy simple Python webserver docker container\n\n\nSet up remote connection interfaces\n\n\ndetermine your assigned IP address on the class LAN\ndetermine your device MAC address\nenable VNC interface\n\nIt’s time to take a deeper look at the hardware and software our reTerminal offers."
-  },
-  {
-    "objectID": "lessons/hardware/reterminal-sensors.slides.html#hardware",
-    "href": "lessons/hardware/reterminal-sensors.slides.html#hardware",
-    "title": "reTerminal Sensors",
-    "section": "Hardware",
-    "text": "Hardware\nThis section is adapted directly from the reTerminal wiki: “Getting Started with reTerminal”\nThe reTerminal is powered by a Raspberry Pi Compute Module 4 (CM4) which is a Quad-Core Cortex-A72 CPU running at 1.5GHz and a 5-inch IPS capacitive multi-touch screen with a resolution of 1280 x 720. It has sufficient amount of RAM (4GB) to perform multitasking and also has sufficient amount of eMMC storage (32GB) to install an operating system, enabling fast boot up times and smooth overall experience. It has wireless connectivity with dual-band 2.4GHz/5GHz Wi-Fi and Bluetooth 5.0 BLE.\nreTerminal consists of a high-speed expansion interface and rich I/O for more expandability. This device has security features such as a cryptographic co-processor with secure hardware-based key storage. It also has built-in modules such as an accelerometer, light sensor and an RTC (Real-Time Clock). reTerminal has a Gigabit Ethernet Port for faster network connections and also has dual USB 2.0 Type-A ports. The 40-pin header on the reTerminal opens it for a wide range of IoT applications.\nFirmware & Version\n\n\n\n\n\n\n\n\n\nReleased Date\nPre-Installed OS\nPre-Installed STM32 Firmware\nBoard Version\n\n\n\n\n06/15/2021\n2021-06-02-Raspbian(modified)-32-bit\nV1.0\nv1.3\n\n\n08/03/2021\n2021-06-02-Raspbian(modified)-32-bit\nV1.1\nv1.4\n\n\n09/03/2021\n2021-06-02-Raspbian(modified)-32-bit\nV1.6\nv1.6\n\n\n11/02/2021\n2021-09-14-Raspbian(modified)-32-bit\nV1.8\nv1.6\n\n\nWinter 2024\nWhat OS did we install in Lab 1?\nV1.8\nv1.6\n\n\n\nYou can find a complete list of the reTerminal specifications here: reTerminal Specifications"
-  },
-  {
-    "objectID": "lessons/hardware/reterminal-sensors.slides.html#raspberry-pi-os-and-debian",
-    "href": "lessons/hardware/reterminal-sensors.slides.html#raspberry-pi-os-and-debian",
-    "title": "reTerminal Sensors",
-    "section": "Raspberry Pi OS and Debian",
-    "text": "Raspberry Pi OS and Debian\nThe Raspberry Pi OS (previously called Raspbian OS) used in the reTerminal is a variation of the Debian OS, with optimizations for the Raspberry Pi hardware.\n\nDebian OS is one of the most commonly used Linux distributions, especially as the “base” for derivative distributions. There are over 100 derivatives of Debian, many of which are themselves very popular distributions. These include:\n\nDesktop distributions like Ubuntu, Linux Mint, elementaryOS;\nSpecial-purpose distributions Kali Linux and Backbox (penetration testing)\nServer/Hypervisor distributions like Proxmox, Ubuntu server,\nMany others, you can find a more complete list here\n\n\nDebian-derived distributions share the following: - the .deb package format - the dpkg package manager and its frontend apt\nFor that reason, many of the commands and configuration for Raspberry Pi OS can be taken directly from Debian’s documentation.\nApt: Debian Package Manger\nThe command apt is the default package manager of Debian.\n\nA package manager is a software tool responsible for automating the installation, removal, configuration and removal of computer programs.\n\nManaging packages could technically be done manually, however, it is very time consuming and error prone: tracking package dependencies and compatibility with the current system.\nNote: apt is a newer package manager API meant to replace the older API apt-get. However, they both accomplish the same. See Debian docs for details.\nDuring Lab 1, you updated, upgraded and installed some packages in the Raspberry Pi OS using apt:\n\n\n\n\n\n\n\nCommand\nDescription\n\n\n\n\nsudo apt update\nUpdate list of available packages\n\n\nsudo apt upgrade\nUpgrade the system by installing/upgrading packages\n\n\n\nOther commonly used commands, as seen from running apt --help:\n\n\n\n\n\n\n\nCommand\nDescription\n\n\n\n\napt list\nlist packages based on package names\n\n\napt search\nsearch in package descriptions\n\n\napt show &lt;package&gt;\nshow package details\n\n\napt install &lt;package&gt;\ninstall packages\n\n\napt reinstall &lt;package&gt;\nreinstall packages\n\n\napt remove &lt;package&gt;\nremove packages\n\n\napt autoremove\nRemove automatically all unused packages\n\n\napt full-upgrade\nupgrade the system by removing/installing/upgrading packages\n\n\napt edit-sources\nedit the source information file\n\n\n\nNote: documentation will often leave out sudo since the need to run sudo depends on the machine and the user.\n\nIn general, commands that read data (apt list, apt search, etc.) will generally not require sudo, since most folderst that apt will touch are universally readable.\napt commands that write data (apt install, etc.) to a folder not owned by the current user – which is most folders outside of /home/username, but particularly common package install locations like /usr, /bin, etc. – these commands will require sudo to gain the required write permission"
-  },
-  {
-    "objectID": "lessons/hardware/reterminal-sensors.slides.html#reading-sensor-data-in-linux",
-    "href": "lessons/hardware/reterminal-sensors.slides.html#reading-sensor-data-in-linux",
-    "title": "reTerminal Sensors",
-    "section": "Reading sensor data in Linux",
-    "text": "Reading sensor data in Linux\nThis section is based on the official documentation for the reTerminal: Hardware and Interfaces Usage\n\nIn Linux, everything is a file stream that can be read and/or written to.\n\nFor example, keyboard inputs and communication over web-sockets are all read as a file streams.\nThe reTerminal has 3 programmable LED’s and a light sensor that can be controlled like a regular file."
-  },
-  {
-    "objectID": "lessons/hardware/reterminal-sensors.slides.html#sensors",
-    "href": "lessons/hardware/reterminal-sensors.slides.html#sensors",
-    "title": "reTerminal Sensors",
-    "section": "Sensors",
-    "text": "Sensors\nProgrammable LEDs\nThere are 3 programmable LEDs in the reTerminal:\n\nSTA light can be turned on as red or green.\nUSR light can only be turned on as green.\n\n\nThe lights can be controlled at the OS level by editing files in the /sys/class/leds/ directory. Use ls -al to list the files in this directory:\nusername@hostname:/sys/class/leds/usr_led0 $ ls -al\ntotal 0            \ndrwxr-xr-x 3 root root    0 Jan 25 20:33 .               \ndrwxr-xr-x 8 root root    0 Jan 25 20:33 ..                                                                                                                                                                         \n-rw-r--r-- 1 root root 4096 Jan 26 22:02 brightness                                                                                                                                                                 \n\n\n\nUnix Permissions cheatsheet py Julia Evans\n\n\n\n Unix File Permissions,  Julia Evans.\n\nThe brightness file inide the usr_led0 controls the brightness of LED0. But, because only root has write permissions to this file, we will likely run into permissions errors if we try to edit the value directly:\n$ nano /sys/class/leds/usr_led0\nPermission denied\n$ echo 255 &gt; /sys/class/leds/usr_led0\nPermission denied\n$ sudo echo 255 &gt; /sys/class/leds/usr_led0\nThere are a few possible approaches to this problem:\nUse sudo + text-editor\nUse sudo + su\nEnable root account privileges (take the identity of the root user)\n$ sudo su\nYour shell should now display root@hostname:~#\nTurn on the LED with maximum brightness\n# echo 255 &gt; brightness\nTurn off the LED\n# echo 0 &gt; brightness\nSimilarly, you can control usr_led1 and usr_led2 and even the buzzer on /sys/class/leds/usr_buzzer ### Use sudo + tee\nNote: We’ll run the next command as root because the file we want to write belongs the system (root user, rather than to the user pi.\nLuminosity Sensor\nThe digital light sensor can read the surrounding light levels.\n\nEnter the following directory\n\ncd /sys/bus/iio/devices/iio:device0\n\nRead the following file to obtain the light intensity value in Lux\n\ncat in_illuminance_input \nOutput:\npi@raspberrypi:/sys/bus/iio/devices/iio:device0 $ cat in_illuminance_input \n2719\nNote: We don’t need to be root to read this file. Its permissions are set to let all users read it, even-though it belongs to the root user:\nrw-r--r-- 1 root root 4096 Jan 30 22:16 in_illuminance_input"
-  },
-  {
-    "objectID": "lessons/hardware/reterminal-sensors.slides.html#python-library-for-reterminal",
-    "href": "lessons/hardware/reterminal-sensors.slides.html#python-library-for-reterminal",
-    "title": "reTerminal Sensors",
-    "section": "Python Library for reTerminal",
-    "text": "Python Library for reTerminal\nSeeed Studio provided a python library to access most of the sensors and actuators of the reTerminal.\nInstall the library seeed-python-reterminal (see official Github repo) using pip:\nsudo pip3 install seeed-python-reterminal\n\nInstalling pip libraries as root is not recommended.\nHowever, this library needs to access system files (see previous section) and will have to be executed as root.\nThere are workarounds, however, for simplicity we will install this package as root. See section ModuleNotFoundError below for more context.\n\nNow you can import it to a test script (eg. buzz.py)\nimport seeed_python_reterminal.core as rt\nimport time\n\nprint(\"BUZZER ON\")\nrt.buzzer = True\ntime.sleep(1)\n\nprint(\"BUZZER OFF\")\nrt.buzzer = False\nThis will sound the buzzer of the reTerminal for 1 second.\nTo run the script:\nsudo python3 buzz.py\nAlternatively, first elevate your shell, then execute the script normally:\npi@raspberrypi:~ $ sudo -i\nroot@raspberrypi:~# python3 buzz.py\n\nNote: this library is simply a wrapper to the OS operations we did in the previous section. Some files need to be accessed by python as root. In this case, it is necessary to run sudo -i before running the python script.\n\nSee the official seeed-python-reterminal Github repo for API reference on how to control:\n\nLED’s\nAccelerometer\nProgrammable Buttons\nLight Sensor (requires manual updating)\n\nModuleNotFoundError\nWhen trying to import the seeed-python-reterminal library, you might get the following error:\nModuleNotFoundError: No module named 'seeed_python_reterminal'\nThe python interpreter is not able to find the module even though it is installed.\nYou can run the checks described below.\nCheck library location\nCheck the location of where the module was installed with pip3 show &lt;module-name&gt;:\npi@raspberrypi:~ $ pip3 show seeed-python-reterminal\n\nName: seeed-python-reterminal\nVersion: 0.2\nSummary: seeed-python-reterminal\nHome-page: https://github.com/Seeed-Studio/Seeed_Python_ReTerminal\nAuthor: Takashi Matsuoka (matsujirushi)\nAuthor-email: matsujirushi@live.jp\nLicense: MIT License\nLocation: /usr/local/lib/python3.7/dist-packages      # Library location\nRequires: evdev\nRequired-by: \nThe library is installed at: Location: /usr/local/lib/python3.7/dist-packages\nCheck python’s library paths\nSimilarly to Linux, there are environmental variables that determine where python will look for installed modules/libraries.\nSee the paths where python is looking for libraries with sys.path.\npi@raspberrypi:~ $ python3\n\n&gt;&gt;&gt; import sys      # Exposes configuration used by the python interpreter.\n&gt;&gt;&gt; sys.path        # Lists all paths where interpreter looks for modules.\n[\n '',\n '/usr/lib/python37.zip',\n '/usr/lib/python3.7',\n '/usr/lib/python3.7/lib-dynload',\n '/home/pi/.local/lib/python3.7/site-packages',\n '/usr/local/lib/python3.7/dist-packages',\n '/usr/lib/python3/dist-packages'\n]\nIf the output of pip3 show seeed-python-reterminal is not in this list, python will not find it when you import it.\n\nNote: the python shell above was started as the user pi. If you start python as root, sys.path might have different paths.\n\nBelow, python was started as root:\npi@raspberrypi:~ $ sudo -i\nroot@raspberrypi:~# python3\n\n&gt;&gt;&gt; import sys\n&gt;&gt;&gt; sys.path\n[\n'',\n'/usr/lib/python37.zip',\n'/usr/lib/python3.7',\n'/usr/lib/python3.7/lib-dynload',\n'/usr/local/lib/python3.7/dist-packages',\n'/usr/lib/python3/dist-packages'\n]\nNote that the user pi does not have permission to add content inside /usr. Thus, all pip installations as the regular user go into /home/pi/.local/lib/python3.7/site-packages.\nConclusion: if you install a python library as root, it might go to a different directory compared to installing it as the regular user.\nThis is the main reason why we chose to install the seeed-python-reterminal as root, rather than the regular user pi.\nMaking user’s library available to root (optional)\nIf you would like to make a library installed as the user pi available when running the script as root, you will need to export an environmental variable named PYTHONPATH pointing to the library location.\nFor example, assuming that a library installed under the user pi is located in /home/pi/.local/lib/python3.7/site-packages, do the following:\n# Elevate the shell to the root user\npi@raspberrypi:~ $ sudo -i\nroot@raspberrypi:~#\n\n# Export the PYTHONPATH environment variable\nroot@raspberrypi:~# export PYTHONPATH=\"/home/pi/.local/lib/python3.7/site-packages\"\n\n# Start python as root and run the script that imports the library\nroot@raspberrypi:~# python3 my_script.py"
-  },
-  {
-    "objectID": "lessons/getting-started/hardware-list.html",
-    "href": "lessons/getting-started/hardware-list.html",
-    "title": "Hardware List",
-    "section": "",
-    "text": "The reTerminal is a development board based on the Raspberry Pi Compute Module 4 (CM4) manufactured by Seeed Studio.\n\nNotable features: - Compute Module 4 with 4GB RAM & 32GB eMMC - 5-Inch IPS capacitive multi-touch screen at 1280 x 720 and 293 PPI - Wireless connectivity with dual-band 2.4GHz/5GHz Wi-Fi and Bluetooth 5.0 BLE - Cryptographic co-processor with secure hardware-based key storage - Built-in modules such as accelerometer, light sensor, and RTC\n\nSee reTerminal Wiki page for detailed specs and documentation\n\n\n\n The reTerminal requires a power supply that can provide a minimum of 3 Amps. The official Raspberry Pi USB-C Power Supply in included in the kit.",
-    "crumbs": [
-      "Lessons",
-      "Getting started",
-      "Hardware List"
-    ]
-  },
-  {
-    "objectID": "lessons/getting-started/hardware-list.html#reterminal",
-    "href": "lessons/getting-started/hardware-list.html#reterminal",
-    "title": "Hardware List",
-    "section": "",
-    "text": "The reTerminal is a development board based on the Raspberry Pi Compute Module 4 (CM4) manufactured by Seeed Studio.\n\nNotable features: - Compute Module 4 with 4GB RAM & 32GB eMMC - 5-Inch IPS capacitive multi-touch screen at 1280 x 720 and 293 PPI - Wireless connectivity with dual-band 2.4GHz/5GHz Wi-Fi and Bluetooth 5.0 BLE - Cryptographic co-processor with secure hardware-based key storage - Built-in modules such as accelerometer, light sensor, and RTC\n\nSee reTerminal Wiki page for detailed specs and documentation\n\n\n\n The reTerminal requires a power supply that can provide a minimum of 3 Amps. The official Raspberry Pi USB-C Power Supply in included in the kit.",
-    "crumbs": [
-      "Lessons",
-      "Getting started",
-      "Hardware List"
-    ]
-  },
-  {
-    "objectID": "lessons/getting-started/hardware-list.html#compute-module-4",
-    "href": "lessons/getting-started/hardware-list.html#compute-module-4",
-    "title": "Hardware List",
-    "section": "Compute Module 4",
-    "text": "Compute Module 4\n The Compute Module 4 (CM4) made by the Raspberry Pi Foundation is powering the reTerminal.\nNotable features: - Processor: Broadcom BCM2711 quad-core Cortex-A72 (ARM v8) 64-bit SoC @ 1.5GHz\n\nSee CM4 datasheet for details.\n\nSee Difference Between ARM64, ARMel, and ARMhf for more info on the different ARM architectures.\n\nGrove Base Hat for Raspberry Pi\n\nIn a typical Raspberry Pi, sensors would be connected via the 40-pin GPIO.\nTo facilitate connections of the Grove sensors, this “Hat” (term for an add-on board of the Raspberry Pi) includes the following types of connection: - 6 Digital\n- 4 Analog\n- 3 I2C\n- 1 PWM\n- 1 UART\n\nSee Grove base hat Wiki for details.",
-    "crumbs": [
-      "Lessons",
-      "Getting started",
-      "Hardware List"
-    ]
-  },
-  {
-    "objectID": "lessons/getting-started/hardware-list.html#sensors",
-    "href": "lessons/getting-started/hardware-list.html#sensors",
-    "title": "Hardware List",
-    "section": "Sensors",
-    "text": "Sensors\n\nAHT20 I2C Temperature & Humidity\n See AHT20 I2C Industrial Grade Temperature & Humidity Sensor wiki for details. - Temperature measurement range -40 ~ 85°C, Humidity measurement range 0 ~ 100% RH. - Digital output, Grove I2C interface.\n\n\nAHT20 Libraries\nThe main module for this sensor is provided by Seeed in this Github repository and can be installed with the grove.py library.\nFollow official Step by step installation for python 3 (see below). Don’t use the one-click installation or it will install to the wrong location\ngit clone [https://github.com/Seeed-Studio/grove.py](https://github.com/Seeed-Studio/grove.py)\ncd grove.py  \nsudo pip3 install .\nAlternatively, it’s also possible to use Adafruit’s adafruit-circuitpython-ahtx0 library to communicate with the sensor (see library’s Pypi page). However, to instantiate the provided sensor class, you will need to pass it an I2C bus instance. To instantiate an I2C bus instance, install and use the adafruit-extended-bus library (see Pypi page).",
-    "crumbs": [
-      "Lessons",
-      "Getting started",
-      "Hardware List"
-    ]
-  },
-  {
-    "objectID": "lessons/getting-started/hardware-list.html#actuators-motors",
-    "href": "lessons/getting-started/hardware-list.html#actuators-motors",
-    "title": "Hardware List",
-    "section": "Actuators & Motors",
-    "text": "Actuators & Motors\n\nLED Socketed\n\nLED in a removable socket and potentiometer for power adjustment. LED can be swapped with different colors.\nSee LED wiki page for details.\n### Cooling Fan  5V Cooling Fan 40mm x 10mm with 2-pin JST connector. - See product page here.\n\n\nRelay\n\nA digital switch. Controls the on/off flow of electricity with a small digital signal. - Operate voltage: 3.3V-5V - Input current: 100mA - Rated load: 5A@250VAC 5A@30VDC\nSee relay wiki page for details.",
-    "crumbs": [
-      "Lessons",
-      "Getting started",
-      "Hardware List"
-    ]
-  },
-  {
-    "objectID": "lessons/getting-started/hardware-list.html#cabling",
-    "href": "lessons/getting-started/hardware-list.html#cabling",
-    "title": "Hardware List",
-    "section": "Cabling",
-    "text": "Cabling\nThe following cables are included in the base kit:\n\nGrove Universal 4 Pin Buckled 5cm Cable.\nGrove Universal 4 Pin Buckled 20cm Cable.\nGrove 4 pin Female Jumper to Grove 4 pin Cable\nGrove 4 pin Male Jumper to Grove 4 pin Cable\n40-pin flat ribbon cable 20cm (female-female).\n2-pin JST SM Plug, one end open.",
-    "crumbs": [
-      "Lessons",
-      "Getting started",
-      "Hardware List"
-    ]
-  },
-  {
-    "objectID": "lessons/getting-started/hardware-list.slides.html#reterminal",
-    "href": "lessons/getting-started/hardware-list.slides.html#reterminal",
-    "title": "Hardware List",
-    "section": "reTerminal",
-    "text": "reTerminal\nThe reTerminal is a development board based on the Raspberry Pi Compute Module 4 (CM4) manufactured by Seeed Studio.\n\nNotable features: - Compute Module 4 with 4GB RAM & 32GB eMMC - 5-Inch IPS capacitive multi-touch screen at 1280 x 720 and 293 PPI - Wireless connectivity with dual-band 2.4GHz/5GHz Wi-Fi and Bluetooth 5.0 BLE - Cryptographic co-processor with secure hardware-based key storage - Built-in modules such as accelerometer, light sensor, and RTC\n\nSee reTerminal Wiki page for detailed specs and documentation\n\nPower Supply\n The reTerminal requires a power supply that can provide a minimum of 3 Amps. The official Raspberry Pi USB-C Power Supply in included in the kit."
-  },
-  {
-    "objectID": "lessons/getting-started/hardware-list.slides.html#compute-module-4",
-    "href": "lessons/getting-started/hardware-list.slides.html#compute-module-4",
-    "title": "Hardware List",
-    "section": "Compute Module 4",
-    "text": "Compute Module 4\n The Compute Module 4 (CM4) made by the Raspberry Pi Foundation is powering the reTerminal.\nNotable features: - Processor: Broadcom BCM2711 quad-core Cortex-A72 (ARM v8) 64-bit SoC @ 1.5GHz\n\nSee CM4 datasheet for details.\n\nSee Difference Between ARM64, ARMel, and ARMhf for more info on the different ARM architectures.\nGrove Base Hat for Raspberry Pi\n\nIn a typical Raspberry Pi, sensors would be connected via the 40-pin GPIO.\nTo facilitate connections of the Grove sensors, this “Hat” (term for an add-on board of the Raspberry Pi) includes the following types of connection: - 6 Digital\n- 4 Analog\n- 3 I2C\n- 1 PWM\n- 1 UART\n\nSee Grove base hat Wiki for details."
-  },
-  {
-    "objectID": "lessons/getting-started/hardware-list.slides.html#sensors",
-    "href": "lessons/getting-started/hardware-list.slides.html#sensors",
-    "title": "Hardware List",
-    "section": "Sensors",
-    "text": "Sensors\nAHT20 I2C Temperature & Humidity\n See AHT20 I2C Industrial Grade Temperature & Humidity Sensor wiki for details. - Temperature measurement range -40 ~ 85°C, Humidity measurement range 0 ~ 100% RH. - Digital output, Grove I2C interface.\nAHT20 Libraries\nThe main module for this sensor is provided by Seeed in this Github repository and can be installed with the grove.py library.\nFollow official Step by step installation for python 3 (see below). Don’t use the one-click installation or it will install to the wrong location\ngit clone [https://github.com/Seeed-Studio/grove.py](https://github.com/Seeed-Studio/grove.py)\ncd grove.py  \nsudo pip3 install .\nAlternatively, it’s also possible to use Adafruit’s adafruit-circuitpython-ahtx0 library to communicate with the sensor (see library’s Pypi page). However, to instantiate the provided sensor class, you will need to pass it an I2C bus instance. To instantiate an I2C bus instance, install and use the adafruit-extended-bus library (see Pypi page)."
-  },
-  {
-    "objectID": "lessons/getting-started/hardware-list.slides.html#actuators-motors",
-    "href": "lessons/getting-started/hardware-list.slides.html#actuators-motors",
-    "title": "Hardware List",
-    "section": "Actuators & Motors",
-    "text": "Actuators & Motors\nLED Socketed\n\nLED in a removable socket and potentiometer for power adjustment. LED can be swapped with different colors.\nSee LED wiki page for details.\n### Cooling Fan  5V Cooling Fan 40mm x 10mm with 2-pin JST connector. - See product page here.\nRelay\n\nA digital switch. Controls the on/off flow of electricity with a small digital signal. - Operate voltage: 3.3V-5V - Input current: 100mA - Rated load: 5A@250VAC 5A@30VDC\nSee relay wiki page for details."
-  },
-  {
-    "objectID": "lessons/getting-started/hardware-list.slides.html#cabling",
-    "href": "lessons/getting-started/hardware-list.slides.html#cabling",
-    "title": "Hardware List",
-    "section": "Cabling",
-    "text": "Cabling\nThe following cables are included in the base kit:\n\nGrove Universal 4 Pin Buckled 5cm Cable.\nGrove Universal 4 Pin Buckled 20cm Cable.\nGrove 4 pin Female Jumper to Grove 4 pin Cable\nGrove 4 pin Male Jumper to Grove 4 pin Cable\n40-pin flat ribbon cable 20cm (female-female).\n2-pin JST SM Plug, one end open."
-  },
-  {
-    "objectID": "lessons/getting-started/vscode-python-setup.html",
-    "href": "lessons/getting-started/vscode-python-setup.html",
-    "title": "Developer setup",
-    "section": "",
-    "text": "Below are the recommended steps to setup your VS Code for this course.\nYou can download VS Code from this link\n\n\n\nRemote - SSH by Microsoft: Open any folder on a remote machine using SSH and take advantage of VS Code’s full feature set.\n\n(the Python dev setup will required additional VS Code extensions, see below)",
-    "crumbs": [
-      "Lessons",
-      "Getting started",
-      "Developer setup"
-    ]
-  },
-  {
-    "objectID": "lessons/getting-started/vscode-python-setup.html#vs-code",
-    "href": "lessons/getting-started/vscode-python-setup.html#vs-code",
-    "title": "Developer setup",
-    "section": "",
-    "text": "Below are the recommended steps to setup your VS Code for this course.\nYou can download VS Code from this link\n\n\n\nRemote - SSH by Microsoft: Open any folder on a remote machine using SSH and take advantage of VS Code’s full feature set.\n\n(the Python dev setup will required additional VS Code extensions, see below)",
-    "crumbs": [
-      "Lessons",
-      "Getting started",
-      "Developer setup"
-    ]
-  },
-  {
-    "objectID": "lessons/getting-started/vscode-python-setup.html#python-development",
-    "href": "lessons/getting-started/vscode-python-setup.html#python-development",
-    "title": "Developer setup",
-    "section": "Python Development",
-    "text": "Python Development\n\nBase Setup\nFollow the official guide Getting Started with Python in VS Code\nThe guide covers the following steps:\n\nInstall the VS Code extension Python by Microsoft. This extension includes:\n\nIntelliSense: with Pylance\nLinting: Pylint (default) and Flake8\nCode formatting: autopep (default), black or yapf\nDebugging\nTesting: Test Explorer or pytest\nJupter Notebooks\nVirtual Environment support\n\n\n\n\n\nPython extension in Visual Studio Code’s Marketplace\n\n\n\nInstall a Python interpreter (if not already installed).\nVerify your Python installation.\nCreate a test project with a Hello World Python file.\nRun the Hello World file from VS Code.\nConfigure and run the integrated debugger.\n\n\n\nEnable Static Type Checking with Pylance\nPylance is the default language support for Python in Visual Studio Code extension. Pylance uses the Pyright static type checker under the hood to supercharge Python IntelliSense in VS Code.\nType checking is not enabled by default in Pylance. To enable it, set the following VS Code configuration:\n{\n  \"python.analysis.typeCheckingMode\": \"basic\"\n}\nAlternatively, use the VS Code configuration UI:\n\n\n\nFormatting & Linting\nFormatting will not fix your code, however, it will help you write more readable code.\nLinting will analyze your code as you save it and tell you about errors before you run the code (remember, Python is an interpreted language, there is no compilation).\n\nFormatting w/ autopep8\nTo help you write consistent Python, make sure the autopep8 code formatter is enabled.\n\nOpen a Python file and press the code formatting shortcut for your machine: Linux: Ctrl + Shift + I Window: Alt + Shift + F macOS: ⇧⌥F\nFollow instructions to setup autopep8.\n\nFor details, see section “Formatting” of Editing Python in Visual Studio Code\n\n\nLinting w/ Pylint\nFollow the first step “Enable linters” in the guide Linting Python in Visual Studio Code\nTo learn more about the benefits of formatting and linting",
-    "crumbs": [
-      "Lessons",
-      "Getting started",
-      "Developer setup"
-    ]
-  },
-  {
-    "objectID": "lessons/getting-started/vscode-python-setup.html#resources",
-    "href": "lessons/getting-started/vscode-python-setup.html#resources",
-    "title": "Developer setup",
-    "section": "Resources",
-    "text": "Resources\nTo learn more about the benefits of formatting and linting, see the video below:\n\n\nFor examples of other VS Code extensions that can improve your dev experience, see the video below:",
-    "crumbs": [
-      "Lessons",
-      "Getting started",
-      "Developer setup"
-    ]
-  },
-  {
-    "objectID": "lessons/getting-started/vscode-python-setup.slides.html#vs-code",
-    "href": "lessons/getting-started/vscode-python-setup.slides.html#vs-code",
-    "title": "Developer setup",
-    "section": "VS Code",
-    "text": "VS Code\nBelow are the recommended steps to setup your VS Code for this course.\nYou can download VS Code from this link\nVS Code Extensions\n\nRemote - SSH by Microsoft: Open any folder on a remote machine using SSH and take advantage of VS Code’s full feature set.\n\n(the Python dev setup will required additional VS Code extensions, see below)"
-  },
-  {
-    "objectID": "lessons/getting-started/vscode-python-setup.slides.html#python-development",
-    "href": "lessons/getting-started/vscode-python-setup.slides.html#python-development",
-    "title": "Developer setup",
-    "section": "Python Development",
-    "text": "Python Development\nBase Setup\nFollow the official guide Getting Started with Python in VS Code\nThe guide covers the following steps:\n\nInstall the VS Code extension Python by Microsoft. This extension includes:\n\nIntelliSense: with Pylance\nLinting: Pylint (default) and Flake8\nCode formatting: autopep (default), black or yapf\nDebugging\nTesting: Test Explorer or pytest\nJupter Notebooks\nVirtual Environment support\n\n\n\n\n\nPython extension in Visual Studio Code’s Marketplace\n\n\n\nInstall a Python interpreter (if not already installed).\nVerify your Python installation.\nCreate a test project with a Hello World Python file.\nRun the Hello World file from VS Code.\nConfigure and run the integrated debugger.\n\nEnable Static Type Checking with Pylance\nPylance is the default language support for Python in Visual Studio Code extension. Pylance uses the Pyright static type checker under the hood to supercharge Python IntelliSense in VS Code.\nType checking is not enabled by default in Pylance. To enable it, set the following VS Code configuration:\n{\n  \"python.analysis.typeCheckingMode\": \"basic\"\n}\nAlternatively, use the VS Code configuration UI:\n\nFormatting & Linting\nFormatting will not fix your code, however, it will help you write more readable code.\nLinting will analyze your code as you save it and tell you about errors before you run the code (remember, Python is an interpreted language, there is no compilation).\nFormatting w/ autopep8\nTo help you write consistent Python, make sure the autopep8 code formatter is enabled.\n\nOpen a Python file and press the code formatting shortcut for your machine: Linux: Ctrl + Shift + I Window: Alt + Shift + F macOS: ⇧⌥F\nFollow instructions to setup autopep8.\n\nFor details, see section “Formatting” of Editing Python in Visual Studio Code\nLinting w/ Pylint\nFollow the first step “Enable linters” in the guide Linting Python in Visual Studio Code\nTo learn more about the benefits of formatting and linting"
-  },
-  {
-    "objectID": "lessons/getting-started/vscode-python-setup.slides.html#resources",
-    "href": "lessons/getting-started/vscode-python-setup.slides.html#resources",
-    "title": "Developer setup",
-    "section": "Resources",
-    "text": "Resources\nTo learn more about the benefits of formatting and linting, see the video below:\n\n\nFor examples of other VS Code extensions that can improve your dev experience, see the video below:"
-  },
-  {
-    "objectID": "lessons/linux/linux-review.html",
-    "href": "lessons/linux/linux-review.html",
-    "title": "Linux review",
-    "section": "",
-    "text": "If you don’t have a Unix shell in your system (Linux or Mac), you can get one using the following:\n\nWSL2 in Windows\nJSLinux Terminal\nCopy.sh Terminal\nJS/UIX Terminal",
-    "crumbs": [
-      "Lessons",
-      "Linux",
-      "Linux review"
-    ]
-  },
-  {
-    "objectID": "lessons/linux/linux-review.html#getting-linux-environment",
-    "href": "lessons/linux/linux-review.html#getting-linux-environment",
-    "title": "Linux review",
-    "section": "",
-    "text": "If you don’t have a Unix shell in your system (Linux or Mac), you can get one using the following:\n\nWSL2 in Windows\nJSLinux Terminal\nCopy.sh Terminal\nJS/UIX Terminal",
-    "crumbs": [
-      "Lessons",
-      "Linux",
-      "Linux review"
-    ]
-  },
-  {
-    "objectID": "lessons/linux/linux-review.html#resources-references",
-    "href": "lessons/linux/linux-review.html#resources-references",
-    "title": "Linux review",
-    "section": "Resources & References",
-    "text": "Resources & References\nThese are great references to get up to speed on using a Unix shell:\n\nLinuxCommand.org\n\nShort guides on learning bash shell and bash scripting.\nLinks to interactive learning games under “Adventures”.\n\nA to Z Linux CLI index by ss64.com\n\nIf you know which command you are looking for, you will find it here.\n\nTop 50+ Linux Commands You MUST Know by Digital Ocean\n\nIncludes examples for the most common commands.\n\nBash Online Manual (brief), specially Basic Shell Features\n\nComplete reference with examples.\nYou may treat this as “The Docs”",
-    "crumbs": [
-      "Lessons",
-      "Linux",
-      "Linux review"
-    ]
-  },
-  {
-    "objectID": "lessons/linux/linux-review.html#basic-tasks",
-    "href": "lessons/linux/linux-review.html#basic-tasks",
-    "title": "Linux review",
-    "section": "Basic Tasks",
-    "text": "Basic Tasks\nManipulation of the Raspberry Pi will require familiarity with the following tasks:\n\nSSH into a remote machine\n\nAs a specific user.\nUsing a non standard port.\n\nMaintaining system packages with apt\n\nUpdate packages.\nList information about a specific package\n\nManipulating text files and folders with:\n\nList: ls\nCopy: cp\nMove: mv\nRemove (recursively and not recursively): rm\nFire hierarchy with tree\n\nCreate files and folders\n\nCreate file: touch\nCreate folder mkdir\n\nEdit, save and exit text files from the command line either:\n\nnano\nvim\n\nFile and folder access permissions\n\nCheck user permissions\nModify access permissions\n\nControlling tasks and processes:\n\nCtrl-C\nCtrl-Z\njobs\nfg\nbg\n\nRun a Python script from the command line.\nInspecting and killing processes with:\n\npgrep\npkill\nkill\n\nMoving files from local machine to host and vice-versa.\n\nscp\n\nAppending to a file with redirection\n\n&gt;\n&gt;&gt;\n\nPiping command output\n\n|\n\nSearching for words in text\n\ngrep\nless",
-    "crumbs": [
-      "Lessons",
-      "Linux",
-      "Linux review"
-    ]
-  },
-  {
-    "objectID": "lessons/linux/linux-review.html#review-exercises",
-    "href": "lessons/linux/linux-review.html#review-exercises",
-    "title": "Linux review",
-    "section": "Review Exercises",
-    "text": "Review Exercises\n\nA great set of exercises to get started is the game Bandit from OverTheWire.org\n\nTry to reach at least level 5",
-    "crumbs": [
-      "Lessons",
-      "Linux",
-      "Linux review"
-    ]
-  },
-  {
-    "objectID": "lessons/linux/linux-review.slides.html#getting-linux-environment",
-    "href": "lessons/linux/linux-review.slides.html#getting-linux-environment",
-    "title": "Linux review",
-    "section": "Getting Linux Environment",
-    "text": "Getting Linux Environment\nIf you don’t have a Unix shell in your system (Linux or Mac), you can get one using the following:\n\nWSL2 in Windows\nJSLinux Terminal\nCopy.sh Terminal\nJS/UIX Terminal"
-  },
-  {
-    "objectID": "lessons/linux/linux-review.slides.html#resources-references",
-    "href": "lessons/linux/linux-review.slides.html#resources-references",
-    "title": "Linux review",
-    "section": "Resources & References",
-    "text": "Resources & References\nThese are great references to get up to speed on using a Unix shell:\n\nLinuxCommand.org\n\nShort guides on learning bash shell and bash scripting.\nLinks to interactive learning games under “Adventures”.\n\nA to Z Linux CLI index by ss64.com\n\nIf you know which command you are looking for, you will find it here.\n\nTop 50+ Linux Commands You MUST Know by Digital Ocean\n\nIncludes examples for the most common commands.\n\nBash Online Manual (brief), specially Basic Shell Features\n\nComplete reference with examples.\nYou may treat this as “The Docs”"
-  },
-  {
-    "objectID": "lessons/linux/linux-review.slides.html#basic-tasks",
-    "href": "lessons/linux/linux-review.slides.html#basic-tasks",
-    "title": "Linux review",
-    "section": "Basic Tasks",
-    "text": "Basic Tasks\nManipulation of the Raspberry Pi will require familiarity with the following tasks:\n\nSSH into a remote machine\n\nAs a specific user.\nUsing a non standard port.\n\nMaintaining system packages with apt\n\nUpdate packages.\nList information about a specific package\n\nManipulating text files and folders with:\n\nList: ls\nCopy: cp\nMove: mv\nRemove (recursively and not recursively): rm\nFire hierarchy with tree\n\nCreate files and folders\n\nCreate file: touch\nCreate folder mkdir\n\nEdit, save and exit text files from the command line either:\n\nnano\nvim\n\nFile and folder access permissions\n\nCheck user permissions\nModify access permissions\n\nControlling tasks and processes:\n\nCtrl-C\nCtrl-Z\njobs\nfg\nbg\n\nRun a Python script from the command line.\nInspecting and killing processes with:\n\npgrep\npkill\nkill\n\nMoving files from local machine to host and vice-versa.\n\nscp\n\nAppending to a file with redirection\n\n&gt;\n&gt;&gt;\n\nPiping command output\n\n|\n\nSearching for words in text\n\ngrep\nless"
-  },
-  {
-    "objectID": "lessons/linux/linux-review.slides.html#review-exercises",
-    "href": "lessons/linux/linux-review.slides.html#review-exercises",
-    "title": "Linux review",
-    "section": "Review Exercises",
-    "text": "Review Exercises\n\nA great set of exercises to get started is the game Bandit from OverTheWire.org\n\nTry to reach at least level 5"
-  },
-  {
-    "objectID": "lessons/linux/index.html",
-    "href": "lessons/linux/index.html",
-    "title": "Linux",
-    "section": "",
-    "text": "Linux review\n\n\nResources and references to brush up linux knowledge.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRemote work on Linux\n\n\nLearn how to connect to your Pi with CLI (ssh) and GUI (VNC). Learn how to setup and troubleshoot local connections (LAN) and remote connections (VPN).\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n Back to top",
-    "crumbs": [
-      "Lessons",
-      "Linux"
-    ]
-  },
-  {
-    "objectID": "lessons/index.html",
-    "href": "lessons/index.html",
-    "title": "Lessons",
-    "section": "",
-    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\nTitle\n\n\nSubtitle\n\n\n\n\n\n\n \n\n\nRemote work on Linux\n\n\nLearn how to connect to your Pi with CLI (ssh) and GUI (VNC). Learn how to setup and troubleshoot local connections (LAN) and remote connections (VPN).\n\n\n\n\n \n\n\nLinux review\n\n\nResources and references to brush up linux knowledge.\n\n\n\n\n \n\n\nDeveloper setup\n\n\nHere’s how to set up the software that will be used for development during the course.\n\n\n\n\n \n\n\nTechnology Stack\n\n\nTechnologies used in this class\n\n\n\n\n \n\n\nHardware List\n\n\nList of hardware available for the course as well as their respective specifications and documentation.\n\n\n\n\n \n\n\nreTerminal Sensors\n\n\nInstalling initial reTerminal packages. Reading and controlling the reTerminal hardware interfaces, e.g. LEDs, light sensor, screen backlight, etc.\n\n\n\n\n \n\n\nIntro to the Internet of Things\n\n\n \n\n\n\n\n \n\n\nIntro to Python for Developers\n\n\nPython exercises\n\n\n\n\n\nNo matching items\n\n Back to top",
-    "crumbs": [
-      "Lessons"
-    ]
-  },
-  {
-    "objectID": "lessons/linux/remote-linux.slides.html#cli",
-    "href": "lessons/linux/remote-linux.slides.html#cli",
-    "title": "Remote work on Linux",
-    "section": "CLI",
-    "text": "CLI\nPasswordless SSH Access\nLogin into the R.Pi without password by setting up SSH credentials\n\nFollow guide by Raspberry Pi Foundation:\n\nPasswordless SSH Access\n\n\nInstall NeoVim on RPI\n# Update source repositories -- a good idea any time you are installing a package.\nsudo apt update -y\n# Install xclip for clipboard support with ssh graphical session `-Y`\nsudo apt install xclip -y\nsudo apt-get install neovim\nInstall AstroNVIM\nAfter installing nvim:\n# Install a Nerd Fonts (FiraCode)\ncd ~/Downloads\nwget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/FiraCode.zip\nunzip FiraCode.zip\n\n# Font installation according to Debian's docs: https://wiki.debian.org/Fonts\n# Move to systam-wide font folder\nsudo mv *.ttf /usr/local/share/fonts/\n# update the font cache\nfc-cache\n# Follow AstroNvim install instructions: https://astronvim.github.io/#%EF%B8%8F-installation\n\n# Make a backup of your current nvim folder\nmv ~/.config/nvim ~/.config/nvim.bak\n# Clean neovim folders (Optional but recommended)\nmv ~/.local/share/nvim ~/.local/share/nvim.bak\nmv ~/.local/state/nvim ~/.local/state/nvim.bak\nmv ~/.cache/nvim ~/.cache/nvim.bak\n# Clone the repository\ngit clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim\nInstall Node\nInstalling node is not required but will improve compatibility with modern nvim features:\n# Install Node.js using nvm according to https://github.com/nvm-sh/nvm\n;wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash\n# source .bashrc to pickup env variables\nsource ~/.bashrc\n# install the latest version of node\nnvm install node\n# Install Tree-sitter CLI\nnpm install tree-sitter-cli"
-  },
-  {
-    "objectID": "lessons/linux/remote-linux.html",
-    "href": "lessons/linux/remote-linux.html",
-    "title": "Remote work on Linux",
-    "section": "",
-    "text": "Login into the R.Pi without password by setting up SSH credentials\n\nFollow guide by Raspberry Pi Foundation:\n\nPasswordless SSH Access\n\n\n\n\n\n# Update source repositories -- a good idea any time you are installing a package.\nsudo apt update -y\n# Install xclip for clipboard support with ssh graphical session `-Y`\nsudo apt install xclip -y\nsudo apt-get install neovim\n\n\nAfter installing nvim:\n# Install a Nerd Fonts (FiraCode)\ncd ~/Downloads\nwget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/FiraCode.zip\nunzip FiraCode.zip\n\n# Font installation according to Debian's docs: https://wiki.debian.org/Fonts\n# Move to systam-wide font folder\nsudo mv *.ttf /usr/local/share/fonts/\n# update the font cache\nfc-cache\n# Follow AstroNvim install instructions: https://astronvim.github.io/#%EF%B8%8F-installation\n\n# Make a backup of your current nvim folder\nmv ~/.config/nvim ~/.config/nvim.bak\n# Clean neovim folders (Optional but recommended)\nmv ~/.local/share/nvim ~/.local/share/nvim.bak\nmv ~/.local/state/nvim ~/.local/state/nvim.bak\nmv ~/.cache/nvim ~/.cache/nvim.bak\n# Clone the repository\ngit clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim\n\n\n\nInstalling node is not required but will improve compatibility with modern nvim features:\n# Install Node.js using nvm according to https://github.com/nvm-sh/nvm\n;wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash\n# source .bashrc to pickup env variables\nsource ~/.bashrc\n# install the latest version of node\nnvm install node\n# Install Tree-sitter CLI\nnpm install tree-sitter-cli",
-    "crumbs": [
-      "Lessons",
-      "Linux",
-      "Remote work on Linux"
-    ]
-  },
-  {
-    "objectID": "lessons/linux/remote-linux.html#cli",
-    "href": "lessons/linux/remote-linux.html#cli",
-    "title": "Remote work on Linux",
-    "section": "",
-    "text": "Login into the R.Pi without password by setting up SSH credentials\n\nFollow guide by Raspberry Pi Foundation:\n\nPasswordless SSH Access\n\n\n\n\n\n# Update source repositories -- a good idea any time you are installing a package.\nsudo apt update -y\n# Install xclip for clipboard support with ssh graphical session `-Y`\nsudo apt install xclip -y\nsudo apt-get install neovim\n\n\nAfter installing nvim:\n# Install a Nerd Fonts (FiraCode)\ncd ~/Downloads\nwget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/FiraCode.zip\nunzip FiraCode.zip\n\n# Font installation according to Debian's docs: https://wiki.debian.org/Fonts\n# Move to systam-wide font folder\nsudo mv *.ttf /usr/local/share/fonts/\n# update the font cache\nfc-cache\n# Follow AstroNvim install instructions: https://astronvim.github.io/#%EF%B8%8F-installation\n\n# Make a backup of your current nvim folder\nmv ~/.config/nvim ~/.config/nvim.bak\n# Clean neovim folders (Optional but recommended)\nmv ~/.local/share/nvim ~/.local/share/nvim.bak\nmv ~/.local/state/nvim ~/.local/state/nvim.bak\nmv ~/.cache/nvim ~/.cache/nvim.bak\n# Clone the repository\ngit clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim\n\n\n\nInstalling node is not required but will improve compatibility with modern nvim features:\n# Install Node.js using nvm according to https://github.com/nvm-sh/nvm\n;wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash\n# source .bashrc to pickup env variables\nsource ~/.bashrc\n# install the latest version of node\nnvm install node\n# Install Tree-sitter CLI\nnpm install tree-sitter-cli",
-    "crumbs": [
-      "Lessons",
-      "Linux",
-      "Remote work on Linux"
-    ]
-  },
-  {
-    "objectID": "lessons/getting-started/index.html",
-    "href": "lessons/getting-started/index.html",
-    "title": "Getting started",
-    "section": "",
-    "text": "Technology Stack\n\n\nTechnologies used in this class\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHardware List\n\n\nList of hardware available for the course as well as their respective specifications and documentation.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDeveloper setup\n\n\nHere’s how to set up the software that will be used for development during the course.\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n Back to top",
-    "crumbs": [
-      "Lessons",
-      "Getting started"
-    ]
-  },
-  {
-    "objectID": "lessons/getting-started/tech-stack.slides.html#hardware",
-    "href": "lessons/getting-started/tech-stack.slides.html#hardware",
-    "title": "Technology Stack",
-    "section": "Hardware",
-    "text": "Hardware\nreTerminal from Seeed\n\n\n\nhardware platform used for the course: reTerminal\n\n\n\nOpen source hardware manufactured by Seeed Studios (Shenzhen, China)\nBuilt around the Raspberry Pi platform. Uses a Raspberry Pi Compute Module 4 (CM4)\nSee the official wiki page for specs and details.\nRuns the Linux based Raspberry PI Operating system\n\nGrove Connection System\n\n\n\nenter image description here\n\n\n\nA standard for wiring sensors to a connector.\nEliminates the need for breadboards and complicated wiring.\nSupported communication protocols: Digital, Analog, UART and I2C.\nSee official wiki page for details."
-  },
-  {
-    "objectID": "lessons/getting-started/tech-stack.slides.html#software",
-    "href": "lessons/getting-started/tech-stack.slides.html#software",
-    "title": "Technology Stack",
-    "section": "Software",
-    "text": "Software\nPython\n\n\n\npython™\n\n\nThis course will be using Python version 3.10 to: - Run programs inside the Raspberry Pi (reTerminal) in order to read and control sensors. - Communicate with the API of the Cloud Platform.\nVS Code IDE\n\n\n\nPart 1: Your First Website | HTML & CSS Tutorial | code …\n\n\nVisual Studio Code IDE will be used with various extensions in order to: - Program in Python (linting, intellisence, debugging, etc) - Remotely connecting to the Respberry Pi. - Connecting to Microsoft Azure.\nLinux (Raspberry Pi OS)\n\n\n\nLogo for raspberry pi os\n\n\nThe operating system running inside the reTerminal is Raspberry Pi OS. - Linux Debian based. - Requires basic use of BASH shell (eg. ssh, and environmental variables).\nMicrosoft Azure\n\n\n\nAzure IoT Hub: Create Using Azure Portal | Build5Nines\n\n\nMicrosoft Azure will be used as the main platform that will: - Register and connect devices. - Store and analyse data. - Manage the security layer. - Provide libraries (SDKs) that can easily be integrated into our code. - For more information see Azure IoT page."
-  },
-  {
-    "objectID": "lessons/getting-started/tech-stack.html",
-    "href": "lessons/getting-started/tech-stack.html",
-    "title": "Technology Stack",
-    "section": "",
-    "text": "hardware platform used for the course: reTerminal\n\n\n\nOpen source hardware manufactured by Seeed Studios (Shenzhen, China)\nBuilt around the Raspberry Pi platform. Uses a Raspberry Pi Compute Module 4 (CM4)\nSee the official wiki page for specs and details.\nRuns the Linux based Raspberry PI Operating system\n\n\n\n\n\n\n\nenter image description here\n\n\n\nA standard for wiring sensors to a connector.\nEliminates the need for breadboards and complicated wiring.\nSupported communication protocols: Digital, Analog, UART and I2C.\nSee official wiki page for details.",
-    "crumbs": [
-      "Lessons",
-      "Getting started",
-      "Technology Stack"
-    ]
-  },
-  {
-    "objectID": "lessons/getting-started/tech-stack.html#hardware",
-    "href": "lessons/getting-started/tech-stack.html#hardware",
-    "title": "Technology Stack",
-    "section": "",
-    "text": "hardware platform used for the course: reTerminal\n\n\n\nOpen source hardware manufactured by Seeed Studios (Shenzhen, China)\nBuilt around the Raspberry Pi platform. Uses a Raspberry Pi Compute Module 4 (CM4)\nSee the official wiki page for specs and details.\nRuns the Linux based Raspberry PI Operating system\n\n\n\n\n\n\n\nenter image description here\n\n\n\nA standard for wiring sensors to a connector.\nEliminates the need for breadboards and complicated wiring.\nSupported communication protocols: Digital, Analog, UART and I2C.\nSee official wiki page for details.",
-    "crumbs": [
-      "Lessons",
-      "Getting started",
-      "Technology Stack"
-    ]
-  },
-  {
-    "objectID": "lessons/getting-started/tech-stack.html#software",
-    "href": "lessons/getting-started/tech-stack.html#software",
-    "title": "Technology Stack",
-    "section": "Software",
-    "text": "Software\n\nPython\n\n\n\npython™\n\n\nThis course will be using Python version 3.10 to: - Run programs inside the Raspberry Pi (reTerminal) in order to read and control sensors. - Communicate with the API of the Cloud Platform.\n\n\nVS Code IDE\n\n\n\nPart 1: Your First Website | HTML & CSS Tutorial | code …\n\n\nVisual Studio Code IDE will be used with various extensions in order to: - Program in Python (linting, intellisence, debugging, etc) - Remotely connecting to the Respberry Pi. - Connecting to Microsoft Azure.\n\n\nLinux (Raspberry Pi OS)\n\n\n\nLogo for raspberry pi os\n\n\nThe operating system running inside the reTerminal is Raspberry Pi OS. - Linux Debian based. - Requires basic use of BASH shell (eg. ssh, and environmental variables).\n\n\nMicrosoft Azure\n\n\n\nAzure IoT Hub: Create Using Azure Portal | Build5Nines\n\n\nMicrosoft Azure will be used as the main platform that will: - Register and connect devices. - Store and analyse data. - Manage the security layer. - Provide libraries (SDKs) that can easily be integrated into our code. - For more information see Azure IoT page.",
-    "crumbs": [
-      "Lessons",
-      "Getting started",
-      "Technology Stack"
-    ]
-  },
-  {
-    "objectID": "lessons/hardware/index.html",
-    "href": "lessons/hardware/index.html",
-    "title": "Hardware",
-    "section": "",
-    "text": "reTerminal Sensors\n\n\nInstalling initial reTerminal packages. Reading and controlling the reTerminal hardware interfaces, e.g. LEDs, light sensor, screen backlight, etc.\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n Back to top",
-    "crumbs": [
-      "Lessons",
-      "Hardware"
-    ]
-  },
-  {
-    "objectID": "lessons/iot/index.html",
-    "href": "lessons/iot/index.html",
-    "title": "IoT",
-    "section": "",
-    "text": "Intro to the Internet of Things\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n Back to top",
-    "crumbs": [
-      "Lessons",
-      "IoT"
-    ]
-  },
-  {
-    "objectID": "lessons/python/index.html",
-    "href": "lessons/python/index.html",
-    "title": "Python",
-    "section": "",
-    "text": "Intro to Python for Developers\n\n\nPython exercises\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n Back to top",
-    "crumbs": [
-      "Lessons",
-      "Python"
+      "Python",
+      "Intro to Python for Developers"
     ]
   },
   {
