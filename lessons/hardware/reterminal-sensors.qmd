@@ -72,7 +72,7 @@ Raspberry Pi OS (previously called *Raspbian OS*) is a variation of the [**Debia
 
 You can see more about Raspberry Pi OS and Debian in the [Linux](/lessons/linux/package-management-debian.qmd) set of lessons.
 
-## Reading sensor data in Linux
+## Programmable Sensors
 
 *This section is based on the official documentation for the reTerminal: [Hardware and Interfaces Usage](https://wiki.seeedstudio.com/reTerminal-hardware-interfaces-usage/#3-user-programmable-leds)*
 
@@ -84,11 +84,7 @@ The reTerminal has 3 programmable LED's and a light sensor that can be **control
 
 ![](../assets/5-reterminal-buttons-light-sensor.png)
 
-## Sensors
-
-### Programmable LEDs
-
-There are 3 programmable LEDs in the reTerminal:
+You can see, there are 3 programmable LEDs in the reTerminal:
 
 - **STA** light can be turned on as **red or green**.
 - **USR** light can only be turned on as **green**.
@@ -104,34 +100,59 @@ drwxr-xr-x 3 root root    0 Jan 25 20:33 .
 drwxr-xr-x 8 root root    0 Jan 25 20:33 ..                                                                                                                                                                         
 -rw-r--r-- 1 root root 4096 Jan 26 22:02 brightness                                                                                                                                                                 
 ```
-![Unix Permissions cheatsheet py Julia Evans](../assets/5-unix-permissions-cheatsheet.png)
-<p class=img-info>
-    <a href="https://drawings.jvns.ca/permissions/"> Unix File Permissions,</a>&nbsp; Julia Evans.
-</p>
+![Unix Permissions cheatsheet by Julia Evans](../assets/5-unix-permissions-cheatsheet.png)
 
 The `brightness` file inide the `usr_led0` controls the brightness of LED0. But, because only `root` has write permissions to this file, we will likely run into permissions errors if we try to edit the value directly:
 
-```
-$ nano /sys/class/leds/usr_led0
+```bash
+$ nano /sys/class/leds/usr_led0/brightness
 Permission denied
-$ echo 255 > /sys/class/leds/usr_led0
+
+$ echo 255 > /sys/class/leds/usr_led0/brightness
 Permission denied
-$ sudo echo 255 > /sys/class/leds/usr_led0
+
+$ sudo echo 255 > /sys/class/leds/usr_led0/brightness
+Permission denied
 ```
 
 There are a few possible approaches to this problem:
 
 ### Use sudo + text-editor
 
-### Use sudo + su
-
-Enable root account privileges (take the identity of the root user)
+You can open a text-editor with `root` permissions using `sudo`:
 
 ```bash
-$ sudo su
+# nano text editor
+sudo nano /sys/class/leds/usr_led0/brightness
+
+# or, you can use vi/vim text editor
+sudo vi /sys/class/leds/usr_led0/brightness
 ```
 
-Your shell should now display `root@hostname:~# `
+Edit the `brightness` file to a value between 0-255 using the editor. When you save, you should see the change immediately.
+
+### Use sudo + su
+
+Using an editor is perfectly reasonable for a one-off change, but annoying if you want to make the change more often.
+
+We can use the `echo value > /path/to/file` pattern, but only if we have permissions to write to `/path/to/file` -- we can obtain these permissions if we run the entire command as the `root` user.
+
+> **NOTE:** Running commands as the root user can have unintended consequences,  ranging from annoying/tedious to fix, to completely devastating/permanently ruinous for your machine. You should avoid being `root` wherever possible (see **Use sudo + tee** section below for how to avoid it for this problem). 
+
+You can enter a `root` shell instance using the command `su` (switch user), or by using `sudo -i` or `sudo -s`:
+
+```bash
+user@hostname $ sudo su
+root@hostname # 
+
+user@hostname $ sudo -i
+root@hostname # 
+
+user@hostname $ sudo -s
+root@hostname # 
+```
+
+Your shell should now display `root@hostname:~# `. 
 
 Turn on the LED with maximum brightness
 
@@ -147,10 +168,50 @@ Turn off the LED
 
 Similarly, you can control  `usr_led1` and `usr_led2` and even the buzzer on `/sys/class/leds/usr_buzzer`
 
+When done working as root, you can exit the root shell and return to your user shell using the `exit` command (or Ctrl-D as a hotkey):
+
+```bash
+root@hostname # exit
+user@hostname $
+```
+
 ### Use sudo + `tee`
 
-**Note:** We'll run the next command as root because the file we want to write belongs the system (`root` user, rather than to the user `pi`.
+If we want to avoid using a text editor, AND avoid logging into a `root` shell instance, it would be great if something like this worked:
 
+```bash
+$ sudo echo 255 > /sys/class/leds/usr_led0/brightness
+```
+
+But it doesn't! Can you understand why? Consider which part of the instruction `sudo` applies to. Unfortunately, there is no way to `sudo >` or `sudo filename` since `sudo` executes **commands** as the root user, NOT filenames/redirects.
+
+What if there were a command that we could put after the redirect, and `sudo` that command? What would that command need to do? It's time to introduce a "new" command: `tee`.
+
+To be clear, [`tee`](https://en.wikipedia.org/wiki/Tee_(command)) is a 50 year old program and an absolute classic -- it is as ubiquitous/essential as the other OG unix programs like `ls`, `cat`, `echo`. We will see why in the following example.
+
+Try running `man tee` in your reTerminal. You should see something like the following: 
+
+```bash
+TEE(1)
+
+NAME
+       tee - read from standard input and write to standard output and files
+
+SYNOPSIS
+       tee [OPTION]... [FILE]...
+
+DESCRIPTION
+       Copy standard input to each FILE, and also to standard output.
+```
+
+We have here a command that will read from standard input, and *write that same content from standard input into BOTH standard output AND files* -- the files we can specify as arguments.
+
+**Challenge for Lab 2:** where would you put `tee` and `sudo` in the command below, to fix our permissions problems?
+
+```bash
+$ echo 255 | /sys/class/leds/usr-led0/brightness 
+# this command is missing `tee` and `sudo`.... find where to put them, and you've learned a very important unix pattern!
+```
 
 ### Luminosity Sensor
 
