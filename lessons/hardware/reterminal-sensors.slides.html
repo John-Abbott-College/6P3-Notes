@@ -493,20 +493,16 @@
 <p>Raspberry Pi OS (previously called <em>Raspbian OS</em>) is a variation of the <a href="https://en.wikipedia.org/wiki/Debian"><strong>Debian OS</strong></a>, with optimizations for the Raspberry Pi hardware.</p>
 <p>You can see more about Raspberry Pi OS and Debian in the <a href="../../lessons/linux/package-management-debian.html">Linux</a> set of lessons.</p>
 </section>
-<section id="reading-sensor-data-in-linux" class="slide level2">
-<h2>Reading sensor data in Linux</h2>
+<section id="programmable-sensors" class="slide level2">
+<h2>Programmable Sensors</h2>
 <p><em>This section is based on the official documentation for the reTerminal: <a href="https://wiki.seeedstudio.com/reTerminal-hardware-interfaces-usage/#3-user-programmable-leds">Hardware and Interfaces Usage</a></em></p>
 <blockquote>
 <p>In Linux, everything is a file stream that can be read and/or written to.</p>
 </blockquote>
 <p>For example, keyboard inputs and communication over web-sockets are all read as a file streams.</p>
 <p>The reTerminal has 3 programmable LED’s and a light sensor that can be <strong>controlled like a regular file</strong>.</p>
-
-<img data-src="../assets/5-reterminal-buttons-light-sensor.png" class="r-stretch"></section>
-<section id="sensors" class="slide level2">
-<h2>Sensors</h2>
-<h3 id="programmable-leds">Programmable LEDs</h3>
-<p>There are 3 programmable LEDs in the reTerminal:</p>
+<p><img data-src="../assets/5-reterminal-buttons-light-sensor.png"></p>
+<p>You can see, there are 3 programmable LEDs in the reTerminal:</p>
 <ul>
 <li><strong>STA</strong> light can be turned on as <strong>red or green</strong>.</li>
 <li><strong>USR</strong> light can only be turned on as <strong>green</strong>.</li>
@@ -521,69 +517,110 @@
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="../assets/5-unix-permissions-cheatsheet.png"></p>
-<figcaption>Unix Permissions cheatsheet py Julia Evans</figcaption>
+<figcaption>Unix Permissions cheatsheet by Julia Evans</figcaption>
 </figure>
 </div>
-<p class="img-info">
-<a href="https://drawings.jvns.ca/permissions/"> Unix File Permissions,</a>&nbsp; Julia Evans.
-</p>
 <p>The <code>brightness</code> file inide the <code>usr_led0</code> controls the brightness of LED0. But, because only <code>root</code> has write permissions to this file, we will likely run into permissions errors if we try to edit the value directly:</p>
-<pre><code>$ nano /sys/class/leds/usr_led0
-Permission denied
-$ echo 255 &gt; /sys/class/leds/usr_led0
-Permission denied
-$ sudo echo 255 &gt; /sys/class/leds/usr_led0</code></pre>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a></a><span class="ex">$</span> nano /sys/class/leds/usr_led0/brightness</span>
+<span id="cb2-2"><a></a><span class="ex">Permission</span> denied</span>
+<span id="cb2-3"><a></a></span>
+<span id="cb2-4"><a></a><span class="ex">$</span> echo 255 <span class="op">&gt;</span> /sys/class/leds/usr_led0/brightness</span>
+<span id="cb2-5"><a></a><span class="ex">Permission</span> denied</span>
+<span id="cb2-6"><a></a></span>
+<span id="cb2-7"><a></a><span class="ex">$</span> sudo echo 255 <span class="op">&gt;</span> /sys/class/leds/usr_led0/brightness</span>
+<span id="cb2-8"><a></a><span class="ex">Permission</span> denied</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>There are a few possible approaches to this problem:</p>
 <h3 id="use-sudo-text-editor">Use sudo + text-editor</h3>
+<p>You can open a text-editor with <code>root</code> permissions using <code>sudo</code>:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a></a><span class="co"># nano text editor</span></span>
+<span id="cb3-2"><a></a><span class="fu">sudo</span> nano /sys/class/leds/usr_led0/brightness</span>
+<span id="cb3-3"><a></a></span>
+<span id="cb3-4"><a></a><span class="co"># or, you can use vi/vim text editor</span></span>
+<span id="cb3-5"><a></a><span class="fu">sudo</span> vi /sys/class/leds/usr_led0/brightness</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Edit the <code>brightness</code> file to a value between 0-255 using the editor. When you save, you should see the change immediately.</p>
 <h3 id="use-sudo-su">Use sudo + su</h3>
-<p>Enable root account privileges (take the identity of the root user)</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a></a><span class="ex">$</span> sudo su</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Your shell should now display <code>root@hostname:~#</code></p>
+<p>Using an editor is perfectly reasonable for a one-off change, but annoying if you want to make the change more often.</p>
+<p>We can use the <code>echo value &gt; /path/to/file</code> pattern, but only if we have permissions to write to <code>/path/to/file</code> – we can obtain these permissions if we run the entire command as the <code>root</code> user.</p>
+<blockquote>
+<p><strong>NOTE:</strong> Running commands as the root user can have unintended consequences, ranging from annoying/tedious to fix, to completely devastating/permanently ruinous for your machine. You should avoid being <code>root</code> wherever possible (see <strong>Use sudo + tee</strong> section below for how to avoid it for this problem).</p>
+</blockquote>
+<p>You can enter a <code>root</code> shell instance using the command <code>su</code> (switch user), or by using <code>sudo -i</code> or <code>sudo -s</code>:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a></a><span class="ex">user@hostname</span> $ sudo su</span>
+<span id="cb4-2"><a></a><span class="ex">root@hostname</span> <span class="co"># </span></span>
+<span id="cb4-3"><a></a></span>
+<span id="cb4-4"><a></a><span class="ex">user@hostname</span> $ sudo <span class="at">-i</span></span>
+<span id="cb4-5"><a></a><span class="ex">root@hostname</span> <span class="co"># </span></span>
+<span id="cb4-6"><a></a></span>
+<span id="cb4-7"><a></a><span class="ex">user@hostname</span> $ sudo <span class="at">-s</span></span>
+<span id="cb4-8"><a></a><span class="ex">root@hostname</span> <span class="co"># </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Your shell should now display <code>root@hostname:~#</code>.</p>
 <p>Turn on the LED with maximum brightness</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a></a><span class="co"># echo 255 &gt; brightness</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a></a><span class="co"># echo 255 &gt; brightness</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Turn off the LED</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a></a><span class="co"># echo 0 &gt; brightness</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a></a><span class="co"># echo 0 &gt; brightness</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Similarly, you can control <code>usr_led1</code> and <code>usr_led2</code> and even the buzzer on <code>/sys/class/leds/usr_buzzer</code></p>
+<p>When done working as root, you can exit the root shell and return to your user shell using the <code>exit</code> command (or Ctrl-D as a hotkey):</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a></a><span class="ex">root@hostname</span> <span class="co"># exit</span></span>
+<span id="cb7-2"><a></a><span class="ex">user@hostname</span> $</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <h3 id="use-sudo-tee">Use sudo + <code>tee</code></h3>
-<p><strong>Note:</strong> We’ll run the next command as root because the file we want to write belongs the system (<code>root</code> user, rather than to the user <code>pi</code>.</p>
+<p>If we want to avoid using a text editor, AND avoid logging into a <code>root</code> shell instance, it would be great if something like this worked:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a></a><span class="ex">$</span> sudo echo 255 <span class="op">&gt;</span> /sys/class/leds/usr_led0/brightness</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>But it doesn’t! Can you understand why? Consider which part of the instruction <code>sudo</code> applies to. Unfortunately, there is no way to <code>sudo &gt;</code> or <code>sudo filename</code> since <code>sudo</code> executes <strong>commands</strong> as the root user, NOT filenames/redirects.</p>
+<p>What if there were a command that we could put after the redirect, and <code>sudo</code> that command? What would that command need to do? It’s time to introduce a “new” command: <code>tee</code>.</p>
+<p>To be clear, <a href="https://en.wikipedia.org/wiki/Tee_(command)"><code>tee</code></a> is a 50 year old program and an absolute classic – it is as ubiquitous/essential as the other OG unix programs like <code>ls</code>, <code>cat</code>, <code>echo</code>. We will see why in the following example.</p>
+<p>Try running <code>man tee</code> in your reTerminal. You should see something like the following:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a></a><span class="ex">TEE</span><span class="er">(</span><span class="ex">1</span><span class="kw">)</span></span>
+<span id="cb9-2"><a></a></span>
+<span id="cb9-3"><a></a><span class="ex">NAME</span></span>
+<span id="cb9-4"><a></a>       <span class="fu">tee</span> <span class="at">-</span> read from standard input and write to standard output and files</span>
+<span id="cb9-5"><a></a></span>
+<span id="cb9-6"><a></a><span class="ex">SYNOPSIS</span></span>
+<span id="cb9-7"><a></a>       <span class="fu">tee</span> <span class="pp">[</span><span class="ss">OPTION</span><span class="pp">]</span>... <span class="pp">[</span><span class="ss">FILE</span><span class="pp">]</span>...</span>
+<span id="cb9-8"><a></a></span>
+<span id="cb9-9"><a></a><span class="ex">DESCRIPTION</span></span>
+<span id="cb9-10"><a></a>       <span class="ex">Copy</span> standard input to each FILE, and also to standard output.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>We have here a command that will read from standard input, and <em>write that same content from standard input into BOTH standard output AND files</em> – the files we can specify as arguments.</p>
+<p><strong>Challenge for Lab 2:</strong> where would you put <code>tee</code> and <code>sudo</code> in the command below, to fix our permissions problems?</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a></a><span class="ex">$</span> echo 255 <span class="kw">|</span> <span class="ex">/sys/class/leds/usr-led0/brightness</span> </span>
+<span id="cb10-2"><a></a><span class="co"># this command is missing `tee` and `sudo`.... find where to put them, and you've learned a very important unix pattern!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <h3 id="luminosity-sensor">Luminosity Sensor</h3>
 <p>The digital light sensor can read the surrounding light levels.</p>
 <ol type="1">
 <li>Enter the following directory</li>
 </ol>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a></a><span class="bu">cd</span> /sys/bus/iio/devices/iio:device0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a></a><span class="bu">cd</span> /sys/bus/iio/devices/iio:device0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="2" type="1">
 <li>Read the following file to obtain the light intensity value in <strong>Lux</strong></li>
 </ol>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a></a><span class="fu">cat</span> in_illuminance_input </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a></a><span class="fu">cat</span> in_illuminance_input </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Output:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a></a><span class="ex">pi@raspberrypi:/sys/bus/iio/devices/iio:device0</span> $ cat in_illuminance_input </span>
-<span id="cb8-2"><a></a><span class="ex">2719</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a></a><span class="ex">pi@raspberrypi:/sys/bus/iio/devices/iio:device0</span> $ cat in_illuminance_input </span>
+<span id="cb13-2"><a></a><span class="ex">2719</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Note:</strong> We don’t need to be root to read this file. Its permissions are set to let all users read it, even-though it belongs to the root user:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a></a><span class="ex">rw-r--r--</span> 1 root root 4096 Jan 30 22:16 in_illuminance_input</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a></a><span class="ex">rw-r--r--</span> 1 root root 4096 Jan 30 22:16 in_illuminance_input</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="python-library-for-reterminal" class="slide level2">
 <h2>Python Library for reTerminal</h2>
 <p>Seeed Studio provided a python library to access most of the sensors and actuators of the reTerminal.</p>
 <p>Install the library <code>seeed-python-reterminal</code> (see official <a href="https://github.com/Seeed-Studio/Seeed_Python_ReTerminal">Github repo</a>) using <code>pip</code>:</p>
 <p><strong>NOTE:</strong> See <a href="../../lessons/python/package-management-python.html">Package Management in Python</a> for a clear explanation of how to use <code>venv</code> and <code>pip</code>, particularly for <a href="../../lessons/python/package-management-python.html#root-permissions">apps requiring root permissions</a></p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a></a><span class="ex">pip</span> install seeed-python-reterminal</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a></a><span class="ex">pip</span> install seeed-python-reterminal</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Now you can import it to a test script (eg. <em>buzz.py</em>)</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a><span class="im">import</span> seeed_python_reterminal.core <span class="im">as</span> rt</span>
-<span id="cb11-2"><a></a><span class="im">import</span> time</span>
-<span id="cb11-3"><a></a></span>
-<span id="cb11-4"><a></a><span class="bu">print</span>(<span class="st">"BUZZER ON"</span>)</span>
-<span id="cb11-5"><a></a>rt.buzzer <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb11-6"><a></a>time.sleep(<span class="dv">1</span>)</span>
-<span id="cb11-7"><a></a></span>
-<span id="cb11-8"><a></a><span class="bu">print</span>(<span class="st">"BUZZER OFF"</span>)</span>
-<span id="cb11-9"><a></a>rt.buzzer <span class="op">=</span> <span class="va">False</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a></a><span class="im">import</span> seeed_python_reterminal.core <span class="im">as</span> rt</span>
+<span id="cb16-2"><a></a><span class="im">import</span> time</span>
+<span id="cb16-3"><a></a></span>
+<span id="cb16-4"><a></a><span class="bu">print</span>(<span class="st">"BUZZER ON"</span>)</span>
+<span id="cb16-5"><a></a>rt.buzzer <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb16-6"><a></a>time.sleep(<span class="dv">1</span>)</span>
+<span id="cb16-7"><a></a></span>
+<span id="cb16-8"><a></a><span class="bu">print</span>(<span class="st">"BUZZER OFF"</span>)</span>
+<span id="cb16-9"><a></a>rt.buzzer <span class="op">=</span> <span class="va">False</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This will sound the buzzer of the reTerminal for 1 second.</p>
 <p>To run the script:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a></a><span class="fu">sudo</span> <span class="va">$(</span><span class="fu">which</span> python<span class="va">)</span> buzz.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a></a><span class="fu">sudo</span> <span class="va">$(</span><span class="fu">which</span> python<span class="va">)</span> buzz.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Alternatively, first elevate your shell, then execute the script normally:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a></a><span class="ex">user@hostname:~</span> $ sudo <span class="at">-i</span></span>
-<span id="cb13-2"><a></a><span class="ex">root@hostname:~#</span> python buzz.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a></a><span class="ex">user@hostname:~</span> $ sudo <span class="at">-i</span></span>
+<span id="cb18-2"><a></a><span class="ex">root@hostname:~#</span> python buzz.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <blockquote>
 <p><strong>Note:</strong> this library is simply a wrapper to the OS operations we did in the previous section.</p>
 </blockquote>
