@@ -5,7 +5,14 @@ subtitle: How to use OS package managers, virtual environments, and `pip` to man
 
 ## Python on Raspberry Pi
 
-*Note: most of these notes were adapted directly from the Raspberry Pi docs: [Python on Raspberry Pi](https://www.raspberrypi.com/documentation/computers/os.html#python-on-raspberry-pi)*
+*Note: most of these notes were adapted directly from the Raspberry Pi docs: [Python on Raspberry Pi](https://www.raspberrypi.com/documentation/computers/os.html#python-on-raspberry-pi)* [^cite]
+
+[^cite]: Raspberry Pi documentation is copyright © 2012-2024 Raspberry Pi Ltd and
+is licensed under a [Creative Commons Attribution-ShareAlike 4.0
+International](https://creativecommons.org/licenses/by-sa/4.0/) (CC
+BY-SA) licence. Some content originates from the [eLinux wiki](http://elinux.org/), and
+is licensed under a [Creative Commons Attribution-ShareAlike 3.0
+Unported](http://creativecommons.org/licenses/by-sa/3.0/) licence.
 
 Python 3 is installed by default on Raspberry Pi OS, and is used for
 many important functions. Interfering with the system Python

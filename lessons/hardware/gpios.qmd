@@ -5,6 +5,16 @@ subtitle: Understanding the various ports and pins our reSeed terminals make ava
 
 ## Intro to Pi's GPIOs 🥧
 
+*Note: most of these notes were adapted directly from the Raspberry Pi docs: [GPIO-Pinout](https://www.raspberrypi.com/documentation/computers/os.html#gpio-pinout)* [^cite]
+
+[^cite]: Raspberry Pi documentation is copyright © 2012-2024 Raspberry Pi Ltd and
+is licensed under a [Creative Commons Attribution-ShareAlike 4.0
+International](https://creativecommons.org/licenses/by-sa/4.0/) (CC
+BY-SA) licence. Some content originates from the [eLinux wiki](http://elinux.org/), and
+is licensed under a [Creative Commons Attribution-ShareAlike 3.0
+Unported](http://creativecommons.org/licenses/by-sa/3.0/) licence.
+
+
 The Raspberry Pi can read and generate digital signals using **General Purpose Input and Output (GPIO)** pins.
 
 Any of the GPIO pins can be designated (in software) as an input or output pin and used for a wide range of purposes.
@@ -57,7 +67,6 @@ Some digital functions are available on all pins, others on specific pins.
 > 
 > In order to process analog electrical signals an external ADC must be used.
 
-
 **Hat to the Rescue**
 
 In this course we will use the integrate ADC of the [Grove Base Hat](https://wiki.seeedstudio.com/Grove_Base_Hat_for_Raspberry_Pi/) for the Raspberry Pi.
@@ -79,3 +88,121 @@ In addition to the 4 ADC connectors, the Base Hat also exposes the original 40-p
 <p class=img-info>
 	<a href="https://wiki.seeedstudio.com/Grove_Base_Hat_for_Raspberry_Pi/"> Specialized connectors of the Raspberry Pi available via the Base Hat </a>&nbsp; Base Hat official wiki, Seeed.
 </p>
+
+## GPIO pinout
+
+A GPIO reference can be accessed on your Raspberry Pi by opening a
+terminal window and running the command `pinout`. This tool is provided
+by the [GPIO Zero](https://gpiozero.readthedocs.io/) Python library,
+which is installed by default in Raspberry Pi OS.
+
+```bash
+$ pinout
+```
+
+::: {.callout-important}
+While connecting up simple components to the GPIO pins is perfectly safe, it's important to be careful how you wire things up. LEDs should have resistors to limit the current passing through them. Do not use 5V for 3.3V components. Do not connect motors directly to the GPIO pins, instead use an [H-bridge circuit or a motor controller board](https://projects.raspberrypi.org/en/projects/physical-computing/14). 
+:::
+
+### Permissions
+
+In order to use the GPIO ports, your user must be a member of the `gpio`
+group. The default user account is a member by default, other users need
+to be added manually.
+
+```bash
+# Only do this to add a NEW user to the gpio group
+sudo usermod -a -G gpio <username>
+```
+
+## GPIO in Python
+
+Using the [GPIO Zero](https://gpiozero.readthedocs.io/) library makes it
+easy to control GPIO devices with Python. The library is comprehensively
+documented at
+[gpiozero.readthedocs.io](https://gpiozero.readthedocs.io/).
+
+### LED
+
+To control an LED connected to GPIO17:
+
+```python
+from gpiozero import LED
+from time import sleep
+
+led = LED(17)
+
+while True:
+    led.on()
+    sleep(1)
+    led.off()
+    sleep(1)
+```
+
+LED methods include `on()`, `off()`, `toggle()`, and `blink()`.
+
+### Button
+
+To read the state of a button connected to GPIO2:
+
+```python
+from gpiozero import Button
+from time import sleep
+
+button = Button(2)
+
+while True:
+    if button.is_pressed:
+        print("Pressed")
+    else:
+        print("Released")
+    sleep(1)
+```
+
+Button functionality includes the properties `is_pressed` and `is_held`;
+callbacks `when_pressed`, `when_released`, and `when_held`; and methods
+`wait_for_press()` and `wait_for_release`.
+
+### Button and LED
+
+To connect the LED and button together, you can use this code:
+
+```python
+from gpiozero import LED, Button
+
+led = LED(17)
+button = Button(2)
+
+while True:
+    if button.is_pressed:
+        led.on()
+    else:
+        led.off()
+```
+
+Alternatively:
+
+```python
+from gpiozero import LED, Button
+
+led = LED(17)
+button = Button(2)
+
+while True:
+    button.wait_for_press()
+    led.on()
+    button.wait_for_release()
+    led.off()
+```
+
+or:
+
+```python
+from gpiozero import LED, Button
+
+led = LED(17)
+button = Button(2)
+
+button.when_pressed = led.on
+button.when_released = led.off
+```
