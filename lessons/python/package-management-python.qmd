@@ -3,92 +3,272 @@ title: "Package management in Python"
 subtitle: How to use OS package managers, virtual environments, and `pip` to manage python applications effectively.
 ---
 
-## Pip: Python Package Manager
+## Python on Raspberry Pi
+
+*Note: most of these notes were adapted directly from the Raspberry Pi docs: [Python on Raspberry Pi](https://www.raspberrypi.com/documentation/computers/os.html#python-on-raspberry-pi)*
+
+Python 3 is installed by default on Raspberry Pi OS, and is used for
+many important functions. Interfering with the system Python
+installation can cause problems for your operating system, so it's
+important that if you install third-party Python libraries, you use the
+correct package-management tools.
+
+There are two routes to installing libraries into the default `python`
+distribution. You can use `apt` and install pre-configured system
+packages, or you can use `pip` to install packages which are not
+distributed as part of Raspberry Pi OS.
+
+## Installing Python packages using apt
+
+::: {.callout-important}
+Installing packages using `apt` is the preferred method for installing Python libraries under Raspberry Pi OS.
+:::
+
+Packages installed via `apt` are tested, are usually pre-compiled so
+they install faster, and are designed for Raspberry Pi OS. They won't
+break your system. Installing via this route also means that all
+required dependencies are also installed, and a log of installation is
+maintained by the OS so installation can be easily rolled back
+(libraries can be uninstalled) if needed.
+
+For instance, to install the Python 3 library to support the Raspberry
+Pi [BuildHAT](https://www.raspberrypi.com/documentation/accessories/build-hat.html)
+you would:
+
+```bash
+$ sudo apt install python3-build-hat
+```
+
+...​to install the pre-built library.
+
+Using `apt` makes installing larger packages, like `numpy` (which has
+many native dependencies including a Fortran compiler), much simpler
+than installing individual packages using Python's own
+package-management system.
+
+If you want to install a Python library called \"foobar\" you can use
+`apt search foobar` to find the exact package name. In most cases,
+you'll find that the required package is going to be called
+`python-foobar` or `python3-foobar`.
+
+## Installing python packages using Pip
 
 [`pip`](https://pip.pypa.io/en/stable/) is python's own package manager, which is independent from `apt`. 
 
 > Pip installs packages from the [Python Package Index repository (pypi.org)](https://pypi.org/)
 
-### Overview
+Even though Raspberry Pi OS comes with `pip` instaled, we can't just use it right away...
 
-In the big picture, `pip` *feels* similar to other package managers like `apt`, where you can install/uninstall/update packages from the CLI.
+### About Python virtual environments
+
+In previous versions of the operating system, it was possible to install
+libraries directly, system-wide, using the package installer for Python,
+`pip`. You'll find the following sort of command in
+many tutorials online -- including in our Labs.
 
 ```bash
-pip install emoji
+$ pip install buildhat
 ```
 
-This will install the a python library emoji -- you can then `import` that package in python scripts to create emojis from text descriptions.
-
-Once a python module has been installed, it is available to be imported in your python script:
+In newer versions of Raspberry Pi OS, and most other operating systems, this
+is disallowed. If you try and install a Python package system-wide
+you'll receive an error similar to this:
 
 ```python
-import emoji
+$ pip install buildhat
+error: externally-managed-environment
 
-message = emoji.emojize('Howdy :sun_with_face:')
-print(message)
+× This environment is externally managed
+╰─> To install Python packages system-wide, try apt install
+  python3-xyz, where xyz is the package you are trying to
+  install.
+
+  If you wish to install a non-Debian-packaged Python package,
+  create a virtual environment using python3 -m venv path/to/venv.
+  Then use path/to/venv/bin/python and path/to/venv/bin/pip. Make
+  sure you have python3-full installed.
+
+  For more information visit http://rptl.io/venv
+
+note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing --break-system-packages.
+hint: See PEP 668 for the detailed specification.
 ```
 
-Output:
+This error is generated because you're trying to install a third-party
+package into the system Python. A long-standing practical problem for
+Python users has been conflicts between OS package managers like `apt`
+and Python-specific package management tools like `pip`. These conflicts
+include both Python-level API incompatibilities and conflicts over file
+ownership.
+
+Therefore from *Debian Bookworm* onwards, packages installed via `pip` must be
+installed into a Python virtual environment using `venv`. A virtual
+environment is a container where you can safely install third-party
+modules so they won't interfere with, or break, your system Python.
+
+### Using pip with virtual environments
+
+::: {.callout}
+Any packages that cannot be installed using `apt` should instead installed onto a Python Virtual Environment using `venv` and `pip`.
+:::
+
+To use a virtual environment you will need to create a container to
+store the environment. There are several ways you can do this depending
+on how you want to work with Python.
+
+#### Using a separate environment for each project
+
+One way you can proceed is to create a new virtual environment for each
+Python project you make. Here, you'll create a directory to hold your
+own code along with a virtual environment directory:
 
 ```bash
-Howdy 🌞
+$ mkdir my_project
+$ cd my_project
+$ python -m venv env
 ```
 
-It is also possible to give an alias to the newly imported module:
-
-```python
-import emoji as em
-
-message = em.emojize('Howdy :sun_with_face:')
-print(message)
-```
-
-Finally, you can import only a specific function and give it an alias:
-
-```python
-from emoji import emojize as emz
-message = emz('Howdy :sun_with_face:')
-print(message)
-```
-
-## Creating virtual environments with `venv`
-
-Unfortunately, the commands shown in the previous section don't work on all systems for all users -- python packages can be for the whole **system**, or just some **users**; moreover, systems and even users can have multiple versions of python installed on the same machine. Where is the package installed? What if there are version conflicts?
-
-The best practise these days to manage python dependencies is to **isolate project dependencies in a virtual environment**. In a **virtual environment**, a python installation is separated from the system and other user installs. You can have many python virtual environments that are all isolated from eachother, each with different dependencies and even versions of python.
-
-Creation of virtual environments is done by executing the command venv:
+If you now look inside the `my_project` directory you'll see a directory
+called `env`.
 
 ```bash
-python -m venv env
+$ ls -la
+total 12
+drwxr-xr-x  3 pi pi 4096 Oct  3 14:34 .
+drwx------ 20 pi pi 4096 Oct  3 14:34 ..
+drwxr-xr-x  5 pi pi 4096 Oct  3 14:34 env
+$
 ```
 
-The final argument (`env` above) is the *target directory* for the virtual environment.
+::: {.callout-important}
+If you want to inherit the currently installed packages from the system Python, you should create your virtual environment using `python -m venv --system-site-packages env`. 
+:::
 
-
-
-## apt vs pip: when to use which?
-
-> Note: do not run `pip` as `sudo` because `pip` could overwrite system files that are managed by `apt`.
-
-### ModuleNotFoundError
-
-When trying to import the  `seeed-python-reterminal`  library, you might get the following error:
+Inside this directory is a full Python distribution. To activate your
+virtual environment and make that version of Python the one you're
+currently using, you should type:
 
 ```bash
-ModuleNotFoundError: No module named 'seeed_python_reterminal'
+$ source env/bin/activate
+(env) $
 ```
 
-The python interpreter is not able to find the module even though it is installed.
+You'll see that your prompt is now prepended with `(env)` to indicate
+that you're no longer using the system Python. Instead, you're using the
+version of Python contained inside your virtual environment. Any changes
+you make here won't cause problems for your system Python; nor will any
+new modules you install into your environment.
 
-You can run the checks described below.
+```bash
+(env) $ which python
+/home/pi/my_project/env/bin/python
+```
+
+If you install a third-party package, it'll install into the Python
+distribution in your virtual environment:
+
+```bash
+(env) $ pip install buildhat
+Looking in indexes: https://pypi.org/simple, https://www.piwheels.org/simple
+Collecting buildhat
+  Downloading https://www.piwheels.org/simple/buildhat/buildhat-0.5.12-py3-none-any.whl (57 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 57.8/57.8 kB 2.8 MB/s eta 0:00:00
+Collecting gpiozero
+  Downloading https://www.piwheels.org/simple/gpiozero/gpiozero-2.0-py3-none-any.whl (150 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 150.5/150.5 kB 6.9 MB/s eta 0:00:00
+Collecting pyserial
+  Downloading https://www.piwheels.org/simple/pyserial/pyserial-3.5-py2.py3-none-any.whl (90 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 90.6/90.6 kB 7.5 MB/s eta 0:00:00
+Collecting colorzero
+  Downloading https://www.piwheels.org/simple/colorzero/colorzero-2.0-py2.py3-none-any.whl (26 kB)
+Requirement already satisfied: setuptools in ./env/lib/python3.11/site-packages (from colorzero->gpiozero->buildhat) (66.1.1)
+Installing collected packages: pyserial, colorzero, gpiozero, buildhat
+Successfully installed buildhat-0.5.12 colorzero-2.0 gpiozero-2.0 pyserial-3.5
+(env) $
+```
+
+Now, if you `pip list`, you'll see that your current version of Python
+includes your new modules.
+
+```bash
+(env) $ pip list
+Package    Version
+---------- -------
+buildhat   0.5.12
+colorzero  2.0
+gpiozero   2.0
+pip        23.0.1
+pyserial   3.5
+setuptools 66.1.1
+```
+
+After writing your code, you can run it from the command line inside the
+virtual environment as you'd expect, by invoking Python as usual.
+
+```bash
+(env) $ ls -la
+total 12
+drwxr-xr-x  3 pi pi 4096 Oct  3 14:34 .
+drwx------ 20 pi pi 4096 Oct  3 14:34 ..
+drwxr-xr-x  5 pi pi 4096 Oct  3 14:34 env
+-rw-r--r--  1 pi pi    0 Oct  3 14:45 my_code.py
+(env) $ python my_code.py
+Hello World!
+(env) $
+```
+
+You can leave your virtual environment and return to using the system
+Python by typing:
+
+```bash
+(env) $ deactivate
+$
+```
+
+...​and demonstrate to yourself you've done so by checking the installed
+packages using `pip list`.
+
+#### Using a separate environment for each user
+
+An alternative method to creating a virtual environment for each of your
+Python projects is to create a single virtual environment for your user
+account, and then activate that environment before running any of your
+Python code. This approach may be preferred if you commonly install the
+same set of modules for each project, and don't want to have to bother
+creating individual Python environments for each project, essentially
+just duplicating your environment.
+
+```bash
+$ python -m venv ~/.env
+$ source ~/.env/bin/activate
+(.env) $
+```
+
+You can check again that you're in a separate environment by using
+`pip list`:
+
+```bash
+(.env) $ pip list
+Package    Version
+---------- -------
+pip        23.0.1
+setuptools 66.1.1
+```
+
+...​and leave it using `deactivate`.
+
+```bash
+(.env) $ deactivate
+$
+```
+
 
 ### Check library location
 
-Check the location of where the module was installed with `pip3 show <module-name>`:
+Check the location of where the module was installed with `pip show <module-name>`:
 
 ```bash
-pi@raspberrypi:~ $ pip3 show seeed-python-reterminal
+(env) pi@raspberrypi:~ $ pip show seeed-python-reterminal
 
 Name: seeed-python-reterminal
 Version: 0.2
@@ -105,73 +285,44 @@ Required-by:
 The library is installed at: `Location: /usr/local/lib/python3.7/dist-packages`
 
 
-#### Check python's library paths
+## Troubleshooting
+
+### Check python's library paths
 
 Similarly to Linux, there are environmental variables that determine where python will look for installed modules/libraries.
 
-See the paths where python is looking for libraries with `sys.path`.
+See the paths where python is looking for libraries with `sys.path`. They should look something like:
+
+::: {.panel-tabset}
+
+## system
 
 ```python
-pi@raspberrypi:~ $ python3
+pi@raspberrypi:~ $ python
 
 >>> import sys      # Exposes configuration used by the python interpreter.
 >>> sys.path        # Lists all paths where interpreter looks for modules.
-[
- '',
- '/usr/lib/python37.zip',
- '/usr/lib/python3.7',
- '/usr/lib/python3.7/lib-dynload',
- '/home/pi/.local/lib/python3.7/site-packages',
- '/usr/local/lib/python3.7/dist-packages',
- '/usr/lib/python3/dist-packages'
-]
+['', '/usr/lib/python311.zip', '/usr/lib/python3.11', '/usr/lib/python3.11/lib-dynload', '/usr/local/lib/python3.11/dist-packages', '/usr/lib/python3/dist-packages', '/usr/lib/python3.11/dist-packages']
 ```
 
-If the output of `pip3 show seeed-python-reterminal` is not in this list, python will not find it when you import it.
+## venv
+
+```python
+(env) pi@raspberrypi:~ $ python
+
+>>> import sys      # Exposes configuration used by the python interpreter.
+>>> sys.path        # Lists all paths where interpreter looks for modules.
+['', '/usr/lib/python311.zip', '/usr/lib/python3.11', '/usr/lib/python3.11/lib-dynload', '/home/pi/lab2/python/env/lib/python3.11/site-packages', '/usr/local/lib/python3.11/dist-packages', '/usr/lib/python3/dist-packages', '/usr/lib/python3.11/dist-packages']
+```
+
+:::
+
+
+If the output of `pip show seeed-python-reterminal` is not in this list, python will not find it when you import it.
 
 > **Note:** the python shell above was started as the user `pi`.
 > If you start python as **root**, `sys.path` might have different paths.
 
-Below, python was started as **root**:
-
-```python
-pi@raspberrypi:~ $ sudo -i
-root@raspberrypi:~# python3
-
->>> import sys
->>> sys.path
-[
-'',
-'/usr/lib/python37.zip',
-'/usr/lib/python3.7',
-'/usr/lib/python3.7/lib-dynload',
-'/usr/local/lib/python3.7/dist-packages',
-'/usr/lib/python3/dist-packages'
-]
-```
-
 Note that the user `pi` does not have permission to add content inside `/usr`.
-Thus, all `pip` installations as the regular user go into `/home/pi/.local/lib/python3.7/site-packages`.
 
-**Conclusion:** if you install a python library as `root`, it might go to a different directory compared to installing it as the regular user.
-
-This is the main reason why we chose to install the `seeed-python-reterminal` as root, rather than the regular user `pi`.
-
-### Making user's library available to root (optional)
-
-If you would like to make a library installed as the user `pi` available when running the script as `root`, you will need to export an environmental variable named `PYTHONPATH` pointing to the library location.
-
-For example, assuming that a library installed under the user `pi` is located in `/home/pi/.local/lib/python3.7/site-packages`, do the following:
-
-```bash
-# Elevate the shell to the root user
-pi@raspberrypi:~ $ sudo -i
-root@raspberrypi:~#
-
-# Export the PYTHONPATH environment variable
-root@raspberrypi:~# export PYTHONPATH="/home/pi/.local/lib/python3.7/site-packages"
-
-# Start python as root and run the script that imports the library
-root@raspberrypi:~# python3 my_script.py
-```
-
+Thus, all `pip` installations as the regular user go into `/home/pi/.local/lib/python3.11/site-packages`.
