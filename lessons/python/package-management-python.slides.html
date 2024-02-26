@@ -402,115 +402,206 @@
 </div>
 
 </section>
-<section id="pip-python-package-manager" class="slide level2">
-<h2>Pip: Python Package Manager</h2>
+<section id="python-on-raspberry-pi" class="slide level2">
+<h2>Python on Raspberry Pi</h2>
+<p><em>Note: most of these notes were adapted directly from the Raspberry Pi docs: <a href="https://www.raspberrypi.com/documentation/computers/os.html#python-on-raspberry-pi">Python on Raspberry Pi</a></em></p>
+<p>Python 3 is installed by default on Raspberry Pi OS, and is used for many important functions. Interfering with the system Python installation can cause problems for your operating system, so it’s important that if you install third-party Python libraries, you use the correct package-management tools.</p>
+<p>There are two routes to installing libraries into the default <code>python</code> distribution. You can use <code>apt</code> and install pre-configured system packages, or you can use <code>pip</code> to install packages which are not distributed as part of Raspberry Pi OS.</p>
+</section>
+<section id="installing-python-packages-using-apt" class="slide level2">
+<h2>Installing Python packages using apt</h2>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Important</strong></p>
+</div>
+<div class="callout-content">
+<p>Installing packages using <code>apt</code> is the preferred method for installing Python libraries under Raspberry Pi OS.</p>
+</div>
+</div>
+</div>
+<p>Packages installed via <code>apt</code> are tested, are usually pre-compiled so they install faster, and are designed for Raspberry Pi OS. They won’t break your system. Installing via this route also means that all required dependencies are also installed, and a log of installation is maintained by the OS so installation can be easily rolled back (libraries can be uninstalled) if needed.</p>
+<p>For instance, to install the Python 3 library to support the Raspberry Pi <a href="https://www.raspberrypi.com/documentation/accessories/build-hat.html">BuildHAT</a> you would:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a></a><span class="ex">$</span> sudo apt install python3-build-hat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>…​to install the pre-built library.</p>
+<p>Using <code>apt</code> makes installing larger packages, like <code>numpy</code> (which has many native dependencies including a Fortran compiler), much simpler than installing individual packages using Python’s own package-management system.</p>
+<p>If you want to install a Python library called "foobar" you can use <code>apt search foobar</code> to find the exact package name. In most cases, you’ll find that the required package is going to be called <code>python-foobar</code> or <code>python3-foobar</code>.</p>
+</section>
+<section id="installing-python-packages-using-pip" class="slide level2">
+<h2>Installing python packages using Pip</h2>
 <p><a href="https://pip.pypa.io/en/stable/"><code>pip</code></a> is python’s own package manager, which is independent from <code>apt</code>.</p>
 <blockquote>
 <p>Pip installs packages from the <a href="https://pypi.org/">Python Package Index repository (pypi.org)</a></p>
 </blockquote>
-<h3 id="overview">Overview</h3>
-<p>In the big picture, <code>pip</code> <em>feels</em> similar to other package managers like <code>apt</code>, where you can install/uninstall/update packages from the CLI.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a></a><span class="ex">pip</span> install emoji</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>This will install the a python library emoji – you can then <code>import</code> that package in python scripts to create emojis from text descriptions.</p>
-<p>Once a python module has been installed, it is available to be imported in your python script:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="im">import</span> emoji</span>
-<span id="cb2-2"><a></a></span>
-<span id="cb2-3"><a></a>message <span class="op">=</span> emoji.emojize(<span class="st">'Howdy :sun_with_face:'</span>)</span>
-<span id="cb2-4"><a></a><span class="bu">print</span>(message)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Output:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a></a><span class="ex">Howdy</span> 🌞</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>It is also possible to give an alias to the newly imported module:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="im">import</span> emoji <span class="im">as</span> em</span>
-<span id="cb4-2"><a></a></span>
-<span id="cb4-3"><a></a>message <span class="op">=</span> em.emojize(<span class="st">'Howdy :sun_with_face:'</span>)</span>
-<span id="cb4-4"><a></a><span class="bu">print</span>(message)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Finally, you can import only a specific function and give it an alias:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="im">from</span> emoji <span class="im">import</span> emojize <span class="im">as</span> emz</span>
-<span id="cb5-2"><a></a>message <span class="op">=</span> emz(<span class="st">'Howdy :sun_with_face:'</span>)</span>
-<span id="cb5-3"><a></a><span class="bu">print</span>(message)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="creating-virtual-environments-with-venv" class="slide level2">
-<h2>Creating virtual environments with <code>venv</code></h2>
-<p>Unfortunately, the commands shown in the previous section don’t work on all systems for all users – python packages can be for the whole <strong>system</strong>, or just some <strong>users</strong>; moreover, systems and even users can have multiple versions of python installed on the same machine. Where is the package installed? What if there are version conflicts?</p>
-<p>The best practise these days to manage python dependencies is to <strong>isolate project dependencies in a virtual environment</strong>. In a <strong>virtual environment</strong>, a python installation is separated from the system and other user installs. You can have many python virtual environments that are all isolated from eachother, each with different dependencies and even versions of python.</p>
-<p>Creation of virtual environments is done by executing the command venv:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a></a><span class="ex">python</span> <span class="at">-m</span> venv env</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The final argument (<code>env</code> above) is the <em>target directory</em> for the virtual environment.</p>
-</section>
-<section id="apt-vs-pip-when-to-use-which" class="slide level2">
-<h2>apt vs pip: when to use which?</h2>
-<blockquote>
-<p>Note: do not run <code>pip</code> as <code>sudo</code> because <code>pip</code> could overwrite system files that are managed by <code>apt</code>.</p>
-</blockquote>
-<h3 id="modulenotfounderror">ModuleNotFoundError</h3>
-<p>When trying to import the <code>seeed-python-reterminal</code> library, you might get the following error:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a></a><span class="ex">ModuleNotFoundError:</span> No module named <span class="st">'seeed_python_reterminal'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The python interpreter is not able to find the module even though it is installed.</p>
-<p>You can run the checks described below.</p>
+<p>Even though Raspberry Pi OS comes with <code>pip</code> instaled, we can’t just use it right away…</p>
+<h3 id="about-python-virtual-environments">About Python virtual environments</h3>
+<p>In previous versions of the operating system, it was possible to install libraries directly, system-wide, using the package installer for Python, <code>pip</code>. You’ll find the following sort of command in many tutorials online – including in our Labs.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a></a><span class="ex">$</span> pip install buildhat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>In newer versions of Raspberry Pi OS, and most other operating systems, this is disallowed. If you try and install a Python package system-wide you’ll receive an error similar to this:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>$ pip install buildhat</span>
+<span id="cb3-2"><a></a>error: externally<span class="op">-</span>managed<span class="op">-</span>environment</span>
+<span id="cb3-3"><a></a></span>
+<span id="cb3-4"><a></a>× This environment <span class="kw">is</span> externally managed</span>
+<span id="cb3-5"><a></a>╰─<span class="op">&gt;</span> To install Python packages system<span class="op">-</span>wide, <span class="cf">try</span> apt install</span>
+<span id="cb3-6"><a></a>  python3<span class="op">-</span>xyz, where xyz <span class="kw">is</span> the package you are trying to</span>
+<span id="cb3-7"><a></a>  install.</span>
+<span id="cb3-8"><a></a></span>
+<span id="cb3-9"><a></a>  If you wish to install a non<span class="op">-</span>Debian<span class="op">-</span>packaged Python package,</span>
+<span id="cb3-10"><a></a>  create a virtual environment using python3 <span class="op">-</span>m venv path<span class="op">/</span>to<span class="op">/</span>venv.</span>
+<span id="cb3-11"><a></a>  Then use path<span class="op">/</span>to<span class="op">/</span>venv<span class="op">/</span><span class="bu">bin</span><span class="op">/</span>python <span class="kw">and</span> path<span class="op">/</span>to<span class="op">/</span>venv<span class="op">/</span><span class="bu">bin</span><span class="op">/</span>pip. Make</span>
+<span id="cb3-12"><a></a>  sure you have python3<span class="op">-</span>full installed.</span>
+<span id="cb3-13"><a></a></span>
+<span id="cb3-14"><a></a>  For more information visit http:<span class="op">//</span>rptl.io<span class="op">/</span>venv</span>
+<span id="cb3-15"><a></a></span>
+<span id="cb3-16"><a></a>note: If you believe this <span class="kw">is</span> a mistake, please contact your Python installation <span class="kw">or</span> OS distribution provider. You can override this, at the risk of breaking your Python installation <span class="kw">or</span> OS, by passing <span class="op">--</span><span class="cf">break</span><span class="op">-</span>system<span class="op">-</span>packages.</span>
+<span id="cb3-17"><a></a>hint: See PEP <span class="dv">668</span> <span class="cf">for</span> the detailed specification.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This error is generated because you’re trying to install a third-party package into the system Python. A long-standing practical problem for Python users has been conflicts between OS package managers like <code>apt</code> and Python-specific package management tools like <code>pip</code>. These conflicts include both Python-level API incompatibilities and conflicts over file ownership.</p>
+<p>Therefore from <em>Debian Bookworm</em> onwards, packages installed via <code>pip</code> must be installed into a Python virtual environment using <code>venv</code>. A virtual environment is a container where you can safely install third-party modules so they won’t interfere with, or break, your system Python.</p>
+<h3 id="using-pip-with-virtual-environments">Using pip with virtual environments</h3>
+<div class="callout callout-none no-icon callout-style-simple">
+<div class="callout-body">
+<div class="callout-content">
+<p>Any packages that cannot be installed using <code>apt</code> should instead installed onto a Python Virtual Environment using <code>venv</code> and <code>pip</code>.</p>
+</div>
+</div>
+</div>
+<p>To use a virtual environment you will need to create a container to store the environment. There are several ways you can do this depending on how you want to work with Python.</p>
+<h4 id="using-a-separate-environment-for-each-project">Using a separate environment for each project</h4>
+<p>One way you can proceed is to create a new virtual environment for each Python project you make. Here, you’ll create a directory to hold your own code along with a virtual environment directory:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a></a><span class="ex">$</span> mkdir my_project</span>
+<span id="cb4-2"><a></a><span class="ex">$</span> cd my_project</span>
+<span id="cb4-3"><a></a><span class="ex">$</span> python <span class="at">-m</span> venv env</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If you now look inside the <code>my_project</code> directory you’ll see a directory called <code>env</code>.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a></a><span class="ex">$</span> ls <span class="at">-la</span></span>
+<span id="cb5-2"><a></a><span class="ex">total</span> 12</span>
+<span id="cb5-3"><a></a><span class="ex">drwxr-xr-x</span>  3 pi pi 4096 Oct  3 14:34 .</span>
+<span id="cb5-4"><a></a><span class="ex">drwx------</span> 20 pi pi 4096 Oct  3 14:34 ..</span>
+<span id="cb5-5"><a></a><span class="ex">drwxr-xr-x</span>  5 pi pi 4096 Oct  3 14:34 env</span>
+<span id="cb5-6"><a></a><span class="ex">$</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Important</strong></p>
+</div>
+<div class="callout-content">
+<p>If you want to inherit the currently installed packages from the system Python, you should create your virtual environment using <code>python -m venv --system-site-packages env</code>.</p>
+</div>
+</div>
+</div>
+<p>Inside this directory is a full Python distribution. To activate your virtual environment and make that version of Python the one you’re currently using, you should type:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a></a><span class="ex">$</span> source env/bin/activate</span>
+<span id="cb6-2"><a></a><span class="kw">(</span><span class="fu">env</span><span class="kw">)</span> <span class="ex">$</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You’ll see that your prompt is now prepended with <code>(env)</code> to indicate that you’re no longer using the system Python. Instead, you’re using the version of Python contained inside your virtual environment. Any changes you make here won’t cause problems for your system Python; nor will any new modules you install into your environment.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a></a><span class="kw">(</span><span class="fu">env</span><span class="kw">)</span> <span class="ex">$</span> which python</span>
+<span id="cb7-2"><a></a><span class="ex">/home/pi/my_project/env/bin/python</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If you install a third-party package, it’ll install into the Python distribution in your virtual environment:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a></a><span class="kw">(</span><span class="fu">env</span><span class="kw">)</span> <span class="ex">$</span> pip install buildhat</span>
+<span id="cb8-2"><a></a><span class="ex">Looking</span> in indexes: https://pypi.org/simple, https://www.piwheels.org/simple</span>
+<span id="cb8-3"><a></a><span class="ex">Collecting</span> buildhat</span>
+<span id="cb8-4"><a></a>  <span class="ex">Downloading</span> https://www.piwheels.org/simple/buildhat/buildhat-0.5.12-py3-none-any.whl <span class="er">(</span><span class="ex">57</span> kB<span class="kw">)</span></span>
+<span id="cb8-5"><a></a>     <span class="ex">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> 57.8/57.8 kB 2.8 MB/s eta 0:00:00</span>
+<span id="cb8-6"><a></a><span class="ex">Collecting</span> gpiozero</span>
+<span id="cb8-7"><a></a>  <span class="ex">Downloading</span> https://www.piwheels.org/simple/gpiozero/gpiozero-2.0-py3-none-any.whl <span class="er">(</span><span class="ex">150</span> kB<span class="kw">)</span></span>
+<span id="cb8-8"><a></a>     <span class="ex">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> 150.5/150.5 kB 6.9 MB/s eta 0:00:00</span>
+<span id="cb8-9"><a></a><span class="ex">Collecting</span> pyserial</span>
+<span id="cb8-10"><a></a>  <span class="ex">Downloading</span> https://www.piwheels.org/simple/pyserial/pyserial-3.5-py2.py3-none-any.whl <span class="er">(</span><span class="ex">90</span> kB<span class="kw">)</span></span>
+<span id="cb8-11"><a></a>     <span class="ex">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> 90.6/90.6 kB 7.5 MB/s eta 0:00:00</span>
+<span id="cb8-12"><a></a><span class="ex">Collecting</span> colorzero</span>
+<span id="cb8-13"><a></a>  <span class="ex">Downloading</span> https://www.piwheels.org/simple/colorzero/colorzero-2.0-py2.py3-none-any.whl <span class="er">(</span><span class="ex">26</span> kB<span class="kw">)</span></span>
+<span id="cb8-14"><a></a><span class="ex">Requirement</span> already satisfied: setuptools in ./env/lib/python3.11/site-packages <span class="er">(</span><span class="ex">from</span> colorzero-<span class="op">&gt;</span>gpiozero-<span class="op">&gt;</span>buildhat<span class="kw">)</span> <span class="kw">(</span><span class="ex">66.1.1</span><span class="kw">)</span></span>
+<span id="cb8-15"><a></a><span class="ex">Installing</span> collected packages: pyserial, colorzero, gpiozero, buildhat</span>
+<span id="cb8-16"><a></a><span class="ex">Successfully</span> installed buildhat-0.5.12 colorzero-2.0 gpiozero-2.0 pyserial-3.5</span>
+<span id="cb8-17"><a></a><span class="kw">(</span><span class="fu">env</span><span class="kw">)</span> <span class="ex">$</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Now, if you <code>pip list</code>, you’ll see that your current version of Python includes your new modules.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a></a><span class="kw">(</span><span class="fu">env</span><span class="kw">)</span> <span class="ex">$</span> pip list</span>
+<span id="cb9-2"><a></a><span class="ex">Package</span>    Version</span>
+<span id="cb9-3"><a></a><span class="ex">----------</span> <span class="at">-------</span></span>
+<span id="cb9-4"><a></a><span class="ex">buildhat</span>   0.5.12</span>
+<span id="cb9-5"><a></a><span class="ex">colorzero</span>  2.0</span>
+<span id="cb9-6"><a></a><span class="ex">gpiozero</span>   2.0</span>
+<span id="cb9-7"><a></a><span class="ex">pip</span>        23.0.1</span>
+<span id="cb9-8"><a></a><span class="ex">pyserial</span>   3.5</span>
+<span id="cb9-9"><a></a><span class="ex">setuptools</span> 66.1.1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>After writing your code, you can run it from the command line inside the virtual environment as you’d expect, by invoking Python as usual.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a></a><span class="kw">(</span><span class="fu">env</span><span class="kw">)</span> <span class="ex">$</span> ls <span class="at">-la</span></span>
+<span id="cb10-2"><a></a><span class="ex">total</span> 12</span>
+<span id="cb10-3"><a></a><span class="ex">drwxr-xr-x</span>  3 pi pi 4096 Oct  3 14:34 .</span>
+<span id="cb10-4"><a></a><span class="ex">drwx------</span> 20 pi pi 4096 Oct  3 14:34 ..</span>
+<span id="cb10-5"><a></a><span class="ex">drwxr-xr-x</span>  5 pi pi 4096 Oct  3 14:34 env</span>
+<span id="cb10-6"><a></a><span class="ex">-rw-r--r--</span>  1 pi pi    0 Oct  3 14:45 my_code.py</span>
+<span id="cb10-7"><a></a><span class="kw">(</span><span class="fu">env</span><span class="kw">)</span> <span class="ex">$</span> python my_code.py</span>
+<span id="cb10-8"><a></a><span class="ex">Hello</span> World!</span>
+<span id="cb10-9"><a></a><span class="kw">(</span><span class="fu">env</span><span class="kw">)</span> <span class="ex">$</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You can leave your virtual environment and return to using the system Python by typing:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a></a><span class="kw">(</span><span class="fu">env</span><span class="kw">)</span> <span class="ex">$</span> deactivate</span>
+<span id="cb11-2"><a></a><span class="ex">$</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>…​and demonstrate to yourself you’ve done so by checking the installed packages using <code>pip list</code>.</p>
+<h4 id="using-a-separate-environment-for-each-user">Using a separate environment for each user</h4>
+<p>An alternative method to creating a virtual environment for each of your Python projects is to create a single virtual environment for your user account, and then activate that environment before running any of your Python code. This approach may be preferred if you commonly install the same set of modules for each project, and don’t want to have to bother creating individual Python environments for each project, essentially just duplicating your environment.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a></a><span class="ex">$</span> python <span class="at">-m</span> venv ~/.env</span>
+<span id="cb12-2"><a></a><span class="ex">$</span> source ~/.env/bin/activate</span>
+<span id="cb12-3"><a></a><span class="kw">(</span><span class="ex">.env</span><span class="kw">)</span> <span class="ex">$</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You can check again that you’re in a separate environment by using <code>pip list</code>:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a></a><span class="kw">(</span><span class="ex">.env</span><span class="kw">)</span> <span class="ex">$</span> pip list</span>
+<span id="cb13-2"><a></a><span class="ex">Package</span>    Version</span>
+<span id="cb13-3"><a></a><span class="ex">----------</span> <span class="at">-------</span></span>
+<span id="cb13-4"><a></a><span class="ex">pip</span>        23.0.1</span>
+<span id="cb13-5"><a></a><span class="ex">setuptools</span> 66.1.1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>…​and leave it using <code>deactivate</code>.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a></a><span class="kw">(</span><span class="ex">.env</span><span class="kw">)</span> <span class="ex">$</span> deactivate</span>
+<span id="cb14-2"><a></a><span class="ex">$</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <h3 id="check-library-location">Check library location</h3>
-<p>Check the location of where the module was installed with <code>pip3 show &lt;module-name&gt;</code>:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a></a><span class="ex">pi@raspberrypi:~</span> $ pip3 show seeed-python-reterminal</span>
-<span id="cb8-2"><a></a></span>
-<span id="cb8-3"><a></a><span class="ex">Name:</span> seeed-python-reterminal</span>
-<span id="cb8-4"><a></a><span class="ex">Version:</span> 0.2</span>
-<span id="cb8-5"><a></a><span class="ex">Summary:</span> seeed-python-reterminal</span>
-<span id="cb8-6"><a></a><span class="ex">Home-page:</span> https://github.com/Seeed-Studio/Seeed_Python_ReTerminal</span>
-<span id="cb8-7"><a></a><span class="ex">Author:</span> Takashi Matsuoka <span class="er">(</span><span class="ex">matsujirushi</span><span class="kw">)</span></span>
-<span id="cb8-8"><a></a><span class="ex">Author-email:</span> matsujirushi@live.jp</span>
-<span id="cb8-9"><a></a><span class="ex">License:</span> MIT License</span>
-<span id="cb8-10"><a></a><span class="ex">Location:</span> /usr/local/lib/python3.7/dist-packages      <span class="co"># Library location</span></span>
-<span id="cb8-11"><a></a><span class="ex">Requires:</span> evdev</span>
-<span id="cb8-12"><a></a><span class="ex">Required-by:</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Check the location of where the module was installed with <code>pip show &lt;module-name&gt;</code>:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a></a><span class="kw">(</span><span class="fu">env</span><span class="kw">)</span> <span class="ex">pi@raspberrypi:~</span> $ pip show seeed-python-reterminal</span>
+<span id="cb15-2"><a></a></span>
+<span id="cb15-3"><a></a><span class="ex">Name:</span> seeed-python-reterminal</span>
+<span id="cb15-4"><a></a><span class="ex">Version:</span> 0.2</span>
+<span id="cb15-5"><a></a><span class="ex">Summary:</span> seeed-python-reterminal</span>
+<span id="cb15-6"><a></a><span class="ex">Home-page:</span> https://github.com/Seeed-Studio/Seeed_Python_ReTerminal</span>
+<span id="cb15-7"><a></a><span class="ex">Author:</span> Takashi Matsuoka <span class="er">(</span><span class="ex">matsujirushi</span><span class="kw">)</span></span>
+<span id="cb15-8"><a></a><span class="ex">Author-email:</span> matsujirushi@live.jp</span>
+<span id="cb15-9"><a></a><span class="ex">License:</span> MIT License</span>
+<span id="cb15-10"><a></a><span class="ex">Location:</span> /usr/local/lib/python3.7/dist-packages      <span class="co"># Library location</span></span>
+<span id="cb15-11"><a></a><span class="ex">Requires:</span> evdev</span>
+<span id="cb15-12"><a></a><span class="ex">Required-by:</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The library is installed at: <code>Location: /usr/local/lib/python3.7/dist-packages</code></p>
-<h4 id="check-pythons-library-paths">Check python’s library paths</h4>
+</section>
+<section id="troubleshooting" class="slide level2">
+<h2>Troubleshooting</h2>
+<h3 id="check-pythons-library-paths">Check python’s library paths</h3>
 <p>Similarly to Linux, there are environmental variables that determine where python will look for installed modules/libraries.</p>
-<p>See the paths where python is looking for libraries with <code>sys.path</code>.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a>pi<span class="op">@</span>raspberrypi:<span class="op">~</span> $ python3</span>
-<span id="cb9-2"><a></a></span>
-<span id="cb9-3"><a></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> sys      <span class="co"># Exposes configuration used by the python interpreter.</span></span>
-<span id="cb9-4"><a></a><span class="op">&gt;&gt;&gt;</span> sys.path        <span class="co"># Lists all paths where interpreter looks for modules.</span></span>
-<span id="cb9-5"><a></a>[</span>
-<span id="cb9-6"><a></a> <span class="st">''</span>,</span>
-<span id="cb9-7"><a></a> <span class="st">'/usr/lib/python37.zip'</span>,</span>
-<span id="cb9-8"><a></a> <span class="st">'/usr/lib/python3.7'</span>,</span>
-<span id="cb9-9"><a></a> <span class="st">'/usr/lib/python3.7/lib-dynload'</span>,</span>
-<span id="cb9-10"><a></a> <span class="st">'/home/pi/.local/lib/python3.7/site-packages'</span>,</span>
-<span id="cb9-11"><a></a> <span class="st">'/usr/local/lib/python3.7/dist-packages'</span>,</span>
-<span id="cb9-12"><a></a> <span class="st">'/usr/lib/python3/dist-packages'</span></span>
-<span id="cb9-13"><a></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>If the output of <code>pip3 show seeed-python-reterminal</code> is not in this list, python will not find it when you import it.</p>
+<p>See the paths where python is looking for libraries with <code>sys.path</code>. They should look something like:</p>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">system</a></li><li><a href="#tabset-1-2">venv</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a></a>pi<span class="op">@</span>raspberrypi:<span class="op">~</span> $ python</span>
+<span id="cb16-2"><a></a></span>
+<span id="cb16-3"><a></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> sys      <span class="co"># Exposes configuration used by the python interpreter.</span></span>
+<span id="cb16-4"><a></a><span class="op">&gt;&gt;&gt;</span> sys.path        <span class="co"># Lists all paths where interpreter looks for modules.</span></span>
+<span id="cb16-5"><a></a>[<span class="st">''</span>, <span class="st">'/usr/lib/python311.zip'</span>, <span class="st">'/usr/lib/python3.11'</span>, <span class="st">'/usr/lib/python3.11/lib-dynload'</span>, <span class="st">'/usr/local/lib/python3.11/dist-packages'</span>, <span class="st">'/usr/lib/python3/dist-packages'</span>, <span class="st">'/usr/lib/python3.11/dist-packages'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-1-2">
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a></a>(env) pi<span class="op">@</span>raspberrypi:<span class="op">~</span> $ python</span>
+<span id="cb17-2"><a></a></span>
+<span id="cb17-3"><a></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> sys      <span class="co"># Exposes configuration used by the python interpreter.</span></span>
+<span id="cb17-4"><a></a><span class="op">&gt;&gt;&gt;</span> sys.path        <span class="co"># Lists all paths where interpreter looks for modules.</span></span>
+<span id="cb17-5"><a></a>[<span class="st">''</span>, <span class="st">'/usr/lib/python311.zip'</span>, <span class="st">'/usr/lib/python3.11'</span>, <span class="st">'/usr/lib/python3.11/lib-dynload'</span>, <span class="st">'/home/pi/lab2/python/env/lib/python3.11/site-packages'</span>, <span class="st">'/usr/local/lib/python3.11/dist-packages'</span>, <span class="st">'/usr/lib/python3/dist-packages'</span>, <span class="st">'/usr/lib/python3.11/dist-packages'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<p>If the output of <code>pip show seeed-python-reterminal</code> is not in this list, python will not find it when you import it.</p>
 <blockquote>
 <p><strong>Note:</strong> the python shell above was started as the user <code>pi</code>. If you start python as <strong>root</strong>, <code>sys.path</code> might have different paths.</p>
 </blockquote>
-<p>Below, python was started as <strong>root</strong>:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a>pi<span class="op">@</span>raspberrypi:<span class="op">~</span> $ sudo <span class="op">-</span>i</span>
-<span id="cb10-2"><a></a>root<span class="op">@</span>raspberrypi:<span class="op">~</span><span class="co"># python3</span></span>
-<span id="cb10-3"><a></a></span>
-<span id="cb10-4"><a></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> sys</span>
-<span id="cb10-5"><a></a><span class="op">&gt;&gt;&gt;</span> sys.path</span>
-<span id="cb10-6"><a></a>[</span>
-<span id="cb10-7"><a></a><span class="st">''</span>,</span>
-<span id="cb10-8"><a></a><span class="st">'/usr/lib/python37.zip'</span>,</span>
-<span id="cb10-9"><a></a><span class="st">'/usr/lib/python3.7'</span>,</span>
-<span id="cb10-10"><a></a><span class="st">'/usr/lib/python3.7/lib-dynload'</span>,</span>
-<span id="cb10-11"><a></a><span class="st">'/usr/local/lib/python3.7/dist-packages'</span>,</span>
-<span id="cb10-12"><a></a><span class="st">'/usr/lib/python3/dist-packages'</span></span>
-<span id="cb10-13"><a></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Note that the user <code>pi</code> does not have permission to add content inside <code>/usr</code>. Thus, all <code>pip</code> installations as the regular user go into <code>/home/pi/.local/lib/python3.7/site-packages</code>.</p>
-<p><strong>Conclusion:</strong> if you install a python library as <code>root</code>, it might go to a different directory compared to installing it as the regular user.</p>
-<p>This is the main reason why we chose to install the <code>seeed-python-reterminal</code> as root, rather than the regular user <code>pi</code>.</p>
-<h3 id="making-users-library-available-to-root-optional">Making user’s library available to root (optional)</h3>
-<p>If you would like to make a library installed as the user <code>pi</code> available when running the script as <code>root</code>, you will need to export an environmental variable named <code>PYTHONPATH</code> pointing to the library location.</p>
-<p>For example, assuming that a library installed under the user <code>pi</code> is located in <code>/home/pi/.local/lib/python3.7/site-packages</code>, do the following:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a></a><span class="co"># Elevate the shell to the root user</span></span>
-<span id="cb11-2"><a></a><span class="ex">pi@raspberrypi:~</span> $ sudo <span class="at">-i</span></span>
-<span id="cb11-3"><a></a><span class="ex">root@raspberrypi:~#</span></span>
-<span id="cb11-4"><a></a></span>
-<span id="cb11-5"><a></a><span class="co"># Export the PYTHONPATH environment variable</span></span>
-<span id="cb11-6"><a></a><span class="ex">root@raspberrypi:~#</span> export PYTHONPATH=<span class="st">"/home/pi/.local/lib/python3.7/site-packages"</span></span>
-<span id="cb11-7"><a></a></span>
-<span id="cb11-8"><a></a><span class="co"># Start python as root and run the script that imports the library</span></span>
-<span id="cb11-9"><a></a><span class="ex">root@raspberrypi:~#</span> python3 my_script.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Note that the user <code>pi</code> does not have permission to add content inside <code>/usr</code>.</p>
+<p>Thus, all <code>pip</code> installations as the regular user go into <code>/home/pi/.local/lib/python3.11/site-packages</code>.</p>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
