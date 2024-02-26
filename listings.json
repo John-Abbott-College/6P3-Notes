@@ -13,12 +13,6 @@
     ]
   },
   {
-    "listing": "/lessons/hardware/index.html",
-    "items": [
-      "/lessons/hardware/reterminal-sensors.html"
-    ]
-  },
-  {
     "listing": "/lessons/getting-started/index.html",
     "items": [
       "/lessons/getting-started/tech-stack.html",
@@ -35,7 +29,9 @@
       "/lessons/getting-started/vscode-python-setup.html",
       "/lessons/getting-started/tech-stack.html",
       "/lessons/getting-started/hardware-list.html",
+      "/lessons/hardware/analog-vs-digital.html",
       "/lessons/hardware/reterminal-sensors.html",
+      "/lessons/hardware/gpios.html",
       "/lessons/iot/what-is-iot.html",
       "/lessons/python/intro-python.html",
       "/lessons/python/package-management-python.html"
@@ -47,6 +43,14 @@
       "/lessons/linux/linux-review.html",
       "/lessons/linux/package-management-debian.html",
       "/lessons/linux/remote-linux.html"
+    ]
+  },
+  {
+    "listing": "/lessons/hardware/index.html",
+    "items": [
+      "/lessons/hardware/reterminal-sensors.html",
+      "/lessons/hardware/gpios.html",
+      "/lessons/hardware/analog-vs-digital.html"
     ]
   },
   {

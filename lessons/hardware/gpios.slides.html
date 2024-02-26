@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
 <link href="../../assets/favicon_io/favicon.ico" rel="icon">
-<script src="../../site_libs/quarto-listing/list.min.js"></script>
-<script src="../../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-html/tabby.min.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -13,7 +11,7 @@
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.550">
 
-  <title>Connected Objects - Getting started</title>
+  <title>Connected Objects - GPIOs: Inputs and Outputs</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -31,37 +29,73 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto.css">
-  <script>
-
-    window.document.addEventListener("DOMContentLoaded", function (_event) {
-      const listingTargetEl = window.document.querySelector('#listing-listing .list');
-      if (!listingTargetEl) {
-        // No listing discovered, do not attach.
-        return; 
-      }
-
-      const options = {
-        valueNames: ['listing-title','listing-author','listing-subtitle','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-        
-        searchColumns: ["listing-title","listing-author","listing-subtitle","listing-image","listing-description"],
-      };
-
-      window['quarto-listings'] = window['quarto-listings'] || {};
-      window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-      if (window['quarto-listing-loaded']) {
-        window['quarto-listing-loaded']();
-      }
-    });
-
-    window.addEventListener('hashchange',() => {
-      if (window['quarto-listing-loaded']) {
-        window['quarto-listing-loaded']();
-      }
-    })
-    </script>
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -351,8 +385,9 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="Connected Objects - Getting started">
-<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/lessons/getting-started/assets/art_title_path_only.svg">
+<meta property="og:title" content="Connected Objects - GPIOs: Inputs and Outputs">
+<meta property="og:description" content="Understanding the various ports and pins our reSeed terminals make available to us.">
+<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/lessons/hardware/assets/art_title_path_only.svg">
 <meta property="og:site_name" content="Connected Objects">
 </head>
 <body class="quarto-light">
@@ -360,15 +395,170 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Getting started</h1>
+  <h1 class="title">GPIOs: Inputs and Outputs</h1>
+  <p class="subtitle">Understanding the various ports and pins our reSeed terminals make available to us.</p>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section class="slide level2">
-
-
+<section id="intro-to-pis-gpios" class="slide level2">
+<h2>Intro to Pi’s GPIOs 🥧</h2>
+<p><em>Note: most of these notes were adapted directly from the Raspberry Pi docs: <a href="https://www.raspberrypi.com/documentation/computers/os.html#gpio-pinout">GPIO-Pinout</a></em> <sup>1</sup></p>
+<p>The Raspberry Pi can read and generate digital signals using <strong>General Purpose Input and Output (GPIO)</strong> pins.</p>
+<p>Any of the GPIO pins can be designated (in software) as an input or output pin and used for a wide range of purposes.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../assets/7-gpio-pi-40-pin-reference.png"></p>
+<figcaption>Diagram of Pi’s 40 GPIO pins</figcaption>
+</figure>
+</div>
+<p class="img-info">
+<a href="https://www.raspberrypi.com/documentation/computers/os.html#gpio-and-the-40-pin-header"> GPIO and the 40-pin headers of the Raspberry Pi </a>&nbsp; - Official docs, Raspberry Pi Foundation.
+</p>
+<p>The reTerminal exposes the same 40-pin header as the Pi on it’s side:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../assets/7-gpio-reterminal-40-pin-header.png"></p>
+<figcaption>Breakout of 40-pin header for reTerminal</figcaption>
+</figure>
+</div>
+<p class="img-info">
+<a href="https://wiki.seeedstudio.com/reTerminal/#pinout-diagram"> GPIO and pin diagram of the reTerminal </a>&nbsp; - reTerminal Official Wiki, Seeed.
+</p>
+<h3 id="voltages">Voltages</h3>
+<p>Two 5V pins and two 3V3 pins are present on the board, as well as a number of ground pins (0V), which are unconfigurable. The remaining pins are all general purpose 3V3 pins, meaning outputs are set to 3V3 and inputs are 3V3-tolerant.</p>
+<h3 id="outputs">Outputs</h3>
+<p>A GPIO pin designated as an output pin can be set to high (3V3) or low (0V).</p>
+<h3 id="inputs">Inputs</h3>
+<p>A GPIO pin designated as an input pin can be read as high (3V3) or low (0V).</p>
+<p><strong>We will learn how to use the GPIOs in a future lesson.</strong></p>
+<h3 id="digital-communication-protocols">Digital Communication Protocols</h3>
+<p>In addition to simple input and output devices, the GPIO pins can be used with a variety of alternative functions and digital communication protocols.</p>
+<p>These digital communication protocols are:</p>
+<ul>
+<li><strong>PWM</strong> (pulse-width modulation)</li>
+<li><strong>SPI</strong> (serial peripheral interface)</li>
+<li><strong>I2C</strong> (inter-integrated circuit)</li>
+<li><strong>Serial</strong></li>
+<li><strong>PCM</strong> (pulse-code modulation)</li>
+</ul>
+<p>Some digital functions are available on all pins, others on specific pins.</p>
+<h3 id="sorry-no-analog">Sorry, No Analog</h3>
+<blockquote>
+<p><strong>The Raspberry Pi does not have an ADC.</strong></p>
+<p>In order to process analog electrical signals an external ADC must be used.</p>
+</blockquote>
+<p><strong>Hat to the Rescue</strong></p>
+<p>In this course we will use the integrate ADC of the <a href="https://wiki.seeedstudio.com/Grove_Base_Hat_for_Raspberry_Pi/">Grove Base Hat</a> for the Raspberry Pi.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://files.seeedstudio.com/wiki/Grove_Base_Hat_for_Raspberry_Pi/img/main.jpg"></p>
+<figcaption>Grove Base Hat for the Raspberry Pi</figcaption>
+</figure>
+</div>
+<p class="img-info">
+<a href="https://wiki.seeedstudio.com/Grove_Base_Hat_for_Raspberry_Pi/"> Seeed’s Grove Base Hat for the Raspberry Pi has an integrated ADC </a>&nbsp; Base Hat official wiki, Seeed.
+</p>
+<p><a href="https://www.tomshardware.com/best-picks/best-raspberry-pi-hats">Pi HATs</a> is the term for expansion boards for the Raspberry Pi.</p>
+<blockquote>
+<p>Seeed’s <a href="https://wiki.seeedstudio.com/Grove_Base_Hat_for_Raspberry_Pi/">Grove Base Hat</a> for the Raspberry Pi has <strong>4 connectors with integrated ADC</strong>.</p>
+<p>Each ADC connector has <strong>12-bit resolution</strong>.</p>
+</blockquote>
+<p>In addition to the 4 ADC connectors, the Base Hat also exposes the original 40-pin header and other digital connectors.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://files.seeedstudio.com/wiki/Grove_Base_Hat_for_Raspberry_Pi/img/pin-out/overview.jpg"></p>
+<figcaption>Connectors of the Grove Base Hat</figcaption>
+</figure>
+</div>
+<p class="img-info">
+<a href="https://wiki.seeedstudio.com/Grove_Base_Hat_for_Raspberry_Pi/"> Specialized connectors of the Raspberry Pi available via the Base Hat </a>&nbsp; Base Hat official wiki, Seeed.
+</p>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>Raspberry Pi documentation is copyright © 2012-2024 Raspberry Pi Ltd and is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International</a> (CC BY-SA) licence. Some content originates from the <a href="http://elinux.org/">eLinux wiki</a>, and is licensed under a <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported</a> licence.</p></li></ol></aside></section>
+<section id="gpio-pinout" class="slide level2">
+<h2>GPIO pinout</h2>
+<p>A GPIO reference can be accessed on your Raspberry Pi by opening a terminal window and running the command <code>pinout</code>. This tool is provided by the <a href="https://gpiozero.readthedocs.io/">GPIO Zero</a> Python library, which is installed by default in Raspberry Pi OS.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a></a><span class="ex">$</span> pinout</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Important</strong></p>
+</div>
+<div class="callout-content">
+<p>While connecting up simple components to the GPIO pins is perfectly safe, it’s important to be careful how you wire things up. LEDs should have resistors to limit the current passing through them. Do not use 5V for 3.3V components. Do not connect motors directly to the GPIO pins, instead use an <a href="https://projects.raspberrypi.org/en/projects/physical-computing/14">H-bridge circuit or a motor controller board</a>.</p>
+</div>
+</div>
+</div>
+<h3 id="permissions">Permissions</h3>
+<p>In order to use the GPIO ports, your user must be a member of the <code>gpio</code> group. The default user account is a member by default, other users need to be added manually.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a></a><span class="co"># Only do this to add a NEW user to the gpio group</span></span>
+<span id="cb2-2"><a></a><span class="fu">sudo</span> usermod <span class="at">-a</span> <span class="at">-G</span> gpio <span class="op">&lt;</span>username<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="gpio-in-python" class="slide level2">
+<h2>GPIO in Python</h2>
+<p>Using the <a href="https://gpiozero.readthedocs.io/">GPIO Zero</a> library makes it easy to control GPIO devices with Python. The library is comprehensively documented at <a href="https://gpiozero.readthedocs.io/">gpiozero.readthedocs.io</a>.</p>
+<h3 id="led">LED</h3>
+<p>To control an LED connected to GPIO17:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="im">from</span> gpiozero <span class="im">import</span> LED</span>
+<span id="cb3-2"><a></a><span class="im">from</span> time <span class="im">import</span> sleep</span>
+<span id="cb3-3"><a></a></span>
+<span id="cb3-4"><a></a>led <span class="op">=</span> LED(<span class="dv">17</span>)</span>
+<span id="cb3-5"><a></a></span>
+<span id="cb3-6"><a></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb3-7"><a></a>    led.on()</span>
+<span id="cb3-8"><a></a>    sleep(<span class="dv">1</span>)</span>
+<span id="cb3-9"><a></a>    led.off()</span>
+<span id="cb3-10"><a></a>    sleep(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>LED methods include <code>on()</code>, <code>off()</code>, <code>toggle()</code>, and <code>blink()</code>.</p>
+<h3 id="button">Button</h3>
+<p>To read the state of a button connected to GPIO2:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="im">from</span> gpiozero <span class="im">import</span> Button</span>
+<span id="cb4-2"><a></a><span class="im">from</span> time <span class="im">import</span> sleep</span>
+<span id="cb4-3"><a></a></span>
+<span id="cb4-4"><a></a>button <span class="op">=</span> Button(<span class="dv">2</span>)</span>
+<span id="cb4-5"><a></a></span>
+<span id="cb4-6"><a></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb4-7"><a></a>    <span class="cf">if</span> button.is_pressed:</span>
+<span id="cb4-8"><a></a>        <span class="bu">print</span>(<span class="st">"Pressed"</span>)</span>
+<span id="cb4-9"><a></a>    <span class="cf">else</span>:</span>
+<span id="cb4-10"><a></a>        <span class="bu">print</span>(<span class="st">"Released"</span>)</span>
+<span id="cb4-11"><a></a>    sleep(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Button functionality includes the properties <code>is_pressed</code> and <code>is_held</code>; callbacks <code>when_pressed</code>, <code>when_released</code>, and <code>when_held</code>; and methods <code>wait_for_press()</code> and <code>wait_for_release</code>.</p>
+<h3 id="button-and-led">Button and LED</h3>
+<p>To connect the LED and button together, you can use this code:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="im">from</span> gpiozero <span class="im">import</span> LED, Button</span>
+<span id="cb5-2"><a></a></span>
+<span id="cb5-3"><a></a>led <span class="op">=</span> LED(<span class="dv">17</span>)</span>
+<span id="cb5-4"><a></a>button <span class="op">=</span> Button(<span class="dv">2</span>)</span>
+<span id="cb5-5"><a></a></span>
+<span id="cb5-6"><a></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb5-7"><a></a>    <span class="cf">if</span> button.is_pressed:</span>
+<span id="cb5-8"><a></a>        led.on()</span>
+<span id="cb5-9"><a></a>    <span class="cf">else</span>:</span>
+<span id="cb5-10"><a></a>        led.off()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Alternatively:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="im">from</span> gpiozero <span class="im">import</span> LED, Button</span>
+<span id="cb6-2"><a></a></span>
+<span id="cb6-3"><a></a>led <span class="op">=</span> LED(<span class="dv">17</span>)</span>
+<span id="cb6-4"><a></a>button <span class="op">=</span> Button(<span class="dv">2</span>)</span>
+<span id="cb6-5"><a></a></span>
+<span id="cb6-6"><a></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb6-7"><a></a>    button.wait_for_press()</span>
+<span id="cb6-8"><a></a>    led.on()</span>
+<span id="cb6-9"><a></a>    button.wait_for_release()</span>
+<span id="cb6-10"><a></a>    led.off()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>or:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="im">from</span> gpiozero <span class="im">import</span> LED, Button</span>
+<span id="cb7-2"><a></a></span>
+<span id="cb7-3"><a></a>led <span class="op">=</span> LED(<span class="dv">17</span>)</span>
+<span id="cb7-4"><a></a>button <span class="op">=</span> Button(<span class="dv">2</span>)</span>
+<span id="cb7-5"><a></a></span>
+<span id="cb7-6"><a></a>button.when_pressed <span class="op">=</span> led.on</span>
+<span id="cb7-7"><a></a>button.when_released <span class="op">=</span> led.off</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
@@ -376,6 +566,7 @@
 </div>
 </div>
 </section>
+
     </div>
   </div>
 
@@ -742,76 +933,4 @@
     </script>
     
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1708949525998" data-listing-reading-time-sort="2" data-listing-word-count-sort="257">
-<div class="thumbnail">
-<p><a href="../../lessons/getting-started/tech-stack.html" class="no-external"></a></p><a href="../../lessons/getting-started/tech-stack.html" class="no-external">
-<!-- img(9CEB782EFEE6)[progressive=false, height=]:lessons/getting-started/tech-stack.html -->
-</a><p><a href="../../lessons/getting-started/tech-stack.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../../lessons/getting-started/tech-stack.html" class="no-external">Technology Stack</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../../lessons/getting-started/tech-stack.html" class="no-external">Technologies used in this class</a>
-</div>
-<div class="listing-description">
-<a href="../../lessons/getting-started/tech-stack.html" class="no-external"><!-- desc(5A0113B34292)[max=175]:lessons/getting-started/tech-stack.html --></a>
-</div>
-</div>
-<div class="metadata">
-<p><a href="../../lessons/getting-started/tech-stack.html" class="no-external"></a></p><a href="../../lessons/getting-started/tech-stack.html" class="no-external">
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-listing-file-modified-sort="1708949525998" data-listing-reading-time-sort="3" data-listing-word-count-sort="518">
-<div class="thumbnail">
-<p><a href="../../lessons/getting-started/hardware-list.html" class="no-external"></a></p><a href="../../lessons/getting-started/hardware-list.html" class="no-external">
-<!-- img(9CEB782EFEE6)[progressive=false, height=]:lessons/getting-started/hardware-list.html -->
-</a><p><a href="../../lessons/getting-started/hardware-list.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../../lessons/getting-started/hardware-list.html" class="no-external">Hardware List</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../../lessons/getting-started/hardware-list.html" class="no-external">List of hardware available for the course as well as their respective specifications and documentation.</a>
-</div>
-<div class="listing-description">
-<a href="../../lessons/getting-started/hardware-list.html" class="no-external"><!-- desc(5A0113B34292)[max=175]:lessons/getting-started/hardware-list.html --></a>
-</div>
-</div>
-<div class="metadata">
-<p><a href="../../lessons/getting-started/hardware-list.html" class="no-external"></a></p><a href="../../lessons/getting-started/hardware-list.html" class="no-external">
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-listing-file-modified-sort="1708949525998" data-listing-reading-time-sort="3" data-listing-word-count-sort="402">
-<div class="thumbnail">
-<p><a href="../../lessons/getting-started/vscode-python-setup.html" class="no-external"></a></p><a href="../../lessons/getting-started/vscode-python-setup.html" class="no-external">
-<!-- img(9CEB782EFEE6)[progressive=false, height=]:lessons/getting-started/vscode-python-setup.html -->
-</a><p><a href="../../lessons/getting-started/vscode-python-setup.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../../lessons/getting-started/vscode-python-setup.html" class="no-external">Developer setup</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../../lessons/getting-started/vscode-python-setup.html" class="no-external">Here’s how to set up the software that will be used for development during the course.</a>
-</div>
-<div class="listing-description">
-<a href="../../lessons/getting-started/vscode-python-setup.html" class="no-external"><!-- desc(5A0113B34292)[max=175]:lessons/getting-started/vscode-python-setup.html --></a>
-</div>
-</div>
-<div class="metadata">
-<p><a href="../../lessons/getting-started/vscode-python-setup.html" class="no-external"></a></p><a href="../../lessons/getting-started/vscode-python-setup.html" class="no-external">
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></body></html>
+</body></html>
