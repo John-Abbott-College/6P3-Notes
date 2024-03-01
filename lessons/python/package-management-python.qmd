@@ -244,6 +244,59 @@ $
 ...​and demonstrate to yourself you've done so by checking the installed
 packages using `pip list`.
 
+### Including system packages in your venv
+
+*This section has been adapted directly from realPython.com: [Virtual Environments: Include the System Site-Packages](https://realpython.com/python-virtual-environments-a-primer/#include-the-system-site-packages). The whole article is worth skimming for reference.*
+
+In this class, we will often use the RaspberryPi python packages that we install system-wide (`gpio`, `RPi`, etc), and we may want to access them in the same environment where we create local virtual environments.
+
+That is, while you still want to keep your projects in separate environments, you can save the effort of re-installing `gpio` or `RPi` into each of these projects. 
+
+You can access all modules you’ve installed to your base Python’s site-packages directory by adding the `--system-site-packages` flag when creating your virtual environment.
+
+::: {.callout}
+Note: If you install any additional external packages, then Python will put them into the site-packages directory of your virtual environment. You only get read access to the system site-packages directory.
+:::
+
+Create a new virtual environment while passing this argument. You’ll see that in addition to your local site-packages directory, the path to your base Python’s site-packages directory will stick around in sys.path.
+
+To test this, you can create and activate a new virtual environment using the `--system-site-packages` argument:
+
+```
+$ python3 -m venv env --system-site-packages
+$ source venv/bin/activate
+(venv) $
+```
+
+Once again, you’ve created a new virtual environment named venv, but this time you passed the `--system-site-packages` argument. Adding this optional argument resulted in a different setting in your `venv/pyvenv.cfg` file:
+
+```
+$ cat env/pyvenv.cfg
+home = /usr/bin
+include-system-site-packages = true
+version = 3.11
+```
+
+By default, the `include-system-site-packages` is set to false. 
+
+
+::: {.callout}
+It is common to forget to include the `--system-site-packages` flag when creating a venv. **If you create a virtual environment and forget to include system site packages, you can include them again by changing `include-system-site-packages` in your environment `env/pyvenv.cfg` to `true` in your venv**.
+:::
+
+This change means that you’ll see an additional entry to sys.path, which allows the Python interpreter in your virtual environment to also access the system site-packages directory. Make sure your virtual environment is active, then start the Python interpreter to check the path variables:
+
+```bash
+(env) $ python
+>>> import sys
+>>> from pprint import pp
+>>> pp(sys.path)
+['',
+ '/usr/local/lib/python311.zip',
+  'etc.'
+]
+```
+
 ### Using packages that require root permissions
 
 The `venv` pattern is very useful for maintaining packages that do not require root permissions. This is a feature, not a bug -- that way, you can have many developers independently install packages on one machine without needing to give them root permissions.

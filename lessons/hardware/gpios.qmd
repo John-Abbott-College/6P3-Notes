@@ -1,6 +1,6 @@
 ---
 title: "GPIOs: Inputs and Outputs"
-subtitle: Understanding the various ports and pins our reSeed terminals make available to us.
+subtitle: Understanding the General Purpose Input and Output (GPIO) pins our reSeed terminal chassis makes available to us. Voltage, digital vs. analog, python libraries for GPIO.
 ---
 
 ## Intro to Pi's GPIOs 🥧
