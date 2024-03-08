@@ -1,5 +1,5 @@
 ---
-title: "Microcomputers: Raspberry Pi, Arduino, and the rest"
+title: "SBCs and Microcontrollers"
 subtitle: Comparing the architectural paradigms for microcomputers to better understand our Pis.
 ---
 
