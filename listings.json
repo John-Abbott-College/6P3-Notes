@@ -1,40 +1,9 @@
 [
   {
-    "listing": "/lessons/python/index.html",
+    "listing": "/about/index.html",
     "items": [
-      "/lessons/python/intro-python.html",
-      "/lessons/python/package-management-python.html"
-    ]
-  },
-  {
-    "listing": "/lessons/iot/index.html",
-    "items": [
-      "/lessons/iot/what-is-iot.html"
-    ]
-  },
-  {
-    "listing": "/lessons/getting-started/index.html",
-    "items": [
-      "/lessons/getting-started/tech-stack.html",
-      "/lessons/getting-started/hardware-list.html",
-      "/lessons/getting-started/vscode-python-setup.html"
-    ]
-  },
-  {
-    "listing": "/lessons/index.html",
-    "items": [
-      "/lessons/linux/package-management-debian.html",
-      "/lessons/linux/remote-linux.html",
-      "/lessons/linux/linux-review.html",
-      "/lessons/getting-started/vscode-python-setup.html",
-      "/lessons/getting-started/tech-stack.html",
-      "/lessons/getting-started/hardware-list.html",
-      "/lessons/hardware/analog-vs-digital.html",
-      "/lessons/hardware/reterminal-sensors.html",
-      "/lessons/hardware/gpios.html",
-      "/lessons/iot/what-is-iot.html",
-      "/lessons/python/intro-python.html",
-      "/lessons/python/package-management-python.html"
+      "/about/calendar.html",
+      "/about/syllabus.html"
     ]
   },
   {
@@ -46,18 +15,55 @@
     ]
   },
   {
-    "listing": "/lessons/hardware/index.html",
+    "listing": "/lessons/index.html",
     "items": [
+      "/lessons/getting-started/vscode-python-setup.html",
+      "/lessons/getting-started/tech-stack.html",
+      "/lessons/getting-started/hardware-list.html",
+      "/lessons/iot/what-is-iot.html",
+      "/lessons/hardware/serial-protocols.html",
       "/lessons/hardware/reterminal-sensors.html",
+      "/lessons/hardware/circuitry-basics.html",
       "/lessons/hardware/gpios.html",
-      "/lessons/hardware/analog-vs-digital.html"
+      "/lessons/hardware/arduino-vs-raspberry-pi.html",
+      "/lessons/hardware/analog-vs-digital.html",
+      "/lessons/python/package-management-python.html",
+      "/lessons/python/intro-python.html",
+      "/lessons/linux/package-management-debian.html",
+      "/lessons/linux/remote-linux.html",
+      "/lessons/linux/linux-review.html"
     ]
   },
   {
-    "listing": "/about/index.html",
+    "listing": "/lessons/python/index.html",
     "items": [
-      "/about/calendar.html",
-      "/about/syllabus.html"
+      "/lessons/python/intro-python.html",
+      "/lessons/python/package-management-python.html"
+    ]
+  },
+  {
+    "listing": "/lessons/getting-started/index.html",
+    "items": [
+      "/lessons/getting-started/tech-stack.html",
+      "/lessons/getting-started/hardware-list.html",
+      "/lessons/getting-started/vscode-python-setup.html"
+    ]
+  },
+  {
+    "listing": "/lessons/iot/index.html",
+    "items": [
+      "/lessons/iot/what-is-iot.html"
+    ]
+  },
+  {
+    "listing": "/lessons/hardware/index.html",
+    "items": [
+      "/lessons/hardware/reterminal-sensors.html",
+      "/lessons/hardware/circuitry-basics.html",
+      "/lessons/hardware/gpios.html",
+      "/lessons/hardware/arduino-vs-raspberry-pi.html",
+      "/lessons/hardware/serial-protocols.html",
+      "/lessons/hardware/analog-vs-digital.html"
     ]
   }
 ]

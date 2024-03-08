@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.550">
+<meta name="generator" content="quarto-1.4.551">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-03-01">
+<meta name="dcterms.date" content="2024-03-08">
 
 <title>Connected Objects - Getting started</title>
 <style>
@@ -154,7 +154,7 @@ window.Quarto = {
     <span class="navbar-title">Connected Objects</span>
     </a>
   </div>
-        <div class="quarto-navbar-tools">
+        <div class="quarto-navbar-tools tools-end">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
           <div id="quarto-search" class="" title="Search"></div>
@@ -217,8 +217,8 @@ window.Quarto = {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../lessons/linux/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Linux</span></a>
+            <a href="../../lessons/iot/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">IoT</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -226,20 +226,8 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../lessons/linux/linux-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Linux review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../lessons/linux/package-management-debian.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Raspberry Pi Package Management: apt</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../lessons/linux/remote-linux.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Remote work on Linux</span></a>
+  <a href="../../lessons/iot/what-is-iot.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Intro to the Internet of Things</span></a>
   </div>
 </li>
       </ul>
@@ -267,25 +255,26 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../lessons/hardware/arduino-vs-raspberry-pi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">SBCs and Microcontrollers</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../lessons/hardware/circuitry-basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Electronics Basics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../lessons/hardware/gpios.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">GPIOs: Inputs and Outputs</span></a>
   </div>
 </li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../lessons/iot/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">IoT</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../lessons/iot/what-is-iot.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Intro to the Internet of Things</span></a>
+  <a href="../../lessons/hardware/serial-protocols.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Serial protocols</span></a>
   </div>
 </li>
       </ul>
@@ -294,11 +283,11 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../lessons/python/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Python</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../lessons/python/intro-python.html" class="sidebar-item-text sidebar-link">
@@ -309,6 +298,35 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="../../lessons/python/package-management-python.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Package management in Python</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../lessons/linux/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linux</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../lessons/linux/linux-review.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linux review</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../lessons/linux/package-management-debian.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Raspberry Pi Package Management: apt</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../lessons/linux/remote-linux.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Remote work on Linux</span></a>
   </div>
 </li>
       </ul>
@@ -362,14 +380,14 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 1, 2024</p>
+      <p class="date">March 8, 2024</p>
     </div>
   </div>
   
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">March 1, 2024</p>
+      <p class="date-modified">March 8, 2024</p>
     </div>
   </div>
     
@@ -386,7 +404,7 @@ window.Quarto = {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1709318006176" data-listing-reading-time-sort="2" data-listing-word-count-sort="257">
+<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1709934700856" data-listing-reading-time-sort="2" data-listing-word-count-sort="257">
 <div class="thumbnail">
 <p><a href="../../lessons/getting-started/tech-stack.html" class="no-external"></a></p><a href="../../lessons/getting-started/tech-stack.html" class="no-external">
 <!-- img(9CEB782EFEE6)[progressive=false, height=]:lessons/getting-started/tech-stack.html -->
@@ -408,7 +426,7 @@ window.Quarto = {
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-listing-file-modified-sort="1709318006176" data-listing-reading-time-sort="3" data-listing-word-count-sort="518">
+<div class="quarto-post image-right" data-index="1" data-listing-file-modified-sort="1709934700856" data-listing-reading-time-sort="3" data-listing-word-count-sort="518">
 <div class="thumbnail">
 <p><a href="../../lessons/getting-started/hardware-list.html" class="no-external"></a></p><a href="../../lessons/getting-started/hardware-list.html" class="no-external">
 <!-- img(9CEB782EFEE6)[progressive=false, height=]:lessons/getting-started/hardware-list.html -->
@@ -430,7 +448,7 @@ window.Quarto = {
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-listing-file-modified-sort="1709318006176" data-listing-reading-time-sort="3" data-listing-word-count-sort="402">
+<div class="quarto-post image-right" data-index="2" data-listing-file-modified-sort="1709934700856" data-listing-reading-time-sort="3" data-listing-word-count-sort="402">
 <div class="thumbnail">
 <p><a href="../../lessons/getting-started/vscode-python-setup.html" class="no-external"></a></p><a href="../../lessons/getting-started/vscode-python-setup.html" class="no-external">
 <!-- img(9CEB782EFEE6)[progressive=false, height=]:lessons/getting-started/vscode-python-setup.html -->
@@ -680,6 +698,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/john-abbott-college\.github\.io\/6P3-Notes\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -714,7 +750,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');

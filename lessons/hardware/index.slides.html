@@ -11,7 +11,7 @@
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.550">
+  <meta name="generator" content="quarto-1.4.551">
 
   <title>Connected Objects - Hardware</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -662,6 +662,24 @@
         // clear code selection
         e.clearSelection();
       });
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp("https:\/\/john-abbott-college\.github\.io\/6P3-Notes\/");
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
       function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
@@ -698,7 +716,11 @@
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          return note.innerHTML;
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
         });
       }
       const findCites = (el) => {
@@ -744,7 +766,7 @@
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1709318006176" data-listing-reading-time-sort="10" data-listing-word-count-sort="1926">
+<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1709934700868" data-listing-reading-time-sort="10" data-listing-word-count-sort="1926">
 <div class="thumbnail">
 <p><a href="../../lessons/hardware/reterminal-sensors.html" class="no-external"></a></p><a href="../../lessons/hardware/reterminal-sensors.html" class="no-external">
 <!-- img(9CEB782EFEE6)[progressive=false, height=]:lessons/hardware/reterminal-sensors.html -->
@@ -766,7 +788,29 @@
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-listing-file-modified-sort="1709318006176" data-listing-reading-time-sort="4" data-listing-word-count-sort="789">
+<div class="quarto-post image-right" data-index="1" data-listing-file-modified-sort="1709934700868" data-listing-reading-time-sort="5" data-listing-word-count-sort="924">
+<div class="thumbnail">
+<p><a href="../../lessons/hardware/circuitry-basics.html" class="no-external"></a></p><a href="../../lessons/hardware/circuitry-basics.html" class="no-external">
+<!-- img(9CEB782EFEE6)[progressive=false, height=]:lessons/hardware/circuitry-basics.html -->
+</a><p><a href="../../lessons/hardware/circuitry-basics.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../../lessons/hardware/circuitry-basics.html" class="no-external">Electronics Basics</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../../lessons/hardware/circuitry-basics.html" class="no-external">Review of Ohm’s Law, fundamental concepts for understanding electronic circuits and interfaces.</a>
+</div>
+<div class="listing-description">
+<a href="../../lessons/hardware/circuitry-basics.html" class="no-external"><!-- desc(5A0113B34292)[max=175]:lessons/hardware/circuitry-basics.html --></a>
+</div>
+</div>
+<div class="metadata">
+<p><a href="../../lessons/hardware/circuitry-basics.html" class="no-external"></a></p><a href="../../lessons/hardware/circuitry-basics.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-listing-file-modified-sort="1709934700868" data-listing-reading-time-sort="4" data-listing-word-count-sort="789">
 <div class="thumbnail">
 <p><a href="../../lessons/hardware/gpios.html" class="no-external"></a></p><a href="../../lessons/hardware/gpios.html" class="no-external">
 <!-- img(9CEB782EFEE6)[progressive=false, height=]:lessons/hardware/gpios.html -->
@@ -788,7 +832,51 @@
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-listing-file-modified-sort="1709318006176" data-listing-reading-time-sort="10" data-listing-word-count-sort="1804">
+<div class="quarto-post image-right" data-index="3" data-listing-file-modified-sort="1709934700856" data-listing-reading-time-sort="12" data-listing-word-count-sort="2272">
+<div class="thumbnail">
+<p><a href="../../lessons/hardware/arduino-vs-raspberry-pi.html" class="no-external"></a></p><a href="../../lessons/hardware/arduino-vs-raspberry-pi.html" class="no-external">
+<!-- img(9CEB782EFEE6)[progressive=false, height=]:lessons/hardware/arduino-vs-raspberry-pi.html -->
+</a><p><a href="../../lessons/hardware/arduino-vs-raspberry-pi.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../../lessons/hardware/arduino-vs-raspberry-pi.html" class="no-external">SBCs and Microcontrollers</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../../lessons/hardware/arduino-vs-raspberry-pi.html" class="no-external">Comparing the architectural paradigms for microcomputers to better understand our Pis.</a>
+</div>
+<div class="listing-description">
+<a href="../../lessons/hardware/arduino-vs-raspberry-pi.html" class="no-external"><!-- desc(5A0113B34292)[max=175]:lessons/hardware/arduino-vs-raspberry-pi.html --></a>
+</div>
+</div>
+<div class="metadata">
+<p><a href="../../lessons/hardware/arduino-vs-raspberry-pi.html" class="no-external"></a></p><a href="../../lessons/hardware/arduino-vs-raspberry-pi.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="4" data-listing-file-modified-sort="1709934700868" data-listing-reading-time-sort="10" data-listing-word-count-sort="1946">
+<div class="thumbnail">
+<p><a href="../../lessons/hardware/serial-protocols.html" class="no-external"></a></p><a href="../../lessons/hardware/serial-protocols.html" class="no-external">
+<!-- img(9CEB782EFEE6)[progressive=false, height=]:lessons/hardware/serial-protocols.html -->
+</a><p><a href="../../lessons/hardware/serial-protocols.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../../lessons/hardware/serial-protocols.html" class="no-external">Serial protocols</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../../lessons/hardware/serial-protocols.html" class="no-external">A deeper dive into the protocols used to communicate between GPIO and the kernel</a>
+</div>
+<div class="listing-description">
+<a href="../../lessons/hardware/serial-protocols.html" class="no-external"><!-- desc(5A0113B34292)[max=175]:lessons/hardware/serial-protocols.html --></a>
+</div>
+</div>
+<div class="metadata">
+<p><a href="../../lessons/hardware/serial-protocols.html" class="no-external"></a></p><a href="../../lessons/hardware/serial-protocols.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="5" data-listing-file-modified-sort="1709934700856" data-listing-reading-time-sort="10" data-listing-word-count-sort="1804">
 <div class="thumbnail">
 <p><a href="../../lessons/hardware/analog-vs-digital.html" class="no-external"></a></p><a href="../../lessons/hardware/analog-vs-digital.html" class="no-external">
 <!-- img(9CEB782EFEE6)[progressive=false, height=]:lessons/hardware/analog-vs-digital.html -->
