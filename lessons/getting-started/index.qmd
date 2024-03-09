@@ -1,8 +1,0 @@
----
-title: "Getting started"
-listing: default
-format:
-  html: default
-format-links: false
-order: 1
----

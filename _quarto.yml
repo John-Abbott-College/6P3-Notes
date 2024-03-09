@@ -13,7 +13,7 @@ website:
   page-navigation: true
   back-to-top-navigation: true
   page-footer:
-    center: |
+    left: |
       &copy; Mauricio Buschinelli 2022-2023; &copy; Michael Haaf 2024
   sidebar:
     style: "docked"
@@ -27,9 +27,6 @@ website:
 format:
   html:
     css: styles.css
-    toc: true
     theme:
       light: flatly
       dark: darkly
-    date: today
-    date-modified: last-modified

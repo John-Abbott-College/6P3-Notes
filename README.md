@@ -21,9 +21,9 @@ By the end of the course, students build and deploy an IoT product that is secur
 - Experience using Object Oriented Programming to create applications in any language.
 - Familiarity using the Bash shell and basic Linux CLI.
 - Familiarity with Python.
-- A Raspberry Pi with various sensors and actuators (see page [Hardware List](lessons/getting-started/hardware-list.qmd)).
+- A Raspberry Pi with various sensors and actuators (see page [Hardware List](topics/getting-started/docs/hardware-list.qmd)).
 - A Microsoft Azure account (create a free [Azure for Students account](https://azure.microsoft.com/en-us/free/students/) if necessary).
-- VS Code configured for Python programming and remote development (see page [Dev Setup](lessons/getting-started/vscode-python-setup.qmd)).
+- VS Code configured for Python programming and remote development (see page [Dev Setup](topics/getting-started/docs/vscode-python-setup.qmd)).
 
 ## Source Code
 
@@ -35,21 +35,17 @@ Source code is **open source** and [available on GitHub](https://github.com/John
 
 Create a local copy of these notes:
 
-0. Install [Quarto](https://quarto.org/docs/get-started/) for your system
+1. Install [Quarto](https://quarto.org/docs/get-started/) for your system
 
-1. Clone the [course GitHub repository](https://github.com/John-Abbott-College/6P3-Notes).
+2. Clone the [course GitHub repository](https://github.com/John-Abbott-College/6P3-Notes).
 
-2. Checkout the branch for this year's notes: `git switch winter2024`
+3. Checkout the branch for this year's notes: `git switch winter2024`
 
-3. Preview the website:
+4. Preview the website:
 
    `quarto preview .`
 
 ---
-
-typing and seeing that there is a lot of input lage every time a snippet suggestion appears, though maybe it gets faster over time for some reason?
-
-what about now has it gotten faster? that's so interesting. How do I fix that?
 
 This work is licensed under a [Creative Commons Attribution-NonCommercial 4.0 International License][cc-by-nc].
   

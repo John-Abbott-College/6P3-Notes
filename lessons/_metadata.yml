@@ -1,9 +1,0 @@
-format:
-  html:
-    code-overflow: wrap
-    page-layout: article
-    grid: 
-      margin-width: 350px
-  clean-revealjs:
-    output-ext: slides.html
-format-links: [html, clean-revealjs]

@@ -1,0 +1,70 @@
+---
+title: Remote work on Linux
+subtitle: Learn how to connect to your Pi with CLI (ssh) and GUI (VNC). Learn how to setup and troubleshoot local connections (LAN) and remote connections (VPN).
+date: 2024-02-09
+---
+
+## CLI
+
+### Passwordless SSH Access
+
+Login into the R.Pi without password by setting up SSH credentials
+
+- Follow guide by Raspberry Pi Foundation:
+	- [Passwordless SSH Access](https://www.raspberrypi.com/documentation/computers/remote-access.html#passwordless-ssh-access)
+
+
+### Install NeoVim on RPI
+
+```bash
+# Update source repositories -- a good idea any time you are installing a package.
+sudo apt update -y
+# Install xclip for clipboard support with ssh graphical session `-Y`
+sudo apt install xclip -y
+sudo apt-get install neovim
+```
+
+#### Install AstroNVIM
+
+After installing nvim:
+
+```bash
+# Install a Nerd Fonts (FiraCode)
+cd ~/Downloads
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/FiraCode.zip
+unzip FiraCode.zip
+
+# Font installation according to Debian's docs: https://wiki.debian.org/Fonts
+# Move to systam-wide font folder
+sudo mv *.ttf /usr/local/share/fonts/
+# update the font cache
+fc-cache
+```
+
+```bash
+# Follow AstroNvim install instructions: https://astronvim.github.io/#%EF%B8%8F-installation
+
+# Make a backup of your current nvim folder
+mv ~/.config/nvim ~/.config/nvim.bak
+# Clean neovim folders (Optional but recommended)
+mv ~/.local/share/nvim ~/.local/share/nvim.bak
+mv ~/.local/state/nvim ~/.local/state/nvim.bak
+mv ~/.cache/nvim ~/.cache/nvim.bak
+# Clone the repository
+git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
+```
+
+#### Install Node 
+
+Installing node is not required but will improve compatibility with modern nvim features:
+
+```bash
+# Install Node.js using nvm according to https://github.com/nvm-sh/nvm
+;wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+# source .bashrc to pickup env variables
+source ~/.bashrc
+# install the latest version of node
+nvm install node
+# Install Tree-sitter CLI
+npm install tree-sitter-cli
+```

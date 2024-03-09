@@ -1,7 +1,0 @@
----
-title: "Linux"
-listing: default
-format:
-  html: default
-format-links: false
----

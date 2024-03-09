@@ -1,0 +1,15 @@
+---
+title: "Topics"
+subtitle: "Directory listing for all course material provided in this course."
+format:
+  html: default
+listing: 
+  type: table
+  fields: [date, title, subtitle]
+  filter-ui: true
+  sort-ui: [date, title]
+  sort: date
+  date-format: iso
+  exclude:
+    filename: "*index.qmd"
+---

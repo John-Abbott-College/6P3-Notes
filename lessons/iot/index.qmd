@@ -1,7 +1,0 @@
----
-title: "IoT"
-listing: default
-format:
-  html: default
-format-links: false
----
