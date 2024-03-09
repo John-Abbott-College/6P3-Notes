@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2024-03-11">
 
-<title>Connected Objects - Calendar</title>
+<title>Connected Objects - Electronics Basics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,27 +24,27 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../about/syllabus.html" rel="next">
-<link href="../about/index.html" rel="prev">
-<link href="../assets/favicon_io/favicon.ico" rel="icon">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../topics/hardware/docs/gpios.html" rel="next">
+<link href="../../../topics/hardware/docs/arduino-vs-raspberry-pi.html" rel="prev">
+<link href="../../../assets/favicon_io/favicon.ico" rel="icon">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -73,24 +74,24 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="Connected Objects - Calendar">
-<meta property="og:description" content="">
-<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/about/assets/art_title_path_only.svg">
+<link rel="stylesheet" href="../../../styles.css">
+<meta property="og:title" content="Connected Objects - Electronics Basics">
+<meta property="og:description" content="Review of Ohm’s Law, fundamental concepts for understanding electronic circuits and interfaces.">
+<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/topics/hardware/docs/assets/art_title_path_only.svg">
 <meta property="og:site_name" content="Connected Objects">
 </head>
 
-<body class="nav-sidebar docked nav-fixed fullcontent">
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../assets/favicon_io/favicon-32x32.png" alt="" class="navbar-logo">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../assets/favicon_io/favicon-32x32.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Connected Objects</span>
     </a>
   </div>
@@ -105,7 +106,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../about/index.html">About</a></li><li class="breadcrumb-item"><a href="../about/calendar.html">Calendar</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../topics/index.html">Topics</a></li><li class="breadcrumb-item"><a href="../../../topics/hardware/index.html">Hardware</a></li><li class="breadcrumb-item"><a href="../../../topics/hardware/docs/reterminal-sensors.html">Docs</a></li><li class="breadcrumb-item"><a href="../../../topics/hardware/docs/circuitry-basics.html">Electronics Basics</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -119,7 +120,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../about/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../../about/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">About</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -128,13 +129,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../about/calendar.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../about/calendar.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Calendar</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../about/syllabus.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../about/syllabus.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Syllabus</span></a>
   </div>
 </li>
@@ -142,7 +143,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../topics/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../../topics/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Topics</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -151,7 +152,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../topics/getting-started/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../../topics/getting-started/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Getting started</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -169,19 +170,19 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../topics/getting-started/docs/hardware-list.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/getting-started/docs/hardware-list.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Hardware List</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../topics/getting-started/docs/tech-stack.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/getting-started/docs/tech-stack.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Technology Stack</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../topics/getting-started/docs/vscode-python-setup.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/getting-started/docs/vscode-python-setup.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Developer setup</span></a>
   </div>
 </li>
@@ -191,7 +192,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../topics/iot/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../../topics/iot/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">IoT</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -209,7 +210,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../topics/iot/docs/what-is-iot.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/iot/docs/what-is-iot.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Intro to the Internet of Things</span></a>
   </div>
 </li>
@@ -219,55 +220,55 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../topics/hardware/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../../topics/hardware/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Hardware</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true">
  <span class="menu-text">Docs</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth3 ">  
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth3 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../topics/hardware/docs/reterminal-sensors.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/hardware/docs/reterminal-sensors.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">reTerminal Sensors</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../topics/hardware/docs/analog-vs-digital.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/hardware/docs/analog-vs-digital.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Signals: Analog and digital</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../topics/hardware/docs/arduino-vs-raspberry-pi.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/hardware/docs/arduino-vs-raspberry-pi.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">SBCs and Microcontrollers</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../topics/hardware/docs/circuitry-basics.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/hardware/docs/circuitry-basics.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Electronics Basics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../topics/hardware/docs/gpios.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/hardware/docs/gpios.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">GPIOs: Inputs and Outputs</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../topics/hardware/docs/serial-protocols.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/hardware/docs/serial-protocols.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Serial protocols</span></a>
   </div>
 </li>
@@ -277,7 +278,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../topics/python/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../../topics/python/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Python</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -295,13 +296,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../topics/python/docs/intro-python.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/python/docs/intro-python.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Intro to Python for Developers</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../topics/python/docs/package-management-python.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/python/docs/package-management-python.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Package management in Python</span></a>
   </div>
 </li>
@@ -311,7 +312,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../topics/linux/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../../topics/linux/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Linux</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -329,19 +330,19 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../topics/linux/docs/linux-review.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/linux/docs/linux-review.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Linux review</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../topics/linux/docs/package-management-debian.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/linux/docs/package-management-debian.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Raspberry Pi Package Management: apt</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../topics/linux/docs/remote-linux.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/linux/docs/remote-linux.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Remote work on Linux</span></a>
   </div>
 </li>
@@ -356,13 +357,32 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#why-study-electronics" id="toc-why-study-electronics" class="nav-link active" data-scroll-target="#why-study-electronics">Why study electronics?</a></li>
+  <li><a href="#gpio-physical-limits" id="toc-gpio-physical-limits" class="nav-link" data-scroll-target="#gpio-physical-limits">GPIO Physical Limits</a></li>
+  <li><a href="#units-of-measurement-volt-amp-and-ohm" id="toc-units-of-measurement-volt-amp-and-ohm" class="nav-link" data-scroll-target="#units-of-measurement-volt-amp-and-ohm">Units of Measurement: Volt, Amp, and Ohm</a>
+  <ul class="collapse">
+  <li><a href="#current" id="toc-current" class="nav-link" data-scroll-target="#current">Current</a></li>
+  <li><a href="#voltage" id="toc-voltage" class="nav-link" data-scroll-target="#voltage">Voltage</a></li>
+  <li><a href="#resistance" id="toc-resistance" class="nav-link" data-scroll-target="#resistance">Resistance</a></li>
+  </ul></li>
+  <li><a href="#ohms-law" id="toc-ohms-law" class="nav-link" data-scroll-target="#ohms-law">Ohm’s law</a></li>
+  <li><a href="#voltage-drop-across-components" id="toc-voltage-drop-across-components" class="nav-link" data-scroll-target="#voltage-drop-across-components">Voltage Drop Across Components</a></li>
+  <li><a href="#resources-references" id="toc-resources-references" class="nav-link" data-scroll-target="#resources-references">Resources &amp; References</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/John-Abbott-College/6P3-Notes/blob/winter2024/topics/hardware/docs/circuitry-basics.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/John-Abbott-College/6P3-Notes/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="circuitry-basics.slides.html"><i class="bi bi-file-slides"></i>RevealJS (clean)</a></li></ul></div></nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../about/index.html">About</a></li><li class="breadcrumb-item"><a href="../about/calendar.html">Calendar</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../topics/index.html">Topics</a></li><li class="breadcrumb-item"><a href="../../../topics/hardware/index.html">Hardware</a></li><li class="breadcrumb-item"><a href="../../../topics/hardware/docs/reterminal-sensors.html">Docs</a></li><li class="breadcrumb-item"><a href="../../../topics/hardware/docs/circuitry-basics.html">Electronics Basics</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Calendar</h1>
+<h1 class="title">Electronics Basics</h1>
+<p class="subtitle lead">Review of Ohm’s Law, fundamental concepts for understanding electronic circuits and interfaces.</p>
 </div>
 
 
@@ -370,7 +390,19 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 11, 2024</p>
+    </div>
+  </div>
   
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">March 9, 2024</p>
+    </div>
+  </div>
     
   </div>
   
@@ -379,9 +411,157 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Coming soon!</p>
+<section id="why-study-electronics" class="level2">
+<h2 class="anchored" data-anchor-id="why-study-electronics">Why study electronics?</h2>
+<p>This course is at the boundary of code and physical objects. While we access the GPIOs of our reTerminals using filesystems and code, ultimately the digital signals are being delivered with electricity along conductive physical components.</p>
+<p>Having a basic understanding of electronics will help you properly connect and debug digital devices without damaging them.</p>
+</section>
+<section id="gpio-physical-limits" class="level2">
+<h2 class="anchored" data-anchor-id="gpio-physical-limits">GPIO Physical Limits</h2>
+<p>The reTerminal has the following electrical constraints (<a href="https://wiki.seeedstudio.com/reTerminal-hardware-interfaces-usage/#40-pin-raspberry-pi-compatible-pins">see official wiki</a>):</p>
+<ul>
+<li>An individual GPIO pin in the reTerminal can only safely draw <strong>16mA</strong> current.</li>
+<li>GPIO pins can only handle <strong>3.3V</strong> voltage.</li>
+<li>The power pins (3.3V and 5V) can handle a maximum of <strong>2A</strong> current.</li>
+</ul>
+<p>What do these numbers mean? Why does it matter for us? What can we do about it?</p>
+</section>
+<section id="units-of-measurement-volt-amp-and-ohm" class="level2">
+<h2 class="anchored" data-anchor-id="units-of-measurement-volt-amp-and-ohm">Units of Measurement: Volt, Amp, and Ohm</h2>
+<p>Bellow are the basic units that are used to measure electricity:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Quantity</th>
+<th>Symbol</th>
+<th>Unit</th>
+<th>Abbreviation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Current</td>
+<td>I or i</td>
+<td>Ampere (“Amps”)</td>
+<td>A</td>
+</tr>
+<tr class="even">
+<td>Voltage</td>
+<td>V or E</td>
+<td>Volts</td>
+<td>V</td>
+</tr>
+<tr class="odd">
+<td>Resistance</td>
+<td>R</td>
+<td>Ohm</td>
+<td>Ω</td>
+</tr>
+</tbody>
+</table>
+<p>An electric circuit is formed when a conductive path is created to allow electric charge to continuously move.</p>
+<section id="current" class="level3">
+<h3 class="anchored" data-anchor-id="current">Current</h3>
+<p>The movement of electric charge (electrons) through the conductors of a circuit is called a <strong><em>current</em></strong>, and it is often referred to in terms of “flow,” just like the flow of a liquid through a hollow pipe.</p>
+</section>
+<section id="voltage" class="level3">
+<h3 class="anchored" data-anchor-id="voltage">Voltage</h3>
+<p>The force pushing the electrons to “flow” in a circuit is called <strong><em>voltage</em></strong>.</p>
+<p>Voltage is a specific measure of potential energy that is always relative between two points. This is comparable to the pressure pushing water from a reservoir into a pipe.</p>
+<blockquote class="blockquote">
+<p>Voltage relates to the amount of potential energy <strong>between two points</strong>.</p>
+<p>Without reference to <strong>two relative points</strong>, the term “voltage” has no meaning.</p>
+</blockquote>
+<p>Voltage is added to a circuit by a voltage source, such as a batter or a power supply unit attached to a wall.</p>
+<p>Below are the two symbols typically used to identify a voltage source in a circuit:</p>
+<p><img src="../assets/ohms-source-symbol.png" class="img-fluid"></p>
+</section>
+<section id="resistance" class="level3">
+<h3 class="anchored" data-anchor-id="resistance">Resistance</h3>
+<p>Current moves through the conductors with some degree of friction, or opposition to motion. This opposition to motion is more properly called <strong><em>resistance</em></strong>.</p>
+<p>The amount of current in a circuit depends on the amount of voltage and the amount of resistance in the circuit to oppose current flow.</p>
+<blockquote class="blockquote">
+<p>Just like voltage, resistance is a quantity <strong>relative between two points.</strong></p>
+<p>Voltage and resistance are often stated as being “<strong>between” or “across” two points</strong> in a circuit.</p>
+</blockquote>
+<p>Below are the two symbols used for a resistor:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fbinaryupdates.com%2Fwp-content%2Fuploads%2FSymbol-of-Resistor.jpg&amp;f=1&amp;nofb=1" class="img-fluid figure-img"></p>
+<figcaption>What is resistor</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="ohms-law" class="level2">
+<h2 class="anchored" data-anchor-id="ohms-law">Ohm’s law</h2>
+<p>Ohm’s law describes the relationship between voltage, current and resistance.</p>
+<blockquote class="blockquote">
+<p>The amount of current through a metal conductor is directly proportional to the voltage across it.</p>
+<p><strong>V = IR</strong></p>
+</blockquote>
+<p>Consider the following circuit:</p>
+<p><img src="../assets/ohms-circuit-resistor.png" class="img-fluid"></p>
+<p>The proper circuit diagram will be:</p>
+<p><img src="../assets/ohms-circuit-simple-diagram.png" class="img-fluid"></p>
+<p>If V1=9V and R1 = 200Ω, what is the current running through the circuit?</p>
+<p>Rearranging Ohm’s law we get:</p>
+<p><strong>I=V/R</strong></p>
+<p>Therefore:</p>
+<p>I = 9V / 200Ω = 0.045A (amps) or 45mA (milli amps).</p>
+<p>We can measure the current by using a multimeter in “ammeter” mode.</p>
+<p>The multimeter must be added in series with the circuit. This means that the wiring must “go thorough” the multimeter.</p>
+<p><img src="../assets/ohms-circuit-example1.png" class="img-fluid"></p>
+</section>
+<section id="voltage-drop-across-components" class="level2">
+<h2 class="anchored" data-anchor-id="voltage-drop-across-components">Voltage Drop Across Components</h2>
+<p>Consider the circuit below:</p>
+<p><img src="../assets/ohm-circuit-led.png" class="img-fluid"></p>
+<p><img src="../assets/ohms-circuit-led-diagram.png" class="img-fluid"></p>
+<p>We must select the resistor value in order to maximize the life of the LED.</p>
+<p>The following requirements apply:</p>
+<ul>
+<li>The ideal current across the LED is of 20mA.</li>
+<li>The voltage drop across the LED (Vled) is of 2.2V.</li>
+<li>The voltage source is 12V.</li>
+</ul>
+<p>Using Ohm’s law:</p>
+<p>R1 = Vr / Ir (Vr and Ir are the voltage and current across the resistor)</p>
+<p>How do we find Vr and Ir?</p>
+<p>Note that because there is a LED that is also “consuming” some voltage, R1 is no longer the same as V1.</p>
+<blockquote class="blockquote">
+<p>The total voltage drop across all components of the circuit must equal the source voltage.</p>
+<p>This is know as Kirchhoff’s Law</p>
+</blockquote>
+<p>This means that the voltage dropped at the LED and the resistor <strong>must add up to the same value as the source voltage</strong>.</p>
+<p>V1 = Vled + Vr</p>
+<p>Vled was provided as a design constraint: Vled = 2.2V. Therefore we can easily calculate Vr:</p>
+<p>Vr = V1 - Vled = 12V - 2.2V = 9.8V</p>
+<p>It’s possible to measure the voltage drop across the resistor by using a multimeter that measures the voltage difference before and after the resistor.</p>
+<blockquote class="blockquote">
+<p>Notice how the multimeter is not interrupting the circuit. It is rather “sampling” the circuit at two points.</p>
+</blockquote>
+<p><img src="../assets/ohms-led-circuit-voltmeter.png" class="img-fluid"></p>
+<p><img src="../assets/ohms-led-schematics-voltmeter.png" class="img-fluid"></p>
+<p>Now that we know the voltage drop across the resistor, we are only missing the current flowing through it (Ir)</p>
+<blockquote class="blockquote">
+<p>Because the circuit only has a <strong>single path</strong>, the current leaving the source <strong>is the same</strong> as the current flowing through <strong>all components</strong>.</p>
+</blockquote>
+<p>Since we are optimizing for the LED lifespan, the target current is 20mA or 0.02A.</p>
+<p>We now have all necessary information to calculate the resistance value:</p>
+<p>R1 = Vr / Ir = 9.8V / 0.02A = 490Ω</p>
+</section>
+<section id="resources-references" class="level2">
+<h2 class="anchored" data-anchor-id="resources-references">Resources &amp; References</h2>
+<p><a href="https://www.allaboutcircuits.com/textbook/direct-current/chpt-2/voltage-current-resistance-relate/">Ohm’s Law - How Voltage, Current, and Resistance Relate</a> by All About Circuits</p>
+<p><a href="https://www.allaboutcircuits.com/textbook/direct-current/chpt-6/voltage-divider-circuits/">Voltage Divider Circuits</a> by All About Circuits</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/HsLLq6Rm5tU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7d4ymjU9NqM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
 
 
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -939,13 +1119,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../about/index.html" class="pagination-link" aria-label="About">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">About</span>
+      <a href="../../../topics/hardware/docs/arduino-vs-raspberry-pi.html" class="pagination-link" aria-label="SBCs and Microcontrollers">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">SBCs and Microcontrollers</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../about/syllabus.html" class="pagination-link" aria-label="Syllabus">
-        <span class="nav-page-text">Syllabus</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../../topics/hardware/docs/gpios.html" class="pagination-link" aria-label="GPIOs: Inputs and Outputs">
+        <span class="nav-page-text">GPIOs: Inputs and Outputs</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -957,7 +1137,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/John-Abbott-College/6P3-Notes/blob/winter2024/about/calendar.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/John-Abbott-College/6P3-Notes/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/John-Abbott-College/6P3-Notes/blob/winter2024/topics/hardware/docs/circuitry-basics.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/John-Abbott-College/6P3-Notes/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

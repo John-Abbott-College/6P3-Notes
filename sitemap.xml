@@ -1,187 +1,163 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/index.html</loc>
-    <lastmod>2024-03-08T21:51:40.692Z</lastmod>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/topics/linux/index.html</loc>
+    <lastmod>2024-03-09T20:50:57.867Z</lastmod>
   </url>
   <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/about/index.html</loc>
-    <lastmod>2024-03-08T21:51:40.692Z</lastmod>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/topics/linux/docs/remote-linux.html</loc>
+    <lastmod>2024-03-09T20:50:57.867Z</lastmod>
   </url>
   <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/lessons/linux/linux-review.html</loc>
-    <lastmod>2024-03-08T21:51:40.868Z</lastmod>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/topics/linux/docs/remote-linux.slides.html</loc>
+    <lastmod>2024-03-09T20:51:42.531Z</lastmod>
   </url>
   <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/lessons/linux/linux-review.slides.html</loc>
-    <lastmod>2024-03-08T21:52:18.984Z</lastmod>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/topics/index.html</loc>
+    <lastmod>2024-03-09T20:50:57.847Z</lastmod>
   </url>
   <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/lessons/linux/index.html</loc>
-    <lastmod>2024-03-08T21:51:40.868Z</lastmod>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/topics/python/docs/intro-python.html</loc>
+    <lastmod>2024-03-09T20:50:57.871Z</lastmod>
   </url>
   <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/lessons/linux/index.slides.html</loc>
-    <lastmod>2024-03-08T21:52:17.580Z</lastmod>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/topics/python/docs/intro-python.slides.html</loc>
+    <lastmod>2024-03-09T20:51:38.455Z</lastmod>
   </url>
   <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/lessons/index.html</loc>
-    <lastmod>2024-03-08T21:51:40.868Z</lastmod>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/topics/hardware/index.html</loc>
+    <lastmod>2024-03-09T20:50:57.847Z</lastmod>
   </url>
   <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/lessons/index.slides.html</loc>
-    <lastmod>2024-03-08T21:52:16.024Z</lastmod>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/topics/hardware/docs/arduino-vs-raspberry-pi.html</loc>
+    <lastmod>2024-03-09T20:50:57.847Z</lastmod>
   </url>
   <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/lessons/python/index.html</loc>
-    <lastmod>2024-03-08T21:51:40.868Z</lastmod>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/topics/hardware/docs/arduino-vs-raspberry-pi.slides.html</loc>
+    <lastmod>2024-03-09T20:51:33.623Z</lastmod>
   </url>
   <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/lessons/python/index.slides.html</loc>
-    <lastmod>2024-03-08T21:52:14.488Z</lastmod>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/topics/hardware/docs/circuitry-basics.html</loc>
+    <lastmod>2024-03-09T20:50:57.847Z</lastmod>
   </url>
   <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/lessons/hardware/analog-vs-digital.html</loc>
-    <lastmod>2024-03-08T21:51:40.856Z</lastmod>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/topics/hardware/docs/circuitry-basics.slides.html</loc>
+    <lastmod>2024-03-09T20:51:31.827Z</lastmod>
   </url>
   <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/lessons/hardware/analog-vs-digital.slides.html</loc>
-    <lastmod>2024-03-08T21:52:12.692Z</lastmod>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/topics/hardware/docs/serial-protocols.html</loc>
+    <lastmod>2024-03-09T20:50:57.847Z</lastmod>
   </url>
   <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/lessons/hardware/arduino-vs-raspberry-pi.html</loc>
-    <lastmod>2024-03-08T21:51:40.856Z</lastmod>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/topics/hardware/docs/serial-protocols.slides.html</loc>
+    <lastmod>2024-03-09T20:51:29.991Z</lastmod>
   </url>
   <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/lessons/hardware/arduino-vs-raspberry-pi.slides.html</loc>
-    <lastmod>2024-03-08T21:52:10.840Z</lastmod>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/topics/iot/docs/what-is-iot.html</loc>
+    <lastmod>2024-03-09T20:50:57.867Z</lastmod>
   </url>
   <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/lessons/hardware/circuitry-basics.html</loc>
-    <lastmod>2024-03-08T21:51:40.868Z</lastmod>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/topics/iot/docs/what-is-iot.slides.html</loc>
+    <lastmod>2024-03-09T20:51:26.935Z</lastmod>
   </url>
   <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/lessons/hardware/circuitry-basics.slides.html</loc>
-    <lastmod>2024-03-08T21:52:09.144Z</lastmod>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/topics/getting-started/docs/hardware-list.html</loc>
+    <lastmod>2024-03-09T20:50:57.715Z</lastmod>
   </url>
   <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/lessons/hardware/serial-protocols.html</loc>
-    <lastmod>2024-03-08T21:51:40.868Z</lastmod>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/topics/getting-started/docs/hardware-list.slides.html</loc>
+    <lastmod>2024-03-09T20:51:23.855Z</lastmod>
   </url>
   <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/lessons/hardware/serial-protocols.slides.html</loc>
-    <lastmod>2024-03-08T21:52:07.360Z</lastmod>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/topics/getting-started/docs/vscode-python-setup.html</loc>
+    <lastmod>2024-03-09T20:50:57.715Z</lastmod>
   </url>
   <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/lessons/iot/what-is-iot.html</loc>
-    <lastmod>2024-03-08T21:51:40.868Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/lessons/iot/what-is-iot.slides.html</loc>
-    <lastmod>2024-03-08T21:52:05.620Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/lessons/getting-started/hardware-list.html</loc>
-    <lastmod>2024-03-08T21:51:40.856Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/lessons/getting-started/hardware-list.slides.html</loc>
-    <lastmod>2024-03-08T21:52:03.960Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/lessons/getting-started/vscode-python-setup.html</loc>
-    <lastmod>2024-03-08T21:51:40.856Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/lessons/getting-started/vscode-python-setup.slides.html</loc>
-    <lastmod>2024-03-08T21:52:01.536Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/lessons/getting-started/tech-stack.slides.html</loc>
-    <lastmod>2024-03-08T21:52:03.140Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/lessons/getting-started/tech-stack.html</loc>
-    <lastmod>2024-03-08T21:51:40.856Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/lessons/getting-started/index.slides.html</loc>
-    <lastmod>2024-03-08T21:52:04.700Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/lessons/getting-started/index.html</loc>
-    <lastmod>2024-03-08T21:51:40.856Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/lessons/iot/index.slides.html</loc>
-    <lastmod>2024-03-08T21:52:06.328Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/lessons/iot/index.html</loc>
-    <lastmod>2024-03-08T21:51:40.868Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/lessons/hardware/reterminal-sensors.slides.html</loc>
-    <lastmod>2024-03-08T21:52:08.312Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/lessons/hardware/reterminal-sensors.html</loc>
-    <lastmod>2024-03-08T21:51:40.868Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/lessons/hardware/gpios.slides.html</loc>
-    <lastmod>2024-03-08T21:52:09.996Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/lessons/hardware/gpios.html</loc>
-    <lastmod>2024-03-08T21:51:40.868Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/lessons/hardware/index.slides.html</loc>
-    <lastmod>2024-03-08T21:52:11.652Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/lessons/hardware/index.html</loc>
-    <lastmod>2024-03-08T21:51:40.868Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/lessons/python/package-management-python.slides.html</loc>
-    <lastmod>2024-03-08T21:52:13.756Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/lessons/python/package-management-python.html</loc>
-    <lastmod>2024-03-08T21:51:40.868Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/lessons/python/intro-python.slides.html</loc>
-    <lastmod>2024-03-08T21:52:15.148Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/lessons/python/intro-python.html</loc>
-    <lastmod>2024-03-08T21:51:40.868Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/lessons/linux/package-management-debian.slides.html</loc>
-    <lastmod>2024-03-08T21:52:16.840Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/lessons/linux/package-management-debian.html</loc>
-    <lastmod>2024-03-08T21:51:40.868Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/lessons/linux/remote-linux.slides.html</loc>
-    <lastmod>2024-03-08T21:52:18.272Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/lessons/linux/remote-linux.html</loc>
-    <lastmod>2024-03-08T21:51:40.868Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/about/syllabus.html</loc>
-    <lastmod>2024-03-08T21:51:40.692Z</lastmod>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/topics/getting-started/docs/vscode-python-setup.slides.html</loc>
+    <lastmod>2024-03-09T20:51:21.483Z</lastmod>
   </url>
   <url>
     <loc>https://john-abbott-college.github.io/6P3-Notes/about/calendar.html</loc>
-    <lastmod>2024-03-08T21:51:40.692Z</lastmod>
+    <lastmod>2024-03-09T20:50:57.699Z</lastmod>
+  </url>
+  <url>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/about/syllabus.html</loc>
+    <lastmod>2024-03-09T20:50:57.699Z</lastmod>
+  </url>
+  <url>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/about/index.html</loc>
+    <lastmod>2024-03-09T20:50:57.699Z</lastmod>
+  </url>
+  <url>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/index.html</loc>
+    <lastmod>2024-03-09T20:50:57.703Z</lastmod>
+  </url>
+  <url>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/topics/getting-started/docs/tech-stack.slides.html</loc>
+    <lastmod>2024-03-09T20:51:23.063Z</lastmod>
+  </url>
+  <url>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/topics/getting-started/docs/tech-stack.html</loc>
+    <lastmod>2024-03-09T20:50:57.715Z</lastmod>
+  </url>
+  <url>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/topics/getting-started/index.html</loc>
+    <lastmod>2024-03-09T20:50:57.715Z</lastmod>
+  </url>
+  <url>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/topics/iot/index.html</loc>
+    <lastmod>2024-03-09T20:50:57.867Z</lastmod>
+  </url>
+  <url>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/topics/hardware/docs/reterminal-sensors.slides.html</loc>
+    <lastmod>2024-03-09T20:51:30.947Z</lastmod>
+  </url>
+  <url>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/topics/hardware/docs/reterminal-sensors.html</loc>
+    <lastmod>2024-03-09T20:50:57.847Z</lastmod>
+  </url>
+  <url>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/topics/hardware/docs/gpios.slides.html</loc>
+    <lastmod>2024-03-09T20:51:32.799Z</lastmod>
+  </url>
+  <url>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/topics/hardware/docs/gpios.html</loc>
+    <lastmod>2024-03-09T20:50:57.847Z</lastmod>
+  </url>
+  <url>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/topics/hardware/docs/analog-vs-digital.slides.html</loc>
+    <lastmod>2024-03-09T20:51:34.611Z</lastmod>
+  </url>
+  <url>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/topics/hardware/docs/analog-vs-digital.html</loc>
+    <lastmod>2024-03-09T20:50:57.847Z</lastmod>
+  </url>
+  <url>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/topics/python/docs/package-management-python.slides.html</loc>
+    <lastmod>2024-03-09T20:51:37.779Z</lastmod>
+  </url>
+  <url>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/topics/python/docs/package-management-python.html</loc>
+    <lastmod>2024-03-09T20:50:57.871Z</lastmod>
+  </url>
+  <url>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/topics/python/index.html</loc>
+    <lastmod>2024-03-09T20:50:57.871Z</lastmod>
+  </url>
+  <url>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/topics/linux/docs/package-management-debian.slides.html</loc>
+    <lastmod>2024-03-09T20:51:41.823Z</lastmod>
+  </url>
+  <url>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/topics/linux/docs/package-management-debian.html</loc>
+    <lastmod>2024-03-09T20:50:57.867Z</lastmod>
+  </url>
+  <url>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/topics/linux/docs/linux-review.slides.html</loc>
+    <lastmod>2024-03-09T20:51:43.267Z</lastmod>
+  </url>
+  <url>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/topics/linux/docs/linux-review.html</loc>
+    <lastmod>2024-03-09T20:50:57.867Z</lastmod>
   </url>
 </urlset>
