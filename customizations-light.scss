@@ -25,7 +25,7 @@ $link-color:	$blue-800 !default;
 
 // Code blocks
 // $code-block-bg:	rgba($primary, 0.1) !default;
-$code-block-border-left: $primary;
+$code-block-border-left: $pink-500;
 $code-block-border-left-size: 0.25rem;
 $code-block-bg-alpha: -.9;
 // $btn-code-copy-color: $white;
@@ -35,7 +35,7 @@ $code-bg: rgba($secondary, 0.1) !default;
 $code-color: $dark !default;
 
 $callout-border-width: 0.25rem;
-$callout-border-scale: 50%;
+// $callout-border-scale: 50%;
 
 // Tables
 $table-dark-bg:               $dark !default;

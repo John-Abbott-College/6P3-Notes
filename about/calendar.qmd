@@ -1,6 +1,93 @@
 ---
 title: Calendar
-toc: false
+subtitle: "Roadmap for course deliverables; record of lectures & activites we have covered along the way."
+format:
+  html:
+    toc: true
+    date-modified: last-modified
 ---
 
-Coming soon!
+This is the authoritative calendar for content covered in class, and for content you should expect to see covered as we continue through the course.
+
+![The focused pupil keeps watch on Time](assets/ticktock.jpg)
+
+You can compare this calendar with the calendar from the [Course Outline][course-outline] to see where this course has deviated from the original outline.
+
+[moodle]: https://moodle.johnabbott.qc.ca/course/view.php?id=807
+[moodle-sec1]: https://moodle.johnabbott.qc.ca/course/view.php?id=807
+[moodle-sec2]: https://moodle.johnabbott.qc.ca/course/view.php?id=808
+
+[syllabus]: /about/syllabus
+
+[lab0-sec1]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=33678
+[lab1-sec1]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=33678
+[lab2-sec1]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=33678
+[lab3-sec1]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=33678
+[lab4-sec1]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=33678
+[lab5-sec1]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=33678
+[lab6-sec1]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=33678
+[lab7-sec1]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=33678
+[lab8-sec1]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=33678
+
+[lab0-sec2]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=33678
+[lab1-sec2]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=33678
+[lab2-sec2]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=33678
+[lab3-sec2]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=33678
+[lab4-sec2]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=33678
+[lab5-sec2]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=33678
+[lab6-sec2]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=33678
+[lab7-sec2]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=33678
+[lab8-sec2]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=33678
+
+[a1-sec1]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=32614
+[a2-sec1]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=32614
+
+[a1-sec2]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=32614
+[a2-sec2]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=32614
+
+[m1-sec1]: http://example.org
+[m2-sec1]: http://example.org
+[m3-sec1]: http://example.org
+[m4-sec1]: http://example.org
+
+[m1-sec2]: http://example.org
+[m2-sec2]: http://example.org
+[m3-sec2]: http://example.org
+[m4-sec2]: http://example.org
+
+
+## January
+
+### Lectures & Activities
+
+## February
+
+### Lectures & Activities
+
+### Deliverables
+
+## March
+
+### Lectures & Activities
+
+
+### Deliverables
+
+## April
+
+### Lectures & Activities
+
+### Deliverables
+
+- **March 11 (Mon):** Finish Lab3, start Lab4 and/or A4 (they're related)
+- **March 15 (Fri):** Work on Lab4
+- **March 18 (Mon):** Finish Lab4, work on A1
+- **March 22 (Fri):** Quiz, work on A1
+- **March 25 (Mon):** A1 due, project Milestone 1 released
+- **March 29 (Fri):** Easter holiday, no class
+
+## May
+
+### Lectures & Activities
+
+### Deliverables

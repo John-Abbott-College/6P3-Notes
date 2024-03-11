@@ -1,6 +1,42 @@
 ---
 title: Syllabus
-toc: false
+subtitle: "Course description outlining goals, expectations, resources, and other important information."
 ---
 
-Coming soon!
+[moodle-sec1]: https://moodle.johnabbott.qc.ca/course/view.php?id=807
+[moodle-sec2]: https://moodle.johnabbott.qc.ca/course/view.php?id=808
+[course-outline]: https://moodle.johnabbott.qc.ca/pluginfile.php/66254/mod_resource/content/4/WINTER2024.COMPUTER_SCIENCE.420-6P3-AB.HAAFM.pdf
+
+From the [course outline][course-outline]:
+
+> This course will introduce students to the basic principles of the Internet of Things (IoT), a connected
+network of objects sensing and exchanging data about the physical world. Students will learn to program
+a micro-controller or single board computer to read data from sensors and control actuators. By the end
+of the course, students will be able to build a stand-alone object that is securely connected to a cloud
+service provider in order to collect and analyze telemetry data associated with multiple devices
+
+## Logistics
+
+- **Room, times, etc.:** see [Course Outline][course-outline]
+- **Office:** Penfield 311
+- **Office hours:** Mon/Fri 11:00 - 12:30pm or so
+- **Email:** michael DOT haaf AT johnabbott DOT qc DOT ca
+- **Course webpage:** This website for all content, Moodle [(section 1)][moodle-sec1], [(section 2)][moodle-sec2] for assignment/project/quiz submissions.
+
+![Forgive me the smarmy comic, this is usually true...](assets/itsInTheSyllabus.png){width=80%}
+
+### Communication
+- Teams - For communicating (fastest, most reliable that I will check it same-day)
+- MIO - For communicating (non-time-critical)
+- Email - For communicating (time-critical).  Will aim for <24hr response.
+- [Moodle][moodle] - For receiving & submitting exercises/assignments/project and getting marks
+
+### Assessment
+
+- 45% Assignments and Labs
+- 20% Test (first week of April)
+- 35% Project Milestones
+
+## Course material
+
+There are no required textbooks for this course -- this website will contain all of the content that you need to complete course deliverables. Additionally, each lecture will contain references to additional resources for exploring each topic in further detail beyond the scope of the course.
