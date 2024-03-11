@@ -8,17 +8,18 @@ $base04: #181818 !default;
 $base05: #181818 !default;
 $base06: #585858 !default;
 $base07: #282828 !default;
-$base08: #de5d6e !default;
-$base09: #ff9470 !default;
-$base0A: #b3684f !default;
-$base0B: #76a85d !default;
-$base0C: #64b5a7 !default;
-$base0D: #5890f8 !default;
-$base0E: #c173d1 !default;
-$base0F: #b3684f !default;
-$base10: #faf0dc !default;
-$base11: #faf0dc !default;
-$base12: #de5d6e !default;
+$base08: #b3475b !default; // red
+$base09: #FFC107 !default; // yellow
+$base0A: #FF5722 !default; // orange
+$base0B: #009688 !default; // green
+$base0C: #4c988b !default; // teal
+$base0D: #00ACC1 !default; // cyan
+$base0E: #a158a1 !default; // violet
+$base0F: #b3684f !default; // brown
+// my custom additions
+$base10: #d70a53 !default; // pink
+$base11: #5555c2 !default; // indigo
+$base12: #5890f8 !default; // blue
 $base13: #ff9470 !default;
 $base14: #76a85d !default;
 $base15: #64b5a7 !default;
@@ -39,13 +40,13 @@ $gray-800: $base07 !default;
 $gray-900: $base07 !default;
 $black:    $base07 !default;
 
-$blue:    $base0D !default;
-$indigo:  $base0E !default;
-$purple:  $base0E !default;
-$pink:    $base08 !default;
+$pink:    $base10 !default;
 $red:     $base08 !default;
 $orange:  $base0A !default;
 $yellow:  $base09 !default;
 $green:   $base0B !default;
-$teal:    $base0D !default;
 $cyan:    $base0D !default;
+$teal:    $base0C !default;
+$blue:    $base12 !default;
+$indigo:  $base11 !default;
+$purple:  $base0E !default;
