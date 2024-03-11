@@ -18,7 +18,9 @@ website:
   sidebar:
     style: "docked"
     align: center
-    contents: auto
+    contents:
+      - index.qmd
+      - auto: "*"
 
   navbar: 
     search: true
@@ -28,5 +30,5 @@ format:
   html:
     css: styles.css
     theme:
-      light: flatly
-      dark: darkly
+      light: [united, customizations-light.scss]
+      dark: [united, customizations-dark.scss]

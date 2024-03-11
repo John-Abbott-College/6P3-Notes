@@ -1,0 +1,15 @@
+$min-contrast-ratio:   4.5 !default;
+
+// Fonts
+
+// stylelint-disable-next-line value-keyword-case
+$font-family-sans-serif:      Ubuntu, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+
+/*-- scss:rules --*/
+
+// Variables
+
+$web-font-path: "https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" !default;
+@if $web-font-path {
+  @import url($web-font-path);
+}

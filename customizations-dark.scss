@@ -1,0 +1,49 @@
+/*-- scss:defaults --*/
+@import 'colors-dark';
+@import 'color-chromas';
+@import 'common';
+
+// Theme
+$primary:       $pink-800 !default;
+$secondary:     $teal !default;
+$success:       $green !default;
+$info:          $cyan !default;
+$warning:       $yellow !default;
+$danger:        $red !default;
+$light:         lighten($white, 10%) !default;
+$dark:          darken($black, 10%) !default;
+
+$min-contrast-ratio:   4.5 !default;
+
+// Body
+$body-bg:	$black !default;
+$body-color:    $white !default;
+$link-color:	$blue !default;
+
+// Navigation
+// $navbar-bg: $pink-900 !default;
+
+// Code blocks
+// $code-block-bg:	rgba($primary, 0.1) !default;
+$code-block-border-left: $primary;
+$code-block-border-left-size: 0.5rem;
+$code-block-bg-alpha: -.9;
+// $btn-code-copy-color: $white;
+// $btn-code-copy-color-active: $primary;
+
+$code-bg: rgba($secondary, 0.1) !default;
+$code-color: $light !default;
+
+$callout-border-width: 0.5rem;
+$callout-border-scale: 50%;
+
+// Tables
+$table-dark-bg:               $dark !default;
+$table-dark-border-color:     darken($dark, 5%) !default;
+
+// Indicators
+.badge {
+  &.bg-light {
+    color: $body-color;
+  }
+}
