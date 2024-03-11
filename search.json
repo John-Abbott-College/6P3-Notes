@@ -932,28 +932,40 @@
     "href": "index.html",
     "title": "Home",
     "section": "",
-    "text": "This companion site for the 420-6P3 course includes:\n\n\nLecture slides / documents\nExercises\nReferences & Resources\n\n\nWebsite accessible at john-abbott-college.github.io/6P3-Notes\n\n\nThis course will introduce students to the principles of the Internet of Things (IoT). Students will use Linux and Python to program a Raspberry Pi in order to read data from sensors and control actuators.\nBy the end of the course, students build and deploy an IoT product that is securely connected to the Azure ecosystem in order to collect and analyse telemetry data as well as respond to remote commands.\n\n\n\n\nExperience using Object Oriented Programming to create applications in any language.\nFamiliarity using the Bash shell and basic Linux CLI.\nFamiliarity with Python.\nA Raspberry Pi with various sensors and actuators (see page Hardware List).\nA Microsoft Azure account (create a free Azure for Students account if necessary).\nVS Code configured for Python programming and remote development (see page Dev Setup).\n\n\n\n\nThis webpage is written in Markdown using the Quarto framework. The website is hosted via GitHub Pages\nSource code is open source and available on GitHub.\n\n\nCreate a local copy of these notes:\n\nInstall Quarto for your system\nClone the course GitHub repository.\nCheckout the branch for this year’s notes: git switch winter2024\nPreview the website:\nquarto preview .\n\n\nThis work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.\n\n\n\nCC BY-NC 4.0"
+    "text": "This companion site for the 420-6P3 course includes:\n\n\nLecture slides / documents\nExercises\nReferences & Resources\n\n\nWebsite accessible at john-abbott-college.github.io/6P3-Notes\n\n\nThis course will introduce students to the principles of the Internet of Things (IoT). Students will use Linux and Python to program a Raspberry Pi in order to read data from sensors and control actuators.\nBy the end of the course, students build and deploy an IoT product that is securely connected to the Azure ecosystem in order to collect and analyse telemetry data as well as respond to remote commands.\n\n\n\n\nExperience using Object Oriented Programming to create applications in any language.\nFamiliarity using the Bash shell and basic Linux CLI.\nFamiliarity with Python.\nA Raspberry Pi with various sensors and actuators (see page Hardware List).\nA Microsoft Azure account (create a free Azure for Students account if necessary).\nVS Code configured for Python programming and remote development (see page Dev Setup).\n\n\n\n\nThis webpage is written in Markdown using the Quarto framework. The website is hosted via GitHub Pages\nSource code is open source and available on GitHub.\n\n\nCreate a local copy of these notes:\n\nInstall Quarto for your system\nClone the course GitHub repository.\nCheckout the branch for this year’s notes: git switch winter2024\nPreview the website:\nquarto preview .\n\n\nThis work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.\n\n\n\nCC BY-NC 4.0",
+    "crumbs": [
+      "Home"
+    ]
   },
   {
     "objectID": "index.html#description",
     "href": "index.html#description",
     "title": "Home",
     "section": "",
-    "text": "This course will introduce students to the principles of the Internet of Things (IoT). Students will use Linux and Python to program a Raspberry Pi in order to read data from sensors and control actuators.\nBy the end of the course, students build and deploy an IoT product that is securely connected to the Azure ecosystem in order to collect and analyse telemetry data as well as respond to remote commands."
+    "text": "This course will introduce students to the principles of the Internet of Things (IoT). Students will use Linux and Python to program a Raspberry Pi in order to read data from sensors and control actuators.\nBy the end of the course, students build and deploy an IoT product that is securely connected to the Azure ecosystem in order to collect and analyse telemetry data as well as respond to remote commands.",
+    "crumbs": [
+      "Home"
+    ]
   },
   {
     "objectID": "index.html#requirements",
     "href": "index.html#requirements",
     "title": "Home",
     "section": "",
-    "text": "Experience using Object Oriented Programming to create applications in any language.\nFamiliarity using the Bash shell and basic Linux CLI.\nFamiliarity with Python.\nA Raspberry Pi with various sensors and actuators (see page Hardware List).\nA Microsoft Azure account (create a free Azure for Students account if necessary).\nVS Code configured for Python programming and remote development (see page Dev Setup)."
+    "text": "Experience using Object Oriented Programming to create applications in any language.\nFamiliarity using the Bash shell and basic Linux CLI.\nFamiliarity with Python.\nA Raspberry Pi with various sensors and actuators (see page Hardware List).\nA Microsoft Azure account (create a free Azure for Students account if necessary).\nVS Code configured for Python programming and remote development (see page Dev Setup).",
+    "crumbs": [
+      "Home"
+    ]
   },
   {
     "objectID": "index.html#source-code",
     "href": "index.html#source-code",
     "title": "Home",
     "section": "",
-    "text": "This webpage is written in Markdown using the Quarto framework. The website is hosted via GitHub Pages\nSource code is open source and available on GitHub.\n\n\nCreate a local copy of these notes:\n\nInstall Quarto for your system\nClone the course GitHub repository.\nCheckout the branch for this year’s notes: git switch winter2024\nPreview the website:\nquarto preview .\n\n\nThis work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.\n\n\n\nCC BY-NC 4.0"
+    "text": "This webpage is written in Markdown using the Quarto framework. The website is hosted via GitHub Pages\nSource code is open source and available on GitHub.\n\n\nCreate a local copy of these notes:\n\nInstall Quarto for your system\nClone the course GitHub repository.\nCheckout the branch for this year’s notes: git switch winter2024\nPreview the website:\nquarto preview .\n\n\nThis work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.\n\n\n\nCC BY-NC 4.0",
+    "crumbs": [
+      "Home"
+    ]
   },
   {
     "objectID": "topics/getting-started/docs/tech-stack.slides.html#hardware",
