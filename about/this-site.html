@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-02-26">
 
-<title>Connected Objects - GPIOs: Inputs and Outputs</title>
+<title>Connected Objects - About this website</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,64 +20,30 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../../">
-<link href="../../../topics/hardware/docs/serial-protocols.html" rel="next">
-<link href="../../../topics/hardware/docs/circuitry-basics.html" rel="prev">
-<link href="../../../assets/favicon_io/favicon.ico" rel="icon">
-<script src="../../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../topics/index.html" rel="next">
+<link href="../about/syllabus.html" rel="prev">
+<link href="../assets/favicon_io/favicon.ico" rel="icon">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -108,10 +73,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<link rel="stylesheet" href="../../../styles.css">
-<meta property="og:title" content="Connected Objects - GPIOs: Inputs and Outputs">
-<meta property="og:description" content="Understanding the General Purpose Input and Output (GPIO) pins our reSeed terminal chassis makes available to us. Voltage, digital vs.&nbsp;analog, python libraries for GPIO.">
-<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/topics/hardware/docs/assets/art_title_path_only.svg">
+<link rel="stylesheet" href="../styles.css">
+<meta property="og:title" content="Connected Objects - About this website">
+<meta property="og:description" content="Description of technologies and resources used to build this website. Acknowledgements, copyright, terms of use, etc. can be found on this page.">
+<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/about/assets/art_title_path_only.svg">
 <meta property="og:site_name" content="Connected Objects">
 </head>
 
@@ -122,10 +87,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../../assets/favicon_io/favicon-32x32.png" alt="" class="navbar-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../assets/favicon_io/favicon-32x32.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="../../../index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Connected Objects</span>
     </a>
   </div>
@@ -140,7 +105,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../topics/index.html">Topics</a></li><li class="breadcrumb-item"><a href="../../../topics/hardware/index.html">Hardware</a></li><li class="breadcrumb-item"><a href="../../../topics/hardware/docs/reterminal-sensors.html">Docs</a></li><li class="breadcrumb-item"><a href="../../../topics/hardware/docs/gpios.html">GPIOs: Inputs and Outputs</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../about/index.html">About</a></li><li class="breadcrumb-item"><a href="../about/this-site.html">About this website</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -154,13 +119,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../index.html" class="sidebar-item-text sidebar-link">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Home</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../about/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../about/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">About</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -169,19 +134,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../about/calendar.html" class="sidebar-item-text sidebar-link">
+  <a href="../about/calendar.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Calendar</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../about/syllabus.html" class="sidebar-item-text sidebar-link">
+  <a href="../about/syllabus.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Syllabus</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../about/this-site.html" class="sidebar-item-text sidebar-link">
+  <a href="../about/this-site.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">About this website</span></a>
   </div>
 </li>
@@ -189,7 +154,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../topics/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../topics/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Topics</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -198,7 +163,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../topics/getting-started/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../topics/getting-started/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Getting started</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -216,19 +181,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../topics/getting-started/docs/hardware-list.html" class="sidebar-item-text sidebar-link">
+  <a href="../topics/getting-started/docs/hardware-list.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Hardware List</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../topics/getting-started/docs/tech-stack.html" class="sidebar-item-text sidebar-link">
+  <a href="../topics/getting-started/docs/tech-stack.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Technology Stack</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../topics/getting-started/docs/vscode-python-setup.html" class="sidebar-item-text sidebar-link">
+  <a href="../topics/getting-started/docs/vscode-python-setup.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Developer setup</span></a>
   </div>
 </li>
@@ -238,7 +203,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../topics/iot/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../topics/iot/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">IoT</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -256,7 +221,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../topics/iot/docs/what-is-iot.html" class="sidebar-item-text sidebar-link">
+  <a href="../topics/iot/docs/what-is-iot.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Intro to the Internet of Things</span></a>
   </div>
 </li>
@@ -266,55 +231,55 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../topics/hardware/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../topics/hardware/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Hardware</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false">
  <span class="menu-text">Docs</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth3 show">  
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../topics/hardware/docs/reterminal-sensors.html" class="sidebar-item-text sidebar-link">
+  <a href="../topics/hardware/docs/reterminal-sensors.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">reTerminal Sensors</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../topics/hardware/docs/analog-vs-digital.html" class="sidebar-item-text sidebar-link">
+  <a href="../topics/hardware/docs/analog-vs-digital.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Signals: Analog and digital</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../topics/hardware/docs/arduino-vs-raspberry-pi.html" class="sidebar-item-text sidebar-link">
+  <a href="../topics/hardware/docs/arduino-vs-raspberry-pi.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">SBCs and Microcontrollers</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../topics/hardware/docs/circuitry-basics.html" class="sidebar-item-text sidebar-link">
+  <a href="../topics/hardware/docs/circuitry-basics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Electronics Basics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../topics/hardware/docs/gpios.html" class="sidebar-item-text sidebar-link active">
+  <a href="../topics/hardware/docs/gpios.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">GPIOs: Inputs and Outputs</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../topics/hardware/docs/serial-protocols.html" class="sidebar-item-text sidebar-link">
+  <a href="../topics/hardware/docs/serial-protocols.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Serial protocols</span></a>
   </div>
 </li>
@@ -324,7 +289,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../topics/python/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../topics/python/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Python</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -342,13 +307,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../topics/python/docs/intro-python.html" class="sidebar-item-text sidebar-link">
+  <a href="../topics/python/docs/intro-python.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Intro to Python for Developers</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../topics/python/docs/package-management-python.html" class="sidebar-item-text sidebar-link">
+  <a href="../topics/python/docs/package-management-python.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Package management in Python</span></a>
   </div>
 </li>
@@ -358,7 +323,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../topics/linux/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../topics/linux/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Linux</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -376,19 +341,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../topics/linux/docs/linux-review.html" class="sidebar-item-text sidebar-link">
+  <a href="../topics/linux/docs/linux-review.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Linux review</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../topics/linux/docs/package-management-debian.html" class="sidebar-item-text sidebar-link">
+  <a href="../topics/linux/docs/package-management-debian.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Raspberry Pi Package Management: apt</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../topics/linux/docs/remote-linux.html" class="sidebar-item-text sidebar-link">
+  <a href="../topics/linux/docs/remote-linux.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Remote work on Linux</span></a>
   </div>
 </li>
@@ -408,34 +373,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#intro-to-pis-gpios" id="toc-intro-to-pis-gpios" class="nav-link active" data-scroll-target="#intro-to-pis-gpios">Intro to Pi’s GPIOs 🥧</a>
+  <li><a href="#course-content" id="toc-course-content" class="nav-link active" data-scroll-target="#course-content">Course content</a>
   <ul class="collapse">
-  <li><a href="#voltages" id="toc-voltages" class="nav-link" data-scroll-target="#voltages">Voltages</a></li>
-  <li><a href="#outputs" id="toc-outputs" class="nav-link" data-scroll-target="#outputs">Outputs</a></li>
-  <li><a href="#inputs" id="toc-inputs" class="nav-link" data-scroll-target="#inputs">Inputs</a></li>
-  <li><a href="#digital-communication-protocols" id="toc-digital-communication-protocols" class="nav-link" data-scroll-target="#digital-communication-protocols">Digital Communication Protocols</a></li>
-  <li><a href="#sorry-no-analog" id="toc-sorry-no-analog" class="nav-link" data-scroll-target="#sorry-no-analog">Sorry, No Analog</a></li>
+  <li><a href="#copyright" id="toc-copyright" class="nav-link" data-scroll-target="#copyright">Copyright</a></li>
   </ul></li>
-  <li><a href="#gpio-pinout" id="toc-gpio-pinout" class="nav-link" data-scroll-target="#gpio-pinout">GPIO pinout</a>
+  <li><a href="#course-website" id="toc-course-website" class="nav-link" data-scroll-target="#course-website">Course website</a>
   <ul class="collapse">
-  <li><a href="#permissions" id="toc-permissions" class="nav-link" data-scroll-target="#permissions">Permissions</a></li>
-  </ul></li>
-  <li><a href="#gpio-in-python" id="toc-gpio-in-python" class="nav-link" data-scroll-target="#gpio-in-python">GPIO in Python</a>
-  <ul class="collapse">
-  <li><a href="#led" id="toc-led" class="nav-link" data-scroll-target="#led">LED</a></li>
-  <li><a href="#button" id="toc-button" class="nav-link" data-scroll-target="#button">Button</a></li>
-  <li><a href="#button-and-led" id="toc-button-and-led" class="nav-link" data-scroll-target="#button-and-led">Button and LED</a></li>
+  <li><a href="#colophon" id="toc-colophon" class="nav-link" data-scroll-target="#colophon">Colophon</a></li>
+  <li><a href="#copyright-1" id="toc-copyright-1" class="nav-link" data-scroll-target="#copyright-1">Copyright</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/John-Abbott-College/6P3-Notes/blob/winter2024/topics/hardware/docs/gpios.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/John-Abbott-College/6P3-Notes/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="gpios.slides.html"><i class="bi bi-file-slides"></i>RevealJS (clean)</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/John-Abbott-College/6P3-Notes/blob/winter2024/about/this-site.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/John-Abbott-College/6P3-Notes/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../topics/index.html">Topics</a></li><li class="breadcrumb-item"><a href="../../../topics/hardware/index.html">Hardware</a></li><li class="breadcrumb-item"><a href="../../../topics/hardware/docs/reterminal-sensors.html">Docs</a></li><li class="breadcrumb-item"><a href="../../../topics/hardware/docs/gpios.html">GPIOs: Inputs and Outputs</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../about/index.html">About</a></li><li class="breadcrumb-item"><a href="../about/this-site.html">About this website</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">GPIOs: Inputs and Outputs</h1>
-<p class="subtitle lead">Understanding the General Purpose Input and Output (GPIO) pins our reSeed terminal chassis makes available to us. Voltage, digital vs.&nbsp;analog, python libraries for GPIO.</p>
+<h1 class="title">About this website</h1>
+<p class="subtitle lead">Description of technologies and resources used to build this website. Acknowledgements, copyright, terms of use, etc. can be found on this page.</p>
 </div>
 
 
@@ -443,19 +399,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-title-meta">
 
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">February 26, 2024</p>
-    </div>
-  </div>
   
-    <div>
-    <div class="quarto-title-meta-heading">Modified</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date-modified">March 11, 2024</p>
-    </div>
-  </div>
     
   </div>
   
@@ -464,192 +408,60 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="intro-to-pis-gpios" class="level2">
-<h2 class="anchored" data-anchor-id="intro-to-pis-gpios">Intro to Pi’s GPIOs 🥧</h2>
-<p><em>Note: most of these notes were adapted directly from the Raspberry Pi docs: <a href="https://www.raspberrypi.com/documentation/computers/os.html#gpio-pinout">GPIO-Pinout</a></em> <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<p>The Raspberry Pi can read and generate digital signals using <strong>General Purpose Input and Output (GPIO)</strong> pins.</p>
-<p>Any of the GPIO pins can be designated (in software) as an input or output pin and used for a wide range of purposes.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../assets/7-gpio-pi-40-pin-reference.png" class="img-fluid figure-img"></p>
-<figcaption>Diagram of Pi’s 40 GPIO pins</figcaption>
-</figure>
-</div>
-<p class="img-info">
-<a href="https://www.raspberrypi.com/documentation/computers/os.html#gpio-and-the-40-pin-header"> GPIO and the 40-pin headers of the Raspberry Pi </a>&nbsp; - Official docs, Raspberry Pi Foundation.
-</p>
-<p>The reTerminal exposes the same 40-pin header as the Pi on it’s side:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../assets/7-gpio-reterminal-40-pin-header.png" class="img-fluid figure-img"></p>
-<figcaption>Breakout of 40-pin header for reTerminal</figcaption>
-</figure>
-</div>
-<p class="img-info">
-<a href="https://wiki.seeedstudio.com/reTerminal/#pinout-diagram"> GPIO and pin diagram of the reTerminal </a>&nbsp; - reTerminal Official Wiki, Seeed.
-</p>
-<section id="voltages" class="level3">
-<h3 class="anchored" data-anchor-id="voltages">Voltages</h3>
-<p>Two 5V pins and two 3V3 pins are present on the board, as well as a number of ground pins (0V), which are unconfigurable. The remaining pins are all general purpose 3V3 pins, meaning outputs are set to 3V3 and inputs are 3V3-tolerant.</p>
-</section>
-<section id="outputs" class="level3">
-<h3 class="anchored" data-anchor-id="outputs">Outputs</h3>
-<p>A GPIO pin designated as an output pin can be set to high (3V3) or low (0V).</p>
-</section>
-<section id="inputs" class="level3">
-<h3 class="anchored" data-anchor-id="inputs">Inputs</h3>
-<p>A GPIO pin designated as an input pin can be read as high (3V3) or low (0V).</p>
-<p><strong>We will learn how to use the GPIOs in a future lesson.</strong></p>
-</section>
-<section id="digital-communication-protocols" class="level3">
-<h3 class="anchored" data-anchor-id="digital-communication-protocols">Digital Communication Protocols</h3>
-<p>In addition to simple input and output devices, the GPIO pins can be used with a variety of alternative functions and digital communication protocols.</p>
-<p>These digital communication protocols are:</p>
+<section id="course-content" class="level2">
+<h2 class="anchored" data-anchor-id="course-content">Course content</h2>
+<p>Course content, both for lectures and assignments, has been adapted by me from a variety of sources. This section serves the purpose of both acknowledging these references as well as pointing the way for curious students to begin investigating further into course material than we had time to cover.</p>
+<section id="copyright" class="level3">
+<h3 class="anchored" data-anchor-id="copyright">Copyright</h3>
+<p>All course content was either written by <a href="https://github.com/maubuz">Mauricio Buschinelli</a>, <a href="https://github.com/michaelhaaf">Michael Haaf</a>, or explicitly adapted from external resources with attributions made clear. This course content retains the licenses of the original works where relevant, and is otherwise licensed under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
+<blockquote class="blockquote">
+<p><strong>Terms of use</strong></p>
+<p>You are free to:</p>
 <ul>
-<li><strong>PWM</strong> (pulse-width modulation)</li>
-<li><strong>SPI</strong> (serial peripheral interface)</li>
-<li><strong>I2C</strong> (inter-integrated circuit)</li>
-<li><strong>Serial</strong></li>
-<li><strong>PCM</strong> (pulse-code modulation)</li>
+<li><strong>Share</strong>: copy and redistribute the material in any medium or format</li>
+<li><strong>Adapt</strong>: remix, transform, and build upon the material for any purpose, even commercially.</li>
 </ul>
-<p>Some digital functions are available on all pins, others on specific pins.</p>
-</section>
-<section id="sorry-no-analog" class="level3">
-<h3 class="anchored" data-anchor-id="sorry-no-analog">Sorry, No Analog</h3>
-<blockquote class="blockquote">
-<p><strong>The Raspberry Pi does not have an ADC.</strong></p>
-<p>In order to process analog electrical signals an external ADC must be used.</p>
+<p>Under the following terms:</p>
+<ul>
+<li><strong>Attribution:</strong> You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.</li>
+</ul>
+<p><a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a></p>
 </blockquote>
-<p><strong>Hat to the Rescue</strong></p>
-<p>In this course we will use the integrate ADC of the <a href="https://wiki.seeedstudio.com/Grove_Base_Hat_for_Raspberry_Pi/">Grove Base Hat</a> for the Raspberry Pi.</p>
+</section>
+</section>
+<section id="course-website" class="level2">
+<h2 class="anchored" data-anchor-id="course-website">Course website</h2>
+<p>Details about how this website was built follow.</p>
+<section id="colophon" class="level3">
+<h3 class="anchored" data-anchor-id="colophon">Colophon</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://files.seeedstudio.com/wiki/Grove_Base_Hat_for_Raspberry_Pi/img/main.jpg" class="img-fluid figure-img"></p>
-<figcaption>Grove Base Hat for the Raspberry Pi</figcaption>
+<p><img src="assets/colophon.jpg" class="img-fluid figure-img"></p>
+<figcaption>From Wikipedia: In publishing, a colophon is a brief statement containing information about the publication of a book… Some web pages also have colophons, which frequently contain (X)HTML, CSS, or usability standards compliance information and links to website validation tests.</figcaption>
 </figure>
 </div>
-<p class="img-info">
-<a href="https://wiki.seeedstudio.com/Grove_Base_Hat_for_Raspberry_Pi/"> Seeed’s Grove Base Hat for the Raspberry Pi has an integrated ADC </a>&nbsp; Base Hat official wiki, Seeed.
-</p>
-<p><a href="https://www.tomshardware.com/best-picks/best-raspberry-pi-hats">Pi HATs</a> is the term for expansion boards for the Raspberry Pi.</p>
+<ul>
+<li>Markup: <a href="https://daringfireball.net/projects/markdown/">Markdown</a></li>
+<li>Framework: <a href="https://quarto.org/">Quarto</a></li>
+<li>Deployment: <a href="https://pages.github.com/">GitHub Pages</a></li>
+</ul>
+<p>You can follow along directly with course updates at the <a href="https://github.com/john-abbott-college/6P3-Notes">course repository</a>.</p>
+</section>
+<section id="copyright-1" class="level3">
+<h3 class="anchored" data-anchor-id="copyright-1">Copyright</h3>
+<p>This website was written and designed by the <a href="https://github.com/michaelhaaf">Michael Haaf</a>. All code and assets related to this website, unless indicated otherwise, are licensed under the <a href="https://github.com/michaelhaaf/2W6-W23/blob/main/LICENSE">GNU General Public License v3.0</a></p>
 <blockquote class="blockquote">
-<p>Seeed’s <a href="https://wiki.seeedstudio.com/Grove_Base_Hat_for_Raspberry_Pi/">Grove Base Hat</a> for the Raspberry Pi has <strong>4 connectors with integrated ADC</strong>.</p>
-<p>Each ADC connector has <strong>12-bit resolution</strong>.</p>
+<p><strong>Terms of use</strong></p>
+<p>This website’s code is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</p>
+<p>This website’s code is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.</p>
+<p><a href="https://www.gnu.org/licenses/gpl-howto.html">GNU General Public License Notice</a></p>
 </blockquote>
-<p>In addition to the 4 ADC connectors, the Base Hat also exposes the original 40-pin header and other digital connectors.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://files.seeedstudio.com/wiki/Grove_Base_Hat_for_Raspberry_Pi/img/pin-out/overview.jpg" class="img-fluid figure-img"></p>
-<figcaption>Connectors of the Grove Base Hat</figcaption>
-</figure>
-</div>
-<p class="img-info">
-<a href="https://wiki.seeedstudio.com/Grove_Base_Hat_for_Raspberry_Pi/"> Specialized connectors of the Raspberry Pi available via the Base Hat </a>&nbsp; Base Hat official wiki, Seeed.
-</p>
-</section>
-</section>
-<section id="gpio-pinout" class="level2">
-<h2 class="anchored" data-anchor-id="gpio-pinout">GPIO pinout</h2>
-<p>A GPIO reference can be accessed on your Raspberry Pi by opening a terminal window and running the command <code>pinout</code>. This tool is provided by the <a href="https://gpiozero.readthedocs.io/">GPIO Zero</a> Python library, which is installed by default in Raspberry Pi OS.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> pinout</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>While connecting up simple components to the GPIO pins is perfectly safe, it’s important to be careful how you wire things up. LEDs should have resistors to limit the current passing through them. Do not use 5V for 3.3V components. Do not connect motors directly to the GPIO pins, instead use an <a href="https://projects.raspberrypi.org/en/projects/physical-computing/14">H-bridge circuit or a motor controller board</a>.</p>
-</div>
-</div>
-<section id="permissions" class="level3">
-<h3 class="anchored" data-anchor-id="permissions">Permissions</h3>
-<p>In order to use the GPIO ports, your user must be a member of the <code>gpio</code> group. The default user account is a member by default, other users need to be added manually.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Only do this to add a NEW user to the gpio group</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> usermod <span class="at">-a</span> <span class="at">-G</span> gpio <span class="op">&lt;</span>username<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-</section>
-<section id="gpio-in-python" class="level2">
-<h2 class="anchored" data-anchor-id="gpio-in-python">GPIO in Python</h2>
-<p>Using the <a href="https://gpiozero.readthedocs.io/">GPIO Zero</a> library makes it easy to control GPIO devices with Python. The library is comprehensively documented at <a href="https://gpiozero.readthedocs.io/">gpiozero.readthedocs.io</a>.</p>
-<section id="led" class="level3">
-<h3 class="anchored" data-anchor-id="led">LED</h3>
-<p>To control an LED connected to GPIO17:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> gpiozero <span class="im">import</span> LED</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> time <span class="im">import</span> sleep</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>led <span class="op">=</span> LED(<span class="dv">17</span>)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    led.on()</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    sleep(<span class="dv">1</span>)</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    led.off()</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    sleep(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>LED methods include <code>on()</code>, <code>off()</code>, <code>toggle()</code>, and <code>blink()</code>.</p>
-</section>
-<section id="button" class="level3">
-<h3 class="anchored" data-anchor-id="button">Button</h3>
-<p>To read the state of a button connected to GPIO2:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> gpiozero <span class="im">import</span> Button</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> time <span class="im">import</span> sleep</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>button <span class="op">=</span> Button(<span class="dv">2</span>)</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> button.is_pressed:</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Pressed"</span>)</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Released"</span>)</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    sleep(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Button functionality includes the properties <code>is_pressed</code> and <code>is_held</code>; callbacks <code>when_pressed</code>, <code>when_released</code>, and <code>when_held</code>; and methods <code>wait_for_press()</code> and <code>wait_for_release</code>.</p>
-</section>
-<section id="button-and-led" class="level3">
-<h3 class="anchored" data-anchor-id="button-and-led">Button and LED</h3>
-<p>To connect the LED and button together, you can use this code:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> gpiozero <span class="im">import</span> LED, Button</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>led <span class="op">=</span> LED(<span class="dv">17</span>)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>button <span class="op">=</span> Button(<span class="dv">2</span>)</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> button.is_pressed:</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>        led.on()</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>        led.off()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Alternatively:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> gpiozero <span class="im">import</span> LED, Button</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>led <span class="op">=</span> LED(<span class="dv">17</span>)</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>button <span class="op">=</span> Button(<span class="dv">2</span>)</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    button.wait_for_press()</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    led.on()</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    button.wait_for_release()</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    led.off()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>or:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> gpiozero <span class="im">import</span> LED, Button</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>led <span class="op">=</span> LED(<span class="dv">17</span>)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>button <span class="op">=</span> Button(<span class="dv">2</span>)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>button.when_pressed <span class="op">=</span> led.on</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>button.when_released <span class="op">=</span> led.off</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>
 </section>
 
-
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
-<ol>
-<li id="fn1"><p>Raspberry Pi documentation is copyright © 2012-2024 Raspberry Pi Ltd and is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International</a> (CC BY-SA) licence. Some content originates from the <a href="http://elinux.org/">eLinux wiki</a>, and is licensed under a <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported</a> licence.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section></div></main> <!-- /main -->
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1205,13 +1017,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../../topics/hardware/docs/circuitry-basics.html" class="pagination-link" aria-label="Electronics Basics">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Electronics Basics</span>
+      <a href="../about/syllabus.html" class="pagination-link" aria-label="Syllabus">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Syllabus</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../../topics/hardware/docs/serial-protocols.html" class="pagination-link" aria-label="Serial protocols">
-        <span class="nav-page-text">Serial protocols</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../topics/index.html" class="pagination-link" aria-label="Topics">
+        <span class="nav-page-text">Topics</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1223,7 +1035,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/John-Abbott-College/6P3-Notes/blob/winter2024/topics/hardware/docs/gpios.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/John-Abbott-College/6P3-Notes/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/John-Abbott-College/6P3-Notes/blob/winter2024/about/this-site.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/John-Abbott-College/6P3-Notes/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

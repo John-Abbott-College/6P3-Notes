@@ -896,25 +896,36 @@
     "text": "Resources\nTo learn more about the benefits of formatting and linting, see the video below:\n\n\nFor examples of other VS Code extensions that can improve your dev experience, see the video below:"
   },
   {
-    "objectID": "about/calendar.html",
-    "href": "about/calendar.html",
-    "title": "Calendar",
+    "objectID": "about/this-site.html",
+    "href": "about/this-site.html",
+    "title": "About this website",
     "section": "",
-    "text": "Coming soon!\n\n\n\n Back to top",
+    "text": "Course content, both for lectures and assignments, has been adapted by me from a variety of sources. This section serves the purpose of both acknowledging these references as well as pointing the way for curious students to begin investigating further into course material than we had time to cover.\n\n\nAll course content was either written by Mauricio Buschinelli, Michael Haaf, or explicitly adapted from external resources with attributions made clear. This course content retains the licenses of the original works where relevant, and is otherwise licensed under the Creative Commons Attribution 4.0 International License.\n\nTerms of use\nYou are free to:\n\nShare: copy and redistribute the material in any medium or format\nAdapt: remix, transform, and build upon the material for any purpose, even commercially.\n\nUnder the following terms:\n\nAttribution: You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.\n\nCreative Commons Attribution 4.0 International License",
     "crumbs": [
       "About",
-      "Calendar"
+      "About this website"
     ]
   },
   {
-    "objectID": "about/syllabus.html",
-    "href": "about/syllabus.html",
-    "title": "Syllabus",
+    "objectID": "about/this-site.html#course-content",
+    "href": "about/this-site.html#course-content",
+    "title": "About this website",
     "section": "",
-    "text": "Coming soon!\n\n\n\n Back to top",
+    "text": "Course content, both for lectures and assignments, has been adapted by me from a variety of sources. This section serves the purpose of both acknowledging these references as well as pointing the way for curious students to begin investigating further into course material than we had time to cover.\n\n\nAll course content was either written by Mauricio Buschinelli, Michael Haaf, or explicitly adapted from external resources with attributions made clear. This course content retains the licenses of the original works where relevant, and is otherwise licensed under the Creative Commons Attribution 4.0 International License.\n\nTerms of use\nYou are free to:\n\nShare: copy and redistribute the material in any medium or format\nAdapt: remix, transform, and build upon the material for any purpose, even commercially.\n\nUnder the following terms:\n\nAttribution: You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.\n\nCreative Commons Attribution 4.0 International License",
     "crumbs": [
       "About",
-      "Syllabus"
+      "About this website"
+    ]
+  },
+  {
+    "objectID": "about/this-site.html#course-website",
+    "href": "about/this-site.html#course-website",
+    "title": "About this website",
+    "section": "Course website",
+    "text": "Course website\nDetails about how this website was built follow.\n\nColophon\n\n\n\nFrom Wikipedia: In publishing, a colophon is a brief statement containing information about the publication of a book… Some web pages also have colophons, which frequently contain (X)HTML, CSS, or usability standards compliance information and links to website validation tests.\n\n\n\nMarkup: Markdown\nFramework: Quarto\nDeployment: GitHub Pages\n\nYou can follow along directly with course updates at the course repository.\n\n\nCopyright\nThis website was written and designed by the Michael Haaf. All code and assets related to this website, unless indicated otherwise, are licensed under the GNU General Public License v3.0\n\nTerms of use\nThis website’s code is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.\nThis website’s code is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.\nGNU General Public License Notice",
+    "crumbs": [
+      "About",
+      "About this website"
     ]
   },
   {
@@ -922,9 +933,108 @@
     "href": "about/index.html",
     "title": "About",
     "section": "",
-    "text": "About this site\n\n\n\n\n\n\n\n\n\n\n\n\nCalendar\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSyllabus\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n Back to top",
+    "text": "About this site\n\n\n\n\n\n\n\n\n\n\n\n\nAbout this website\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCalendar\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSyllabus\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n Back to top",
     "crumbs": [
       "About"
+    ]
+  },
+  {
+    "objectID": "about/syllabus.html",
+    "href": "about/syllabus.html",
+    "title": "Syllabus",
+    "section": "",
+    "text": "From the course outline:",
+    "crumbs": [
+      "About",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "about/syllabus.html#logistics",
+    "href": "about/syllabus.html#logistics",
+    "title": "Syllabus",
+    "section": "Logistics",
+    "text": "Logistics\n\nRoom, times, etc.: see Course Outline\nOffice: Penfield 311\nOffice hours: Mon/Fri 11:00 - 12:30pm or so\nEmail: michael DOT haaf AT johnabbott DOT qc DOT ca\nCourse webpage: This website for all content, Moodle (section 1), (section 2) for assignment/project/quiz submissions.\n\n\n\n\nForgive me the smarmy comic, this is usually true…\n\n\n\nCommunication\n\nTeams - For communicating (fastest, most reliable that I will check it same-day)\nMIO - For communicating (non-time-critical)\nEmail - For communicating (time-critical).  Will aim for &lt;24hr response.\n[Moodle][moodle] - For receiving & submitting exercises/assignments/project and getting marks\n\n\n\nAssessment\n\n45% Assignments and Labs\n20% Test (first week of April)\n35% Project Milestones",
+    "crumbs": [
+      "About",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "about/syllabus.html#course-material",
+    "href": "about/syllabus.html#course-material",
+    "title": "Syllabus",
+    "section": "Course material",
+    "text": "Course material\nThere are no required textbooks for this course – this website will contain all of the content that you need to complete course deliverables. Additionally, each lecture will contain references to additional resources for exploring each topic in further detail beyond the scope of the course.",
+    "crumbs": [
+      "About",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "about/calendar.html",
+    "href": "about/calendar.html",
+    "title": "Calendar",
+    "section": "",
+    "text": "This is the authoritative calendar for content covered in class, and for content you should expect to see covered as we continue through the course.\nYou can compare this calendar with the calendar from the [Course Outline][course-outline] to see where this course has deviated from the original outline.",
+    "crumbs": [
+      "About",
+      "Calendar"
+    ]
+  },
+  {
+    "objectID": "about/calendar.html#january",
+    "href": "about/calendar.html#january",
+    "title": "Calendar",
+    "section": "January",
+    "text": "January\n\nLectures & Activities",
+    "crumbs": [
+      "About",
+      "Calendar"
+    ]
+  },
+  {
+    "objectID": "about/calendar.html#february",
+    "href": "about/calendar.html#february",
+    "title": "Calendar",
+    "section": "February",
+    "text": "February\n\nLectures & Activities\n\n\nDeliverables",
+    "crumbs": [
+      "About",
+      "Calendar"
+    ]
+  },
+  {
+    "objectID": "about/calendar.html#march",
+    "href": "about/calendar.html#march",
+    "title": "Calendar",
+    "section": "March",
+    "text": "March\n\nLectures & Activities\n\n\nDeliverables",
+    "crumbs": [
+      "About",
+      "Calendar"
+    ]
+  },
+  {
+    "objectID": "about/calendar.html#april",
+    "href": "about/calendar.html#april",
+    "title": "Calendar",
+    "section": "April",
+    "text": "April\n\nLectures & Activities\n\n\nDeliverables\n\nMarch 11 (Mon): Finish Lab3, start Lab4 and/or A4 (they’re related)\nMarch 15 (Fri): Work on Lab4\nMarch 18 (Mon): Finish Lab4, work on A1\nMarch 22 (Fri): Quiz, work on A1\nMarch 25 (Mon): A1 due, project Milestone 1 released\nMarch 29 (Fri): Easter holiday, no class",
+    "crumbs": [
+      "About",
+      "Calendar"
+    ]
+  },
+  {
+    "objectID": "about/calendar.html#may",
+    "href": "about/calendar.html#may",
+    "title": "Calendar",
+    "section": "May",
+    "text": "May\n\nLectures & Activities\n\n\nDeliverables",
+    "crumbs": [
+      "About",
+      "Calendar"
     ]
   },
   {
