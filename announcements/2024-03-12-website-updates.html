@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-02-19">
+<meta name="dcterms.date" content="2024-03-12">
 
-<title>Connected Objects - Raspberry Pi Package Management: apt</title>
+<title>Connected Objects - Website updates</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,65 +21,29 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../../">
-<link href="../../../topics/linux/docs/remote-linux.html" rel="next">
-<link href="../../../topics/linux/docs/linux-review.html" rel="prev">
-<link href="../../../assets/favicon_io/favicon.ico" rel="icon">
-<script src="../../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<script src="../../../site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../assets/favicon_io/favicon.ico" rel="icon">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": true,
@@ -109,24 +73,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<link rel="stylesheet" href="../../../styles.css">
-<meta property="og:title" content="Connected Objects - Raspberry Pi Package Management: apt">
-<meta property="og:description" content="Installing and configuring Linux packages on Raspberry Pi Debian using the apt package manager.">
-<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/topics/linux/docs/assets/art_title_path_only.svg">
+<link rel="stylesheet" href="../styles.css">
+<meta property="og:title" content="Connected Objects - Website updates">
+<meta property="og:description" content="">
+<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/announcements/assets/art_title_path_only.svg">
 <meta property="og:site_name" content="Connected Objects">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-sidebar floating nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../../assets/favicon_io/favicon-32x32.png" alt="" class="navbar-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../assets/favicon_io/favicon-32x32.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="../../../index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Connected Objects</span>
     </a>
   </div>
@@ -137,19 +101,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="../../../index.html" aria-current="page"> 
+    <a class="nav-link active" href="../index.html" aria-current="page"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../about/calendar.html"> 
+    <a class="nav-link" href="../about/calendar.html"> 
 <span class="menu-text">Calendar</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../about/syllabus.html"> 
+    <a class="nav-link" href="../about/syllabus.html"> 
 <span class="menu-text">Syllabus</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../topics/index.html"> 
+    <a class="nav-link" href="../topics/index.html"> 
 <span class="menu-text">Lectures</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -168,7 +132,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </ul>
   </li>
   <li class="nav-item compact">
-    <a class="nav-link" href="../../../announcements/index.xml"> <i class="bi bi-rss" role="img">
+    <a class="nav-link" href="../announcements/index.xml"> <i class="bi bi-rss" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -188,7 +152,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../topics/index.html">Topics</a></li><li class="breadcrumb-item"><a href="../../../topics/linux/index.html">Linux</a></li><li class="breadcrumb-item"><a href="../../../topics/linux/docs/linux-review.html">Docs</a></li><li class="breadcrumb-item"><a href="../../../topics/linux/docs/package-management-debian.html">Raspberry Pi Package Management: apt</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Website updates</li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -202,19 +166,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../index.html" class="sidebar-item-text sidebar-link">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Home</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../announcements/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../announcements/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Announcements</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../about/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../about/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">About</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -223,19 +187,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../about/calendar.html" class="sidebar-item-text sidebar-link">
+  <a href="../about/calendar.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Calendar</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../about/syllabus.html" class="sidebar-item-text sidebar-link">
+  <a href="../about/syllabus.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Syllabus</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../about/this-site.html" class="sidebar-item-text sidebar-link">
+  <a href="../about/this-site.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">About this website</span></a>
   </div>
 </li>
@@ -243,7 +207,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../topics/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../topics/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Topics</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -252,7 +216,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../topics/getting-started/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../topics/getting-started/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Getting started</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -270,19 +234,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../topics/getting-started/docs/hardware-list.html" class="sidebar-item-text sidebar-link">
+  <a href="../topics/getting-started/docs/hardware-list.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Hardware List</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../topics/getting-started/docs/tech-stack.html" class="sidebar-item-text sidebar-link">
+  <a href="../topics/getting-started/docs/tech-stack.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Technology Stack</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../topics/getting-started/docs/vscode-python-setup.html" class="sidebar-item-text sidebar-link">
+  <a href="../topics/getting-started/docs/vscode-python-setup.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Developer setup</span></a>
   </div>
 </li>
@@ -292,7 +256,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../topics/iot/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../topics/iot/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">IoT</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -310,7 +274,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../topics/iot/docs/what-is-iot.html" class="sidebar-item-text sidebar-link">
+  <a href="../topics/iot/docs/what-is-iot.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Intro to the Internet of Things</span></a>
   </div>
 </li>
@@ -320,7 +284,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../topics/hardware/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../topics/hardware/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Hardware</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -338,37 +302,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../topics/hardware/docs/reterminal-sensors.html" class="sidebar-item-text sidebar-link">
+  <a href="../topics/hardware/docs/reterminal-sensors.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">reTerminal Sensors</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../topics/hardware/docs/analog-vs-digital.html" class="sidebar-item-text sidebar-link">
+  <a href="../topics/hardware/docs/analog-vs-digital.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Signals: Analog and digital</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../topics/hardware/docs/arduino-vs-raspberry-pi.html" class="sidebar-item-text sidebar-link">
+  <a href="../topics/hardware/docs/arduino-vs-raspberry-pi.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">SBCs and Microcontrollers</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../topics/hardware/docs/circuitry-basics.html" class="sidebar-item-text sidebar-link">
+  <a href="../topics/hardware/docs/circuitry-basics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Electronics Basics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../topics/hardware/docs/gpios.html" class="sidebar-item-text sidebar-link">
+  <a href="../topics/hardware/docs/gpios.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">GPIOs: Inputs and Outputs</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../topics/hardware/docs/serial-protocols.html" class="sidebar-item-text sidebar-link">
+  <a href="../topics/hardware/docs/serial-protocols.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Serial protocols</span></a>
   </div>
 </li>
@@ -378,7 +342,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../topics/python/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../topics/python/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Python</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -396,13 +360,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../topics/python/docs/intro-python.html" class="sidebar-item-text sidebar-link">
+  <a href="../topics/python/docs/intro-python.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Intro to Python for Developers</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../topics/python/docs/package-management-python.html" class="sidebar-item-text sidebar-link">
+  <a href="../topics/python/docs/package-management-python.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Package management in Python</span></a>
   </div>
 </li>
@@ -412,37 +376,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../topics/linux/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../topics/linux/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Linux</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false">
  <span class="menu-text">Docs</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth3 show">  
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../topics/linux/docs/linux-review.html" class="sidebar-item-text sidebar-link">
+  <a href="../topics/linux/docs/linux-review.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Linux review</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../topics/linux/docs/package-management-debian.html" class="sidebar-item-text sidebar-link active">
+  <a href="../topics/linux/docs/package-management-debian.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Raspberry Pi Package Management: apt</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../topics/linux/docs/remote-linux.html" class="sidebar-item-text sidebar-link">
+  <a href="../topics/linux/docs/remote-linux.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Remote work on Linux</span></a>
   </div>
 </li>
@@ -457,31 +421,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#raspberry-pi-os-and-debian" id="toc-raspberry-pi-os-and-debian" class="nav-link active" data-scroll-target="#raspberry-pi-os-and-debian">Raspberry Pi OS and Debian</a></li>
-  <li><a href="#apt-debian-package-manger" id="toc-apt-debian-package-manger" class="nav-link" data-scroll-target="#apt-debian-package-manger">Apt: Debian Package Manger</a>
-  <ul class="collapse">
-  <li><a href="#common-apt-commands" id="toc-common-apt-commands" class="nav-link" data-scroll-target="#common-apt-commands">Common <code>apt</code> commands</a></li>
-  <li><a href="#apt-source-repositories-explained" id="toc-apt-source-repositories-explained" class="nav-link" data-scroll-target="#apt-source-repositories-explained">Apt source repositories explained</a></li>
-  </ul></li>
-  </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="package-management-debian.slides.html"><i class="bi bi-file-slides"></i>RevealJS (clean)</a></li></ul></div></nav>
-    </div>
+    
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../topics/index.html">Topics</a></li><li class="breadcrumb-item"><a href="../../../topics/linux/index.html">Linux</a></li><li class="breadcrumb-item"><a href="../../../topics/linux/docs/linux-review.html">Docs</a></li><li class="breadcrumb-item"><a href="../../../topics/linux/docs/package-management-debian.html">Raspberry Pi Package Management: apt</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Raspberry Pi Package Management: apt</h1>
-<p class="subtitle lead">Installing and configuring Linux packages on Raspberry Pi Debian using the <code>apt</code> package manager.</p>
-  <div class="quarto-categories">
-    <div class="quarto-category">Linux</div>
-  </div>
-  </div>
+<h1 class="title">Website updates</h1>
+</div>
 
 
 
@@ -491,7 +438,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">February 19, 2024</p>
+      <p class="date">March 12, 2024</p>
     </div>
   </div>
   
@@ -509,140 +456,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="raspberry-pi-os-and-debian" class="level2">
-<h2 class="anchored" data-anchor-id="raspberry-pi-os-and-debian">Raspberry Pi OS and Debian</h2>
-<p>The Raspberry Pi OS (previously called <em>Raspbian OS</em>) used in the reTerminal is a variation of the <a href="https://en.wikipedia.org/wiki/Debian"><strong>Debian OS</strong></a>, with optimizations for the Raspberry Pi hardware.</p>
-<blockquote class="blockquote">
-<p><strong>Debian OS</strong> is one of the most commonly used Linux distributions, especially as the “base” for derivative distributions. There are over 100 derivatives of Debian, many of which are themselves very popular distributions. These include:</p>
+<p>Hey everyone,</p>
+<p>I’ve made a few changes to the course website, some of which are worth emphasizing because I think they’ll be particularly useful to you:</p>
 <ul>
-<li>Desktop distributions like Ubuntu, Linux Mint, elementaryOS;</li>
-<li>Special-purpose distributions Kali Linux and Backbox (penetration testing)</li>
-<li>Server/Hypervisor distributions like Proxmox, Ubuntu server,</li>
-<li>Many others, you can find a more complete list <a href="https://en.wikipedia.org/wiki/List_of_Linux_distributions#Debian-based">here</a></li>
+<li><a href="http://example.org">Course Calendar</a>: The defunct Calendar page is now being maintained. Check this page for upcoming lecture/lab activity, particularly for Lab demo deadlines. I will keep it maintained throughout the rest of the semester.</li>
+<li><a href="http://example.org">Announcements</a>: Announcements like this one will be posted on the course website and (sort-of) automatically posted on Moodle as well. If you like <a href="http://example.org">RSS</a>, you can subcribe using the <iconify-icon inline="" icon="simple-icons:moodle" aria-label="Icon moodle from simple-icons Iconify.design set." title="Icon moodle from simple-icons Iconify.design set."></iconify-icon> icon in the nav bar.</li>
+<li><a href="http://example.org">Lecture index</a>: I’ve fixed some metadata and theming issues for the <a href="http://example.org">Topics</a> page (also called Lectures). Here you can find an index of every course lecture, and sort them by category. This should help keep track of topics and things learned.</li>
 </ul>
-</blockquote>
-<p>Debian-derived distributions share the following: - the <code>.deb</code> package format - the <code>dpkg</code> package manager and its frontend <code>apt</code></p>
-<p>For that reason, many of the commands and configuration for Raspberry Pi OS can be taken directly from Debian’s documentation.</p>
-</section>
-<section id="apt-debian-package-manger" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="apt-debian-package-manger">Apt: Debian Package Manger</h2>
-<p>The command <code>apt</code> is the default package manager of Debian.</p>
-<blockquote class="blockquote">
-<p>A <strong>package manager</strong> is a software tool responsible for automating the installation, removal, configuration and removal of computer programs.</p>
-</blockquote>
-<p>Managing packages could technically be done manually, however, it is very time consuming and error prone: tracking package dependencies and compatibility with the current system.</p>
-<section id="common-apt-commands" class="level3 page-columns page-full">
-<h3 class="anchored" data-anchor-id="common-apt-commands">Common <code>apt</code> commands</h3>
-<p>There are many <code>apt</code> commands you will find yourself using all the time on a Debian-based OS like Raspberry Pi. It’s worth knowing in a bit more detail how they work.</p>
-<p>Note: Online, you will often see <code>apt-get</code> used instead of <code>apt</code>. <strong><code>apt</code> is a newer package manager API meant to replace the older API <code>apt-get</code></strong>. However, they both do more or less the same things the same ways, and <code>apt</code> is a backwards compatible replacement for <code>apt-get</code> in all cases. See <a href="https://www.debian.org/doc/manuals/debian-handbook/sect.apt-get.en.html">Debian docs</a> for details.</p>
-<p>During Lab 1, you updated, upgraded and installed some packages in the Raspberry Pi OS using <code>apt</code>:</p>
-<table class="table-striped table-hover column-body-outset-right table">
-<caption><code>apt</code>: the difference between <code>update</code> and <code>upgrade</code></caption>
-<colgroup>
-<col style="width: 25%">
-<col style="width: 74%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Command</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>sudo apt update</code></td>
-<td>Update list of available packages</td>
-</tr>
-<tr class="even">
-<td><code>sudo apt upgrade</code></td>
-<td>Upgrade the system by installing/upgrading packages</td>
-</tr>
-</tbody>
-</table>
-<p>Combined, these two commands <strong>update and upgrade all of the currently operating system packages</strong> on your system:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sudo apt update <span class="kw">&amp;&amp;</span> <span class="fu">sudo</span> apt upgrade <span class="at">-y</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>There are a few other <code>apt</code> commands worth knowing.</p>
-<table class="table-striped table-hover column-body-outset-right table">
-<caption><code>apt</code>: a variety of other commands I find myself using now and again</caption>
-<colgroup>
-<col style="width: 20%">
-<col style="width: 32%">
-<col style="width: 47%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Command</th>
-<th>Description</th>
-<th>Example use case</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>apt list</code></td>
-<td>list packages installed on your system based on package names.</td>
-<td><code>apt list | grep "package name"</code> Need to remember or check if you successfully installed an app? Combine <code>apt list</code> with <code>grep</code> and a pipe.</td>
-</tr>
-<tr class="even">
-<td><code>apt search &lt;query&gt;</code></td>
-<td>Returns all repository packages search in package descriptions</td>
-<td><code>apt search "package name"</code> Do you know part of the? Run after <code>apt</code></td>
-</tr>
-<tr class="odd">
-<td><code>apt show &lt;package&gt;</code></td>
-<td>show package details</td>
-<td></td>
-</tr>
-<tr class="even">
-<td><code>apt install &lt;package&gt;</code></td>
-<td>install packages</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><code>apt reinstall &lt;package&gt;</code></td>
-<td>reinstall packages</td>
-<td></td>
-</tr>
-<tr class="even">
-<td><code>apt remove &lt;package&gt;</code></td>
-<td>remove packages</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>You can see details about all of these commands and more by running <code>apt --help</code>. Note: documentation will often leave out <code>sudo</code> since the need to run <code>sudo</code> depends on the machine and the user.</p>
-<blockquote class="blockquote">
-<p>In general, commands that <strong>read</strong> data (<code>apt list</code>, <code>apt search</code>, etc.) will generally not require <code>sudo</code>, since most folderst that <code>apt</code> will touch are universally readable.</p>
-<p><code>apt</code> commands that <strong>write</strong> data (<code>apt install</code>, etc.) to a folder not owned by the current user – which is most folders outside of <code>/home/username</code>, but particularly common package install locations like <code>/usr</code>, <code>/bin</code>, etc. – these commands will require <code>sudo</code> to gain the required write permission</p>
-</blockquote>
-</section>
-<section id="apt-source-repositories-explained" class="level3">
-<h3 class="anchored" data-anchor-id="apt-source-repositories-explained">Apt source repositories explained</h3>
-<p><em>This section has been adapted directly from the Debian documentation: see <a href="https://wiki.debian.org/SourcesList">SourcesList</a></em></p>
-<p><code>Apt</code> downloads packages from one or more <a href="https://wiki.debian.org/DebianRepository">software repositories</a> (sources) and installs them onto your computer.</p>
-<p>A repository is generally a network server, such as the official <a href="https://wiki.debian.org/DebianStable">DebianStable</a> repository. Local directories or CD/DVD are also accepted.</p>
-<p>The specific repositories (package sources) configured on your machine affect: - What software packages are available for download - What versions of packages are available - Who packages the software</p>
-<section id="commonly-used-package-sources" class="level4">
-<h4 class="anchored" data-anchor-id="commonly-used-package-sources">Commonly used package sources</h4>
-<ul>
-<li>DebianStable: official Debian repository for the current release</li>
-<li>StableProposedUpdates: official Debian repository for upcoming point releases (security and important bug fixes every ~2 months)</li>
-<li>StableUpdates: official Debian repository for changes that cannot wait for the next point release, packages are also added to StableProposedUpdates for inclusion in the next point release</li>
-<li>DebianSecurity: official Debian repository for frequent security updates</li>
-<li>DebianBackports: more recent versions of some packages, compatible with DebianStable.</li>
-<li>DebianUnstable: rolling development version containing the latest packages</li>
-<li>DebianExperimental: development version containing the experimental/alpha/beta/untested packages</li>
-</ul>
-</section>
-<section id="editing-software-sources" class="level4">
-<h4 class="anchored" data-anchor-id="editing-software-sources">Editing Software Sources</h4>
-<p>Being able to change the repositories used by your package management system is a powerful feature but this power comes with some responsibility.</p>
-<p>Users are cautioned that it is possible to break your system (in a way that could be difficult or impossible to cleanly fix) by adding third-party repositories, or repositories for a Debian version that does not match your current version - these repository create a risk of conflicting package versions, creating what’s sometimes called a “Franken-Debian” system.</p>
-<p>The whole concept behind a Debian stable release is that the Debian developers have picked a set of software and their versions that function nicely together. While this software is patched to fix security issues, the software is frequently not the latest version. It takes some experience to know how the repos may be changed without risk of breaking your system. Users of all levels are advised to change repos cautiously.</p>
+<p>Let me know if you have any questions, or if there’s something that doesn’t seem to work.</p>
 
 
-</section>
-</section>
-</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1198,18 +1021,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../../../topics/linux/docs/linux-review.html" class="pagination-link" aria-label="Linux review">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Linux review</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../../../topics/linux/docs/remote-linux.html" class="pagination-link" aria-label="Remote work on Linux">
-        <span class="nav-page-text">Remote work on Linux</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -1219,12 +1030,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="../../../about/this-site.html">
+    <a class="nav-link" href="../about/this-site.html">
 <p>About</p>
 </a>
   </li>  
     <li class="nav-item">
-    <a class="nav-link" href="../../../about/this-site.html#copyright">
+    <a class="nav-link" href="../about/this-site.html#copyright">
 <p>License</p>
 </a>
   </li>  
@@ -1241,7 +1052,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
  
   </li>  
     <li class="nav-item compact">
-    <a class="nav-link" href="../../../announcements/index.xml">
+    <a class="nav-link" href="../announcements/index.xml">
       <i class="bi bi-rss" role="img">
 </i> 
     </a>
