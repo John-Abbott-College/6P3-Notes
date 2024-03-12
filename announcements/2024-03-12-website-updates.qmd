@@ -1,0 +1,20 @@
+---
+title: "Website updates"
+date: 2024-03-12
+date-modified: last-modified
+---
+
+[calendar]: http://example.org
+[rss]: http://example.org
+[announcements]: http://example.org
+[lectures]: http://example.org
+
+Hey everyone,
+
+I've made a few changes to the course website, some of which are worth emphasizing because I think they'll be particularly useful to you:
+
+- [Course Calendar][calendar]: The defunct Calendar page is now being maintained. Check this page for upcoming lecture/lab activity, particularly for Lab demo deadlines. I will keep it maintained throughout the rest of the semester.
+- [Announcements][announcements]: Announcements like this one will be posted on the course website and (sort-of) automatically posted on Moodle as well. If you like [RSS][rss], you can subcribe using the {{< iconify simple-icons moodle >}} icon in the nav bar.
+- [Lecture index][lectures]: I've fixed some metadata and theming issues for the [Topics][lectures] page (also called Lectures). Here you can find an index of every course lecture, and sort them by category. This should help keep track of topics and things learned.
+
+Let me know if you have any questions, or if there's something that doesn't seem to work.
