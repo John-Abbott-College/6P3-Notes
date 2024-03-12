@@ -9,8 +9,6 @@ date-modified: last-modified
 [announcements]: http://example.org
 [lectures]: http://example.org
 
-Hey everyone,
-
 I've made a few changes to the course website, some of which are worth emphasizing because I think they'll be particularly useful to you:
 
 - [Course Calendar][calendar]: The defunct Calendar page is now being maintained. Check this page for upcoming lecture/lab activity, particularly for Lab demo deadlines. I will keep it maintained throughout the rest of the semester.
