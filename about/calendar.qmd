@@ -81,8 +81,8 @@ You can compare this calendar with the calendar from the [Course Outline][course
 ### Schedule
 
 - March 4-8: Study break
-- **March 11 (Mon):** Finish Lab3, start Lab4
-- **March 15 (Fri):** Work on Lab4, start A1
+- **March 11 (Mon):** Finish Lab3
+- **March 15 (Fri):** **Demo Lab3 beginning of class**, start Lab4
 - **March 18 (Mon):** Finish Lab4, work on A1
 - **March 22 (Fri):** Quiz 1, work on A1
 - **March 25 (Mon):** A1 due, project Milestone 1 released

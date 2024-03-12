@@ -23,11 +23,23 @@ website:
         href: about/this-site.qmd#copyright
       - text: "Source"
         href: https://github.com/john-abbott-college/6P3-Notes/
+    right:
+      - text: "{{< iconify simple-icons moodle >}}"
+        menu: 
+          - text: "Section 1 (8h30)"
+            href: https://moodle.johnabbott.qc.ca/course/view.php?id=807
+          - text: "Section 2 (13h30)"
+            href: https://moodle.johnabbott.qc.ca/course/view.php?id=808
+      - icon: rss
+        href: announcements/index.xml
+      - text: "{{< iconify fa6-brands github >}}"
+        href: https://github.com/John-Abbott-College/6P3-Notes
   sidebar:
     style: "floating"
     align: center
     contents: 
       - index.qmd
+      - announcements/index.qmd
       - section: "About"
         contents: about/**
       - section: "Topics"
@@ -48,6 +60,8 @@ website:
             href: https://moodle.johnabbott.qc.ca/course/view.php?id=807
           - text: "Section 2 (13h30)"
             href: https://moodle.johnabbott.qc.ca/course/view.php?id=808
+      - icon: rss
+        href: announcements/index.xml
       - text: "{{< iconify fa6-brands github >}}"
         href: https://github.com/John-Abbott-College/6P3-Notes
 

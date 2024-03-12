@@ -10,6 +10,7 @@ listing:
   sort-ui: [date, title]
   sort: date
   date-format: iso
+  categories: true
   exclude:
     filename: "*index.qmd"
 ---

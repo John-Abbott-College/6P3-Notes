@@ -1,0 +1,13 @@
+---
+title: "Lab 3: Demo in class Friday March 15"
+date: 2024-03-12
+date-modified: last-modified
+---
+
+As mentioned in class on March 11, the hand-in for **Lab 3** will be on **Friday March 15**. Demos will start at the **beginning** of class. Come to class prepared to show your progress.
+
+The deadline to submit your scripts for Lab 3 code remains midnight on Friday. 
+
+If you have not completed the lab by Friday morning, you will get partial marks up to whatever you have completed. 
+
+Let me know if you have any questions! (by Teams preferably)
