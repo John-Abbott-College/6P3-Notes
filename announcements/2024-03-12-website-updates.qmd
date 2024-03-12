@@ -4,10 +4,10 @@ date: 2024-03-12
 date-modified: last-modified
 ---
 
-[calendar]: http://example.org
-[rss]: http://example.org
-[announcements]: http://example.org
-[lectures]: http://example.org
+[calendar]: /about/calendar.qmd
+[rss]: https://en.wikipedia.org/wiki/RSS
+[announcements]: /announcements/
+[lectures]: /topics/
 
 I've made a few changes to the course website, some of which are worth emphasizing because I think they'll be particularly useful to you:
 
