@@ -13,81 +13,97 @@ This is the authoritative calendar for content covered in class, and for content
 
 You can compare this calendar with the calendar from the [Course Outline][course-outline] to see where this course has deviated from the original outline.
 
-[moodle]: https://moodle.johnabbott.qc.ca/course/view.php?id=807
 [moodle-sec1]: https://moodle.johnabbott.qc.ca/course/view.php?id=807
 [moodle-sec2]: https://moodle.johnabbott.qc.ca/course/view.php?id=808
 
 [syllabus]: /about/syllabus
+[course-outline]: /about/course-outline
 
 [lab0-sec1]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=33678
-[lab1-sec1]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=33678
-[lab2-sec1]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=33678
-[lab3-sec1]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=33678
-[lab4-sec1]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=33678
-[lab5-sec1]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=33678
-[lab6-sec1]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=33678
-[lab7-sec1]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=33678
-[lab8-sec1]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=33678
-
-[lab0-sec2]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=33678
-[lab1-sec2]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=33678
-[lab2-sec2]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=33678
-[lab3-sec2]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=33678
-[lab4-sec2]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=33678
-[lab5-sec2]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=33678
-[lab6-sec2]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=33678
-[lab7-sec2]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=33678
-[lab8-sec2]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=33678
-
+[lab1-sec1]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=33679
+[lab2-sec1]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=32606
+[lab3-sec1]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=32608
+[lab4-sec1]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=32609
+[lab5-sec1]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=32610
+[lab6-sec1]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=32611
+[lab7-sec1]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=32612
+[lab8-sec1]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=32613
 [a1-sec1]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=32614
-[a2-sec1]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=32614
-
-[a1-sec2]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=32614
-[a2-sec2]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=32614
-
+[a2-sec1]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=32615
 [m1-sec1]: http://example.org
 [m2-sec1]: http://example.org
 [m3-sec1]: http://example.org
 [m4-sec1]: http://example.org
 
+
+
+[lab0-sec2]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=33682
+[lab1-sec2]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=33681
+[lab2-sec2]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=32628
+[lab3-sec2]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=32630
+[lab4-sec2]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=32631
+[lab5-sec2]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=32632
+[lab6-sec2]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=32633
+[lab7-sec2]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=32634
+[lab8-sec2]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=32635
+[a1-sec2]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=32636
+[a2-sec2]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=32637
 [m1-sec2]: http://example.org
 [m2-sec2]: http://example.org
 [m3-sec2]: http://example.org
 [m4-sec2]: http://example.org
 
 
-## January
-
-### Lectures & Activities
-
-## February
-
-### Lectures & Activities
+## January & February
 
 ### Deliverables
+
+1. **Lab 0:** Dev env and Python (1%). [Section 1][lab0-sec1], [Section 2][lab0-sec2]
+2. **Lab 1:** reTerminal First Login (3%). [Section 1][lab1-sec1], [Section 2][lab1-sec2]
+3. **Lab 2:** reTerminal Interface Scripting (3%). [Section 1][lab2-sec1], [Section 2][lab2-sec2]
+
+### Schedule
+
+- **Jan 26/29:** Intro to course, reTerminal distribution, Lab 0 exercises
+- **Feb 2:** Finish Lab0, start Lab1
+- **Feb 5-16:** Lab1
+- **Feb 19-March 1:** Lab2
 
 ## March
 
-### Lectures & Activities
-
-
 ### Deliverables
+
+1. **Lab 3:** Analog & Digital Signals (3%). [Section 1][lab3-sec1], [Section 2][lab3-sec2]
+2. **Lab 4:** PWM, I2C, and Device Controllers (4%). [Section 1][lab4-sec1], [Section 2][lab4-sec2]
+3. **Assignment 1:** HVAC IoT System (9%). [Section 1][a1-sec1], [Section 2][a1-sec2]
+4. **Quiz 1:** Linux, Python, and reTerminal knowledge check (see Schedule below)
+
+### Schedule
+
+- March 4-8: Study break
+- **March 11 (Mon):** Finish Lab3, start Lab4
+- **March 15 (Fri):** Work on Lab4, start A1
+- **March 18 (Mon):** Finish Lab4, work on A1
+- **March 22 (Fri):** Quiz 1, work on A1
+- **March 25 (Mon):** A1 due, project Milestone 1 released
+- March 29 (Fri): Easter holiday, no class
 
 ## April
 
-### Lectures & Activities
-
 ### Deliverables
 
-- **March 11 (Mon):** Finish Lab3, start Lab4 and/or A4 (they're related)
-- **March 15 (Fri):** Work on Lab4
-- **March 18 (Mon):** Finish Lab4, work on A1
-- **March 22 (Fri):** Quiz, work on A1
-- **March 25 (Mon):** A1 due, project Milestone 1 released
-- **March 29 (Fri):** Easter holiday, no class
+TBA
+
+### Schedule
+
+TBA
 
 ## May
 
-### Lectures & Activities
-
 ### Deliverables
+
+TBA
+
+### Schedule
+
+TBA

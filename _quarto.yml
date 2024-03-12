@@ -5,25 +5,54 @@ website:
   title: "Connected Objects"
   image: "assets/art_title_path_only.svg"
   favicon: "assets/favicon_io/favicon.ico"
+  site-path: "/6P3-Notes/"
   site-url: "https://john-abbott-college.github.io/6P3-Notes/"
-  repo-url: "https://github.com/John-Abbott-College/6P3-Notes/"
-  repo-branch: winter2024
-  repo-actions: [source, issue]
   open-graph: true
   page-navigation: true
   back-to-top-navigation: true
+  bread-crumbs: true
+  search:
+    show-item-context: true
+    type: overlay
+    copy-button: true
   page-footer:
     left: |
       &copy; Mauricio Buschinelli 2022-2023; &copy; Michael Haaf 2024
+    center:
+      - text: "About"
+        href: about/this-site.qmd
+      - text: "License"
+        href: about/this-site.qmd#copyright
+      - text: "Source"
+        href: https://github.com/john-abbott-college/6P3-Notes/
   sidebar:
-    style: "docked"
+    style: "floating"
     align: center
-    contents:
+    contents: 
       - index.qmd
-      - auto: "*"
+      - section: "About"
+        contents: about/**
+      - section: "Topics"
+        contents: topics/**
 
   navbar: 
-    search: true
+    left:
+      - index.qmd
+      - text: "Calendar"
+        href: about/calendar.qmd
+      - text: "Syllabus"
+        href: about/syllabus.qmd
+      - text: "Lectures"
+        href: topics/index.qmd
+      - text: "{{< iconify simple-icons moodle >}}"
+        menu: 
+          - text: "Section 1 (8h30)"
+            href: https://moodle.johnabbott.qc.ca/course/view.php?id=807
+          - text: "Section 2 (13h30)"
+            href: https://moodle.johnabbott.qc.ca/course/view.php?id=808
+      - text: "{{< iconify fa6-brands github >}}"
+        href: https://github.com/John-Abbott-College/6P3-Notes
+
     logo: "assets/favicon_io/favicon-32x32.png"
 
 format:

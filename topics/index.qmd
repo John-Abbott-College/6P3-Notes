@@ -1,6 +1,6 @@
 ---
-title: "Topics"
-subtitle: "Directory listing for all course material provided in this course."
+title: "Lecture Index"
+subtitle: "Directory listing for all lecture material provided in this course."
 format:
   html: default
 listing: 
