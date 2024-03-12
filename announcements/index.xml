@@ -45,9 +45,9 @@
 
 <p>I’ve made a few changes to the course website, some of which are worth emphasizing because I think they’ll be particularly useful to you:</p>
 <ul>
-<li><a href="http://example.org">Course Calendar</a>: The defunct Calendar page is now being maintained. Check this page for upcoming lecture/lab activity, particularly for Lab demo deadlines. I will keep it maintained throughout the rest of the semester.</li>
-<li><a href="http://example.org">Announcements</a>: Announcements like this one will be posted on the course website and (sort-of) automatically posted on Moodle as well. If you like <a href="http://example.org">RSS</a>, you can subcribe using the <iconify-icon inline="" icon="simple-icons:moodle" aria-label="Icon moodle from simple-icons Iconify.design set." title="Icon moodle from simple-icons Iconify.design set."></iconify-icon> icon in the nav bar.</li>
-<li><a href="http://example.org">Lecture index</a>: I’ve fixed some metadata and theming issues for the <a href="http://example.org">Topics</a> page (also called Lectures). Here you can find an index of every course lecture, and sort them by category. This should help keep track of topics and things learned.</li>
+<li><a href="../about/calendar.html">Course Calendar</a>: The defunct Calendar page is now being maintained. Check this page for upcoming lecture/lab activity, particularly for Lab demo deadlines. I will keep it maintained throughout the rest of the semester.</li>
+<li><a href="../announcements/">Announcements</a>: Announcements like this one will be posted on the course website and (sort-of) automatically posted on Moodle as well. If you like <a href="https://en.wikipedia.org/wiki/RSS">RSS</a>, you can subcribe using the <iconify-icon inline="" icon="simple-icons:moodle" aria-label="Icon moodle from simple-icons Iconify.design set." title="Icon moodle from simple-icons Iconify.design set."></iconify-icon> icon in the nav bar.</li>
+<li><a href="../topics/">Lecture index</a>: I’ve fixed some metadata and theming issues for the <a href="../topics/">Topics</a> page (also called Lectures). Here you can find an index of every course lecture, and sort them by category. This should help keep track of topics and things learned.</li>
 </ul>
 <p>Let me know if you have any questions, or if there’s something that doesn’t seem to work.</p>
 
