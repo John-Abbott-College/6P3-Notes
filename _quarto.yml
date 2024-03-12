@@ -16,8 +16,6 @@ website:
     type: overlay
     copy-button: true
   page-footer:
-    left: |
-      &copy; Mauricio Buschinelli 2022-2023; &copy; Michael Haaf 2024
     center:
       - text: "About"
         href: about/this-site.qmd
