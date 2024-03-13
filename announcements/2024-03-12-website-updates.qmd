@@ -1,7 +1,6 @@
 ---
 title: "Website updates"
 date: 2024-03-12
-date-modified: last-modified
 ---
 
 [calendar]: /about/calendar.qmd

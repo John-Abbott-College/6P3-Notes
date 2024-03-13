@@ -1,7 +1,6 @@
 ---
 title: "Lab 3: Demo in class Friday March 15"
 date: 2024-03-12
-date-modified: last-modified
 ---
 
 As mentioned in class on March 11, the hand-in for **Lab 3** will be on **Friday March 15**. Demos will start at the **beginning** of class. Come to class prepared to show your progress.

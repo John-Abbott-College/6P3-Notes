@@ -3,9 +3,7 @@ title: Syllabus
 subtitle: "Course description outlining goals, expectations, resources, and other important information."
 ---
 
-[moodle-sec1]: https://moodle.johnabbott.qc.ca/course/view.php?id=807
-[moodle-sec2]: https://moodle.johnabbott.qc.ca/course/view.php?id=808
-[course-outline]: https://moodle.johnabbott.qc.ca/pluginfile.php/66254/mod_resource/content/4/WINTER2024.COMPUTER_SCIENCE.420-6P3-AB.HAAFM.pdf
+{{< include /_reference-links.md >}}
 
 From the [course outline][course-outline]:
 
