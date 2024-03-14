@@ -1,0 +1,35 @@
+---
+title: "On updating your pi"
+date: 2024-03-14
+---
+
+A few students have run into system updates that may break important reTerminal features (the screen, for e.g.). If you run into any issues when updating your pi software, see below!
+
+The standard Debian commands for updating system software: 
+
+```bash
+$ sudo apt update && sudo apt upgrade -y
+```
+
+The latest linux updates have [introduced some significant changes to i2c interface](https://forum.seeedstudio.com/t/running-seeed-linux-dtoverlays-in-reterminal-fails-to-build-device-driver/275675) which may cause your pi LCD screen, among other hardware, to fail.
+
+For now, when updating your pi software, you should also do the following:
+
+```bash
+# If this folder does not exist, run the following command first:
+# cd ~/ && git clone https://github.com/Seeed-Studio/seeed-linux-dtoverlays
+cd ~/seeed-linux-dtoverlays 
+git pull
+```
+
+If there are any updates when the `git pull` is run, you should re-run the setup script:
+
+```bash
+sudo ./scripts/reTerminal.sh
+```
+
+Then, finally, reboot the device:
+
+```bash
+sudo reboot
+```

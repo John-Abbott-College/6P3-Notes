@@ -52,6 +52,9 @@ Combined, these two commands **update and upgrade all of the currently operating
 $ sudo apt update && sudo apt upgrade -y
 ```
 
+::: {.callout-important}
+Important: see [the March 14 announcement about upgrading your Pi](/announcements/2024-03-14-pi-update.qmd) if at any point a system update causes hardware issues (e.g. your screen stops working)
+:::
 
 There are a few other `apt` commands worth knowing.
 
