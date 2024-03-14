@@ -1,6 +1,10 @@
 ---
 title: Syllabus
 subtitle: "Course description outlining goals, expectations, resources, and other important information."
+format:
+  html:
+    toc: true
+    date-modified: last-modified
 ---
 
 {{< include /_reference-links.md >}}
