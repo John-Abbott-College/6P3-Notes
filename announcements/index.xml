@@ -15,7 +15,55 @@
 <link>https://john-abbott-college.github.io/6P3-Notes/announcements/</link>
 </image>
 <generator>quarto-1.4.551</generator>
-<lastBuildDate>Tue, 12 Mar 2024 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Thu, 14 Mar 2024 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>On updating your pi</title>
+  <link>https://john-abbott-college.github.io/6P3-Notes/announcements/2024-03-14-pi-update.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>A few students have run into system updates that may break important reTerminal features (the screen, for e.g.). If you run into any issues when updating your pi software, see below!</p>
+<p>The standard Debian commands for updating system software:</p>
+<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">$</span> sudo apt update <span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&amp;&amp;</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sudo</span> apt upgrade <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-y</span></span></code></pre></div>
+<p>The latest linux updates have <a href="https://forum.seeedstudio.com/t/running-seeed-linux-dtoverlays-in-reterminal-fails-to-build-device-driver/275675">introduced some significant changes to i2c interface</a> which may cause your pi LCD screen, among other hardware, to fail.</p>
+<p>For now, when updating your pi software, you should also do the following:</p>
+<div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># If this folder does not exist, run the following command first:</span></span>
+<span id="cb2-2"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># cd ~/ &amp;&amp; git clone https://github.com/Seeed-Studio/seeed-linux-dtoverlays</span></span>
+<span id="cb2-3"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">cd</span> ~/seeed-linux-dtoverlays </span>
+<span id="cb2-4"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">git</span> pull</span></code></pre></div>
+<p>If there are any updates when the <code>git pull</code> is run, you should re-run the setup script:</p>
+<div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sudo</span> ./scripts/reTerminal.sh</span></code></pre></div>
+<p>Then, finally, reboot the device:</p>
+<div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sudo</span> reboot</span></code></pre></div>
+
+
+
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
+  <guid>https://john-abbott-college.github.io/6P3-Notes/announcements/2024-03-14-pi-update.html</guid>
+  <pubDate>Thu, 14 Mar 2024 00:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Lab 3: Demo in class Friday March 15</title>
   <link>https://john-abbott-college.github.io/6P3-Notes/announcements/2024-03-12-lab3-demo.html</link>

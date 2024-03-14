@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2024-03-14">
 
-<title>Connected Objects - Getting started</title>
+<title>Connected Objects - On updating your pi</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,33 +21,63 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<link href="../../topics/getting-started/docs/hardware-list.html" rel="next">
-<link href="../../topics/python/docs/package-management-python.html" rel="prev">
-<link href="../../assets/favicon_io/favicon.ico" rel="icon">
-<script src="../../site_libs/quarto-listing/list.min.js"></script>
-<script src="../../site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<script src="../../site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../assets/favicon_io/favicon.ico" rel="icon">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": true,
@@ -74,69 +105,12 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-subtitle','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="Connected Objects - Getting started">
-<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/topics/getting-started/assets/art_title_path_only.svg">
+<link rel="stylesheet" href="../styles.css">
+<meta property="og:title" content="Connected Objects - On updating your pi">
+<meta property="og:description" content="">
+<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/announcements/assets/art_title_path_only.svg">
 <meta property="og:site_name" content="Connected Objects">
 </head>
 
@@ -147,10 +121,10 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../assets/favicon_io/favicon-32x32.png" alt="" class="navbar-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../assets/favicon_io/favicon-32x32.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Connected Objects</span>
     </a>
   </div>
@@ -161,19 +135,19 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="../../index.html" aria-current="page"> 
+    <a class="nav-link active" href="../index.html" aria-current="page"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../about/calendar.html"> 
+    <a class="nav-link" href="../about/calendar.html"> 
 <span class="menu-text">Calendar</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../about/syllabus.html"> 
+    <a class="nav-link" href="../about/syllabus.html"> 
 <span class="menu-text">Syllabus</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../topics/index.html"> 
+    <a class="nav-link" href="../topics/index.html"> 
 <span class="menu-text">Lectures</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -192,7 +166,7 @@ window.Quarto = {
     </ul>
   </li>
   <li class="nav-item compact">
-    <a class="nav-link" href="../../announcements/index.xml"> <i class="bi bi-rss" role="img">
+    <a class="nav-link" href="../announcements/index.xml"> <i class="bi bi-rss" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -212,7 +186,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../topics/index.html">Topics</a></li><li class="breadcrumb-item"><a href="../../topics/getting-started/index.html">Getting started</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">On updating your pi</li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -226,19 +200,19 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Home</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../announcements/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../announcements/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Announcements</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../about/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../about/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">About</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -247,19 +221,19 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../about/calendar.html" class="sidebar-item-text sidebar-link">
+  <a href="../about/calendar.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Calendar</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../about/syllabus.html" class="sidebar-item-text sidebar-link">
+  <a href="../about/syllabus.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Syllabus</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../about/this-site.html" class="sidebar-item-text sidebar-link">
+  <a href="../about/this-site.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">About this website</span></a>
   </div>
 </li>
@@ -267,7 +241,7 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../topics/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../topics/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Topics</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -276,7 +250,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../topics/linux/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../topics/linux/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Linux</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -294,19 +268,19 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../topics/linux/docs/linux-review.html" class="sidebar-item-text sidebar-link">
+  <a href="../topics/linux/docs/linux-review.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Linux review</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../topics/linux/docs/package-management-debian.html" class="sidebar-item-text sidebar-link">
+  <a href="../topics/linux/docs/package-management-debian.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Raspberry Pi Package Management: apt</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../topics/linux/docs/remote-linux.html" class="sidebar-item-text sidebar-link">
+  <a href="../topics/linux/docs/remote-linux.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Remote work on Linux</span></a>
   </div>
 </li>
@@ -316,7 +290,7 @@ window.Quarto = {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../topics/hardware/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../topics/hardware/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Hardware</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -334,37 +308,37 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../topics/hardware/docs/reterminal-sensors.html" class="sidebar-item-text sidebar-link">
+  <a href="../topics/hardware/docs/reterminal-sensors.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">reTerminal Sensors</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../topics/hardware/docs/analog-vs-digital.html" class="sidebar-item-text sidebar-link">
+  <a href="../topics/hardware/docs/analog-vs-digital.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Signals: Analog and digital</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../topics/hardware/docs/arduino-vs-raspberry-pi.html" class="sidebar-item-text sidebar-link">
+  <a href="../topics/hardware/docs/arduino-vs-raspberry-pi.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">SBCs and Microcontrollers</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../topics/hardware/docs/circuitry-basics.html" class="sidebar-item-text sidebar-link">
+  <a href="../topics/hardware/docs/circuitry-basics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Electronics Basics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../topics/hardware/docs/gpios.html" class="sidebar-item-text sidebar-link">
+  <a href="../topics/hardware/docs/gpios.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">GPIOs: Inputs and Outputs</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../topics/hardware/docs/serial-protocols.html" class="sidebar-item-text sidebar-link">
+  <a href="../topics/hardware/docs/serial-protocols.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Serial protocols</span></a>
   </div>
 </li>
@@ -374,7 +348,7 @@ window.Quarto = {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../topics/python/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../topics/python/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Python</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -392,13 +366,13 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../topics/python/docs/intro-python.html" class="sidebar-item-text sidebar-link">
+  <a href="../topics/python/docs/intro-python.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Intro to Python for Developers</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../topics/python/docs/package-management-python.html" class="sidebar-item-text sidebar-link">
+  <a href="../topics/python/docs/package-management-python.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Package management in Python</span></a>
   </div>
 </li>
@@ -408,13 +382,13 @@ window.Quarto = {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../topics/getting-started/index.html" class="sidebar-item-text sidebar-link active">
+            <a href="../topics/getting-started/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Getting started</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false">
@@ -426,19 +400,19 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../topics/getting-started/docs/hardware-list.html" class="sidebar-item-text sidebar-link">
+  <a href="../topics/getting-started/docs/hardware-list.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Hardware List</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../topics/getting-started/docs/tech-stack.html" class="sidebar-item-text sidebar-link">
+  <a href="../topics/getting-started/docs/tech-stack.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Technology Stack</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../topics/getting-started/docs/vscode-python-setup.html" class="sidebar-item-text sidebar-link">
+  <a href="../topics/getting-started/docs/vscode-python-setup.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Developer setup</span></a>
   </div>
 </li>
@@ -448,7 +422,7 @@ window.Quarto = {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../topics/iot/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../topics/iot/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">IoT</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -466,7 +440,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../topics/iot/docs/what-is-iot.html" class="sidebar-item-text sidebar-link">
+  <a href="../topics/iot/docs/what-is-iot.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Intro to the Internet of Things</span></a>
   </div>
 </li>
@@ -485,9 +459,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../topics/index.html">Topics</a></li><li class="breadcrumb-item"><a href="../../topics/getting-started/index.html">Getting started</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Getting started</h1>
+<h1 class="title">On updating your pi</h1>
 </div>
 
 
@@ -495,6 +469,12 @@ window.Quarto = {
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 14, 2024</p>
+    </div>
+  </div>
   
     
   </div>
@@ -504,114 +484,23 @@ window.Quarto = {
 </header>
 
 
+<p>A few students have run into system updates that may break important reTerminal features (the screen, for e.g.). If you run into any issues when updating your pi software, see below!</p>
+<p>The standard Debian commands for updating system software:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sudo apt update <span class="kw">&amp;&amp;</span> <span class="fu">sudo</span> apt upgrade <span class="at">-y</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The latest linux updates have <a href="https://forum.seeedstudio.com/t/running-seeed-linux-dtoverlays-in-reterminal-fails-to-build-device-driver/275675">introduced some significant changes to i2c interface</a> which may cause your pi LCD screen, among other hardware, to fail.</p>
+<p>For now, when updating your pi software, you should also do the following:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># If this folder does not exist, run the following command first:</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># cd ~/ &amp;&amp; git clone https://github.com/Seeed-Studio/seeed-linux-dtoverlays</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/seeed-linux-dtoverlays </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If there are any updates when the <code>git pull</code> is run, you should re-run the setup script:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> ./scripts/reTerminal.sh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Then, finally, reboot the device:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> reboot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="listing-actions-group">
-   <div class="input-group input-group-sm quarto-listing-sort">
-     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-     <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-       <option value="" disabled="" selected="" hidden="">Order By</option>
-       <option value="index" data-direction="asc">Default</option>
-         <option value="listing-date-sort" data-direction="asc">
-          Date - Oldest
-        </option>
-         <option value="listing-date-sort" data-direction="desc">
-          Date - Newest
-        </option>
-         <option value="listing-title" data-direction="asc">
-          Title
-        </option>
-     </select>
-  </div>
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
-</div>
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="Getting Started" data-listing-date-sort="1706227200000" data-listing-file-modified-sort="1710444141403" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="518">
-<div class="thumbnail">
-<p><a href="../../topics/getting-started/docs/hardware-list.html" class="no-external"></a></p><a href="../../topics/getting-started/docs/hardware-list.html" class="no-external">
-<p class="card-img-top"><img src="assets/1-hardware-reterminal.png" title=":size=300" class="thumbnail-image card-img"/></p>
-</a><p><a href="../../topics/getting-started/docs/hardware-list.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../../topics/getting-started/docs/hardware-list.html" class="no-external">Hardware List</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../../topics/getting-started/docs/hardware-list.html" class="no-external">List of hardware available for the course as well as their respective specifications and documentation.</a>
-</div>
-<div class="listing-description">
-<a href="../../topics/getting-started/docs/hardware-list.html" class="no-external">The reTerminal is a development board based on the Raspberry Pi Compute Module 4 (CM4) manufactured by Seeed Studio.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="../../topics/getting-started/docs/hardware-list.html" class="no-external">
-<div class="listing-date">
-Jan 26, 2024
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="Getting Started" data-listing-date-sort="1706227200000" data-listing-file-modified-sort="1710444141403" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="402">
-<div class="thumbnail">
-<p><a href="../../topics/getting-started/docs/vscode-python-setup.html" class="no-external"></a></p><a href="../../topics/getting-started/docs/vscode-python-setup.html" class="no-external">
-<p class="card-img-top"><img src="assets/1-Pasted image 20220121010400.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="../../topics/getting-started/docs/vscode-python-setup.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../../topics/getting-started/docs/vscode-python-setup.html" class="no-external">Developer setup</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../../topics/getting-started/docs/vscode-python-setup.html" class="no-external">Here’s how to set up the software that will be used for development during the course.</a>
-</div>
-<div class="listing-description">
-<a href="../../topics/getting-started/docs/vscode-python-setup.html" class="no-external">Below are the recommended steps to setup your VS Code for this course.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="../../topics/getting-started/docs/vscode-python-setup.html" class="no-external">
-<div class="listing-date">
-Jan 26, 2024
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="Getting Started" data-listing-date-sort="1706227200000" data-listing-file-modified-sort="1710444141403" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="257">
-<div class="thumbnail">
-<p><a href="../../topics/getting-started/docs/tech-stack.html" class="no-external"></a></p><a href="../../topics/getting-started/docs/tech-stack.html" class="no-external">
-<p class="card-img-top"><img src="assets/1-tech-stack-reterminal.png" title=":size=500" class="thumbnail-image card-img"/></p>
-</a><p><a href="../../topics/getting-started/docs/tech-stack.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../../topics/getting-started/docs/tech-stack.html" class="no-external">Technology Stack</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../../topics/getting-started/docs/tech-stack.html" class="no-external">Technologies used in this class</a>
-</div>
-<div class="listing-description">
-<a href="../../topics/getting-started/docs/tech-stack.html" class="no-external">This course will be using <strong>Python version 3.10</strong> to: - Run programs inside the Raspberry Pi (reTerminal) in order to read and control sensors. - Communicate with the API of the…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="../../topics/getting-started/docs/tech-stack.html" class="no-external">
-<div class="listing-date">
-Jan 26, 2024
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1165,18 +1054,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../../topics/python/docs/package-management-python.html" class="pagination-link" aria-label="Package management in Python">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Package management in Python</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../../topics/getting-started/docs/hardware-list.html" class="pagination-link" aria-label="Hardware List">
-        <span class="nav-page-text">Hardware List</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -1186,12 +1063,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="../../about/this-site.html">
+    <a class="nav-link" href="../about/this-site.html">
 <p>About</p>
 </a>
   </li>  
     <li class="nav-item">
-    <a class="nav-link" href="../../about/this-site.html#copyright">
+    <a class="nav-link" href="../about/this-site.html#copyright">
 <p>License</p>
 </a>
   </li>  
@@ -1208,7 +1085,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
  
   </li>  
     <li class="nav-item compact">
-    <a class="nav-link" href="../../announcements/index.xml">
+    <a class="nav-link" href="../announcements/index.xml">
       <i class="bi bi-rss" role="img">
 </i> 
     </a>
