@@ -4,15 +4,126 @@ subtitle: Learn how to connect to your Pi with CLI (ssh) and GUI (VNC). Learn ho
 date: 2024-02-09
 ---
 
-## CLI
+## SSH
 
 ### Passwordless SSH Access
 
 Login into the R.Pi without password by setting up SSH credentials
 
 - Follow guide by Raspberry Pi Foundation:
-	- [Passwordless SSH Access](https://www.raspberrypi.com/documentation/computers/remote-access.html#passwordless-ssh-access)
+	- [Passwordless SSH Access](https://www.raspberrypi.com/documentation/computers/remote-access.html#manually-configure-an-ssh-key)
 
+### SCP: Copy files from Remote 
+
+- Follow guide by Raspberry Pi Foundation:
+    - [Using Secure Copy](https://www.raspberrypi.com/documentation/computers/remote-access.html#using-secure-copy)
+
+### SSH Configuration Tweaks
+
+*These instructions are adapted directly from ["Keeping SSH Connections Alive: the Ultimate Guide to Uninterrupted Connectevity"](https://sivapraveenr.medium.com/keeping-ssh-connections-alive-the-ultimate-guide-to-uninterrupted-connectivity-cda0d3857100) by [SivaPraveen](https://sivapraveenr.medium.com/)*
+
+As we've been finding in class, the SSH protocol doesn't always handle connection interruptions gracefully. Long periods of inactivity, lots of shared trafic, poor WiFi signal strength, or application/system interruptions can all cause the connection to terminate, resulting in annoying interruptions that require you to re-authorize a new SSH connection.
+
+There are a few configuration options we have available to us to improve this situation.
+
+#### Client: ServerAliveInterval
+
+To enable SSH keep-alive, follow these simple steps:
+
+1.  Open your SSH client `config` file, typically located inside:
+	- `~/.ssh/` (for unix-based systems e.g. Linux/macOS)
+	- `%userprofile%\.ssh\` (for Windows).
+2.  Add the following lines to the configuration file:
+
+```bash
+Host *
+    ServerAliveInterval 60
+```
+
+3. Save the configuration file.
+
+In the above example, the `ServerAliveInterval`
+option specifies the time interval (in seconds) between keep-alive
+messages. Adjust this value according to your requirements. It is
+recommended to keep the interval reasonably low to maintain
+responsiveness without overwhelming the server with excessive keep-alive
+traffic.
+
+#### Client: SSH Multiplexing
+
+SSH multiplexing allows you to reuse an existing SSH connection for
+subsequent sessions, eliminating the need to establish new connections
+for every interaction. By leveraging SSH multiplexing, you can mitigate
+the effects of network instability and reduce connection setup overhead.
+
+To enable SSH multiplexing, follow these steps:
+
+1.  Open your SSH client configuration file (`~/.ssh/config` or `%userprofile%\.ssh\config`).
+2.  Add the following lines to the configuration file:{#39ef}
+
+::: {.panel-tabset}
+
+## Windows Client (lab computers)
+
+```bash 
+Host *
+    ControlMaster auto
+    ControlPath ~/.ssh/master-%r@%h:%p
+    ControlPersist 5m
+```
+
+## Unix Client (Linux/mac os)
+
+```bash 
+Host *
+    ControlMaster auto
+    ControlPath %userprofile%/.ssh/master-%r@%h:%p
+    ControlPersist 5m
+```
+
+:::
+
+Save the configuration file.
+
+In the above example, the `ControlMaster` option enables SSH connection sharing, while `ControlPath` specifies the location of the control socket used for multiplexing. Adjust the `ControlPersist` value to set the maximum time the control connection remains open after the last active session exits.
+
+
+#### Server: Modifty Idle Timeout
+
+SSH servers often have an idle timeout period, after which they
+automatically disconnect idle sessions. To prevent premature
+disconnections, consider modifying the server's idle timeout setting.
+
+To modify the idle timeout:
+
+1.  Locate the SSH server configuration file, typically located at
+   `/etc/ssh/sshd_config`.
+2.  Open the configuration file using a text editor.
+3.  Find the line that specifies the `ClientAliveInterval` and `ClientAliveCountMax`
+   options.
+4.  Adjust these values to meet your requirements. For example:
+
+```bash 
+ClientAliveInterval 300
+ClientAliveCountMax 3
+```
+
+In the above example, the `ClientAliveInterval`
+option sets the time interval (in seconds) between server-to-client
+alive messages, while `ClientAliveCountMax`
+defines the number of unanswered messages allowed before the server
+terminates the connection.
+
+
+### tmux 
+
+More to come soon...
+
+#### 
+
+## Tools
+
+More to come soon...
 
 ### Install NeoVim on RPI
 
