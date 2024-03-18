@@ -15,7 +15,42 @@
 <link>https://john-abbott-college.github.io/6P3-Notes/announcements/</link>
 </image>
 <generator>quarto-1.4.551</generator>
-<lastBuildDate>Thu, 14 Mar 2024 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Mon, 18 Mar 2024 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Quiz 1: Topics/Information</title>
+  <link>https://john-abbott-college.github.io/6P3-Notes/announcements/2024-03-18-quiz1-topics.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p><strong>Quiz 1</strong> will take place in-class on <strong>Friday, March 22.</strong>. This announcement contains logistical and topics covered.</p>
+<section id="logistics" class="level2">
+<h2 class="anchored" data-anchor-id="logistics">Logistics</h2>
+<ul>
+<li>worth 2%</li>
+<li>Multiple choice / short-answer on Moodle, in-class. 15-30 minutes.</li>
+<li>Limited open-book: access to course notes, reTerminal, workstation, but not external resources.</li>
+</ul>
+</section>
+<section id="topics" class="level2">
+<h2 class="anchored" data-anchor-id="topics">Topics</h2>
+<p>There will be 5-10 short-answer questions covering concepts that we have seen in Labs 0-3 of this course. Broadly, that is the following topics:</p>
+<ul>
+<li>Linux: using <code>apt</code>, <code>apt</code> for python packages, frequently used Bash concepts/commands like <code>tar</code>, shebangs, workflow for reading/writing to reTerminal interfaces. Anything covered in the labs explicitly.</li>
+<li>Python: installing local packages using <code>venv</code> and <code>pip</code>, workflow for reading/writing to reTerminal interfaces, libraries vs scripts</li>
+<li>Hardware: reTerminal sensors, GPIO, Analog vs Digital signals</li>
+</ul>
+<p>To help with reviewing, I have added all of the relevant lectures to the <strong>Quiz 1</strong> category on this course website. <strong>Click on the <a href="../topics/index.html">Lectures</a> tab of the course website and click “Quiz 1” to filter the relevant lectures.</strong></p>
+<p>Let me know if you have any questions!</p>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
+  <guid>https://john-abbott-college.github.io/6P3-Notes/announcements/2024-03-18-quiz1-topics.html</guid>
+  <pubDate>Mon, 18 Mar 2024 00:00:00 GMT</pubDate>
+</item>
 <item>
   <title>On updating your pi</title>
   <link>https://john-abbott-college.github.io/6P3-Notes/announcements/2024-03-14-pi-update.html</link>

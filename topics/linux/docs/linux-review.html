@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -432,6 +466,15 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#resources-references" id="toc-resources-references" class="nav-link" data-scroll-target="#resources-references">Resources &amp; References</a></li>
   <li><a href="#basic-tasks" id="toc-basic-tasks" class="nav-link" data-scroll-target="#basic-tasks">Basic Tasks</a></li>
   <li><a href="#review-exercises" id="toc-review-exercises" class="nav-link" data-scroll-target="#review-exercises">Review Exercises</a></li>
+  <li><a href="#particularly-useful-commands" id="toc-particularly-useful-commands" class="nav-link" data-scroll-target="#particularly-useful-commands">Particularly Useful Commands</a>
+  <ul>
+  <li><a href="#tar" id="toc-tar" class="nav-link" data-scroll-target="#tar">tar</a>
+  <ul class="collapse">
+  <li><a href="#tar-operations" id="toc-tar-operations" class="nav-link" data-scroll-target="#tar-operations"><code>tar</code> Operations</a></li>
+  <li><a href="#tar-options" id="toc-tar-options" class="nav-link" data-scroll-target="#tar-options"><code>tar</code> Options</a></li>
+  <li><a href="#tldr-examples" id="toc-tldr-examples" class="nav-link" data-scroll-target="#tldr-examples">TLDR; Examples</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -444,6 +487,7 @@ ul.task-list li input[type="checkbox"] {
 <p class="subtitle lead">Resources and references to brush up linux knowledge.</p>
   <div class="quarto-categories">
     <div class="quarto-category">Linux</div>
+    <div class="quarto-category">Quiz 1</div>
   </div>
   </div>
 
@@ -587,8 +631,91 @@ ul.task-list li input[type="checkbox"] {
 <li>Try to reach at least level 5</li>
 </ul></li>
 </ol>
+</section>
+<section id="particularly-useful-commands" class="level2">
+<h2 class="anchored" data-anchor-id="particularly-useful-commands">Particularly Useful Commands</h2>
+<p>The Linux shell environment has literally hundreds of useful commands. I’ll try to highlight/explain a handful throughout the semester to help you get the sense of just how powerful these commands can be, when you get the hang of them.</p>
+<section id="tar" class="level3">
+<h3 class="anchored" data-anchor-id="tar">tar</h3>
+<p><em>This section adapted from www.gnu.org: <a href="https://www.gnu.org/software/tar/manual/html_chapter/Tutorial.html">Introduction to tar</a></em></p>
+<p>The <code>tar</code> program provides the ability to create, extract, and otherwise manipulate <strong>archives</strong> of files, where an <strong>archive</strong> of files is simply a file that stores a collection of files.</p>
+<p>The usecases for <code>tar</code> are very similar to <code>zip</code>, which you are likely more used to: <code>tar</code> is a program that helps facilitate efficient <strong>storage</strong>, <strong>transfer</strong>, and <strong>backup</strong> of collections of files, particularly large files, by providing an interface for collecting/compressing/extracting groups of files. You can read more about the usecases and history of tar at <a href="https://www.gnu.org/software/tar/manual/html_chapter/Introduction.html#What-tar-Does">gnu.org</a></p>
+<section id="tar-operations" class="level4">
+<h4 class="anchored" data-anchor-id="tar-operations"><code>tar</code> Operations</h4>
+<p>Like other Linux CLI programs, the behavior of <code>tar</code> can be altered by command line arguments, or parameters. Unlike most Linux CLI programs, <code>tar</code> has fundamentally different <strong>operations</strong> it performs depending on some of those parameters. The most common are:</p>
+<ul>
+<li><code>--create</code>, <code>-c</code>: Create a new <code>tar</code> archive.</li>
+<li><code>--list</code>, <code>-t</code>: List the contents of an archive.</li>
+<li><code>--extract</code>, <code>-x</code>: Extract one or more members from an archive.</li>
+</ul>
+<p>For example:</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Create</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Extract</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">List</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="fu">env</span><span class="kw">)</span><span class="ex">jyourusername@yourhostname:~</span> $ which python</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># &lt;double check that the python executable comes from your venv&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>When you create an archive, you <em>must</em> specify which files you want placed in the archive. If you do not specify any archive members, GNU <code>tar</code> will complain.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When using <code>--create</code> or <code>-c</code>, it is very important to make sure there isn’t already a file in the working directory with the archive name you intend to use, or that you don’t care about its contents. Whenever you use ‘<samp>create</samp>’, <code>tar</code> will erase the current contents of the file named by <code>--file=archive-name</code> or <code>-f archive-name</code> if it exists. To add files to an existing archive, you need to use a different option, such as <code>--append</code> or <code>-r</code></p>
+</div>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="fu">env</span><span class="kw">)</span><span class="ex">jyourusername@yourhostname:~</span> $ which python</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># &lt;double check that the python executable comes from your venv&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="fu">env</span><span class="kw">)</span><span class="ex">jyourusername@yourhostname:~</span> $ sudo su</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="fu">env</span><span class="kw">)</span><span class="ex">root@yourhostname:~</span> <span class="co"># which python</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># &lt;you should see that the python executable is in a different place!, even though we still have "env"&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<p>Each of these operations is <strong>mutually exclusive</strong>, which makes some sense. You cannot <strong>create</strong> and <strong>extract</strong> an archive at the same time, that doesn’t make sense!</p>
+</section>
+<section id="tar-options" class="level4">
+<h4 class="anchored" data-anchor-id="tar-options"><code>tar</code> Options</h4>
+<ul>
+<li><code>--gzip</code>, <code>-z</code>: Specify that the <code>tar</code> command should use <code>gzip</code> during the operation (either to compress or decompress, depending on the operation).</li>
+<li><code>--verbose</code>, <code>-v</code>: Specify that the <code>tar</code> command should show the files being worked on as <code>tar</code> is running.</li>
+<li><code>--file=archive-name</code>, <code>-f archive-name</code>: Specify the name of the <code>.tar</code> archive file that should be created/extracted/listed.</li>
+</ul>
+</section>
+<section id="tldr-examples" class="level4">
+<h4 class="anchored" data-anchor-id="tldr-examples">TLDR; Examples</h4>
+<p>To make sense of the commands, it is better to have actual files/directories to work with. Of course the <code>tar</code> command is not limited to this set-up, but for the examples below assume at that we have a directory <code>~/practise</code>, containing the files <code>blues</code>, <code>folk</code>, and <code>jazz</code>, and that <code>~/practise</code> is your <em>current working directory</em>.</p>
+<p>That is, assume you have a structure like this:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> pwd</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">~/practise</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tree .</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="bu">.</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> blues</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> folk</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="ex">└──</span> jazz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>To place the files ‘<code>blues</code>’, ‘<code>folk</code>’, and ‘<code>jazz</code>’ into an archive named ‘<code>collection.tar</code>’, and to ensure the results are printed to the terminal, use any of the following commands</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tar <span class="at">--create</span> <span class="at">--verbose</span> <span class="at">--file</span><span class="op">=</span>collection.tar blues folk jazz</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tar <span class="at">-cvf</span> collection.tar blues folk jazz</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tar <span class="at">-cvf</span> collection.tar ./<span class="pp">*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>To store <code>practice</code>’ in the new archive file ‘<code>music.tar</code>’, type:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd ..</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tar <span class="at">--create</span> <span class="at">--verbose</span> <span class="at">--file</span><span class="op">=</span>music.tar practice</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tar <span class="at">-cvf</span> music.tar practice</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># tries to creates an archive file called "v" containing collection.tar, blues, folk, jazz; succeeds if collection.tar already exists, errors out if it does not.</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tar <span class="at">-cfv</span> collection.tar blues folk jazz </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
+</section>
+</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->

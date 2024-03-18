@@ -51,7 +51,7 @@
     "href": "about/calendar.html#april",
     "title": "Calendar",
     "section": "April",
-    "text": "April\n\nDeliverables\nTBA\n\n\nSchedule\nTBA",
+    "text": "April\n\nDeliverables\n\nProject Milestone 1: TBA\nQuiz 2: TBA\nTest 1: TBA\nAssignment 2: TBA\nLab 5: Luminosity, Iot, and the Eclipse\n\n\n\nSchedule\n\nApril 1 (Mon): Easter holiday, no class\nApril 2 (Tues): Monday schedule, work on project Milestone 1\nApril 5 (Fri): TBA\nApril 8 (Mon): Lab 5, Eclipse day\nApril 12 (Fri): (and all following days) TBA",
     "crumbs": [
       "Home",
       "About",
@@ -680,18 +680,29 @@
     ]
   },
   {
-    "objectID": "announcements/2024-03-12-website-updates.html",
-    "href": "announcements/2024-03-12-website-updates.html",
-    "title": "Website updates",
-    "section": "",
-    "text": "I’ve made a few changes to the course website, some of which are worth emphasizing because I think they’ll be particularly useful to you:\n\nCourse Calendar: The defunct Calendar page is now being maintained. Check this page for upcoming lecture/lab activity, particularly for Lab demo deadlines. I will keep it maintained throughout the rest of the semester.\nAnnouncements: Announcements like this one will be posted on the course website and (sort-of) automatically posted on Moodle as well. If you like RSS, you can subcribe using the  icon in the nav bar.\nLecture index: I’ve fixed some metadata and theming issues for the Topics page (also called Lectures). Here you can find an index of every course lecture, and sort them by category. This should help keep track of topics and things learned.\n\nLet me know if you have any questions, or if there’s something that doesn’t seem to work.\n\n\n\n Back to top"
+    "objectID": "topics/linux/docs/linux-review.html#particularly-useful-commands",
+    "href": "topics/linux/docs/linux-review.html#particularly-useful-commands",
+    "title": "Linux review",
+    "section": "Particularly Useful Commands",
+    "text": "Particularly Useful Commands\nThe Linux shell environment has literally hundreds of useful commands. I’ll try to highlight/explain a handful throughout the semester to help you get the sense of just how powerful these commands can be, when you get the hang of them.\n\ntar\nThis section adapted from www.gnu.org: Introduction to tar\nThe tar program provides the ability to create, extract, and otherwise manipulate archives of files, where an archive of files is simply a file that stores a collection of files.\nThe usecases for tar are very similar to zip, which you are likely more used to: tar is a program that helps facilitate efficient storage, transfer, and backup of collections of files, particularly large files, by providing an interface for collecting/compressing/extracting groups of files. You can read more about the usecases and history of tar at gnu.org\n\ntar Operations\nLike other Linux CLI programs, the behavior of tar can be altered by command line arguments, or parameters. Unlike most Linux CLI programs, tar has fundamentally different operations it performs depending on some of those parameters. The most common are:\n\n--create, -c: Create a new tar archive.\n--list, -t: List the contents of an archive.\n--extract, -x: Extract one or more members from an archive.\n\nFor example:\n\nCreateExtractList\n\n\n(env)jyourusername@yourhostname:~ $ which python\n# &lt;double check that the python executable comes from your venv&gt;\nWhen you create an archive, you must specify which files you want placed in the archive. If you do not specify any archive members, GNU tar will complain.\n\n\n\n\n\n\nImportant\n\n\n\nWhen using --create or -c, it is very important to make sure there isn’t already a file in the working directory with the archive name you intend to use, or that you don’t care about its contents. Whenever you use ‘create’, tar will erase the current contents of the file named by --file=archive-name or -f archive-name if it exists. To add files to an existing archive, you need to use a different option, such as --append or -r\n\n\n\n\n(env)jyourusername@yourhostname:~ $ which python\n# &lt;double check that the python executable comes from your venv&gt;\n\n\n(env)jyourusername@yourhostname:~ $ sudo su\n(env)root@yourhostname:~ # which python\n# &lt;you should see that the python executable is in a different place!, even though we still have \"env\"&gt;\n\n\n\nEach of these operations is mutually exclusive, which makes some sense. You cannot create and extract an archive at the same time, that doesn’t make sense!\n\n\ntar Options\n\n--gzip, -z: Specify that the tar command should use gzip during the operation (either to compress or decompress, depending on the operation).\n--verbose, -v: Specify that the tar command should show the files being worked on as tar is running.\n--file=archive-name, -f archive-name: Specify the name of the .tar archive file that should be created/extracted/listed.\n\n\n\nTLDR; Examples\nTo make sense of the commands, it is better to have actual files/directories to work with. Of course the tar command is not limited to this set-up, but for the examples below assume at that we have a directory ~/practise, containing the files blues, folk, and jazz, and that ~/practise is your current working directory.\nThat is, assume you have a structure like this:\n$ pwd\n~/practise\n$ tree .\n.\n├── blues\n├── folk\n└── jazz\nTo place the files ‘blues’, ‘folk’, and ‘jazz’ into an archive named ‘collection.tar’, and to ensure the results are printed to the terminal, use any of the following commands\n$ tar --create --verbose --file=collection.tar blues folk jazz\n$ tar -cvf collection.tar blues folk jazz\n$ tar -cvf collection.tar ./*\nTo store practice’ in the new archive file ‘music.tar’, type:\n$ cd ..\n$ tar --create --verbose --file=music.tar practice\n$ tar -cvf music.tar practice\n# tries to creates an archive file called \"v\" containing collection.tar, blues, folk, jazz; succeeds if collection.tar already exists, errors out if it does not.\n$ tar -cfv collection.tar blues folk jazz",
+    "crumbs": [
+      "Home",
+      "Topics",
+      "Linux",
+      "Docs",
+      "Linux review"
+    ]
   },
   {
-    "objectID": "announcements/2024-03-12-lab3-demo.html",
-    "href": "announcements/2024-03-12-lab3-demo.html",
-    "title": "Lab 3: Demo in class Friday March 15",
+    "objectID": "announcements/index.html",
+    "href": "announcements/index.html",
+    "title": "Announcements",
     "section": "",
-    "text": "As mentioned in class on March 11, the hand-in for Lab 3 will be on Friday March 15. Demos will start at the beginning of class. Come to class prepared to show your progress.\nThe deadline to submit your scripts for Lab 3 code remains midnight on Friday.\nIf you have not completed the lab by Friday morning, you will get partial marks up to whatever you have completed.\nLet me know if you have any questions! (by Teams preferably)\n\n\n\n Back to top"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nQuiz 1: Topics/Information\n\n\n\n\n\n\n\n\n\n\n\nMar 18, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nOn updating your pi\n\n\n\n\n\n\n\n\n\n\n\nMar 14, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nLab 3: Demo in class Friday March 15\n\n\n\n\n\n\n\n\n\n\n\nMar 12, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nWebsite updates\n\n\n\n\n\n\n\n\n\n\n\nMar 12, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top",
+    "crumbs": [
+      "Home",
+      "Announcements"
+    ]
   },
   {
     "objectID": "announcements/2024-03-14-pi-update.html",
@@ -701,15 +712,39 @@
     "text": "A few students have run into system updates that may break important reTerminal features (the screen, for e.g.). If you run into any issues when updating your pi software, see below!\nThe standard Debian commands for updating system software:\n$ sudo apt update && sudo apt upgrade -y\nThe latest linux updates have introduced some significant changes to i2c interface which may cause your pi LCD screen, among other hardware, to fail.\nFor now, when updating your pi software, you should also do the following:\n# If this folder does not exist, run the following command first:\n# cd ~/ && git clone https://github.com/Seeed-Studio/seeed-linux-dtoverlays\ncd ~/seeed-linux-dtoverlays \ngit pull\nIf there are any updates when the git pull is run, you should re-run the setup script:\nsudo ./scripts/reTerminal.sh\nThen, finally, reboot the device:\nsudo reboot\n\n\n\n Back to top"
   },
   {
-    "objectID": "announcements/index.html",
-    "href": "announcements/index.html",
-    "title": "Announcements",
+    "objectID": "announcements/2024-03-12-lab3-demo.html",
+    "href": "announcements/2024-03-12-lab3-demo.html",
+    "title": "Lab 3: Demo in class Friday March 15",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nOn updating your pi\n\n\n\n\n\n\n\n\n\n\n\nMar 14, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nLab 3: Demo in class Friday March 15\n\n\n\n\n\n\n\n\n\n\n\nMar 12, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nWebsite updates\n\n\n\n\n\n\n\n\n\n\n\nMar 12, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top",
-    "crumbs": [
-      "Home",
-      "Announcements"
-    ]
+    "text": "As mentioned in class on March 11, the hand-in for Lab 3 will be on Friday March 15. Demos will start at the beginning of class. Come to class prepared to show your progress.\nThe deadline to submit your scripts for Lab 3 code remains midnight on Friday.\nIf you have not completed the lab by Friday morning, you will get partial marks up to whatever you have completed.\nLet me know if you have any questions! (by Teams preferably)\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "announcements/2024-03-12-website-updates.html",
+    "href": "announcements/2024-03-12-website-updates.html",
+    "title": "Website updates",
+    "section": "",
+    "text": "I’ve made a few changes to the course website, some of which are worth emphasizing because I think they’ll be particularly useful to you:\n\nCourse Calendar: The defunct Calendar page is now being maintained. Check this page for upcoming lecture/lab activity, particularly for Lab demo deadlines. I will keep it maintained throughout the rest of the semester.\nAnnouncements: Announcements like this one will be posted on the course website and (sort-of) automatically posted on Moodle as well. If you like RSS, you can subcribe using the  icon in the nav bar.\nLecture index: I’ve fixed some metadata and theming issues for the Topics page (also called Lectures). Here you can find an index of every course lecture, and sort them by category. This should help keep track of topics and things learned.\n\nLet me know if you have any questions, or if there’s something that doesn’t seem to work.\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "announcements/2024-03-18-quiz1-topics.html",
+    "href": "announcements/2024-03-18-quiz1-topics.html",
+    "title": "Quiz 1: Topics/Information",
+    "section": "",
+    "text": "Quiz 1 will take place in-class on Friday, March 22.. This announcement contains logistical and topics covered."
+  },
+  {
+    "objectID": "announcements/2024-03-18-quiz1-topics.html#logistics",
+    "href": "announcements/2024-03-18-quiz1-topics.html#logistics",
+    "title": "Quiz 1: Topics/Information",
+    "section": "Logistics",
+    "text": "Logistics\n\nworth 2%\nMultiple choice / short-answer on Moodle, in-class. 15-30 minutes.\nLimited open-book: access to course notes, reTerminal, workstation, but not external resources."
+  },
+  {
+    "objectID": "announcements/2024-03-18-quiz1-topics.html#topics",
+    "href": "announcements/2024-03-18-quiz1-topics.html#topics",
+    "title": "Quiz 1: Topics/Information",
+    "section": "Topics",
+    "text": "Topics\nThere will be 5-10 short-answer questions covering concepts that we have seen in Labs 0-3 of this course. Broadly, that is the following topics:\n\nLinux: using apt, apt for python packages, frequently used Bash concepts/commands like tar, shebangs, workflow for reading/writing to reTerminal interfaces. Anything covered in the labs explicitly.\nPython: installing local packages using venv and pip, workflow for reading/writing to reTerminal interfaces, libraries vs scripts\nHardware: reTerminal sensors, GPIO, Analog vs Digital signals\n\nTo help with reviewing, I have added all of the relevant lectures to the Quiz 1 category on this course website. Click on the Lectures tab of the course website and click “Quiz 1” to filter the relevant lectures.\nLet me know if you have any questions!"
   },
   {
     "objectID": "topics/linux/docs/package-management-debian.html",
