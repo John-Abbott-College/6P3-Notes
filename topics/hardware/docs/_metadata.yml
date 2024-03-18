@@ -2,6 +2,7 @@ categories: ["Hardware"]
 format:
   html:
     toc: true
+    toc-depth: 4
     date-modified: last-modified
     code-overflow: wrap
     page-layout: article
