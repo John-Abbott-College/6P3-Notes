@@ -2,6 +2,7 @@
 title: Linux review
 subtitle: Resources and references to brush up linux knowledge.
 date: 2024-02-02
+categories: ["Linux", "Quiz 1"]
 ---
 
 ## Getting Linux Environment
@@ -81,4 +82,108 @@ Manipulation of the Raspberry Pi will require familiarity with the following tas
 1. A great set of exercises to get started is the game [**Bandit** from *OverTheWire.org*](https://overthewire.org/wargames/bandit/)
 
 	- Try to reach at least level 5
+
+
+## Particularly Useful Commands
+
+The Linux shell environment has literally hundreds of useful commands. I'll try to highlight/explain a handful throughout the semester to help you get the sense of just how powerful these commands can be, when you get the hang of them.
+
+### tar
+
+*This section adapted from www.gnu.org: [Introduction to tar](https://www.gnu.org/software/tar/manual/html_chapter/Tutorial.html)*
+
+The `tar` program provides the ability to create, extract, and otherwise manipulate **archives** of files, where an **archive** of files is simply a file that stores a collection of files. 
+
+The usecases for `tar` are very similar to `zip`, which you are likely more used to: `tar` is a program that helps facilitate efficient **storage**, **transfer**, and **backup** of collections of files, particularly large files, by providing an interface for collecting/compressing/extracting groups of files. You can read more about the usecases and history of tar at [gnu.org](https://www.gnu.org/software/tar/manual/html_chapter/Introduction.html#What-tar-Does)
+
+#### `tar` Operations
+
+Like other Linux CLI programs, the behavior of `tar` can be altered by command line arguments, or parameters. Unlike most Linux CLI programs, `tar` has fundamentally different **operations** it performs depending on some of those parameters. The most common are:
+
+- `--create`, `-c`: Create a new `tar` archive.
+- `--list`, `-t`: List the contents of an archive.
+- `--extract`, `-x`: Extract one or more members from an archive.
+
+For example:
+
+::: {.panel-tabset}
+
+## Create
+
+```bash
+(env)jyourusername@yourhostname:~ $ which python
+# <double check that the python executable comes from your venv>
+```
+
+When you create an archive, you *must* specify which files you want
+placed in the archive. If you do not specify any archive members, GNU
+`tar` will complain.
+
+::: {.callout-important}
+When using `--create` or `-c`, it is very important to make sure there isn't already a file in the working directory with the archive name you intend to use, or that you don't care about its contents. Whenever you use '`create`{.sample}', `tar` will erase the current
+contents of the file named by `--file=archive-name` or `-f archive-name` if it exists. To add files to an existing archive, you need to use a different option, such as `--append` or `-r`
+:::
+
+## Extract
+
+```bash
+(env)jyourusername@yourhostname:~ $ which python
+# <double check that the python executable comes from your venv>
+```
+
+## List
+
+```bash
+(env)jyourusername@yourhostname:~ $ sudo su
+(env)root@yourhostname:~ # which python
+# <you should see that the python executable is in a different place!, even though we still have "env">
+```
+
+:::
+
+Each of these operations is **mutually exclusive**, which makes some sense. You cannot **create** and **extract** an archive at the same time, that doesn't make sense!
+
+#### `tar` Options
+
+- `--gzip`, `-z`: Specify that the `tar` command should use `gzip` during the operation (either to compress or decompress, depending on the operation).
+- `--verbose`, `-v`: Specify that the `tar` command should show the files being worked on as `tar` is running.
+- `--file=archive-name`, `-f archive-name`: Specify the name of the `.tar` archive file that should be created/extracted/listed.
+
+
+#### TLDR; Examples
+
+To make sense of the commands, it is better to have actual files/directories to work with. Of course the `tar` command is not limited to this set-up, but for the examples below assume at that we have a directory `~/practise`, containing the files `blues`, `folk`, and `jazz`, and that `~/practise` is your *current working directory*. 
+
+That is, assume you have a structure like this:
+
+```bash
+$ pwd
+~/practise
+$ tree .
+.
+├── blues
+├── folk
+└── jazz
+```
+
+To place the files '`blues`', '`folk`', and '`jazz`' into an archive named '`collection.tar`', and to ensure the results are printed to the terminal, use any of the following commands
+
+```bash
+$ tar --create --verbose --file=collection.tar blues folk jazz
+$ tar -cvf collection.tar blues folk jazz
+$ tar -cvf collection.tar ./*
+```
+
+To store `practice`' in the new archive file '`music.tar`', type:
+
+```bash
+$ cd ..
+$ tar --create --verbose --file=music.tar practice
+$ tar -cvf music.tar practice
+```
+
+```bash
+# tries to creates an archive file called "v" containing collection.tar, blues, folk, jazz; succeeds if collection.tar already exists, errors out if it does not.
+$ tar -cfv collection.tar blues folk jazz 
+```
 

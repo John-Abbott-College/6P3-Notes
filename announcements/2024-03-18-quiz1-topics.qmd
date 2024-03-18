@@ -1,0 +1,24 @@
+---
+title: "Quiz 1: Topics/Information"
+date: 2024-03-18
+---
+
+**Quiz 1** will take place in-class on **Friday, March 22.**. This announcement contains logistical and topics covered.
+
+## Logistics
+
+- worth 2%
+- Multiple choice / short-answer on Moodle, in-class. 15-30 minutes.
+- Limited open-book: access to course notes, reTerminal, workstation, but not external resources.
+
+## Topics
+
+There will be 5-10 short-answer questions covering concepts that we have seen in Labs 0-3 of this course. Broadly, that is the following topics:
+
+- Linux: using `apt`, `apt` for python packages, frequently used Bash concepts/commands like `tar`, shebangs, workflow for reading/writing to reTerminal interfaces. Anything covered in the labs explicitly.
+- Python: installing local packages using `venv` and `pip`, workflow for reading/writing to reTerminal interfaces, libraries vs scripts
+- Hardware: reTerminal sensors, GPIO, Analog vs Digital signals
+
+To help with reviewing, I have added all of the relevant lectures to the **Quiz 1** category on this course website. **Click on the [Lectures](/topics/index.qmd) tab of the course website and click "Quiz 1" to filter the relevant lectures.**
+
+Let me know if you have any questions!

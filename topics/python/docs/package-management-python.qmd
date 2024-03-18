@@ -2,6 +2,7 @@
 title: "Package management in Python"
 subtitle: How to use OS package managers, virtual environments, and `pip` to manage python applications effectively.
 date: 2024-02-19
+categories: ["Quiz 1", "Python"]
 ---
 
 ## Python on Raspberry Pi

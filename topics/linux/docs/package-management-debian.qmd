@@ -4,6 +4,7 @@ subtitle: Installing and configuring Linux packages on Raspberry Pi Debian using
 reference-location: margin
 citation-location: margin
 date: 2024-02-19
+categories: ["Quiz 1", "Linux"]
 ---
 
 ## Raspberry Pi OS and Debian

@@ -53,11 +53,19 @@ You can compare this calendar with the calendar from the [Course Outline][course
 
 ### Deliverables
 
-TBA
+1. **Project Milestone 1:** TBA
+2. **Quiz 2:** TBA
+3. **Test 1:** TBA
+4. **Assignment 2:** TBA
+5. **Lab 5:** Luminosity, Iot, and the Eclipse
 
 ### Schedule
 
-TBA
+- April 1 (Mon): Easter holiday, no class
+- **April 2 (Tues):** Monday schedule, work on project Milestone 1
+- **April 5 (Fri):** TBA
+- **April 8 (Mon):** Lab 5, Eclipse day
+- **April 12 (Fri): (and all following days)** TBA
 
 ## May
 
