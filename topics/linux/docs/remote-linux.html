@@ -462,9 +462,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#cli" id="toc-cli" class="nav-link active" data-scroll-target="#cli">CLI</a>
+  <li><a href="#ssh" id="toc-ssh" class="nav-link active" data-scroll-target="#ssh">SSH</a>
   <ul>
   <li><a href="#passwordless-ssh-access" id="toc-passwordless-ssh-access" class="nav-link" data-scroll-target="#passwordless-ssh-access">Passwordless SSH Access</a></li>
+  <li><a href="#scp-copy-files-from-remote" id="toc-scp-copy-files-from-remote" class="nav-link" data-scroll-target="#scp-copy-files-from-remote">SCP: Copy files from Remote</a></li>
+  <li><a href="#ssh-configuration-tweaks" id="toc-ssh-configuration-tweaks" class="nav-link" data-scroll-target="#ssh-configuration-tweaks">SSH Configuration Tweaks</a>
+  <ul class="collapse">
+  <li><a href="#client-serveraliveinterval" id="toc-client-serveraliveinterval" class="nav-link" data-scroll-target="#client-serveraliveinterval">Client: ServerAliveInterval</a></li>
+  <li><a href="#client-ssh-multiplexing" id="toc-client-ssh-multiplexing" class="nav-link" data-scroll-target="#client-ssh-multiplexing">Client: SSH Multiplexing</a></li>
+  <li><a href="#server-modifty-idle-timeout" id="toc-server-modifty-idle-timeout" class="nav-link" data-scroll-target="#server-modifty-idle-timeout">Server: Modifty Idle Timeout</a></li>
+  </ul></li>
+  <li><a href="#tmux" id="toc-tmux" class="nav-link" data-scroll-target="#tmux">tmux</a>
+  <ul class="collapse">
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#tools" id="toc-tools" class="nav-link" data-scroll-target="#tools">Tools</a>
+  <ul>
   <li><a href="#install-neovim-on-rpi" id="toc-install-neovim-on-rpi" class="nav-link" data-scroll-target="#install-neovim-on-rpi">Install NeoVim on RPI</a>
   <ul class="collapse">
   <li><a href="#install-astronvim" id="toc-install-astronvim" class="nav-link" data-scroll-target="#install-astronvim">Install AstroNVIM</a></li>
@@ -512,60 +526,146 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="cli" class="level2">
-<h2 class="anchored" data-anchor-id="cli">CLI</h2>
+<section id="ssh" class="level2">
+<h2 class="anchored" data-anchor-id="ssh">SSH</h2>
 <section id="passwordless-ssh-access" class="level3">
 <h3 class="anchored" data-anchor-id="passwordless-ssh-access">Passwordless SSH Access</h3>
 <p>Login into the R.Pi without password by setting up SSH credentials</p>
 <ul>
 <li>Follow guide by Raspberry Pi Foundation:
 <ul>
-<li><a href="https://www.raspberrypi.com/documentation/computers/remote-access.html#passwordless-ssh-access">Passwordless SSH Access</a></li>
+<li><a href="https://www.raspberrypi.com/documentation/computers/remote-access.html#manually-configure-an-ssh-key">Passwordless SSH Access</a></li>
 </ul></li>
 </ul>
 </section>
+<section id="scp-copy-files-from-remote" class="level3">
+<h3 class="anchored" data-anchor-id="scp-copy-files-from-remote">SCP: Copy files from Remote</h3>
+<ul>
+<li>Follow guide by Raspberry Pi Foundation:
+<ul>
+<li><a href="https://www.raspberrypi.com/documentation/computers/remote-access.html#using-secure-copy">Using Secure Copy</a></li>
+</ul></li>
+</ul>
+</section>
+<section id="ssh-configuration-tweaks" class="level3">
+<h3 class="anchored" data-anchor-id="ssh-configuration-tweaks">SSH Configuration Tweaks</h3>
+<p><em>These instructions are adapted directly from <a href="https://sivapraveenr.medium.com/keeping-ssh-connections-alive-the-ultimate-guide-to-uninterrupted-connectivity-cda0d3857100">“Keeping SSH Connections Alive: the Ultimate Guide to Uninterrupted Connectevity”</a> by <a href="https://sivapraveenr.medium.com/">SivaPraveen</a></em></p>
+<p>As we’ve been finding in class, the SSH protocol doesn’t always handle connection interruptions gracefully. Long periods of inactivity, lots of shared trafic, poor WiFi signal strength, or application/system interruptions can all cause the connection to terminate, resulting in annoying interruptions that require you to re-authorize a new SSH connection.</p>
+<p>There are a few configuration options we have available to us to improve this situation.</p>
+<section id="client-serveraliveinterval" class="level4">
+<h4 class="anchored" data-anchor-id="client-serveraliveinterval">Client: ServerAliveInterval</h4>
+<p>To enable SSH keep-alive, follow these simple steps:</p>
+<ol type="1">
+<li>Open your SSH client <code>config</code> file, typically located inside:
+<ul>
+<li><code>~/.ssh/</code> (for unix-based systems e.g.&nbsp;Linux/macOS)</li>
+<li><code>%userprofile%\.ssh\</code> (for Windows).</li>
+</ul></li>
+<li>Add the following lines to the configuration file:</li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Host</span> <span class="pp">*</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">ServerAliveInterval</span> 60</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="3" type="1">
+<li>Save the configuration file.</li>
+</ol>
+<p>In the above example, the <code>ServerAliveInterval</code> option specifies the time interval (in seconds) between keep-alive messages. Adjust this value according to your requirements. It is recommended to keep the interval reasonably low to maintain responsiveness without overwhelming the server with excessive keep-alive traffic.</p>
+</section>
+<section id="client-ssh-multiplexing" class="level4">
+<h4 class="anchored" data-anchor-id="client-ssh-multiplexing">Client: SSH Multiplexing</h4>
+<p>SSH multiplexing allows you to reuse an existing SSH connection for subsequent sessions, eliminating the need to establish new connections for every interaction. By leveraging SSH multiplexing, you can mitigate the effects of network instability and reduce connection setup overhead.</p>
+<p>To enable SSH multiplexing, follow these steps:</p>
+<ol type="1">
+<li>Open your SSH client configuration file (<code>~/.ssh/config</code> or <code>%userprofile%\.ssh\config</code>).</li>
+<li>Add the following lines to the configuration file:{#39ef}</li>
+</ol>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Windows Client (lab computers)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Unix Client (Linux/mac os)</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Host</span> <span class="pp">*</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">ControlMaster</span> auto</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">ControlPath</span> ~/.ssh/master-%r@%h:%p</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">ControlPersist</span> 5m</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Host</span> <span class="pp">*</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">ControlMaster</span> auto</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">ControlPath</span> %userprofile%/.ssh/master-%r@%h:%p</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">ControlPersist</span> 5m</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<p>Save the configuration file.</p>
+<p>In the above example, the <code>ControlMaster</code> option enables SSH connection sharing, while <code>ControlPath</code> specifies the location of the control socket used for multiplexing. Adjust the <code>ControlPersist</code> value to set the maximum time the control connection remains open after the last active session exits.</p>
+</section>
+<section id="server-modifty-idle-timeout" class="level4">
+<h4 class="anchored" data-anchor-id="server-modifty-idle-timeout">Server: Modifty Idle Timeout</h4>
+<p>SSH servers often have an idle timeout period, after which they automatically disconnect idle sessions. To prevent premature disconnections, consider modifying the server’s idle timeout setting.</p>
+<p>To modify the idle timeout:</p>
+<ol type="1">
+<li>Locate the SSH server configuration file, typically located at <code>/etc/ssh/sshd_config</code>.</li>
+<li>Open the configuration file using a text editor.</li>
+<li>Find the line that specifies the <code>ClientAliveInterval</code> and <code>ClientAliveCountMax</code> options.</li>
+<li>Adjust these values to meet your requirements. For example:</li>
+</ol>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ClientAliveInterval</span> 300</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">ClientAliveCountMax</span> 3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>In the above example, the <code>ClientAliveInterval</code> option sets the time interval (in seconds) between server-to-client alive messages, while <code>ClientAliveCountMax</code> defines the number of unanswered messages allowed before the server terminates the connection.</p>
+</section>
+</section>
+<section id="tmux" class="level3">
+<h3 class="anchored" data-anchor-id="tmux">tmux</h3>
+<p>More to come soon…</p>
+<section id="section" class="level4">
+<h4 class="anchored" data-anchor-id="section"></h4>
+</section>
+</section>
+</section>
+<section id="tools" class="level2">
+<h2 class="anchored" data-anchor-id="tools">Tools</h2>
+<p>More to come soon…</p>
 <section id="install-neovim-on-rpi" class="level3">
 <h3 class="anchored" data-anchor-id="install-neovim-on-rpi">Install NeoVim on RPI</h3>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Update source repositories -- a good idea any time you are installing a package.</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update <span class="at">-y</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Install xclip for clipboard support with ssh graphical session `-Y`</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install xclip <span class="at">-y</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install neovim</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Update source repositories -- a good idea any time you are installing a package.</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update <span class="at">-y</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Install xclip for clipboard support with ssh graphical session `-Y`</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install xclip <span class="at">-y</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install neovim</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <section id="install-astronvim" class="level4">
 <h4 class="anchored" data-anchor-id="install-astronvim">Install AstroNVIM</h4>
 <p>After installing nvim:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install a Nerd Fonts (FiraCode)</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Downloads</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/FiraCode.zip</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">unzip</span> FiraCode.zip</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Font installation according to Debian's docs: https://wiki.debian.org/Fonts</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Move to systam-wide font folder</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> mv <span class="pp">*</span>.ttf /usr/local/share/fonts/</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># update the font cache</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="ex">fc-cache</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Follow AstroNvim install instructions: https://astronvim.github.io/#%EF%B8%8F-installation</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Make a backup of your current nvim folder</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> ~/.config/nvim ~/.config/nvim.bak</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Clean neovim folders (Optional but recommended)</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> ~/.local/share/nvim ~/.local/share/nvim.bak</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> ~/.local/state/nvim ~/.local/state/nvim.bak</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> ~/.cache/nvim ~/.cache/nvim.bak</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Clone the repository</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install a Nerd Fonts (FiraCode)</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Downloads</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/FiraCode.zip</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">unzip</span> FiraCode.zip</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Font installation according to Debian's docs: https://wiki.debian.org/Fonts</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Move to systam-wide font folder</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> mv <span class="pp">*</span>.ttf /usr/local/share/fonts/</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co"># update the font cache</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="ex">fc-cache</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Follow AstroNvim install instructions: https://astronvim.github.io/#%EF%B8%8F-installation</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Make a backup of your current nvim folder</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> ~/.config/nvim ~/.config/nvim.bak</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Clean neovim folders (Optional but recommended)</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> ~/.local/share/nvim ~/.local/share/nvim.bak</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> ~/.local/state/nvim ~/.local/state/nvim.bak</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> ~/.cache/nvim ~/.cache/nvim.bak</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Clone the repository</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="install-node" class="level4">
 <h4 class="anchored" data-anchor-id="install-node">Install Node</h4>
 <p>Installing node is not required but will improve compatibility with modern nvim features:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install Node.js using nvm according to https://github.com/nvm-sh/nvm</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">;</span><span class="fu">wget</span> <span class="at">-qO-</span> https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh <span class="kw">|</span> <span class="fu">bash</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># source .bashrc to pickup env variables</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> ~/.bashrc</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># install the latest version of node</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="ex">nvm</span> install node</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Install Tree-sitter CLI</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> install tree-sitter-cli</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install Node.js using nvm according to https://github.com/nvm-sh/nvm</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">;</span><span class="fu">wget</span> <span class="at">-qO-</span> https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh <span class="kw">|</span> <span class="fu">bash</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># source .bashrc to pickup env variables</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> ~/.bashrc</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># install the latest version of node</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="ex">nvm</span> install node</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Install Tree-sitter CLI</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> install tree-sitter-cli</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>
