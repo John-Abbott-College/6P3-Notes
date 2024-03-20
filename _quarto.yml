@@ -71,5 +71,5 @@ format:
   html:
     css: styles.css
     theme:
-      light: [united, customizations-light.scss]
-      dark: [united, customizations-dark.scss]
+      light: [united, assets/css/customizations-light.scss]
+      dark: [united, assets/css/customizations-dark.scss]
