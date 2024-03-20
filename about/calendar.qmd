@@ -62,17 +62,31 @@ You can compare this calendar with the calendar from the [Course Outline][course
 ### Schedule
 
 - April 1 (Mon): Easter holiday, no class
-- **April 2 (Tues):** Monday schedule, work on project Milestone 1
-- **April 5 (Fri):** TBA
+- April 2 (Tues): Stage, no class
+- **April 5 (Fri):** Work on project milestone 1
 - **April 8 (Mon):** Lab 5, Eclipse day
-- **April 12 (Fri): (and all following days)** TBA
+- **April 12 (Fri):** Quiz 2, work on project milestone 1
+- **April 15 (Mon):** TBA
+- **April 19 (Fri):** TBA
+- **April 22 (Mon):** TBA, possible Test 1 date
+- **April 26 (Fri):** TBA, possible Test 1 date
+- **April 29 (Mon):** TBA, possible Test 1 date
 
 ## May
 
 ### Deliverables
 
-TBA
+1. **Project Milestone 2:** TBA
+2. **Project Milestone 3:** TBA
+3. **Lab 6:** TBA
+4. **Quiz 3** TBA
 
 ### Schedule
 
-TBA
+- **May 3 (Fri):** TBA
+- **May 6 (Mon):** TBA
+- **May 10 (Fri):** TBA
+- **May 13 (Mon):** TBA
+- **May 17 (Fri):** TBA
+- **May 20 (Mon):** TBA
+- **May 24 (Fri):** TBA
