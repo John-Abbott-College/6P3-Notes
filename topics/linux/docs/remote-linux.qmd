@@ -63,7 +63,7 @@ To enable SSH multiplexing, follow these steps:
 
 ::: {.panel-tabset}
 
-## Windows Client (lab computers)
+## Unix Client (Linux/mac os)
 
 ```bash 
 Host *
@@ -72,7 +72,7 @@ Host *
     ControlPersist 5m
 ```
 
-## Unix Client (Linux/mac os)
+## Windows Client (lab computers)
 
 ```bash 
 Host *
