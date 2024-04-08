@@ -1,9 +1,20 @@
 ---
-title: "Package management in Python"
+title: "Package management"
 subtitle: How to use OS package managers, virtual environments, and `pip` to manage python applications effectively.
 date: 2024-02-19
 categories: ["Quiz 1", "Python"]
+aliases: 
+  - package-management-python.html
+order: 2
 ---
+
+## Overview
+
+This lecture looks at the ways to acquire use and install external python packages.
+
+- Installing system python packages with `apt` on debian
+- Creating virtual environments with `venv`
+- Installing packages locally with `pip`
 
 ## Python on Raspberry Pi
 

@@ -1,7 +1,10 @@
 ---
-title: Intro to Python for Developers
+title: Introduction (for developers)
 subtitle: Python exercises
 date: 2024-01-29
+aliases: 
+  - intro-python.html
+order: 1
 ---
 
 Notes provided on a different platform,
