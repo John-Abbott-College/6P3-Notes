@@ -39,9 +39,7 @@ Create a local copy of these notes:
 
 2. Clone the [course GitHub repository](https://github.com/John-Abbott-College/6P3-Notes).
 
-3. Checkout the branch for this year's notes: `git switch winter2024`
-
-4. Preview the website:
+3. Preview the website:
 
    `quarto preview .`
 
