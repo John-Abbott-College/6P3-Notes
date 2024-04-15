@@ -982,7 +982,7 @@
     "href": "about/calendar.html#april",
     "title": "Calendar",
     "section": "April",
-    "text": "April\n\nDeliverables\n\nProject Milestone 1: TBA\nQuiz 2: TBA\nTest 1: TBA\nAssignment 2: TBA\nLab 5: Luminosity, Iot, and the Eclipse\n\n\n\nSchedule\n\nApril 1 (Mon): Easter holiday, no class\nApril 2 (Tues): Stage, no class\nApril 5 (Fri): Work on project milestone 1\nApril 8 (Mon): Lab 5, Eclipse day\nApril 12 (Fri): Quiz 2, work on project milestone 1\nApril 15 (Mon): TBA\nApril 19 (Fri): TBA\nApril 22 (Mon): TBA, possible Test 1 date\nApril 26 (Fri): TBA, possible Test 1 date\nApril 29 (Mon): TBA, possible Test 1 date",
+    "text": "April\n\nDeliverables\n\nProject Milestone 1: Set up team Repo and Requirement Tracking (5%). Section 1, Section 2\nProject Milestone 2: Create sensor and actuator subsystems (9%). Section 1, Section 2\nAssignment 2: HVAC system using Azure IoT (9%). Section 1, Section 2\nLab 5: Eclipse Lab (3%). Section 1, Section 2\nLab 6: Azure IoT Hub (4%). Section 1, Section 2\nQuiz 2: March+April content (in-class April 26)\n\n\n\nSchedule\n\nApril 1 (Mon): Easter holiday, no class\nApril 2 (Tues): Stage, no class\nApril 5 (Fri): Work on project milestone 1\nApril 8 (Mon): Lab 5, Eclipse day\nApril 12 (Fri): Submit Lab 5 and Assignment 1\nApril 15 (Mon): Start Lab 6, Assignment 2, Milestone 2\nApril 19 (Fri): Finish Lab 6, work on Assignment 2\nApril 22 (Mon): Finish Milestone 2\nApril 26 (Fri): Quiz 2\nApril 29 (Mon): Finish Assignment 2",
     "crumbs": [
       "Home",
       "About",
@@ -994,7 +994,7 @@
     "href": "about/calendar.html#may",
     "title": "Calendar",
     "section": "May",
-    "text": "May\n\nDeliverables\n\nProject Milestone 2: TBA\nProject Milestone 3: TBA\nLab 6: TBA\nQuiz 3 TBA\n\n\n\nSchedule\n\nMay 3 (Fri): TBA\nMay 6 (Mon): TBA\nMay 10 (Fri): TBA\nMay 13 (Mon): TBA\nMay 17 (Fri): TBA\nMay 20 (Mon): TBA\nMay 24 (Fri): TBA\n\n\n\n\nThe focused pupil keeps watch on Time",
+    "text": "May\n\nDeliverables\n\nTest 1: All course content (in-class May 3)\nProject Milestone 3: TBA\n\n\n\nSchedule\n\nMay 3 (Fri): Test 1\nMay 6 (Mon): TBA\nMay 10 (Fri): TBA\nMay 13 (Mon): TBA\nMay 17 (Fri): TBA\nMay 20 (Mon): TBA\nMay 24 (Fri): TBA\n\n\n\n\nThe focused pupil keeps watch on Time",
     "crumbs": [
       "Home",
       "About",
@@ -1006,7 +1006,7 @@
     "href": "index.html",
     "title": "Home",
     "section": "",
-    "text": "This companion site for the 420-6P3 course includes:\n\n\nLecture slides / documents\nExercises\nReferences & Resources\n\n\nWebsite accessible at john-abbott-college.github.io/6P3-Notes\n\n\nThis course will introduce students to the principles of the Internet of Things (IoT). Students will use Linux and Python to program a Raspberry Pi in order to read data from sensors and control actuators.\nBy the end of the course, students build and deploy an IoT product that is securely connected to the Azure ecosystem in order to collect and analyse telemetry data as well as respond to remote commands.\n\n\n\n\nExperience using Object Oriented Programming to create applications in any language.\nFamiliarity using the Bash shell and basic Linux CLI.\nFamiliarity with Python.\nA Raspberry Pi with various sensors and actuators (see page Hardware List).\nA Microsoft Azure account (create a free Azure for Students account if necessary).\nVS Code configured for Python programming and remote development (see page Dev Setup).\n\n\n\n\nThis webpage is written in Markdown using the Quarto framework. The website is hosted via GitHub Pages\nSource code is open source and available on GitHub.\n\n\nCreate a local copy of these notes:\n\nInstall Quarto for your system\nClone the course GitHub repository.\nCheckout the branch for this year’s notes: git switch winter2024\nPreview the website:\nquarto preview .\n\n\nThis work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.\n\n\n\nCC BY-NC 4.0\n\n\n\n\n\nCC BY-NC 4.0",
+    "text": "This companion site for the 420-6P3 course includes:\n\n\nLecture slides / documents\nExercises\nReferences & Resources\n\n\nWebsite accessible at john-abbott-college.github.io/6P3-Notes\n\n\nThis course will introduce students to the principles of the Internet of Things (IoT). Students will use Linux and Python to program a Raspberry Pi in order to read data from sensors and control actuators.\nBy the end of the course, students build and deploy an IoT product that is securely connected to the Azure ecosystem in order to collect and analyse telemetry data as well as respond to remote commands.\n\n\n\n\nExperience using Object Oriented Programming to create applications in any language.\nFamiliarity using the Bash shell and basic Linux CLI.\nFamiliarity with Python.\nA Raspberry Pi with various sensors and actuators (see page Hardware List).\nA Microsoft Azure account (create a free Azure for Students account if necessary).\nVS Code configured for Python programming and remote development (see page Dev Setup).\n\n\n\n\nThis webpage is written in Markdown using the Quarto framework. The website is hosted via GitHub Pages\nSource code is open source and available on GitHub.\n\n\nCreate a local copy of these notes:\n\nInstall Quarto for your system\nClone the course GitHub repository.\nPreview the website:\nquarto preview .\n\n\nThis work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.\n\n\n\nCC BY-NC 4.0\n\n\n\n\n\nCC BY-NC 4.0",
     "crumbs": [
       "Home"
     ]
@@ -1036,7 +1036,7 @@
     "href": "index.html#source-code",
     "title": "Home",
     "section": "",
-    "text": "This webpage is written in Markdown using the Quarto framework. The website is hosted via GitHub Pages\nSource code is open source and available on GitHub.\n\n\nCreate a local copy of these notes:\n\nInstall Quarto for your system\nClone the course GitHub repository.\nCheckout the branch for this year’s notes: git switch winter2024\nPreview the website:\nquarto preview .\n\n\nThis work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.\n\n\n\nCC BY-NC 4.0\n\n\n\n\n\nCC BY-NC 4.0",
+    "text": "This webpage is written in Markdown using the Quarto framework. The website is hosted via GitHub Pages\nSource code is open source and available on GitHub.\n\n\nCreate a local copy of these notes:\n\nInstall Quarto for your system\nClone the course GitHub repository.\nPreview the website:\nquarto preview .\n\n\nThis work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.\n\n\n\nCC BY-NC 4.0\n\n\n\n\n\nCC BY-NC 4.0",
     "crumbs": [
       "Home"
     ]

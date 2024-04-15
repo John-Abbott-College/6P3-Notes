@@ -521,7 +521,6 @@ ul.task-list li input[type="checkbox"] {
 <ol type="1">
 <li><p>Install <a href="https://quarto.org/docs/get-started/">Quarto</a> for your system</p></li>
 <li><p>Clone the <a href="https://github.com/John-Abbott-College/6P3-Notes">course GitHub repository</a>.</p></li>
-<li><p>Checkout the branch for this year’s notes: <code>git switch winter2024</code></p></li>
 <li><p>Preview the website:</p>
 <p><code>quarto preview .</code></p></li>
 </ol>
@@ -1150,7 +1149,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","openEffect":"zoom","loop":false,"selector":".lightbox"});
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","selector":".lightbox","loop":false,"descPosition":"bottom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
