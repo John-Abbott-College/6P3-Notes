@@ -48,6 +48,8 @@ website:
   navbar: 
     left:
       - index.qmd
+      - text: "Announcements"
+        href: announcements/index.qmd
       - text: "Calendar"
         href: about/calendar.qmd
       - text: "Syllabus"

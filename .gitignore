@@ -4,6 +4,7 @@ __pycache__
 
 # For Python demo code
 .env
+.venv
 
 # For .NET demo code
 bin/
