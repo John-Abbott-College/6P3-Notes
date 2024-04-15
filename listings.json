@@ -9,39 +9,12 @@
     ]
   },
   {
-    "listing": "/topics/hardware/index.html",
+    "listing": "/topics/iot/index.html",
     "items": [
-      "/topics/hardware/docs/reterminal-sensors.html",
-      "/topics/hardware/docs/gpios.html",
-      "/topics/hardware/docs/analog-vs-digital.html",
-      "/topics/hardware/docs/arduino-vs-raspberry-pi.html",
-      "/topics/hardware/docs/circuitry-basics.html",
-      "/topics/hardware/docs/serial-protocols.html"
-    ]
-  },
-  {
-    "listing": "/about/index.html",
-    "items": [
-      "/about/this-site.html",
-      "/about/calendar.html",
-      "/about/syllabus.html"
-    ]
-  },
-  {
-    "listing": "/announcements/index.html",
-    "items": [
-      "/announcements/2024-03-18-quiz1-topics.html",
-      "/announcements/2024-03-14-pi-update.html",
-      "/announcements/2024-03-12-lab3-demo.html",
-      "/announcements/2024-03-12-website-updates.html"
-    ]
-  },
-  {
-    "listing": "/topics/getting-started/index.html",
-    "items": [
-      "/topics/getting-started/docs/vscode-python-setup.html",
-      "/topics/getting-started/docs/hardware-list.html",
-      "/topics/getting-started/docs/tech-stack.html"
+      "/topics/iot/docs/what-is-iot.html",
+      "/topics/iot/docs/intro-azure-iot.html",
+      "/topics/iot/docs/iot-protocols.html",
+      "/topics/iot/docs/azure-sdks.html"
     ]
   },
   {
@@ -66,13 +39,47 @@
       "/topics/python/docs/scripting.html",
       "/topics/python/docs/project-management.html",
       "/topics/python/docs/advanced.html",
-      "/topics/linux/docs/github.html"
+      "/topics/linux/docs/github.html",
+      "/topics/iot/docs/intro-azure-iot.html",
+      "/topics/iot/docs/iot-protocols.html",
+      "/topics/iot/docs/azure-sdks.html"
     ]
   },
   {
-    "listing": "/topics/iot/index.html",
+    "listing": "/topics/getting-started/index.html",
     "items": [
-      "/topics/iot/docs/what-is-iot.html"
+      "/topics/getting-started/docs/vscode-python-setup.html",
+      "/topics/getting-started/docs/hardware-list.html",
+      "/topics/getting-started/docs/tech-stack.html"
+    ]
+  },
+  {
+    "listing": "/about/index.html",
+    "items": [
+      "/about/this-site.html",
+      "/about/calendar.html",
+      "/about/syllabus.html"
+    ]
+  },
+  {
+    "listing": "/announcements/index.html",
+    "items": [
+      "/announcements/2024-04-15-schedule-updates.html",
+      "/announcements/2024-03-18-quiz1-topics.html",
+      "/announcements/2024-03-14-pi-update.html",
+      "/announcements/2024-03-12-lab3-demo.html",
+      "/announcements/2024-03-12-website-updates.html"
+    ]
+  },
+  {
+    "listing": "/topics/hardware/index.html",
+    "items": [
+      "/topics/hardware/docs/reterminal-sensors.html",
+      "/topics/hardware/docs/gpios.html",
+      "/topics/hardware/docs/analog-vs-digital.html",
+      "/topics/hardware/docs/arduino-vs-raspberry-pi.html",
+      "/topics/hardware/docs/circuitry-basics.html",
+      "/topics/hardware/docs/serial-protocols.html"
     ]
   },
   {

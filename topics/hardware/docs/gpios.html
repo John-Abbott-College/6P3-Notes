@@ -144,6 +144,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="../../../announcements/index.html"> 
+<span class="menu-text">Announcements</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="../../../about/calendar.html"> 
 <span class="menu-text">Calendar</span></a>
   </li>  
@@ -371,6 +375,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../../topics/iot/docs/azure-sdks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Azure SDKs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../topics/iot/docs/intro-azure-iot.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Intro to Azure IoT</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../topics/iot/docs/iot-protocols.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">IoT Communication Protocols</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../../topics/iot/docs/what-is-iot.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Intro to the Internet of Things</span></a>
   </div>
@@ -562,7 +584,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Any of the GPIO pins can be designated (in software) as an input or output pin and used for a wide range of purposes.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../assets/7-gpio-pi-40-pin-reference.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1" title="Diagram of Pi’s 40 GPIO pins"><img src="../assets/7-gpio-pi-40-pin-reference.png" class="img-fluid figure-img" alt="Diagram of Pi’s 40 GPIO pins"></a></p>
+<p><a href="../assets/7-gpio-pi-40-pin-reference.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1" title="Diagram of Pi’s 40 GPIO pins"><img src="../assets/7-gpio-pi-40-pin-reference.png" class="img-fluid figure-img" alt="Diagram of Pi’s 40 GPIO pins"></a></p>
 <figcaption>Diagram of Pi’s 40 GPIO pins</figcaption>
 </figure>
 </div>
@@ -572,7 +594,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The reTerminal exposes the same 40-pin header as the Pi on it’s side:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../assets/7-gpio-reterminal-40-pin-header.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" data-glightbox="description: .lightbox-desc-2" title="Breakout of 40-pin header for reTerminal"><img src="../assets/7-gpio-reterminal-40-pin-header.png" class="img-fluid figure-img" alt="Breakout of 40-pin header for reTerminal"></a></p>
+<p><a href="../assets/7-gpio-reterminal-40-pin-header.png" class="lightbox" data-glightbox="description: .lightbox-desc-2" data-gallery="quarto-lightbox-gallery-2" title="Breakout of 40-pin header for reTerminal"><img src="../assets/7-gpio-reterminal-40-pin-header.png" class="img-fluid figure-img" alt="Breakout of 40-pin header for reTerminal"></a></p>
 <figcaption>Breakout of 40-pin header for reTerminal</figcaption>
 </figure>
 </div>
@@ -615,7 +637,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>In this course we will use the integrate ADC of the <a href="https://wiki.seeedstudio.com/Grove_Base_Hat_for_Raspberry_Pi/">Grove Base Hat</a> for the Raspberry Pi.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://files.seeedstudio.com/wiki/Grove_Base_Hat_for_Raspberry_Pi/img/main.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" data-glightbox="description: .lightbox-desc-3" title="Grove Base Hat for the Raspberry Pi"><img src="https://files.seeedstudio.com/wiki/Grove_Base_Hat_for_Raspberry_Pi/img/main.jpg" class="img-fluid figure-img" alt="Grove Base Hat for the Raspberry Pi"></a></p>
+<p><a href="https://files.seeedstudio.com/wiki/Grove_Base_Hat_for_Raspberry_Pi/img/main.jpg" class="lightbox" data-glightbox="description: .lightbox-desc-3" data-gallery="quarto-lightbox-gallery-3" title="Grove Base Hat for the Raspberry Pi"><img src="https://files.seeedstudio.com/wiki/Grove_Base_Hat_for_Raspberry_Pi/img/main.jpg" class="img-fluid figure-img" alt="Grove Base Hat for the Raspberry Pi"></a></p>
 <figcaption>Grove Base Hat for the Raspberry Pi</figcaption>
 </figure>
 </div>
@@ -630,7 +652,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>In addition to the 4 ADC connectors, the Base Hat also exposes the original 40-pin header and other digital connectors.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://files.seeedstudio.com/wiki/Grove_Base_Hat_for_Raspberry_Pi/img/pin-out/overview.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" data-glightbox="description: .lightbox-desc-4" title="Connectors of the Grove Base Hat"><img src="https://files.seeedstudio.com/wiki/Grove_Base_Hat_for_Raspberry_Pi/img/pin-out/overview.jpg" class="img-fluid figure-img" alt="Connectors of the Grove Base Hat"></a></p>
+<p><a href="https://files.seeedstudio.com/wiki/Grove_Base_Hat_for_Raspberry_Pi/img/pin-out/overview.jpg" class="lightbox" data-glightbox="description: .lightbox-desc-4" data-gallery="quarto-lightbox-gallery-4" title="Connectors of the Grove Base Hat"><img src="https://files.seeedstudio.com/wiki/Grove_Base_Hat_for_Raspberry_Pi/img/pin-out/overview.jpg" class="img-fluid figure-img" alt="Connectors of the Grove Base Hat"></a></p>
 <figcaption>Connectors of the Grove Base Hat</figcaption>
 </figure>
 </div>
@@ -1357,7 +1379,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","openEffect":"zoom","loop":false,"selector":".lightbox"});
+<script>var lightboxQuarto = GLightbox({"loop":false,"openEffect":"zoom","descPosition":"bottom","selector":".lightbox","closeEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

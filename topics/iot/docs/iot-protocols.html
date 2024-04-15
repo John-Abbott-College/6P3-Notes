@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-01-29">
+<meta name="dcterms.date" content="2024-04-15">
 
-<title>Connected Objects - Intro to the Internet of Things</title>
+<title>Connected Objects - IoT Communication Protocols</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -31,8 +65,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../">
-<link href="../../../topics/python/index.html" rel="next">
-<link href="../../../topics/iot/docs/iot-protocols.html" rel="prev">
+<link href="../../../topics/iot/docs/what-is-iot.html" rel="next">
+<link href="../../../topics/iot/docs/intro-azure-iot.html" rel="prev">
 <link href="../../../assets/favicon_io/favicon.ico" rel="icon">
 <script src="../../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
@@ -79,8 +113,8 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="../../../styles.css">
-<meta property="og:title" content="Connected Objects - Intro to the Internet of Things">
-<meta property="og:description" content="Fundamental concepts and applications behind the ‘Internet of Things’ paradigm.">
+<meta property="og:title" content="Connected Objects - IoT Communication Protocols">
+<meta property="og:description" content="How communication protocols can be optimized for device-cloud communication, i.e.&nbsp;why not everything should use HTTP">
 <meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/topics/iot/docs/assets/art_title_path_only.svg">
 <meta property="og:site_name" content="Connected Objects">
 </head>
@@ -161,7 +195,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../topics/index.html">Topics</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/index.html">IoT</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/docs/azure-sdks.html">Docs</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/docs/what-is-iot.html">Intro to the Internet of Things</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../topics/index.html">Topics</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/index.html">IoT</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/docs/azure-sdks.html">Docs</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/docs/iot-protocols.html">IoT Communication Protocols</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -353,13 +387,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../topics/iot/docs/iot-protocols.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/iot/docs/iot-protocols.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">IoT Communication Protocols</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../topics/iot/docs/what-is-iot.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../topics/iot/docs/what-is-iot.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Intro to the Internet of Things</span></a>
   </div>
 </li>
@@ -483,38 +517,57 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#internet-of-things-iot" id="toc-internet-of-things-iot" class="nav-link active" data-scroll-target="#internet-of-things-iot">Internet of Things (IoT)</a></li>
-  <li><a href="#why-collect-all-this-data" id="toc-why-collect-all-this-data" class="nav-link" data-scroll-target="#why-collect-all-this-data">Why collect all this data?</a></li>
-  <li><a href="#iot-examples" id="toc-iot-examples" class="nav-link" data-scroll-target="#iot-examples">IoT Examples</a>
+  <li><a href="#http" id="toc-http" class="nav-link active" data-scroll-target="#http">HTTP</a>
   <ul>
-  <li><a href="#consumer-iot" id="toc-consumer-iot" class="nav-link" data-scroll-target="#consumer-iot">Consumer IoT</a></li>
-  <li><a href="#industrial-iot-iiot" id="toc-industrial-iot-iiot" class="nav-link" data-scroll-target="#industrial-iot-iiot">Industrial IoT (IIoT)</a></li>
+  <li><a href="#typical-http-request" id="toc-typical-http-request" class="nav-link" data-scroll-target="#typical-http-request">Typical HTTP request</a></li>
+  <li><a href="#typical-http-response" id="toc-typical-http-response" class="nav-link" data-scroll-target="#typical-http-response">Typical HTTP Response</a></li>
+  <li><a href="#http-characteristics" id="toc-http-characteristics" class="nav-link" data-scroll-target="#http-characteristics">HTTP Characteristics</a></li>
+  <li><a href="#dash-app-example" id="toc-dash-app-example" class="nav-link" data-scroll-target="#dash-app-example">Dash app example</a></li>
   </ul></li>
-  <li><a href="#high-level-components-of-an-iot-system" id="toc-high-level-components-of-an-iot-system" class="nav-link" data-scroll-target="#high-level-components-of-an-iot-system">High-level Components of an IoT System</a></li>
-  <li><a href="#iot-cloud-service-providers" id="toc-iot-cloud-service-providers" class="nav-link" data-scroll-target="#iot-cloud-service-providers">IoT Cloud Service Providers</a></li>
-  <li><a href="#azure-account-check" id="toc-azure-account-check" class="nav-link" data-scroll-target="#azure-account-check">Azure Account Check</a>
+  <li><a href="#pubsub-communication" id="toc-pubsub-communication" class="nav-link" data-scroll-target="#pubsub-communication">Pub/Sub Communication</a>
   <ul>
-  <li><a href="#checking-your-balance" id="toc-checking-your-balance" class="nav-link" data-scroll-target="#checking-your-balance">Checking your balance 💸</a></li>
-  <li><a href="#budget-alerts" id="toc-budget-alerts" class="nav-link" data-scroll-target="#budget-alerts">Budget Alerts</a>
+  <li><a href="#clients" id="toc-clients" class="nav-link" data-scroll-target="#clients">Clients</a></li>
+  <li><a href="#broker" id="toc-broker" class="nav-link" data-scroll-target="#broker">Broker</a></li>
+  </ul></li>
+  <li><a href="#mqtt" id="toc-mqtt" class="nav-link" data-scroll-target="#mqtt">MQTT</a>
+  <ul>
+  <li><a href="#topics-wildcards" id="toc-topics-wildcards" class="nav-link" data-scroll-target="#topics-wildcards">Topics &amp; Wildcards</a>
   <ul class="collapse">
-  <li><a href="#create-a-budget-for-a-resource-group" id="toc-create-a-budget-for-a-resource-group" class="nav-link" data-scroll-target="#create-a-budget-for-a-resource-group">Create a Budget for a Resource Group</a></li>
+  <li><a href="#wildcards" id="toc-wildcards" class="nav-link" data-scroll-target="#wildcards">Wildcards</a></li>
   </ul></li>
+  <li><a href="#messages" id="toc-messages" class="nav-link" data-scroll-target="#messages">Messages</a></li>
+  <li><a href="#qos" id="toc-qos" class="nav-link" data-scroll-target="#qos">QoS</a></li>
+  <li><a href="#sessions-clean-or-persistent" id="toc-sessions-clean-or-persistent" class="nav-link" data-scroll-target="#sessions-clean-or-persistent">Sessions: Clean or Persistent</a></li>
+  <li><a href="#keepalive" id="toc-keepalive" class="nav-link" data-scroll-target="#keepalive">KeepAlive</a></li>
+  <li><a href="#last-will-testament" id="toc-last-will-testament" class="nav-link" data-scroll-target="#last-will-testament">Last Will &amp; Testament</a></li>
+  <li><a href="#retained-messages" id="toc-retained-messages" class="nav-link" data-scroll-target="#retained-messages">Retained Messages</a></li>
   </ul></li>
+  <li><a href="#http-vs-mqtt" id="toc-http-vs-mqtt" class="nav-link" data-scroll-target="#http-vs-mqtt">HTTP vs MQTT</a></li>
+  <li><a href="#mqtt-client-examples" id="toc-mqtt-client-examples" class="nav-link" data-scroll-target="#mqtt-client-examples">MQTT Client Examples</a>
+  <ul>
+  <li><a href="#public-brokers" id="toc-public-brokers" class="nav-link" data-scroll-target="#public-brokers">Public Brokers</a></li>
+  <li><a href="#publisher-code" id="toc-publisher-code" class="nav-link" data-scroll-target="#publisher-code">Publisher Code</a></li>
+  <li><a href="#subscriber-code" id="toc-subscriber-code" class="nav-link" data-scroll-target="#subscriber-code">Subscriber Code</a></li>
+  </ul></li>
+  <li><a href="#connectivity-issues" id="toc-connectivity-issues" class="nav-link" data-scroll-target="#connectivity-issues">Connectivity Issues</a></li>
   <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
+  <li><a href="#references-resources" id="toc-references-resources" class="nav-link" data-scroll-target="#references-resources">References &amp; Resources</a>
+  <ul>
   <li><a href="#diving-deeper" id="toc-diving-deeper" class="nav-link" data-scroll-target="#diving-deeper">Diving Deeper</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../topics/index.html">Topics</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/index.html">IoT</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/docs/azure-sdks.html">Docs</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/docs/what-is-iot.html">Intro to the Internet of Things</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../topics/index.html">Topics</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/index.html">IoT</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/docs/azure-sdks.html">Docs</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/docs/iot-protocols.html">IoT Communication Protocols</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Intro to the Internet of Things</h1>
-<p class="subtitle lead">Fundamental concepts and applications behind the ‘Internet of Things’ paradigm.</p>
+<h1 class="title">IoT Communication Protocols</h1>
+<p class="subtitle lead">How communication protocols can be optimized for device-cloud communication, i.e.&nbsp;why not everything should use HTTP</p>
   <div class="quarto-categories">
-    <div class="quarto-category">IoT</div>
+    <div class="quarto-category">IOT</div>
+    <div class="quarto-category">Quiz 2</div>
   </div>
   </div>
 
@@ -526,7 +579,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 29, 2024</p>
+      <p class="date">April 15, 2024</p>
     </div>
   </div>
   
@@ -544,231 +597,516 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><img src="../assets/iot-banner.webp" class="img-fluid" alt="The Interconnection of communicating devices defines the “Internet of Things”"> Image: © Irina Strelnikova / Adobe Stock</p>
-<section id="internet-of-things-iot" class="level2">
-<h2 class="anchored" data-anchor-id="internet-of-things-iot">Internet of Things (IoT)</h2>
-<p>The <strong>Internet of Things (IoT)</strong> is comprised of equipment, machines, products, and devices that are connected to the cloud and <strong>periodically collect, send and/or receive data.</strong></p>
+<p>IoT devices typically exchange data with a cloud service using a specific <strong>communication protocol</strong>.</p>
 <blockquote class="blockquote">
-<p><strong>IoT</strong> refers to the <strong>entire network</strong> of:</p>
-<ul>
-<li>physical devices,</li>
-<li>tools,</li>
-<li>equipment, and</li>
-<li>smart objects</li>
-</ul>
-<p>These objects have the capability to <strong>collect and share data</strong> about:</p>
-<ul>
-<li>how they are used</li>
-<li>the environment around them</li>
-</ul>
-<p>IoT devices can also <strong>receive commands or updates</strong> via the cloud.</p>
+<p>Data gathered from sensors and sent to the cloud is called <strong>telemetry</strong>.</p>
 </blockquote>
+<p>This section looks at common communication protocols used in IoT with a focus on <strong>MQTT</strong>.</p>
+<section id="http" class="level2">
+<h2 class="anchored" data-anchor-id="http">HTTP</h2>
+<p>So far in this course we’ve been exchanging data between our devices and Python Flask/Dash servers using HTTP.</p>
+<blockquote class="blockquote">
+<p>The default web server instantiated by the Dash python library is a thin HTTP wrapper around the Flask web server.</p>
+</blockquote>
+<p>HTTP is a common protocol for the web, however, some of its characteristics make it not ideal for IoT applications, as the next section explains.</p>
+<section id="typical-http-request" class="level3">
+<h3 class="anchored" data-anchor-id="typical-http-request">Typical HTTP request</h3>
+<img src="https://www3.ntu.edu.sg/home/ehchua/programming/webprogramming/images/HTTP_RequestMessageExample.png" class="img-fluid">
+<p class="img-info">
+<a href="https://cheapsslsecurity.com/p/http2-vs-http1/"> Example of an HTTP Request </a>&nbsp; cheapsslsecurity.com.
+</p>
 </section>
-<section id="why-collect-all-this-data" class="level2">
-<h2 class="anchored" data-anchor-id="why-collect-all-this-data">Why collect all this data?</h2>
-<p>By analyzing the data collected by these connected objects, users and organisations can make informed decisions in near real-time and automate tightly integrated processes. This avoids decision making based on limited or out-dated data.</p>
-<p>This data can create quick feedback loops for automation. Data from one object can trigger actions or control several other objects with timing and precision that could not be achieved by humans.</p>
+<section id="typical-http-response" class="level3">
+<h3 class="anchored" data-anchor-id="typical-http-response">Typical HTTP Response</h3>
+<img src="https://www3.ntu.edu.sg/home/ehchua/programming/webprogramming/images/HTTP_ResponseMessageExample.png" class="img-fluid">
+<p class="img-info">
+<a href="https://cheapsslsecurity.com/p/http2-vs-http1/"> Example of an HTTP Response </a>&nbsp; cheapsslsecurity.com.
+</p>
+<p>Below is the HTTP response header for the posting of AIO data above (1 KB long)</p>
 </section>
-<section id="iot-examples" class="level2">
-<h2 class="anchored" data-anchor-id="iot-examples">IoT Examples</h2>
-<p>The use of IoT can be organised in two fields of application:</p>
+<section id="http-characteristics" class="level3">
+<h3 class="anchored" data-anchor-id="http-characteristics">HTTP Characteristics</h3>
+<p>The following HTTP characteristics are relevant in the IoT context:</p>
 <ul>
-<li><strong>Industrial IoT (IIoT)</strong></li>
-<li><strong>Consumer IoT</strong></li>
+<li><strong>Request response protocol</strong>: client always has to request an update from the server.</li>
+<li>Designed for <strong>large bandwidth</strong>, low delay.</li>
+<li><strong>Stateless</strong>: each request is considered as the new request. Server doesn’t recognise the user by default (cookies or tokens are required).</li>
+<li><strong>Resource identification</strong>: each request includes a URI (universal resource identifier).</li>
+<li><strong>DNS lookup</strong>: 3-way identification handshake (overhead).</li>
+<li><strong>Big protocol headers</strong>: uncompressed content transfer that is not the payload.</li>
 </ul>
+<p>In HTTP, the client has to be constantly “pulling” the server for new information. Pull updates are either slow (check only every few minutes) or data/power intensive (check constantly).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../assets/1-iot-intro-industrial-vs-consumer.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1" title="Examples of industrial and consumer iot applications"><img src="../assets/1-iot-intro-industrial-vs-consumer.png" class="img-fluid figure-img" alt="Examples of industrial and consumer iot applications"></a></p>
-<figcaption>Examples of industrial and consumer iot applications</figcaption>
+<p><a href="https://cdn-learn.adafruit.com/assets/assets/000/049/264/medium800/customer___partner_projects_adafruit_io_polling.png?1513195213" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1" title="customer___partner_projects_adafruit_io_polling.png"><img src="https://cdn-learn.adafruit.com/assets/assets/000/049/264/medium800/customer___partner_projects_adafruit_io_polling.png?1513195213" class="img-fluid figure-img" alt="customer___partner_projects_adafruit_io_polling.png"></a></p>
+<figcaption>customer___partner_projects_adafruit_io_polling.png</figcaption>
 </figure>
 </div>
 <p class="img-info">
-<a href="https://www.kuritaamerica.com/the-splash/the-internet-of-things-and-its-benefit-to-us-water-customers"> The Internet of Things and its Benefit to U.S. Water Customer </a> &nbsp; in kuritaamerica.com
+<a href="https://learn.adafruit.com/alltheiot-protocols?view=all#internet-of-toast-2977937-4"> HTTP Client constantly pulling the server for updates </a>&nbsp; HTTP Protocol, Adafruit.
 </p>
-<section id="consumer-iot" class="level3">
-<h3 class="anchored" data-anchor-id="consumer-iot">Consumer IoT</h3>
-<p>Examples of consumer IoT are:</p>
+</section>
+<section id="dash-app-example" class="level3">
+<h3 class="anchored" data-anchor-id="dash-app-example">Dash app example</h3>
+<p>In our dash apps, this problem showed up in the form of a strict dependency between the Dash app and the Device Controller – at each interval, the Dash app had to directly call the Device Controller “read_sensors” and “control_actuators” methods. This is fine in a simple example where it doesn’t matter that we poll the device each second, but on faster intervals, or when information is not aligned with regular intervals, this results in large inefficiencies.</p>
+</section>
+</section>
+<section id="pubsub-communication" class="level2">
+<h2 class="anchored" data-anchor-id="pubsub-communication">Pub/Sub Communication</h2>
+<blockquote class="blockquote">
+<p>The most popular communication pattern for IoT systems is a publish/subscribe (pub/sub) messaging system done via some kind of broker.</p>
+</blockquote>
+<p>This IoT system has two types of actors:</p>
 <ul>
-<li><p><strong>Home Security</strong>: Sensors, alarms, cameras, lights, and microphones provide 24/7 security and surveillance. All of which can be controlled from a smart phone.</p></li>
-<li><p><strong>Smart Home</strong>: Smart lighting, heating and sound systems can be automated to detect human present or receive instructions remotely. Voice Assistants can also control house appliances or and provide information.</p></li>
-<li><p><strong>Wearables:</strong> Smartwatches and fitness trackers can monitor blood pressure or heart rate, and physical activity and suggest workouts, breaks or medical assistance.</p></li>
-<li><p><strong>Appliances:</strong> Smart fridges can keep track of food quantities and expiry dates and create shopping lists accordingly. Smart outlet plugs can measure electrical consumption and turn other appliances on/off.</p></li>
+<li>One or more <strong>Clients</strong></li>
+<li>One <strong>Broker</strong></li>
+</ul>
+<p>In the image below, a client device is publishing messages to the topic <code>/telemetry</code> while a client in the cloud is subscribed to the same topic.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://github.com/microsoft/IoT-For-Beginners/raw/main/images/mqtt.png" class="img-fluid figure-img"></p>
+<figcaption>IoT device publishing telemetry on the /telemetry topic, and the cloud service subscribing to that topic</figcaption>
+</figure>
+</div>
+<p>It’s very typical that any particular client is both the publisher and the subscriber.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://github.com/microsoft/IoT-For-Beginners/raw/main/images/pub-sub.png" class="img-fluid figure-img"></p>
+<figcaption>IoT devices connect to a broker and publish telemetry and subscribe to commands. Cloud services connect to the broker and subscribe to all telemetry and send commands to specific devices.</figcaption>
+</figure>
+</div>
+<p>Figures from: <a href="https://github.com/microsoft/IoT-For-Beginners/tree/main/1-getting-started/lessons/4-connect-internet">Broker and client relationship</a>, IoT for Beginners, Microsoft.</p>
+<section id="clients" class="level3">
+<h3 class="anchored" data-anchor-id="clients">Clients</h3>
+<p><strong>Clients</strong> are typically devices, applications or back-end services. They connect to the broker and publish telemetry as well as subscribe to commands.</p>
+<blockquote class="blockquote">
+<p><strong>A cloud service is an example of a client</strong>.</p>
+<p>It connects to the broker and subscribes to all the telemetry messages and publishes commands either to specific devices, or to groups of devices.</p>
+</blockquote>
+<p>The client performs two operations:</p>
+<ul>
+<li><strong>Publishes information:</strong> When the client sends the data to the server.</li>
+<li><strong>Subscribes to information:</strong> When the client receives the data from the server.</li>
 </ul>
 </section>
-<section id="industrial-iot-iiot" class="level3">
-<h3 class="anchored" data-anchor-id="industrial-iot-iiot">Industrial IoT (IIoT)</h3>
-<p>Most people tend to first think of IoT as consumer devices. However, <strong>their main value added happens in industrial applications.</strong></p>
-<p><a href="https://miro.medium.com/max/1400/1*VKScdttTvAJZ7n663OwGPw.jpeg" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="https://miro.medium.com/max/1400/1*VKScdttTvAJZ7n663OwGPw.jpeg" class="img-fluid"></a></p>
+<section id="broker" class="level3">
+<h3 class="anchored" data-anchor-id="broker">Broker</h3>
+<p>The Broker is typically running on a server and performs the following operations:</p>
+<ul>
+<li>Accepts messages from clients.</li>
+<li>Processes subscribe and unsubscribe requests.</li>
+<li>Forwards messages to specific clients according to subscription requests.</li>
+</ul>
+<blockquote class="blockquote">
+<p>MQTT is the most popular communication protocol for IoT devices</p>
+</blockquote>
+</section>
+</section>
+<section id="mqtt" class="level2">
+<h2 class="anchored" data-anchor-id="mqtt">MQTT</h2>
+<p>Message Queueing Telemetry Transport, i.e.&nbsp;<a href="http://mqtt.org">MQTT</a>, is a lightweight pub/sub protocol. It was originally designed to monitor oil pipelines where connectivity could not be guaranteed.</p>
+<p>One or more clients connect to a single broker, who routes messages to the interested clients.</p>
+<p>MQTT manages messages <strong>asynchronously</strong> over a <strong>network socket</strong>.</p>
+<p>The broker can hold and forward messages from client to client so if one gets disconnected, it will be able to fetch the message when it reconnects later.</p>
+<blockquote class="blockquote">
+<p><a href="https://engineering.fb.com/2011/08/12/android/building-facebook-messenger/">Facebook Messenger uses MQTT</a> and is the World’s largest MQTT network.</p>
+<p>Infrastructure details <a href="https://engineering.fb.com/2014/10/09/production-engineering/building-mobile-first-infrastructure-for-messenger/">here</a> (nice read!).</p>
+</blockquote>
+<section id="topics-wildcards" class="level3">
+<h3 class="anchored" data-anchor-id="topics-wildcards">Topics &amp; Wildcards</h3>
+<p>Messages are routed using <strong>named topics</strong>, rather than being sent directly to an individual client. A client can publish to a topic, and any clients subscribed to that topic will receive the message.</p>
+<p>In the example below, a <strong>client device is publishing</strong> some data (not shown) to the topic <code>/telemetry</code>. Immediately after the data is received by the broker, the <strong>broker routes the message</strong> to a client application previously <strong>subscribed to the same topic</strong>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://github.com/microsoft/IoT-For-Beginners/raw/main/images/mqtt.png" class="img-fluid figure-img"></p>
+<figcaption>IoT device publishing telemetry on the /telemetry topic, and the cloud service subscribing to that topic</figcaption>
+</figure>
+</div>
+<p><a href="https://github.com/microsoft/IoT-For-Beginners/tree/main/1-getting-started/lessons/4-connect-internet"> MQTT Topics </a>&nbsp; IoT for Beginners, Microsoft.</p>
+<blockquote class="blockquote">
+<p>Topics <strong>typically have a hierarchy</strong> to keep data organized and intuitive to access.</p>
+</blockquote>
+<p>For example, a factory might want to track temperature from different HVAC units on different floor.</p>
+<p>The topic hierarchy could be set up in the following way:</p>
+<p><code>sensors/&lt;FLOOR&gt;/temperature/&lt;HVAC_UNIT_ID&gt;</code></p>
+<p>HVAC units would publish data to the following topics:</p>
+<ul>
+<li>The AC unit on the third floor: <code>sensors/floor3/temperature/AC1</code></li>
+<li>The boiler unit on the tenth floor: <code>sensors/floor10/temperature/boiler</code></li>
+<li>The heater unit on the fourth floor: <code>sensors/floor4/temperature/heater</code></li>
+</ul>
+<section id="wildcards" class="level4">
+<h4 class="anchored" data-anchor-id="wildcards">Wildcards</h4>
+<p>Clients can subscribe to different levels of the topic hierarchy using <strong>wildcards</strong>.</p>
+<p>When subscribing to multiple topics two <strong>wildcard</strong> characters can be used:</p>
+<ul>
+<li><strong># (hash character)</strong> – multi level wildcard</li>
+<li><strong>+</strong> <strong>(plus character)</strong> -single level wildcard</li>
+</ul>
+<p>Using the previous factory temperature example, an application could monitor multiple temperatures in the following way:</p>
+<table class="table">
+<colgroup>
+<col style="width: 37%">
+<col style="width: 62%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Topic string</th>
+<th>Subscription result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>sensors/floor3/temperature/+</code></td>
+<td><strong>All</strong> of the temperature sensors on the 3rd floor</td>
+</tr>
+<tr class="even">
+<td><code>sensors/+/temperature/+</code></td>
+<td><strong>All</strong> the temperature data on <strong>all</strong> floors</td>
+</tr>
+<tr class="odd">
+<td><code>sensors/#</code></td>
+<td><strong>All</strong> topics going on <strong>all</strong> floors</td>
+</tr>
+<tr class="even">
+<td><code>sensors/floor10/#</code></td>
+<td><strong>All</strong> topics of the tenth floor</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="messages" class="level3">
+<h3 class="anchored" data-anchor-id="messages">Messages</h3>
+<p>Like to HTTP, MQTT is built on top of TCP/IP and can also be used over websockets.</p>
+<p>MQTT messages can be as short as 2 bytes (eg. acknowledgement or disconnect messages), as big as 256Mb (eg. publishing a picture or firmware update).</p>
+<p>A typical telemetry message with payload data such as <code>value=40</code> to a topic <code>/assign1-temp</code> has a size around 20 to 40 bytes.</p>
+<blockquote class="blockquote">
+<p>Message headers and topic names are text encoded (UTF-8).</p>
+<p>Message payload encoding is specific to the application (eg. plain text, JSON, binary, etc)</p>
+</blockquote>
+<p>MQTT connections can be <strong>public and open, or encrypted and secured</strong> using usernames and passwords, or certificates.</p>
+</section>
+<section id="qos" class="level3">
+<h3 class="anchored" data-anchor-id="qos">QoS</h3>
+<p>Messages can be sent with a quality of service (QoS) flag, which determines the guarantee of the message being received.</p>
+<ul>
+<li><p><strong>QoS 0: At most once (Fire and Forget)</strong> - the message is sent only once and the client and broker take no additional steps to acknowledge delivery (fire and forget).</p></li>
+<li><p><strong>QoS 1: At least once</strong> - the message is re-tried by the sender multiple times until acknowledgement is received (acknowledged delivery).</p></li>
+<li><p><strong>QoS 2: Exactly once</strong> - the sender and receiver engage in a two-level handshake to ensure only one copy of the message is received (assured delivery).</p></li>
+</ul>
+<p>Below is an example of <strong>QoS 1</strong>:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://cdn-learn.adafruit.com/assets/assets/000/049/303/medium800/customer___partner_projects_adafruit_io_puback.png?1513286630" class="lightbox" data-gallery="quarto-lightbox-gallery-5" data-glightbox="description: .lightbox-desc-5" title="customer___partner_projects_adafruit_io_puback.png"><img src="https://cdn-learn.adafruit.com/assets/assets/000/049/303/medium800/customer___partner_projects_adafruit_io_puback.png?1513286630" class="img-fluid figure-img" alt="customer___partner_projects_adafruit_io_puback.png"></a></p>
+<figcaption>customer___partner_projects_adafruit_io_puback.png</figcaption>
+</figure>
+</div>
 <p class="img-info">
-<a href="https://medium.com/@jaydev_21091/how-industrial-internet-of-things-are-impacting-our-lives-8af4163530ce">How Industrial Internet of Things are impacting our lives</a> by Bluechip Infocorp Pvt Ltd via Medium.
+<a href="https://learn.adafruit.com/alltheiot-protocols/mqtt-qos"> Example of ‘At Least Once’ (QoS 1) delivery </a>&nbsp; MQTT QoS, Adafruit.
 </p>
-<p>Industrial IoT Examples:</p>
-<ul>
-<li><p><strong>Equipment Maintenance:</strong> <a href="https://www.rolls-royce.com/media/press-releases/2016/11-07-2016-rr-takes-totalcare-digital-with-microsoft-and-singapore-airlines.aspx">Rolls-Royce’s Total Care</a> provides a suite of predictive maintenance and repair services for its jet engines, including monitoring engine health, and modifying engines to increase reliability and durability.</p></li>
-<li><p><strong>Farming:</strong> <a href="https://www.iotforall.com/ces-2021-john-deere">John Deere</a> is building intelligence into its large tractors and sprayers through sensors that make the machines into mobile platforms capable of self-driving.</p></li>
-<li><p><strong>Heavy Machinery &amp; Transportation:</strong> <a href="https://www.iotforall.com/iot-is-reshaping-heavy-industry">Rio Tinto</a>, a global mining company uses a remote command center to orchestrate the actions of huge drills, excavators, trains, and trucks across multiple mining sites.</p></li>
-<li><p><strong>Renewable Energies:</strong> <a href="https://www.nsenergybusiness.com/features/iot-wind-power/">Iberdrola and Siemens</a> are using IoT to optimize the operation and maintenance of offshore wind power farms, the lifetime extension of wind turbines and the reducing the cost of energy.</p></li>
-<li><p><strong>Facilities Management:</strong> Monitoring of buildings, infrastructure, and other spaces, allow to improve energy efficiency, space utilization, productivity, and safety. These insights may help:</p>
-<ul>
-<li>save money by automating lighting or optimizing heating and cooling cycles.</li>
-<li>Increase employee or occupant satisfaction by keep equipment running or ensuring that supplies are stocked.</li>
-</ul></li>
-</ul>
-</section>
-</section>
-<section id="high-level-components-of-an-iot-system" class="level2">
-<h2 class="anchored" data-anchor-id="high-level-components-of-an-iot-system">High-level Components of an IoT System</h2>
-<p>IoT systems are compromised of five high-level components:</p>
-<ol type="1">
-<li><strong>Sensors</strong>:
-<ul>
-<li>Collect data from the device’s environment (eg. velocity, GPS coordinates, temperature, etc).</li>
-<li>Sensors might use different communication protocols.</li>
-</ul></li>
-<li><strong>IoT Devices</strong> are computing devices that have:
-<ul>
-<li>Ability to securely register with the cloud;</li>
-<li>Connectivity options for sending and receiving data with the cloud.</li>
-</ul></li>
-<li><strong>Cloud Gateway / Hub</strong>:
-<ul>
-<li>Securely ingests and sends data or commands to devices;</li>
-<li>Offers device management (provisioning) services (add, remove, update, group, etc).</li>
-</ul></li>
-<li><strong>Data Processing:</strong>
-<ul>
-<li>Data validation;</li>
-<li>Integrate with <strong>business processes</strong> (check thresholds, send alerts, trigger action)</li>
-<li>Place data in <strong>Storage</strong>;</li>
-<li>Retrieve data from <strong>Storage</strong> for deeper / long-term analysis;</li>
-</ul></li>
-<li><strong>User Interface:</strong>
-<ul>
-<li>Data visualization;</li>
-<li>Trigger manual actions;</li>
-<li>Configure automatic actions;</li>
-<li>Facilitate device management.</li>
-</ul></li>
-</ol>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="../assets/iot-high-components.png" class="lightbox" data-glightbox="description: .lightbox-desc-3" data-gallery="quarto-lightbox-gallery-3" title="Icons of IoT High level components"><img src="../assets/iot-high-components.png" class="img-fluid figure-img" alt="Icons of IoT High level components"></a></p>
-<figcaption>Icons of IoT High level components</figcaption>
-</figure>
-</div>
-</section>
-<section id="iot-cloud-service-providers" class="level2">
-<h2 class="anchored" data-anchor-id="iot-cloud-service-providers">IoT Cloud Service Providers</h2>
-<p>Since IoT objects typically move around, connectivity and data collection need to happen over wide geographical areas.</p>
-<p>Most companies do not want to deal with setting-up the <strong>physical infrastructure and software</strong> required to have this level of distributed connectivity and reliability (servers, databases, backup systems, networking, container orchestration, etc).</p>
-<p>It is typically far more practical and cost-effective to use the services of an established IoT Cloud Service Provider.</p>
-<p>The three main Cloud Service Providers in the IoT space are:</p>
-<ul>
-<li><strong>Amazon Web Services (AWS)</strong></li>
-<li><strong>Microsoft Azure</strong></li>
-<li><strong>Google Cloud</strong></li>
-</ul>
-<p><a href="../assets/1-iot-intro-cloud-service-providers.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="../assets/1-iot-intro-cloud-service-providers.png" class="img-fluid"></a></p>
-<p>There are many other Cloud providers such as <a href="https://www.ibm.com/cloud/internet-of-things">IBM Cloud IoT</a> and <a href="https://www.oracle.com/internet-of-things/">Oracle IoT</a>.</p>
 <blockquote class="blockquote">
-<p>In this course we will focus on <strong>Microsoft Azure</strong>. However, all three platforms offer similar functionality.</p>
+<p>By default MQTT sessions are established with QoS 0 for all messages (clean sessions).</p>
+<p>This means that if a client disconnects and then reconnects, <strong>it won’t receive messages sent during the disconnection</strong>.</p>
+</blockquote>
+<p>When setting QoS, there are two sides of message delivery:</p>
+<ol type="1">
+<li>Message delivery from the publishing client to the broker.</li>
+<li>Message delivery from the broker to the subscribing client.</li>
+</ol>
+<p>The client that publishes the message to the broker defines the QoS level of the message when it sends the message to the broker.</p>
+<p>The broker transmits this message to subscribing clients <strong>using the QoS level that each subscribing client defines</strong> during the subscription process.</p>
+<blockquote class="blockquote">
+<p>If the subscribing client defines a lower QoS than the publishing client, the broker transmits the message with the lower quality of service.</p>
 </blockquote>
 </section>
-<section id="azure-account-check" class="level2">
-<h2 class="anchored" data-anchor-id="azure-account-check">Azure Account Check</h2>
-<p>Students get $100 of credit for 12 months and free <a href="https://portal.azure.com/#blade/Microsoft_Azure_Billing/FreeServicesBlade">developer tools</a> without a credit card.</p>
-<blockquote class="blockquote">
-<p><strong>Create an account</strong> and see details <a href="https://azure.microsoft.com/en-us/free/students/">here</a>.</p>
-</blockquote>
-<p>The student account can be renewed annually (including $100 credits) for as long as you are a student.</p>
-<p>Most things we’ll do with Azure will use <strong>free services</strong>. We will occasionally use some of your free credits (~$20).</p>
-<section id="checking-your-balance" class="level3">
-<h3 class="anchored" data-anchor-id="checking-your-balance">Checking your balance 💸</h3>
-<p>As you experiment with Azure you might want to know your current balance.</p>
-<p><strong>TL:DR</strong> 1. Sign in to the Azure portn in to the Azure portal.al. 2. Search for <strong><em>Cost Management</em></strong> <img src="../assets/intro-azure-cost-management.png" title=":class=inline-img" class="img-fluid"></p>
-<ol start="3" type="1">
-<li><p>Select <strong><em>Payment methods</em></strong></p></li>
-<li><p>Check your <strong><em>Azure credits</em></strong> panel.</p></li>
-</ol>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="../assets/intro-azure-credit-check.png" class="lightbox" data-glightbox="description: .lightbox-desc-5" data-gallery="quarto-lightbox-gallery-5" title="Credit check panel in Azure"><img src="../assets/intro-azure-credit-check.png" class="img-fluid figure-img" alt="Credit check panel in Azure"></a></p>
-<figcaption>Credit check panel in Azure</figcaption>
-</figure>
-</div>
-<p>For details check <a href="https://docs.microsoft.com/en-us/azure/cost-management-billing/manage/mca-check-azure-credits-balance?tabs=portal#main">Track Microsoft Customer Agreement Azure credit balance</a></p>
+<section id="sessions-clean-or-persistent" class="level3">
+<h3 class="anchored" data-anchor-id="sessions-clean-or-persistent">Sessions: Clean or Persistent</h3>
+<p>Typically, a client-broker connection is established with the session flag set to <strong>Clean</strong> with <code>CleanSession = true</code> (however, this is specific to the library implementation).</p>
+<p>In this case the broker does not store anything for the client and purges all information from any previous subscriptions.</p>
+<p>In a persistent session (<code>CleanSession = false</code>), the broker stores all subscriptions for the client and all missed messages for the client <strong>IF it subscribed with a QoS level 1 or 2</strong>.</p>
 </section>
-<section id="budget-alerts" class="level3">
-<h3 class="anchored" data-anchor-id="budget-alerts">Budget Alerts</h3>
-<p>It’s possible to setup email alerts when your Azure spending exceeds a dollar threshold. This avoids unexpected spending of Azure credits.</p>
-<p>There are two approaches to setting up a Budget in the Azure Portal:</p>
-<ol type="1">
-<li><p>Open the panel (aka “blade”) for the Resource Group in question, and then create a new Budget for that group.</p></li>
-<li><p>Create a Budget for your account under <strong><em>Cost Management + Billing</em></strong> and then <strong>apply a filter</strong> according to <em>ResourceGroupName</em> in order to target a specific Resource Group.</p></li>
-</ol>
-<p>The first approach involves a few less steps so it is described below.</p>
+<section id="keepalive" class="level3">
+<h3 class="anchored" data-anchor-id="keepalive">KeepAlive</h3>
+<p>The keep alive flag is <strong>a time interval in seconds</strong> that the client specifies and communicates to the broker when the connection established.</p>
+<p>This is longest period of time that the broker and client can go without <strong>pinging each other</strong>. This method allows both sides to determine if the session is still available.</p>
+</section>
+<section id="last-will-testament" class="level3">
+<h3 class="anchored" data-anchor-id="last-will-testament">Last Will &amp; Testament</h3>
+<p>When a client connects, it can provide the broker with a Last Will and Testament (LWT) message and topic.</p>
+<p>If the client disconnects unexpectedly, the broker sends the LWT message on behalf of the client.</p>
+<p><strong>This message notifies other clients when a client disconnects unexpectedly.</strong></p>
+<img src="../assets/11-iot-protocols-last-will.png" class="img-fluid">
+<p class="img-info">
+<a href="https://www.youtube.com/watch?v=LKz1jYngpcU"> Last Will &amp; Testament </a>&nbsp; Why HTTP isn’t the King of the IoT, Robert Bird, Akamai.
+</p>
+</section>
+<section id="retained-messages" class="level3">
+<h3 class="anchored" data-anchor-id="retained-messages">Retained Messages</h3>
+<p>A retained message is <strong>a normal MQTT message with the retained flag set to true</strong>.</p>
+<p>The broker stores the last retained message and the corresponding QoS for that topic.</p>
+<p>Each client that subscribes to a topic pattern that matches the topic of the retained message receives the retained message immediately after they subscribe.</p>
+<p>The broker stores only one retained message per topic.</p>
 <blockquote class="blockquote">
+<p>Retained messages help newly-subscribed clients get a status update immediately after they subscribe to a topic.</p>
+</blockquote>
+<img src="../assets/11-iot-protocols-retained.png" class="img-fluid">
+<p class="img-info">
+<a href="https://www.youtube.com/watch?v=LKz1jYngpcU"> Message with Retained Flag </a>&nbsp; Why HTTP isn’t the King of the IoT, Robert Bird, Akamai.
+</p>
+</section>
+</section>
+<section id="http-vs-mqtt" class="level2">
+<h2 class="anchored" data-anchor-id="http-vs-mqtt">HTTP vs MQTT</h2>
+<table class="table">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 47%">
+<col style="width: 32%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Criteria</th>
+<th>MQTT</th>
+<th>HTTP</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Complexity</td>
+<td>Simple and lightweight</td>
+<td>More complex and slightly heavier</td>
+</tr>
+<tr class="even">
+<td>Consumption</td>
+<td>More energy efficient</td>
+<td>Less energy efficient</td>
+</tr>
+<tr class="odd">
+<td>Communication direction</td>
+<td>Bi-directional (client or broker can initiate)</td>
+<td>Uni-directional (client must initiate)</td>
+</tr>
+<tr class="even">
+<td>Architecture</td>
+<td>Publish / Subscribe model</td>
+<td>Request / Response Model</td>
+</tr>
+<tr class="odd">
+<td>Session</td>
+<td>Can keep connection open</td>
+<td>Connection closes after every request</td>
+</tr>
+<tr class="even">
+<td>Delivery assurance</td>
+<td>Reliable message delivery with QoS (Quality of Service)</td>
+<td>No QoS option</td>
+</tr>
+<tr class="odd">
+<td>Header size</td>
+<td>Smaller (~2 bytes)</td>
+<td>Comparatively large size (~8 bytes)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="mqtt-client-examples" class="level2">
+<h2 class="anchored" data-anchor-id="mqtt-client-examples">MQTT Client Examples</h2>
+<blockquote class="blockquote">
+<p>Examples of <strong>graphical</strong> MQTT clients: - <a href="https://mqttx.app/">MQTT X</a> (supports <code>cleanSession = False</code>) - <a href="https://mqtt-explorer.com/">MQTT Explorer</a> - VS Code <a href="https://marketplace.visualstudio.com/items?itemName=rpdswtk.vsmqtt">Extension VSMqtt</a> t</p>
+</blockquote>
+<p>In this course you will write your own MQTT client. The next sections show an example of a simple MQTT client using Python that publishes and subscribes to messages.</p>
+<section id="public-brokers" class="level3">
+<h3 class="anchored" data-anchor-id="public-brokers">Public Brokers</h3>
+<p>Since a broker is necessary, we can use the following publicly available MQTT brokers:</p>
 <ul>
-<li>For information on creating a budget from the Cost Management blade, see <a href="https://www.techtarget.com/searchcloudcomputing/tutorial/How-to-set-up-Azure-budget-alerts">How to set up Azure budget alerts</a> by TechTarget.com.</li>
-<li>For details on using and managing budgets, see official tutorial: <a href="https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/tutorial-acm-create-budgets">Create and manage Azure budgets</a>.</li>
+<li><a href="https://test.mosquitto.org">test.mosquitto.org</a> by Eclipse Foundation.</li>
+<li><a href="https://www.emqx.com/en/mqtt/public-mqtt5-broker">broker.emqx.io</a> by EMQX.</li>
+</ul>
+<blockquote class="blockquote">
+<p>For the client implementation we will use the <a href="https://github.com/eclipse/paho.mqtt.python">Eclipse Paho MQTT Python Client</a>. It is a popular choice for many IoT Cloud services such as Adafruit IO.</p>
+<ul>
+<li>Documentation for the <code>paho-mqtt</code> client is available at the <a href="https://pypi.org/project/paho-mqtt/#constructor-reinitialise">Pypi page</a>.</li>
 </ul>
 </blockquote>
-<section id="create-a-budget-for-a-resource-group" class="level4">
-<h4 class="anchored" data-anchor-id="create-a-budget-for-a-resource-group">Create a Budget for a Resource Group</h4>
+<p>However, there are lots of other implementation options.</p>
+<blockquote class="blockquote">
+<p>This <a href="https://mqtt.org/software/">link compiles a list</a> of open-source MQTT client and broker implementations you can use in your projects.</p>
+</blockquote>
+</section>
+<section id="publisher-code" class="level3">
+<h3 class="anchored" data-anchor-id="publisher-code">Publisher Code</h3>
+<p>The first example will only publish random data to the broker every 3 seconds.</p>
 <ol type="1">
-<li>In the Azure Portal Home, select the <strong><em>Resource groups</em></strong> service.</li>
-<li>Select the resource group you want to monitor with a budget.</li>
-<li>In the left panel, select <strong><em>Budgets</em></strong> under the <em>Cost Management</em> group and select <strong><em>Add</em></strong>.</li>
+<li>Install the <code>paho-python</code> library.</li>
 </ol>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="../assets/12-budget-resource-group.png" class="lightbox" data-glightbox="description: .lightbox-desc-6" data-gallery="quarto-lightbox-gallery-6" title="Menu for creating a budget for a resource group"><img src="../assets/12-budget-resource-group.png" class="img-fluid figure-img" alt="Menu for creating a budget for a resource group"></a></p>
-<figcaption>Menu for creating a budget for a resource group</figcaption>
-</figure>
-</div>
-<ol start="4" type="1">
-<li>Give your budget a name and an amount.</li>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install paho-mqtt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li>Create your script file. A few notes:</li>
 </ol>
-<p><a href="../assets/12-budget-name-ammount.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="../assets/12-budget-name-ammount.png" class="img-fluid"></a></p>
-<ol start="5" type="1">
-<li>Select the <strong>percent spending</strong> for the alert and the <strong>email</strong> to receive the notification.</li>
-<li>Click <strong><em>Create</em></strong>.</li>
-</ol>
-<p><a href="../assets/12-budget-alert-percent-email.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="../assets/12-budget-alert-percent-email.png" class="img-fluid"></a></p>
+<ul>
+<li>Create a unique client ID to avoid conflicts with other users (this is a public broker).
+<ul>
+<li>https://test.mosquitto.org/</li>
+<li>Create a unique ID using the <a href="https://www.guidgen.com/">Online GUID generator</a></li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>common_key <span class="op">=</span> <span class="st">'329adb05-8b85-4ebe-8309-15c564503a1f'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>To have a unique client name and topic, we will combine the key from above with the desired name and topic.</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>client_name <span class="op">=</span> common_key <span class="op">+</span> <span class="st">'publisher'</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>topic_name <span class="op">=</span> common_key <span class="op">+</span> <span class="st">'/temperature'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Import <code>paho-python</code> and the built-in <code>json</code> library (we’ll encode our data as JSON).</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> paho.mqtt.client <span class="im">as</span> mqtt</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>All network operations (incoming and outgoing data) are processed with the <code>loop()</code> method every 3 seconds.</li>
+</ul>
+<p>Complete code:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Publish to data topic (fire &amp; forget)</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> paho.mqtt.client <span class="im">as</span> mqtt</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>rnd <span class="op">=</span> random.Random()</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>common_key <span class="op">=</span> <span class="st">'d5a4d5e6-d597-4bd4-8196-5f51d12345'</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>topic_name <span class="op">=</span> common_key <span class="op">+</span> <span class="st">'/temperature'</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>client_name <span class="op">=</span> common_key <span class="op">+</span> <span class="st">'publisher'</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>mqtt_client <span class="op">=</span> mqtt.Client(client_name)</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>mqtt_client.<span class="ex">connect</span>(<span class="st">'test.mosquitto.org'</span>)</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"MQTT connected!"</span>)</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Random integer between -10 and 30</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>    temp <span class="op">=</span> rnd.randint(<span class="op">-</span><span class="dv">10</span>, <span class="dv">30</span>)</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Prepare json payload</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>    payload <span class="op">=</span> json.dumps({<span class="st">'temperature'</span>: temp})</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Sending telemetry "</span>, payload)</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Send it off. QoS=0 and Retain=false</span></span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>    info <span class="op">=</span> mqtt_client.publish(topic_name, payload)</span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Process network event. Handles incoming/outgoing data</span></span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>    mqtt_client.loop()</span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="subscriber-code" class="level3">
+<h3 class="anchored" data-anchor-id="subscriber-code">Subscriber Code</h3>
+<p>The MQTT client below subscribes to data from the publisher using the <strong>library’s default values</strong>.</p>
+<p>A few notes:</p>
+<ul>
+<li>The subscriber used the same unique key as the publisher in order to subscribe to the same topics. However, the subscriber has its own client name.</li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>common_key <span class="op">=</span> <span class="st">'d5a4d5e6-d597-4bd4-8196-5f51d12345'</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>topic_name <span class="op">=</span> common_key <span class="op">+</span> <span class="st">'/temperature'</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>client_name <span class="op">=</span> common_key <span class="op">+</span> <span class="st">'subscriber'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Once the client receives a message from the broker, the method <code>on_message</code> is called. This is used as a hook to define our own callback function.</li>
+</ul>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Callback for when a message is received</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> message_received(mqtt_client, userdata, message):</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Received message: </span><span class="sc">{</span>message<span class="sc">.</span>payload<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Callback hook</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>mqtt_client.on_message <span class="op">=</span> message_received</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Similarly to the publisher example, the network loop is processed every 1 second.</li>
+</ul>
+<p>The complete subscriber code:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Subscribe to a topic with library's default values.</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> paho.mqtt.client <span class="im">as</span> mqtt</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>common_key <span class="op">=</span> <span class="st">'d5a4d5e6-d597-4bd4-8196-5f51d12345'</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>client_name <span class="op">=</span> common_key <span class="op">+</span> <span class="st">'subscriber'</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>topic_name <span class="op">=</span> common_key <span class="op">+</span> <span class="st">'/temperature'</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>mqtt_client <span class="op">=</span> mqtt.Client(client_name)</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>mqtt_client.<span class="ex">connect</span>(<span class="st">'test.mosquitto.org'</span>)</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"MQTT connected!"</span>)</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Callback for when a message is received</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> message_received(mqtt_client, userdata, message):</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'Received message: </span><span class="sc">{</span>message<span class="sc">.</span>payload<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Callback hook</span></span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>mqtt_client.on_message <span class="op">=</span> message_received</span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>mqtt_client.subscribe(topic_name)</span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Process network event. Handles incoming/outgoing data</span></span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>    mqtt_client.loop()</span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
+<section id="connectivity-issues" class="level2">
+<h2 class="anchored" data-anchor-id="connectivity-issues">Connectivity Issues</h2>
+<p>Connectivity is not always guaranteed. Things to think about when coding your application:</p>
+<p><strong>What happens if:</strong> - Connection is lost just prior to telemetry being published? - Client connection is lost just prior to broker forwarding messages?</p>
+<p><strong>How to make sure that:</strong> - The broker has received the most up to date telemetry data? - Client has the most recent command/data?</p>
 </section>
 <section id="exercises" class="level2">
 <h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
-<p><strong>NOTE:</strong> The exercise below is out of date. We will see IOT learning material later in the course.</p>
 <ol type="1">
-<li><del>Read the Microsoft training module <a href="https://learn.microsoft.com/en-us/training/modules/introduction-iot-solution-architecture/"><strong>Examine the architecture of an IoT solution</strong></a> and complete the Moodle quiz on the module.</del></li>
+<li>Use a Graphical MQTT client such as <a href="https://mqttx.app/">MQTT X</a>, <a href="https://mqtt-explorer.com/">MQTT Explorer</a> or the VS Code <a href="https://marketplace.visualstudio.com/items?itemName=rpdswtk.vsmqtt">Extension VSMqtt</a> to publish and subscribe telemetry data to/from one of our Adafruit IO (AIO) feeds.
+<ol type="1">
+<li>See the <a href="https://io.adafruit.com/api/docs/mqtt.html#adafruit-io-mqtt-api">AIO MQTT API</a> documentation.</li>
+<li>Publish a MQTT message with a random value to one of your feeds.</li>
+<li>Subscribe to one of your AIO feeds.</li>
+<li>Using the AIO Web interface, write a value to feed you subscribed in the previous step. Your MQTT client should receive the new value as a published message</li>
+</ol></li>
+<li>Use a Graphical MQTT client (see previous question) to publish and subscribe to topics using the public <a href="https://test.mosquitto.org/">MQTT Mosquitto broker</a>.
+<ol type="1">
+<li>Use the <a href="https://www.guidgen.com/">Online GUID generator</a> to generate a unique prefix to your username.</li>
+<li>Come-up with new topics and post new messages to them.</li>
+<li>Subscribe to the same topics and see the new messages appear.</li>
+</ol></li>
 </ol>
 </section>
-<section id="diving-deeper" class="level2">
-<h2 class="anchored" data-anchor-id="diving-deeper">Diving Deeper</h2>
-<p>Video (15:19): <strong>The 7 Principles of the IoT by Tom Bradicich</strong></p>
-<ul>
-<li>In depth explanation of the integration between IoT sub-systems and opportunities from a technical and business perspective.</li>
-</ul>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/u3IaXvjDiOE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="">
+<section id="references-resources" class="level2">
+<h2 class="anchored" data-anchor-id="references-resources">References &amp; Resources</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/shqLy8XjqAQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
 </iframe>
-</section>
-<section id="references" class="level2">
-<h2 class="anchored" data-anchor-id="references">References</h2>
-<ol type="1">
-<li><a href="https://azure.microsoft.com/en-us/overview/internet-of-things-iot/what-is-the-internet-of-things/">What is IoT</a> by Microsoft Azure.</li>
-<li><a href="https://medium.com/@jaydev_21091/how-industrial-internet-of-things-are-impacting-our-lives-8af4163530ce">How Industrial Internet of Things are impacting our lives</a> by Bluechip Infocorp Pvt Ltd via Medium.</li>
-<li><a href="https://www.freecodecamp.org/news/introduction-to-iot-internet-of-things/">An Introduction to the Internet of Things</a> by Pier Paolo Ippolito via FreeCodeCamp Blog.</li>
-</ol>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LKz1jYngpcU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+<p><a href="https://learn.adafruit.com/alltheiot-protocols?view=all#mqtt">All the Internet of Things - Episode Two: Protocols</a>, by Adafruit and Digikey</p>
+<p><a href="https://github.com/microsoft/IoT-For-Beginners/tree/main/1-getting-started/lessons/4-connect-internet">Lesson 4: connect your device to the Internet</a>, IoT for Beginners by Microsoft</p>
+<p><a href="https://www.hivemq.com/blog/mqtt-essentials-part-3-client-broker-connection-establishment/">MQTT Client and Broker and MQTT Server and Connection Establishment Explained</a> by HiveMQ</p>
+<section id="diving-deeper" class="level3">
+<h3 class="anchored" data-anchor-id="diving-deeper">Diving Deeper</h3>
+<p><a href="https://openlabpro.com/guide/mqtt-packet-format/">MQTT Packet Format</a> by OpenLab</p>
+<p><a href="http://www.steves-internet-guide.com/mqtt-protocol-messages-overview/">Understanding the MQTT Protocol Packet Structure</a> by steves-internet-guide.com</p>
 
 
 <div class="hidden" aria-hidden="true">
-<span class="glightbox-desc lightbox-desc-1">Examples of industrial and consumer iot applications</span>
-<span class="glightbox-desc lightbox-desc-3">Icons of IoT High level components</span>
-<span class="glightbox-desc lightbox-desc-5">Credit check panel in Azure</span>
-<span class="glightbox-desc lightbox-desc-6">Menu for creating a budget for a resource group</span>
+<span class="glightbox-desc lightbox-desc-1">customer___partner_projects_adafruit_io_polling.png</span>
+<span class="glightbox-desc lightbox-desc-2">IoT device publishing telemetry on the /telemetry topic, and the cloud service subscribing to that topic</span>
+<span class="glightbox-desc lightbox-desc-3">IoT devices connect to a broker and publish telemetry and subscribe to commands. Cloud services connect to the broker and subscribe to all telemetry and send commands to specific devices.</span>
+<span class="glightbox-desc lightbox-desc-4">IoT device publishing telemetry on the /telemetry topic, and the cloud service subscribing to that topic</span>
+<span class="glightbox-desc lightbox-desc-5">customer___partner_projects_adafruit_io_puback.png</span>
 </div>
+</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
@@ -1327,13 +1665,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../../topics/iot/docs/iot-protocols.html" class="pagination-link" aria-label="IoT Communication Protocols">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">IoT Communication Protocols</span>
+      <a href="../../../topics/iot/docs/intro-azure-iot.html" class="pagination-link" aria-label="Intro to Azure IoT">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Intro to Azure IoT</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../../topics/python/index.html" class="pagination-link" aria-label="Python">
-        <span class="nav-page-text">Python</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../../topics/iot/docs/what-is-iot.html" class="pagination-link" aria-label="Intro to the Internet of Things">
+        <span class="nav-page-text">Intro to the Internet of Things</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1382,7 +1720,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","loop":false,"openEffect":"zoom","closeEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"loop":false,"selector":".lightbox","descPosition":"bottom","openEffect":"zoom","closeEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-02-19">
+<meta name="dcterms.date" content="2024-04-15">
 
-<title>Connected Objects - reTerminal Sensors</title>
+<title>Connected Objects - Intro to Azure IoT</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,40 +21,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -65,8 +31,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../">
-<link href="../../../topics/hardware/docs/analog-vs-digital.html" rel="next">
-<link href="../../../topics/hardware/index.html" rel="prev">
+<link href="../../../topics/iot/docs/iot-protocols.html" rel="next">
+<link href="../../../topics/iot/docs/azure-sdks.html" rel="prev">
 <link href="../../../assets/favicon_io/favicon.ico" rel="icon">
 <script src="../../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
@@ -113,9 +79,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="../../../styles.css">
-<meta property="og:title" content="Connected Objects - reTerminal Sensors">
-<meta property="og:description" content="Installing initial reTerminal packages. Reading and controlling the reTerminal hardware interfaces, e.g.&nbsp;LEDs, light sensor, screen backlight, etc.">
-<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/topics/hardware/docs/assets/art_title_path_only.svg">
+<meta property="og:title" content="Connected Objects - Intro to Azure IoT">
+<meta property="og:description" content="How to use a PaaS to deploy IoT services">
+<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/topics/iot/docs/assets/art_title_path_only.svg">
 <meta property="og:site_name" content="Connected Objects">
 </head>
 
@@ -195,7 +161,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../topics/index.html">Topics</a></li><li class="breadcrumb-item"><a href="../../../topics/hardware/index.html">Hardware</a></li><li class="breadcrumb-item"><a href="../../../topics/hardware/docs/reterminal-sensors.html">Docs</a></li><li class="breadcrumb-item"><a href="../../../topics/hardware/docs/reterminal-sensors.html">reTerminal Sensors</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../topics/index.html">Topics</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/index.html">IoT</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/docs/azure-sdks.html">Docs</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/docs/intro-azure-iot.html">Intro to Azure IoT</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -301,23 +267,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="sidebar-item-container"> 
             <a href="../../../topics/hardware/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Hardware</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
  <span class="menu-text">Docs</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth3 show">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../topics/hardware/docs/reterminal-sensors.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../topics/hardware/docs/reterminal-sensors.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">reTerminal Sensors</span></a>
   </div>
 </li>
@@ -359,20 +325,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="sidebar-item-container"> 
             <a href="../../../topics/iot/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">IoT</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true">
  <span class="menu-text">Docs</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth3 ">  
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth3 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../topics/iot/docs/azure-sdks.html" class="sidebar-item-text sidebar-link">
@@ -381,7 +347,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../topics/iot/docs/intro-azure-iot.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/iot/docs/intro-azure-iot.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Intro to Azure IoT</span></a>
   </div>
 </li>
@@ -517,33 +483,45 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#lab-1-review" id="toc-lab-1-review" class="nav-link active" data-scroll-target="#lab-1-review">Lab 1 Review</a></li>
-  <li><a href="#hardware" id="toc-hardware" class="nav-link" data-scroll-target="#hardware">Hardware</a>
+  <li><a href="#platform-as-a-service-paas" id="toc-platform-as-a-service-paas" class="nav-link active" data-scroll-target="#platform-as-a-service-paas">Platform as a Service (PaaS)</a></li>
+  <li><a href="#iot-subsystems" id="toc-iot-subsystems" class="nav-link" data-scroll-target="#iot-subsystems">IoT Subsystems</a></li>
+  <li><a href="#azure-iot-services" id="toc-azure-iot-services" class="nav-link" data-scroll-target="#azure-iot-services">Azure IoT Services</a></li>
+  <li><a href="#iot-hub-iot-central" id="toc-iot-hub-iot-central" class="nav-link" data-scroll-target="#iot-hub-iot-central">IoT Hub &amp; IoT Central</a>
   <ul>
-  <li><a href="#firmware-version" id="toc-firmware-version" class="nav-link" data-scroll-target="#firmware-version">Firmware &amp; Version</a></li>
+  <li><a href="#iot-central" id="toc-iot-central" class="nav-link" data-scroll-target="#iot-central">IoT Central</a></li>
+  <li><a href="#iot-hub" id="toc-iot-hub" class="nav-link" data-scroll-target="#iot-hub">IoT Hub</a></li>
   </ul></li>
-  <li><a href="#raspberry-pi-os" id="toc-raspberry-pi-os" class="nav-link" data-scroll-target="#raspberry-pi-os">Raspberry Pi OS</a></li>
-  <li><a href="#programmable-sensors" id="toc-programmable-sensors" class="nav-link" data-scroll-target="#programmable-sensors">Programmable Sensors</a>
+  <li><a href="#iot-hub-documentation" id="toc-iot-hub-documentation" class="nav-link" data-scroll-target="#iot-hub-documentation">IoT Hub Documentation</a></li>
+  <li><a href="#azure-resource-group-zones" id="toc-azure-resource-group-zones" class="nav-link" data-scroll-target="#azure-resource-group-zones">Azure Resource Group &amp; Zones</a>
   <ul>
-  <li><a href="#use-sudo-text-editor" id="toc-use-sudo-text-editor" class="nav-link" data-scroll-target="#use-sudo-text-editor">Use sudo + text-editor</a></li>
-  <li><a href="#use-sudo-su" id="toc-use-sudo-su" class="nav-link" data-scroll-target="#use-sudo-su">Use sudo + su</a></li>
-  <li><a href="#use-sudo-tee" id="toc-use-sudo-tee" class="nav-link" data-scroll-target="#use-sudo-tee">Use sudo + <code>tee</code></a></li>
-  <li><a href="#luminosity-sensor" id="toc-luminosity-sensor" class="nav-link" data-scroll-target="#luminosity-sensor">Luminosity Sensor</a></li>
+  <li><a href="#azure-regions" id="toc-azure-regions" class="nav-link" data-scroll-target="#azure-regions">Azure Regions</a></li>
+  <li><a href="#azure-zones" id="toc-azure-zones" class="nav-link" data-scroll-target="#azure-zones">Azure Zones</a></li>
   </ul></li>
-  <li><a href="#python-library-for-reterminal" id="toc-python-library-for-reterminal" class="nav-link" data-scroll-target="#python-library-for-reterminal">Python Library for reTerminal</a></li>
+  <li><a href="#azure-iot-dev-tools" id="toc-azure-iot-dev-tools" class="nav-link" data-scroll-target="#azure-iot-dev-tools">Azure IoT Dev Tools</a>
+  <ul>
+  <li><a href="#azure-portal" id="toc-azure-portal" class="nav-link" data-scroll-target="#azure-portal">Azure Portal</a></li>
+  <li><a href="#azure-cli-cloud-shell-iot-extension" id="toc-azure-cli-cloud-shell-iot-extension" class="nav-link" data-scroll-target="#azure-cli-cloud-shell-iot-extension">Azure CLI, Cloud Shell &amp; IoT Extension</a>
+  <ul class="collapse">
+  <li><a href="#cloud-shell" id="toc-cloud-shell" class="nav-link" data-scroll-target="#cloud-shell">Cloud Shell</a></li>
+  </ul></li>
+  <li><a href="#azure-iot-extension-for-azure-cli" id="toc-azure-iot-extension-for-azure-cli" class="nav-link" data-scroll-target="#azure-iot-extension-for-azure-cli">Azure IoT extension for Azure CLI</a></li>
+  <li><a href="#azure-iot-tools-for-vs-code" id="toc-azure-iot-tools-for-vs-code" class="nav-link" data-scroll-target="#azure-iot-tools-for-vs-code">Azure IoT Tools for VS Code</a></li>
+  <li><a href="#iot-explorer-powershell" id="toc-iot-explorer-powershell" class="nav-link" data-scroll-target="#iot-explorer-powershell">IoT Explorer &amp; PowerShell</a></li>
+  </ul></li>
+  <li><a href="#demo-iot-hub-device-telemetry-data" id="toc-demo-iot-hub-device-telemetry-data" class="nav-link" data-scroll-target="#demo-iot-hub-device-telemetry-data">Demo: IoT Hub &amp; Device telemetry data</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../topics/index.html">Topics</a></li><li class="breadcrumb-item"><a href="../../../topics/hardware/index.html">Hardware</a></li><li class="breadcrumb-item"><a href="../../../topics/hardware/docs/reterminal-sensors.html">Docs</a></li><li class="breadcrumb-item"><a href="../../../topics/hardware/docs/reterminal-sensors.html">reTerminal Sensors</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../topics/index.html">Topics</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/index.html">IoT</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/docs/azure-sdks.html">Docs</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/docs/intro-azure-iot.html">Intro to Azure IoT</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">reTerminal Sensors</h1>
-<p class="subtitle lead">Installing initial reTerminal packages. Reading and controlling the reTerminal hardware interfaces, e.g.&nbsp;LEDs, light sensor, screen backlight, etc.</p>
+<h1 class="title">Intro to Azure IoT</h1>
+<p class="subtitle lead">How to use a PaaS to deploy IoT services</p>
   <div class="quarto-categories">
-    <div class="quarto-category">Hardware</div>
-    <div class="quarto-category">Quiz 1</div>
+    <div class="quarto-category">IOT</div>
+    <div class="quarto-category">Quiz 2</div>
   </div>
   </div>
 
@@ -555,7 +533,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">February 19, 2024</p>
+      <p class="date">April 15, 2024</p>
     </div>
   </div>
   
@@ -573,249 +551,304 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="lab-1-review" class="level2">
-<h2 class="anchored" data-anchor-id="lab-1-review">Lab 1 Review</h2>
-<p>After Lab 1, you have taken the following steps:</p>
-<ol type="1">
-<li>Install the Raspberry Pi OS image.</li>
-</ol>
+<p>From now on, we will deploy and manage our IoT solutions using Microsoft Azure and its Azure IoT platform as a service (PaaS).</p>
+<p>This lecture serves as background information you should know to complete Lab 6 and Assignment 2 – I will link to this lecture from those assignments frequently.</p>
+<section id="platform-as-a-service-paas" class="level2">
+<h2 class="anchored" data-anchor-id="platform-as-a-service-paas">Platform as a Service (PaaS)</h2>
+<p>Platform as a service (PaaS) is a complete development and deployment environment in the cloud:</p>
 <ul>
-<li>disassemble, flip the memory switch and use <code>usbboot/rpiboot</code> script to prepare internal memory for firmware flash.</li>
-<li>use Raspberry Pi Imager to flash new image 64bit “Bookworm” Raspberry OS with chosen username/password and SSH enabled</li>
-<li>fix the “black screen” issue by installing the latest seeed overlay drivers</li>
+<li>Infrastructure: servers, storage, and networking,</li>
+<li>Platforms: development tools, business intelligence services (BI), database management systems, and more.</li>
 </ul>
-<ol start="2" type="1">
-<li>Update system packages</li>
-</ol>
-<ul>
-<li>update system repositories with <code>sudo apt update</code> and <code>sudo apt upgrade</code></li>
-<li>install kernel headers with <code>sudo apt install raspberrypi-kernel-headers</code></li>
-<li>install <code>git</code> and <code>docker</code>, deploy simple Python webserver docker container</li>
-</ul>
-<ol start="3" type="1">
-<li>Set up remote connection interfaces</li>
-</ol>
-<ul>
-<li>determine your assigned IP address on the class LAN</li>
-<li>determine your device MAC address</li>
-<li>enable VNC interface</li>
-</ul>
-<p>It’s time to take a deeper look at the hardware and software our reTerminal offers.</p>
+<blockquote class="blockquote">
+<p>PaaS is designed to support the complete web application life-cycle: building, testing, deploying, managing, and updating.</p>
+</blockquote>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../assets/intro-azure-paas.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1" title="Compasion of SaaS, PaaS and IaaS platforms"><img src="../assets/intro-azure-paas.png" class="img-fluid figure-img" alt="Compasion of SaaS, PaaS and IaaS platforms"></a></p>
+<figcaption>Compasion of SaaS, PaaS and IaaS platforms</figcaption>
+</figure>
+</div>
+<p>Figure from: <a href="https://docs.microsoft.com/en-us/learn/modules/introduction-iot-solution-">SaaS vs PaaS vs IaaS</a>, What is PaaS?, Microsoft.</p>
+<p>So far in this course, we have developed applications that are almost entirely local to our reTerminal (production) and workstation (development) environments. We did not worry ourselves terribly about data storage, application logic, authentication, etc. We could implement these things using Flask/Dash in Python, but we can also automate many of them using a PaaS framework.</p>
+<blockquote class="blockquote">
+<p>Moving forward, we will be implementing our IoT solutions using Microsoft Azure as PaaS.</p>
+</blockquote>
+<p>See more in <a href="https://azure.microsoft.com/en-us/overview/what-is-paas/">What is PaaS</a> by azure.microsoft.com</p>
 </section>
-<section id="hardware" class="level2">
-<h2 class="anchored" data-anchor-id="hardware">Hardware</h2>
-<p><em>This section is adapted directly from the reTerminal wiki: <a href="https://wiki.seeedstudio.com/reTerminal/#features">“Getting Started with reTerminal”</a></em></p>
-<p>The reTerminal is powered by a Raspberry Pi Compute Module 4 (CM4) which is a Quad-Core Cortex-A72 CPU running at 1.5GHz and a 5-inch IPS capacitive multi-touch screen with a resolution of 1280 x 720. It has sufficient amount of RAM (4GB) to perform multitasking and also has sufficient amount of eMMC storage (32GB) to install an operating system, enabling fast boot up times and smooth overall experience. It has wireless connectivity with dual-band 2.4GHz/5GHz Wi-Fi and Bluetooth 5.0 BLE.</p>
-<p>reTerminal consists of a high-speed expansion interface and rich I/O for more expandability. This device has security features such as a cryptographic co-processor with secure hardware-based key storage. It also has built-in modules such as an accelerometer, light sensor and an RTC (Real-Time Clock). reTerminal has a Gigabit Ethernet Port for faster network connections and also has dual USB 2.0 Type-A ports. The 40-pin header on the reTerminal opens it for a wide range of IoT applications.</p>
-<section id="firmware-version" class="level3">
-<h3 class="anchored" data-anchor-id="firmware-version">Firmware &amp; Version</h3>
+<section id="iot-subsystems" class="level2">
+<h2 class="anchored" data-anchor-id="iot-subsystems">IoT Subsystems</h2>
+<p>We can breakdown an IoT solution into <strong>subsystems</strong> and explore how information flows between them:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://docs.microsoft.com/en-us/learn/wwl-azure/introduction-iot-solution-architecture/media/m01-l02-core-subsystems-iot-architecture-8158ad9e.png" class="lightbox" data-glightbox="description: .lightbox-desc-2" data-gallery="quarto-lightbox-gallery-2" title="Diagram that shows the core subsystems of the Azure IoT reference architecture."><img src="https://docs.microsoft.com/en-us/learn/wwl-azure/introduction-iot-solution-architecture/media/m01-l02-core-subsystems-iot-architecture-8158ad9e.png" class="img-fluid figure-img" alt="Diagram that shows the core subsystems of the Azure IoT reference architecture."></a></p>
+<figcaption>Diagram that shows the core subsystems of the Azure IoT reference architecture.</figcaption>
+</figure>
+</div>
+<p>Figure from: <a href="https://docs.microsoft.com/en-us/learn/modules/introduction-iot-solution-architecture/2-subsystems-iot-architecture">Subsystems of IoT architecture</a>, Examine systems of an IoT architecture, Microsoft.</p>
+<ul>
+<li><strong>IoT Devices</strong>: The physical devices and sensors where data originates.</li>
+<li><strong>Cloud Gateway</strong>: The Cloud Gateway provides a cloud hub for secure connectivity, telemetry, event ingestion and device management (including command and control) capabilities.</li>
+<li><strong>Stream Processing</strong>: Processes large streams of data records, evaluates rules for those streams, and further routes the data.</li>
+<li><strong>Storage</strong>: Storage can be divided into warm path (data that is required to be available for reporting and visualization immediately from devices), and cold path (data that is stored longer term and used for batch processing).</li>
+<li><strong>User Interface and Reporting</strong>: The user interface for an IoT application can be delivered on a wide array of device types, in native applications, and browsers.</li>
+<li><strong>Business Process Integration</strong>: Facilitates executing actions based on insights garnered from device telemetry data during stream processing. Integration could include storage of informational messages, alarms, sending email or SMS, integration with CRM, and more.</li>
+</ul>
+<blockquote class="blockquote">
+<p>We will use Microsoft Azure to manage each sub-system individually.</p>
+</blockquote>
+</section>
+<section id="azure-iot-services" class="level2">
+<h2 class="anchored" data-anchor-id="azure-iot-services">Azure IoT Services</h2>
+<p>Azure offers many IoT-related services (see image below). In this course we’ll only explore a few.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/iot/images/iot-refarch.svg" class="lightbox" data-glightbox="description: .lightbox-desc-3" data-gallery="quarto-lightbox-gallery-3" title="Azure IoT-related architecture"><img src="https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/iot/images/iot-refarch.svg" class="img-fluid figure-img" alt="Azure IoT-related architecture"></a></p>
+<figcaption>Azure IoT-related architecture</figcaption>
+</figure>
+</div>
+<p><a href="https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/iot"><em>Azure IoT Reference Architecture</em></a>, <em>Microsoft learn</em></p>
+</section>
+<section id="iot-hub-iot-central" class="level2">
+<h2 class="anchored" data-anchor-id="iot-hub-iot-central">IoT Hub &amp; IoT Central</h2>
+<p>Microsoft Azure has two service offers for deploying and managing IoT systems: <strong>IoT Hub</strong> and <strong>IoT Central</strong>.</p>
+<blockquote class="blockquote">
+<p>The page <a href="https://docs.microsoft.com/en-us/azure/iot-develop/concepts-overview-connection-options#application-platforms-iot-central-and-iot-hub">Overview: Connection options for Azure IoT device developers</a> offers a great summary and comparison between IoT Hub and IoT Central.</p>
+</blockquote>
+<section id="iot-central" class="level3">
+<h3 class="anchored" data-anchor-id="iot-central">IoT Central</h3>
+<p>Azure IoT Central is a software-as-a-service (SaaS) application that provides a complete platform for hosting IoT applications. Its main feature is a web UI that streamlines the lifecycle of creating and managing IoT applications.</p>
+<p>The web UI simplifies the tasks of creating applications, and connecting and managing from a few up to millions of devices.</p>
+<p>This service has a limited free plan (2 devices with 5000 messages per month). Pricing available <a href="https://azure.microsoft.com/en-us/pricing/details/iot-central/">here</a>.</p>
+<p>See <a href="https://azure.microsoft.com/en-us/services/iot-central/#overview">official site for details</a> or watch the <a href="https://www.youtube.com/watch?v=G32stXSwtyA">walk-through for an example</a>.</p>
+<blockquote class="blockquote">
+<p>We will not use IoT Central in this course because we’ll connect the underlying Azure services ourselves.</p>
+</blockquote>
+</section>
+<section id="iot-hub" class="level3">
+<h3 class="anchored" data-anchor-id="iot-hub">IoT Hub</h3>
+<p>IoT Hub is a platform-as-a-service (PaaS) application that also provides a platform for hosting IoT applications. IoT Hub acts as a central message hub for bi-directional communication between IoT applications and connected devices.</p>
+<p>IoT Hub offers <strong>greater control and customization</strong> over your application design, and <strong>more developer tool options</strong> for working with the service. However, it requires more development time and slightly more management complexity.</p>
+<p>This service also offers a more generous free plan (500 devices with 8000 messages per day).</p>
+<p>See <a href="https://azure.microsoft.com/en-us/pricing/details/iot-hub/#overview">official site for details</a> and <a href="https://azure.microsoft.com/en-us/pricing/details/iot-hub/#pricing">pricing</a>.</p>
+</section>
+</section>
+<section id="iot-hub-documentation" class="level2">
+<h2 class="anchored" data-anchor-id="iot-hub-documentation">IoT Hub Documentation</h2>
+<blockquote class="blockquote">
+<p><a href="https://docs.microsoft.com/en-us/azure/iot-hub/"><strong>Azure IoT Hub Documentation</strong></a> hosts most of the documentation we will be using.</p>
+<p>Please get familiar with the left-hand menu, including the “Quickstarts” and “How-to guides”</p>
+</blockquote>
+<p><a href="../assets/intro-azure-docs-page.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="../assets/intro-azure-docs-page.png" class="img-fluid"></a></p>
+</section>
+<section id="azure-resource-group-zones" class="level2">
+<h2 class="anchored" data-anchor-id="azure-resource-group-zones">Azure Resource Group &amp; Zones</h2>
+<p>A resource group is a “container” that holds related resources for an Azure solution (such as your IoT system).</p>
+<p>The resource group can include all or a subset of the resources for the solution. You decide how to allocate resources to resource groups based on what makes sense for your organization. Generally, group resources share the same lifecycle (deploy, update, and delete).</p>
+<blockquote class="blockquote">
+<p>Azure resources and their groups must be deployed to a particular region.</p>
+<p><strong>To create a resource group</strong> see guide <a href="https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal">Manage Azure resource groups by using the Azure portal</a></p>
+</blockquote>
+<section id="azure-regions" class="level3">
+<h3 class="anchored" data-anchor-id="azure-regions">Azure Regions</h3>
+<p>Azure operates in multiple datacenters around the world. These datacenters are grouped in to <strong>geographic regions</strong>.</p>
+<p>To see a list of all Azure regions see <a href="https://azure.microsoft.com/en-us/global-infrastructure/geographies/#overview">azure geographies</a>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://www.poppelgaard.com/wp-content/uploads/2017/03/azure_datacenters.png" class="lightbox" data-glightbox="description: .lightbox-desc-5" data-gallery="quarto-lightbox-gallery-5" title="Azure infrastructure map"><img src="https://www.poppelgaard.com/wp-content/uploads/2017/03/azure_datacenters.png" class="img-fluid figure-img" alt="Azure infrastructure map"></a></p>
+<figcaption>Azure infrastructure map</figcaption>
+</figure>
+</div>
+<p class="img-info">
+<a href="https://www.poppelgaard.com/citrix-xenapp-essentials-microsoft-azure/azure_datacenters"> Map of Azure Regions (2017) </a>&nbsp; Thomas Poppelgaard.
+</p>
+<p>Canada has two Azure regions:</p>
+<ul>
+<li><strong>Canada Central:</strong> located in Toronto (with 3 zones).</li>
+<li><strong>Canada East</strong>: located in Quebec City (no zones).</li>
+</ul>
+<p><br></p>
+<p>Some services are only available in certain regions. For example, Azure IoT Central is not available in the <em>Canada East</em> region.</p>
+<p><a href="../assets/intro-azure-service-availability.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="../assets/intro-azure-service-availability.png" class="img-fluid"></a></p>
+</section>
+<section id="azure-zones" class="level3">
+<h3 class="anchored" data-anchor-id="azure-zones">Azure Zones</h3>
+<p>Azure <strong>availability zones</strong> are physically separate locations within each Azure region that are tolerant to local failures.</p>
+<p>Tolerance to failures is achieved because of redundancy and logical isolation of Azure services. To ensure resiliency, a minimum of three separate availability zones are present in all availability zone-enabled regions.</p>
+<p><a href="../assets/intro-azure-zone-region.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="../assets/intro-azure-zone-region.png" class="img-fluid"></a></p>
+<p class="img-info">
+<a href="https://docs.microsoft.com/en-us/azure/availability-zones/az-overview"> Azure region with 3 zones and one disaster recovery location. </a>&nbsp; Regions and availability zones, Mocrosoft.
+</p>
+</section>
+</section>
+<section id="azure-iot-dev-tools" class="level2">
+<h2 class="anchored" data-anchor-id="azure-iot-dev-tools">Azure IoT Dev Tools</h2>
+<p>Azure offers several developer tools to create, manage and connect to the IoT Hub service.</p>
+<p>Some tools have <strong>nearly the same functionality</strong>. Choose the one that best works for you.</p>
+<section id="azure-portal" class="level3">
+<h3 class="anchored" data-anchor-id="azure-portal">Azure Portal</h3>
+<p>The Azure Portal is a browser-based portal for IoT Hub and devices. Also works with other Azure resources including IoT Central.</p>
 <table class="table">
-<colgroup>
-<col style="width: 17%">
-<col style="width: 45%">
-<col style="width: 18%">
-<col style="width: 18%">
-</colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">Released Date</th>
-<th style="text-align: left;">Pre-Installed OS</th>
-<th style="text-align: left;">Pre-Installed STM32 Firmware</th>
-<th style="text-align: left;">Board Version</th>
+<th>Documentation</th>
+<th>Quick Start</th>
+<th>IoT Example</th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">06/15/2021</td>
-<td style="text-align: left;">2021-06-02-Raspbian(modified)-32-bit</td>
-<td style="text-align: left;">V1.0</td>
-<td style="text-align: left;">v1.3</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">08/03/2021</td>
-<td style="text-align: left;">2021-06-02-Raspbian(modified)-32-bit</td>
-<td style="text-align: left;">V1.1</td>
-<td style="text-align: left;">v1.4</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">09/03/2021</td>
-<td style="text-align: left;">2021-06-02-Raspbian(modified)-32-bit</td>
-<td style="text-align: left;">V1.6</td>
-<td style="text-align: left;">v1.6</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">11/02/2021</td>
-<td style="text-align: left;">2021-09-14-Raspbian(modified)-32-bit</td>
-<td style="text-align: left;">V1.8</td>
-<td style="text-align: left;">v1.6</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>Winter 2024</strong></td>
-<td style="text-align: left;"><strong>What OS did we install in Lab 1?</strong></td>
-<td style="text-align: left;">V1.8</td>
-<td style="text-align: left;">v1.6</td>
+<td><a href="https://learn.microsoft.com/en-us/azure/azure-portal/">Azure portal documentation</a></td>
+<td><a href="https://learn.microsoft.com/en-us/azure/azure-portal/azure-portal-overview">What is the Azure portal?</a></td>
+<td><a href="https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal">Create an IoT hub with Azure portal</a></td>
+<td></td>
 </tr>
 </tbody>
 </table>
-<p><strong>You can find a complete list of the reTerminal specifications here: <a href="https://wiki.seeedstudio.com/reTerminal/#specifications">reTerminal Specifications</a></strong></p>
+<p><a href="../assets/12-azure-portal-example.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="../assets/12-azure-portal-example.png" class="img-fluid"></a></p>
 </section>
-</section>
-<section id="raspberry-pi-os" class="level2">
-<h2 class="anchored" data-anchor-id="raspberry-pi-os">Raspberry Pi OS</h2>
-<p>In Lab 1, we re-imaged the reTerminal Operating System to run the latest, recommended version of 64-bit Raspberry Pi OS.</p>
-<p>Raspberry Pi OS (previously called <em>Raspbian OS</em>) is a variation of the <a href="https://en.wikipedia.org/wiki/Debian"><strong>Debian OS</strong></a>, with optimizations for the Raspberry Pi hardware.</p>
-<p>You can see more about Raspberry Pi OS and Debian in the <a href="../../../topics/linux/docs/package-management-debian.html">Linux</a> set of lessons.</p>
-</section>
-<section id="programmable-sensors" class="level2">
-<h2 class="anchored" data-anchor-id="programmable-sensors">Programmable Sensors</h2>
-<p><em>This section is based on the official documentation for the reTerminal: <a href="https://wiki.seeedstudio.com/reTerminal-hardware-interfaces-usage/#3-user-programmable-leds">Hardware and Interfaces Usage</a></em></p>
+<section id="azure-cli-cloud-shell-iot-extension" class="level3">
+<h3 class="anchored" data-anchor-id="azure-cli-cloud-shell-iot-extension">Azure CLI, Cloud Shell &amp; IoT Extension</h3>
+<p><strong>Azure CLI</strong> is a terminal tool to manage Azure services offered as Bash and PowerShell shells.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Documentation</th>
+<th>Quick Start</th>
+<th>IoT Example</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://learn.microsoft.com/en-us/cli/azure/">Azure CLI documentation</a></td>
+<td><a href="https://learn.microsoft.com/en-us/cli/azure/get-started-with-azure-cli">Get started with Azure CLI</a></td>
+<td><a href="https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-using-cli">Create an IoT hub with CLI</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Azure CLI can be installed in your local machine or run from the browser via the Cloud Shell (see below).</p>
 <blockquote class="blockquote">
-<p>In Linux, everything is a file stream that can be read and/or written to.</p>
+<p>To use it locally, see <a href="https://docs.microsoft.com/en-us/cli/azure/install-azure-cli">Install Azure CLI</a>.</p>
 </blockquote>
-<p>For example, keyboard inputs and communication over web-sockets are all read as a file streams.</p>
-<p>The reTerminal has 3 programmable LED’s and a light sensor that can be <strong>controlled like a regular file</strong>.</p>
-<p><a href="../assets/5-reterminal-buttons-light-sensor.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="../assets/5-reterminal-buttons-light-sensor.png" class="img-fluid"></a></p>
-<p>You can see, there are 3 programmable LEDs in the reTerminal:</p>
-<ul>
-<li><strong>STA</strong> light can be turned on as <strong>red or green</strong>.</li>
-<li><strong>USR</strong> light can only be turned on as <strong>green</strong>.</li>
-</ul>
-<p><a href="../assets/5-reterminal_leds.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="../assets/5-reterminal_leds.png" title=":size=400" class="img-fluid"></a></p>
-<p>The lights can be controlled at the OS level by editing files in the <code>/sys/class/leds/</code> directory. Use <code>ls -al</code> to list the files in this directory:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">username@hostname:/sys/class/leds/usr_led0</span> $ ls <span class="at">-al</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">total</span> 0            </span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span> 3 root root    0 Jan 25 20:33 .               </span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span> 8 root root    0 Jan 25 20:33 ..                                                                                                                                                                         </span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 root root 4096 Jan 26 22:02 brightness                                                                                                                                                                 </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="../assets/5-unix-permissions-cheatsheet.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" data-glightbox="description: .lightbox-desc-3" title="Unix Permissions cheatsheet by Julia Evans"><img src="../assets/5-unix-permissions-cheatsheet.png" class="img-fluid figure-img" alt="Unix Permissions cheatsheet by Julia Evans"></a></p>
-<figcaption>Unix Permissions cheatsheet by Julia Evans</figcaption>
-</figure>
-</div>
-<p>The <code>brightness</code> file inide the <code>usr_led0</code> controls the brightness of LED0. But, because only <code>root</code> has write permissions to this file, we will likely run into permissions errors if we try to edit the value directly:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> nano /sys/class/leds/usr_led0/brightness</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Permission</span> denied</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo 255 <span class="op">&gt;</span> /sys/class/leds/usr_led0/brightness</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ex">Permission</span> denied</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sudo echo 255 <span class="op">&gt;</span> /sys/class/leds/usr_led0/brightness</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="ex">Permission</span> denied</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>There are a few possible approaches to this problem:</p>
-<section id="use-sudo-text-editor" class="level3">
-<h3 class="anchored" data-anchor-id="use-sudo-text-editor">Use sudo + text-editor</h3>
-<p>You can open a text-editor with <code>root</code> permissions using <code>sudo</code>:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># nano text editor</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> nano /sys/class/leds/usr_led0/brightness</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># or, you can use vi/vim text editor</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> vi /sys/class/leds/usr_led0/brightness</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Edit the <code>brightness</code> file to a value between 0-255 using the editor. When you save, you should see the change immediately.</p>
+<section id="cloud-shell" class="level4">
+<h4 class="anchored" data-anchor-id="cloud-shell">Cloud Shell</h4>
+<p>Azure Cloud Shell is the ability to run the Azure CLI directly in the browser (most convenient).</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Documentation</th>
+<th>Quick Start</th>
+<th>IoT Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://learn.microsoft.com/en-us/azure/cloud-shell/features">Features &amp; tools for Azure Cloud Shell</a></td>
+<td><a href="https://learn.microsoft.com/en-us/azure/cloud-shell/quickstart?tabs=azurecli">Quickstart for Azure Cloud Shell</a></td>
+<td>Same examples as Azure CLI</td>
+</tr>
+</tbody>
+</table>
+<p>Start the Cloud Shell from anywhere in the Azure portal by clicking on it Cloud Shell icon (below):</p>
+<p><img src="../assets/intro-azure-cli.png" class="img-fluid"> <img src="../assets/12-azure-cloud-shell-example.png" class="img-fluid"></p>
+<p>The first time you start the Azure Cloud Shell you will be asked to setup an account.</p>
 </section>
-<section id="use-sudo-su" class="level3">
-<h3 class="anchored" data-anchor-id="use-sudo-su">Use sudo + su</h3>
-<p>Using an editor is perfectly reasonable for a one-off change, but annoying if you want to make the change more often.</p>
-<p>We can use the <code>echo value &gt; /path/to/file</code> pattern, but only if we have permissions to write to <code>/path/to/file</code> – we can obtain these permissions if we run the entire command as the <code>root</code> user.</p>
-<blockquote class="blockquote">
-<p><strong>NOTE:</strong> Running commands as the root user can have unintended consequences, ranging from annoying/tedious to fix, to completely devastating/permanently ruinous for your machine. You should avoid being <code>root</code> wherever possible (see <strong>Use sudo + tee</strong> section below for how to avoid it for this problem).</p>
-</blockquote>
-<p>You can enter a <code>root</code> shell instance using the command <code>su</code> (switch user), or by using <code>sudo -i</code> or <code>sudo -s</code>:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">user@hostname</span> $ sudo su</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">root@hostname</span> <span class="co"># </span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ex">user@hostname</span> $ sudo <span class="at">-i</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="ex">root@hostname</span> <span class="co"># </span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="ex">user@hostname</span> $ sudo <span class="at">-s</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="ex">root@hostname</span> <span class="co"># </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Your shell should now display <code>root@hostname:~#</code>.</p>
-<p>Turn on the LED with maximum brightness</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># echo 255 &gt; brightness</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Turn off the LED</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># echo 0 &gt; brightness</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Similarly, you can control <code>usr_led1</code> and <code>usr_led2</code> and even the buzzer on <code>/sys/class/leds/usr_buzzer</code></p>
-<p>When done working as root, you can exit the root shell and return to your user shell using the <code>exit</code> command (or Ctrl-D as a hotkey):</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">root@hostname</span> <span class="co"># exit</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">user@hostname</span> $</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="use-sudo-tee" class="level3">
-<h3 class="anchored" data-anchor-id="use-sudo-tee">Use sudo + <code>tee</code></h3>
-<p>If we want to avoid using a text editor, AND avoid logging into a <code>root</code> shell instance, it would be great if something like this worked:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sudo echo 255 <span class="op">&gt;</span> /sys/class/leds/usr_led0/brightness</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>But it doesn’t! Can you understand why? Consider which part of the instruction <code>sudo</code> applies to. Unfortunately, there is no way to <code>sudo &gt;</code> or <code>sudo filename</code> since <code>sudo</code> executes <strong>commands</strong> as the root user, NOT filenames/redirects.</p>
-<p>What if there were a command that we could put after the redirect, and <code>sudo</code> that command? What would that command need to do? It’s time to introduce a “new” command: <code>tee</code>.</p>
-<p>To be clear, <a href="https://en.wikipedia.org/wiki/Tee_(command)"><code>tee</code></a> is a 50 year old program and an absolute classic – it is as ubiquitous/essential as the other OG unix programs like <code>ls</code>, <code>cat</code>, <code>echo</code>. We will see why in the following example.</p>
-<p>Try running <code>man tee</code> in your reTerminal. You should see something like the following:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">TEE</span><span class="er">(</span><span class="ex">1</span><span class="kw">)</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="ex">NAME</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>       <span class="fu">tee</span> <span class="at">-</span> read from standard input and write to standard output and files</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="ex">SYNOPSIS</span></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>       <span class="fu">tee</span> <span class="pp">[</span><span class="ss">OPTION</span><span class="pp">]</span>... <span class="pp">[</span><span class="ss">FILE</span><span class="pp">]</span>...</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="ex">DESCRIPTION</span></span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>       <span class="ex">Copy</span> standard input to each FILE, and also to standard output.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>We have here a command that will read from standard input, and <em>write that same content from standard input into BOTH standard output AND files</em> – the files we can specify as arguments.</p>
-<p><strong>Challenge for Lab 2:</strong> where would you put <code>tee</code> and <code>sudo</code> in the command below, to fix our permissions problems?</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo 255 <span class="kw">|</span> <span class="ex">/sys/class/leds/usr-led0/brightness</span> </span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># this command is missing `tee` and `sudo`.... find where to put them, and you've learned a very important unix pattern!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="azure-iot-extension-for-azure-cli" class="level3">
+<h3 class="anchored" data-anchor-id="azure-iot-extension-for-azure-cli">Azure IoT extension for Azure CLI</h3>
+<p>Azure CLI uses “extensions” in order to manage different Azure services.</p>
+<p>The Azure IoT extension uses the sub-command <code>az iot</code> to control IoT related sevices.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>GitHub Repo</th>
+<th>Documentation</th>
+<th>IoT Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://github.com/Azure/azure-iot-cli-extension">azure-iot-cli-extension</a></td>
+<td><a href="https://learn.microsoft.com/en-us/cli/azure/iot/hub?view=azure-cli-latest">List of <code>az iot hub</code> commands</a></td>
+<td>Same examples as Azure CLI</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="luminosity-sensor" class="level3">
-<h3 class="anchored" data-anchor-id="luminosity-sensor">Luminosity Sensor</h3>
-<p>The digital light sensor can read the surrounding light levels.</p>
+<section id="azure-iot-tools-for-vs-code" class="level3">
+<h3 class="anchored" data-anchor-id="azure-iot-tools-for-vs-code">Azure IoT Tools for VS Code</h3>
+<p>There is a VS Code extension to test and mange IoT Hub services.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>GitHub Repo</th>
+<th>Documentation</th>
+<th>IoT Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://github.com/microsoft/vscode-azure-iot-toolkit">vscode-azure-iot-toolkit</a></td>
+<td><a href="https://github.com/Microsoft/vscode-azure-iot-toolkit/wiki">Wiki page</a></td>
+<td><a href="https://learn.microsoft.com/en-us/azure/iot-hub/iot-hub-create-use-iot-toolkit">Create an IoT hub using the Azure IoT Tools for Visual Studio Code</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="iot-explorer-powershell" class="level3">
+<h3 class="anchored" data-anchor-id="iot-explorer-powershell">IoT Explorer &amp; PowerShell</h3>
+<p>Two other tools worth mentioning but less used in this course:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Tool</th>
+<th>Description</th>
+<th>Documentation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Azure IoT Explorer</td>
+<td>Connects to an existing IoT hub to manage devices. Cannot create IoT hubs. Often used with CLI or Portal.</td>
+<td><a href="https://github.com/Azure/azure-iot-explorer#azure-iot-explorer-preview">Azure IoT Explorer</a></td>
+</tr>
+<tr class="even">
+<td>Azure PowerShell</td>
+<td>PowerShell interface for creating and managing IoT applications</td>
+<td><a href="https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-using-powershell">Create an IoT hub with PowerShell</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="demo-iot-hub-device-telemetry-data" class="level2">
+<h2 class="anchored" data-anchor-id="demo-iot-hub-device-telemetry-data">Demo: IoT Hub &amp; Device telemetry data</h2>
+<p>In-class demo to illustrate the process of:</p>
 <ol type="1">
-<li>Enter the following directory</li>
-</ol>
-<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /sys/bus/iio/devices/iio:device0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="2" type="1">
-<li>Read the following file to obtain the light intensity value in <strong>Lux</strong></li>
-</ol>
-<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> in_illuminance_input </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Output:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pi@raspberrypi:/sys/bus/iio/devices/iio:device0</span> $ cat in_illuminance_input </span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="ex">2719</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>Note:</strong> We don’t need to be root to read this file. Its permissions are set to let all users read it, even-though it belongs to the root user:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rw-r--r--</span> 1 root root 4096 Jan 30 22:16 in_illuminance_input</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-</section>
-<section id="python-library-for-reterminal" class="level2">
-<h2 class="anchored" data-anchor-id="python-library-for-reterminal">Python Library for reTerminal</h2>
-<p>Seeed Studio provided a python library to access most of the sensors and actuators of the reTerminal.</p>
-<p>Install the library <code>seeed-python-reterminal</code> (see official <a href="https://github.com/Seeed-Studio/Seeed_Python_ReTerminal">Github repo</a>) using <code>pip</code>:</p>
-<p><strong>NOTE:</strong> See <a href="../../../topics/python/docs/package-management-python.qmd">Package Management in Python</a> for a clear explanation of how to use <code>venv</code> and <code>pip</code>, particularly for <a href="../../../topics/python/docs/package-management-python.qmd#root-permissions">apps requiring root permissions</a> consumer</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install seeed-python-reterminal</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Now you can import it to a test script (eg. <em>buzz.py</em>)</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seeed_python_reterminal.core <span class="im">as</span> rt</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"BUZZER ON"</span>)</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>rt.buzzer <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>time.sleep(<span class="dv">1</span>)</span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"BUZZER OFF"</span>)</span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>rt.buzzer <span class="op">=</span> <span class="va">False</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>This will sound the buzzer of the reTerminal for 1 second.</p>
-<p>To run the script:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> <span class="va">$(</span><span class="fu">which</span> python<span class="va">)</span> buzz.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Alternatively, first elevate your shell, then execute the script normally:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">user@hostname:~</span> $ sudo <span class="at">-i</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="ex">root@hostname:~#</span> python buzz.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<blockquote class="blockquote">
-<p><strong>Note:</strong> this library is simply a wrapper to the OS operations we did in the previous section.</p>
-</blockquote>
-<p>See the official <code>seeed-python-reterminal</code> <a href="https://github.com/Seeed-Studio/Seeed_Python_ReTerminal">Github repo</a> for API reference on how to control:</p>
+<li>Creating an resource group</li>
+<li>Creating an IoT Hub</li>
+<li>Defining a new device</li>
+<li>Use Azure CLI and Azure IoT Tools for VS Code to:
 <ul>
-<li>LED’s</li>
-<li>Accelerometer</li>
-<li>Programmable Buttons</li>
-<li>Light Sensor</li>
+<li>Simulate device data and send it to IoT Hub</li>
+<li>Monitor data incoming data in IoT Hub</li>
+</ul></li>
+</ol>
+<p>This demo is based on the following guides:</p>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/azure/iot-hub/quickstart-send-telemetry-cli">Quickstart: Send telemetry from a device to an IoT hub and monitor it with the Azure CLI</a></li>
+<li><a href="https://docs.microsoft.com/en-us/azure/iot-develop/quickstart-send-telemetry-iot-hub?toc=%2Fazure%2Fiot-hub%2Ftoc.json&amp;bc=%2Fazure%2Fiot-hub%2Fbreadcrumb%2Ftoc.json&amp;pivots=programming-language-python">Quickstart: Send telemetry from an IoT Plug and Play device to Azure IoT Hub</a></li>
 </ul>
 
 
 <div class="hidden" aria-hidden="true">
-<span class="glightbox-desc lightbox-desc-3">Unix Permissions cheatsheet by Julia Evans</span>
+<span class="glightbox-desc lightbox-desc-1">Compasion of SaaS, PaaS and IaaS platforms</span>
+<span class="glightbox-desc lightbox-desc-2">Diagram that shows the core subsystems of the Azure IoT reference architecture.</span>
+<span class="glightbox-desc lightbox-desc-3">Azure IoT-related architecture</span>
+<span class="glightbox-desc lightbox-desc-5">Azure infrastructure map</span>
 </div>
 </section>
 
@@ -1375,13 +1408,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../../topics/hardware/index.html" class="pagination-link" aria-label="Hardware">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Hardware</span>
+      <a href="../../../topics/iot/docs/azure-sdks.html" class="pagination-link" aria-label="Azure SDKs">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Azure SDKs</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../../topics/hardware/docs/analog-vs-digital.html" class="pagination-link" aria-label="Signals: Analog and digital">
-        <span class="nav-page-text">Signals: Analog and digital</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../../topics/iot/docs/iot-protocols.html" class="pagination-link" aria-label="IoT Communication Protocols">
+        <span class="nav-page-text">IoT Communication Protocols</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1430,7 +1463,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","openEffect":"zoom","closeEffect":"zoom","loop":false});
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","loop":false,"descPosition":"bottom","selector":".lightbox","closeEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
