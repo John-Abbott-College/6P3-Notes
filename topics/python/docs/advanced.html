@@ -80,6 +80,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script src="../../../site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
+<script src="../../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": true,
@@ -541,7 +544,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">April 8, 2024</p>
+      <p class="date-modified">April 15, 2024</p>
     </div>
   </div>
     
@@ -572,7 +575,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="concurrent-vs-parallel" class="level3">
 <h3 class="anchored" data-anchor-id="concurrent-vs-parallel">Concurrent vs Parallel</h3>
 <p>It’s important to note that <strong>concurrent code does not necessarily mean parallel</strong>.</p>
-<p><img src="https://tenthousandmeters.com/blog/python_bts_12/concurrency.png" class="img-fluid"></p>
+<p><a href="https://tenthousandmeters.com/blog/python_bts_12/concurrency.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="https://tenthousandmeters.com/blog/python_bts_12/concurrency.png" class="img-fluid"></a></p>
 <p><em>Concurrent does necessarily mean parallel execution. By <a href="https://tenthousandmeters.com/blog/python-behind-the-scenes-12-how-asyncawait-works-in-python/">Ten thousand meters</a></em></p>
 <blockquote class="blockquote">
 <p>In Python, the only way to run parallel code is to use multiple CPU cores by running multiple Python interpreters that interact. See <a href="https://docs.python.org/3/library/multiprocessing.html">multiprocessing module</a>.</p>
@@ -590,10 +593,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Waiting to write to a file.</li>
 <li></li>
 </ul>
-<p><img src="https://files.realpython.com/media/IOBound.4810a888b457.png" class="img-fluid"></p>
+<p><a href="https://files.realpython.com/media/IOBound.4810a888b457.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="https://files.realpython.com/media/IOBound.4810a888b457.png" class="img-fluid"></a></p>
 <p><em>Synchronous code execution by <a href="https://realpython.com/python-concurrency/">RealPython.com</a></em></p>
 <p><strong>Asynchronous</strong> execution enables the execution of the next task while waiting for the external input/output.</p>
-<p><img src="https://files.realpython.com/media/Asyncio.31182d3731cf.png" class="img-fluid"></p>
+<p><a href="https://files.realpython.com/media/Asyncio.31182d3731cf.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="https://files.realpython.com/media/Asyncio.31182d3731cf.png" class="img-fluid"></a></p>
 <p><em>Asynchronous code execution by <a href="https://realpython.com/python-concurrency/">RealPython.com</a></em></p>
 <blockquote class="blockquote">
 <p>Note that the amount <strong>CPU processing (blue area in the diagrams above) is the same</strong> in both sync and async executions.</p>
@@ -614,7 +617,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>Preemptive because the OS is anticipating the start and stop of each thread.</li>
 </ul>
-<p><img src="https://www.digikey.bg/maker-media/ac6c69ba-1ff1-4e5a-9275-50240049de58.png" class="img-fluid"></p>
+<p><a href="https://www.digikey.bg/maker-media/ac6c69ba-1ff1-4e5a-9275-50240049de58.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="https://www.digikey.bg/maker-media/ac6c69ba-1ff1-4e5a-9275-50240049de58.png" class="img-fluid"></a></p>
 <p><em>Thread execution time being managed by the OS. By <a href="https://www.digikey.bg/en/maker/projects/getting-started-with-asyncio-in-micropython-raspberry-pi-pico/110b4243a2f544b6af60411a85f0437c">Digikey.com</a></em></p>
 </section>
 <section id="asyncio-tasks" class="level4">
@@ -623,12 +626,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <blockquote class="blockquote">
 <p>In <strong>cooperative multitasking</strong>, each task must explicitly yield (or pass) execution time back to the main loop so that the next task can start/continue.</p>
 </blockquote>
-<p><img src="https://www.digikey.bg/maker-media/ad878381-74bb-43ef-9b9b-2eb149d179df.png" class="img-fluid"></p>
+<p><a href="https://www.digikey.bg/maker-media/ad878381-74bb-43ef-9b9b-2eb149d179df.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="https://www.digikey.bg/maker-media/ad878381-74bb-43ef-9b9b-2eb149d179df.png" class="img-fluid"></a></p>
 <p><em>Tasks yielding CPU execution time so that other tasks can run. By <a href="https://www.digikey.bg/en/maker/projects/getting-started-with-asyncio-in-micropython-raspberry-pi-pico/110b4243a2f544b6af60411a85f0437c">Digikey.com</a></em></p>
 <blockquote class="blockquote">
 <p>In Asyncio, <strong>tasks yield by using the <code>await</code> keyword.</strong></p>
 </blockquote>
-<p><img src="https://cdn-learn.adafruit.com/assets/assets/000/106/571/medium800/circuitpython_2tasks.png?1637163446" class="img-fluid"></p>
+<p><a href="https://cdn-learn.adafruit.com/assets/assets/000/106/571/medium800/circuitpython_2tasks.png?1637163446" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="https://cdn-learn.adafruit.com/assets/assets/000/106/571/medium800/circuitpython_2tasks.png?1637163446" class="img-fluid"></a></p>
 <p><em>Tasks yielding execution time with the <code>await</code> keyword. By <a href="https://learn.adafruit.com/cooperative-multitasking-in-circuitpython-with-asyncio">Adafruit.com</a></em></p>
 <p>In the image above, Task 1 (running function <code>f()</code>) yields execution time to Task 2 (running function <code>g()</code>) by using the <code>await</code> keyboard and vice-versa.</p>
 </section>
@@ -1408,6 +1411,31 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","descPosition":"bottom","closeEffect":"zoom","loop":false});
+window.onload = () => {
+  lightboxQuarto.on('slide_before_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    const href = trigger.getAttribute('href');
+    if (href !== null) {
+      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+      if (imgEl !== null) {
+        const srcAttr = imgEl.getAttribute("src");
+        if (srcAttr && srcAttr.startsWith("data:")) {
+          slideConfig.href = srcAttr;
+        }
+      }
+    } 
+  });
+
+  lightboxQuarto.on('slide_after_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    if (window.Quarto?.typesetMath) {
+      window.Quarto.typesetMath(slideNode);
+    }
+  });
+
+};
+          </script>
 
 
 

@@ -80,6 +80,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script src="../../../site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
+<script src="../../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": true,
@@ -541,7 +544,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">April 8, 2024</p>
+      <p class="date-modified">April 15, 2024</p>
     </div>
   </div>
     
@@ -559,7 +562,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Any of the GPIO pins can be designated (in software) as an input or output pin and used for a wide range of purposes.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../assets/7-gpio-pi-40-pin-reference.png" class="img-fluid figure-img"></p>
+<p><a href="../assets/7-gpio-pi-40-pin-reference.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1" title="Diagram of Pi’s 40 GPIO pins"><img src="../assets/7-gpio-pi-40-pin-reference.png" class="img-fluid figure-img" alt="Diagram of Pi’s 40 GPIO pins"></a></p>
 <figcaption>Diagram of Pi’s 40 GPIO pins</figcaption>
 </figure>
 </div>
@@ -569,7 +572,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The reTerminal exposes the same 40-pin header as the Pi on it’s side:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../assets/7-gpio-reterminal-40-pin-header.png" class="img-fluid figure-img"></p>
+<p><a href="../assets/7-gpio-reterminal-40-pin-header.png" class="lightbox" data-glightbox="description: .lightbox-desc-2" data-gallery="quarto-lightbox-gallery-2" title="Breakout of 40-pin header for reTerminal"><img src="../assets/7-gpio-reterminal-40-pin-header.png" class="img-fluid figure-img" alt="Breakout of 40-pin header for reTerminal"></a></p>
 <figcaption>Breakout of 40-pin header for reTerminal</figcaption>
 </figure>
 </div>
@@ -612,7 +615,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>In this course we will use the integrate ADC of the <a href="https://wiki.seeedstudio.com/Grove_Base_Hat_for_Raspberry_Pi/">Grove Base Hat</a> for the Raspberry Pi.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://files.seeedstudio.com/wiki/Grove_Base_Hat_for_Raspberry_Pi/img/main.jpg" class="img-fluid figure-img"></p>
+<p><a href="https://files.seeedstudio.com/wiki/Grove_Base_Hat_for_Raspberry_Pi/img/main.jpg" class="lightbox" data-glightbox="description: .lightbox-desc-3" data-gallery="quarto-lightbox-gallery-3" title="Grove Base Hat for the Raspberry Pi"><img src="https://files.seeedstudio.com/wiki/Grove_Base_Hat_for_Raspberry_Pi/img/main.jpg" class="img-fluid figure-img" alt="Grove Base Hat for the Raspberry Pi"></a></p>
 <figcaption>Grove Base Hat for the Raspberry Pi</figcaption>
 </figure>
 </div>
@@ -627,7 +630,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>In addition to the 4 ADC connectors, the Base Hat also exposes the original 40-pin header and other digital connectors.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://files.seeedstudio.com/wiki/Grove_Base_Hat_for_Raspberry_Pi/img/pin-out/overview.jpg" class="img-fluid figure-img"></p>
+<p><a href="https://files.seeedstudio.com/wiki/Grove_Base_Hat_for_Raspberry_Pi/img/pin-out/overview.jpg" class="lightbox" data-glightbox="description: .lightbox-desc-4" data-gallery="quarto-lightbox-gallery-4" title="Connectors of the Grove Base Hat"><img src="https://files.seeedstudio.com/wiki/Grove_Base_Hat_for_Raspberry_Pi/img/pin-out/overview.jpg" class="img-fluid figure-img" alt="Connectors of the Grove Base Hat"></a></p>
 <figcaption>Connectors of the Grove Base Hat</figcaption>
 </figure>
 </div>
@@ -728,6 +731,12 @@ Important
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>button.when_released <span class="op">=</span> led.off</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
+<div class="hidden" aria-hidden="true">
+<span class="glightbox-desc lightbox-desc-1">Diagram of Pi’s 40 GPIO pins</span>
+<span class="glightbox-desc lightbox-desc-2">Breakout of 40-pin header for reTerminal</span>
+<span class="glightbox-desc lightbox-desc-3">Grove Base Hat for the Raspberry Pi</span>
+<span class="glightbox-desc lightbox-desc-4">Connectors of the Grove Base Hat</span>
+</div>
 </section>
 </section>
 
@@ -1348,6 +1357,31 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","descPosition":"bottom","closeEffect":"zoom","loop":false});
+window.onload = () => {
+  lightboxQuarto.on('slide_before_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    const href = trigger.getAttribute('href');
+    if (href !== null) {
+      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+      if (imgEl !== null) {
+        const srcAttr = imgEl.getAttribute("src");
+        if (srcAttr && srcAttr.startsWith("data:")) {
+          slideConfig.href = srcAttr;
+        }
+      }
+    } 
+  });
+
+  lightboxQuarto.on('slide_after_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    if (window.Quarto?.typesetMath) {
+      window.Quarto.typesetMath(slideNode);
+    }
+  });
+
+};
+          </script>
 
 
 

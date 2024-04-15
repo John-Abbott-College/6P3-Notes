@@ -46,6 +46,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script src="../../../site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
+<script src="../../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": true,
@@ -515,7 +518,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">April 8, 2024</p>
+      <p class="date-modified">April 15, 2024</p>
     </div>
   </div>
     
@@ -568,7 +571,7 @@ ul.task-list li input[type="checkbox"] {
 </blockquote>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="http://resource.isvr.soton.ac.uk/spcg/tutorial/tutorial/Tutorial_files/longipatm.gif" class="img-fluid figure-img"></p>
+<p><a href="http://resource.isvr.soton.ac.uk/spcg/tutorial/tutorial/Tutorial_files/longipatm.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1" title="Animation of acoustic wave travelling in air"><img src="http://resource.isvr.soton.ac.uk/spcg/tutorial/tutorial/Tutorial_files/longipatm.gif" class="img-fluid figure-img" alt="Animation of acoustic wave travelling in air"></a></p>
 <figcaption>Animation of acoustic wave travelling in air</figcaption>
 </figure>
 </div>
@@ -587,7 +590,7 @@ ul.task-list li input[type="checkbox"] {
 </blockquote>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://cdn.sparkfun.com/assets/3/7/6/6/0/51c48875ce395f745a000000.png"><img src="https://cdn.sparkfun.com/assets/3/7/6/6/0/51c48875ce395f745a000000.png" class="img-fluid figure-img" alt="Analog Sine Wave"></a></p>
+<p><img src="https://cdn.sparkfun.com/assets/3/7/6/6/0/51c48875ce395f745a000000.png" class="img-fluid figure-img"></p>
 <figcaption>Analog Sine Wave</figcaption>
 </figure>
 </div>
@@ -663,7 +666,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Basically, <strong>sampling is taking snap-shot values of the analog signal at regular time intervals.</strong></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../assets/6-analog-digital-sample-period.png" class="img-fluid figure-img"></p>
+<p><a href="../assets/6-analog-digital-sample-period.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" data-glightbox="description: .lightbox-desc-3" title="Analog signal showing sample period and sample frequency"><img src="../assets/6-analog-digital-sample-period.png" class="img-fluid figure-img" alt="Analog signal showing sample period and sample frequency"></a></p>
 <figcaption>Analog signal showing sample period and sample frequency</figcaption>
 </figure>
 </div>
@@ -678,7 +681,7 @@ ul.task-list li input[type="checkbox"] {
 <p>The higher the sample rate, the more accurate the digital signal is.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../assets/6-analog-digital-increasing-sample-rate.png" class="img-fluid figure-img"></p>
+<p><a href="../assets/6-analog-digital-increasing-sample-rate.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" data-glightbox="description: .lightbox-desc-4" title="Signals of increasing sample rate"><img src="../assets/6-analog-digital-increasing-sample-rate.png" class="img-fluid figure-img" alt="Signals of increasing sample rate"></a></p>
 <figcaption>Signals of increasing sample rate</figcaption>
 </figure>
 </div>
@@ -715,7 +718,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Assuming the ADC has a resolution of 3 bits, all voltage values (-1V to 1V) must be represented with at most 3 bits, or 2^3 = 8 unique values (0 is a unique value).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../assets/6-analog-digital-bit-resolution.png" class="img-fluid figure-img"></p>
+<p><a href="../assets/6-analog-digital-bit-resolution.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" data-glightbox="description: .lightbox-desc-5" title="voltage signal converted to a bit resolution of 3 bits"><img src="../assets/6-analog-digital-bit-resolution.png" class="img-fluid figure-img" alt="voltage signal converted to a bit resolution of 3 bits"></a></p>
 <figcaption>voltage signal converted to a bit resolution of 3 bits</figcaption>
 </figure>
 </div>
@@ -747,7 +750,7 @@ ul.task-list li input[type="checkbox"] {
 </ol>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../assets/6-analog-digital-exercise1.png" class="img-fluid figure-img"></p>
+<p><a href="../assets/6-analog-digital-exercise1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" data-glightbox="description: .lightbox-desc-6" title="Graph for exercise 1"><img src="../assets/6-analog-digital-exercise1.png" class="img-fluid figure-img" alt="Graph for exercise 1"></a></p>
 <figcaption>Graph for exercise 1</figcaption>
 </figure>
 </div>
@@ -787,6 +790,14 @@ Solution
 #### Noise: digital can handle it -->
 
 
+<div class="hidden" aria-hidden="true">
+<span class="glightbox-desc lightbox-desc-1">Animation of acoustic wave travelling in air</span>
+<span class="glightbox-desc lightbox-desc-2">Analog Sine Wave</span>
+<span class="glightbox-desc lightbox-desc-3">Analog signal showing sample period and sample frequency</span>
+<span class="glightbox-desc lightbox-desc-4">Signals of increasing sample rate</span>
+<span class="glightbox-desc lightbox-desc-5">voltage signal converted to a bit resolution of 3 bits</span>
+<span class="glightbox-desc lightbox-desc-6">Graph for exercise 1</span>
+</div>
 </section>
 </section>
 
@@ -1401,6 +1412,31 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","openEffect":"zoom","loop":false,"descPosition":"bottom"});
+window.onload = () => {
+  lightboxQuarto.on('slide_before_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    const href = trigger.getAttribute('href');
+    if (href !== null) {
+      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+      if (imgEl !== null) {
+        const srcAttr = imgEl.getAttribute("src");
+        if (srcAttr && srcAttr.startsWith("data:")) {
+          slideConfig.href = srcAttr;
+        }
+      }
+    } 
+  });
+
+  lightboxQuarto.on('slide_after_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    if (window.Quarto?.typesetMath) {
+      window.Quarto.typesetMath(slideNode);
+    }
+  });
+
+};
+          </script>
 
 
 
