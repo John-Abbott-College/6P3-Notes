@@ -64,11 +64,11 @@ website:
         href: announcements/index.xml
       - text: "{{< iconify fa6-brands github >}}"
         href: https://github.com/John-Abbott-College/6P3-Notes
-
     logo: "assets/favicon_io/favicon-32x32.png"
 
 format:
   html:
+    lightbox: true
     css: styles.css
     theme:
       light: [united, assets/css/customizations-light.scss]
