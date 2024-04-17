@@ -14,8 +14,8 @@
 [lab4-sec1]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=32609
 [lab5-sec1]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=34855
 [lab6-sec1]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=32610
-[lab7-sec1]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=32612
-[lab8-sec1]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=32613
+[lab7-sec1]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=32611
+[lab8-sec1]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=32612
 
 [a1-sec1]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=32614
 [a2-sec1]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=32615
