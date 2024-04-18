@@ -14,7 +14,7 @@ In setting up Azure for Lab 6, a few students have asked me about troubles with 
 - Difficulties creating an Azure IoTHub on the Free-tier plan
 - Etc.
 
-[course-notes-announcements]: https://john-abbott-college.github.io/6P3-Notes/announcements/2024-04-18-azure-plan-troubleshooting.qmd
+[course-notes-announcements]: https://john-abbott-college.github.io/6P3-Notes/announcements/2024-04-18-azure-plan-troubleshooting.html
 
 I would like to share my help for those students for the rest of you, just in case there are more of you struggling with setting up Azure.
 
