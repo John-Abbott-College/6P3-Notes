@@ -5,7 +5,7 @@ date: 2024-04-18
 
 {{< include /_reference-links.md >}}
 
-A few students have asked me about troubles with the following:
+In setting up Azure for Lab 6, a few students have asked me about troubles with the following:
 
 - Eligibility for a student Azure plan
 - Student Azure plan expiring
