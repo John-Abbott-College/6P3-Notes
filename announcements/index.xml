@@ -15,7 +15,81 @@
 <link>https://john-abbott-college.github.io/6P3-Notes/announcements/</link>
 </image>
 <generator>quarto-1.4.553</generator>
-<lastBuildDate>Mon, 15 Apr 2024 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Thu, 18 Apr 2024 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Azure Plan Troubleshooting</title>
+  <link>https://john-abbott-college.github.io/6P3-Notes/announcements/2024-04-18-azure-plan-troubleshooting.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>A few students have asked me about troubles with the following:</p>
+<ul>
+<li>Eligibility for a student Azure plan</li>
+<li>Student Azure plan expiring</li>
+<li>Signing up for the Free-tier of Azure</li>
+<li>Creating a budget for Azure</li>
+<li>Difficulties creating an Azure IoTHub on the Free-tier plan</li>
+<li>Etc.</li>
+</ul>
+<p>I would like to share my help for those students for the rest of you, just in case there are more of you struggling with setting up Azure.</p>
+<p>I will keep the Course Website version of this announcement up to date – if you are seeing this announcement on Moodle, you can <a href="https://john-abbott-college.github.io/6P3-Notes/announcements/2024-04-18-azure-plan-troubleshooting.qmd">click here</a> to get to the up-to-date version of this announcement with the latest change</p>
+<section id="big-picture" class="level2">
+<h2 class="anchored" data-anchor-id="big-picture">Big picture</h2>
+<p>In the big picture, no matter what your situation is, your Azure plan should have the following properties:</p>
+<ol type="1">
+<li><p>No <strong>upfront</strong> costs – your account should be free to create, and every service/resource you create should be free to create.</p></li>
+<li><p>No <strong>monthly</strong> costs – your costs should be covered entirely by one of the following:</p></li>
+</ol>
+<ul>
+<li><ol type="a">
+<li>your student account credit</li>
+</ol></li>
+<li><ol start="2" type="a">
+<li>$200 free credit for new non-student account</li>
+</ol></li>
+<li><ol start="3" type="a">
+<li>pay-as-you-go that is <strong>free per month</strong>, but will charge your credit card <strong>per usage</strong>.</li>
+</ol></li>
+</ul>
+<ol start="3" type="1">
+<li>A budget alert system that warns you when your usage exceeds &gt;$5 . Even if you are in situation (c), you should not expect to pay more than $5 or $10 – <strong>please set up an alert system and monitor this. Let me know if your costs ever exceed this amount</strong>. See the <a href="../topics/iot/docs/what-is-iot.html#azure-account-check">course notes on Azure Account Check</a>.</li>
+</ol>
+</section>
+<section id="faq" class="level2">
+<h2 class="anchored" data-anchor-id="faq">FAQ</h2>
+<blockquote class="blockquote">
+<p>Q: I’m not eligible for a student account?</p>
+</blockquote>
+<p>Student accounts last for 18 months – if you have taken courses in the past that require an Azure account, and it was more than 18 months since you created that account, your student credits have unfortunately expired. There are other free options in this case.</p>
+<blockquote class="blockquote">
+<p>Q: I’m not eligible for the $200 free account credit for my non-student account?</p>
+</blockquote>
+<p>The $200 credit is only available if you have not used that email address for an Azure account in the past (and it only lasts for one month).</p>
+<p>If you are not elgible for the $200 credit on the email address you have provided, you will either need to: - use a new email address - register for a free-tier pay-as-you-go.</p>
+<blockquote class="blockquote">
+<p>Q: I tried to register for the pay-as-you-go and I’m told it costs $35 per month?</p>
+</blockquote>
+<p>The pay-as-you-go account <strong>should not cost any upfront or monthly charges</strong>. Double check that you do not select options like “tech support plans” or “standard-tier service” – ALWAYS opt out of any paid options, ALWAYS select free-tier for any choices provided to you by Azure.</p>
+<blockquote class="blockquote">
+<p>Q: if I’m on free-tier and there’s no monthly costs, why do I need to monitor the budget?</p>
+</blockquote>
+<p>The pay-as-you-go account may charge your credit card, only when you <em>use</em> the service <em>beyond the defined free-tier limits</em>.</p>
+<p>In our class, we will have IoT Hub services that handle communication between your Mobile App from App Dev III, and your reTerminal devices from Connected Objects. <strong>The free-tier limit for the IoTHub is 8000 messages per day</strong> – I don’t think there will be a reason to exceed this, so by default, you may never have to pay any money for this serivce.</p>
+<p>However, there may be small charges to your credit card, ONLY IF you exceed the free-tier limits of the services we use. These charges will be small, but it is possible for them to get out-of-hand by accident. To make sure they do not get out of hand by accident, you must set up a Budget for your Resource Group to alert you when charges exceed a certain number. <a href="../topics/iot/docs/what-is-iot.html#azure-account-check">Please review the course notes about budgets and set up an alert if you have not done so</a>.</p>
+<blockquote class="blockquote">
+<p>Q: I have some other question?</p>
+</blockquote>
+<p>Please let me know if you have any questions, or if there’s something else that doesn’t seem to work. I will update these instructions if there are more troubles you run into that I can share answers for. Again, if you are seeing this on moodle, <a href="https://john-abbott-college.github.io/6P3-Notes/announcements/2024-04-18-azure-plan-troubleshooting.qmd">click here</a> to see the latest version of these instructions.</p>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
+  <guid>https://john-abbott-college.github.io/6P3-Notes/announcements/2024-04-18-azure-plan-troubleshooting.html</guid>
+  <pubDate>Thu, 18 Apr 2024 00:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Mid-April Schedule Updates</title>
   <link>https://john-abbott-college.github.io/6P3-Notes/announcements/2024-04-15-schedule-updates.html</link>
@@ -122,25 +196,6 @@ font-style: inherit;">sudo</span> reboot</span></code></pre></div>
   <pubDate>Thu, 14 Mar 2024 00:00:00 GMT</pubDate>
 </item>
 <item>
-  <title>Lab 3: Demo in class Friday March 15</title>
-  <link>https://john-abbott-college.github.io/6P3-Notes/announcements/2024-03-12-lab3-demo.html</link>
-  <description><![CDATA[ 
-
-
-
-
-<p>As mentioned in class on March 11, the hand-in for <strong>Lab 3</strong> will be on <strong>Friday March 15</strong>. Demos will start at the <strong>beginning</strong> of class. Come to class prepared to show your progress.</p>
-<p>The deadline to submit your scripts for Lab 3 code remains midnight on Friday.</p>
-<p>If you have not completed the lab by Friday morning, you will get partial marks up to whatever you have completed.</p>
-<p>Let me know if you have any questions! (by Teams preferably)</p>
-
-
-
-<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
-  <guid>https://john-abbott-college.github.io/6P3-Notes/announcements/2024-03-12-lab3-demo.html</guid>
-  <pubDate>Tue, 12 Mar 2024 00:00:00 GMT</pubDate>
-</item>
-<item>
   <title>Website updates</title>
   <link>https://john-abbott-college.github.io/6P3-Notes/announcements/2024-03-12-website-updates.html</link>
   <description><![CDATA[ 
@@ -160,6 +215,25 @@ font-style: inherit;">sudo</span> reboot</span></code></pre></div>
 
 <a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
   <guid>https://john-abbott-college.github.io/6P3-Notes/announcements/2024-03-12-website-updates.html</guid>
+  <pubDate>Tue, 12 Mar 2024 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Lab 3: Demo in class Friday March 15</title>
+  <link>https://john-abbott-college.github.io/6P3-Notes/announcements/2024-03-12-lab3-demo.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>As mentioned in class on March 11, the hand-in for <strong>Lab 3</strong> will be on <strong>Friday March 15</strong>. Demos will start at the <strong>beginning</strong> of class. Come to class prepared to show your progress.</p>
+<p>The deadline to submit your scripts for Lab 3 code remains midnight on Friday.</p>
+<p>If you have not completed the lab by Friday morning, you will get partial marks up to whatever you have completed.</p>
+<p>Let me know if you have any questions! (by Teams preferably)</p>
+
+
+
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
+  <guid>https://john-abbott-college.github.io/6P3-Notes/announcements/2024-03-12-lab3-demo.html</guid>
   <pubDate>Tue, 12 Mar 2024 00:00:00 GMT</pubDate>
 </item>
 </channel>
