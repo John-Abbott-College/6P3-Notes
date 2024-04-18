@@ -1,3 +1,5 @@
+[azure-account-check]: /topics/iot/docs/what-is-iot.qmd#azure-account-check
+
 [syllabus]: /about/syllabus.qmd
 [course-outline]: /about/course-outline.qmd
 [calendar]: /about/calendar.qmd
