@@ -44,7 +44,8 @@ Student accounts last for 18 months -- if you have taken courses in the past tha
 
 The $200 credit is only available if you have not used that email address for an Azure account in the past (and it only lasts for one month).
 
-If you are not elgible for the $200 credit on the email address you have provided, you will either need to:
+If you are not elgible for the $200 credit on the email address you have provided, you have two choices, both of which are fine:
+
 - use a new email address
 - register for a free-tier pay-as-you-go.
 
