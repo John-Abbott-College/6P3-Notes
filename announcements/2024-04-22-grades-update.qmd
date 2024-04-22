@@ -1,0 +1,14 @@
+---
+title: "Grading Update"
+date: 2024-04-22
+---
+
+{{< include /_reference-links.md >}}
+
+Hello everyone,
+
+Your grades for L4, L5, Q1, and Milestone 1 have been updated. You can find your feedback on Moodle in most cases.
+
+For the milestone, your detailed feedback has been included in the "Teacher Feedback" issue of your repository.
+
+**Note for April 22 morning section**: I will be around 15-20 minutes late. Please get your Lab 6 demos ready while you are waiting. 
