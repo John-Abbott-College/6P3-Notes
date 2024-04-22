@@ -161,7 +161,6 @@ The Azure Portal is a browser-based portal for IoT Hub and devices. Also works w
 ![](../assets/12-azure-portal-example.png)
 
 
-
 ### Azure CLI, Cloud Shell & IoT Extension 
 
 **Azure CLI** is a terminal tool to manage Azure services offered as Bash and PowerShell shells.
