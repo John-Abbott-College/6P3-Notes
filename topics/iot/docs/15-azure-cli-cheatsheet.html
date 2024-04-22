@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2024-04-22">
 
-<title>Connected Objects - About this website</title>
+<title>Connected Objects - Azure CLI Cheatsheet</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,34 +21,65 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../topics/index.html" rel="next">
-<link href="../about/syllabus.html" rel="prev">
-<link href="../assets/favicon_io/favicon.ico" rel="icon">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<script src="../site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
-<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../topics/iot/docs/azure-sdks.html" rel="next">
+<link href="../../../topics/iot/index.html" rel="prev">
+<link href="../../../assets/favicon_io/favicon.ico" rel="icon">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../../site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": true,
@@ -77,10 +109,10 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="Connected Objects - About this website">
-<meta property="og:description" content="Description of technologies and resources used to build this website. Acknowledgements, copyright, terms of use, etc. can be found on this page.">
-<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/about/assets/art_title_path_only.svg">
+<link rel="stylesheet" href="../../../styles.css">
+<meta property="og:title" content="Connected Objects - Azure CLI Cheatsheet">
+<meta property="og:description" content="References for useful Azure CLI commands and concepts">
+<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/topics/iot/docs/assets/art_title_path_only.svg">
 <meta property="og:site_name" content="Connected Objects">
 </head>
 
@@ -91,10 +123,10 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../assets/favicon_io/favicon-32x32.png" alt="" class="navbar-logo">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../assets/favicon_io/favicon-32x32.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Connected Objects</span>
     </a>
   </div>
@@ -105,23 +137,23 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="../index.html" aria-current="page"> 
+    <a class="nav-link active" href="../../../index.html" aria-current="page"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../announcements/index.html"> 
+    <a class="nav-link" href="../../../announcements/index.html"> 
 <span class="menu-text">Announcements</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../about/calendar.html"> 
+    <a class="nav-link" href="../../../about/calendar.html"> 
 <span class="menu-text">Calendar</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../about/syllabus.html"> 
+    <a class="nav-link" href="../../../about/syllabus.html"> 
 <span class="menu-text">Syllabus</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../topics/index.html"> 
+    <a class="nav-link" href="../../../topics/index.html"> 
 <span class="menu-text">Lectures</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -140,7 +172,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
   </li>
   <li class="nav-item compact">
-    <a class="nav-link" href="../announcements/index.xml"> <i class="bi bi-rss" role="img">
+    <a class="nav-link" href="../../../announcements/index.xml"> <i class="bi bi-rss" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -160,7 +192,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../about/index.html">About</a></li><li class="breadcrumb-item"><a href="../about/this-site.html">About this website</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../topics/index.html">Topics</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/index.html">IoT</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/docs/15-azure-cli-cheatsheet.html">Docs</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/docs/15-azure-cli-cheatsheet.html">Azure CLI Cheatsheet</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -174,19 +206,19 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Home</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../announcements/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../announcements/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Announcements</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../about/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../../about/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">About</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -195,19 +227,19 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../about/calendar.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../about/calendar.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Calendar</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../about/syllabus.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../about/syllabus.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Syllabus</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../about/this-site.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../about/this-site.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">About this website</span></a>
   </div>
 </li>
@@ -215,7 +247,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../topics/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../../topics/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Topics</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -224,49 +256,49 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../topics/iot/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../../topics/iot/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">IoT</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
  <span class="menu-text">Docs</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth3 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth3 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../topics/iot/docs/15-azure-cli-cheatsheet.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/iot/docs/15-azure-cli-cheatsheet.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Azure CLI Cheatsheet</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../topics/iot/docs/azure-sdks.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/iot/docs/azure-sdks.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Azure SDKs</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../topics/iot/docs/intro-azure-iot.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/iot/docs/intro-azure-iot.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Intro to Azure IoT</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../topics/iot/docs/iot-protocols.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/iot/docs/iot-protocols.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">IoT Communication Protocols</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../topics/iot/docs/what-is-iot.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/iot/docs/what-is-iot.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Intro to the Internet of Things</span></a>
   </div>
 </li>
@@ -276,7 +308,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../topics/hardware/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../../topics/hardware/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Hardware</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -294,37 +326,37 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../topics/hardware/docs/reterminal-sensors.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/hardware/docs/reterminal-sensors.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">reTerminal Sensors</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../topics/hardware/docs/analog-vs-digital.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/hardware/docs/analog-vs-digital.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Signals: Analog and digital</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../topics/hardware/docs/arduino-vs-raspberry-pi.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/hardware/docs/arduino-vs-raspberry-pi.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">SBCs and Microcontrollers</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../topics/hardware/docs/circuitry-basics.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/hardware/docs/circuitry-basics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Electronics Basics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../topics/hardware/docs/gpios.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/hardware/docs/gpios.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">GPIOs: Inputs and Outputs</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../topics/hardware/docs/serial-protocols.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/hardware/docs/serial-protocols.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Serial protocols</span></a>
   </div>
 </li>
@@ -334,7 +366,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../topics/getting-started/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../../topics/getting-started/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Getting started</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -352,19 +384,19 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../topics/getting-started/docs/hardware-list.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/getting-started/docs/hardware-list.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Hardware List</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../topics/getting-started/docs/tech-stack.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/getting-started/docs/tech-stack.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Technology Stack</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../topics/getting-started/docs/vscode-python-setup.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/getting-started/docs/vscode-python-setup.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Developer setup</span></a>
   </div>
 </li>
@@ -374,7 +406,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../topics/python/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../../topics/python/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Python</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -392,37 +424,37 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../topics/python/docs/intro.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/python/docs/intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction (for developers)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../topics/python/docs/package-management.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/python/docs/package-management.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Package management</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../topics/python/docs/oop.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/python/docs/oop.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">OOP</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../topics/python/docs/scripting.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/python/docs/scripting.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Scripting</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../topics/python/docs/project-management.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/python/docs/project-management.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Project management</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../topics/python/docs/advanced.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/python/docs/advanced.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Asynchronous, REST API</span></a>
   </div>
 </li>
@@ -432,7 +464,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../topics/linux/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../../topics/linux/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Linux</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -450,25 +482,25 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../topics/linux/docs/github.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/linux/docs/github.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Some notes about GitHub</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../topics/linux/docs/linux-review.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/linux/docs/linux-review.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Linux review</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../topics/linux/docs/package-management-debian.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/linux/docs/package-management-debian.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Raspberry Pi Package Management: apt</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../topics/linux/docs/remote-linux.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/linux/docs/remote-linux.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Remote work on Linux</span></a>
   </div>
 </li>
@@ -488,14 +520,25 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#course-content" id="toc-course-content" class="nav-link active" data-scroll-target="#course-content">Course content</a>
+  <li><a href="#connection-strings" id="toc-connection-strings" class="nav-link active" data-scroll-target="#connection-strings">Connection Strings</a>
+  <ul>
+  <li><a href="#iot-hub" id="toc-iot-hub" class="nav-link" data-scroll-target="#iot-hub">IoT Hub</a>
   <ul class="collapse">
-  <li><a href="#copyright" id="toc-copyright" class="nav-link" data-scroll-target="#copyright">Copyright</a></li>
+  <li><a href="#iot-hub-service-string" id="toc-iot-hub-service-string" class="nav-link" data-scroll-target="#iot-hub-service-string">IoT Hub Service String</a></li>
+  <li><a href="#iot-hub-owner-string" id="toc-iot-hub-owner-string" class="nav-link" data-scroll-target="#iot-hub-owner-string">IoT Hub Owner String</a></li>
+  <li><a href="#eventhub-compatible-string" id="toc-eventhub-compatible-string" class="nav-link" data-scroll-target="#eventhub-compatible-string">EventHub Compatible String</a></li>
   </ul></li>
-  <li><a href="#course-website" id="toc-course-website" class="nav-link" data-scroll-target="#course-website">Course website</a>
-  <ul class="collapse">
-  <li><a href="#colophon" id="toc-colophon" class="nav-link" data-scroll-target="#colophon">Colophon</a></li>
-  <li><a href="#copyright-1" id="toc-copyright-1" class="nav-link" data-scroll-target="#copyright-1">Copyright</a></li>
+  <li><a href="#device-strings" id="toc-device-strings" class="nav-link" data-scroll-target="#device-strings">Device Strings</a></li>
+  </ul></li>
+  <li><a href="#simulating-a-device" id="toc-simulating-a-device" class="nav-link" data-scroll-target="#simulating-a-device">Simulating a Device</a></li>
+  <li><a href="#messages" id="toc-messages" class="nav-link" data-scroll-target="#messages">Messages</a>
+  <ul>
+  <li><a href="#monitor-c2d-messages" id="toc-monitor-c2d-messages" class="nav-link" data-scroll-target="#monitor-c2d-messages">Monitor C2D Messages</a></li>
+  <li><a href="#send-c2d-message" id="toc-send-c2d-message" class="nav-link" data-scroll-target="#send-c2d-message">Send C2D Message</a></li>
+  </ul></li>
+  <li><a href="#direct-methods" id="toc-direct-methods" class="nav-link" data-scroll-target="#direct-methods">Direct Methods</a>
+  <ul>
+  <li><a href="#invoke-direct-method-on-device" id="toc-invoke-direct-method-on-device" class="nav-link" data-scroll-target="#invoke-direct-method-on-device">Invoke Direct Method on Device</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -503,18 +546,33 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../about/index.html">About</a></li><li class="breadcrumb-item"><a href="../about/this-site.html">About this website</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../topics/index.html">Topics</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/index.html">IoT</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/docs/15-azure-cli-cheatsheet.html">Docs</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/docs/15-azure-cli-cheatsheet.html">Azure CLI Cheatsheet</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">About this website</h1>
-<p class="subtitle lead">Description of technologies and resources used to build this website. Acknowledgements, copyright, terms of use, etc. can be found on this page.</p>
-</div>
+<h1 class="title">Azure CLI Cheatsheet</h1>
+<p class="subtitle lead">References for useful Azure CLI commands and concepts</p>
+  <div class="quarto-categories">
+    <div class="quarto-category">IoT</div>
+  </div>
+  </div>
 
 
 
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">April 22, 2024</p>
+    </div>
+  </div>
   
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">April 22, 2024</p>
+    </div>
+  </div>
     
   </div>
   
@@ -523,59 +581,76 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="course-content" class="level2">
-<h2 class="anchored" data-anchor-id="course-content">Course content</h2>
-<p>Course content, both for lectures and assignments, has been adapted by me from a variety of sources. This section serves the purpose of both acknowledging these references as well as pointing the way for curious students to begin investigating further into course material than we had time to cover.</p>
-<section id="copyright" class="level3">
-<h3 class="anchored" data-anchor-id="copyright">Copyright</h3>
-<p>All course content was either written by <a href="https://github.com/maubuz">Mauricio Buschinelli</a>, <a href="https://github.com/michaelhaaf">Michael Haaf</a>, or explicitly adapted from external resources with attributions made clear. This course content retains the licenses of the original works where relevant, and is otherwise licensed under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
+<p>Most of these commands were obtained from <em><a href="https://learn.microsoft.com/en-us/azure/iot-hub/quickstart-send-telemetry-cli">Quickstart: Send telemetry from a device to an IoT hub and monitor it with the Azure CLI</a></em>, which we did in Lab 6 of this course.</p>
 <blockquote class="blockquote">
-<p><strong>Terms of use</strong></p>
-<p>You are free to:</p>
+<p>Reminder: there are several options for using Azure CLI:</p>
 <ul>
-<li><strong>Share</strong>: copy and redistribute the material in any medium or format</li>
-<li><strong>Adapt</strong>: remix, transform, and build upon the material for any purpose, even commercially.</li>
+<li>you can install it on your reTerminal via <code>apt</code>,</li>
+<li>on your developer workstation, or</li>
+<li>on your VSCode via the Azure IoT Hub extension,</li>
+<li>you can use it on the Azure browser via the Cloud Shell.</li>
 </ul>
-<p>Under the following terms:</p>
-<ul>
-<li><strong>Attribution:</strong> You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.</li>
-</ul>
-<p><a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a></p>
+<p>You may find all four options useful, depending on what part of your system you are working on. See <a href="../../../topics/iot/docs/intro-azure-iot.html">the Intro to Azure</a> course notes on the subject for more info to get Azure CLI set up.</p>
 </blockquote>
+<section id="connection-strings" class="level2">
+<h2 class="anchored" data-anchor-id="connection-strings">Connection Strings</h2>
+<section id="iot-hub" class="level3">
+<h3 class="anchored" data-anchor-id="iot-hub">IoT Hub</h3>
+<p>See detailed documentation at <a href="https://learn.microsoft.com/en-us/cli/azure/iot/hub/connection-string?view=azure-cli-latest">az iot hub connection-string</a></p>
+<section id="iot-hub-service-string" class="level4">
+<h4 class="anchored" data-anchor-id="iot-hub-service-string">IoT Hub Service String</h4>
+<p>Recommended level of access for external applications:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">az</span> iot hub connection-string show <span class="at">--policy-name</span> service <span class="at">--hub-name</span> {YourIoTHubName} <span class="at">--output</span> table</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="iot-hub-owner-string" class="level4">
+<h4 class="anchored" data-anchor-id="iot-hub-owner-string">IoT Hub Owner String</h4>
+<p>Be advised: this connection string provides the highest level of access.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">az</span> iot hub connection-string show <span class="at">--hub-name</span> {YourIoTHubName}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="eventhub-compatible-string" class="level4">
+<h4 class="anchored" data-anchor-id="eventhub-compatible-string">EventHub Compatible String</h4>
+<p>Show the eventhub compatible connection string of the given IoT Hub’s default eventhub:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">az</span> iot hub connection-string show <span class="at">-n</span> MyIotHub <span class="at">--default-eventhub</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
-<section id="course-website" class="level2">
-<h2 class="anchored" data-anchor-id="course-website">Course website</h2>
-<p>Details about how this website was built follow.</p>
-<section id="colophon" class="level3">
-<h3 class="anchored" data-anchor-id="colophon">Colophon</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="assets/colophon.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1" title="From Wikipedia: In publishing, a colophon is a brief statement containing information about the publication of a book… Some web pages also have colophons, which frequently contain (X)HTML, CSS, or usability standards compliance information and links to website validation tests."><img src="assets/colophon.jpg" class="img-fluid figure-img" alt="From Wikipedia: In publishing, a colophon is a brief statement containing information about the publication of a book… Some web pages also have colophons, which frequently contain (X)HTML, CSS, or usability standards compliance information and links to website validation tests."></a></p>
-<figcaption>From Wikipedia: In publishing, a colophon is a brief statement containing information about the publication of a book… Some web pages also have colophons, which frequently contain (X)HTML, CSS, or usability standards compliance information and links to website validation tests.</figcaption>
-</figure>
-</div>
+<section id="device-strings" class="level3">
+<h3 class="anchored" data-anchor-id="device-strings">Device Strings</h3>
+<p>Manage IoT device’s connection string with <a href="https://learn.microsoft.com/en-us/cli/azure/iot/hub/device-identity/connection-string?view=azure-cli-latest#az-iot-hub-device-identity-connection-string-show">az iot hub device-identity connection-string show</a></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">az</span> iot hub device-identity connection-string show <span class="at">--device-id</span> {YourDevice} <span class="at">--hub-name</span> [YourIotHubName}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="simulating-a-device" class="level2">
+<h2 class="anchored" data-anchor-id="simulating-a-device">Simulating a Device</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">az</span> iot device simulate <span class="at">-d</span> simDevice <span class="at">-n</span> {YourIoTHubName}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>By default, this command will:</p>
 <ul>
-<li>Markup: <a href="https://daringfireball.net/projects/markdown/">Markdown</a></li>
-<li>Framework: <a href="https://quarto.org/">Quarto</a></li>
-<li>Deployment: <a href="https://pages.github.com/">GitHub Pages</a></li>
+<li>Send D2C messages with a payload of <code>Ping from Az CLI IoT Extension</code></li>
+<li>Automatically receive and acknowledge C2D messages.</li>
 </ul>
-<p>You can follow along directly with course updates at the <a href="https://github.com/john-abbott-college/6P3-Notes">course repository</a>.</p>
+<p>See <code>az iot device simulate</code> <a href="https://learn.microsoft.com/en-us/cli/azure/iot/device?view=azure-cli-latest#az-iot-device-simulate">documentation for details</a>.</p>
 </section>
-<section id="copyright-1" class="level3">
-<h3 class="anchored" data-anchor-id="copyright-1">Copyright</h3>
-<p>This website was written and designed by the <a href="https://github.com/michaelhaaf">Michael Haaf</a>. All code and assets related to this website, unless indicated otherwise, are licensed under the <a href="https://github.com/michaelhaaf/2W6-W23/blob/main/LICENSE">GNU General Public License v3.0</a></p>
-<blockquote class="blockquote">
-<p><strong>Terms of use</strong></p>
-<p>This website’s code is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</p>
-<p>This website’s code is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.</p>
-<p><a href="https://www.gnu.org/licenses/gpl-howto.html">GNU General Public License Notice</a></p>
-</blockquote>
+<section id="messages" class="level2">
+<h2 class="anchored" data-anchor-id="messages">Messages</h2>
+<section id="monitor-c2d-messages" class="level3">
+<h3 class="anchored" data-anchor-id="monitor-c2d-messages">Monitor C2D Messages</h3>
+<p>List all message details for all devices.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">az</span> iot hub monitor-events <span class="at">--output</span> table <span class="at">-p</span> all <span class="at">-n</span> {YourIoTHubName}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>List message details for a specific device:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">az</span> iot hub monitor-events <span class="at">--output</span> table <span class="at">--device-id</span> {YourDevice} <span class="at">--hub-name</span> {YourIoTHubName}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="send-c2d-message" class="level3">
+<h3 class="anchored" data-anchor-id="send-c2d-message">Send C2D Message</h3>
+<p>Includes custom key, value properties. <a href="https://learn.microsoft.com/en-us/cli/azure/iot/device/c2d-message?view=azure-cli-latest#az-iot-device-c2d-message-send">See documentation</a>.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">az</span> iot device c2d-message send <span class="at">-d</span> simDevice <span class="at">--data</span> <span class="st">"Hello World"</span> <span class="at">--props</span> <span class="st">"key0=value0;key1=value1"</span> <span class="at">-n</span> {YourIoTHubName}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="direct-methods" class="level2">
+<h2 class="anchored" data-anchor-id="direct-methods">Direct Methods</h2>
+<section id="invoke-direct-method-on-device" class="level3">
+<h3 class="anchored" data-anchor-id="invoke-direct-method-on-device">Invoke Direct Method on Device</h3>
+<div class="sourceCode" id="cb9"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">az</span> iot hub invoke-device-method <span class="at">--mn</span> MySampleMethod <span class="at">-d</span> simDevice <span class="at">-n</span> {YourIoTHubName}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
-<div class="hidden" aria-hidden="true">
-<span class="glightbox-desc lightbox-desc-1">From Wikipedia: In publishing, a colophon is a brief statement containing information about the publication of a book… Some web pages also have colophons, which frequently contain (X)HTML, CSS, or usability standards compliance information and links to website validation tests.</span>
-</div>
 </section>
 </section>
 
@@ -1135,13 +1210,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../about/syllabus.html" class="pagination-link" aria-label="Syllabus">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Syllabus</span>
+      <a href="../../../topics/iot/index.html" class="pagination-link" aria-label="IoT">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">IoT</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../topics/index.html" class="pagination-link" aria-label="Topics">
-        <span class="nav-page-text">Topics</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../../topics/iot/docs/azure-sdks.html" class="pagination-link" aria-label="Azure SDKs">
+        <span class="nav-page-text">Azure SDKs</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1154,12 +1229,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="../about/this-site.html">
+    <a class="nav-link" href="../../../about/this-site.html">
 <p>About</p>
 </a>
   </li>  
     <li class="nav-item">
-    <a class="nav-link" href="../about/this-site.html#copyright">
+    <a class="nav-link" href="../../../about/this-site.html#copyright">
 <p>License</p>
 </a>
   </li>  
@@ -1176,7 +1251,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
  
   </li>  
     <li class="nav-item compact">
-    <a class="nav-link" href="../announcements/index.xml">
+    <a class="nav-link" href="../../../announcements/index.xml">
       <i class="bi bi-rss" role="img">
 </i> 
     </a>
@@ -1190,31 +1265,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","loop":false,"closeEffect":"zoom","openEffect":"zoom"});
-window.onload = () => {
-  lightboxQuarto.on('slide_before_load', (data) => {
-    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-    const href = trigger.getAttribute('href');
-    if (href !== null) {
-      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-      if (imgEl !== null) {
-        const srcAttr = imgEl.getAttribute("src");
-        if (srcAttr && srcAttr.startsWith("data:")) {
-          slideConfig.href = srcAttr;
-        }
-      }
-    } 
-  });
-
-  lightboxQuarto.on('slide_after_load', (data) => {
-    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-    if (window.Quarto?.typesetMath) {
-      window.Quarto.typesetMath(slideNode);
-    }
-  });
-
-};
-          </script>
 
 
 

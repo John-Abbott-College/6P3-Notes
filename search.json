@@ -140,7 +140,7 @@
     "href": "topics/index.html",
     "title": "Lecture Index",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\nTitle\n\n\nSubtitle\n\n\n\n\n\n\n2024-01-26\n\n\nHardware List\n\n\nList of hardware available for the course as well as their respective specifications and documentation.\n\n\n\n\n2024-01-26\n\n\nDeveloper setup\n\n\nHere’s how to set up the software that will be used for development during the course.\n\n\n\n\n2024-01-26\n\n\nTechnology Stack\n\n\nTechnologies used in this class\n\n\n\n\n2024-01-29\n\n\nIntro to the Internet of Things\n\n\nFundamental concepts and applications behind the ‘Internet of Things’ paradigm.\n\n\n\n\n2024-01-29\n\n\nIntroduction (for developers)\n\n\nPython exercises\n\n\n\n\n2024-02-02\n\n\nLinux review\n\n\nResources and references to brush up linux knowledge.\n\n\n\n\n2024-02-09\n\n\nRemote work on Linux\n\n\nLearn how to connect to your Pi with CLI (ssh) and GUI (VNC). Learn how to setup and troubleshoot local connections (LAN) and remote connections (VPN).\n\n\n\n\n2024-02-19\n\n\nreTerminal Sensors\n\n\nInstalling initial reTerminal packages. Reading and controlling the reTerminal hardware interfaces, e.g. LEDs, light sensor, screen backlight, etc.\n\n\n\n\n2024-02-19\n\n\nPackage management\n\n\nHow to use OS package managers, virtual environments, and pip to manage python applications effectively.\n\n\n\n\n2024-02-19\n\n\nRaspberry Pi Package Management: apt\n\n\nInstalling and configuring Linux packages on Raspberry Pi Debian using the apt package manager.\n\n\n\n\n2024-02-26\n\n\nSignals: Analog and digital\n\n\nComparing the two paradigms for measuring electronic information and understanding how each are used for distributed applications.\n\n\n\n\n2024-02-26\n\n\nGPIOs: Inputs and Outputs\n\n\nUnderstanding the General Purpose Input and Output (GPIO) pins our reSeed terminal chassis makes available to us. Voltage, digital vs. analog, python libraries for GPIO.\n\n\n\n\n2024-03-11\n\n\nSerial protocols\n\n\nA deeper dive into the protocols used to communicate between GPIO and the kernel\n\n\n\n\n2024-03-11\n\n\nElectronics Basics\n\n\nReview of Ohm’s Law, fundamental concepts for understanding electronic circuits and interfaces.\n\n\n\n\n2024-03-11\n\n\nSBCs and Microcontrollers\n\n\nComparing the architectural paradigms for microcomputers to better understand our Pis.\n\n\n\n\n2024-04-08\n\n\nScripting\n\n\nTips and tricks for effective scripting in Python\n\n\n\n\n2024-04-08\n\n\nOOP\n\n\nTips and tricks for effective OOP in Python\n\n\n\n\n2024-04-08\n\n\nAsynchronous, REST API\n\n\nAsynchronous programming, TBD\n\n\n\n\n2024-04-08\n\n\nProject management\n\n\nPreviously, we have focused on installing dependencies from other projects – we expand on that knowledge to learn how to create our own projects\n\n\n\n\n2024-04-08\n\n\nSome notes about GitHub\n\n\nFor now, just a note about authenticating in the terminal. More to come.\n\n\n\n\n2024-04-15\n\n\nAzure SDKs\n\n\nAzure Libraries in Python and C# that you’ll find useful for your projects.\n\n\n\n\n2024-04-15\n\n\nIoT Communication Protocols\n\n\nHow communication protocols can be optimized for device-cloud communication, i.e. why not everything should use HTTP\n\n\n\n\n2024-04-15\n\n\nIntro to Azure IoT\n\n\nHow to use a PaaS to deploy IoT services\n\n\n\n\n\nNo matching items\n\n Back to top",
+    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\nTitle\n\n\nSubtitle\n\n\n\n\n\n\n2024-01-26\n\n\nHardware List\n\n\nList of hardware available for the course as well as their respective specifications and documentation.\n\n\n\n\n2024-01-26\n\n\nDeveloper setup\n\n\nHere’s how to set up the software that will be used for development during the course.\n\n\n\n\n2024-01-26\n\n\nTechnology Stack\n\n\nTechnologies used in this class\n\n\n\n\n2024-01-29\n\n\nIntro to the Internet of Things\n\n\nFundamental concepts and applications behind the ‘Internet of Things’ paradigm.\n\n\n\n\n2024-01-29\n\n\nIntroduction (for developers)\n\n\nPython exercises\n\n\n\n\n2024-02-02\n\n\nLinux review\n\n\nResources and references to brush up linux knowledge.\n\n\n\n\n2024-02-09\n\n\nRemote work on Linux\n\n\nLearn how to connect to your Pi with CLI (ssh) and GUI (VNC). Learn how to setup and troubleshoot local connections (LAN) and remote connections (VPN).\n\n\n\n\n2024-02-19\n\n\nreTerminal Sensors\n\n\nInstalling initial reTerminal packages. Reading and controlling the reTerminal hardware interfaces, e.g. LEDs, light sensor, screen backlight, etc.\n\n\n\n\n2024-02-19\n\n\nPackage management\n\n\nHow to use OS package managers, virtual environments, and pip to manage python applications effectively.\n\n\n\n\n2024-02-19\n\n\nRaspberry Pi Package Management: apt\n\n\nInstalling and configuring Linux packages on Raspberry Pi Debian using the apt package manager.\n\n\n\n\n2024-02-26\n\n\nSignals: Analog and digital\n\n\nComparing the two paradigms for measuring electronic information and understanding how each are used for distributed applications.\n\n\n\n\n2024-02-26\n\n\nGPIOs: Inputs and Outputs\n\n\nUnderstanding the General Purpose Input and Output (GPIO) pins our reSeed terminal chassis makes available to us. Voltage, digital vs. analog, python libraries for GPIO.\n\n\n\n\n2024-03-11\n\n\nSerial protocols\n\n\nA deeper dive into the protocols used to communicate between GPIO and the kernel\n\n\n\n\n2024-03-11\n\n\nElectronics Basics\n\n\nReview of Ohm’s Law, fundamental concepts for understanding electronic circuits and interfaces.\n\n\n\n\n2024-03-11\n\n\nSBCs and Microcontrollers\n\n\nComparing the architectural paradigms for microcomputers to better understand our Pis.\n\n\n\n\n2024-04-08\n\n\nScripting\n\n\nTips and tricks for effective scripting in Python\n\n\n\n\n2024-04-08\n\n\nOOP\n\n\nTips and tricks for effective OOP in Python\n\n\n\n\n2024-04-08\n\n\nAsynchronous, REST API\n\n\nAsynchronous programming, TBD\n\n\n\n\n2024-04-08\n\n\nProject management\n\n\nPreviously, we have focused on installing dependencies from other projects – we expand on that knowledge to learn how to create our own projects\n\n\n\n\n2024-04-08\n\n\nSome notes about GitHub\n\n\nFor now, just a note about authenticating in the terminal. More to come.\n\n\n\n\n2024-04-15\n\n\nAzure SDKs\n\n\nAzure Libraries in Python and C# that you’ll find useful for your projects.\n\n\n\n\n2024-04-15\n\n\nIoT Communication Protocols\n\n\nHow communication protocols can be optimized for device-cloud communication, i.e. why not everything should use HTTP\n\n\n\n\n2024-04-15\n\n\nIntro to Azure IoT\n\n\nHow to use a PaaS to deploy IoT services\n\n\n\n\n2024-04-22\n\n\nAzure CLI Cheatsheet\n\n\nReferences for useful Azure CLI commands and concepts\n\n\n\n\n\nNo matching items\n\n Back to top",
     "crumbs": [
       "Home",
       "Topics"
@@ -751,11 +751,372 @@
     "href": "topics/iot/index.html",
     "title": "IoT",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nIntro to the Internet of Things\n\n\nFundamental concepts and applications behind the ‘Internet of Things’ paradigm.\n\n\n\n\n\n\n\n\nJan 29, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nAzure SDKs\n\n\nAzure Libraries in Python and C# that you’ll find useful for your projects.\n\n\n\n\n\n\n\n\nApr 15, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nIoT Communication Protocols\n\n\nHow communication protocols can be optimized for device-cloud communication, i.e. why not everything should use HTTP\n\n\n\n\n\n\n\n\nApr 15, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nIntro to Azure IoT\n\n\nHow to use a PaaS to deploy IoT services\n\n\n\n\n\n\n\n\nApr 15, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top",
+    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nIntro to the Internet of Things\n\n\nFundamental concepts and applications behind the ‘Internet of Things’ paradigm.\n\n\n\n\n\n\n\n\nJan 29, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nAzure SDKs\n\n\nAzure Libraries in Python and C# that you’ll find useful for your projects.\n\n\n\n\n\n\n\n\nApr 15, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nIoT Communication Protocols\n\n\nHow communication protocols can be optimized for device-cloud communication, i.e. why not everything should use HTTP\n\n\n\n\n\n\n\n\nApr 15, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nIntro to Azure IoT\n\n\nHow to use a PaaS to deploy IoT services\n\n\n\n\n\n\n\n\nApr 15, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nAzure CLI Cheatsheet\n\n\nReferences for useful Azure CLI commands and concepts\n\n\n\n\n\n\n\n\nApr 22, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top",
     "crumbs": [
       "Home",
       "Topics",
       "IoT"
+    ]
+  },
+  {
+    "objectID": "topics/iot/docs/15-azure-cli-cheatsheet.html",
+    "href": "topics/iot/docs/15-azure-cli-cheatsheet.html",
+    "title": "Azure CLI Cheatsheet",
+    "section": "",
+    "text": "Most of these commands were obtained from Quickstart: Send telemetry from a device to an IoT hub and monitor it with the Azure CLI, which we did in Lab 6 of this course.",
+    "crumbs": [
+      "Home",
+      "Topics",
+      "IoT",
+      "Docs",
+      "Azure CLI Cheatsheet"
+    ]
+  },
+  {
+    "objectID": "topics/iot/docs/15-azure-cli-cheatsheet.html#connection-strings",
+    "href": "topics/iot/docs/15-azure-cli-cheatsheet.html#connection-strings",
+    "title": "Azure CLI Cheatsheet",
+    "section": "Connection Strings",
+    "text": "Connection Strings\n\nIoT Hub\nSee detailed documentation at az iot hub connection-string\n\nIoT Hub Service String\nRecommended level of access for external applications:\naz iot hub connection-string show --policy-name service --hub-name {YourIoTHubName} --output table\n\n\nIoT Hub Owner String\nBe advised: this connection string provides the highest level of access.\naz iot hub connection-string show --hub-name {YourIoTHubName}\n\n\nEventHub Compatible String\nShow the eventhub compatible connection string of the given IoT Hub’s default eventhub:\naz iot hub connection-string show -n MyIotHub --default-eventhub\n\n\n\nDevice Strings\nManage IoT device’s connection string with az iot hub device-identity connection-string show\naz iot hub device-identity connection-string show --device-id {YourDevice} --hub-name [YourIotHubName}",
+    "crumbs": [
+      "Home",
+      "Topics",
+      "IoT",
+      "Docs",
+      "Azure CLI Cheatsheet"
+    ]
+  },
+  {
+    "objectID": "topics/iot/docs/15-azure-cli-cheatsheet.html#simulating-a-device",
+    "href": "topics/iot/docs/15-azure-cli-cheatsheet.html#simulating-a-device",
+    "title": "Azure CLI Cheatsheet",
+    "section": "Simulating a Device",
+    "text": "Simulating a Device\naz iot device simulate -d simDevice -n {YourIoTHubName}\nBy default, this command will:\n\nSend D2C messages with a payload of Ping from Az CLI IoT Extension\nAutomatically receive and acknowledge C2D messages.\n\nSee az iot device simulate documentation for details.",
+    "crumbs": [
+      "Home",
+      "Topics",
+      "IoT",
+      "Docs",
+      "Azure CLI Cheatsheet"
+    ]
+  },
+  {
+    "objectID": "topics/iot/docs/15-azure-cli-cheatsheet.html#messages",
+    "href": "topics/iot/docs/15-azure-cli-cheatsheet.html#messages",
+    "title": "Azure CLI Cheatsheet",
+    "section": "Messages",
+    "text": "Messages\n\nMonitor C2D Messages\nList all message details for all devices.\naz iot hub monitor-events --output table -p all -n {YourIoTHubName}\nList message details for a specific device:\naz iot hub monitor-events --output table --device-id {YourDevice} --hub-name {YourIoTHubName}\n\n\nSend C2D Message\nIncludes custom key, value properties. See documentation.\naz iot device c2d-message send -d simDevice --data \"Hello World\" --props \"key0=value0;key1=value1\" -n {YourIoTHubName}",
+    "crumbs": [
+      "Home",
+      "Topics",
+      "IoT",
+      "Docs",
+      "Azure CLI Cheatsheet"
+    ]
+  },
+  {
+    "objectID": "topics/iot/docs/15-azure-cli-cheatsheet.html#direct-methods",
+    "href": "topics/iot/docs/15-azure-cli-cheatsheet.html#direct-methods",
+    "title": "Azure CLI Cheatsheet",
+    "section": "Direct Methods",
+    "text": "Direct Methods\n\nInvoke Direct Method on Device\naz iot hub invoke-device-method --mn MySampleMethod -d simDevice -n {YourIoTHubName}",
+    "crumbs": [
+      "Home",
+      "Topics",
+      "IoT",
+      "Docs",
+      "Azure CLI Cheatsheet"
+    ]
+  },
+  {
+    "objectID": "topics/iot/docs/iot-protocols.html",
+    "href": "topics/iot/docs/iot-protocols.html",
+    "title": "IoT Communication Protocols",
+    "section": "",
+    "text": "IoT devices typically exchange data with a cloud service using a specific communication protocol.\nThis section looks at common communication protocols used in IoT with a focus on MQTT.",
+    "crumbs": [
+      "Home",
+      "Topics",
+      "IoT",
+      "Docs",
+      "IoT Communication Protocols"
+    ]
+  },
+  {
+    "objectID": "topics/iot/docs/iot-protocols.html#http",
+    "href": "topics/iot/docs/iot-protocols.html#http",
+    "title": "IoT Communication Protocols",
+    "section": "HTTP",
+    "text": "HTTP\nSo far in this course we’ve been exchanging data between our devices and Python Flask/Dash servers using HTTP.\n\nThe default web server instantiated by the Dash python library is a thin HTTP wrapper around the Flask web server.\n\nHTTP is a common protocol for the web, however, some of its characteristics make it not ideal for IoT applications, as the next section explains.\n\nTypical HTTP request\n\n\n Example of an HTTP Request   cheapsslsecurity.com.\n\n\n\nTypical HTTP Response\n\n\n Example of an HTTP Response   cheapsslsecurity.com.\n\nBelow is the HTTP response header for the posting of AIO data above (1 KB long)\n\n\nHTTP Characteristics\nThe following HTTP characteristics are relevant in the IoT context:\n\nRequest response protocol: client always has to request an update from the server.\nDesigned for large bandwidth, low delay.\nStateless: each request is considered as the new request. Server doesn’t recognise the user by default (cookies or tokens are required).\nResource identification: each request includes a URI (universal resource identifier).\nDNS lookup: 3-way identification handshake (overhead).\nBig protocol headers: uncompressed content transfer that is not the payload.\n\nIn HTTP, the client has to be constantly “pulling” the server for new information. Pull updates are either slow (check only every few minutes) or data/power intensive (check constantly).\n\n\n\ncustomer___partner_projects_adafruit_io_polling.png\n\n\n\n HTTP Client constantly pulling the server for updates   HTTP Protocol, Adafruit.\n\n\n\nDash app example\nIn our dash apps, this problem showed up in the form of a strict dependency between the Dash app and the Device Controller – at each interval, the Dash app had to directly call the Device Controller “read_sensors” and “control_actuators” methods. This is fine in a simple example where it doesn’t matter that we poll the device each second, but on faster intervals, or when information is not aligned with regular intervals, this results in large inefficiencies.",
+    "crumbs": [
+      "Home",
+      "Topics",
+      "IoT",
+      "Docs",
+      "IoT Communication Protocols"
+    ]
+  },
+  {
+    "objectID": "topics/iot/docs/iot-protocols.html#pubsub-communication",
+    "href": "topics/iot/docs/iot-protocols.html#pubsub-communication",
+    "title": "IoT Communication Protocols",
+    "section": "Pub/Sub Communication",
+    "text": "Pub/Sub Communication\n\nThe most popular communication pattern for IoT systems is a publish/subscribe (pub/sub) messaging system done via some kind of broker.\n\nThis IoT system has two types of actors:\n\nOne or more Clients\nOne Broker\n\nIn the image below, a client device is publishing messages to the topic /telemetry while a client in the cloud is subscribed to the same topic.\n\n\n\nIoT device publishing telemetry on the /telemetry topic, and the cloud service subscribing to that topic\n\n\nIt’s very typical that any particular client is both the publisher and the subscriber.\n\n\n\nIoT devices connect to a broker and publish telemetry and subscribe to commands. Cloud services connect to the broker and subscribe to all telemetry and send commands to specific devices.\n\n\nFigures from: Broker and client relationship, IoT for Beginners, Microsoft.\n\nClients\nClients are typically devices, applications or back-end services. They connect to the broker and publish telemetry as well as subscribe to commands.\n\nA cloud service is an example of a client.\nIt connects to the broker and subscribes to all the telemetry messages and publishes commands either to specific devices, or to groups of devices.\n\nThe client performs two operations:\n\nPublishes information: When the client sends the data to the server.\nSubscribes to information: When the client receives the data from the server.\n\n\n\nBroker\nThe Broker is typically running on a server and performs the following operations:\n\nAccepts messages from clients.\nProcesses subscribe and unsubscribe requests.\nForwards messages to specific clients according to subscription requests.\n\n\nMQTT is the most popular communication protocol for IoT devices",
+    "crumbs": [
+      "Home",
+      "Topics",
+      "IoT",
+      "Docs",
+      "IoT Communication Protocols"
+    ]
+  },
+  {
+    "objectID": "topics/iot/docs/iot-protocols.html#mqtt",
+    "href": "topics/iot/docs/iot-protocols.html#mqtt",
+    "title": "IoT Communication Protocols",
+    "section": "MQTT",
+    "text": "MQTT\nMessage Queueing Telemetry Transport, i.e. MQTT, is a lightweight pub/sub protocol. It was originally designed to monitor oil pipelines where connectivity could not be guaranteed.\nOne or more clients connect to a single broker, who routes messages to the interested clients.\nMQTT manages messages asynchronously over a network socket.\nThe broker can hold and forward messages from client to client so if one gets disconnected, it will be able to fetch the message when it reconnects later.\n\nFacebook Messenger uses MQTT and is the World’s largest MQTT network.\nInfrastructure details here (nice read!).\n\n\nTopics & Wildcards\nMessages are routed using named topics, rather than being sent directly to an individual client. A client can publish to a topic, and any clients subscribed to that topic will receive the message.\nIn the example below, a client device is publishing some data (not shown) to the topic /telemetry. Immediately after the data is received by the broker, the broker routes the message to a client application previously subscribed to the same topic.\n\n\n\nIoT device publishing telemetry on the /telemetry topic, and the cloud service subscribing to that topic\n\n\n MQTT Topics   IoT for Beginners, Microsoft.\n\nTopics typically have a hierarchy to keep data organized and intuitive to access.\n\nFor example, a factory might want to track temperature from different HVAC units on different floor.\nThe topic hierarchy could be set up in the following way:\nsensors/&lt;FLOOR&gt;/temperature/&lt;HVAC_UNIT_ID&gt;\nHVAC units would publish data to the following topics:\n\nThe AC unit on the third floor: sensors/floor3/temperature/AC1\nThe boiler unit on the tenth floor: sensors/floor10/temperature/boiler\nThe heater unit on the fourth floor: sensors/floor4/temperature/heater\n\n\nWildcards\nClients can subscribe to different levels of the topic hierarchy using wildcards.\nWhen subscribing to multiple topics two wildcard characters can be used:\n\n# (hash character) – multi level wildcard\n+ (plus character) -single level wildcard\n\nUsing the previous factory temperature example, an application could monitor multiple temperatures in the following way:\n\n\n\n\n\n\n\nTopic string\nSubscription result\n\n\n\n\nsensors/floor3/temperature/+\nAll of the temperature sensors on the 3rd floor\n\n\nsensors/+/temperature/+\nAll the temperature data on all floors\n\n\nsensors/#\nAll topics going on all floors\n\n\nsensors/floor10/#\nAll topics of the tenth floor\n\n\n\n\n\n\nMessages\nLike to HTTP, MQTT is built on top of TCP/IP and can also be used over websockets.\nMQTT messages can be as short as 2 bytes (eg. acknowledgement or disconnect messages), as big as 256Mb (eg. publishing a picture or firmware update).\nA typical telemetry message with payload data such as value=40 to a topic /assign1-temp has a size around 20 to 40 bytes.\n\nMessage headers and topic names are text encoded (UTF-8).\nMessage payload encoding is specific to the application (eg. plain text, JSON, binary, etc)\n\nMQTT connections can be public and open, or encrypted and secured using usernames and passwords, or certificates.\n\n\nQoS\nMessages can be sent with a quality of service (QoS) flag, which determines the guarantee of the message being received.\n\nQoS 0: At most once (Fire and Forget) - the message is sent only once and the client and broker take no additional steps to acknowledge delivery (fire and forget).\nQoS 1: At least once - the message is re-tried by the sender multiple times until acknowledgement is received (acknowledged delivery).\nQoS 2: Exactly once - the sender and receiver engage in a two-level handshake to ensure only one copy of the message is received (assured delivery).\n\nBelow is an example of QoS 1:\n\n\n\ncustomer___partner_projects_adafruit_io_puback.png\n\n\n\n Example of ‘At Least Once’ (QoS 1) delivery   MQTT QoS, Adafruit.\n\n\nBy default MQTT sessions are established with QoS 0 for all messages (clean sessions).\nThis means that if a client disconnects and then reconnects, it won’t receive messages sent during the disconnection.\n\nWhen setting QoS, there are two sides of message delivery:\n\nMessage delivery from the publishing client to the broker.\nMessage delivery from the broker to the subscribing client.\n\nThe client that publishes the message to the broker defines the QoS level of the message when it sends the message to the broker.\nThe broker transmits this message to subscribing clients using the QoS level that each subscribing client defines during the subscription process.\n\nIf the subscribing client defines a lower QoS than the publishing client, the broker transmits the message with the lower quality of service.\n\n\n\nSessions: Clean or Persistent\nTypically, a client-broker connection is established with the session flag set to Clean with CleanSession = true (however, this is specific to the library implementation).\nIn this case the broker does not store anything for the client and purges all information from any previous subscriptions.\nIn a persistent session (CleanSession = false), the broker stores all subscriptions for the client and all missed messages for the client IF it subscribed with a QoS level 1 or 2.\n\n\nKeepAlive\nThe keep alive flag is a time interval in seconds that the client specifies and communicates to the broker when the connection established.\nThis is longest period of time that the broker and client can go without pinging each other. This method allows both sides to determine if the session is still available.\n\n\nLast Will & Testament\nWhen a client connects, it can provide the broker with a Last Will and Testament (LWT) message and topic.\nIf the client disconnects unexpectedly, the broker sends the LWT message on behalf of the client.\nThis message notifies other clients when a client disconnects unexpectedly.\n\n\n Last Will & Testament   Why HTTP isn’t the King of the IoT, Robert Bird, Akamai.\n\n\n\nRetained Messages\nA retained message is a normal MQTT message with the retained flag set to true.\nThe broker stores the last retained message and the corresponding QoS for that topic.\nEach client that subscribes to a topic pattern that matches the topic of the retained message receives the retained message immediately after they subscribe.\nThe broker stores only one retained message per topic.\n\nRetained messages help newly-subscribed clients get a status update immediately after they subscribe to a topic.\n\n\n\n Message with Retained Flag   Why HTTP isn’t the King of the IoT, Robert Bird, Akamai.",
+    "crumbs": [
+      "Home",
+      "Topics",
+      "IoT",
+      "Docs",
+      "IoT Communication Protocols"
+    ]
+  },
+  {
+    "objectID": "topics/iot/docs/iot-protocols.html#http-vs-mqtt",
+    "href": "topics/iot/docs/iot-protocols.html#http-vs-mqtt",
+    "title": "IoT Communication Protocols",
+    "section": "HTTP vs MQTT",
+    "text": "HTTP vs MQTT\n\n\n\n\n\n\n\n\nCriteria\nMQTT\nHTTP\n\n\n\n\nComplexity\nSimple and lightweight\nMore complex and slightly heavier\n\n\nConsumption\nMore energy efficient\nLess energy efficient\n\n\nCommunication direction\nBi-directional (client or broker can initiate)\nUni-directional (client must initiate)\n\n\nArchitecture\nPublish / Subscribe model\nRequest / Response Model\n\n\nSession\nCan keep connection open\nConnection closes after every request\n\n\nDelivery assurance\nReliable message delivery with QoS (Quality of Service)\nNo QoS option\n\n\nHeader size\nSmaller (~2 bytes)\nComparatively large size (~8 bytes)",
+    "crumbs": [
+      "Home",
+      "Topics",
+      "IoT",
+      "Docs",
+      "IoT Communication Protocols"
+    ]
+  },
+  {
+    "objectID": "topics/iot/docs/iot-protocols.html#mqtt-client-examples",
+    "href": "topics/iot/docs/iot-protocols.html#mqtt-client-examples",
+    "title": "IoT Communication Protocols",
+    "section": "MQTT Client Examples",
+    "text": "MQTT Client Examples\n\nExamples of graphical MQTT clients: - MQTT X (supports cleanSession = False) - MQTT Explorer - VS Code Extension VSMqtt t\n\nIn this course you will write your own MQTT client. The next sections show an example of a simple MQTT client using Python that publishes and subscribes to messages.\n\nPublic Brokers\nSince a broker is necessary, we can use the following publicly available MQTT brokers:\n\ntest.mosquitto.org by Eclipse Foundation.\nbroker.emqx.io by EMQX.\n\n\nFor the client implementation we will use the Eclipse Paho MQTT Python Client. It is a popular choice for many IoT Cloud services such as Adafruit IO.\n\nDocumentation for the paho-mqtt client is available at the Pypi page.\n\n\nHowever, there are lots of other implementation options.\n\nThis link compiles a list of open-source MQTT client and broker implementations you can use in your projects.\n\n\n\nPublisher Code\nThe first example will only publish random data to the broker every 3 seconds.\n\nInstall the paho-python library.\n\npip install paho-mqtt\n\nCreate your script file. A few notes:\n\n\nCreate a unique client ID to avoid conflicts with other users (this is a public broker).\n\nhttps://test.mosquitto.org/\nCreate a unique ID using the Online GUID generator\n\n\ncommon_key = '329adb05-8b85-4ebe-8309-15c564503a1f'\n\nTo have a unique client name and topic, we will combine the key from above with the desired name and topic.\n\nclient_name = common_key + 'publisher'\ntopic_name = common_key + '/temperature'\n\nImport paho-python and the built-in json library (we’ll encode our data as JSON).\n\nimport paho.mqtt.client as mqtt\nimport json\n\nAll network operations (incoming and outgoing data) are processed with the loop() method every 3 seconds.\n\nComplete code:\n# Publish to data topic (fire & forget)\n\nimport paho.mqtt.client as mqtt\nimport json\n\nimport time\nimport random\n\nrnd = random.Random()\n\ncommon_key = 'd5a4d5e6-d597-4bd4-8196-5f51d12345'\ntopic_name = common_key + '/temperature'\nclient_name = common_key + 'publisher'\n\nmqtt_client = mqtt.Client(client_name)\nmqtt_client.connect('test.mosquitto.org')\n\nprint(\"MQTT connected!\")\n\nwhile True:\n\n    # Random integer between -10 and 30\n    temp = rnd.randint(-10, 30)\n    \n    # Prepare json payload\n    payload = json.dumps({'temperature': temp})\n    print(\"Sending telemetry \", payload)\n    \n    # Send it off. QoS=0 and Retain=false\n    info = mqtt_client.publish(topic_name, payload)\n    \n    # Process network event. Handles incoming/outgoing data\n    mqtt_client.loop()\n    \n    time.sleep(3)\n\n\nSubscriber Code\nThe MQTT client below subscribes to data from the publisher using the library’s default values.\nA few notes:\n\nThe subscriber used the same unique key as the publisher in order to subscribe to the same topics. However, the subscriber has its own client name.\n\ncommon_key = 'd5a4d5e6-d597-4bd4-8196-5f51d12345'\ntopic_name = common_key + '/temperature'\nclient_name = common_key + 'subscriber'\n\nOnce the client receives a message from the broker, the method on_message is called. This is used as a hook to define our own callback function.\n\n# Callback for when a message is received\ndef message_received(mqtt_client, userdata, message):\nprint(f'Received message: {message.payload}')\n\n# Callback hook\nmqtt_client.on_message = message_received\n\nSimilarly to the publisher example, the network loop is processed every 1 second.\n\nThe complete subscriber code:\n# Subscribe to a topic with library's default values.\n\nimport paho.mqtt.client as mqtt\nimport json\n\nimport time\nimport random\n\ncommon_key = 'd5a4d5e6-d597-4bd4-8196-5f51d12345'\nclient_name = common_key + 'subscriber'\ntopic_name = common_key + '/temperature'\n\nmqtt_client = mqtt.Client(client_name)\nmqtt_client.connect('test.mosquitto.org')\nprint(\"MQTT connected!\")\n\n\n# Callback for when a message is received\ndef message_received(mqtt_client, userdata, message):\n    print(f'Received message: {message.payload}')\n\n\n# Callback hook\nmqtt_client.on_message = message_received\n\nmqtt_client.subscribe(topic_name)\n\nwhile True:\n\n    # Process network event. Handles incoming/outgoing data\n    mqtt_client.loop()\n    \n    time.sleep(1)",
+    "crumbs": [
+      "Home",
+      "Topics",
+      "IoT",
+      "Docs",
+      "IoT Communication Protocols"
+    ]
+  },
+  {
+    "objectID": "topics/iot/docs/iot-protocols.html#connectivity-issues",
+    "href": "topics/iot/docs/iot-protocols.html#connectivity-issues",
+    "title": "IoT Communication Protocols",
+    "section": "Connectivity Issues",
+    "text": "Connectivity Issues\nConnectivity is not always guaranteed. Things to think about when coding your application:\nWhat happens if: - Connection is lost just prior to telemetry being published? - Client connection is lost just prior to broker forwarding messages?\nHow to make sure that: - The broker has received the most up to date telemetry data? - Client has the most recent command/data?",
+    "crumbs": [
+      "Home",
+      "Topics",
+      "IoT",
+      "Docs",
+      "IoT Communication Protocols"
+    ]
+  },
+  {
+    "objectID": "topics/iot/docs/iot-protocols.html#exercises",
+    "href": "topics/iot/docs/iot-protocols.html#exercises",
+    "title": "IoT Communication Protocols",
+    "section": "Exercises",
+    "text": "Exercises\n\nUse a Graphical MQTT client such as MQTT X, MQTT Explorer or the VS Code Extension VSMqtt to publish and subscribe telemetry data to/from one of our Adafruit IO (AIO) feeds.\n\nSee the AIO MQTT API documentation.\nPublish a MQTT message with a random value to one of your feeds.\nSubscribe to one of your AIO feeds.\nUsing the AIO Web interface, write a value to feed you subscribed in the previous step. Your MQTT client should receive the new value as a published message\n\nUse a Graphical MQTT client (see previous question) to publish and subscribe to topics using the public MQTT Mosquitto broker.\n\nUse the Online GUID generator to generate a unique prefix to your username.\nCome-up with new topics and post new messages to them.\nSubscribe to the same topics and see the new messages appear.",
+    "crumbs": [
+      "Home",
+      "Topics",
+      "IoT",
+      "Docs",
+      "IoT Communication Protocols"
+    ]
+  },
+  {
+    "objectID": "topics/iot/docs/iot-protocols.html#references-resources",
+    "href": "topics/iot/docs/iot-protocols.html#references-resources",
+    "title": "IoT Communication Protocols",
+    "section": "References & Resources",
+    "text": "References & Resources\n\n\n\n\nAll the Internet of Things - Episode Two: Protocols, by Adafruit and Digikey\nLesson 4: connect your device to the Internet, IoT for Beginners by Microsoft\nMQTT Client and Broker and MQTT Server and Connection Establishment Explained by HiveMQ\n\nDiving Deeper\nMQTT Packet Format by OpenLab\nUnderstanding the MQTT Protocol Packet Structure by steves-internet-guide.com\n\n\n\ncustomer___partner_projects_adafruit_io_polling.png\nIoT device publishing telemetry on the /telemetry topic, and the cloud service subscribing to that topic\nIoT devices connect to a broker and publish telemetry and subscribe to commands. Cloud services connect to the broker and subscribe to all telemetry and send commands to specific devices.\nIoT device publishing telemetry on the /telemetry topic, and the cloud service subscribing to that topic\ncustomer___partner_projects_adafruit_io_puback.png",
+    "crumbs": [
+      "Home",
+      "Topics",
+      "IoT",
+      "Docs",
+      "IoT Communication Protocols"
+    ]
+  },
+  {
+    "objectID": "announcements/2024-03-14-pi-update.html",
+    "href": "announcements/2024-03-14-pi-update.html",
+    "title": "On updating your pi",
+    "section": "",
+    "text": "A few students have run into system updates that may break important reTerminal features (the screen, for e.g.). If you run into any issues when updating your pi software, see below!\nThe standard Debian commands for updating system software:\n$ sudo apt update && sudo apt upgrade -y\nThe latest linux updates have introduced some significant changes to i2c interface which may cause your pi LCD screen, among other hardware, to fail.\nFor now, when updating your pi software, you should also do the following:\n# If this folder does not exist, run the following command first:\n# cd ~/ && git clone https://github.com/Seeed-Studio/seeed-linux-dtoverlays\ncd ~/seeed-linux-dtoverlays \ngit pull\nIf there are any updates when the git pull is run, you should re-run the setup script:\nsudo ./scripts/reTerminal.sh\nThen, finally, reboot the device:\nsudo reboot\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "announcements/index.html",
+    "href": "announcements/index.html",
+    "title": "Announcements",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nAzure Plan Troubleshooting\n\n\n\n\n\n\n\n\n\n\n\nApr 18, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nMid-April Schedule Updates\n\n\n\n\n\n\n\n\n\n\n\nApr 15, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nQuiz 1: Topics/Information\n\n\n\n\n\n\n\n\n\n\n\nMar 18, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nOn updating your pi\n\n\n\n\n\n\n\n\n\n\n\nMar 14, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nWebsite updates\n\n\n\n\n\n\n\n\n\n\n\nMar 12, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nLab 3: Demo in class Friday March 15\n\n\n\n\n\n\n\n\n\n\n\nMar 12, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top",
+    "crumbs": [
+      "Home",
+      "Announcements"
+    ]
+  },
+  {
+    "objectID": "announcements/2024-04-18-azure-plan-troubleshooting.html",
+    "href": "announcements/2024-04-18-azure-plan-troubleshooting.html",
+    "title": "Azure Plan Troubleshooting",
+    "section": "",
+    "text": "In setting up Azure for Lab 6, a few students have asked me about troubles with the following:\nI would like to share my help for those students for the rest of you, just in case there are more of you struggling with setting up Azure.\nI will keep the Course Website version of this announcement up to date – if you are seeing this announcement on Moodle, you can click here to get to the up-to-date version of this announcement with the latest change"
+  },
+  {
+    "objectID": "announcements/2024-04-18-azure-plan-troubleshooting.html#big-picture",
+    "href": "announcements/2024-04-18-azure-plan-troubleshooting.html#big-picture",
+    "title": "Azure Plan Troubleshooting",
+    "section": "Big picture",
+    "text": "Big picture\nIn the big picture, no matter what your situation is, your Azure plan should have the following properties:\n\nNo upfront costs – your account should be free to create, and every service/resource you create should be free to create.\nNo monthly costs – your costs should be covered entirely by one of the following:\n\n\n\nyour student account credit\n\n\n$200 free credit for new non-student account\n\n\npay-as-you-go that is free per month, but will charge your credit card per usage.\n\n\n\nA budget alert system that warns you when your usage exceeds &gt;$5 . Even if you are in situation (c), you should not expect to pay more than $5 or $10 – please set up an alert system and monitor this. Let me know if your costs ever exceed this amount. See the course notes on Azure Account Check."
+  },
+  {
+    "objectID": "announcements/2024-04-18-azure-plan-troubleshooting.html#faq",
+    "href": "announcements/2024-04-18-azure-plan-troubleshooting.html#faq",
+    "title": "Azure Plan Troubleshooting",
+    "section": "FAQ",
+    "text": "FAQ\n\nQ: I’m not eligible for a student account?\n\nStudent accounts last for 18 months – if you have taken courses in the past that require an Azure account, and it was more than 18 months since you created that account, your student credits have unfortunately expired. There are other free options in this case.\n\nQ: I’m not eligible for the $200 free account credit for my non-student account?\n\nThe $200 credit is only available if you have not used that email address for an Azure account in the past (and it only lasts for one month).\nIf you are not elgible for the $200 credit on the email address you have provided, you have two choices, both of which are fine:\n\nuse a new email address\nregister for a free-tier pay-as-you-go.\n\n\nQ: I tried to register for the pay-as-you-go and I’m told it costs $35 per month?\n\nThe pay-as-you-go account should not cost any upfront or monthly charges. Double check that you do not select options like “tech support plans” or “standard-tier service” – ALWAYS opt out of any paid options, ALWAYS select free-tier for any choices provided to you by Azure.\n\nQ: if I’m on free-tier and there’s no monthly costs, why do I need to monitor the budget?\n\nThe pay-as-you-go account may charge your credit card, only when you use the service beyond the defined free-tier limits.\nIn our class, we will have IoT Hub services that handle communication between your Mobile App from App Dev III, and your reTerminal devices from Connected Objects. The free-tier limit for the IoTHub is 8000 messages per day – I don’t think there will be a reason to exceed this, so by default, you may never have to pay any money for this serivce.\nHowever, there may be small charges to your credit card, ONLY IF you exceed the free-tier limits of the services we use. These charges will be small, but it is possible for them to get out-of-hand by accident. To make sure they do not get out of hand by accident, you must set up a Budget for your Resource Group to alert you when charges exceed a certain number. Please review the course notes about budgets and set up an alert if you have not done so.\n\nQ: I have some other question?\n\nPlease let me know if you have any questions, or if there’s something else that doesn’t seem to work. I will update these instructions if there are more troubles you run into that I can share answers for. Again, if you are seeing this on moodle, click here to see the latest version of these instructions."
+  },
+  {
+    "objectID": "announcements/2024-03-18-quiz1-topics.html",
+    "href": "announcements/2024-03-18-quiz1-topics.html",
+    "title": "Quiz 1: Topics/Information",
+    "section": "",
+    "text": "Quiz 1 will take place in-class on Friday, March 22.. This announcement contains logistical and topics covered."
+  },
+  {
+    "objectID": "announcements/2024-03-18-quiz1-topics.html#logistics",
+    "href": "announcements/2024-03-18-quiz1-topics.html#logistics",
+    "title": "Quiz 1: Topics/Information",
+    "section": "Logistics",
+    "text": "Logistics\n\nworth 2%\nMultiple choice / short-answer on Moodle, in-class. 15-30 minutes.\nLimited open-book: access to course notes, reTerminal, workstation, but not external resources."
+  },
+  {
+    "objectID": "announcements/2024-03-18-quiz1-topics.html#topics",
+    "href": "announcements/2024-03-18-quiz1-topics.html#topics",
+    "title": "Quiz 1: Topics/Information",
+    "section": "Topics",
+    "text": "Topics\nThere will be 5-10 short-answer questions covering concepts that we have seen in Labs 0-3 of this course. Broadly, that is the following topics:\n\nLinux: using apt, apt for python packages, frequently used Bash concepts/commands like tar, shebangs, workflow for reading/writing to reTerminal interfaces. Anything covered in the labs explicitly.\nPython: installing local packages using venv and pip, workflow for reading/writing to reTerminal interfaces, libraries vs scripts\nHardware: reTerminal sensors, GPIO, Analog vs Digital signals\n\nTo help with reviewing, I have added all of the relevant lectures to the Quiz 1 category on this course website. Click on the Lectures tab of the course website and click “Quiz 1” to filter the relevant lectures.\nLet me know if you have any questions!"
+  },
+  {
+    "objectID": "announcements/2024-03-12-website-updates.html",
+    "href": "announcements/2024-03-12-website-updates.html",
+    "title": "Website updates",
+    "section": "",
+    "text": "I’ve made a few changes to the course website, some of which are worth emphasizing because I think they’ll be particularly useful to you:\n\nCourse Calendar: The defunct Calendar page is now being maintained. Check this page for upcoming lecture/lab activity, particularly for Lab demo deadlines. I will keep it maintained throughout the rest of the semester.\nAnnouncements: Announcements like this one will be posted on the course website and (sort-of) automatically posted on Moodle as well. If you like RSS, you can subcribe using the  icon in the nav bar.\nLecture index: I’ve fixed some metadata and theming issues for the Topics page (also called Lectures). Here you can find an index of every course lecture, and sort them by category. This should help keep track of topics and things learned.\n\nLet me know if you have any questions, or if there’s something that doesn’t seem to work.\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "announcements/2024-04-15-schedule-updates.html",
+    "href": "announcements/2024-04-15-schedule-updates.html",
+    "title": "Mid-April Schedule Updates",
+    "section": "",
+    "text": "I’ve made a series of updates to the course website and Moodle, some of which are worth emphasizing because I think they’ll be particularly useful to you:\n\nCourse Calendar: I’ve updated the April section of the calendar with the latest set of deliverables.\nFinal Project Description and Milestones: I’ve uploaded all remaining Connected Objects Milestones onto Moodle. Links for Section 1, Section 2\nLectures: There are a new set of IoT lectures which should help you with Lab 6 (links for Section 1, Section 2). We will also cover this ground on Assignment 2 (TBA) and future project milestones. This is the (almost) the final set of lectures for this class, and will be covered in Quiz 2.\n\nLet me know if you have any questions, or if there’s something that doesn’t seem to work.\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "announcements/2024-03-12-lab3-demo.html",
+    "href": "announcements/2024-03-12-lab3-demo.html",
+    "title": "Lab 3: Demo in class Friday March 15",
+    "section": "",
+    "text": "As mentioned in class on March 11, the hand-in for Lab 3 will be on Friday March 15. Demos will start at the beginning of class. Come to class prepared to show your progress.\nThe deadline to submit your scripts for Lab 3 code remains midnight on Friday.\nIf you have not completed the lab by Friday morning, you will get partial marks up to whatever you have completed.\nLet me know if you have any questions! (by Teams preferably)\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "topics/iot/docs/azure-sdks.html",
+    "href": "topics/iot/docs/azure-sdks.html",
+    "title": "Azure SDKs",
+    "section": "",
+    "text": "Azure offers Software Development Kits (SDKs) for most of its services. Below you will find references to the SDKs used in the course.",
+    "crumbs": [
+      "Home",
+      "Topics",
+      "IoT",
+      "Docs",
+      "Azure SDKs"
+    ]
+  },
+  {
+    "objectID": "topics/iot/docs/azure-sdks.html#azure-iot-sdks",
+    "href": "topics/iot/docs/azure-sdks.html#azure-iot-sdks",
+    "title": "Azure SDKs",
+    "section": "Azure IoT SDKs",
+    "text": "Azure IoT SDKs\nAzure IoT provides SDKs for several languages such as Python, Java, .NET, C and Node.js.\nThe SDKs are organized as:\n\nDevice SDKs\n\nFunctionality to build device clients that communicate with and are controlled by an IoT Hub.\n\nService SDKs\n\nFunctionality for applications and services that communicate with an IoT Hub and registered devices.\nExamples are a back-end service running on a VM or a mobile application.\n\nIoT Hub Management SDKs\n\nHelp build back-end applications that manage an IoT Hub.\n\n\n\nRemember that the IoT Hub is only managing the device registration, authentication and routing of messages and data.\nThe application logic and device control is typically done by a back-end service and user applications using data routed via the IoT Hub’s end-points.\n\n Azure IoT SDKs provide tooling and examples to develop devices, service applications and to manage the IoT Hub itself.",
+    "crumbs": [
+      "Home",
+      "Topics",
+      "IoT",
+      "Docs",
+      "Azure SDKs"
+    ]
+  },
+  {
+    "objectID": "topics/iot/docs/azure-sdks.html#device-sdks",
+    "href": "topics/iot/docs/azure-sdks.html#device-sdks",
+    "title": "Azure SDKs",
+    "section": "Device SDKs",
+    "text": "Device SDKs\n\n\n\nLanguage\nPackage\nSource\nQuickstarts\nSamples\nReference Docs\n\n\n\n\n.NET\nNuGet\nGitHub\nConnect to IoT Hub\nSamples\nReference\n\n\nPython\npip\nGitHub\nConnect to IoT Hub\nSamples\nReference\n\n\n\nDevice SDKs are further divided into:\n\nProvisioning\n\nHow to provision (eg. create) a device identity on the Azure IoT Hub.\n\nDevice Client\n\nDevices that send telemetry messages to Azure IoT Hub\nDevices that receive Cloud-to-Device (C2D) messages from the Azure IoT Hub.\nDevices that receive and respond to direct method invocations from the Azure IoT Hub.\n\nModule Client\n\nMostly intended for communicating with Edge devices (not covered in this course). See here for more.\n\n\n\nPython Notes\nBy default, the Python device SDKs connect to an IoT Hub over MQTT with:\n\nCleanSession flag set to 0\nQoS 1 for message exchange with the IoT hub.\n\nIt’s possible to connect a generic MQTT client (ex.: the paho-mqtt client) to the IoT Hub. For a manual MQTT connection, see Communicate with your IoT hub using the MQTT protocol.",
+    "crumbs": [
+      "Home",
+      "Topics",
+      "IoT",
+      "Docs",
+      "Azure SDKs"
+    ]
+  },
+  {
+    "objectID": "topics/iot/docs/azure-sdks.html#service-sdks",
+    "href": "topics/iot/docs/azure-sdks.html#service-sdks",
+    "title": "Azure SDKs",
+    "section": "Service SDKs",
+    "text": "Service SDKs\n\n\n\nLanguage\nPackage\nSource\nSamples\nReference Docs\n\n\n\n\n.NET\nNuGet\nGitHub\nSamples\nReference\n\n\nPython\npip\nGitHub\nSamples\nReference\n\n\n\n\nRegistry Manager\nSome SDKs include an IoT Hub Registry Manager service client in order to:\n\nProvides CRUD operations for device on IoTHub\nGet statistics about the IoTHub service and devices\n\nSince this is a SDK to manage a cloud service (IoT Hub), it assumes bandwidth is not constrained and most calls are made over HTTPS.\n\n\nEvent Hubs Service SDK\n\nBehind the scenes, IoT Hubs is an instance of another Azure service called Event Hubs. Please see the chapter on Reading D2C Messages with the EventHub SDK.",
+    "crumbs": [
+      "Home",
+      "Topics",
+      "IoT",
+      "Docs",
+      "Azure SDKs"
+    ]
+  },
+  {
+    "objectID": "topics/iot/docs/azure-sdks.html#iot-hub-management",
+    "href": "topics/iot/docs/azure-sdks.html#iot-hub-management",
+    "title": "Azure SDKs",
+    "section": "IoT Hub Management",
+    "text": "IoT Hub Management\n\n\n\nPlatform\nPackage\nCode repository\nReference\n\n\n\n\n.NET\nNuGet\nGitHub\nReference\n\n\nPython\npip\nGitHub\nReference",
+    "crumbs": [
+      "Home",
+      "Topics",
+      "IoT",
+      "Docs",
+      "Azure SDKs"
+    ]
+  },
+  {
+    "objectID": "topics/iot/docs/azure-sdks.html#browse-code-samples",
+    "href": "topics/iot/docs/azure-sdks.html#browse-code-samples",
+    "title": "Azure SDKs",
+    "section": "Browse Code Samples",
+    "text": "Browse Code Samples\nIn addition to the sample code provided in each of the SDK’s repositories, Azure also offers a catalogue of code samples for different types of Azure services:\n\nBrowse Azure Code Samples",
+    "crumbs": [
+      "Home",
+      "Topics",
+      "IoT",
+      "Docs",
+      "Azure SDKs"
     ]
   },
   {
@@ -896,297 +1257,6 @@
       "IoT",
       "Docs",
       "Intro to the Internet of Things"
-    ]
-  },
-  {
-    "objectID": "topics/iot/docs/azure-sdks.html",
-    "href": "topics/iot/docs/azure-sdks.html",
-    "title": "Azure SDKs",
-    "section": "",
-    "text": "Azure offers Software Development Kits (SDKs) for most of its services. Below you will find references to the SDKs used in the course.",
-    "crumbs": [
-      "Home",
-      "Topics",
-      "IoT",
-      "Docs",
-      "Azure SDKs"
-    ]
-  },
-  {
-    "objectID": "topics/iot/docs/azure-sdks.html#azure-iot-sdks",
-    "href": "topics/iot/docs/azure-sdks.html#azure-iot-sdks",
-    "title": "Azure SDKs",
-    "section": "Azure IoT SDKs",
-    "text": "Azure IoT SDKs\nAzure IoT provides SDKs for several languages such as Python, Java, .NET, C and Node.js.\nThe SDKs are organized as:\n\nDevice SDKs\n\nFunctionality to build device clients that communicate with and are controlled by an IoT Hub.\n\nService SDKs\n\nFunctionality for applications and services that communicate with an IoT Hub and registered devices.\nExamples are a back-end service running on a VM or a mobile application.\n\nIoT Hub Management SDKs\n\nHelp build back-end applications that manage an IoT Hub.\n\n\n\nRemember that the IoT Hub is only managing the device registration, authentication and routing of messages and data.\nThe application logic and device control is typically done by a back-end service and user applications using data routed via the IoT Hub’s end-points.\n\n Azure IoT SDKs provide tooling and examples to develop devices, service applications and to manage the IoT Hub itself.",
-    "crumbs": [
-      "Home",
-      "Topics",
-      "IoT",
-      "Docs",
-      "Azure SDKs"
-    ]
-  },
-  {
-    "objectID": "topics/iot/docs/azure-sdks.html#device-sdks",
-    "href": "topics/iot/docs/azure-sdks.html#device-sdks",
-    "title": "Azure SDKs",
-    "section": "Device SDKs",
-    "text": "Device SDKs\n\n\n\nLanguage\nPackage\nSource\nQuickstarts\nSamples\nReference Docs\n\n\n\n\n.NET\nNuGet\nGitHub\nConnect to IoT Hub\nSamples\nReference\n\n\nPython\npip\nGitHub\nConnect to IoT Hub\nSamples\nReference\n\n\n\nDevice SDKs are further divided into:\n\nProvisioning\n\nHow to provision (eg. create) a device identity on the Azure IoT Hub.\n\nDevice Client\n\nDevices that send telemetry messages to Azure IoT Hub\nDevices that receive Cloud-to-Device (C2D) messages from the Azure IoT Hub.\nDevices that receive and respond to direct method invocations from the Azure IoT Hub.\n\nModule Client\n\nMostly intended for communicating with Edge devices (not covered in this course). See here for more.\n\n\n\nPython Notes\nBy default, the Python device SDKs connect to an IoT Hub over MQTT with:\n\nCleanSession flag set to 0\nQoS 1 for message exchange with the IoT hub.\n\nIt’s possible to connect a generic MQTT client (ex.: the paho-mqtt client) to the IoT Hub. For a manual MQTT connection, see Communicate with your IoT hub using the MQTT protocol.",
-    "crumbs": [
-      "Home",
-      "Topics",
-      "IoT",
-      "Docs",
-      "Azure SDKs"
-    ]
-  },
-  {
-    "objectID": "topics/iot/docs/azure-sdks.html#service-sdks",
-    "href": "topics/iot/docs/azure-sdks.html#service-sdks",
-    "title": "Azure SDKs",
-    "section": "Service SDKs",
-    "text": "Service SDKs\n\n\n\nLanguage\nPackage\nSource\nSamples\nReference Docs\n\n\n\n\n.NET\nNuGet\nGitHub\nSamples\nReference\n\n\nPython\npip\nGitHub\nSamples\nReference\n\n\n\n\nRegistry Manager\nSome SDKs include an IoT Hub Registry Manager service client in order to:\n\nProvides CRUD operations for device on IoTHub\nGet statistics about the IoTHub service and devices\n\nSince this is a SDK to manage a cloud service (IoT Hub), it assumes bandwidth is not constrained and most calls are made over HTTPS.\n\n\nEvent Hubs Service SDK\n\nBehind the scenes, IoT Hubs is an instance of another Azure service called Event Hubs. Please see the chapter on Reading D2C Messages with the EventHub SDK.",
-    "crumbs": [
-      "Home",
-      "Topics",
-      "IoT",
-      "Docs",
-      "Azure SDKs"
-    ]
-  },
-  {
-    "objectID": "topics/iot/docs/azure-sdks.html#iot-hub-management",
-    "href": "topics/iot/docs/azure-sdks.html#iot-hub-management",
-    "title": "Azure SDKs",
-    "section": "IoT Hub Management",
-    "text": "IoT Hub Management\n\n\n\nPlatform\nPackage\nCode repository\nReference\n\n\n\n\n.NET\nNuGet\nGitHub\nReference\n\n\nPython\npip\nGitHub\nReference",
-    "crumbs": [
-      "Home",
-      "Topics",
-      "IoT",
-      "Docs",
-      "Azure SDKs"
-    ]
-  },
-  {
-    "objectID": "topics/iot/docs/azure-sdks.html#browse-code-samples",
-    "href": "topics/iot/docs/azure-sdks.html#browse-code-samples",
-    "title": "Azure SDKs",
-    "section": "Browse Code Samples",
-    "text": "Browse Code Samples\nIn addition to the sample code provided in each of the SDK’s repositories, Azure also offers a catalogue of code samples for different types of Azure services:\n\nBrowse Azure Code Samples",
-    "crumbs": [
-      "Home",
-      "Topics",
-      "IoT",
-      "Docs",
-      "Azure SDKs"
-    ]
-  },
-  {
-    "objectID": "announcements/2024-03-12-lab3-demo.html",
-    "href": "announcements/2024-03-12-lab3-demo.html",
-    "title": "Lab 3: Demo in class Friday March 15",
-    "section": "",
-    "text": "As mentioned in class on March 11, the hand-in for Lab 3 will be on Friday March 15. Demos will start at the beginning of class. Come to class prepared to show your progress.\nThe deadline to submit your scripts for Lab 3 code remains midnight on Friday.\nIf you have not completed the lab by Friday morning, you will get partial marks up to whatever you have completed.\nLet me know if you have any questions! (by Teams preferably)\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "announcements/2024-04-15-schedule-updates.html",
-    "href": "announcements/2024-04-15-schedule-updates.html",
-    "title": "Mid-April Schedule Updates",
-    "section": "",
-    "text": "I’ve made a series of updates to the course website and Moodle, some of which are worth emphasizing because I think they’ll be particularly useful to you:\n\nCourse Calendar: I’ve updated the April section of the calendar with the latest set of deliverables.\nFinal Project Description and Milestones: I’ve uploaded all remaining Connected Objects Milestones onto Moodle. Links for Section 1, Section 2\nLectures: There are a new set of IoT lectures which should help you with Lab 6 (links for Section 1, Section 2). We will also cover this ground on Assignment 2 (TBA) and future project milestones. This is the (almost) the final set of lectures for this class, and will be covered in Quiz 2.\n\nLet me know if you have any questions, or if there’s something that doesn’t seem to work.\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "announcements/2024-03-12-website-updates.html",
-    "href": "announcements/2024-03-12-website-updates.html",
-    "title": "Website updates",
-    "section": "",
-    "text": "I’ve made a few changes to the course website, some of which are worth emphasizing because I think they’ll be particularly useful to you:\n\nCourse Calendar: The defunct Calendar page is now being maintained. Check this page for upcoming lecture/lab activity, particularly for Lab demo deadlines. I will keep it maintained throughout the rest of the semester.\nAnnouncements: Announcements like this one will be posted on the course website and (sort-of) automatically posted on Moodle as well. If you like RSS, you can subcribe using the  icon in the nav bar.\nLecture index: I’ve fixed some metadata and theming issues for the Topics page (also called Lectures). Here you can find an index of every course lecture, and sort them by category. This should help keep track of topics and things learned.\n\nLet me know if you have any questions, or if there’s something that doesn’t seem to work.\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "announcements/2024-03-18-quiz1-topics.html",
-    "href": "announcements/2024-03-18-quiz1-topics.html",
-    "title": "Quiz 1: Topics/Information",
-    "section": "",
-    "text": "Quiz 1 will take place in-class on Friday, March 22.. This announcement contains logistical and topics covered."
-  },
-  {
-    "objectID": "announcements/2024-03-18-quiz1-topics.html#logistics",
-    "href": "announcements/2024-03-18-quiz1-topics.html#logistics",
-    "title": "Quiz 1: Topics/Information",
-    "section": "Logistics",
-    "text": "Logistics\n\nworth 2%\nMultiple choice / short-answer on Moodle, in-class. 15-30 minutes.\nLimited open-book: access to course notes, reTerminal, workstation, but not external resources."
-  },
-  {
-    "objectID": "announcements/2024-03-18-quiz1-topics.html#topics",
-    "href": "announcements/2024-03-18-quiz1-topics.html#topics",
-    "title": "Quiz 1: Topics/Information",
-    "section": "Topics",
-    "text": "Topics\nThere will be 5-10 short-answer questions covering concepts that we have seen in Labs 0-3 of this course. Broadly, that is the following topics:\n\nLinux: using apt, apt for python packages, frequently used Bash concepts/commands like tar, shebangs, workflow for reading/writing to reTerminal interfaces. Anything covered in the labs explicitly.\nPython: installing local packages using venv and pip, workflow for reading/writing to reTerminal interfaces, libraries vs scripts\nHardware: reTerminal sensors, GPIO, Analog vs Digital signals\n\nTo help with reviewing, I have added all of the relevant lectures to the Quiz 1 category on this course website. Click on the Lectures tab of the course website and click “Quiz 1” to filter the relevant lectures.\nLet me know if you have any questions!"
-  },
-  {
-    "objectID": "announcements/2024-04-18-azure-plan-troubleshooting.html",
-    "href": "announcements/2024-04-18-azure-plan-troubleshooting.html",
-    "title": "Azure Plan Troubleshooting",
-    "section": "",
-    "text": "In setting up Azure for Lab 6, a few students have asked me about troubles with the following:\nI would like to share my help for those students for the rest of you, just in case there are more of you struggling with setting up Azure.\nI will keep the Course Website version of this announcement up to date – if you are seeing this announcement on Moodle, you can click here to get to the up-to-date version of this announcement with the latest change"
-  },
-  {
-    "objectID": "announcements/2024-04-18-azure-plan-troubleshooting.html#big-picture",
-    "href": "announcements/2024-04-18-azure-plan-troubleshooting.html#big-picture",
-    "title": "Azure Plan Troubleshooting",
-    "section": "Big picture",
-    "text": "Big picture\nIn the big picture, no matter what your situation is, your Azure plan should have the following properties:\n\nNo upfront costs – your account should be free to create, and every service/resource you create should be free to create.\nNo monthly costs – your costs should be covered entirely by one of the following:\n\n\n\nyour student account credit\n\n\n$200 free credit for new non-student account\n\n\npay-as-you-go that is free per month, but will charge your credit card per usage.\n\n\n\nA budget alert system that warns you when your usage exceeds &gt;$5 . Even if you are in situation (c), you should not expect to pay more than $5 or $10 – please set up an alert system and monitor this. Let me know if your costs ever exceed this amount. See the course notes on Azure Account Check."
-  },
-  {
-    "objectID": "announcements/2024-04-18-azure-plan-troubleshooting.html#faq",
-    "href": "announcements/2024-04-18-azure-plan-troubleshooting.html#faq",
-    "title": "Azure Plan Troubleshooting",
-    "section": "FAQ",
-    "text": "FAQ\n\nQ: I’m not eligible for a student account?\n\nStudent accounts last for 18 months – if you have taken courses in the past that require an Azure account, and it was more than 18 months since you created that account, your student credits have unfortunately expired. There are other free options in this case.\n\nQ: I’m not eligible for the $200 free account credit for my non-student account?\n\nThe $200 credit is only available if you have not used that email address for an Azure account in the past (and it only lasts for one month).\nIf you are not elgible for the $200 credit on the email address you have provided, you have two choices, both of which are fine:\n\nuse a new email address\nregister for a free-tier pay-as-you-go.\n\n\nQ: I tried to register for the pay-as-you-go and I’m told it costs $35 per month?\n\nThe pay-as-you-go account should not cost any upfront or monthly charges. Double check that you do not select options like “tech support plans” or “standard-tier service” – ALWAYS opt out of any paid options, ALWAYS select free-tier for any choices provided to you by Azure.\n\nQ: if I’m on free-tier and there’s no monthly costs, why do I need to monitor the budget?\n\nThe pay-as-you-go account may charge your credit card, only when you use the service beyond the defined free-tier limits.\nIn our class, we will have IoT Hub services that handle communication between your Mobile App from App Dev III, and your reTerminal devices from Connected Objects. The free-tier limit for the IoTHub is 8000 messages per day – I don’t think there will be a reason to exceed this, so by default, you may never have to pay any money for this serivce.\nHowever, there may be small charges to your credit card, ONLY IF you exceed the free-tier limits of the services we use. These charges will be small, but it is possible for them to get out-of-hand by accident. To make sure they do not get out of hand by accident, you must set up a Budget for your Resource Group to alert you when charges exceed a certain number. Please review the course notes about budgets and set up an alert if you have not done so.\n\nQ: I have some other question?\n\nPlease let me know if you have any questions, or if there’s something else that doesn’t seem to work. I will update these instructions if there are more troubles you run into that I can share answers for. Again, if you are seeing this on moodle, click here to see the latest version of these instructions."
-  },
-  {
-    "objectID": "announcements/index.html",
-    "href": "announcements/index.html",
-    "title": "Announcements",
-    "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nAzure Plan Troubleshooting\n\n\n\n\n\n\n\n\n\n\n\nApr 18, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nMid-April Schedule Updates\n\n\n\n\n\n\n\n\n\n\n\nApr 15, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nQuiz 1: Topics/Information\n\n\n\n\n\n\n\n\n\n\n\nMar 18, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nOn updating your pi\n\n\n\n\n\n\n\n\n\n\n\nMar 14, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nWebsite updates\n\n\n\n\n\n\n\n\n\n\n\nMar 12, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nLab 3: Demo in class Friday March 15\n\n\n\n\n\n\n\n\n\n\n\nMar 12, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top",
-    "crumbs": [
-      "Home",
-      "Announcements"
-    ]
-  },
-  {
-    "objectID": "announcements/2024-03-14-pi-update.html",
-    "href": "announcements/2024-03-14-pi-update.html",
-    "title": "On updating your pi",
-    "section": "",
-    "text": "A few students have run into system updates that may break important reTerminal features (the screen, for e.g.). If you run into any issues when updating your pi software, see below!\nThe standard Debian commands for updating system software:\n$ sudo apt update && sudo apt upgrade -y\nThe latest linux updates have introduced some significant changes to i2c interface which may cause your pi LCD screen, among other hardware, to fail.\nFor now, when updating your pi software, you should also do the following:\n# If this folder does not exist, run the following command first:\n# cd ~/ && git clone https://github.com/Seeed-Studio/seeed-linux-dtoverlays\ncd ~/seeed-linux-dtoverlays \ngit pull\nIf there are any updates when the git pull is run, you should re-run the setup script:\nsudo ./scripts/reTerminal.sh\nThen, finally, reboot the device:\nsudo reboot\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "topics/iot/docs/iot-protocols.html",
-    "href": "topics/iot/docs/iot-protocols.html",
-    "title": "IoT Communication Protocols",
-    "section": "",
-    "text": "IoT devices typically exchange data with a cloud service using a specific communication protocol.\nThis section looks at common communication protocols used in IoT with a focus on MQTT.",
-    "crumbs": [
-      "Home",
-      "Topics",
-      "IoT",
-      "Docs",
-      "IoT Communication Protocols"
-    ]
-  },
-  {
-    "objectID": "topics/iot/docs/iot-protocols.html#http",
-    "href": "topics/iot/docs/iot-protocols.html#http",
-    "title": "IoT Communication Protocols",
-    "section": "HTTP",
-    "text": "HTTP\nSo far in this course we’ve been exchanging data between our devices and Python Flask/Dash servers using HTTP.\n\nThe default web server instantiated by the Dash python library is a thin HTTP wrapper around the Flask web server.\n\nHTTP is a common protocol for the web, however, some of its characteristics make it not ideal for IoT applications, as the next section explains.\n\nTypical HTTP request\n\n\n Example of an HTTP Request   cheapsslsecurity.com.\n\n\n\nTypical HTTP Response\n\n\n Example of an HTTP Response   cheapsslsecurity.com.\n\nBelow is the HTTP response header for the posting of AIO data above (1 KB long)\n\n\nHTTP Characteristics\nThe following HTTP characteristics are relevant in the IoT context:\n\nRequest response protocol: client always has to request an update from the server.\nDesigned for large bandwidth, low delay.\nStateless: each request is considered as the new request. Server doesn’t recognise the user by default (cookies or tokens are required).\nResource identification: each request includes a URI (universal resource identifier).\nDNS lookup: 3-way identification handshake (overhead).\nBig protocol headers: uncompressed content transfer that is not the payload.\n\nIn HTTP, the client has to be constantly “pulling” the server for new information. Pull updates are either slow (check only every few minutes) or data/power intensive (check constantly).\n\n\n\ncustomer___partner_projects_adafruit_io_polling.png\n\n\n\n HTTP Client constantly pulling the server for updates   HTTP Protocol, Adafruit.\n\n\n\nDash app example\nIn our dash apps, this problem showed up in the form of a strict dependency between the Dash app and the Device Controller – at each interval, the Dash app had to directly call the Device Controller “read_sensors” and “control_actuators” methods. This is fine in a simple example where it doesn’t matter that we poll the device each second, but on faster intervals, or when information is not aligned with regular intervals, this results in large inefficiencies.",
-    "crumbs": [
-      "Home",
-      "Topics",
-      "IoT",
-      "Docs",
-      "IoT Communication Protocols"
-    ]
-  },
-  {
-    "objectID": "topics/iot/docs/iot-protocols.html#pubsub-communication",
-    "href": "topics/iot/docs/iot-protocols.html#pubsub-communication",
-    "title": "IoT Communication Protocols",
-    "section": "Pub/Sub Communication",
-    "text": "Pub/Sub Communication\n\nThe most popular communication pattern for IoT systems is a publish/subscribe (pub/sub) messaging system done via some kind of broker.\n\nThis IoT system has two types of actors:\n\nOne or more Clients\nOne Broker\n\nIn the image below, a client device is publishing messages to the topic /telemetry while a client in the cloud is subscribed to the same topic.\n\n\n\nIoT device publishing telemetry on the /telemetry topic, and the cloud service subscribing to that topic\n\n\nIt’s very typical that any particular client is both the publisher and the subscriber.\n\n\n\nIoT devices connect to a broker and publish telemetry and subscribe to commands. Cloud services connect to the broker and subscribe to all telemetry and send commands to specific devices.\n\n\nFigures from: Broker and client relationship, IoT for Beginners, Microsoft.\n\nClients\nClients are typically devices, applications or back-end services. They connect to the broker and publish telemetry as well as subscribe to commands.\n\nA cloud service is an example of a client.\nIt connects to the broker and subscribes to all the telemetry messages and publishes commands either to specific devices, or to groups of devices.\n\nThe client performs two operations:\n\nPublishes information: When the client sends the data to the server.\nSubscribes to information: When the client receives the data from the server.\n\n\n\nBroker\nThe Broker is typically running on a server and performs the following operations:\n\nAccepts messages from clients.\nProcesses subscribe and unsubscribe requests.\nForwards messages to specific clients according to subscription requests.\n\n\nMQTT is the most popular communication protocol for IoT devices",
-    "crumbs": [
-      "Home",
-      "Topics",
-      "IoT",
-      "Docs",
-      "IoT Communication Protocols"
-    ]
-  },
-  {
-    "objectID": "topics/iot/docs/iot-protocols.html#mqtt",
-    "href": "topics/iot/docs/iot-protocols.html#mqtt",
-    "title": "IoT Communication Protocols",
-    "section": "MQTT",
-    "text": "MQTT\nMessage Queueing Telemetry Transport, i.e. MQTT, is a lightweight pub/sub protocol. It was originally designed to monitor oil pipelines where connectivity could not be guaranteed.\nOne or more clients connect to a single broker, who routes messages to the interested clients.\nMQTT manages messages asynchronously over a network socket.\nThe broker can hold and forward messages from client to client so if one gets disconnected, it will be able to fetch the message when it reconnects later.\n\nFacebook Messenger uses MQTT and is the World’s largest MQTT network.\nInfrastructure details here (nice read!).\n\n\nTopics & Wildcards\nMessages are routed using named topics, rather than being sent directly to an individual client. A client can publish to a topic, and any clients subscribed to that topic will receive the message.\nIn the example below, a client device is publishing some data (not shown) to the topic /telemetry. Immediately after the data is received by the broker, the broker routes the message to a client application previously subscribed to the same topic.\n\n\n\nIoT device publishing telemetry on the /telemetry topic, and the cloud service subscribing to that topic\n\n\n MQTT Topics   IoT for Beginners, Microsoft.\n\nTopics typically have a hierarchy to keep data organized and intuitive to access.\n\nFor example, a factory might want to track temperature from different HVAC units on different floor.\nThe topic hierarchy could be set up in the following way:\nsensors/&lt;FLOOR&gt;/temperature/&lt;HVAC_UNIT_ID&gt;\nHVAC units would publish data to the following topics:\n\nThe AC unit on the third floor: sensors/floor3/temperature/AC1\nThe boiler unit on the tenth floor: sensors/floor10/temperature/boiler\nThe heater unit on the fourth floor: sensors/floor4/temperature/heater\n\n\nWildcards\nClients can subscribe to different levels of the topic hierarchy using wildcards.\nWhen subscribing to multiple topics two wildcard characters can be used:\n\n# (hash character) – multi level wildcard\n+ (plus character) -single level wildcard\n\nUsing the previous factory temperature example, an application could monitor multiple temperatures in the following way:\n\n\n\n\n\n\n\nTopic string\nSubscription result\n\n\n\n\nsensors/floor3/temperature/+\nAll of the temperature sensors on the 3rd floor\n\n\nsensors/+/temperature/+\nAll the temperature data on all floors\n\n\nsensors/#\nAll topics going on all floors\n\n\nsensors/floor10/#\nAll topics of the tenth floor\n\n\n\n\n\n\nMessages\nLike to HTTP, MQTT is built on top of TCP/IP and can also be used over websockets.\nMQTT messages can be as short as 2 bytes (eg. acknowledgement or disconnect messages), as big as 256Mb (eg. publishing a picture or firmware update).\nA typical telemetry message with payload data such as value=40 to a topic /assign1-temp has a size around 20 to 40 bytes.\n\nMessage headers and topic names are text encoded (UTF-8).\nMessage payload encoding is specific to the application (eg. plain text, JSON, binary, etc)\n\nMQTT connections can be public and open, or encrypted and secured using usernames and passwords, or certificates.\n\n\nQoS\nMessages can be sent with a quality of service (QoS) flag, which determines the guarantee of the message being received.\n\nQoS 0: At most once (Fire and Forget) - the message is sent only once and the client and broker take no additional steps to acknowledge delivery (fire and forget).\nQoS 1: At least once - the message is re-tried by the sender multiple times until acknowledgement is received (acknowledged delivery).\nQoS 2: Exactly once - the sender and receiver engage in a two-level handshake to ensure only one copy of the message is received (assured delivery).\n\nBelow is an example of QoS 1:\n\n\n\ncustomer___partner_projects_adafruit_io_puback.png\n\n\n\n Example of ‘At Least Once’ (QoS 1) delivery   MQTT QoS, Adafruit.\n\n\nBy default MQTT sessions are established with QoS 0 for all messages (clean sessions).\nThis means that if a client disconnects and then reconnects, it won’t receive messages sent during the disconnection.\n\nWhen setting QoS, there are two sides of message delivery:\n\nMessage delivery from the publishing client to the broker.\nMessage delivery from the broker to the subscribing client.\n\nThe client that publishes the message to the broker defines the QoS level of the message when it sends the message to the broker.\nThe broker transmits this message to subscribing clients using the QoS level that each subscribing client defines during the subscription process.\n\nIf the subscribing client defines a lower QoS than the publishing client, the broker transmits the message with the lower quality of service.\n\n\n\nSessions: Clean or Persistent\nTypically, a client-broker connection is established with the session flag set to Clean with CleanSession = true (however, this is specific to the library implementation).\nIn this case the broker does not store anything for the client and purges all information from any previous subscriptions.\nIn a persistent session (CleanSession = false), the broker stores all subscriptions for the client and all missed messages for the client IF it subscribed with a QoS level 1 or 2.\n\n\nKeepAlive\nThe keep alive flag is a time interval in seconds that the client specifies and communicates to the broker when the connection established.\nThis is longest period of time that the broker and client can go without pinging each other. This method allows both sides to determine if the session is still available.\n\n\nLast Will & Testament\nWhen a client connects, it can provide the broker with a Last Will and Testament (LWT) message and topic.\nIf the client disconnects unexpectedly, the broker sends the LWT message on behalf of the client.\nThis message notifies other clients when a client disconnects unexpectedly.\n\n\n Last Will & Testament   Why HTTP isn’t the King of the IoT, Robert Bird, Akamai.\n\n\n\nRetained Messages\nA retained message is a normal MQTT message with the retained flag set to true.\nThe broker stores the last retained message and the corresponding QoS for that topic.\nEach client that subscribes to a topic pattern that matches the topic of the retained message receives the retained message immediately after they subscribe.\nThe broker stores only one retained message per topic.\n\nRetained messages help newly-subscribed clients get a status update immediately after they subscribe to a topic.\n\n\n\n Message with Retained Flag   Why HTTP isn’t the King of the IoT, Robert Bird, Akamai.",
-    "crumbs": [
-      "Home",
-      "Topics",
-      "IoT",
-      "Docs",
-      "IoT Communication Protocols"
-    ]
-  },
-  {
-    "objectID": "topics/iot/docs/iot-protocols.html#http-vs-mqtt",
-    "href": "topics/iot/docs/iot-protocols.html#http-vs-mqtt",
-    "title": "IoT Communication Protocols",
-    "section": "HTTP vs MQTT",
-    "text": "HTTP vs MQTT\n\n\n\n\n\n\n\n\nCriteria\nMQTT\nHTTP\n\n\n\n\nComplexity\nSimple and lightweight\nMore complex and slightly heavier\n\n\nConsumption\nMore energy efficient\nLess energy efficient\n\n\nCommunication direction\nBi-directional (client or broker can initiate)\nUni-directional (client must initiate)\n\n\nArchitecture\nPublish / Subscribe model\nRequest / Response Model\n\n\nSession\nCan keep connection open\nConnection closes after every request\n\n\nDelivery assurance\nReliable message delivery with QoS (Quality of Service)\nNo QoS option\n\n\nHeader size\nSmaller (~2 bytes)\nComparatively large size (~8 bytes)",
-    "crumbs": [
-      "Home",
-      "Topics",
-      "IoT",
-      "Docs",
-      "IoT Communication Protocols"
-    ]
-  },
-  {
-    "objectID": "topics/iot/docs/iot-protocols.html#mqtt-client-examples",
-    "href": "topics/iot/docs/iot-protocols.html#mqtt-client-examples",
-    "title": "IoT Communication Protocols",
-    "section": "MQTT Client Examples",
-    "text": "MQTT Client Examples\n\nExamples of graphical MQTT clients: - MQTT X (supports cleanSession = False) - MQTT Explorer - VS Code Extension VSMqtt t\n\nIn this course you will write your own MQTT client. The next sections show an example of a simple MQTT client using Python that publishes and subscribes to messages.\n\nPublic Brokers\nSince a broker is necessary, we can use the following publicly available MQTT brokers:\n\ntest.mosquitto.org by Eclipse Foundation.\nbroker.emqx.io by EMQX.\n\n\nFor the client implementation we will use the Eclipse Paho MQTT Python Client. It is a popular choice for many IoT Cloud services such as Adafruit IO.\n\nDocumentation for the paho-mqtt client is available at the Pypi page.\n\n\nHowever, there are lots of other implementation options.\n\nThis link compiles a list of open-source MQTT client and broker implementations you can use in your projects.\n\n\n\nPublisher Code\nThe first example will only publish random data to the broker every 3 seconds.\n\nInstall the paho-python library.\n\npip install paho-mqtt\n\nCreate your script file. A few notes:\n\n\nCreate a unique client ID to avoid conflicts with other users (this is a public broker).\n\nhttps://test.mosquitto.org/\nCreate a unique ID using the Online GUID generator\n\n\ncommon_key = '329adb05-8b85-4ebe-8309-15c564503a1f'\n\nTo have a unique client name and topic, we will combine the key from above with the desired name and topic.\n\nclient_name = common_key + 'publisher'\ntopic_name = common_key + '/temperature'\n\nImport paho-python and the built-in json library (we’ll encode our data as JSON).\n\nimport paho.mqtt.client as mqtt\nimport json\n\nAll network operations (incoming and outgoing data) are processed with the loop() method every 3 seconds.\n\nComplete code:\n# Publish to data topic (fire & forget)\n\nimport paho.mqtt.client as mqtt\nimport json\n\nimport time\nimport random\n\nrnd = random.Random()\n\ncommon_key = 'd5a4d5e6-d597-4bd4-8196-5f51d12345'\ntopic_name = common_key + '/temperature'\nclient_name = common_key + 'publisher'\n\nmqtt_client = mqtt.Client(client_name)\nmqtt_client.connect('test.mosquitto.org')\n\nprint(\"MQTT connected!\")\n\nwhile True:\n\n    # Random integer between -10 and 30\n    temp = rnd.randint(-10, 30)\n    \n    # Prepare json payload\n    payload = json.dumps({'temperature': temp})\n    print(\"Sending telemetry \", payload)\n    \n    # Send it off. QoS=0 and Retain=false\n    info = mqtt_client.publish(topic_name, payload)\n    \n    # Process network event. Handles incoming/outgoing data\n    mqtt_client.loop()\n    \n    time.sleep(3)\n\n\nSubscriber Code\nThe MQTT client below subscribes to data from the publisher using the library’s default values.\nA few notes:\n\nThe subscriber used the same unique key as the publisher in order to subscribe to the same topics. However, the subscriber has its own client name.\n\ncommon_key = 'd5a4d5e6-d597-4bd4-8196-5f51d12345'\ntopic_name = common_key + '/temperature'\nclient_name = common_key + 'subscriber'\n\nOnce the client receives a message from the broker, the method on_message is called. This is used as a hook to define our own callback function.\n\n# Callback for when a message is received\ndef message_received(mqtt_client, userdata, message):\nprint(f'Received message: {message.payload}')\n\n# Callback hook\nmqtt_client.on_message = message_received\n\nSimilarly to the publisher example, the network loop is processed every 1 second.\n\nThe complete subscriber code:\n# Subscribe to a topic with library's default values.\n\nimport paho.mqtt.client as mqtt\nimport json\n\nimport time\nimport random\n\ncommon_key = 'd5a4d5e6-d597-4bd4-8196-5f51d12345'\nclient_name = common_key + 'subscriber'\ntopic_name = common_key + '/temperature'\n\nmqtt_client = mqtt.Client(client_name)\nmqtt_client.connect('test.mosquitto.org')\nprint(\"MQTT connected!\")\n\n\n# Callback for when a message is received\ndef message_received(mqtt_client, userdata, message):\n    print(f'Received message: {message.payload}')\n\n\n# Callback hook\nmqtt_client.on_message = message_received\n\nmqtt_client.subscribe(topic_name)\n\nwhile True:\n\n    # Process network event. Handles incoming/outgoing data\n    mqtt_client.loop()\n    \n    time.sleep(1)",
-    "crumbs": [
-      "Home",
-      "Topics",
-      "IoT",
-      "Docs",
-      "IoT Communication Protocols"
-    ]
-  },
-  {
-    "objectID": "topics/iot/docs/iot-protocols.html#connectivity-issues",
-    "href": "topics/iot/docs/iot-protocols.html#connectivity-issues",
-    "title": "IoT Communication Protocols",
-    "section": "Connectivity Issues",
-    "text": "Connectivity Issues\nConnectivity is not always guaranteed. Things to think about when coding your application:\nWhat happens if: - Connection is lost just prior to telemetry being published? - Client connection is lost just prior to broker forwarding messages?\nHow to make sure that: - The broker has received the most up to date telemetry data? - Client has the most recent command/data?",
-    "crumbs": [
-      "Home",
-      "Topics",
-      "IoT",
-      "Docs",
-      "IoT Communication Protocols"
-    ]
-  },
-  {
-    "objectID": "topics/iot/docs/iot-protocols.html#exercises",
-    "href": "topics/iot/docs/iot-protocols.html#exercises",
-    "title": "IoT Communication Protocols",
-    "section": "Exercises",
-    "text": "Exercises\n\nUse a Graphical MQTT client such as MQTT X, MQTT Explorer or the VS Code Extension VSMqtt to publish and subscribe telemetry data to/from one of our Adafruit IO (AIO) feeds.\n\nSee the AIO MQTT API documentation.\nPublish a MQTT message with a random value to one of your feeds.\nSubscribe to one of your AIO feeds.\nUsing the AIO Web interface, write a value to feed you subscribed in the previous step. Your MQTT client should receive the new value as a published message\n\nUse a Graphical MQTT client (see previous question) to publish and subscribe to topics using the public MQTT Mosquitto broker.\n\nUse the Online GUID generator to generate a unique prefix to your username.\nCome-up with new topics and post new messages to them.\nSubscribe to the same topics and see the new messages appear.",
-    "crumbs": [
-      "Home",
-      "Topics",
-      "IoT",
-      "Docs",
-      "IoT Communication Protocols"
-    ]
-  },
-  {
-    "objectID": "topics/iot/docs/iot-protocols.html#references-resources",
-    "href": "topics/iot/docs/iot-protocols.html#references-resources",
-    "title": "IoT Communication Protocols",
-    "section": "References & Resources",
-    "text": "References & Resources\n\n\n\n\nAll the Internet of Things - Episode Two: Protocols, by Adafruit and Digikey\nLesson 4: connect your device to the Internet, IoT for Beginners by Microsoft\nMQTT Client and Broker and MQTT Server and Connection Establishment Explained by HiveMQ\n\nDiving Deeper\nMQTT Packet Format by OpenLab\nUnderstanding the MQTT Protocol Packet Structure by steves-internet-guide.com\n\n\n\ncustomer___partner_projects_adafruit_io_polling.png\nIoT device publishing telemetry on the /telemetry topic, and the cloud service subscribing to that topic\nIoT devices connect to a broker and publish telemetry and subscribe to commands. Cloud services connect to the broker and subscribe to all telemetry and send commands to specific devices.\nIoT device publishing telemetry on the /telemetry topic, and the cloud service subscribing to that topic\ncustomer___partner_projects_adafruit_io_puback.png",
-    "crumbs": [
-      "Home",
-      "Topics",
-      "IoT",
-      "Docs",
-      "IoT Communication Protocols"
     ]
   },
   {

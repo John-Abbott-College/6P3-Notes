@@ -195,7 +195,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../topics/index.html">Topics</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/index.html">IoT</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/docs/azure-sdks.html">Docs</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/docs/iot-protocols.html">IoT Communication Protocols</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../topics/index.html">Topics</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/index.html">IoT</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/docs/15-azure-cli-cheatsheet.html">Docs</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/docs/iot-protocols.html">IoT Communication Protocols</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -275,6 +275,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           </a> 
       </div>
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth3 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../topics/iot/docs/15-azure-cli-cheatsheet.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Azure CLI Cheatsheet</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../topics/iot/docs/azure-sdks.html" class="sidebar-item-text sidebar-link">
@@ -561,7 +567,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../topics/index.html">Topics</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/index.html">IoT</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/docs/azure-sdks.html">Docs</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/docs/iot-protocols.html">IoT Communication Protocols</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../topics/index.html">Topics</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/index.html">IoT</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/docs/15-azure-cli-cheatsheet.html">Docs</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/docs/iot-protocols.html">IoT Communication Protocols</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">IoT Communication Protocols</h1>
 <p class="subtitle lead">How communication protocols can be optimized for device-cloud communication, i.e.&nbsp;why not everything should use HTTP</p>
@@ -586,7 +592,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">April 19, 2024</p>
+      <p class="date-modified">April 22, 2024</p>
     </div>
   </div>
     
@@ -638,7 +644,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>In HTTP, the client has to be constantly “pulling” the server for new information. Pull updates are either slow (check only every few minutes) or data/power intensive (check constantly).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://cdn-learn.adafruit.com/assets/assets/000/049/264/medium800/customer___partner_projects_adafruit_io_polling.png?1513195213" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1" title="customer___partner_projects_adafruit_io_polling.png"><img src="https://cdn-learn.adafruit.com/assets/assets/000/049/264/medium800/customer___partner_projects_adafruit_io_polling.png?1513195213" class="img-fluid figure-img" alt="customer___partner_projects_adafruit_io_polling.png"></a></p>
+<p><a href="https://cdn-learn.adafruit.com/assets/assets/000/049/264/medium800/customer___partner_projects_adafruit_io_polling.png?1513195213" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1" title="customer___partner_projects_adafruit_io_polling.png"><img src="https://cdn-learn.adafruit.com/assets/assets/000/049/264/medium800/customer___partner_projects_adafruit_io_polling.png?1513195213" class="img-fluid figure-img" alt="customer___partner_projects_adafruit_io_polling.png"></a></p>
 <figcaption>customer___partner_projects_adafruit_io_polling.png</figcaption>
 </figure>
 </div>
@@ -798,7 +804,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Below is an example of <strong>QoS 1</strong>:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://cdn-learn.adafruit.com/assets/assets/000/049/303/medium800/customer___partner_projects_adafruit_io_puback.png?1513286630" class="lightbox" data-glightbox="description: .lightbox-desc-5" data-gallery="quarto-lightbox-gallery-5" title="customer___partner_projects_adafruit_io_puback.png"><img src="https://cdn-learn.adafruit.com/assets/assets/000/049/303/medium800/customer___partner_projects_adafruit_io_puback.png?1513286630" class="img-fluid figure-img" alt="customer___partner_projects_adafruit_io_puback.png"></a></p>
+<p><a href="https://cdn-learn.adafruit.com/assets/assets/000/049/303/medium800/customer___partner_projects_adafruit_io_puback.png?1513286630" class="lightbox" data-gallery="quarto-lightbox-gallery-5" data-glightbox="description: .lightbox-desc-5" title="customer___partner_projects_adafruit_io_puback.png"><img src="https://cdn-learn.adafruit.com/assets/assets/000/049/303/medium800/customer___partner_projects_adafruit_io_puback.png?1513286630" class="img-fluid figure-img" alt="customer___partner_projects_adafruit_io_puback.png"></a></p>
 <figcaption>customer___partner_projects_adafruit_io_puback.png</figcaption>
 </figure>
 </div>
@@ -1720,7 +1726,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","descPosition":"bottom","selector":".lightbox","loop":false,"closeEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","closeEffect":"zoom","loop":false,"descPosition":"bottom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
