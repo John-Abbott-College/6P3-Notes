@@ -966,7 +966,7 @@
     "href": "announcements/index.html",
     "title": "Announcements",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nAzure Plan Troubleshooting\n\n\n\n\n\n\n\n\n\n\n\nApr 18, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nMid-April Schedule Updates\n\n\n\n\n\n\n\n\n\n\n\nApr 15, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nQuiz 1: Topics/Information\n\n\n\n\n\n\n\n\n\n\n\nMar 18, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nOn updating your pi\n\n\n\n\n\n\n\n\n\n\n\nMar 14, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nWebsite updates\n\n\n\n\n\n\n\n\n\n\n\nMar 12, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nLab 3: Demo in class Friday March 15\n\n\n\n\n\n\n\n\n\n\n\nMar 12, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top",
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nGrading Update\n\n\n\n\n\n\n\n\n\n\n\nApr 22, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nAzure Plan Troubleshooting\n\n\n\n\n\n\n\n\n\n\n\nApr 18, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nMid-April Schedule Updates\n\n\n\n\n\n\n\n\n\n\n\nApr 15, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nQuiz 1: Topics/Information\n\n\n\n\n\n\n\n\n\n\n\nMar 18, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nOn updating your pi\n\n\n\n\n\n\n\n\n\n\n\nMar 14, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nWebsite updates\n\n\n\n\n\n\n\n\n\n\n\nMar 12, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nLab 3: Demo in class Friday March 15\n\n\n\n\n\n\n\n\n\n\n\nMar 12, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top",
     "crumbs": [
       "Home",
       "Announcements"
@@ -1013,6 +1013,13 @@
     "title": "Quiz 1: Topics/Information",
     "section": "Topics",
     "text": "Topics\nThere will be 5-10 short-answer questions covering concepts that we have seen in Labs 0-3 of this course. Broadly, that is the following topics:\n\nLinux: using apt, apt for python packages, frequently used Bash concepts/commands like tar, shebangs, workflow for reading/writing to reTerminal interfaces. Anything covered in the labs explicitly.\nPython: installing local packages using venv and pip, workflow for reading/writing to reTerminal interfaces, libraries vs scripts\nHardware: reTerminal sensors, GPIO, Analog vs Digital signals\n\nTo help with reviewing, I have added all of the relevant lectures to the Quiz 1 category on this course website. Click on the Lectures tab of the course website and click “Quiz 1” to filter the relevant lectures.\nLet me know if you have any questions!"
+  },
+  {
+    "objectID": "announcements/2024-04-22-grades-update.html",
+    "href": "announcements/2024-04-22-grades-update.html",
+    "title": "Grading Update",
+    "section": "",
+    "text": "Hello everyone,\nYour grades for L4, L5, Q1, and Milestone 1 have been updated. You can find your feedback on Moodle in most cases.\nFor the milestone, your detailed feedback has been included in the “Teacher Feedback” issue of your repository.\nNote for April 22 morning section: I will be around 15-20 minutes late. Please get your Lab 6 demos ready while you are waiting.\n\n\n\n Back to top"
   },
   {
     "objectID": "announcements/2024-03-12-website-updates.html",

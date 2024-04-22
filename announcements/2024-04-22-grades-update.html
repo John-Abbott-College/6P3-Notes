@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2024-04-22">
 
-<title>Connected Objects - Announcements</title>
+<title>Connected Objects - Grading Update</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,11 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../about/index.html" rel="next">
-<link href="../index.html" rel="prev">
 <link href="../assets/favicon_io/favicon.ico" rel="icon">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -74,69 +71,11 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../styles.css">
-<link rel="alternate" type="application/rss+xml" title="Connected Objects" href="index.xml" data-external="1"><meta property="og:title" content="Connected Objects - Announcements">
-<meta property="og:description" content="Course announcements">
+<meta property="og:title" content="Connected Objects - Grading Update">
+<meta property="og:description" content="">
 <meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/announcements/assets/art_title_path_only.svg">
 <meta property="og:site_name" content="Connected Objects">
 </head>
@@ -217,7 +156,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../announcements/index.html">Announcements</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Grading Update</li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -237,7 +176,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../announcements/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../announcements/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Announcements</span></a>
   </div>
 </li>
@@ -546,8 +485,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Announcements</h1>
-<p class="subtitle lead">Course announcements</p>
+<h1 class="title">Grading Update</h1>
 </div>
 
 
@@ -555,6 +493,12 @@ window.Quarto = {
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">April 22, 2024</p>
+    </div>
+  </div>
   
     
   </div>
@@ -564,217 +508,14 @@ window.Quarto = {
 </header>
 
 
+<p>Hello everyone,</p>
+<p>Your grades for L4, L5, Q1, and Milestone 1 have been updated. You can find your feedback on Moodle in most cases.</p>
+<p>For the milestone, your detailed feedback has been included in the “Teacher Feedback” issue of your repository.</p>
+<p><strong>Note for April 22 morning section</strong>: I will be around 15-20 minutes late. Please get your Lab 6 demos ready while you are waiting.</p>
 
 
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="listing-actions-group">
-   <div class="input-group input-group-sm quarto-listing-sort">
-     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-     <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-       <option value="" disabled="" selected="" hidden="">Order By</option>
-       <option value="index" data-direction="asc">Default</option>
-         <option value="listing-title" data-direction="asc">
-          Title
-        </option>
-         <option value="listing-date-sort" data-direction="asc">
-          Date - Oldest
-        </option>
-         <option value="listing-date-sort" data-direction="desc">
-          Date - Newest
-        </option>
-         <option value="listing-author" data-direction="asc">
-          Author
-        </option>
-     </select>
-  </div>
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
-</div>
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1713744000000" data-listing-file-modified-sort="1713787138698" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="66">
-<div class="thumbnail">
-<p><a href="../announcements/2024-04-22-grades-update.html" class="no-external"></a></p><a href="../announcements/2024-04-22-grades-update.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="../announcements/2024-04-22-grades-update.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../announcements/2024-04-22-grades-update.html" class="no-external">Grading Update</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../announcements/2024-04-22-grades-update.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="../announcements/2024-04-22-grades-update.html" class="no-external">Hello everyone,</a>
-</div>
-</div>
-<div class="metadata">
-<a href="../announcements/2024-04-22-grades-update.html" class="no-external">
-<div class="listing-date">
-Apr 22, 2024
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-listing-date-sort="1713398400000" data-listing-file-modified-sort="1713787138698" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="701">
-<div class="thumbnail">
-<p><a href="../announcements/2024-04-18-azure-plan-troubleshooting.html" class="no-external"></a></p><a href="../announcements/2024-04-18-azure-plan-troubleshooting.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="../announcements/2024-04-18-azure-plan-troubleshooting.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../announcements/2024-04-18-azure-plan-troubleshooting.html" class="no-external">Azure Plan Troubleshooting</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../announcements/2024-04-18-azure-plan-troubleshooting.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="../announcements/2024-04-18-azure-plan-troubleshooting.html" class="no-external">In setting up Azure for Lab 6, a few students have asked me about troubles with the following:</a>
-</div>
-</div>
-<div class="metadata">
-<a href="../announcements/2024-04-18-azure-plan-troubleshooting.html" class="no-external">
-<div class="listing-date">
-Apr 18, 2024
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-listing-date-sort="1713139200000" data-listing-file-modified-sort="1713787138698" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="137">
-<div class="thumbnail">
-<p><a href="../announcements/2024-04-15-schedule-updates.html" class="no-external"></a></p><a href="../announcements/2024-04-15-schedule-updates.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="../announcements/2024-04-15-schedule-updates.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../announcements/2024-04-15-schedule-updates.html" class="no-external">Mid-April Schedule Updates</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../announcements/2024-04-15-schedule-updates.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="../announcements/2024-04-15-schedule-updates.html" class="no-external">I’ve made a series of updates to the course website and Moodle, some of which are worth emphasizing because I think they’ll be particularly useful to you:</a>
-</div>
-</div>
-<div class="metadata">
-<a href="../announcements/2024-04-15-schedule-updates.html" class="no-external">
-<div class="listing-date">
-Apr 15, 2024
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-listing-date-sort="1710720000000" data-listing-file-modified-sort="1713787138698" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="160">
-<div class="thumbnail">
-<p><a href="../announcements/2024-03-18-quiz1-topics.html" class="no-external"></a></p><a href="../announcements/2024-03-18-quiz1-topics.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="../announcements/2024-03-18-quiz1-topics.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../announcements/2024-03-18-quiz1-topics.html" class="no-external">Quiz 1: Topics/Information</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../announcements/2024-03-18-quiz1-topics.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="../announcements/2024-03-18-quiz1-topics.html" class="no-external"><strong>Quiz 1</strong> will take place in-class on <strong>Friday, March 22.</strong>. This announcement contains logistical and topics covered.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="../announcements/2024-03-18-quiz1-topics.html" class="no-external">
-<div class="listing-date">
-Mar 18, 2024
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-listing-date-sort="1710374400000" data-listing-file-modified-sort="1713787138698" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="113">
-<div class="thumbnail">
-<p><a href="../announcements/2024-03-14-pi-update.html" class="no-external"></a></p><a href="../announcements/2024-03-14-pi-update.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="../announcements/2024-03-14-pi-update.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../announcements/2024-03-14-pi-update.html" class="no-external">On updating your pi</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../announcements/2024-03-14-pi-update.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="../announcements/2024-03-14-pi-update.html" class="no-external">A few students have run into system updates that may break important reTerminal features (the screen, for e.g.). If you run into any issues when updating your pi software…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="../announcements/2024-03-14-pi-update.html" class="no-external">
-<div class="listing-date">
-Mar 14, 2024
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-listing-date-sort="1710201600000" data-listing-file-modified-sort="1713787138698" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="157">
-<div class="thumbnail">
-<p><a href="../announcements/2024-03-12-website-updates.html" class="no-external"></a></p><a href="../announcements/2024-03-12-website-updates.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="../announcements/2024-03-12-website-updates.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../announcements/2024-03-12-website-updates.html" class="no-external">Website updates</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../announcements/2024-03-12-website-updates.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="../announcements/2024-03-12-website-updates.html" class="no-external">I’ve made a few changes to the course website, some of which are worth emphasizing because I think they’ll be particularly useful to you:</a>
-</div>
-</div>
-<div class="metadata">
-<a href="../announcements/2024-03-12-website-updates.html" class="no-external">
-<div class="listing-date">
-Mar 12, 2024
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="6" data-listing-date-sort="1710201600000" data-listing-file-modified-sort="1713787138698" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="79">
-<div class="thumbnail">
-<p><a href="../announcements/2024-03-12-lab3-demo.html" class="no-external"></a></p><a href="../announcements/2024-03-12-lab3-demo.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="../announcements/2024-03-12-lab3-demo.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../announcements/2024-03-12-lab3-demo.html" class="no-external">Lab 3: Demo in class Friday March 15</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../announcements/2024-03-12-lab3-demo.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="../announcements/2024-03-12-lab3-demo.html" class="no-external">As mentioned in class on March 11, the hand-in for <strong>Lab 3</strong> will be on <strong>Friday March 15</strong>. Demos will start at the <strong>beginning</strong> of class. Come to class prepared to show your progress.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="../announcements/2024-03-12-lab3-demo.html" class="no-external">
-<div class="listing-date">
-Mar 12, 2024
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1328,18 +1069,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../index.html" class="pagination-link" aria-label="Home">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Home</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../about/index.html" class="pagination-link" aria-label="About">
-        <span class="nav-page-text">About</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
