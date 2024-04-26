@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-04-08">
+<meta name="dcterms.date" content="2024-04-26">
 
-<title>Connected Objects - Asynchronous, REST API</title>
+<title>Connected Objects - Debugging Black Screen Issue</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,40 +21,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -65,8 +31,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../">
-<link href="../../../topics/linux/index.html" rel="next">
-<link href="../../../topics/python/docs/project-management.html" rel="prev">
+<link href="../../../topics/hardware/docs/gpios.html" rel="next">
+<link href="../../../topics/hardware/docs/circuitry-basics.html" rel="prev">
 <link href="../../../assets/favicon_io/favicon.ico" rel="icon">
 <script src="../../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
@@ -80,9 +46,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script src="../../../site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
-<script src="../../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": true,
@@ -113,9 +76,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="../../../styles.css">
-<meta property="og:title" content="Connected Objects - Asynchronous, REST API">
-<meta property="og:description" content="Asynchronous programming, TBD">
-<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/topics/python/docs/assets/art_title_path_only.svg">
+<meta property="og:title" content="Connected Objects - Debugging Black Screen Issue">
+<meta property="og:description" content="Sometimes, the reTerminal display drivers fail. Here is an (incomplete) set of debugging steps you can take to try fixing the issue.">
+<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/topics/hardware/docs/assets/art_title_path_only.svg">
 <meta property="og:site_name" content="Connected Objects">
 </head>
 
@@ -195,7 +158,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../topics/index.html">Topics</a></li><li class="breadcrumb-item"><a href="../../../topics/python/index.html">Python</a></li><li class="breadcrumb-item"><a href="../../../topics/python/docs/intro.html">Docs</a></li><li class="breadcrumb-item"><a href="../../../topics/python/docs/advanced.html">Asynchronous, REST API</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../topics/index.html">Topics</a></li><li class="breadcrumb-item"><a href="../../../topics/hardware/index.html">Hardware</a></li><li class="breadcrumb-item"><a href="../../../topics/hardware/docs/reterminal-sensors.html">Docs</a></li><li class="breadcrumb-item"><a href="../../../topics/hardware/docs/debug-black-screen.html">Debugging Black Screen Issue</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -313,20 +276,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="sidebar-item-container"> 
             <a href="../../../topics/hardware/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Hardware</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
  <span class="menu-text">Docs</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth3 ">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth3 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../topics/hardware/docs/reterminal-sensors.html" class="sidebar-item-text sidebar-link">
@@ -353,7 +316,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../topics/hardware/docs/debug-black-screen.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/hardware/docs/debug-black-screen.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Debugging Black Screen Issue</span></a>
   </div>
 </li>
@@ -417,20 +380,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="sidebar-item-container"> 
             <a href="../../../topics/python/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Python</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false">
  <span class="menu-text">Docs</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth3 show">  
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../topics/python/docs/intro.html" class="sidebar-item-text sidebar-link">
@@ -463,7 +426,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../topics/python/docs/advanced.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../topics/python/docs/advanced.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Asynchronous, REST API</span></a>
   </div>
 </li>
@@ -529,24 +492,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
-  <li><a href="#asynch-with-asyncio" id="toc-asynch-with-asyncio" class="nav-link" data-scroll-target="#asynch-with-asyncio">Asynch with <code>asyncio</code></a>
+  <li><a href="#if-you-can-ssh-into-your-reterminal" id="toc-if-you-can-ssh-into-your-reterminal" class="nav-link active" data-scroll-target="#if-you-can-ssh-into-your-reterminal">If you can <code>ssh</code> into your reTerminal</a></li>
+  <li><a href="#if-you-cannot-ssh-into-your-reterminal" id="toc-if-you-cannot-ssh-into-your-reterminal" class="nav-link" data-scroll-target="#if-you-cannot-ssh-into-your-reterminal">If you cannot <code>ssh</code> into your reTerminal</a>
   <ul>
-  <li><a href="#concurrent-vs-parallel" id="toc-concurrent-vs-parallel" class="nav-link" data-scroll-target="#concurrent-vs-parallel">Concurrent vs Parallel</a></li>
-  <li><a href="#synchronous-vs-async-execution" id="toc-synchronous-vs-async-execution" class="nav-link" data-scroll-target="#synchronous-vs-async-execution">Synchronous vs Async Execution</a></li>
-  <li><a href="#asyncio-vs-threads" id="toc-asyncio-vs-threads" class="nav-link" data-scroll-target="#asyncio-vs-threads">Asyncio vs Threads</a>
-  <ul class="collapse">
-  <li><a href="#threads" id="toc-threads" class="nav-link" data-scroll-target="#threads">Threads</a></li>
-  <li><a href="#asyncio-tasks" id="toc-asyncio-tasks" class="nav-link" data-scroll-target="#asyncio-tasks">Asyncio Tasks</a></li>
-  </ul></li>
-  <li><a href="#coroutines-tasks-event-loop" id="toc-coroutines-tasks-event-loop" class="nav-link" data-scroll-target="#coroutines-tasks-event-loop">Coroutines, Tasks &amp; Event Loop</a>
-  <ul class="collapse">
-  <li><a href="#coroutines" id="toc-coroutines" class="nav-link" data-scroll-target="#coroutines">Coroutines</a></li>
-  <li><a href="#tasks" id="toc-tasks" class="nav-link" data-scroll-target="#tasks">Tasks</a></li>
-  <li><a href="#futures" id="toc-futures" class="nav-link" data-scroll-target="#futures">Futures</a></li>
-  </ul></li>
-  <li><a href="#diving-further-references" id="toc-diving-further-references" class="nav-link" data-scroll-target="#diving-further-references">Diving Further &amp; References</a></li>
-  <li><a href="#asyncio-exercises" id="toc-asyncio-exercises" class="nav-link" data-scroll-target="#asyncio-exercises">Asyncio Exercises</a></li>
+  <li><a href="#finding-the-problem" id="toc-finding-the-problem" class="nav-link" data-scroll-target="#finding-the-problem">Finding the problem</a></li>
+  <li><a href="#solving-boot-firmare-file-problems" id="toc-solving-boot-firmare-file-problems" class="nav-link" data-scroll-target="#solving-boot-firmare-file-problems">Solving <code>/boot/</code> firmare file problems</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -554,12 +504,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../topics/index.html">Topics</a></li><li class="breadcrumb-item"><a href="../../../topics/python/index.html">Python</a></li><li class="breadcrumb-item"><a href="../../../topics/python/docs/intro.html">Docs</a></li><li class="breadcrumb-item"><a href="../../../topics/python/docs/advanced.html">Asynchronous, REST API</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../topics/index.html">Topics</a></li><li class="breadcrumb-item"><a href="../../../topics/hardware/index.html">Hardware</a></li><li class="breadcrumb-item"><a href="../../../topics/hardware/docs/reterminal-sensors.html">Docs</a></li><li class="breadcrumb-item"><a href="../../../topics/hardware/docs/debug-black-screen.html">Debugging Black Screen Issue</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Asynchronous, REST API</h1>
-<p class="subtitle lead">Asynchronous programming, TBD</p>
+<h1 class="title">Debugging Black Screen Issue</h1>
+<p class="subtitle lead">Sometimes, the reTerminal display drivers fail. Here is an (incomplete) set of debugging steps you can take to try fixing the issue.</p>
   <div class="quarto-categories">
-    <div class="quarto-category">Python</div>
+    <div class="quarto-category">Hardware</div>
   </div>
   </div>
 
@@ -571,7 +521,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 8, 2024</p>
+      <p class="date">April 26, 2024</p>
     </div>
   </div>
   
@@ -589,246 +539,45 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>This section explores advanced Python topics that will help us write better IoT applications.</p>
-<p>We’ll explore:</p>
-<ul>
-<li>Asynchronous programming with <code>asyncio</code></li>
-<li>REST API for HTTP with <code>flask</code> and <code>dash</code> (TO BE UPDATED SOON)</li>
-</ul>
-</section>
-<section id="asynch-with-asyncio" class="level2">
-<h2 class="anchored" data-anchor-id="asynch-with-asyncio">Asynch with <code>asyncio</code></h2>
-<p>The library <code>asyncio</code> enables code to be <strong>run concurrently</strong>: - Tasks share the execution thread while appearing to be executing in parallel.</p>
-<blockquote class="blockquote">
-<p>Asyncio API: - <a href="https://docs.python.org/3/library/asyncio-task.html#asyncio-example-gather">Coroutines and Tasks</a> (good intro to <em>asyncio</em>).</p>
-<p>In-depth guide: - <a href="https://realpython.com/async-io-python/">Async IO in Python: A Complete Walkthrough</a> by realpython.com.</p>
-<p>Video Summary: - <a href="https://www.youtube.com/watch?v=2IW-ZEui4h4">How To Easily Do Asynchronous Programming With Asyncio</a> by ArjanCodes</p>
-</blockquote>
-<section id="concurrent-vs-parallel" class="level3">
-<h3 class="anchored" data-anchor-id="concurrent-vs-parallel">Concurrent vs Parallel</h3>
-<p>It’s important to note that <strong>concurrent code does not necessarily mean parallel</strong>.</p>
-<p><a href="https://tenthousandmeters.com/blog/python_bts_12/concurrency.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="https://tenthousandmeters.com/blog/python_bts_12/concurrency.png" class="img-fluid"></a></p>
-<p><em>Concurrent does necessarily mean parallel execution. By <a href="https://tenthousandmeters.com/blog/python-behind-the-scenes-12-how-asyncawait-works-in-python/">Ten thousand meters</a></em></p>
-<blockquote class="blockquote">
-<p>In Python, the only way to run parallel code is to use multiple CPU cores by running multiple Python interpreters that interact. See <a href="https://docs.python.org/3/library/multiprocessing.html">multiprocessing module</a>.</p>
-</blockquote>
-<p>Asyncio is used to run <strong>multiple tasks or multiple threads</strong> concurrently but never at the same time (in parallel).</p>
-</section>
-<section id="synchronous-vs-async-execution" class="level3">
-<h3 class="anchored" data-anchor-id="synchronous-vs-async-execution">Synchronous vs Async Execution</h3>
-<p>In typical programming, most tasks and processes are synchronous, meaning, they run <strong>one at the time, always waiting for the previous taks to finish</strong></p>
-<p>Synchronous is disadvantageous when there are many tasks that need to wait for external input or output before it can proceed. For example:</p>
-<ul>
-<li>The code was asked to sleep.</li>
-<li>Waiting for a HTTP response.</li>
-<li>Waiting for a Database call.</li>
-<li>Waiting to write to a file.</li>
-<li></li>
-</ul>
-<p><a href="https://files.realpython.com/media/IOBound.4810a888b457.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="https://files.realpython.com/media/IOBound.4810a888b457.png" class="img-fluid"></a></p>
-<p><em>Synchronous code execution by <a href="https://realpython.com/python-concurrency/">RealPython.com</a></em></p>
-<p><strong>Asynchronous</strong> execution enables the execution of the next task while waiting for the external input/output.</p>
-<p><a href="https://files.realpython.com/media/Asyncio.31182d3731cf.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="https://files.realpython.com/media/Asyncio.31182d3731cf.png" class="img-fluid"></a></p>
-<p><em>Asynchronous code execution by <a href="https://realpython.com/python-concurrency/">RealPython.com</a></em></p>
-<blockquote class="blockquote">
-<p>Note that the amount <strong>CPU processing (blue area in the diagrams above) is the same</strong> in both sync and async executions.</p>
-<p>However, the async execution spends <strong>less time waiting idle</strong>.</p>
-</blockquote>
-</section>
-<section id="asyncio-vs-threads" class="level3">
-<h3 class="anchored" data-anchor-id="asyncio-vs-threads">Asyncio vs Threads</h3>
-<p>By default, asyncio works with task, not threads. However, it is possible to create new threads with asyncio.</p>
-<section id="threads" class="level4">
-<h4 class="anchored" data-anchor-id="threads">Threads</h4>
-<p>Once a thread is created, it is managed by the Operating System (OS).</p>
-<p>Thread execution can be halted and resumed whenever the OS deems necessary, <strong>without any control from the application side</strong>.</p>
-<blockquote class="blockquote">
-<p>In Python all threads run in the same CPU core due to the <a href="https://realpython.com/python-gil/">GIL (Global Interpreter Lock)</a></p>
-</blockquote>
-<p>This type of time-slicing (execution time given for each thread) is called <strong>preemptive multitasking</strong>.</p>
-<ul>
-<li>Preemptive because the OS is anticipating the start and stop of each thread.</li>
-</ul>
-<p><a href="https://www.digikey.bg/maker-media/ac6c69ba-1ff1-4e5a-9275-50240049de58.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="https://www.digikey.bg/maker-media/ac6c69ba-1ff1-4e5a-9275-50240049de58.png" class="img-fluid"></a></p>
-<p><em>Thread execution time being managed by the OS. By <a href="https://www.digikey.bg/en/maker/projects/getting-started-with-asyncio-in-micropython-raspberry-pi-pico/110b4243a2f544b6af60411a85f0437c">Digikey.com</a></em></p>
-</section>
-<section id="asyncio-tasks" class="level4">
-<h4 class="anchored" data-anchor-id="asyncio-tasks">Asyncio Tasks</h4>
-<p><strong>Asyncio uses cooperative multitasking</strong> to manage and share the CPU processing time (time-slicing).</p>
-<blockquote class="blockquote">
-<p>In <strong>cooperative multitasking</strong>, each task must explicitly yield (or pass) execution time back to the main loop so that the next task can start/continue.</p>
-</blockquote>
-<p><a href="https://www.digikey.bg/maker-media/ad878381-74bb-43ef-9b9b-2eb149d179df.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="https://www.digikey.bg/maker-media/ad878381-74bb-43ef-9b9b-2eb149d179df.png" class="img-fluid"></a></p>
-<p><em>Tasks yielding CPU execution time so that other tasks can run. By <a href="https://www.digikey.bg/en/maker/projects/getting-started-with-asyncio-in-micropython-raspberry-pi-pico/110b4243a2f544b6af60411a85f0437c">Digikey.com</a></em></p>
-<blockquote class="blockquote">
-<p>In Asyncio, <strong>tasks yield by using the <code>await</code> keyword.</strong></p>
-</blockquote>
-<p><a href="https://cdn-learn.adafruit.com/assets/assets/000/106/571/medium800/circuitpython_2tasks.png?1637163446" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="https://cdn-learn.adafruit.com/assets/assets/000/106/571/medium800/circuitpython_2tasks.png?1637163446" class="img-fluid"></a></p>
-<p><em>Tasks yielding execution time with the <code>await</code> keyword. By <a href="https://learn.adafruit.com/cooperative-multitasking-in-circuitpython-with-asyncio">Adafruit.com</a></em></p>
-<p>In the image above, Task 1 (running function <code>f()</code>) yields execution time to Task 2 (running function <code>g()</code>) by using the <code>await</code> keyboard and vice-versa.</p>
-</section>
-</section>
-<section id="coroutines-tasks-event-loop" class="level3">
-<h3 class="anchored" data-anchor-id="coroutines-tasks-event-loop">Coroutines, Tasks &amp; Event Loop</h3>
-<p>In Asyncio, there are 3 types of awaitable objects: - Coroutines - Tasks - Futures</p>
-<section id="coroutines" class="level4">
-<h4 class="anchored" data-anchor-id="coroutines">Coroutines</h4>
-<p>Coroutines are functions that are awaitable.</p>
-<p>They must be declared with the <code>async</code> keyword</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">async</span> <span class="kw">def</span> countdown(task_name, seconds):</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(seconds, <span class="dv">0</span>, <span class="op">-</span><span class="dv">1</span>):</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(task_name, i)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">await</span> asyncio.sleep(<span class="dv">1</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"done!"</span>)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="cf">async</span> <span class="kw">def</span> main():</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">await</span> countdown(<span class="st">"simple count"</span>, <span class="dv">4</span>)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>asyncio.run(main())</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">""" Output</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">simple count 4</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co">simple count 3</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co">simple count 2</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co">simple count 1</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co">done!</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>In the example above, <code>countdown()</code>, <code>asyncio.sleep()</code> and <code>main()</code> are coroutines.</p>
-<p><code>countdown()</code> and <code>asyncio.sleep()</code> were called with <code>await</code> , however, <code>main()</code> was called with <code>asyncio.run()</code></p>
-<blockquote class="blockquote">
-<p>In asyncio, all awaitable objects must run <strong>inside an event loop</strong>.</p>
-<ul>
-<li>The method <code>asyncio.run()</code> creates a “top-level” event loop</li>
-</ul>
-</blockquote>
-</section>
-<section id="tasks" class="level4">
-<h4 class="anchored" data-anchor-id="tasks">Tasks</h4>
-<p><strong>Tasks</strong> are used to schedule coroutines <em>concurrently</em>.</p>
-<p>Once a task is scheduled, it will run as soon as the event loop is available.</p>
-<ul>
-<li>Tasks are scheduled (wrapped) with <code>asyncio.create_task()</code></li>
-<li>In order <strong>to run a task to completion, it must be awaited</strong>.</li>
-</ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="cf">async</span> <span class="kw">def</span> main():</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Scheduling and starting tasks</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    taskA <span class="op">=</span> asyncio.create_task(countdown(<span class="st">"task A"</span>, <span class="dv">3</span>))</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    taskB <span class="op">=</span> asyncio.create_task(countdown(<span class="st">"task B"</span>, <span class="dv">2</span>))</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Doing something else while they run</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">await</span> asyncio.sleep(<span class="dv">1</span>)</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Everything, everywhere, all at once"</span>)</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Awaiting for tasks to complete before ending main()</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Try running this code without awaiting</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">await</span> taskA</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">await</span> taskB</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>asyncio.run(main())</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co">""" Output</span></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="co">task A 3</span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="co">task B 2</span></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="co">Everything, everywhere, all at once</span></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="co">task A 2</span></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="co">task B 1</span></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="co">task A 1</span></span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="co">done!</span></span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="co">done!</span></span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The scheduling and execution of each task is illustrated in the diagram below: <img src="../../../topics/assets/10-python-create-task.png" class="img-fluid"></p>
-<p>Order of task execution. From <a href="https://qiita.com/everylittle/items/57da997d9e0507050085">Qiita.com</a></p>
-<p>Instead of creating Tasks and awaiting them individually, it’s possible to run multiple coroutines concurrently and wait for all of them:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">async</span> <span class="kw">def</span> main():</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Running and awaiting multiple coroutines</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">await</span> asyncio.gather(</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>        countdown(<span class="st">"task A"</span>, <span class="dv">4</span>),</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        countdown(<span class="st">"task B"</span>, <span class="dv">3</span>)</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">await</span> asyncio.sleep(<span class="dv">1</span>)</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Everything, everywhere, all at once"</span>)</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>asyncio.run(main())</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co">task A 4</span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co">task B 3</span></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="co">task A 3</span></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="co">task B 2</span></span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="co">task A 2</span></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="co">task B 1</span></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="co">task A 1</span></span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="co">done!</span></span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="co">done!</span></span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="co">Everything, everywhere, all at once</span></span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="futures" class="level4">
-<h4 class="anchored" data-anchor-id="futures">Futures</h4>
-<p>A Future in Asyncio is the equivalent of a Promise in JavaScript.</p>
-<blockquote class="blockquote">
-<p>It is rare that developers need to use a Future directly.</p>
-</blockquote>
-</section>
-</section>
-<section id="diving-further-references" class="level3">
-<h3 class="anchored" data-anchor-id="diving-further-references">Diving Further &amp; References</h3>
-<p>The following are excellent resources for learning more about Asyncio:</p>
-<ul>
-<li><a href="https://realpython.com/async-io-python/">Async IO in Python: A Complete Walkthrough</a> by RealPython.com</li>
-</ul>
-</section>
-<section id="asyncio-exercises" class="level3">
-<h3 class="anchored" data-anchor-id="asyncio-exercises">Asyncio Exercises</h3>
+<p>So far, there have been two primary causes for the reTerminal screen to stop working:</p>
 <ol type="1">
-<li>Create a program with <em>asyncio</em> that uses two function to display information “at the same time”. Call the functions with arguments of your choice.
-<ul>
-<li><code>countdown()</code>:
-<ul>
-<li>Take it from the examples above.</li>
-</ul></li>
-<li><code>blink()</code>:
-<ul>
-<li><strong>Arguments</strong>:
-<ul>
-<li>A message that will be displayed periodically. Defaults to “Blink”</li>
-<li>The number of seconds to flash the message.</li>
-<li>How many times per second the message should be flashed.</li>
-</ul></li>
-<li><strong>Return</strong>:
-<ul>
-<li>The number of times the message was flashed.</li>
-</ul></li>
-<li>Example:
-<ul>
-<li>calling <code>blink("Hello", 5, 2)</code> should return 10</li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li>Use the <a href="https://docs.python-requests.org/en/latest/">library <code>requests</code></a> to fetch 5 random pokemon names from the <a href="https://pokeapi.co/docs/v2#info">Pokemon API</a>.
-<ul>
-<li>Use a random number between 1 and 251 as the <strong>pokemon id</strong>.</li>
-<li>Use the <a href="https://pokeapi.co/docs/v2#pokemon">API endpoint: <code>https://pokeapi.co/api/v2/pokemon/{id or name}/</code></a>.</li>
-<li>Use the <code>requests</code> built-in json decoder: <a href="https://docs.python-requests.org/en/latest/user/quickstart/#json-response-content">JSON Response Content</a></li>
-<li>Send 5 GET requests.</li>
-<li>For each request, display the name of the randomly selected pokemon.</li>
-<li>Time the total script execution with <a href="https://docs.python.org/3/library/time.html#time.perf_counter"><code>time.perf_counter()</code></a></li>
-</ul></li>
-<li>Use the <a href="https://docs.aiohttp.org/en/stable/client_quickstart.html">library <code>aiohttp</code></a> to fetch 5 “simultaneous” random pokemon names from the <a href="https://pokeapi.co/docs/v2#info">Pokemon API</a>.
-<ul>
-<li>Use a random number between 1 and 251 as the <strong>pokemon id</strong>.</li>
-<li>Use the <a href="https://pokeapi.co/docs/v2#pokemon">API endpoint: <code>https://pokeapi.co/api/v2/pokemon/{id or name}/</code></a>.</li>
-<li>Use the <code>aiohttp</code> built-in json decoder: <a href="https://docs.aiohttp.org/en/stable/client_quickstart.html#json-response-content">JSON Response Content</a></li>
-<li>Send 5 get requests at the same time using <code>asyncio</code></li>
-<li>For each request, display the name of the randomly selected pokemon.</li>
-<li>Time the total script execution with <a href="https://docs.python.org/3/library/time.html#time.perf_counter"><code>time.perf_counter()</code></a></li>
-</ul></li>
+<li>System update using <code>apt</code>: during the semester, some changes that break raspberry pi and reTerminal compatibility were introduced in the update from Linux <code>6.1</code> to <code>6.6</code>.</li>
+<li>Errors introduced from mistakes when editing firmware files like <code>/boot/firmware/*.txt</code> and/or <code>/boot/cmdline.txt</code> and/or <code>/boot/config.txt</code></li>
 </ol>
+<p>In the first case, the reTerminal boots just fine, but the screen doesn’t work. In the second case, the reTerminal fails to boot at all.</p>
+<p>For each of these cases, I have a set of troubleshooting steps you can take to resolve these issues.</p>
+<section id="if-you-can-ssh-into-your-reterminal" class="level2">
+<h2 class="anchored" data-anchor-id="if-you-can-ssh-into-your-reterminal">If you can <code>ssh</code> into your reTerminal</h2>
+<ol type="1">
+<li>Follow the steps from the announcment <a href="../../../topics/announcements/2024-03-14-pi-update.qmd">On Updating Your Pi</a></li>
+</ol>
+</section>
+<section id="if-you-cannot-ssh-into-your-reterminal" class="level2">
+<h2 class="anchored" data-anchor-id="if-you-cannot-ssh-into-your-reterminal">If you cannot <code>ssh</code> into your reTerminal</h2>
+<section id="finding-the-problem" class="level3">
+<h3 class="anchored" data-anchor-id="finding-the-problem">Finding the problem</h3>
+<ol type="1">
+<li>Ask the teacher for a micro-usb to HDMI connector</li>
+<li>Plug the HDMI end into a workstation monitor, and the micro-usb end into your reTerminal (in the port labelled HDMI)</li>
+<li>Plug your reTerminal into a power supply to boot the reTerminal</li>
+<li>The monitor will show logs of your reTerminal booting. Observe these logs closely. <strong>You are looking for specific error messages</strong>.</li>
+<li>Write down the specific error messages. Search the course notes/<a href="https://www.raspberrypi.com/documentation/computers/configuration.html#the-boot-folder">Raspberry Pi Documentation</a> for any concepts you don’t understand. Think backl: have you made any changes to the <code>/boot</code> files that seem related to these errors?</li>
+<li>If you have a good idea of what happened and what needs to be fixed, proceed to the next section. Feel free to double check your understanding with the teacher at this point – for educational purposes, I may not give you the answer directly, but I can guide you in a direction that will help save you some time.</li>
+</ol>
+</section>
+<section id="solving-boot-firmare-file-problems" class="level3">
+<h3 class="anchored" data-anchor-id="solving-boot-firmare-file-problems">Solving <code>/boot/</code> firmare file problems</h3>
+<p>If indeed the error comes from an incorrect <code>/boot</code> configuration file setting, we can fix the error <em>without reimaging the pi</em>. Instead, we will <em>mount the reTerminal storage</em> on to a workstation and then <em>fix the firmware files directly on that workstation</em>.</p>
+<p>The steps will look similar to Lab 1, except we won’t be reimaging the device at the end. You should open Lab 1 instructions for reference while you are working for reference (<a href="https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=33679">Lab 1 Section 1 link</a>, <a href="https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=33681">Lab 2 Section 2 link</a>). The following steps will be necessary:</p>
+<ol start="0" type="1">
+<li>Make sure your reTerminal is entirely unplugged and powered off.</li>
+<li>Disassemble your reTerminal, <em>up to the step where you can toggle the Firmware Flash switch</em>. Toggle the switch. This step will let you mount the storage device onto your workstation.</li>
+<li>On your lab workstation, find the program <code>rpibootloader</code> and run it. You should not need elevated access.</li>
+<li>While the <code>rpibootloader</code> program is running, plug your reTerminal into the workstation using a USB-C to USB-3 connector.</li>
+<li>You should see the <code>rpibootloader</code> acknowledge connection to your reterminal. A dozen or so logs will be printed to the <code>rpibootloader</code> program window. Once this is done: navigate to Windows Explorer (the file manager) and you should see the reTerminal (~28-32GB) as a connected drive on the workstation</li>
+<li>The firmware files can now be edited directly to fix any mistakes made.</li>
+</ol>
+<p>Step (5) above will vary depending on your exact error – this is why the “Finding the problem” step is important,to inform what fixes you should attempt first.</p>
 
 
 </section>
@@ -1390,13 +1139,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../../topics/python/docs/project-management.html" class="pagination-link" aria-label="Project management">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Project management</span>
+      <a href="../../../topics/hardware/docs/circuitry-basics.html" class="pagination-link" aria-label="Electronics Basics">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Electronics Basics</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../../topics/linux/index.html" class="pagination-link" aria-label="Linux">
-        <span class="nav-page-text">Linux</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../../topics/hardware/docs/gpios.html" class="pagination-link" aria-label="GPIOs: Inputs and Outputs">
+        <span class="nav-page-text">GPIOs: Inputs and Outputs</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1445,31 +1194,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","openEffect":"zoom","loop":false,"closeEffect":"zoom"});
-window.onload = () => {
-  lightboxQuarto.on('slide_before_load', (data) => {
-    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-    const href = trigger.getAttribute('href');
-    if (href !== null) {
-      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-      if (imgEl !== null) {
-        const srcAttr = imgEl.getAttribute("src");
-        if (srcAttr && srcAttr.startsWith("data:")) {
-          slideConfig.href = srcAttr;
-        }
-      }
-    } 
-  });
-
-  lightboxQuarto.on('slide_after_load', (data) => {
-    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-    if (window.Quarto?.typesetMath) {
-      window.Quarto.typesetMath(slideNode);
-    }
-  });
-
-};
-          </script>
 
 
 
