@@ -55,7 +55,6 @@ You can compare this calendar with the calendar from the [Course Outline][course
 
 1. **Project Milestone 1:** Set up team Repo and Requirement Tracking (5%). [Section 1][m1-sec1], [Section 2][m1-sec2]
 2. **Project Milestone 2:** Create sensor and actuator subsystems (9%). [Section 1][m2-sec1], [Section 2][m2-sec2]
-3. **Assignment 2:** HVAC system using Azure IoT (9%). [Section 1][a1-sec1], [Section 2][a1-sec2] 
 4. **Lab 5:** Eclipse Lab (3%). [Section 1][lab5-sec1], [Section 2][lab5-sec2]
 5. **Lab 6:** Azure IoT Hub (4%). [Section 1][lab6-sec1], [Section 2][lab6-sec2]
 6. **Quiz 2:** March+April content (in-class April 26)
@@ -71,21 +70,23 @@ You can compare this calendar with the calendar from the [Course Outline][course
 - **April 19 (Fri):** Finish Lab 6, work on Assignment 2
 - **April 22 (Mon):** Finish Milestone 2
 - **April 26 (Fri):** Quiz 2
-- **April 29 (Mon):** Finish Assignment 2
+- **April 29 (Mon):** Work on Milestone/Assignment
 
 ## May
 
 ### Deliverables
 
 1. **Test 1:** All course content (in-class May 3)
-2. **Project Milestone 3:** TBA
+2. **Project Milestone 4:** (May 10) Azure IoT for devices in project. [Section 1][m4-sec1], [Section 2][m4-sec2]
+3. **Assignment 2:** (May 10) HVAC system using Azure IoT (9%). [Section 1][a1-sec1], [Section 2][a1-sec2] 
+4. **Project Milestone 6:** Finalizing IoT Communications System. [Section 1][m6-sec1], [Section 2][m6-sec2]
+5. **Project Milestone 7:** Final Presentations. [Section 1][m7-sec1], [Section 2][m7-sec2]
 
 ### Schedule
 
 - **May 3 (Fri):** Test 1
-- **May 6 (Mon):** TBA
-- **May 10 (Fri):** TBA
-- **May 13 (Mon):** TBA
-- **May 17 (Fri):** TBA
-- **May 20 (Mon):** TBA
-- **May 24 (Fri):** TBA
+- **May 6 (Mon):** Work on Assignment 2 and Milestone 4
+- **May 10 (Fri):** Milestone 2 and Assignment 4 due.
+- **May 13 (Mon):** Work on Milestone 6 + App Dev III
+- **May 17 (Fri):** Wrap up Milestone 6 + App Dev III
+- **May 23/24 (Thurs/Fri):** Final presentations, all milestones due
