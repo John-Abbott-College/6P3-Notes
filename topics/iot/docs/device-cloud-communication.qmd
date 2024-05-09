@@ -1,7 +1,7 @@
 ---
 title: Device to Cloud Communication
 subtitle: "How to use Azure for bidrectional device-cloud communication"
-date: 2024-04-19
+date: 2024-04-09
 ---
 
 Communication for IoT systems should be bi-directional:
@@ -42,7 +42,7 @@ IoT Hub exposes three options for sending information from the device to the clo
         
 - [File uploads](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-file-upload) for media files and large telemetry batches uploaded by intermittently connected devices.
 
-- [Device twin's reported properties](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-device-twins) for reporting device state information such as configuration or last known state. More on Device twins later in the course.
+- [Device twin's reported properties](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-device-twins) for reporting device state information such as configuration or last known state. [Course notes on Device twins](/topics/iot/docs/device-twins.qmd)
 
 
 ## Cloud to Device (C2D) Communication
@@ -53,8 +53,7 @@ IoT Hub provides three options for devices to receive information and commands f
 
 - [Direct methods](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-direct-methods) follow a request-response pattern and are meant for communications that require immediate confirmation of their result. For example, interactive control of the device, such as turning on a fan.
     
-- [Twin's desired properties](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-device-twins) for long-running commands intended to put the device into a certain desired state. For example, set the telemetry send interval to 30 minutes. More on Device twins later in the course.
-
+- [Twin's desired properties](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-device-twins) for long-running commands intended to put the device into a certain desired state. For example, set the telemetry send interval to 30 minutes. [Course notes on Device twins](/topics/iot/docs/device-twins.qmd)
 
 ## End-points
 
