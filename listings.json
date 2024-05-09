@@ -22,11 +22,13 @@
       "/topics/python/docs/advanced.html",
       "/topics/python/docs/project-management.html",
       "/topics/linux/docs/github.html",
+      "/topics/iot/docs/device-cloud-communication.html",
+      "/topics/iot/docs/device-twins.html",
       "/topics/iot/docs/azure-sdks.html",
       "/topics/iot/docs/iot-protocols.html",
       "/topics/iot/docs/intro-azure-iot.html",
-      "/topics/iot/docs/15-azure-cli-cheatsheet.html",
-      "/topics/hardware/docs/debug-black-screen.html"
+      "/topics/hardware/docs/debug-black-screen.html",
+      "/topics/iot/docs/azure-cli-cheatsheet.html"
     ]
   },
   {
@@ -56,10 +58,12 @@
     "listing": "/topics/iot/index.html",
     "items": [
       "/topics/iot/docs/what-is-iot.html",
+      "/topics/iot/docs/device-cloud-communication.html",
+      "/topics/iot/docs/device-twins.html",
       "/topics/iot/docs/azure-sdks.html",
       "/topics/iot/docs/iot-protocols.html",
       "/topics/iot/docs/intro-azure-iot.html",
-      "/topics/iot/docs/15-azure-cli-cheatsheet.html"
+      "/topics/iot/docs/azure-cli-cheatsheet.html"
     ]
   },
   {

@@ -32,7 +32,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../">
 <link href="../../../topics/iot/docs/iot-protocols.html" rel="next">
-<link href="../../../topics/iot/docs/azure-sdks.html" rel="prev">
+<link href="../../../topics/iot/docs/device-twins.html" rel="prev">
 <link href="../../../assets/favicon_io/favicon.ico" rel="icon">
 <script src="../../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
@@ -161,7 +161,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../topics/index.html">Topics</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/index.html">IoT</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/docs/15-azure-cli-cheatsheet.html">Docs</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/docs/intro-azure-iot.html">Intro to Azure IoT</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../topics/index.html">Topics</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/index.html">IoT</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/docs/azure-cli-cheatsheet.html">Docs</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/docs/intro-azure-iot.html">Intro to Azure IoT</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -243,7 +243,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth3 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../topics/iot/docs/15-azure-cli-cheatsheet.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/iot/docs/azure-cli-cheatsheet.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Azure CLI Cheatsheet</span></a>
   </div>
 </li>
@@ -251,6 +251,18 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="../../../topics/iot/docs/azure-sdks.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Azure SDKs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../topics/iot/docs/device-cloud-communication.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Device to Cloud Communication</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../topics/iot/docs/device-twins.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Device Twins</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -527,7 +539,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../topics/index.html">Topics</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/index.html">IoT</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/docs/15-azure-cli-cheatsheet.html">Docs</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/docs/intro-azure-iot.html">Intro to Azure IoT</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../topics/index.html">Topics</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/index.html">IoT</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/docs/azure-cli-cheatsheet.html">Docs</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/docs/intro-azure-iot.html">Intro to Azure IoT</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Intro to Azure IoT</h1>
 <p class="subtitle lead">How to use a PaaS to deploy IoT services</p>
@@ -552,7 +564,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">May 6, 2024</p>
+      <p class="date-modified">May 9, 2024</p>
     </div>
   </div>
     
@@ -577,7 +589,7 @@ ul.task-list li input[type="checkbox"] {
 </blockquote>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../assets/intro-azure-paas.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1" title="Compasion of SaaS, PaaS and IaaS platforms"><img src="../assets/intro-azure-paas.png" class="img-fluid figure-img" alt="Compasion of SaaS, PaaS and IaaS platforms"></a></p>
+<p><a href="../assets/intro-azure-paas.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1" title="Compasion of SaaS, PaaS and IaaS platforms"><img src="../assets/intro-azure-paas.png" class="img-fluid figure-img" alt="Compasion of SaaS, PaaS and IaaS platforms"></a></p>
 <figcaption>Compasion of SaaS, PaaS and IaaS platforms</figcaption>
 </figure>
 </div>
@@ -593,7 +605,7 @@ ul.task-list li input[type="checkbox"] {
 <p>We can breakdown an IoT solution into <strong>subsystems</strong> and explore how information flows between them:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://docs.microsoft.com/en-us/learn/wwl-azure/introduction-iot-solution-architecture/media/m01-l02-core-subsystems-iot-architecture-8158ad9e.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" data-glightbox="description: .lightbox-desc-2" title="Diagram that shows the core subsystems of the Azure IoT reference architecture."><img src="https://docs.microsoft.com/en-us/learn/wwl-azure/introduction-iot-solution-architecture/media/m01-l02-core-subsystems-iot-architecture-8158ad9e.png" class="img-fluid figure-img" alt="Diagram that shows the core subsystems of the Azure IoT reference architecture."></a></p>
+<p><a href="https://docs.microsoft.com/en-us/learn/wwl-azure/introduction-iot-solution-architecture/media/m01-l02-core-subsystems-iot-architecture-8158ad9e.png" class="lightbox" data-glightbox="description: .lightbox-desc-2" data-gallery="quarto-lightbox-gallery-2" title="Diagram that shows the core subsystems of the Azure IoT reference architecture."><img src="https://docs.microsoft.com/en-us/learn/wwl-azure/introduction-iot-solution-architecture/media/m01-l02-core-subsystems-iot-architecture-8158ad9e.png" class="img-fluid figure-img" alt="Diagram that shows the core subsystems of the Azure IoT reference architecture."></a></p>
 <figcaption>Diagram that shows the core subsystems of the Azure IoT reference architecture.</figcaption>
 </figure>
 </div>
@@ -615,7 +627,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Azure offers many IoT-related services (see image below). In this course we’ll only explore a few.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/iot/images/iot-refarch.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" data-glightbox="description: .lightbox-desc-3" title="Azure IoT-related architecture"><img src="https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/iot/images/iot-refarch.svg" class="img-fluid figure-img" alt="Azure IoT-related architecture"></a></p>
+<p><a href="https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/iot/images/iot-refarch.svg" class="lightbox" data-glightbox="description: .lightbox-desc-3" data-gallery="quarto-lightbox-gallery-3" title="Azure IoT-related architecture"><img src="https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/iot/images/iot-refarch.svg" class="img-fluid figure-img" alt="Azure IoT-related architecture"></a></p>
 <figcaption>Azure IoT-related architecture</figcaption>
 </figure>
 </div>
@@ -667,7 +679,7 @@ ul.task-list li input[type="checkbox"] {
 <p>To see a list of all Azure regions see <a href="https://azure.microsoft.com/en-us/global-infrastructure/geographies/#overview">azure geographies</a>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://www.poppelgaard.com/wp-content/uploads/2017/03/azure_datacenters.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" data-glightbox="description: .lightbox-desc-5" title="Azure infrastructure map"><img src="https://www.poppelgaard.com/wp-content/uploads/2017/03/azure_datacenters.png" class="img-fluid figure-img" alt="Azure infrastructure map"></a></p>
+<p><a href="https://www.poppelgaard.com/wp-content/uploads/2017/03/azure_datacenters.png" class="lightbox" data-glightbox="description: .lightbox-desc-5" data-gallery="quarto-lightbox-gallery-5" title="Azure infrastructure map"><img src="https://www.poppelgaard.com/wp-content/uploads/2017/03/azure_datacenters.png" class="img-fluid figure-img" alt="Azure infrastructure map"></a></p>
 <figcaption>Azure infrastructure map</figcaption>
 </figure>
 </div>
@@ -1420,8 +1432,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../../topics/iot/docs/azure-sdks.html" class="pagination-link" aria-label="Azure SDKs">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Azure SDKs</span>
+      <a href="../../../topics/iot/docs/device-twins.html" class="pagination-link" aria-label="Device Twins">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Device Twins</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
@@ -1475,7 +1487,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":false,"openEffect":"zoom","closeEffect":"zoom","descPosition":"bottom"});
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","loop":false,"openEffect":"zoom","closeEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

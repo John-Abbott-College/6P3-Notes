@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-04-26">
+<meta name="dcterms.date" content="2024-04-09">
 
-<title>Connected Objects - Debugging Black Screen Issue</title>
+<title>Connected Objects - Device to Cloud Communication</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -31,8 +65,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../">
-<link href="../../../topics/hardware/docs/gpios.html" rel="next">
-<link href="../../../topics/hardware/docs/circuitry-basics.html" rel="prev">
+<link href="../../../topics/iot/docs/device-twins.html" rel="next">
+<link href="../../../topics/iot/docs/azure-sdks.html" rel="prev">
 <link href="../../../assets/favicon_io/favicon.ico" rel="icon">
 <script src="../../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
@@ -46,6 +80,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script src="../../../site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
+<script src="../../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": true,
@@ -76,9 +113,9 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="../../../styles.css">
-<meta property="og:title" content="Connected Objects - Debugging Black Screen Issue">
-<meta property="og:description" content="Sometimes, the reTerminal display drivers fail. Here is an (incomplete) set of debugging steps you can take to try fixing the issue.">
-<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/topics/hardware/docs/assets/art_title_path_only.svg">
+<meta property="og:title" content="Connected Objects - Device to Cloud Communication">
+<meta property="og:description" content="How to use Azure for bidrectional device-cloud communication">
+<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/topics/iot/docs/assets/art_title_path_only.svg">
 <meta property="og:site_name" content="Connected Objects">
 </head>
 
@@ -158,7 +195,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../topics/index.html">Topics</a></li><li class="breadcrumb-item"><a href="../../../topics/hardware/index.html">Hardware</a></li><li class="breadcrumb-item"><a href="../../../topics/hardware/docs/reterminal-sensors.html">Docs</a></li><li class="breadcrumb-item"><a href="../../../topics/hardware/docs/debug-black-screen.html">Debugging Black Screen Issue</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../topics/index.html">Topics</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/index.html">IoT</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/docs/azure-cli-cheatsheet.html">Docs</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/docs/device-cloud-communication.html">Device to Cloud Communication</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -224,20 +261,20 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../topics/iot/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">IoT</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
  <span class="menu-text">Docs</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth3 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth3 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../topics/iot/docs/azure-cli-cheatsheet.html" class="sidebar-item-text sidebar-link">
@@ -252,7 +289,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../topics/iot/docs/device-cloud-communication.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/iot/docs/device-cloud-communication.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Device to Cloud Communication</span></a>
   </div>
 </li>
@@ -288,20 +325,20 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../topics/hardware/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Hardware</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
  <span class="menu-text">Docs</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth3 show">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../topics/hardware/docs/reterminal-sensors.html" class="sidebar-item-text sidebar-link">
@@ -328,7 +365,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../topics/hardware/docs/debug-black-screen.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../topics/hardware/docs/debug-black-screen.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Debugging Black Screen Issue</span></a>
   </div>
 </li>
@@ -504,24 +541,28 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#if-you-can-ssh-into-your-reterminal" id="toc-if-you-can-ssh-into-your-reterminal" class="nav-link active" data-scroll-target="#if-you-can-ssh-into-your-reterminal">If you can <code>ssh</code> into your reTerminal</a></li>
-  <li><a href="#if-you-cannot-ssh-into-your-reterminal" id="toc-if-you-cannot-ssh-into-your-reterminal" class="nav-link" data-scroll-target="#if-you-cannot-ssh-into-your-reterminal">If you cannot <code>ssh</code> into your reTerminal</a>
+  <li><a href="#azure-iot-protocols" id="toc-azure-iot-protocols" class="nav-link active" data-scroll-target="#azure-iot-protocols">Azure IoT Protocols</a></li>
+  <li><a href="#device-to-cloud-d2c-communication" id="toc-device-to-cloud-d2c-communication" class="nav-link" data-scroll-target="#device-to-cloud-d2c-communication">Device to Cloud (D2C) Communication</a></li>
+  <li><a href="#cloud-to-device-c2d-communication" id="toc-cloud-to-device-c2d-communication" class="nav-link" data-scroll-target="#cloud-to-device-c2d-communication">Cloud to Device (C2D) Communication</a></li>
+  <li><a href="#end-points" id="toc-end-points" class="nav-link" data-scroll-target="#end-points">End-points</a></li>
+  <li><a href="#message-anatomy" id="toc-message-anatomy" class="nav-link" data-scroll-target="#message-anatomy">Message Anatomy</a>
   <ul>
-  <li><a href="#finding-the-problem" id="toc-finding-the-problem" class="nav-link" data-scroll-target="#finding-the-problem">Finding the problem</a></li>
-  <li><a href="#solving-boot-firmare-file-problems" id="toc-solving-boot-firmare-file-problems" class="nav-link" data-scroll-target="#solving-boot-firmare-file-problems">Solving <code>/boot/</code> firmare file problems</a></li>
+  <li><a href="#application-properties-in-python" id="toc-application-properties-in-python" class="nav-link" data-scroll-target="#application-properties-in-python">Application Properties in Python</a></li>
   </ul></li>
+  <li><a href="#direct-methods" id="toc-direct-methods" class="nav-link" data-scroll-target="#direct-methods">Direct Methods</a></li>
+  <li><a href="#diving-deeper" id="toc-diving-deeper" class="nav-link" data-scroll-target="#diving-deeper">Diving Deeper 🤿</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../topics/index.html">Topics</a></li><li class="breadcrumb-item"><a href="../../../topics/hardware/index.html">Hardware</a></li><li class="breadcrumb-item"><a href="../../../topics/hardware/docs/reterminal-sensors.html">Docs</a></li><li class="breadcrumb-item"><a href="../../../topics/hardware/docs/debug-black-screen.html">Debugging Black Screen Issue</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../topics/index.html">Topics</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/index.html">IoT</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/docs/azure-cli-cheatsheet.html">Docs</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/docs/device-cloud-communication.html">Device to Cloud Communication</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Debugging Black Screen Issue</h1>
-<p class="subtitle lead">Sometimes, the reTerminal display drivers fail. Here is an (incomplete) set of debugging steps you can take to try fixing the issue.</p>
+<h1 class="title">Device to Cloud Communication</h1>
+<p class="subtitle lead">How to use Azure for bidrectional device-cloud communication</p>
   <div class="quarto-categories">
-    <div class="quarto-category">Hardware</div>
+    <div class="quarto-category">IoT</div>
   </div>
   </div>
 
@@ -533,7 +574,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 26, 2024</p>
+      <p class="date">April 9, 2024</p>
     </div>
   </div>
   
@@ -551,48 +592,156 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>So far, there have been two primary causes for the reTerminal screen to stop working:</p>
-<ol type="1">
-<li>System update using <code>apt</code>: during the semester, some changes that break raspberry pi and reTerminal compatibility were introduced in the update from Linux <code>6.1</code> to <code>6.6</code>.</li>
-<li>Errors introduced from mistakes when editing firmware files like <code>/boot/firmware/*.txt</code> and/or <code>/boot/cmdline.txt</code> and/or <code>/boot/config.txt</code></li>
-</ol>
-<p>In the first case, the reTerminal boots just fine, but the screen doesn’t work. In the second case, the reTerminal fails to boot at all.</p>
-<p>For each of these cases, I have a set of troubleshooting steps you can take to resolve these issues.</p>
-<section id="if-you-can-ssh-into-your-reterminal" class="level2">
-<h2 class="anchored" data-anchor-id="if-you-can-ssh-into-your-reterminal">If you can <code>ssh</code> into your reTerminal</h2>
-<ol type="1">
-<li>Follow the steps from the announcment <a href="../../../topics/announcements/2024-03-14-pi-update.qmd">On Updating Your Pi</a></li>
-</ol>
+<p>Communication for IoT systems should be bi-directional:</p>
+<ul>
+<li>Device to Cloud (D2C)</li>
+<li>Cloud to Device (C2D)</li>
+</ul>
+<p>Azure offers a variety of ways of exchanging information in both directions. In this lesson we’ll look at the specifics of how these messaging systems work.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../assets/iot-hub-communication.drawio.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1" title="Communication options between IoT Hub and devices"><img src="../assets/iot-hub-communication.drawio.svg" class="img-fluid figure-img" alt="Communication options between IoT Hub and devices"></a></p>
+<figcaption>Communication options between IoT Hub and devices</figcaption>
+</figure>
+</div>
+<section id="azure-iot-protocols" class="level2">
+<h2 class="anchored" data-anchor-id="azure-iot-protocols">Azure IoT Protocols</h2>
+<p>IoT Hub allows devices to use the following protocols for device-side communications:</p>
+<ul>
+<li><a href="https://docs.oasis-open.org/mqtt/mqtt/v3.1.1/mqtt-v3.1.1.pdf">MQTT</a> (including over WebSockets)</li>
+<li><a href="https://docs.oasis-open.org/amqp/core/v1.0/os/amqp-core-complete-v1.0-os.pdf">AMQP</a> (including over WebSockets)</li>
+<li>HTTPS</li>
+</ul>
+<p>By now you are well familiar with MQTT and HTTPS.</p>
+<p>AMQP is not covered in this course, however, it is also a popular protocol for IoT communication. It is used for most of Azure IoT internal communication.</p>
+<p>AMQP is more complex and has slightly more over head than MQTT, thus consuming more bandwidth and device memory. However, it does not requires a broker (although one can be used) and has extra features for security and flow control.</p>
+<blockquote class="blockquote">
+<p>The choice of protocol is a design choice that is <strong>implemented when using libraries from the <a href="https://github.com/Azure/azure-iot-sdks">Azure IoT SDKs</a></strong> (ex.: when instantiating a client or a connection object).</p>
+<p>For example, the <strong>Azure IoT SDK for python uses MQTT by default</strong>.</p>
+</blockquote>
+<p>If you would like to know more about AMQP and how it differs from MQTT, see the video on “Diving Deeper”.</p>
 </section>
-<section id="if-you-cannot-ssh-into-your-reterminal" class="level2">
-<h2 class="anchored" data-anchor-id="if-you-cannot-ssh-into-your-reterminal">If you cannot <code>ssh</code> into your reTerminal</h2>
-<section id="finding-the-problem" class="level3">
-<h3 class="anchored" data-anchor-id="finding-the-problem">Finding the problem</h3>
-<ol type="1">
-<li>Ask the teacher for a micro-usb to HDMI connector</li>
-<li>Plug the HDMI end into a workstation monitor, and the micro-usb end into your reTerminal (in the port labelled HDMI)</li>
-<li>Plug your reTerminal into a power supply to boot the reTerminal</li>
-<li>The monitor will show logs of your reTerminal booting. Observe these logs closely. <strong>You are looking for specific error messages</strong>.</li>
-<li>Write down the specific error messages. Search the course notes/<a href="https://www.raspberrypi.com/documentation/computers/configuration.html#the-boot-folder">Raspberry Pi Documentation</a> for any concepts you don’t understand. Think backl: have you made any changes to the <code>/boot</code> files that seem related to these errors?</li>
-<li>If you have a good idea of what happened and what needs to be fixed, proceed to the next section. Feel free to double check your understanding with the teacher at this point – for educational purposes, I may not give you the answer directly, but I can guide you in a direction that will help save you some time.</li>
-</ol>
+<section id="device-to-cloud-d2c-communication" class="level2">
+<h2 class="anchored" data-anchor-id="device-to-cloud-d2c-communication">Device to Cloud (D2C) Communication</h2>
+<p>IoT Hub exposes three options for sending information from the device to the cloud or solution back end:</p>
+<ul>
+<li><p><a href="https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-messages-d2c">Device-to-cloud messages</a> for time series telemetry and alerts.</p></li>
+<li><p><a href="https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-file-upload">File uploads</a> for media files and large telemetry batches uploaded by intermittently connected devices.</p></li>
+<li><p><a href="https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-device-twins">Device twin’s reported properties</a> for reporting device state information such as configuration or last known state. <a href="../../../topics/iot/docs/device-twins.html">Course notes on Device twins</a></p></li>
+</ul>
 </section>
-<section id="solving-boot-firmare-file-problems" class="level3">
-<h3 class="anchored" data-anchor-id="solving-boot-firmare-file-problems">Solving <code>/boot/</code> firmare file problems</h3>
-<p>If indeed the error comes from an incorrect <code>/boot</code> configuration file setting, we can fix the error <em>without reimaging the pi</em>. Instead, we will <em>mount the reTerminal storage</em> on to a workstation and then <em>fix the firmware files directly on that workstation</em>.</p>
-<p>The steps will look similar to Lab 1, except we won’t be reimaging the device at the end. You should open Lab 1 instructions for reference while you are working for reference (<a href="https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=33679">Lab 1 Section 1 link</a>, <a href="https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=33681">Lab 2 Section 2 link</a>). The following steps will be necessary:</p>
-<ol start="0" type="1">
-<li>Make sure your reTerminal is entirely unplugged and powered off.</li>
-<li>Disassemble your reTerminal, <em>up to the step where you can toggle the Firmware Flash switch</em>. Toggle the switch. This step will let you mount the storage device onto your workstation.</li>
-<li>On your lab workstation, find the program <code>rpibootloader</code> and run it. You should not need elevated access.</li>
-<li>While the <code>rpibootloader</code> program is running, plug your reTerminal into the workstation using a USB-C to USB-3 connector.</li>
-<li>You should see the <code>rpibootloader</code> acknowledge connection to your reterminal. A dozen or so logs will be printed to the <code>rpibootloader</code> program window. Once this is done: navigate to Windows Explorer (the file manager) and you should see the reTerminal (~28-32GB) as a connected drive on the workstation</li>
-<li>The firmware files can now be edited directly to fix any mistakes made.</li>
+<section id="cloud-to-device-c2d-communication" class="level2">
+<h2 class="anchored" data-anchor-id="cloud-to-device-c2d-communication">Cloud to Device (C2D) Communication</h2>
+<p>IoT Hub provides three options for devices to receive information and commands from the cloud or back-end app:</p>
+<ul>
+<li><p><a href="https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-messages-c2d">Cloud-to-device messages</a> for one-way notifications to the device.</p></li>
+<li><p><a href="https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-direct-methods">Direct methods</a> follow a request-response pattern and are meant for communications that require immediate confirmation of their result. For example, interactive control of the device, such as turning on a fan.</p></li>
+<li><p><a href="https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-device-twins">Twin’s desired properties</a> for long-running commands intended to put the device into a certain desired state. For example, set the telemetry send interval to 30 minutes. <a href="../../../topics/iot/docs/device-twins.html">Course notes on Device twins</a></p></li>
+</ul>
+</section>
+<section id="end-points" class="level2">
+<h2 class="anchored" data-anchor-id="end-points">End-points</h2>
+<p>IoT Hub also exposes multiple end-points that act as data input and output to various other actors.</p>
+<p>For example, all messages received from a device are also forwarded to a “device to cloud message” end-point. An external client such as VS Code or Azure CLI can connect to this end-point and read the D2C messages sent to IoT Hub.</p>
+<blockquote class="blockquote">
+<p>You can think of <strong>IoT Hub as a broker</strong> and the <strong>end-points as topics</strong>. A client can subscribe to a topic and receive forwarded messages.</p>
+<p>By default, messages are routed to a built-in endpoint.</p>
+</blockquote>
+<p>IoT Hub allows data retention in the built-in end-points for a maximum of 7 days (1 day by default).</p>
+<p>For a list of all built-in end-points see <a href="https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-endpoints">IoT Hub endpoints reference</a>.</p>
+<p>The <a href="https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-sdks">Azure IoT SDKs</a> article describes the various ways to access these endpoints.</p>
+</section>
+<section id="message-anatomy" class="level2">
+<h2 class="anchored" data-anchor-id="message-anatomy">Message Anatomy</h2>
+<p>As previously mentioned, IoT Hub messages can be used for both D2C or C2D communication.</p>
+<p><strong>An IoT Hub message consists of:</strong></p>
+<ul>
+<li><p>A predetermined set of <strong>system properties</strong>.</p></li>
+<li><p>A set of <strong>application properties</strong>: A dictionary of string properties that the application can define and access, without needing to deserialize the message body.</p></li>
+<li><p>An opaque binary body (the payload / application data).</p></li>
+</ul>
+<p>(Property names and values can only contain ASCII alphanumeric characters).</p>
+<p><br> Below is an example of a message <strong>as they are received by the IoT Hub</strong>.</p>
+<blockquote class="blockquote">
+<p>Note that creating and manipulation of the message on the device-side will look different. Many properties are automatically set on message by the SDK.</p>
+</blockquote>
+<div class="sourceCode" id="cb1"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span> </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"message"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"systemProperties"</span><span class="fu">:</span> <span class="fu">{</span> </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"contentType"</span><span class="fu">:</span> <span class="st">"application/json"</span><span class="fu">,</span> </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"contentEncoding"</span><span class="fu">:</span> <span class="st">"UTF-8"</span><span class="fu">,</span> </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"iothub-message-source"</span><span class="fu">:</span> <span class="st">"deviceMessages"</span><span class="fu">,</span> </span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"iothub-enqueuedtime"</span><span class="fu">:</span> <span class="st">"2017-05-08T18:55:31.8514657Z"</span> </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">},</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>     </span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"appProperties"</span><span class="fu">:</span> <span class="fu">{</span> </span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"processingPath"</span><span class="fu">:</span> <span class="st">"{cold | warm | hot}"</span><span class="fu">,</span> </span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"verbose"</span><span class="fu">:</span> <span class="st">"{true, false}"</span><span class="fu">,</span> </span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"severity"</span><span class="fu">:</span> <span class="dv">1-5</span><span class="fu">,</span> </span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"testDevice"</span><span class="fu">:</span> <span class="st">"{true | false}"</span> </span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">},</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>     </span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"body"</span><span class="fu">:</span> <span class="st">"{</span><span class="ch">\"</span><span class="st">Weather</span><span class="ch">\"</span><span class="st">:{</span><span class="ch">\"</span><span class="st">Temperature</span><span class="ch">\"</span><span class="st">:50}}"</span> </span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">}</span> </span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>System properties are added for all users and identify content of the message. Users can selectively add application properties to the message.</p>
+<p>For a list of system and application properties that can be read or set on messages, see:</p>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-messages-construct#system-properties-of-d2c-iot-hub-messages">System Properties of D2C IoT Hub messages</a></li>
+<li><a href="https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-messages-construct#application-properties-of-d2c-iot-hub-messages">Application Properties of D2C IoT Hub messages</a></li>
+<li><a href="https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-messages-construct#system-properties-of-c2d-iot-hub-messages">System Properties of C2D IoT Hub messages</a></li>
+</ul>
+<section id="application-properties-in-python" class="level3">
+<h3 class="anchored" data-anchor-id="application-properties-in-python">Application Properties in Python</h3>
+<p>To send device-to-cloud messages the method <code>IoTHubDeviceClient.send_message(message)</code> is used. This method can receive a string or a <code>Message</code> object. Typically we’ve been passing a json string with the telemetry payload and the <code>Message</code>&nbsp;object is created automatically for you (<a href="https://docs.microsoft.com/en-us/python/api/azure-iot-device/azure.iot.device.iothubdeviceclient?view=azure-python#azure-iot-device-iothubdeviceclient-send-message" title="https://docs.microsoft.com/en-us/python/api/azure-iot-device/azure.iot.device.iothubdeviceclient?view=azure-python#azure-iot-device-iothubdeviceclient-send-message">as per the docs</a>).</p>
+<p>You can, however, have more control over the properties of the <code>Message</code>&nbsp;object to be sent. As mention in <a href="https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-messages-construct#application-properties-of-d2c-iot-hub-messages">Application Properties of D2C IoT Hub messages</a>, there are many properties you can set yourself, including <strong>custom application properties</strong>. See the <a href="https://docs.microsoft.com/en-us/python/api/azure-iot-device/azure.iot.device.message?view=azure-python" title="https://docs.microsoft.com/en-us/python/api/azure-iot-device/azure.iot.device.message?view=azure-python">docs for the <code>Message</code> class</a>.</p>
+<p>See the example in <a href="https://github.com/Azure/azure-iot-sdk-python" title="https://github.com/Azure/azure-iot-sdk-python">azure-iot-sdk-python</a>/<a href="https://github.com/Azure/azure-iot-sdk-python/tree/main/azure-iot-device" title="https://github.com/Azure/azure-iot-sdk-python/tree/main/azure-iot-device">azure-iot-device</a>/<a href="https://github.com/Azure/azure-iot-sdk-python/tree/main/azure-iot-device/samples" title="https://github.com/Azure/azure-iot-sdk-python/tree/main/azure-iot-device/samples">samples</a>/<a href="https://github.com/Azure/azure-iot-sdk-python/tree/main/azure-iot-device/samples/sync-samples" title="https://github.com/Azure/azure-iot-sdk-python/tree/main/azure-iot-device/samples/sync-samples">sync-samples</a>/<strong>send_message.py</strong> to understand how to set message properties.</p>
+<blockquote class="blockquote">
+<p>The messages described above (D2C and C2D communication) are typically created at the device or application with the help of a SDK (Software Development Kit) library.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>See notes on Azure IoT SDKs for references to libraries and examples provided by Azure.</p>
+</blockquote>
+</section>
+</section>
+<section id="direct-methods" class="level2">
+<h2 class="anchored" data-anchor-id="direct-methods">Direct Methods</h2>
+<p>IoT Hub gives you the ability to invoke direct methods on devices from the cloud. For example, to trigger a relay or ask the device to initiate a upload process.</p>
+<p>Similarly to HTTP, direct methods represent a request-reply interaction with a device. The request sender needs to know immediately if the request succeeded or failed. For example, turning on a light from a phone.</p>
+<p>The life-cycle of a Direct Method is as follows:</p>
+<p><a href="../../../topics/assets/direct-method.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="../../../topics/assets/direct-method.svg" class="img-fluid"></a></p>
+<ol type="1">
+<li><p>A service application (such as a back-end or mobile app) sends a Direct Method request to the device.</p>
+<ul>
+<li>This is typically done using a SDK library running on the application or “manually” via a HTTPS call to IoT Hub.</li>
+</ul></li>
+<li><p>The device receives the Direct Method, processes it and prepares a response.</p>
+<ul>
+<li>Also typically done using a SDK library running on the device.</li>
+</ul></li>
+<li><p>The response is sent back to the sender of the Direct Method.</p></li>
+<li><p>The application inspects the response using a call-back function and decides what to do next.</p>
+<ul>
+<li>Callback calls are typically provided by a SDK library running on the application or “manually” by processing the HTTP response.</li>
+</ul></li>
 </ol>
-<p>Step (5) above will vary depending on your exact error – this is why the “Finding the problem” step is important,to inform what fixes you should attempt first.</p>
+<p>For details see <a href="https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-direct-methods">Understand and invoke direct methods from IoT Hub</a></p>
+<p>For examples of how to use Direct Methods, see <a href="https://learn.microsoft.com/en-us/azure/iot-hub/quickstart-control-device?pivots=programming-language-csharp">Quickstart: Control a device connected to an IoT hub</a>.</p>
+</section>
+<section id="diving-deeper" class="level2">
+<h2 class="anchored" data-anchor-id="diving-deeper">Diving Deeper 🤿</h2>
+<p>If you would like to have a “bigger picture” view of how the different Azure IoT services fit together, watch the video below by Blaize Stewart.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/UA15WTgZlYs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+<p>To learn more about AMQT and how it differs from MQTT, see the presentation below by Ken Giusti.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/g3e9lDlMn5M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
 
 
-</section>
+<div class="hidden" aria-hidden="true">
+<span class="glightbox-desc lightbox-desc-1">Communication options between IoT Hub and devices</span>
+</div>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
@@ -1151,13 +1300,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../../topics/hardware/docs/circuitry-basics.html" class="pagination-link" aria-label="Electronics Basics">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Electronics Basics</span>
+      <a href="../../../topics/iot/docs/azure-sdks.html" class="pagination-link" aria-label="Azure SDKs">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Azure SDKs</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../../topics/hardware/docs/gpios.html" class="pagination-link" aria-label="GPIOs: Inputs and Outputs">
-        <span class="nav-page-text">GPIOs: Inputs and Outputs</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../../topics/iot/docs/device-twins.html" class="pagination-link" aria-label="Device Twins">
+        <span class="nav-page-text">Device Twins</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1206,6 +1355,31 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","loop":false,"openEffect":"zoom","closeEffect":"zoom"});
+window.onload = () => {
+  lightboxQuarto.on('slide_before_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    const href = trigger.getAttribute('href');
+    if (href !== null) {
+      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+      if (imgEl !== null) {
+        const srcAttr = imgEl.getAttribute("src");
+        if (srcAttr && srcAttr.startsWith("data:")) {
+          slideConfig.href = srcAttr;
+        }
+      }
+    } 
+  });
+
+  lightboxQuarto.on('slide_after_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    if (window.Quarto?.typesetMath) {
+      window.Quarto.typesetMath(slideNode);
+    }
+  });
+
+};
+          </script>
 
 
 
