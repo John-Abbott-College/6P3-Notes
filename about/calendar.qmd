@@ -88,6 +88,6 @@ You can compare this calendar with the calendar from the [Course Outline][course
 - **May 6 (Mon):** Work on Assignment 2 and Milestone 4
 - **May 10 (Fri):** Milestone 2 and Assignment 4 due.
 - **May 13 (Mon):** Work on Milestone 6 + App Dev III
-- **May 17 (Fri):** Wrap up Milestone 6 + App Dev III
+- **May 16 (Thursday, Friday schedule):** Wrap up Milestone 6 + App Dev III
 - **May 21 (Mon):** Milestone 6 Due
 - **May 23/24 (Thurs/Fri):** Final presentations, all milestones due
