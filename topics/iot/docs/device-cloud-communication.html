@@ -606,7 +606,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Azure offers a variety of ways of exchanging information in both directions. In this lesson we’ll look at the specifics of how these messaging systems work.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../assets/iot-hub-communication.drawio.svg" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1" title="Communication options between IoT Hub and devices"><img src="../assets/iot-hub-communication.drawio.svg" class="img-fluid figure-img" alt="Communication options between IoT Hub and devices"></a></p>
+<p><a href="../assets/iot-hub-communication.drawio.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1" title="Communication options between IoT Hub and devices"><img src="../assets/iot-hub-communication.drawio.svg" class="img-fluid figure-img" alt="Communication options between IoT Hub and devices"></a></p>
 <figcaption>Communication options between IoT Hub and devices</figcaption>
 </figure>
 </div>
@@ -734,6 +734,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <p>For details see <a href="https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-direct-methods">Understand and invoke direct methods from IoT Hub</a></p>
 <p>For examples of how to use Direct Methods, see <a href="https://learn.microsoft.com/en-us/azure/iot-hub/quickstart-control-device?pivots=programming-language-csharp">Quickstart: Control a device connected to an IoT hub</a>.</p>
+<p>You can also review <strong>Lab 6</strong> (<a href="https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=32610">Section 1</a>, <a href="https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=32633">Section 2</a>): we used the <strong>InvokeDeviceMethod</strong> sample service in this lab. You can use this code in your own project, modifying the direct method name to correspond to your use case (e.g.&nbsp;<strong>lights-on</strong> or <strong>door-unlock</strong>).</p>
 </section>
 <section id="diving-deeper" class="level2">
 <h2 class="anchored" data-anchor-id="diving-deeper">Diving Deeper 🤿</h2>
@@ -1361,7 +1362,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","loop":false,"openEffect":"zoom","descPosition":"bottom"});
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","loop":false,"selector":".lightbox","descPosition":"bottom","openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
