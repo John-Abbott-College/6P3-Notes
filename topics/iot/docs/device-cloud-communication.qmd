@@ -4,6 +4,8 @@ subtitle: "How to use Azure for bidrectional device-cloud communication"
 date: 2024-05-09
 ---
 
+{{< include /_reference-links.md >}}
+
 Communication for IoT systems should be bi-directional:
 
 - Device to Cloud (D2C)
@@ -138,10 +140,6 @@ See the example in [azure-iot-sdk-python](https://github.com/Azure/azure-iot-sdk
 
 > See notes on Azure IoT SDKs for references to libraries and examples provided by Azure.
 
-
-
-
-
 ## Direct Methods
 
 IoT Hub gives you the ability to invoke direct methods on devices from the cloud. For example, to trigger a relay or ask the device to initiate a upload process.
@@ -163,10 +161,11 @@ The life-cycle of a Direct Method is as follows:
 4. The application inspects the response using a call-back function and decides what to do next.
 	- Callback calls are typically provided by a SDK library running on the application or "manually" by processing the HTTP response.
 
-
 For details see [Understand and invoke direct methods from IoT Hub](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-direct-methods)
 
 For examples of how to use Direct Methods, see [Quickstart: Control a device connected to an IoT hub](https://learn.microsoft.com/en-us/azure/iot-hub/quickstart-control-device?pivots=programming-language-csharp).
+
+You can also review **Lab 6** ([Section 1][lab6-sec1], [Section 2][lab6-sec2]): we used the **InvokeDeviceMethod** sample service in this lab. You can use this code in your own project, modifying the direct method name to correspond to your use case (e.g. **lights-on** or **door-unlock**).
 
 
 ## Diving Deeper 🤿
