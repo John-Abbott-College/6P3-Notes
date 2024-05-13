@@ -140,7 +140,7 @@
     "href": "topics/index.html",
     "title": "Lecture Index",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\nTitle\n\n\nSubtitle\n\n\n\n\n\n\n2024-01-26\n\n\nHardware List\n\n\nList of hardware available for the course as well as their respective specifications and documentation.\n\n\n\n\n2024-01-26\n\n\nDeveloper setup\n\n\nHere’s how to set up the software that will be used for development during the course.\n\n\n\n\n2024-01-26\n\n\nTechnology Stack\n\n\nTechnologies used in this class\n\n\n\n\n2024-01-29\n\n\nIntro to the Internet of Things\n\n\nFundamental concepts and applications behind the ‘Internet of Things’ paradigm.\n\n\n\n\n2024-01-29\n\n\nIntroduction (for developers)\n\n\nPython exercises\n\n\n\n\n2024-02-02\n\n\nLinux review\n\n\nResources and references to brush up linux knowledge.\n\n\n\n\n2024-02-09\n\n\nRemote work on Linux\n\n\nLearn how to connect to your Pi with CLI (ssh) and GUI (VNC). Learn how to setup and troubleshoot local connections (LAN) and remote connections (VPN).\n\n\n\n\n2024-02-19\n\n\nreTerminal Sensors\n\n\nInstalling initial reTerminal packages. Reading and controlling the reTerminal hardware interfaces, e.g. LEDs, light sensor, screen backlight, etc.\n\n\n\n\n2024-02-19\n\n\nPackage management\n\n\nHow to use OS package managers, virtual environments, and pip to manage python applications effectively.\n\n\n\n\n2024-02-19\n\n\nRaspberry Pi Package Management: apt\n\n\nInstalling and configuring Linux packages on Raspberry Pi Debian using the apt package manager.\n\n\n\n\n2024-02-26\n\n\nSignals: Analog and digital\n\n\nComparing the two paradigms for measuring electronic information and understanding how each are used for distributed applications.\n\n\n\n\n2024-02-26\n\n\nGPIOs: Inputs and Outputs\n\n\nUnderstanding the General Purpose Input and Output (GPIO) pins our reSeed terminal chassis makes available to us. Voltage, digital vs. analog, python libraries for GPIO.\n\n\n\n\n2024-03-11\n\n\nSerial protocols\n\n\nA deeper dive into the protocols used to communicate between GPIO and the kernel\n\n\n\n\n2024-03-11\n\n\nElectronics Basics\n\n\nReview of Ohm’s Law, fundamental concepts for understanding electronic circuits and interfaces.\n\n\n\n\n2024-03-11\n\n\nSBCs and Microcontrollers\n\n\nComparing the architectural paradigms for microcomputers to better understand our Pis.\n\n\n\n\n2024-04-08\n\n\nScripting\n\n\nTips and tricks for effective scripting in Python\n\n\n\n\n2024-04-08\n\n\nOOP\n\n\nTips and tricks for effective OOP in Python\n\n\n\n\n2024-04-08\n\n\nAsynchronous, REST API\n\n\nAsynchronous programming, TBD\n\n\n\n\n2024-04-08\n\n\nProject management\n\n\nPreviously, we have focused on installing dependencies from other projects – we expand on that knowledge to learn how to create our own projects\n\n\n\n\n2024-04-08\n\n\nSome notes about GitHub\n\n\nFor now, just a note about authenticating in the terminal. More to come.\n\n\n\n\n2024-04-15\n\n\nAzure SDKs\n\n\nAzure Libraries in Python and C# that you’ll find useful for your projects.\n\n\n\n\n2024-04-15\n\n\nIoT Communication Protocols\n\n\nHow communication protocols can be optimized for device-cloud communication, i.e. why not everything should use HTTP\n\n\n\n\n2024-04-15\n\n\nIntro to Azure IoT\n\n\nHow to use a PaaS to deploy IoT services\n\n\n\n\n2024-04-26\n\n\nDebugging Black Screen Issue\n\n\nSometimes, the reTerminal display drivers fail. Here is an (incomplete) set of debugging steps you can take to try fixing the issue.\n\n\n\n\n2024-05-09\n\n\nAzure CLI Cheatsheet\n\n\nReference for common Azure commands\n\n\n\n\n2024-05-09\n\n\nDevice to Cloud Communication\n\n\nHow to use Azure for bidrectional device-cloud communication\n\n\n\n\n2024-05-09\n\n\nDevice Twins\n\n\nHow to retrieve and configure IoT Devices using Device Twin metadata\n\n\n\n\n\nNo matching items\n\n Back to top",
+    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\nTitle\n\n\nSubtitle\n\n\n\n\n\n\n2024-01-26\n\n\nHardware List\n\n\nList of hardware available for the course as well as their respective specifications and documentation.\n\n\n\n\n2024-01-26\n\n\nDeveloper setup\n\n\nHere’s how to set up the software that will be used for development during the course.\n\n\n\n\n2024-01-26\n\n\nTechnology Stack\n\n\nTechnologies used in this class\n\n\n\n\n2024-01-29\n\n\nIntro to the Internet of Things\n\n\nFundamental concepts and applications behind the ‘Internet of Things’ paradigm.\n\n\n\n\n2024-01-29\n\n\nIntroduction (for developers)\n\n\nPython exercises\n\n\n\n\n2024-02-02\n\n\nLinux review\n\n\nResources and references to brush up linux knowledge.\n\n\n\n\n2024-02-09\n\n\nRemote work on Linux\n\n\nLearn how to connect to your Pi with CLI (ssh) and GUI (VNC). Learn how to setup and troubleshoot local connections (LAN) and remote connections (VPN).\n\n\n\n\n2024-02-19\n\n\nreTerminal Sensors\n\n\nInstalling initial reTerminal packages. Reading and controlling the reTerminal hardware interfaces, e.g. LEDs, light sensor, screen backlight, etc.\n\n\n\n\n2024-02-19\n\n\nPackage management\n\n\nHow to use OS package managers, virtual environments, and pip to manage python applications effectively.\n\n\n\n\n2024-02-19\n\n\nRaspberry Pi Package Management: apt\n\n\nInstalling and configuring Linux packages on Raspberry Pi Debian using the apt package manager.\n\n\n\n\n2024-02-26\n\n\nSignals: Analog and digital\n\n\nComparing the two paradigms for measuring electronic information and understanding how each are used for distributed applications.\n\n\n\n\n2024-02-26\n\n\nGPIOs: Inputs and Outputs\n\n\nUnderstanding the General Purpose Input and Output (GPIO) pins our reSeed terminal chassis makes available to us. Voltage, digital vs. analog, python libraries for GPIO.\n\n\n\n\n2024-03-11\n\n\nSerial protocols\n\n\nA deeper dive into the protocols used to communicate between GPIO and the kernel\n\n\n\n\n2024-03-11\n\n\nElectronics Basics\n\n\nReview of Ohm’s Law, fundamental concepts for understanding electronic circuits and interfaces.\n\n\n\n\n2024-03-11\n\n\nSBCs and Microcontrollers\n\n\nComparing the architectural paradigms for microcomputers to better understand our Pis.\n\n\n\n\n2024-04-08\n\n\nScripting\n\n\nTips and tricks for effective scripting in Python\n\n\n\n\n2024-04-08\n\n\nOOP\n\n\nTips and tricks for effective OOP in Python\n\n\n\n\n2024-04-08\n\n\nAsynchronous, REST API\n\n\nAsynchronous programming, TBD\n\n\n\n\n2024-04-08\n\n\nProject management\n\n\nPreviously, we have focused on installing dependencies from other projects – we expand on that knowledge to learn how to create our own projects\n\n\n\n\n2024-04-08\n\n\nSome notes about GitHub\n\n\nFor now, just a note about authenticating in the terminal. More to come.\n\n\n\n\n2024-04-15\n\n\nAzure SDKs\n\n\nAzure Libraries in Python and C# that you’ll find useful for your projects.\n\n\n\n\n2024-04-15\n\n\nIoT Communication Protocols\n\n\nHow communication protocols can be optimized for device-cloud communication, i.e. why not everything should use HTTP\n\n\n\n\n2024-04-15\n\n\nIntro to Azure IoT\n\n\nHow to use a PaaS to deploy IoT services\n\n\n\n\n2024-04-26\n\n\nDebugging Black Screen Issue\n\n\nSometimes, the reTerminal display drivers fail. Here is an (incomplete) set of debugging steps you can take to try fixing the issue.\n\n\n\n\n2024-05-09\n\n\nAzure CLI Cheatsheet\n\n\nReference for common Azure commands\n\n\n\n\n2024-05-09\n\n\nDevice to Cloud Communication\n\n\nHow to use Azure for bidrectional device-cloud communication\n\n\n\n\n2024-05-09\n\n\nDevice Twins\n\n\nHow to retrieve and configure IoT Devices using Device Twin metadata\n\n\n\n\n2024-05-13\n\n\nEventHubs & .NET SDK\n\n\nMore notes on how to send and receive events in C#\n\n\n\n\n\nNo matching items\n\n Back to top",
     "crumbs": [
       "Home",
       "Topics"
@@ -1209,6 +1209,164 @@
     ]
   },
   {
+    "objectID": "topics/iot/docs/eventhub-dotnet.html",
+    "href": "topics/iot/docs/eventhub-dotnet.html",
+    "title": "EventHubs & .NET SDK",
+    "section": "",
+    "text": "The notes below were taken from the official Microsoft documentation page Features and terminology in Azure Event Hubs.",
+    "crumbs": [
+      "Home",
+      "Topics",
+      "IoT",
+      "Docs",
+      "EventHubs & .NET SDK"
+    ]
+  },
+  {
+    "objectID": "topics/iot/docs/eventhub-dotnet.html#azure-event-hub",
+    "href": "topics/iot/docs/eventhub-dotnet.html#azure-event-hub",
+    "title": "EventHubs & .NET SDK",
+    "section": "Azure Event Hub",
+    "text": "Azure Event Hub\nAzure Event Hub is a big data streaming platform and event ingestion service. It can receive and process millions of events per second.\nThe Event Hub routes live data from a data producer (publisher) to one or many data consumers (subscribers). The focus of Event Hub is to route streaming data\nIn addition to messages being streamed to all consumers, messages can also be stored. Typically messages are stored within an Azure service such as blob storage or data lake (more on this later).\n\nFor overview of what is an EventHub and its terminology, refer to:\n\nFeatures and terminology in Azure Event Hubs\n\n\n\n\n\nData flow through Event Hub being forwarded to a consumer and stored\n\n\n\n Data flow through Event Hub being forwarded to a consumer and stored   Azure Event Hubs, Blaize Stewart.\n\n\nEventHub Partitions\nEvent Hubs organizes sequences of events sent to an event hub into one or more partitions. As newer events arrive, they’re added to the end of this sequence.\n\nThe Free Tier of the Azure IoT Hub uses 2 partitions by default.\n\n\n\n\nEventHub Partition diagram\n\n\nA partition can be thought of as a “commit log”. Partitions hold event data that contains:\n\nOffset,\nBody of the event,\nSequence number (number in the stream sequence),\nUser-defined custom properties,\nSystem properties,\n\nSuch as service-side timestamp at which the event was accepted.\n\n\n\n\nStream offsets\nAn offset is the position of an event within a partition. This offset enables an event consumer (reader) to specify a point in the event stream from which they want to begin reading events.\nYou can specify the offset as a timestamp or as an offset value.\n\n\n\npartition offser\n\n\nConsumers are responsible for storing their own offset values outside of the Event Hubs service.\n\n\nMessage Checkpointing\nIt’s possible to save a “checkpoint” offset within a partition.\nThis checkpoint information needs to be stored somewhere. A typical location is an Azure Blob Storage or a fast cloud-based database.\nFor convenience, the Azure EventHub .Net SDK includes methods for storing and retrieving checkpoints from an Azure Blob Storage (more on this later).",
+    "crumbs": [
+      "Home",
+      "Topics",
+      "IoT",
+      "Docs",
+      "EventHubs & .NET SDK"
+    ]
+  },
+  {
+    "objectID": "topics/iot/docs/eventhub-dotnet.html#eventhub-and-iot-hub",
+    "href": "topics/iot/docs/eventhub-dotnet.html#eventhub-and-iot-hub",
+    "title": "EventHubs & .NET SDK",
+    "section": "EventHub and IoT Hub",
+    "text": "EventHub and IoT Hub\nAn Azure IoT Hub is also an instance of an Azure EventHub.\nDefault, Device to Cloud (D2C) messages to an Azure IoT Hub are exposed to external applications via the build-in endpoints. The IoT Hub’s endpoints behave the same way as a EventHub endpoint.\n\nTherefore, the Azure EventHub SDK is used by an application or service to receive D2C messages sent to the IoT Hub.\n\nFor details on the difference between an IoT Hub and an Event Hub, see Connecting IoT Devices to Azure: IoT Hub and Event Hubs.",
+    "crumbs": [
+      "Home",
+      "Topics",
+      "IoT",
+      "Docs",
+      "EventHubs & .NET SDK"
+    ]
+  },
+  {
+    "objectID": "topics/iot/docs/eventhub-dotnet.html#eventhub-.net-sdk",
+    "href": "topics/iot/docs/eventhub-dotnet.html#eventhub-.net-sdk",
+    "title": "EventHubs & .NET SDK",
+    "section": "EventHub .NET SDK",
+    "text": "EventHub .NET SDK\nAzure provides two distinct packages, each with their respective classes for reading EventHub Messages:\n\nEventProcessorClient included in the Azure.Messaging.EventHubs.Processor package.\n\nSupports reading events from all partitions with the call-back methods ProcessEventAsync and ProcessErrorAsync (recommended for production).\n\nEventHubConsumerClient included in the Azure.Messaging.EventHubs package.\n\nSupports reading events from a single partition with the method ReadEventsFromPartitionAsync (suitable for production).\nSupports reading from all partitions with the method ReadEventsAsync (not recommended for production).\n\n\nBelow are the references for both packages mentioned above:\n\n\n\nNuget Package\nOverview\nReference\nSamples\n\n\n\n\nMessaging.EventHubs.Processor\nGetting started: Event Processor\nAPI Reference for Messaging.EventHubs.Processor\nSamples for Messaging.EventHubs.Processor\n\n\nMessaging.EventHubs\nGetting Started: Event Hubs Client\nAPI Reference for Messaging.EventHubs.Consumer\nSamples for Messaging.EventHubs\n\n\n\nWhen going through the sample code, the following order is recommended:\n\nEventProcessorClient\n\nSample01_HelloWorld.md\nSample04_ProcessingEvents.md\n\nEventHubConsumerClient\n\nSample01_HelloWorld.md\nSample05_ReadingEvents.md\n\nRun the “Quickstart” code Read device-to-cloud messages\n\n\nCancellation Tokens\nMany of examples listed above make use of Cancellation Tokens to manage Tasks.\n\nTo learn more about Cancellation Tokens, see: How to use CancellationTokens to cancel tasks in the Azure SDK for .NET",
+    "crumbs": [
+      "Home",
+      "Topics",
+      "IoT",
+      "Docs",
+      "EventHubs & .NET SDK"
+    ]
+  },
+  {
+    "objectID": "topics/iot/docs/eventhub-dotnet.html#connection-string-event-hub-endpoint",
+    "href": "topics/iot/docs/eventhub-dotnet.html#connection-string-event-hub-endpoint",
+    "title": "EventHubs & .NET SDK",
+    "section": "Connection String: Event Hub Endpoint",
+    "text": "Connection String: Event Hub Endpoint\nWhen you use Event Hubs SDKs or product integrations that are unaware of IoT Hub, you need an Event Hub-compatible endpoint and Event Hub-compatible name. You can retrieve these values from the portal as follows:\n\nSign in to the Azure portal and navigate to your IoT hub.\nSelect Built-in endpoints from the resource menu, under Hub settings.\nThe Built-in endpoints working pane contains three sections:\n\nThe Event Hub Details section contains the following values:\n\nEvent Hub-compatible name\nConsumer Groups.\n\nThe Event Hub compatible endpoint section contains the following values:\n\nShared access policy (the default is \"$Default\")\nEvent Hub-compatible endpoint.\n\n\n\nIn the working pane, the Event Hub-compatible endpoint field contains a complete Event Hubs connection string that looks like the following example:\nNote that the default consumer group name is \"$Default\" (might required including double quotes).\n\n\n\nScreen capture showing device-to-cloud settings.\n\n\n\n\n\nData flow through Event Hub being forwarded to a consumer and stored\nEventHub Partition diagram\npartition offser\nScreen capture showing device-to-cloud settings.",
+    "crumbs": [
+      "Home",
+      "Topics",
+      "IoT",
+      "Docs",
+      "EventHubs & .NET SDK"
+    ]
+  },
+  {
+    "objectID": "announcements/2024-03-14-pi-update.html",
+    "href": "announcements/2024-03-14-pi-update.html",
+    "title": "On updating your pi",
+    "section": "",
+    "text": "A few students have run into system updates that may break important reTerminal features (the screen, for e.g.). If you run into any issues when updating your pi software, see below!\nThe standard Debian commands for updating system software:\n$ sudo apt update && sudo apt upgrade -y\nThe latest linux updates have introduced some significant changes to i2c interface which may cause your pi LCD screen, among other hardware, to fail.\nFor now, when updating your pi software, you should also do the following:\n# If this folder does not exist, run the following command first:\n# cd ~/ && git clone https://github.com/Seeed-Studio/seeed-linux-dtoverlays\ncd ~/seeed-linux-dtoverlays \ngit pull\nIf there are any updates when the git pull is run, you should re-run the setup script:\nsudo ./scripts/reTerminal.sh\nThen, finally, reboot the device:\nsudo reboot\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "announcements/index.html",
+    "href": "announcements/index.html",
+    "title": "Announcements",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nGrading Update\n\n\n\n\n\n\n\n\n\n\n\nApr 22, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nAzure Plan Troubleshooting\n\n\n\n\n\n\n\n\n\n\n\nApr 18, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nMid-April Schedule Updates\n\n\n\n\n\n\n\n\n\n\n\nApr 15, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nQuiz 1: Topics/Information\n\n\n\n\n\n\n\n\n\n\n\nMar 18, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nOn updating your pi\n\n\n\n\n\n\n\n\n\n\n\nMar 14, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nWebsite updates\n\n\n\n\n\n\n\n\n\n\n\nMar 12, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nLab 3: Demo in class Friday March 15\n\n\n\n\n\n\n\n\n\n\n\nMar 12, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top",
+    "crumbs": [
+      "Home",
+      "Announcements"
+    ]
+  },
+  {
+    "objectID": "announcements/2024-04-18-azure-plan-troubleshooting.html",
+    "href": "announcements/2024-04-18-azure-plan-troubleshooting.html",
+    "title": "Azure Plan Troubleshooting",
+    "section": "",
+    "text": "In setting up Azure for Lab 6, a few students have asked me about troubles with the following:\nI would like to share my help for those students for the rest of you, just in case there are more of you struggling with setting up Azure.\nI will keep the Course Website version of this announcement up to date – if you are seeing this announcement on Moodle, you can click here to get to the up-to-date version of this announcement with the latest change"
+  },
+  {
+    "objectID": "announcements/2024-04-18-azure-plan-troubleshooting.html#big-picture",
+    "href": "announcements/2024-04-18-azure-plan-troubleshooting.html#big-picture",
+    "title": "Azure Plan Troubleshooting",
+    "section": "Big picture",
+    "text": "Big picture\nIn the big picture, no matter what your situation is, your Azure plan should have the following properties:\n\nNo upfront costs – your account should be free to create, and every service/resource you create should be free to create.\nNo monthly costs – your costs should be covered entirely by one of the following:\n\n\n\nyour student account credit\n\n\n$200 free credit for new non-student account\n\n\npay-as-you-go that is free per month, but will charge your credit card per usage.\n\n\n\nA budget alert system that warns you when your usage exceeds &gt;$5 . Even if you are in situation (c), you should not expect to pay more than $5 or $10 – please set up an alert system and monitor this. Let me know if your costs ever exceed this amount. See the course notes on Azure Account Check."
+  },
+  {
+    "objectID": "announcements/2024-04-18-azure-plan-troubleshooting.html#faq",
+    "href": "announcements/2024-04-18-azure-plan-troubleshooting.html#faq",
+    "title": "Azure Plan Troubleshooting",
+    "section": "FAQ",
+    "text": "FAQ\n\nQ: I’m not eligible for a student account?\n\nStudent accounts last for 18 months – if you have taken courses in the past that require an Azure account, and it was more than 18 months since you created that account, your student credits have unfortunately expired. There are other free options in this case.\n\nQ: I’m not eligible for the $200 free account credit for my non-student account?\n\nThe $200 credit is only available if you have not used that email address for an Azure account in the past (and it only lasts for one month).\nIf you are not elgible for the $200 credit on the email address you have provided, you have two choices, both of which are fine:\n\nuse a new email address\nregister for a free-tier pay-as-you-go.\n\n\nQ: I tried to register for the pay-as-you-go and I’m told it costs $35 per month?\n\nThe pay-as-you-go account should not cost any upfront or monthly charges. Double check that you do not select options like “tech support plans” or “standard-tier service” – ALWAYS opt out of any paid options, ALWAYS select free-tier for any choices provided to you by Azure.\n\nQ: if I’m on free-tier and there’s no monthly costs, why do I need to monitor the budget?\n\nThe pay-as-you-go account may charge your credit card, only when you use the service beyond the defined free-tier limits.\nIn our class, we will have IoT Hub services that handle communication between your Mobile App from App Dev III, and your reTerminal devices from Connected Objects. The free-tier limit for the IoTHub is 8000 messages per day – I don’t think there will be a reason to exceed this, so by default, you may never have to pay any money for this serivce.\nHowever, there may be small charges to your credit card, ONLY IF you exceed the free-tier limits of the services we use. These charges will be small, but it is possible for them to get out-of-hand by accident. To make sure they do not get out of hand by accident, you must set up a Budget for your Resource Group to alert you when charges exceed a certain number. Please review the course notes about budgets and set up an alert if you have not done so.\n\nQ: I have some other question?\n\nPlease let me know if you have any questions, or if there’s something else that doesn’t seem to work. I will update these instructions if there are more troubles you run into that I can share answers for. Again, if you are seeing this on moodle, click here to see the latest version of these instructions."
+  },
+  {
+    "objectID": "announcements/2024-03-18-quiz1-topics.html",
+    "href": "announcements/2024-03-18-quiz1-topics.html",
+    "title": "Quiz 1: Topics/Information",
+    "section": "",
+    "text": "Quiz 1 will take place in-class on Friday, March 22.. This announcement contains logistical and topics covered."
+  },
+  {
+    "objectID": "announcements/2024-03-18-quiz1-topics.html#logistics",
+    "href": "announcements/2024-03-18-quiz1-topics.html#logistics",
+    "title": "Quiz 1: Topics/Information",
+    "section": "Logistics",
+    "text": "Logistics\n\nworth 2%\nMultiple choice / short-answer on Moodle, in-class. 15-30 minutes.\nLimited open-book: access to course notes, reTerminal, workstation, but not external resources."
+  },
+  {
+    "objectID": "announcements/2024-03-18-quiz1-topics.html#topics",
+    "href": "announcements/2024-03-18-quiz1-topics.html#topics",
+    "title": "Quiz 1: Topics/Information",
+    "section": "Topics",
+    "text": "Topics\nThere will be 5-10 short-answer questions covering concepts that we have seen in Labs 0-3 of this course. Broadly, that is the following topics:\n\nLinux: using apt, apt for python packages, frequently used Bash concepts/commands like tar, shebangs, workflow for reading/writing to reTerminal interfaces. Anything covered in the labs explicitly.\nPython: installing local packages using venv and pip, workflow for reading/writing to reTerminal interfaces, libraries vs scripts\nHardware: reTerminal sensors, GPIO, Analog vs Digital signals\n\nTo help with reviewing, I have added all of the relevant lectures to the Quiz 1 category on this course website. Click on the Lectures tab of the course website and click “Quiz 1” to filter the relevant lectures.\nLet me know if you have any questions!"
+  },
+  {
+    "objectID": "announcements/2024-04-22-grades-update.html",
+    "href": "announcements/2024-04-22-grades-update.html",
+    "title": "Grading Update",
+    "section": "",
+    "text": "Hello everyone,\nYour grades for L4, L5, Q1, and Milestone 1 have been updated. You can find your feedback on Moodle in most cases.\nFor the milestone, your detailed feedback has been included in the “Teacher Feedback” issue of your repository.\nNote for April 22 morning section: I will be around 15-20 minutes late. Please get your Lab 6 demos ready while you are waiting.\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "announcements/2024-03-12-website-updates.html",
+    "href": "announcements/2024-03-12-website-updates.html",
+    "title": "Website updates",
+    "section": "",
+    "text": "I’ve made a few changes to the course website, some of which are worth emphasizing because I think they’ll be particularly useful to you:\n\nCourse Calendar: The defunct Calendar page is now being maintained. Check this page for upcoming lecture/lab activity, particularly for Lab demo deadlines. I will keep it maintained throughout the rest of the semester.\nAnnouncements: Announcements like this one will be posted on the course website and (sort-of) automatically posted on Moodle as well. If you like RSS, you can subcribe using the  icon in the nav bar.\nLecture index: I’ve fixed some metadata and theming issues for the Topics page (also called Lectures). Here you can find an index of every course lecture, and sort them by category. This should help keep track of topics and things learned.\n\nLet me know if you have any questions, or if there’s something that doesn’t seem to work.\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "announcements/2024-04-15-schedule-updates.html",
+    "href": "announcements/2024-04-15-schedule-updates.html",
+    "title": "Mid-April Schedule Updates",
+    "section": "",
+    "text": "I’ve made a series of updates to the course website and Moodle, some of which are worth emphasizing because I think they’ll be particularly useful to you:\n\nCourse Calendar: I’ve updated the April section of the calendar with the latest set of deliverables.\nFinal Project Description and Milestones: I’ve uploaded all remaining Connected Objects Milestones onto Moodle. Links for Section 1, Section 2\nLectures: There are a new set of IoT lectures which should help you with Lab 6 (links for Section 1, Section 2). We will also cover this ground on Assignment 2 (TBA) and future project milestones. This is the (almost) the final set of lectures for this class, and will be covered in Quiz 2.\n\nLet me know if you have any questions, or if there’s something that doesn’t seem to work.\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "announcements/2024-03-12-lab3-demo.html",
+    "href": "announcements/2024-03-12-lab3-demo.html",
+    "title": "Lab 3: Demo in class Friday March 15",
+    "section": "",
+    "text": "As mentioned in class on March 11, the hand-in for Lab 3 will be on Friday March 15. Demos will start at the beginning of class. Come to class prepared to show your progress.\nThe deadline to submit your scripts for Lab 3 code remains midnight on Friday.\nIf you have not completed the lab by Friday morning, you will get partial marks up to whatever you have completed.\nLet me know if you have any questions! (by Teams preferably)\n\n\n\n Back to top"
+  },
+  {
     "objectID": "topics/iot/docs/azure-sdks.html",
     "href": "topics/iot/docs/azure-sdks.html",
     "title": "Azure SDKs",
@@ -1291,94 +1449,6 @@
       "Docs",
       "Azure SDKs"
     ]
-  },
-  {
-    "objectID": "announcements/2024-03-12-lab3-demo.html",
-    "href": "announcements/2024-03-12-lab3-demo.html",
-    "title": "Lab 3: Demo in class Friday March 15",
-    "section": "",
-    "text": "As mentioned in class on March 11, the hand-in for Lab 3 will be on Friday March 15. Demos will start at the beginning of class. Come to class prepared to show your progress.\nThe deadline to submit your scripts for Lab 3 code remains midnight on Friday.\nIf you have not completed the lab by Friday morning, you will get partial marks up to whatever you have completed.\nLet me know if you have any questions! (by Teams preferably)\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "announcements/2024-04-15-schedule-updates.html",
-    "href": "announcements/2024-04-15-schedule-updates.html",
-    "title": "Mid-April Schedule Updates",
-    "section": "",
-    "text": "I’ve made a series of updates to the course website and Moodle, some of which are worth emphasizing because I think they’ll be particularly useful to you:\n\nCourse Calendar: I’ve updated the April section of the calendar with the latest set of deliverables.\nFinal Project Description and Milestones: I’ve uploaded all remaining Connected Objects Milestones onto Moodle. Links for Section 1, Section 2\nLectures: There are a new set of IoT lectures which should help you with Lab 6 (links for Section 1, Section 2). We will also cover this ground on Assignment 2 (TBA) and future project milestones. This is the (almost) the final set of lectures for this class, and will be covered in Quiz 2.\n\nLet me know if you have any questions, or if there’s something that doesn’t seem to work.\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "announcements/2024-03-12-website-updates.html",
-    "href": "announcements/2024-03-12-website-updates.html",
-    "title": "Website updates",
-    "section": "",
-    "text": "I’ve made a few changes to the course website, some of which are worth emphasizing because I think they’ll be particularly useful to you:\n\nCourse Calendar: The defunct Calendar page is now being maintained. Check this page for upcoming lecture/lab activity, particularly for Lab demo deadlines. I will keep it maintained throughout the rest of the semester.\nAnnouncements: Announcements like this one will be posted on the course website and (sort-of) automatically posted on Moodle as well. If you like RSS, you can subcribe using the  icon in the nav bar.\nLecture index: I’ve fixed some metadata and theming issues for the Topics page (also called Lectures). Here you can find an index of every course lecture, and sort them by category. This should help keep track of topics and things learned.\n\nLet me know if you have any questions, or if there’s something that doesn’t seem to work.\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "announcements/2024-04-22-grades-update.html",
-    "href": "announcements/2024-04-22-grades-update.html",
-    "title": "Grading Update",
-    "section": "",
-    "text": "Hello everyone,\nYour grades for L4, L5, Q1, and Milestone 1 have been updated. You can find your feedback on Moodle in most cases.\nFor the milestone, your detailed feedback has been included in the “Teacher Feedback” issue of your repository.\nNote for April 22 morning section: I will be around 15-20 minutes late. Please get your Lab 6 demos ready while you are waiting.\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "announcements/2024-03-18-quiz1-topics.html",
-    "href": "announcements/2024-03-18-quiz1-topics.html",
-    "title": "Quiz 1: Topics/Information",
-    "section": "",
-    "text": "Quiz 1 will take place in-class on Friday, March 22.. This announcement contains logistical and topics covered."
-  },
-  {
-    "objectID": "announcements/2024-03-18-quiz1-topics.html#logistics",
-    "href": "announcements/2024-03-18-quiz1-topics.html#logistics",
-    "title": "Quiz 1: Topics/Information",
-    "section": "Logistics",
-    "text": "Logistics\n\nworth 2%\nMultiple choice / short-answer on Moodle, in-class. 15-30 minutes.\nLimited open-book: access to course notes, reTerminal, workstation, but not external resources."
-  },
-  {
-    "objectID": "announcements/2024-03-18-quiz1-topics.html#topics",
-    "href": "announcements/2024-03-18-quiz1-topics.html#topics",
-    "title": "Quiz 1: Topics/Information",
-    "section": "Topics",
-    "text": "Topics\nThere will be 5-10 short-answer questions covering concepts that we have seen in Labs 0-3 of this course. Broadly, that is the following topics:\n\nLinux: using apt, apt for python packages, frequently used Bash concepts/commands like tar, shebangs, workflow for reading/writing to reTerminal interfaces. Anything covered in the labs explicitly.\nPython: installing local packages using venv and pip, workflow for reading/writing to reTerminal interfaces, libraries vs scripts\nHardware: reTerminal sensors, GPIO, Analog vs Digital signals\n\nTo help with reviewing, I have added all of the relevant lectures to the Quiz 1 category on this course website. Click on the Lectures tab of the course website and click “Quiz 1” to filter the relevant lectures.\nLet me know if you have any questions!"
-  },
-  {
-    "objectID": "announcements/2024-04-18-azure-plan-troubleshooting.html",
-    "href": "announcements/2024-04-18-azure-plan-troubleshooting.html",
-    "title": "Azure Plan Troubleshooting",
-    "section": "",
-    "text": "In setting up Azure for Lab 6, a few students have asked me about troubles with the following:\nI would like to share my help for those students for the rest of you, just in case there are more of you struggling with setting up Azure.\nI will keep the Course Website version of this announcement up to date – if you are seeing this announcement on Moodle, you can click here to get to the up-to-date version of this announcement with the latest change"
-  },
-  {
-    "objectID": "announcements/2024-04-18-azure-plan-troubleshooting.html#big-picture",
-    "href": "announcements/2024-04-18-azure-plan-troubleshooting.html#big-picture",
-    "title": "Azure Plan Troubleshooting",
-    "section": "Big picture",
-    "text": "Big picture\nIn the big picture, no matter what your situation is, your Azure plan should have the following properties:\n\nNo upfront costs – your account should be free to create, and every service/resource you create should be free to create.\nNo monthly costs – your costs should be covered entirely by one of the following:\n\n\n\nyour student account credit\n\n\n$200 free credit for new non-student account\n\n\npay-as-you-go that is free per month, but will charge your credit card per usage.\n\n\n\nA budget alert system that warns you when your usage exceeds &gt;$5 . Even if you are in situation (c), you should not expect to pay more than $5 or $10 – please set up an alert system and monitor this. Let me know if your costs ever exceed this amount. See the course notes on Azure Account Check."
-  },
-  {
-    "objectID": "announcements/2024-04-18-azure-plan-troubleshooting.html#faq",
-    "href": "announcements/2024-04-18-azure-plan-troubleshooting.html#faq",
-    "title": "Azure Plan Troubleshooting",
-    "section": "FAQ",
-    "text": "FAQ\n\nQ: I’m not eligible for a student account?\n\nStudent accounts last for 18 months – if you have taken courses in the past that require an Azure account, and it was more than 18 months since you created that account, your student credits have unfortunately expired. There are other free options in this case.\n\nQ: I’m not eligible for the $200 free account credit for my non-student account?\n\nThe $200 credit is only available if you have not used that email address for an Azure account in the past (and it only lasts for one month).\nIf you are not elgible for the $200 credit on the email address you have provided, you have two choices, both of which are fine:\n\nuse a new email address\nregister for a free-tier pay-as-you-go.\n\n\nQ: I tried to register for the pay-as-you-go and I’m told it costs $35 per month?\n\nThe pay-as-you-go account should not cost any upfront or monthly charges. Double check that you do not select options like “tech support plans” or “standard-tier service” – ALWAYS opt out of any paid options, ALWAYS select free-tier for any choices provided to you by Azure.\n\nQ: if I’m on free-tier and there’s no monthly costs, why do I need to monitor the budget?\n\nThe pay-as-you-go account may charge your credit card, only when you use the service beyond the defined free-tier limits.\nIn our class, we will have IoT Hub services that handle communication between your Mobile App from App Dev III, and your reTerminal devices from Connected Objects. The free-tier limit for the IoTHub is 8000 messages per day – I don’t think there will be a reason to exceed this, so by default, you may never have to pay any money for this serivce.\nHowever, there may be small charges to your credit card, ONLY IF you exceed the free-tier limits of the services we use. These charges will be small, but it is possible for them to get out-of-hand by accident. To make sure they do not get out of hand by accident, you must set up a Budget for your Resource Group to alert you when charges exceed a certain number. Please review the course notes about budgets and set up an alert if you have not done so.\n\nQ: I have some other question?\n\nPlease let me know if you have any questions, or if there’s something else that doesn’t seem to work. I will update these instructions if there are more troubles you run into that I can share answers for. Again, if you are seeing this on moodle, click here to see the latest version of these instructions."
-  },
-  {
-    "objectID": "announcements/index.html",
-    "href": "announcements/index.html",
-    "title": "Announcements",
-    "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nGrading Update\n\n\n\n\n\n\n\n\n\n\n\nApr 22, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nAzure Plan Troubleshooting\n\n\n\n\n\n\n\n\n\n\n\nApr 18, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nMid-April Schedule Updates\n\n\n\n\n\n\n\n\n\n\n\nApr 15, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nQuiz 1: Topics/Information\n\n\n\n\n\n\n\n\n\n\n\nMar 18, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nOn updating your pi\n\n\n\n\n\n\n\n\n\n\n\nMar 14, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nWebsite updates\n\n\n\n\n\n\n\n\n\n\n\nMar 12, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nLab 3: Demo in class Friday March 15\n\n\n\n\n\n\n\n\n\n\n\nMar 12, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top",
-    "crumbs": [
-      "Home",
-      "Announcements"
-    ]
-  },
-  {
-    "objectID": "announcements/2024-03-14-pi-update.html",
-    "href": "announcements/2024-03-14-pi-update.html",
-    "title": "On updating your pi",
-    "section": "",
-    "text": "A few students have run into system updates that may break important reTerminal features (the screen, for e.g.). If you run into any issues when updating your pi software, see below!\nThe standard Debian commands for updating system software:\n$ sudo apt update && sudo apt upgrade -y\nThe latest linux updates have introduced some significant changes to i2c interface which may cause your pi LCD screen, among other hardware, to fail.\nFor now, when updating your pi software, you should also do the following:\n# If this folder does not exist, run the following command first:\n# cd ~/ && git clone https://github.com/Seeed-Studio/seeed-linux-dtoverlays\ncd ~/seeed-linux-dtoverlays \ngit pull\nIf there are any updates when the git pull is run, you should re-run the setup script:\nsudo ./scripts/reTerminal.sh\nThen, finally, reboot the device:\nsudo reboot\n\n\n\n Back to top"
   },
   {
     "objectID": "topics/iot/docs/iot-protocols.html",
@@ -1721,7 +1791,7 @@
     "href": "topics/iot/index.html",
     "title": "IoT",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nIntro to the Internet of Things\n\n\nFundamental concepts and applications behind the ‘Internet of Things’ paradigm.\n\n\n\n\n\n\n\n\nJan 29, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nAzure SDKs\n\n\nAzure Libraries in Python and C# that you’ll find useful for your projects.\n\n\n\n\n\n\n\n\nApr 15, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nIoT Communication Protocols\n\n\nHow communication protocols can be optimized for device-cloud communication, i.e. why not everything should use HTTP\n\n\n\n\n\n\n\n\nApr 15, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nIntro to Azure IoT\n\n\nHow to use a PaaS to deploy IoT services\n\n\n\n\n\n\n\n\nApr 15, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nAzure CLI Cheatsheet\n\n\nReference for common Azure commands\n\n\n\n\n\n\n\n\nMay 9, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nDevice to Cloud Communication\n\n\nHow to use Azure for bidrectional device-cloud communication\n\n\n\n\n\n\n\n\nMay 9, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nDevice Twins\n\n\nHow to retrieve and configure IoT Devices using Device Twin metadata\n\n\n\n\n\n\n\n\nMay 9, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top",
+    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nIntro to the Internet of Things\n\n\nFundamental concepts and applications behind the ‘Internet of Things’ paradigm.\n\n\n\n\n\n\n\n\nJan 29, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nAzure SDKs\n\n\nAzure Libraries in Python and C# that you’ll find useful for your projects.\n\n\n\n\n\n\n\n\nApr 15, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nIoT Communication Protocols\n\n\nHow communication protocols can be optimized for device-cloud communication, i.e. why not everything should use HTTP\n\n\n\n\n\n\n\n\nApr 15, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nIntro to Azure IoT\n\n\nHow to use a PaaS to deploy IoT services\n\n\n\n\n\n\n\n\nApr 15, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nAzure CLI Cheatsheet\n\n\nReference for common Azure commands\n\n\n\n\n\n\n\n\nMay 9, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nDevice to Cloud Communication\n\n\nHow to use Azure for bidrectional device-cloud communication\n\n\n\n\n\n\n\n\nMay 9, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nDevice Twins\n\n\nHow to retrieve and configure IoT Devices using Device Twin metadata\n\n\n\n\n\n\n\n\nMay 9, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nEventHubs & .NET SDK\n\n\nMore notes on how to send and receive events in C#\n\n\n\n\n\n\n\n\nMay 13, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top",
     "crumbs": [
       "Home",
       "Topics",

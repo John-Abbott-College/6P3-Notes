@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2024-05-13">
 
-<title>Connected Objects - Linux</title>
+<title>Connected Objects - EventHubs &amp; .NET SDK</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,30 +24,31 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<link href="../../topics/linux/docs/github.html" rel="next">
-<link href="../../topics/python/docs/advanced.html" rel="prev">
-<link href="../../assets/favicon_io/favicon.ico" rel="icon">
-<script src="../../site_libs/quarto-listing/list.min.js"></script>
-<script src="../../site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<script src="../../site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../topics/iot/docs/intro-azure-iot.html" rel="next">
+<link href="../../../topics/iot/docs/device-twins.html" rel="prev">
+<link href="../../../assets/favicon_io/favicon.ico" rel="icon">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../../site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
+<script src="../../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": true,
@@ -74,83 +76,26 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-subtitle','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="Connected Objects - Linux">
-<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/topics/linux/assets/art_title_path_only.svg">
+<link rel="stylesheet" href="../../../styles.css">
+<meta property="og:title" content="Connected Objects - EventHubs &amp; .NET SDK">
+<meta property="og:description" content="More notes on how to send and receive events in C#">
+<meta property="og:image" content="https://learn.microsoft.com/en-us/azure/event-hubs/media/event-hubs-features/partition_offset.png">
 <meta property="og:site_name" content="Connected Objects">
 </head>
 
-<body class="nav-sidebar floating nav-fixed fullcontent">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../assets/favicon_io/favicon-32x32.png" alt="" class="navbar-logo">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../assets/favicon_io/favicon-32x32.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Connected Objects</span>
     </a>
   </div>
@@ -161,23 +106,23 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="../../index.html" aria-current="page"> 
+    <a class="nav-link active" href="../../../index.html" aria-current="page"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../announcements/index.html"> 
+    <a class="nav-link" href="../../../announcements/index.html"> 
 <span class="menu-text">Announcements</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../about/calendar.html"> 
+    <a class="nav-link" href="../../../about/calendar.html"> 
 <span class="menu-text">Calendar</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../about/syllabus.html"> 
+    <a class="nav-link" href="../../../about/syllabus.html"> 
 <span class="menu-text">Syllabus</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../topics/index.html"> 
+    <a class="nav-link" href="../../../topics/index.html"> 
 <span class="menu-text">Lectures</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -196,7 +141,7 @@ window.Quarto = {
     </ul>
   </li>
   <li class="nav-item compact">
-    <a class="nav-link" href="../../announcements/index.xml"> <i class="bi bi-rss" role="img">
+    <a class="nav-link" href="../../../announcements/index.xml"> <i class="bi bi-rss" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -216,7 +161,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../topics/index.html">Topics</a></li><li class="breadcrumb-item"><a href="../../topics/linux/index.html">Linux</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../topics/index.html">Topics</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/index.html">IoT</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/docs/azure-cli-cheatsheet.html">Docs</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/docs/eventhub-dotnet.html">EventHubs &amp; .NET SDK</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -230,19 +175,19 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Home</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../announcements/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../announcements/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Announcements</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../about/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../../about/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">About</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -251,19 +196,19 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../about/calendar.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../about/calendar.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Calendar</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../about/syllabus.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../about/syllabus.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Syllabus</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../about/this-site.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../about/this-site.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">About this website</span></a>
   </div>
 </li>
@@ -271,7 +216,7 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../topics/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../../topics/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Topics</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -280,67 +225,67 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../topics/iot/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../../topics/iot/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">IoT</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
  <span class="menu-text">Docs</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth3 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth3 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../topics/iot/docs/azure-cli-cheatsheet.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/iot/docs/azure-cli-cheatsheet.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Azure CLI Cheatsheet</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../topics/iot/docs/azure-sdks.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/iot/docs/azure-sdks.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Azure SDKs</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../topics/iot/docs/device-cloud-communication.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/iot/docs/device-cloud-communication.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Device to Cloud Communication</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../topics/iot/docs/device-twins.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/iot/docs/device-twins.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Device Twins</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../topics/iot/docs/eventhub-dotnet.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/iot/docs/eventhub-dotnet.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">EventHubs &amp; .NET SDK</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../topics/iot/docs/intro-azure-iot.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/iot/docs/intro-azure-iot.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Intro to Azure IoT</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../topics/iot/docs/iot-protocols.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/iot/docs/iot-protocols.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">IoT Communication Protocols</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../topics/iot/docs/what-is-iot.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/iot/docs/what-is-iot.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Intro to the Internet of Things</span></a>
   </div>
 </li>
@@ -350,7 +295,7 @@ window.Quarto = {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../topics/hardware/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../../topics/hardware/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Hardware</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -368,43 +313,43 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../topics/hardware/docs/reterminal-sensors.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/hardware/docs/reterminal-sensors.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">reTerminal Sensors</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../topics/hardware/docs/analog-vs-digital.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/hardware/docs/analog-vs-digital.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Signals: Analog and digital</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../topics/hardware/docs/arduino-vs-raspberry-pi.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/hardware/docs/arduino-vs-raspberry-pi.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">SBCs and Microcontrollers</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../topics/hardware/docs/circuitry-basics.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/hardware/docs/circuitry-basics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Electronics Basics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../topics/hardware/docs/debug-black-screen.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/hardware/docs/debug-black-screen.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Debugging Black Screen Issue</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../topics/hardware/docs/gpios.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/hardware/docs/gpios.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">GPIOs: Inputs and Outputs</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../topics/hardware/docs/serial-protocols.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/hardware/docs/serial-protocols.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Serial protocols</span></a>
   </div>
 </li>
@@ -414,7 +359,7 @@ window.Quarto = {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../topics/getting-started/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../../topics/getting-started/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Getting started</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -432,19 +377,19 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../topics/getting-started/docs/hardware-list.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/getting-started/docs/hardware-list.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Hardware List</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../topics/getting-started/docs/tech-stack.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/getting-started/docs/tech-stack.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Technology Stack</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../topics/getting-started/docs/vscode-python-setup.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/getting-started/docs/vscode-python-setup.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Developer setup</span></a>
   </div>
 </li>
@@ -454,7 +399,7 @@ window.Quarto = {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../topics/python/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../../topics/python/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Python</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -472,37 +417,37 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../topics/python/docs/intro.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/python/docs/intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction (for developers)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../topics/python/docs/package-management.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/python/docs/package-management.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Package management</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../topics/python/docs/oop.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/python/docs/oop.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">OOP</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../topics/python/docs/scripting.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/python/docs/scripting.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Scripting</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../topics/python/docs/project-management.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/python/docs/project-management.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Project management</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../topics/python/docs/advanced.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/python/docs/advanced.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Asynchronous, REST API</span></a>
   </div>
 </li>
@@ -512,13 +457,13 @@ window.Quarto = {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../topics/linux/index.html" class="sidebar-item-text sidebar-link active">
+            <a href="../../../topics/linux/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Linux</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false">
@@ -530,25 +475,25 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../topics/linux/docs/github.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/linux/docs/github.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Some notes about GitHub</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../topics/linux/docs/linux-review.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/linux/docs/linux-review.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Linux review</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../topics/linux/docs/package-management-debian.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/linux/docs/package-management-debian.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Raspberry Pi Package Management: apt</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../topics/linux/docs/remote-linux.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/linux/docs/remote-linux.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Remote work on Linux</span></a>
   </div>
 </li>
@@ -563,21 +508,56 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#azure-event-hub" id="toc-azure-event-hub" class="nav-link active" data-scroll-target="#azure-event-hub">Azure Event Hub</a>
+  <ul>
+  <li><a href="#eventhub-partitions" id="toc-eventhub-partitions" class="nav-link" data-scroll-target="#eventhub-partitions">EventHub Partitions</a></li>
+  <li><a href="#stream-offsets" id="toc-stream-offsets" class="nav-link" data-scroll-target="#stream-offsets">Stream offsets</a></li>
+  <li><a href="#message-checkpointing" id="toc-message-checkpointing" class="nav-link" data-scroll-target="#message-checkpointing">Message Checkpointing</a></li>
+  </ul></li>
+  <li><a href="#eventhub-and-iot-hub" id="toc-eventhub-and-iot-hub" class="nav-link" data-scroll-target="#eventhub-and-iot-hub">EventHub and IoT Hub</a></li>
+  <li><a href="#eventhub-.net-sdk" id="toc-eventhub-.net-sdk" class="nav-link" data-scroll-target="#eventhub-.net-sdk">EventHub .NET SDK</a>
+  <ul>
+  <li><a href="#cancellation-tokens" id="toc-cancellation-tokens" class="nav-link" data-scroll-target="#cancellation-tokens">Cancellation Tokens</a></li>
+  </ul></li>
+  <li><a href="#connection-string-event-hub-endpoint" id="toc-connection-string-event-hub-endpoint" class="nav-link" data-scroll-target="#connection-string-event-hub-endpoint">Connection String: Event Hub Endpoint</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../topics/index.html">Topics</a></li><li class="breadcrumb-item"><a href="../../topics/linux/index.html">Linux</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../topics/index.html">Topics</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/index.html">IoT</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/docs/azure-cli-cheatsheet.html">Docs</a></li><li class="breadcrumb-item"><a href="../../../topics/iot/docs/eventhub-dotnet.html">EventHubs &amp; .NET SDK</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Linux</h1>
-</div>
+<h1 class="title">EventHubs &amp; .NET SDK</h1>
+<p class="subtitle lead">More notes on how to send and receive events in C#</p>
+  <div class="quarto-categories">
+    <div class="quarto-category">IoT</div>
+  </div>
+  </div>
 
 
 
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 13, 2024</p>
+    </div>
+  </div>
   
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">May 13, 2024</p>
+    </div>
+  </div>
     
   </div>
   
@@ -586,139 +566,179 @@ window.Quarto = {
 </header>
 
 
+<p><em>The notes below were taken from the official Microsoft documentation page </em><a href="https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-features">Features and terminology in Azure Event Hubs</a><em>.</em></p>
+<section id="azure-event-hub" class="level2">
+<h2 class="anchored" data-anchor-id="azure-event-hub">Azure Event Hub</h2>
+<p><a href="https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-about#main">Azure Event Hub</a> is a big data streaming platform and event ingestion service. It can receive and process millions of events per second.</p>
+<p>The Event Hub routes live data from a data producer (publisher) to one or many data consumers (subscribers). The focus of Event Hub is to route <strong>streaming data</strong></p>
+<p>In addition to messages being streamed to all consumers, messages can also be stored. Typically messages are stored within an Azure service such as blob storage or data lake (more on this later).</p>
+<blockquote class="blockquote">
+<p>For overview of what is an EventHub and its terminology, refer to:</p>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-features"><strong>Features and terminology in Azure Event Hubs</strong></a></li>
+</ul>
+</blockquote>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../assets/15-routing-event-hub.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1" title="Data flow through Event Hub being forwarded to a consumer and stored"><img src="../assets/15-routing-event-hub.png" class="img-fluid figure-img" alt="Data flow through Event Hub being forwarded to a consumer and stored"></a></p>
+<figcaption>Data flow through Event Hub being forwarded to a consumer and stored</figcaption>
+</figure>
+</div>
+<p class="img-info">
+<a href="https://www.youtube.com/watch?v=zm1XUTAa9sc"> Data flow through Event Hub being forwarded to a consumer and stored </a>&nbsp; Azure Event Hubs, Blaize Stewart.
+</p>
+<section id="eventhub-partitions" class="level3">
+<h3 class="anchored" data-anchor-id="eventhub-partitions">EventHub Partitions</h3>
+<p>Event Hubs organizes sequences of events sent to an event hub <strong>into one or more partitions</strong>. As newer events arrive, they’re added to the end of this sequence.</p>
+<blockquote class="blockquote">
+<p>The Free Tier of the Azure IoT Hub uses 2 partitions by default.</p>
+</blockquote>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://learn.microsoft.com/en-us/azure/event-hubs/media/event-hubs-about/event_hubs_architecture.png" class="lightbox" data-glightbox="description: .lightbox-desc-2" data-gallery="quarto-lightbox-gallery-2" title="EventHub Partition diagram"><img src="https://learn.microsoft.com/en-us/azure/event-hubs/media/event-hubs-about/event_hubs_architecture.png" class="img-fluid figure-img" alt="EventHub Partition diagram"></a></p>
+<figcaption>EventHub Partition diagram</figcaption>
+</figure>
+</div>
+<p>A partition can be thought of as a “commit log”. Partitions hold event data that contains:</p>
+<ul>
+<li>Offset,</li>
+<li>Body of the event,</li>
+<li>Sequence number (number in the stream sequence),</li>
+<li>User-defined custom properties,</li>
+<li>System properties,
+<ul>
+<li>Such as service-side timestamp at which the event was accepted.</li>
+</ul></li>
+</ul>
+</section>
+<section id="stream-offsets" class="level3">
+<h3 class="anchored" data-anchor-id="stream-offsets">Stream offsets</h3>
+<p>An <em>offset</em> is the position of an event within a partition. This offset enables an event consumer (reader) to specify a point in the event stream from which they want to begin reading events.</p>
+<p>You can specify the offset as a <strong>timestamp or as an offset value</strong>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://learn.microsoft.com/en-us/azure/event-hubs/media/event-hubs-features/partition_offset.png" class="lightbox" data-glightbox="description: .lightbox-desc-3" data-gallery="quarto-lightbox-gallery-3" title="partition offser"><img src="https://learn.microsoft.com/en-us/azure/event-hubs/media/event-hubs-features/partition_offset.png" class="img-fluid figure-img" alt="partition offser"></a></p>
+<figcaption>partition offser</figcaption>
+</figure>
+</div>
+<p>Consumers are responsible for storing their own offset values outside of the Event Hubs service.</p>
+</section>
+<section id="message-checkpointing" class="level3">
+<h3 class="anchored" data-anchor-id="message-checkpointing">Message Checkpointing</h3>
+<p>It’s possible to <strong>save a “checkpoint” offset</strong> within a partition.</p>
+<p>This checkpoint information needs to be stored somewhere. A typical location is an Azure Blob Storage or a fast cloud-based database.</p>
+<p>For convenience, the Azure EventHub .Net SDK includes methods for storing and retrieving checkpoints from an Azure Blob Storage (more on this later).</p>
+</section>
+</section>
+<section id="eventhub-and-iot-hub" class="level2">
+<h2 class="anchored" data-anchor-id="eventhub-and-iot-hub">EventHub and IoT Hub</h2>
+<p>An <strong>Azure IoT Hub is also an instance of an Azure EventHub</strong>.</p>
+<p>Default, Device to Cloud (D2C) messages to an Azure IoT Hub are exposed to external applications via the build-in endpoints. <strong>The IoT Hub’s endpoints behave the same way as a EventHub endpoint.</strong></p>
+<blockquote class="blockquote">
+<p>Therefore, the Azure EventHub SDK is used by an application or service to receive D2C messages sent to the IoT Hub.</p>
+</blockquote>
+<p>For details on the difference between an IoT Hub and an Event Hub, see <a href="https://learn.microsoft.com/en-us/azure/iot-hub/iot-hub-compare-event-hubs">Connecting IoT Devices to Azure: IoT Hub and Event Hubs</a>.</p>
+</section>
+<section id="eventhub-.net-sdk" class="level2">
+<h2 class="anchored" data-anchor-id="eventhub-.net-sdk">EventHub .NET SDK</h2>
+<p>Azure provides two distinct packages, each with their <strong>respective classes</strong> for reading EventHub Messages:</p>
+<ul>
+<li><code>EventProcessorClient</code> included in the <code>Azure.Messaging.EventHubs.Processor</code> package.
+<ul>
+<li>Supports reading events from all partitions with the call-back methods <code>ProcessEventAsync</code> and <code>ProcessErrorAsync</code> (recommended for production).</li>
+</ul></li>
+<li><code>EventHubConsumerClient</code> included in the <code>Azure.Messaging.EventHubs</code> package.
+<ul>
+<li>Supports reading events from a single partition with the method <code>ReadEventsFromPartitionAsync</code> (suitable for production).</li>
+<li>Supports reading from all partitions with the method <code>ReadEventsAsync</code> (not recommended for production).</li>
+</ul></li>
+</ul>
+<p>Below are the references for both packages mentioned above:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Nuget Package</th>
+<th>Overview</th>
+<th>Reference</th>
+<th>Samples</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://www.nuget.org/packages/Azure.Messaging.EventHubs.Processor">Messaging.EventHubs.Processor</a></td>
+<td><a href="https://learn.microsoft.com/en-us/dotnet/api/overview/azure/messaging.eventhubs.processor-readme?view=azure-dotnet">Getting started: Event Processor</a></td>
+<td><a href="https://docs.microsoft.com/dotnet/api/azure.messaging.eventhubs?view=azure-dotnet">API Reference for Messaging.EventHubs.Processor</a></td>
+<td><a href="https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/eventhub/Azure.Messaging.EventHubs.Processor/samples">Samples for Messaging.EventHubs.Processor</a></td>
+</tr>
+<tr class="even">
+<td><a href="https://www.nuget.org/packages/Azure.Messaging.EventHubs">Messaging.EventHubs</a></td>
+<td><a href="https://learn.microsoft.com/en-us/dotnet/api/overview/azure/messaging.eventhubs-readme?view=azure-dotnet">Getting Started: Event Hubs Client</a></td>
+<td><a href="https://learn.microsoft.com/en-us/dotnet/api/azure.messaging.eventhubs.consumer?view=azure-dotnet">API Reference for Messaging.EventHubs.Consumer</a></td>
+<td><a href="https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/eventhub/Azure.Messaging.EventHubs/samples">Samples for Messaging.EventHubs</a></td>
+</tr>
+</tbody>
+</table>
+<p>When going through the sample code, the following order is recommended:</p>
+<ol type="1">
+<li><code>EventProcessorClient</code>
+<ol type="1">
+<li><a href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/eventhub/Azure.Messaging.EventHubs.Processor/samples/Sample01_HelloWorld.md">Sample01_HelloWorld.md</a></li>
+<li><a href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/eventhub/Azure.Messaging.EventHubs.Processor/samples/Sample04_ProcessingEvents.md">Sample04_ProcessingEvents.md</a></li>
+</ol></li>
+<li><code>EventHubConsumerClient</code>
+<ol type="1">
+<li><a href="https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/eventhub/Azure.Messaging.EventHubs/samples">Sample01_HelloWorld.md</a></li>
+<li><a href="https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/eventhub/Azure.Messaging.EventHubs/samples">Sample05_ReadingEvents.md</a></li>
+</ol></li>
+<li>Run the “Quickstart” code <a href="https://github.com/Azure-Samples/azure-iot-samples-csharp/tree/main/iot-hub/Quickstarts/ReadD2cMessages">Read device-to-cloud messages</a></li>
+</ol>
+<section id="cancellation-tokens" class="level3">
+<h3 class="anchored" data-anchor-id="cancellation-tokens">Cancellation Tokens</h3>
+<p>Many of examples listed above make use of Cancellation Tokens to manage Tasks.</p>
+<blockquote class="blockquote">
+<p>To learn more about Cancellation Tokens, see: <a href="https://devblogs.microsoft.com/azure-sdk/how-to-use-cancellationtokens-to-cancel-tasks-in-the-azure-sdk-for-net/">How to use CancellationTokens to cancel tasks in the Azure SDK for .NET</a></p>
+</blockquote>
+</section>
+</section>
+<section id="connection-string-event-hub-endpoint" class="level2">
+<h2 class="anchored" data-anchor-id="connection-string-event-hub-endpoint">Connection String: Event Hub Endpoint</h2>
+<p>When you use Event Hubs SDKs or product integrations that are unaware of IoT Hub, you need an Event Hub-compatible endpoint and Event Hub-compatible name. You can retrieve these values from the portal as follows:</p>
+<ol type="1">
+<li><p>Sign in to the <a href="https://portal.azure.com">Azure portal</a> and navigate to your IoT hub.</p></li>
+<li><p>Select <strong>Built-in endpoints</strong> from the resource menu, under <strong>Hub settings</strong>.</p></li>
+<li><p>The <strong>Built-in endpoints</strong> working pane contains three sections:</p>
+<ul>
+<li>The <strong>Event Hub Details</strong> section contains the following values:
+<ul>
+<li><strong>Event Hub-compatible name</strong></li>
+<li><strong>Consumer Groups</strong>.</li>
+</ul></li>
+<li>The <strong>Event Hub compatible endpoint</strong> section contains the following values:
+<ul>
+<li><strong>Shared access policy</strong> (the default is <code>"$Default"</code>)</li>
+<li><strong>Event Hub-compatible endpoint</strong>.</li>
+</ul></li>
+</ul></li>
+</ol>
+<p>In the working pane, the <strong>Event Hub-compatible endpoint</strong> field contains a complete Event Hubs connection string that looks like the following example:</p>
+<p><strong>Note that the default consumer group name is <code>"$Default"</code></strong> (might required including double quotes).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://learn.microsoft.com/en-us/azure/iot-hub/media/iot-hub-devguide-messages-read-builtin/eventhubcompatible.png" class="lightbox" data-glightbox="description: .lightbox-desc-4" data-gallery="quarto-lightbox-gallery-4" title="Screen capture showing device-to-cloud settings."><img src="https://learn.microsoft.com/en-us/azure/iot-hub/media/iot-hub-devguide-messages-read-builtin/eventhubcompatible.png" class="img-fluid figure-img" alt="Screen capture showing device-to-cloud settings."></a></p>
+<figcaption>Screen capture showing device-to-cloud settings.</figcaption>
+</figure>
+</div>
 
 
+<div class="hidden" aria-hidden="true">
+<span class="glightbox-desc lightbox-desc-1">Data flow through Event Hub being forwarded to a consumer and stored</span>
+<span class="glightbox-desc lightbox-desc-2">EventHub Partition diagram</span>
+<span class="glightbox-desc lightbox-desc-3">partition offser</span>
+<span class="glightbox-desc lightbox-desc-4">Screen capture showing device-to-cloud settings.</span>
+</div>
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="listing-actions-group">
-   <div class="input-group input-group-sm quarto-listing-sort">
-     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-     <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-       <option value="" disabled="" selected="" hidden="">Order By</option>
-       <option value="index" data-direction="asc">Default</option>
-         <option value="listing-date-sort" data-direction="asc">
-          Date - Oldest
-        </option>
-         <option value="listing-date-sort" data-direction="desc">
-          Date - Newest
-        </option>
-         <option value="listing-title" data-direction="asc">
-          Title
-        </option>
-     </select>
-  </div>
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
-</div>
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="Linux,Quiz 1" data-listing-date-sort="1706832000000" data-listing-file-modified-sort="1715594698882" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="909">
-<div class="thumbnail">
-<p><a href="../../topics/linux/docs/linux-review.html" class="no-external"></a></p><a href="../../topics/linux/docs/linux-review.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="../../topics/linux/docs/linux-review.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../../topics/linux/docs/linux-review.html" class="no-external">Linux review</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../../topics/linux/docs/linux-review.html" class="no-external">Resources and references to brush up linux knowledge.</a>
-</div>
-<div class="listing-description">
-<a href="../../topics/linux/docs/linux-review.html" class="no-external">If you don’t have a Unix shell in your system (Linux or Mac), you can get one using the following:</a>
-</div>
-</div>
-<div class="metadata">
-<a href="../../topics/linux/docs/linux-review.html" class="no-external">
-<div class="listing-date">
-Feb 2, 2024
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="Linux" data-listing-date-sort="1707436800000" data-listing-file-modified-sort="1715594698882" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="625">
-<div class="thumbnail">
-<p><a href="../../topics/linux/docs/remote-linux.html" class="no-external"></a></p><a href="../../topics/linux/docs/remote-linux.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="../../topics/linux/docs/remote-linux.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../../topics/linux/docs/remote-linux.html" class="no-external">Remote work on Linux</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../../topics/linux/docs/remote-linux.html" class="no-external">Learn how to connect to your Pi with CLI (ssh) and GUI (VNC). Learn how to setup and troubleshoot local connections (LAN) and remote connections (VPN).</a>
-</div>
-<div class="listing-description">
-<a href="../../topics/linux/docs/remote-linux.html" class="no-external">Login into the R.Pi without password by setting up SSH credentials</a>
-</div>
-</div>
-<div class="metadata">
-<a href="../../topics/linux/docs/remote-linux.html" class="no-external">
-<div class="listing-date">
-Feb 9, 2024
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="Linux,Quiz 1" data-listing-date-sort="1708300800000" data-listing-file-modified-sort="1715594698882" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1035">
-<div class="thumbnail">
-<p><a href="../../topics/linux/docs/package-management-debian.html" class="no-external"></a></p><a href="../../topics/linux/docs/package-management-debian.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="../../topics/linux/docs/package-management-debian.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../../topics/linux/docs/package-management-debian.html" class="no-external">Raspberry Pi Package Management: apt</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../../topics/linux/docs/package-management-debian.html" class="no-external">Installing and configuring Linux packages on Raspberry Pi Debian using the <code>apt</code> package manager.</a>
-</div>
-<div class="listing-description">
-<a href="../../topics/linux/docs/package-management-debian.html" class="no-external">The Raspberry Pi OS (previously called <em>Raspbian OS</em>) used in the reTerminal is a variation of the <strong>Debian OS</strong>, with optimizations for the Raspberry Pi hardware.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="../../topics/linux/docs/package-management-debian.html" class="no-external">
-<div class="listing-date">
-Feb 19, 2024
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="Linux" data-listing-date-sort="1712534400000" data-listing-file-modified-sort="1715594698882" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="156">
-<div class="thumbnail">
-<p><a href="../../topics/linux/docs/github.html" class="no-external"></a></p><a href="../../topics/linux/docs/github.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="../../topics/linux/docs/github.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../../topics/linux/docs/github.html" class="no-external">Some notes about GitHub</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../../topics/linux/docs/github.html" class="no-external">For now, just a note about authenticating in the terminal. More to come.</a>
-</div>
-<div class="listing-description">
-<a href="../../topics/linux/docs/github.html" class="no-external">I will update this lecture with tips and tricks for using GitHub effectively. For now:</a>
-</div>
-</div>
-<div class="metadata">
-<a href="../../topics/linux/docs/github.html" class="no-external">
-<div class="listing-date">
-Apr 8, 2024
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1274,13 +1294,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../topics/python/docs/advanced.html" class="pagination-link" aria-label="Asynchronous, REST API">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Asynchronous, REST API</span>
+      <a href="../../../topics/iot/docs/device-twins.html" class="pagination-link" aria-label="Device Twins">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Device Twins</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../topics/linux/docs/github.html" class="pagination-link" aria-label="Some notes about GitHub">
-        <span class="nav-page-text">Some notes about GitHub</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../../topics/iot/docs/intro-azure-iot.html" class="pagination-link" aria-label="Intro to Azure IoT">
+        <span class="nav-page-text">Intro to Azure IoT</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1293,12 +1313,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="../../about/this-site.html">
+    <a class="nav-link" href="../../../about/this-site.html">
 <p>About</p>
 </a>
   </li>  
     <li class="nav-item">
-    <a class="nav-link" href="../../about/this-site.html#copyright">
+    <a class="nav-link" href="../../../about/this-site.html#copyright">
 <p>License</p>
 </a>
   </li>  
@@ -1315,7 +1335,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
  
   </li>  
     <li class="nav-item compact">
-    <a class="nav-link" href="../../announcements/index.xml">
+    <a class="nav-link" href="../../../announcements/index.xml">
       <i class="bi bi-rss" role="img">
 </i> 
     </a>
@@ -1329,6 +1349,31 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","loop":false,"closeEffect":"zoom","descPosition":"bottom"});
+window.onload = () => {
+  lightboxQuarto.on('slide_before_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    const href = trigger.getAttribute('href');
+    if (href !== null) {
+      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+      if (imgEl !== null) {
+        const srcAttr = imgEl.getAttribute("src");
+        if (srcAttr && srcAttr.startsWith("data:")) {
+          slideConfig.href = srcAttr;
+        }
+      }
+    } 
+  });
+
+  lightboxQuarto.on('slide_after_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    if (window.Quarto?.typesetMath) {
+      window.Quarto.typesetMath(slideNode);
+    }
+  });
+
+};
+          </script>
 
 
 

@@ -28,7 +28,8 @@
       "/topics/hardware/docs/debug-black-screen.html",
       "/topics/iot/docs/azure-cli-cheatsheet.html",
       "/topics/iot/docs/device-cloud-communication.html",
-      "/topics/iot/docs/device-twins.html"
+      "/topics/iot/docs/device-twins.html",
+      "/topics/iot/docs/eventhub-dotnet.html"
     ]
   },
   {
@@ -63,7 +64,8 @@
       "/topics/iot/docs/intro-azure-iot.html",
       "/topics/iot/docs/azure-cli-cheatsheet.html",
       "/topics/iot/docs/device-cloud-communication.html",
-      "/topics/iot/docs/device-twins.html"
+      "/topics/iot/docs/device-twins.html",
+      "/topics/iot/docs/eventhub-dotnet.html"
     ]
   },
   {
