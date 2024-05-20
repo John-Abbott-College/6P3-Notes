@@ -1,9 +1,18 @@
 [
   {
+    "listing": "/topics/linux/index.html",
+    "items": [
+      "/topics/linux/docs/linux-review.html",
+      "/topics/linux/docs/remote-linux.html",
+      "/topics/linux/docs/package-management-debian.html",
+      "/topics/linux/docs/github.html"
+    ]
+  },
+  {
     "listing": "/topics/index.html",
     "items": [
-      "/topics/getting-started/docs/hardware-list.html",
       "/topics/getting-started/docs/vscode-python-setup.html",
+      "/topics/getting-started/docs/hardware-list.html",
       "/topics/getting-started/docs/tech-stack.html",
       "/topics/iot/docs/what-is-iot.html",
       "/topics/python/docs/intro.html",
@@ -12,15 +21,15 @@
       "/topics/hardware/docs/reterminal-sensors.html",
       "/topics/python/docs/package-management.html",
       "/topics/linux/docs/package-management-debian.html",
-      "/topics/hardware/docs/analog-vs-digital.html",
       "/topics/hardware/docs/gpios.html",
-      "/topics/hardware/docs/serial-protocols.html",
+      "/topics/hardware/docs/analog-vs-digital.html",
       "/topics/hardware/docs/circuitry-basics.html",
+      "/topics/hardware/docs/serial-protocols.html",
       "/topics/hardware/docs/arduino-vs-raspberry-pi.html",
-      "/topics/python/docs/scripting.html",
-      "/topics/python/docs/oop.html",
-      "/topics/python/docs/advanced.html",
       "/topics/python/docs/project-management.html",
+      "/topics/python/docs/oop.html",
+      "/topics/python/docs/scripting.html",
+      "/topics/python/docs/advanced.html",
       "/topics/linux/docs/github.html",
       "/topics/iot/docs/azure-sdks.html",
       "/topics/iot/docs/iot-protocols.html",
@@ -33,26 +42,11 @@
     ]
   },
   {
-    "listing": "/topics/python/index.html",
+    "listing": "/about/index.html",
     "items": [
-      "/topics/python/docs/intro.html",
-      "/topics/python/docs/package-management.html",
-      "/topics/python/docs/scripting.html",
-      "/topics/python/docs/oop.html",
-      "/topics/python/docs/advanced.html",
-      "/topics/python/docs/project-management.html"
-    ]
-  },
-  {
-    "listing": "/announcements/index.html",
-    "items": [
-      "/announcements/2024-04-22-grades-update.html",
-      "/announcements/2024-04-18-azure-plan-troubleshooting.html",
-      "/announcements/2024-04-15-schedule-updates.html",
-      "/announcements/2024-03-18-quiz1-topics.html",
-      "/announcements/2024-03-14-pi-update.html",
-      "/announcements/2024-03-12-website-updates.html",
-      "/announcements/2024-03-12-lab3-demo.html"
+      "/about/this-site.html",
+      "/about/calendar.html",
+      "/about/syllabus.html"
     ]
   },
   {
@@ -69,40 +63,46 @@
     ]
   },
   {
+    "listing": "/topics/getting-started/index.html",
+    "items": [
+      "/topics/getting-started/docs/vscode-python-setup.html",
+      "/topics/getting-started/docs/hardware-list.html",
+      "/topics/getting-started/docs/tech-stack.html"
+    ]
+  },
+  {
     "listing": "/topics/hardware/index.html",
     "items": [
       "/topics/hardware/docs/reterminal-sensors.html",
-      "/topics/hardware/docs/analog-vs-digital.html",
       "/topics/hardware/docs/gpios.html",
-      "/topics/hardware/docs/serial-protocols.html",
+      "/topics/hardware/docs/analog-vs-digital.html",
       "/topics/hardware/docs/circuitry-basics.html",
+      "/topics/hardware/docs/serial-protocols.html",
       "/topics/hardware/docs/arduino-vs-raspberry-pi.html",
       "/topics/hardware/docs/debug-black-screen.html"
     ]
   },
   {
-    "listing": "/topics/getting-started/index.html",
+    "listing": "/topics/python/index.html",
     "items": [
-      "/topics/getting-started/docs/hardware-list.html",
-      "/topics/getting-started/docs/vscode-python-setup.html",
-      "/topics/getting-started/docs/tech-stack.html"
+      "/topics/python/docs/intro.html",
+      "/topics/python/docs/package-management.html",
+      "/topics/python/docs/project-management.html",
+      "/topics/python/docs/oop.html",
+      "/topics/python/docs/scripting.html",
+      "/topics/python/docs/advanced.html"
     ]
   },
   {
-    "listing": "/topics/linux/index.html",
+    "listing": "/announcements/index.html",
     "items": [
-      "/topics/linux/docs/linux-review.html",
-      "/topics/linux/docs/remote-linux.html",
-      "/topics/linux/docs/package-management-debian.html",
-      "/topics/linux/docs/github.html"
-    ]
-  },
-  {
-    "listing": "/about/index.html",
-    "items": [
-      "/about/this-site.html",
-      "/about/calendar.html",
-      "/about/syllabus.html"
+      "/announcements/2024-04-22-grades-update.html",
+      "/announcements/2024-04-18-azure-plan-troubleshooting.html",
+      "/announcements/2024-04-15-schedule-updates.html",
+      "/announcements/2024-03-18-quiz1-topics.html",
+      "/announcements/2024-03-14-pi-update.html",
+      "/announcements/2024-03-12-website-updates.html",
+      "/announcements/2024-03-12-lab3-demo.html"
     ]
   }
 ]
