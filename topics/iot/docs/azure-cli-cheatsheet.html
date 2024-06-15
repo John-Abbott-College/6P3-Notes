@@ -623,28 +623,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="iot-hub-owner-string" class="level4">
 <h4 class="anchored" data-anchor-id="iot-hub-owner-string">IoT Hub Owner String</h4>
 <p>Be advised: this connection string provides the highest level of access.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">az</span> iot hub connection-string  show <span class="at">--hub-name</span> {YourIoTHubName}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">az</span> iot hub connection-string  show <span class="at">--hub-name</span> {YourIoTHubName}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="iot-hub-service-string" class="level4">
 <h4 class="anchored" data-anchor-id="iot-hub-service-string">IoT Hub Service String</h4>
 <p>Recommended level of access for external applications:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">az</span> iot hub connection-string show <span class="at">--policy-name</span> service <span class="at">--hub-name</span> {YourIoTHubName} <span class="at">--output</span> table</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">az</span> iot hub connection-string show <span class="at">--policy-name</span> service <span class="at">--hub-name</span> {YourIoTHubName} <span class="at">--output</span> table</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="eventhub-compatible-string" class="level4">
 <h4 class="anchored" data-anchor-id="eventhub-compatible-string">EventHub Compatible String</h4>
 <p>Show the eventhub compatible connection string of the given IoT Hub’s default eventhub:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">az</span> iot hub connection-string show <span class="at">-n</span> MyIotHub <span class="at">--default-eventhub</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">az</span> iot hub connection-string show <span class="at">-n</span> MyIotHub <span class="at">--default-eventhub</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
 <section id="device-strings" class="level3">
 <h3 class="anchored" data-anchor-id="device-strings">Device Strings</h3>
 <p>Manage IoT device’s connection string with <a href="https://learn.microsoft.com/en-us/cli/azure/iot/hub/device-identity/connection-string?view=azure-cli-latest#az-iot-hub-device-identity-connection-string-show">az iot hub device-identity connection-string show</a></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">az</span> iot hub device-identity connection-string show <span class="at">--device-id</span> {YourDevice}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">az</span> iot hub device-identity connection-string show <span class="at">--device-id</span> {YourDevice}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
 <section id="simulating-a-device" class="level2">
 <h2 class="anchored" data-anchor-id="simulating-a-device">Simulating a Device</h2>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">az</span> iot device simulate <span class="at">-d</span> simDevice <span class="at">-n</span> {YourIoTHubName}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">az</span> iot device simulate <span class="at">-d</span> simDevice <span class="at">-n</span> {YourIoTHubName}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>By default, this command will:</p>
 <ul>
 <li>Send D2C messages with a payload of <code>Ping from Az CLI IoT Extension</code></li>
@@ -657,32 +657,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="monitor-c2d-messages" class="level3">
 <h3 class="anchored" data-anchor-id="monitor-c2d-messages">Monitor C2D Messages</h3>
 <p>List all message details for all devices.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">az</span> iot hub monitor-events <span class="at">--output</span> table <span class="at">-p</span> all <span class="at">-n</span> {YourIoTHubName}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">az</span> iot hub monitor-events <span class="at">--output</span> table <span class="at">-p</span> all <span class="at">-n</span> {YourIoTHubName}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>List message details for a specific device:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">az</span> iot hub monitor-events <span class="at">--output</span> table <span class="at">--device-id</span> {YourDevice} <span class="at">--hub-name</span> {YourIoTHubName}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">az</span> iot hub monitor-events <span class="at">--output</span> table <span class="at">--device-id</span> {YourDevice} <span class="at">--hub-name</span> {YourIoTHubName}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="send-c2d-message" class="level3">
 <h3 class="anchored" data-anchor-id="send-c2d-message">Send C2D Message</h3>
 <p>Includes custom key, value properties. <a href="https://learn.microsoft.com/en-us/cli/azure/iot/device/c2d-message?view=azure-cli-latest#az-iot-device-c2d-message-send">See documentation</a>.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">az</span> iot device c2d-message send <span class="at">-d</span> simDevice <span class="at">--data</span> <span class="st">"Hello World"</span> <span class="at">--props</span> <span class="st">"key0=value0;key1=value1"</span> <span class="at">-n</span> {YourIoTHubName}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">az</span> iot device c2d-message send <span class="at">-d</span> simDevice <span class="at">--data</span> <span class="st">"Hello World"</span> <span class="at">--props</span> <span class="st">"key0=value0;key1=value1"</span> <span class="at">-n</span> {YourIoTHubName}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
 <section id="direct-methods" class="level2">
 <h2 class="anchored" data-anchor-id="direct-methods">Direct Methods</h2>
 <section id="invoke-direct-method-on-device" class="level3">
 <h3 class="anchored" data-anchor-id="invoke-direct-method-on-device">Invoke Direct Method on Device</h3>
-<div class="sourceCode" id="cb9"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">az</span> iot hub invoke-device-method <span class="at">--mn</span> MySampleMethod <span class="at">-d</span> simDevice <span class="at">-n</span> {YourIoTHubName}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">az</span> iot hub invoke-device-method <span class="at">--mn</span> MySampleMethod <span class="at">-d</span> simDevice <span class="at">-n</span> {YourIoTHubName}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
 <section id="device-twins" class="level2">
 <h2 class="anchored" data-anchor-id="device-twins">Device Twins</h2>
 <section id="update-device-twin-properties" class="level3">
 <h3 class="anchored" data-anchor-id="update-device-twin-properties">Update Device Twin Properties</h3>
-<div class="sourceCode" id="cb10"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">az</span> iot hub device-twin update <span class="at">-d</span> simDevice <span class="at">--desired</span> <span class="st">'{"conditions":{"temperature":{"warning":98, "critical":107}}}'</span> <span class="at">-n</span> {YourIoTHubName}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">az</span> iot hub device-twin update <span class="at">-d</span> simDevice <span class="at">--desired</span> <span class="st">'{"conditions":{"temperature":{"warning":98, "critical":107}}}'</span> <span class="at">-n</span> {YourIoTHubName}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="get-device-twin-properties" class="level3">
 <h3 class="anchored" data-anchor-id="get-device-twin-properties">Get Device Twin Properties</h3>
-<div class="sourceCode" id="cb11"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">az</span> iot hub device-twin show <span class="at">-d</span> simDevice <span class="at">--query</span> properties.reported <span class="at">-n</span> {YourIoTHubName}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">az</span> iot hub device-twin show <span class="at">-d</span> simDevice <span class="at">--query</span> properties.reported <span class="at">-n</span> {YourIoTHubName}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>
