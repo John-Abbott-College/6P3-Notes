@@ -17,6 +17,7 @@ See detailes documentation at [az iot hub connection-string](https://learn.micro
 #### IoT Hub Owner String
 
 Be advised: this connection string provides the highest level of access.
+
 ```sh
 az iot hub connection-string  show --hub-name {YourIoTHubName}
 ```
@@ -24,6 +25,7 @@ az iot hub connection-string  show --hub-name {YourIoTHubName}
 #### IoT Hub Service String
 
 Recommended level of access for external applications:
+
 ```sh
 az iot hub connection-string show --policy-name service --hub-name {YourIoTHubName} --output table
 ```
@@ -31,6 +33,7 @@ az iot hub connection-string show --policy-name service --hub-name {YourIoTHubNa
 #### EventHub Compatible String
 
 Show the eventhub compatible connection string of the given IoT Hub's default eventhub:
+
 ```sh
 az iot hub connection-string show -n MyIotHub --default-eventhub
 ```
