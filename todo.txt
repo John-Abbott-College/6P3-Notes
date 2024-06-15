@@ -1,15 +1,12 @@
-- pi: 32->64 bit explanation
-- any other quality of life changes to the pi to be made?
-- led lab?
-- adafruit notes?
-- calendar?
+- investigate code-overflow: wrap not taking effect in prod, but working in preview
 
-- adapt linux file system notes from Unix Networking?
+- pi: 32->64 bit explanation
+- quality of life changes to the pi (pimp my pi lab)
+- adapt linux file system notes from Unix Networking lectures?
 
 In class demo ideas
 
 - mauricio has some py scripts that are probs worth checking out...
-
 
 # https://wiki.archlinux.org/title/Backlight
 # https://man.archlinux.org/man/sysfs.5
@@ -20,13 +17,10 @@ echo 5 | sudo tee brightness
 
 - (the reTerminal setup and sensors notes contain the above, let's say "overview of reterminal interfaces/hardware/capabilities/etc.?)
 
-progression: talk about the device, get 'em to think about how it works, get 'em to read some notes, do some demos of /sys/ etc. 
+- lecture: scripting, bash, risks vs rewards, a practical approach (good for reading current state, very fast, native format, remembering steps, make alias, etc.)
 
-break, then talk about scripting, bash, risks vs rewards, a practical approach (good for reading current state, very fast, native format, remembering steps, make alias, etc.)
-
-cool idea: sxkhd to have hotkey for brightness control?!?! that would be fun lol.
-
-then: download python library to do the same, tease the point of the rest of the circuitry
+- cool lab idea: sxkhd to have hotkey for brightness control. that would be fun
+- then: download python library to do the same, introdouce the point of the rest of the circuitry
 
 
 
