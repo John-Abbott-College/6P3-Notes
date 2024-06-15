@@ -9,7 +9,7 @@ format:
 
 {{< include /_reference-links.md >}}
 
-From the [course outline][course-outline]:
+From the course outline:
 
 > This course will introduce students to the basic principles of the Internet of Things (IoT), a connected
 network of objects sensing and exchanging data about the physical world. Students will learn to program
@@ -19,7 +19,7 @@ service provider in order to collect and analyze telemetry data associated with 
 
 ## Logistics
 
-- **Room, times, etc.:** see [Course Outline][course-outline]
+- **Room, times, etc.:** see Course Outline [(section 1)][course-outline-s1] [(section 2)][course-outline-s2]:
 - **Office:** Penfield 311
 - **Office hours:** Mon/Fri 11:00 - 12:30pm or so
 - **Email:** michael DOT haaf AT johnabbott DOT qc DOT ca

@@ -11,7 +11,7 @@ This is the authoritative calendar for content covered in class, and for content
 
 ![The focused pupil keeps watch on Time](assets/ticktock.jpg){fig-align=left}
 
-You can compare this calendar with the calendar from the [Course Outline][course-outline] to see where this course has deviated from the original outline.
+You can compare this calendar with the calendar from the Course Outline [(section 1)][course-outline-s1] [(section 2)][course-outline-s2] to see where this course has deviated from the original outline.
 
 {{< include /_reference-links.md >}}
 

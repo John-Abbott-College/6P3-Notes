@@ -1,7 +1,8 @@
 [azure-account-check]: /topics/iot/docs/what-is-iot.qmd#azure-account-check
 
 [syllabus]: /about/syllabus.qmd
-[course-outline]: /about/course-outline.qmd
+[course-outline-s1]: https://moodle.johnabbott.qc.ca/pluginfile.php/66254/mod_resource/content/4/WINTER2024.COMPUTER_SCIENCE.420-6P3-AB.HAAFM.pdf
+[course-outline-s2]: https://moodle.johnabbott.qc.ca/pluginfile.php/66310/mod_resource/content/4/WINTER2024.COMPUTER_SCIENCE.420-6P3-AB.HAAFM.pdf
 [calendar]: /about/calendar.qmd
 [lectures]: /topics/index.qmd
 
