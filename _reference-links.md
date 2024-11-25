@@ -1,14 +1,14 @@
-[azure-account-check]: /topics/iot/docs/what-is-iot.qmd#azure-account-check
+[moodle]: https://moodle.johnabbott.qc.ca/
+[moodle-sec1]: https://moodle.johnabbott.qc.ca/course/view.php?id=807
+[moodle-sec2]: https://moodle.johnabbott.qc.ca/course/view.php?id=808
 
-[syllabus]: /about/syllabus.qmd
 [course-outline-s1]: https://moodle.johnabbott.qc.ca/pluginfile.php/66254/mod_resource/content/4/WINTER2024.COMPUTER_SCIENCE.420-6P3-AB.HAAFM.pdf
 [course-outline-s2]: https://moodle.johnabbott.qc.ca/pluginfile.php/66310/mod_resource/content/4/WINTER2024.COMPUTER_SCIENCE.420-6P3-AB.HAAFM.pdf
 [calendar]: /about/calendar.qmd
 [lectures]: /topics/index.qmd
+[syllabus]: /about/syllabus.qmd
 
-[moodle]: https://moodle.johnabbott.qc.ca/
-[moodle-sec1]: https://moodle.johnabbott.qc.ca/course/view.php?id=807
-[moodle-sec2]: https://moodle.johnabbott.qc.ca/course/view.php?id=808
+[azure-account-check]: /topics/iot/docs/what-is-iot.qmd#azure-account-check
 
 [lab0-sec1]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=33678
 [lab1-sec1]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=33679
