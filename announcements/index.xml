@@ -14,7 +14,7 @@
 <title>Connected Objects</title>
 <link>https://john-abbott-college.github.io/6P3-Notes/announcements/</link>
 </image>
-<generator>quarto-1.4.555</generator>
+<generator>quarto-1.6.37</generator>
 <lastBuildDate>Mon, 22 Apr 2024 00:00:00 GMT</lastBuildDate>
 <item>
   <title>Grading Update</title>
@@ -184,6 +184,7 @@
 background-color: null;
 font-style: inherit;">$</span> sudo apt update <span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">&amp;&amp;</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">sudo</span> apt upgrade <span class="at" style="color: #657422;
@@ -219,6 +220,25 @@ font-style: inherit;">sudo</span> reboot</span></code></pre></div>
   <pubDate>Thu, 14 Mar 2024 00:00:00 GMT</pubDate>
 </item>
 <item>
+  <title>Lab 3: Demo in class Friday March 15</title>
+  <link>https://john-abbott-college.github.io/6P3-Notes/announcements/2024-03-12-lab3-demo.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>As mentioned in class on March 11, the hand-in for <strong>Lab 3</strong> will be on <strong>Friday March 15</strong>. Demos will start at the <strong>beginning</strong> of class. Come to class prepared to show your progress.</p>
+<p>The deadline to submit your scripts for Lab 3 code remains midnight on Friday.</p>
+<p>If you have not completed the lab by Friday morning, you will get partial marks up to whatever you have completed.</p>
+<p>Let me know if you have any questions! (by Teams preferably)</p>
+
+
+
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
+  <guid>https://john-abbott-college.github.io/6P3-Notes/announcements/2024-03-12-lab3-demo.html</guid>
+  <pubDate>Tue, 12 Mar 2024 00:00:00 GMT</pubDate>
+</item>
+<item>
   <title>Website updates</title>
   <link>https://john-abbott-college.github.io/6P3-Notes/announcements/2024-03-12-website-updates.html</link>
   <description><![CDATA[ 
@@ -238,25 +258,6 @@ font-style: inherit;">sudo</span> reboot</span></code></pre></div>
 
 <a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
   <guid>https://john-abbott-college.github.io/6P3-Notes/announcements/2024-03-12-website-updates.html</guid>
-  <pubDate>Tue, 12 Mar 2024 00:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Lab 3: Demo in class Friday March 15</title>
-  <link>https://john-abbott-college.github.io/6P3-Notes/announcements/2024-03-12-lab3-demo.html</link>
-  <description><![CDATA[ 
-
-
-
-
-<p>As mentioned in class on March 11, the hand-in for <strong>Lab 3</strong> will be on <strong>Friday March 15</strong>. Demos will start at the <strong>beginning</strong> of class. Come to class prepared to show your progress.</p>
-<p>The deadline to submit your scripts for Lab 3 code remains midnight on Friday.</p>
-<p>If you have not completed the lab by Friday morning, you will get partial marks up to whatever you have completed.</p>
-<p>Let me know if you have any questions! (by Teams preferably)</p>
-
-
-
-<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
-  <guid>https://john-abbott-college.github.io/6P3-Notes/announcements/2024-03-12-lab3-demo.html</guid>
   <pubDate>Tue, 12 Mar 2024 00:00:00 GMT</pubDate>
 </item>
 </channel>
