@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2024-01-29">
 
-<title>Syllabus – Connected Objects</title>
+<title>Intro to the Internet of Things – Connected Objects</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,26 +24,29 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../assets/favicon_io/favicon.ico" rel="icon">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-46ee400ebd2c19ba122ec631c5f961f9.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-ba0467802c581767bb15e37147f38c23.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-c33c405b63b127b4c2f41bbf661c04b0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-2bfe667330ba0a9fda6cba1a7076ee51.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<script src="../site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../assets/favicon_io/favicon.ico" rel="icon">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-46ee400ebd2c19ba122ec631c5f961f9.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-ba0467802c581767bb15e37147f38c23.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-bd05319d547d4417e98c75b5a20fed9a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-eabc42ce70820c9f2cebf332591e943c.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": true,
@@ -72,12 +76,11 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="Syllabus – Connected Objects">
-<meta property="og:description" content="Course description outlining goals, expectations, resources, and other important information.">
-<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/about/assets/itsInTheSyllabus.png">
+<meta property="og:title" content="Intro to the Internet of Things – Connected Objects">
+<meta property="og:description" content="Fundamental concepts and applications behind the ‘Internet of Things’ paradigm.">
+<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/lectures/assets/iot-banner.webp">
 <meta property="og:site_name" content="Connected Objects">
-<meta property="og:image:height" content="681">
-<meta property="og:image:width" content="1000">
+<meta property="og:image:alt" content="The Interconnection of communicating devices defines the “Internet of Things”">
 </head>
 
 <body class="nav-fixed">
@@ -87,10 +90,10 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../assets/favicon_io/favicon-32x32.png" alt="" class="navbar-logo">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../assets/favicon_io/favicon-32x32.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Connected Objects</span>
     </a>
   </div>
@@ -101,19 +104,19 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../about/index.html"> 
+    <a class="nav-link" href="../../about/index.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../announcements/index.html"> 
+    <a class="nav-link" href="../../announcements/index.html"> 
 <span class="menu-text">Announcements</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../lectures/index.html"> 
+    <a class="nav-link" href="../../lectures/index.html"> 
 <span class="menu-text">Lectures</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../reference/index.html"> 
+    <a class="nav-link" href="../../reference/index.html"> 
 <span class="menu-text">Reference</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -132,7 +135,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
   </li>
   <li class="nav-item compact">
-    <a class="nav-link" href="../announcements/index.xml"> <i class="bi bi-rss" role="img">
+    <a class="nav-link" href="../../announcements/index.xml"> <i class="bi bi-rss" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -157,12 +160,26 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#logistics" id="toc-logistics" class="nav-link active" data-scroll-target="#logistics">Logistics</a>
-  <ul class="collapse">
-  <li><a href="#communication" id="toc-communication" class="nav-link" data-scroll-target="#communication">Communication</a></li>
-  <li><a href="#assessment" id="toc-assessment" class="nav-link" data-scroll-target="#assessment">Assessment</a></li>
+  <li><a href="#internet-of-things-iot" id="toc-internet-of-things-iot" class="nav-link active" data-scroll-target="#internet-of-things-iot">Internet of Things (IoT)</a></li>
+  <li><a href="#why-collect-all-this-data" id="toc-why-collect-all-this-data" class="nav-link" data-scroll-target="#why-collect-all-this-data">Why collect all this data?</a></li>
+  <li><a href="#iot-examples" id="toc-iot-examples" class="nav-link" data-scroll-target="#iot-examples">IoT Examples</a>
+  <ul>
+  <li><a href="#consumer-iot" id="toc-consumer-iot" class="nav-link" data-scroll-target="#consumer-iot">Consumer IoT</a></li>
+  <li><a href="#industrial-iot-iiot" id="toc-industrial-iot-iiot" class="nav-link" data-scroll-target="#industrial-iot-iiot">Industrial IoT (IIoT)</a></li>
   </ul></li>
-  <li><a href="#course-material" id="toc-course-material" class="nav-link" data-scroll-target="#course-material">Course material</a></li>
+  <li><a href="#high-level-components-of-an-iot-system" id="toc-high-level-components-of-an-iot-system" class="nav-link" data-scroll-target="#high-level-components-of-an-iot-system">High-level Components of an IoT System</a></li>
+  <li><a href="#iot-cloud-service-providers" id="toc-iot-cloud-service-providers" class="nav-link" data-scroll-target="#iot-cloud-service-providers">IoT Cloud Service Providers</a></li>
+  <li><a href="#azure-account-check" id="toc-azure-account-check" class="nav-link" data-scroll-target="#azure-account-check">Azure Account Check</a>
+  <ul>
+  <li><a href="#checking-your-balance" id="toc-checking-your-balance" class="nav-link" data-scroll-target="#checking-your-balance">Checking your balance 💸</a></li>
+  <li><a href="#budget-alerts" id="toc-budget-alerts" class="nav-link" data-scroll-target="#budget-alerts">Budget Alerts</a>
+  <ul class="collapse">
+  <li><a href="#create-a-budget-for-a-resource-group" id="toc-create-a-budget-for-a-resource-group" class="nav-link" data-scroll-target="#create-a-budget-for-a-resource-group">Create a Budget for a Resource Group</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
+  <li><a href="#diving-deeper" id="toc-diving-deeper" class="nav-link" data-scroll-target="#diving-deeper">Diving Deeper</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
     </div>
@@ -171,8 +188,8 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Syllabus</h1>
-<p class="subtitle lead">Course description outlining goals, expectations, resources, and other important information.</p>
+<h1 class="title">Intro to the Internet of Things</h1>
+<p class="subtitle lead">Fundamental concepts and applications behind the ‘Internet of Things’ paradigm.</p>
 </div>
 
 
@@ -180,6 +197,12 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">January 29, 2024</p>
+    </div>
+  </div>
   
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
@@ -195,46 +218,223 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>From the course outline:</p>
+<p><img src="../assets/iot-banner.webp" class="img-fluid" alt="The Interconnection of communicating devices defines the “Internet of Things”"> Image: © Irina Strelnikova / Adobe Stock</p>
+<section id="internet-of-things-iot" class="level2">
+<h2 class="anchored" data-anchor-id="internet-of-things-iot">Internet of Things (IoT)</h2>
+<p>The <strong>Internet of Things (IoT)</strong> is comprised of equipment, machines, products, and devices that are connected to the cloud and <strong>periodically collect, send and/or receive data.</strong></p>
 <blockquote class="blockquote">
-<p>This course will introduce students to the basic principles of the Internet of Things (IoT), a connected network of objects sensing and exchanging data about the physical world. Students will learn to program a micro-controller or single board computer to read data from sensors and control actuators. By the end of the course, students will be able to build a stand-alone object that is securely connected to a cloud service provider in order to collect and analyze telemetry data associated with multiple devices</p>
-</blockquote>
-<section id="logistics" class="level2">
-<h2 class="anchored" data-anchor-id="logistics">Logistics</h2>
+<p><strong>IoT</strong> refers to the <strong>entire network</strong> of:</p>
 <ul>
-<li><strong>Room, times, etc.:</strong> see Course Outline <a href="https://moodle.johnabbott.qc.ca/pluginfile.php/66254/mod_resource/content/4/WINTER2024.COMPUTER_SCIENCE.420-6P3-AB.HAAFM.pdf">(section 1)</a> <a href="https://moodle.johnabbott.qc.ca/pluginfile.php/66310/mod_resource/content/4/WINTER2024.COMPUTER_SCIENCE.420-6P3-AB.HAAFM.pdf">(section 2)</a>:</li>
-<li><strong>Office:</strong> Penfield 311</li>
-<li><strong>Office hours:</strong> Mon/Fri 11:00 - 12:30pm or so</li>
-<li><strong>Email:</strong> michael DOT haaf AT johnabbott DOT qc DOT ca</li>
-<li><strong>Course webpage:</strong> This website for all content, Moodle <a href="https://moodle.johnabbott.qc.ca/course/view.php?id=807">(section 1)</a>, <a href="https://moodle.johnabbott.qc.ca/course/view.php?id=808">(section 2)</a> for assignment/project/quiz submissions.</li>
+<li>physical devices,</li>
+<li>tools,</li>
+<li>equipment, and</li>
+<li>smart objects</li>
+</ul>
+<p>These objects have the capability to <strong>collect and share data</strong> about:</p>
+<ul>
+<li>how they are used</li>
+<li>the environment around them</li>
+</ul>
+<p>IoT devices can also <strong>receive commands or updates</strong> via the cloud.</p>
+</blockquote>
+</section>
+<section id="why-collect-all-this-data" class="level2">
+<h2 class="anchored" data-anchor-id="why-collect-all-this-data">Why collect all this data?</h2>
+<p>By analyzing the data collected by these connected objects, users and organisations can make informed decisions in near real-time and automate tightly integrated processes. This avoids decision making based on limited or out-dated data.</p>
+<p>This data can create quick feedback loops for automation. Data from one object can trigger actions or control several other objects with timing and precision that could not be achieved by humans.</p>
+</section>
+<section id="iot-examples" class="level2">
+<h2 class="anchored" data-anchor-id="iot-examples">IoT Examples</h2>
+<p>The use of IoT can be organised in two fields of application:</p>
+<ul>
+<li><strong>Industrial IoT (IIoT)</strong></li>
+<li><strong>Consumer IoT</strong></li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="assets/itsInTheSyllabus.png" class="img-fluid figure-img" style="width:80.0%"></p>
-<figcaption>Forgive me the smarmy comic, this is usually true…</figcaption>
+<p><a href="../assets/1-iot-intro-industrial-vs-consumer.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Examples of industrial and consumer iot applications"><img src="../assets/1-iot-intro-industrial-vs-consumer.png" class="img-fluid figure-img" alt="Examples of industrial and consumer iot applications"></a></p>
+<figcaption>Examples of industrial and consumer iot applications</figcaption>
 </figure>
 </div>
-<section id="communication" class="level3">
-<h3 class="anchored" data-anchor-id="communication">Communication</h3>
+<p class="img-info">
+<a href="https://www.kuritaamerica.com/the-splash/the-internet-of-things-and-its-benefit-to-us-water-customers"> The Internet of Things and its Benefit to U.S. Water Customer </a> &nbsp; in kuritaamerica.com
+</p>
+<section id="consumer-iot" class="level3">
+<h3 class="anchored" data-anchor-id="consumer-iot">Consumer IoT</h3>
+<p>Examples of consumer IoT are:</p>
 <ul>
-<li>Teams - For communicating (fastest, most reliable that I will check it same-day)</li>
-<li>MIO - For communicating (non-time-critical)</li>
-<li>Email - For communicating (time-critical).&nbsp; Will aim for &lt;24hr response.</li>
-<li><a href="https://moodle.johnabbott.qc.ca/">Moodle</a> - For receiving &amp; submitting exercises/assignments/project and getting marks</li>
+<li><p><strong>Home Security</strong>: Sensors, alarms, cameras, lights, and microphones provide 24/7 security and surveillance. All of which can be controlled from a smart phone.</p></li>
+<li><p><strong>Smart Home</strong>: Smart lighting, heating and sound systems can be automated to detect human present or receive instructions remotely. Voice Assistants can also control house appliances or and provide information.</p></li>
+<li><p><strong>Wearables:</strong> Smartwatches and fitness trackers can monitor blood pressure or heart rate, and physical activity and suggest workouts, breaks or medical assistance.</p></li>
+<li><p><strong>Appliances:</strong> Smart fridges can keep track of food quantities and expiry dates and create shopping lists accordingly. Smart outlet plugs can measure electrical consumption and turn other appliances on/off.</p></li>
 </ul>
 </section>
-<section id="assessment" class="level3">
-<h3 class="anchored" data-anchor-id="assessment">Assessment</h3>
+<section id="industrial-iot-iiot" class="level3">
+<h3 class="anchored" data-anchor-id="industrial-iot-iiot">Industrial IoT (IIoT)</h3>
+<p>Most people tend to first think of IoT as consumer devices. However, <strong>their main value added happens in industrial applications.</strong></p>
+<p><a href="https://miro.medium.com/max/1400/1*VKScdttTvAJZ7n663OwGPw.jpeg" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="https://miro.medium.com/max/1400/1*VKScdttTvAJZ7n663OwGPw.jpeg" class="img-fluid"></a></p>
+<p class="img-info">
+<a href="https://medium.com/@jaydev_21091/how-industrial-internet-of-things-are-impacting-our-lives-8af4163530ce">How Industrial Internet of Things are impacting our lives</a> by Bluechip Infocorp Pvt Ltd via Medium.
+</p>
+<p>Industrial IoT Examples:</p>
 <ul>
-<li>45% Assignments and Labs</li>
-<li>20% Test (first week of April)</li>
-<li>35% Project Milestones</li>
+<li><p><strong>Equipment Maintenance:</strong> <a href="https://www.rolls-royce.com/media/press-releases/2016/11-07-2016-rr-takes-totalcare-digital-with-microsoft-and-singapore-airlines.aspx">Rolls-Royce’s Total Care</a> provides a suite of predictive maintenance and repair services for its jet engines, including monitoring engine health, and modifying engines to increase reliability and durability.</p></li>
+<li><p><strong>Farming:</strong> <a href="https://www.iotforall.com/ces-2021-john-deere">John Deere</a> is building intelligence into its large tractors and sprayers through sensors that make the machines into mobile platforms capable of self-driving.</p></li>
+<li><p><strong>Heavy Machinery &amp; Transportation:</strong> <a href="https://www.iotforall.com/iot-is-reshaping-heavy-industry">Rio Tinto</a>, a global mining company uses a remote command center to orchestrate the actions of huge drills, excavators, trains, and trucks across multiple mining sites.</p></li>
+<li><p><strong>Renewable Energies:</strong> <a href="https://www.nsenergybusiness.com/features/iot-wind-power/">Iberdrola and Siemens</a> are using IoT to optimize the operation and maintenance of offshore wind power farms, the lifetime extension of wind turbines and the reducing the cost of energy.</p></li>
+<li><p><strong>Facilities Management:</strong> Monitoring of buildings, infrastructure, and other spaces, allow to improve energy efficiency, space utilization, productivity, and safety. These insights may help:</p>
+<ul>
+<li>save money by automating lighting or optimizing heating and cooling cycles.</li>
+<li>Increase employee or occupant satisfaction by keep equipment running or ensuring that supplies are stocked.</li>
+</ul></li>
 </ul>
 </section>
 </section>
-<section id="course-material" class="level2">
-<h2 class="anchored" data-anchor-id="course-material">Course material</h2>
-<p>There are no required textbooks for this course – this website will contain all of the content that you need to complete course deliverables. Additionally, each lecture will contain references to additional resources for exploring each topic in further detail beyond the scope of the course.</p>
+<section id="high-level-components-of-an-iot-system" class="level2">
+<h2 class="anchored" data-anchor-id="high-level-components-of-an-iot-system">High-level Components of an IoT System</h2>
+<p>IoT systems are compromised of five high-level components:</p>
+<ol type="1">
+<li><strong>Sensors</strong>:
+<ul>
+<li>Collect data from the device’s environment (eg. velocity, GPS coordinates, temperature, etc).</li>
+<li>Sensors might use different communication protocols.</li>
+</ul></li>
+<li><strong>IoT Devices</strong> are computing devices that have:
+<ul>
+<li>Ability to securely register with the cloud;</li>
+<li>Connectivity options for sending and receiving data with the cloud.</li>
+</ul></li>
+<li><strong>Cloud Gateway / Hub</strong>:
+<ul>
+<li>Securely ingests and sends data or commands to devices;</li>
+<li>Offers device management (provisioning) services (add, remove, update, group, etc).</li>
+</ul></li>
+<li><strong>Data Processing:</strong>
+<ul>
+<li>Data validation;</li>
+<li>Integrate with <strong>business processes</strong> (check thresholds, send alerts, trigger action)</li>
+<li>Place data in <strong>Storage</strong>;</li>
+<li>Retrieve data from <strong>Storage</strong> for deeper / long-term analysis;</li>
+</ul></li>
+<li><strong>User Interface:</strong>
+<ul>
+<li>Data visualization;</li>
+<li>Trigger manual actions;</li>
+<li>Configure automatic actions;</li>
+<li>Facilitate device management.</li>
+</ul></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../assets/iot-high-components.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Icons of IoT High level components"><img src="../assets/iot-high-components.png" class="img-fluid figure-img" alt="Icons of IoT High level components"></a></p>
+<figcaption>Icons of IoT High level components</figcaption>
+</figure>
+</div>
+</section>
+<section id="iot-cloud-service-providers" class="level2">
+<h2 class="anchored" data-anchor-id="iot-cloud-service-providers">IoT Cloud Service Providers</h2>
+<p>Since IoT objects typically move around, connectivity and data collection need to happen over wide geographical areas.</p>
+<p>Most companies do not want to deal with setting-up the <strong>physical infrastructure and software</strong> required to have this level of distributed connectivity and reliability (servers, databases, backup systems, networking, container orchestration, etc).</p>
+<p>It is typically far more practical and cost-effective to use the services of an established IoT Cloud Service Provider.</p>
+<p>The three main Cloud Service Providers in the IoT space are:</p>
+<ul>
+<li><strong>Amazon Web Services (AWS)</strong></li>
+<li><strong>Microsoft Azure</strong></li>
+<li><strong>Google Cloud</strong></li>
+</ul>
+<p><a href="../assets/1-iot-intro-cloud-service-providers.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="../assets/1-iot-intro-cloud-service-providers.png" class="img-fluid"></a></p>
+<p>There are many other Cloud providers such as <a href="https://www.ibm.com/cloud/internet-of-things">IBM Cloud IoT</a> and <a href="https://www.oracle.com/internet-of-things/">Oracle IoT</a>.</p>
+<blockquote class="blockquote">
+<p>In this course we will focus on <strong>Microsoft Azure</strong>. However, all three platforms offer similar functionality.</p>
+</blockquote>
+</section>
+<section id="azure-account-check" class="level2">
+<h2 class="anchored" data-anchor-id="azure-account-check">Azure Account Check</h2>
+<p>Students get $100 of credit for 12 months and free <a href="https://portal.azure.com/#blade/Microsoft_Azure_Billing/FreeServicesBlade">developer tools</a> without a credit card.</p>
+<blockquote class="blockquote">
+<p><strong>Create an account</strong> and see details <a href="https://azure.microsoft.com/en-us/free/students/">here</a>.</p>
+</blockquote>
+<p>The student account can be renewed annually (including $100 credits) for as long as you are a student.</p>
+<p>Most things we’ll do with Azure will use <strong>free services</strong>. We will occasionally use some of your free credits (~$20).</p>
+<section id="checking-your-balance" class="level3">
+<h3 class="anchored" data-anchor-id="checking-your-balance">Checking your balance 💸</h3>
+<p>As you experiment with Azure you might want to know your current balance.</p>
+<p><strong>TL:DR</strong> 1. Sign in to the Azure portn in to the Azure portal.al. 2. Search for <strong><em>Cost Management</em></strong> <img src="../assets/intro-azure-cost-management.png" title=":class=inline-img" class="img-fluid"></p>
+<ol start="3" type="1">
+<li><p>Select <strong><em>Payment methods</em></strong></p></li>
+<li><p>Check your <strong><em>Azure credits</em></strong> panel.</p></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../assets/intro-azure-credit-check.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Credit check panel in Azure"><img src="../assets/intro-azure-credit-check.png" class="img-fluid figure-img" alt="Credit check panel in Azure"></a></p>
+<figcaption>Credit check panel in Azure</figcaption>
+</figure>
+</div>
+<p>For details check <a href="https://docs.microsoft.com/en-us/azure/cost-management-billing/manage/mca-check-azure-credits-balance?tabs=portal#main">Track Microsoft Customer Agreement Azure credit balance</a></p>
+</section>
+<section id="budget-alerts" class="level3">
+<h3 class="anchored" data-anchor-id="budget-alerts">Budget Alerts</h3>
+<p>It’s possible to setup email alerts when your Azure spending exceeds a dollar threshold. This avoids unexpected spending of Azure credits.</p>
+<p>There are two approaches to setting up a Budget in the Azure Portal:</p>
+<ol type="1">
+<li><p>Open the panel (aka “blade”) for the Resource Group in question, and then create a new Budget for that group.</p></li>
+<li><p>Create a Budget for your account under <strong><em>Cost Management + Billing</em></strong> and then <strong>apply a filter</strong> according to <em>ResourceGroupName</em> in order to target a specific Resource Group.</p></li>
+</ol>
+<p>The first approach involves a few less steps so it is described below.</p>
+<blockquote class="blockquote">
+<ul>
+<li>For information on creating a budget from the Cost Management blade, see <a href="https://www.techtarget.com/searchcloudcomputing/tutorial/How-to-set-up-Azure-budget-alerts">How to set up Azure budget alerts</a> by TechTarget.com.</li>
+<li>For details on using and managing budgets, see official tutorial: <a href="https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/tutorial-acm-create-budgets">Create and manage Azure budgets</a>.</li>
+</ul>
+</blockquote>
+<section id="create-a-budget-for-a-resource-group" class="level4">
+<h4 class="anchored" data-anchor-id="create-a-budget-for-a-resource-group">Create a Budget for a Resource Group</h4>
+<ol type="1">
+<li>In the Azure Portal Home, select the <strong><em>Resource groups</em></strong> service.</li>
+<li>Select the resource group you want to monitor with a budget.</li>
+<li>In the left panel, select <strong><em>Budgets</em></strong> under the <em>Cost Management</em> group and select <strong><em>Add</em></strong>.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../assets/12-budget-resource-group.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Menu for creating a budget for a resource group"><img src="../assets/12-budget-resource-group.png" class="img-fluid figure-img" alt="Menu for creating a budget for a resource group"></a></p>
+<figcaption>Menu for creating a budget for a resource group</figcaption>
+</figure>
+</div>
+<ol start="4" type="1">
+<li>Give your budget a name and an amount.</li>
+</ol>
+<p><a href="../assets/12-budget-name-ammount.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="../assets/12-budget-name-ammount.png" class="img-fluid"></a></p>
+<ol start="5" type="1">
+<li>Select the <strong>percent spending</strong> for the alert and the <strong>email</strong> to receive the notification.</li>
+<li>Click <strong><em>Create</em></strong>.</li>
+</ol>
+<p><a href="../assets/12-budget-alert-percent-email.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="../assets/12-budget-alert-percent-email.png" class="img-fluid"></a></p>
+</section>
+</section>
+</section>
+<section id="exercises" class="level2">
+<h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
+<p><strong>NOTE:</strong> The exercise below is out of date. We will see IOT learning material later in the course.</p>
+<ol type="1">
+<li><del>Read the Microsoft training module <a href="https://learn.microsoft.com/en-us/training/modules/introduction-iot-solution-architecture/"><strong>Examine the architecture of an IoT solution</strong></a> and complete the Moodle quiz on the module.</del></li>
+</ol>
+</section>
+<section id="diving-deeper" class="level2">
+<h2 class="anchored" data-anchor-id="diving-deeper">Diving Deeper</h2>
+<p>Video (15:19): <strong>The 7 Principles of the IoT by Tom Bradicich</strong></p>
+<ul>
+<li>In depth explanation of the integration between IoT sub-systems and opportunities from a technical and business perspective.</li>
+</ul>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/u3IaXvjDiOE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="">
+</iframe>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ol type="1">
+<li><a href="https://azure.microsoft.com/en-us/overview/internet-of-things-iot/what-is-the-internet-of-things/">What is IoT</a> by Microsoft Azure.</li>
+<li><a href="https://medium.com/@jaydev_21091/how-industrial-internet-of-things-are-impacting-our-lives-8af4163530ce">How Industrial Internet of Things are impacting our lives</a> by Bluechip Infocorp Pvt Ltd via Medium.</li>
+<li><a href="https://www.freecodecamp.org/news/introduction-to-iot-internet-of-things/">An Introduction to the Internet of Things</a> by Pier Paolo Ippolito via FreeCodeCamp Blog.</li>
+</ol>
 
 
 </section>
@@ -810,12 +1010,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="../about/this-site.html">
+    <a class="nav-link" href="../../about/this-site.html">
 <p>About</p>
 </a>
   </li>  
     <li class="nav-item">
-    <a class="nav-link" href="../about/this-site.html#copyright">
+    <a class="nav-link" href="../../about/this-site.html#copyright">
 <p>License</p>
 </a>
   </li>  
@@ -832,7 +1032,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
  
   </li>  
     <li class="nav-item compact">
-    <a class="nav-link" href="../announcements/index.xml">
+    <a class="nav-link" href="../../announcements/index.xml">
       <i class="bi bi-rss" role="img">
 </i> 
     </a>
@@ -846,6 +1046,38 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

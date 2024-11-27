@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2024-01-26">
 
-<title>Syllabus – Connected Objects</title>
+<title>Course Hardware – Connected Objects</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -72,15 +107,13 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="Syllabus – Connected Objects">
-<meta property="og:description" content="Course description outlining goals, expectations, resources, and other important information.">
-<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/about/assets/itsInTheSyllabus.png">
+<meta property="og:title" content="Course Hardware – Connected Objects">
+<meta property="og:description" content="List of hardware available for the course as well as their respective specifications and documentation.">
+<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/assets/1-hardware-reterminal.png">
 <meta property="og:site_name" content="Connected Objects">
-<meta property="og:image:height" content="681">
-<meta property="og:image:width" content="1000">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -152,27 +185,14 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#logistics" id="toc-logistics" class="nav-link active" data-scroll-target="#logistics">Logistics</a>
-  <ul class="collapse">
-  <li><a href="#communication" id="toc-communication" class="nav-link" data-scroll-target="#communication">Communication</a></li>
-  <li><a href="#assessment" id="toc-assessment" class="nav-link" data-scroll-target="#assessment">Assessment</a></li>
-  </ul></li>
-  <li><a href="#course-material" id="toc-course-material" class="nav-link" data-scroll-target="#course-material">Course material</a></li>
-  </ul>
-</nav>
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Syllabus</h1>
-<p class="subtitle lead">Course description outlining goals, expectations, resources, and other important information.</p>
+<h1 class="title">Course Hardware</h1>
+<p class="subtitle lead">List of hardware available for the course as well as their respective specifications and documentation.</p>
 </div>
 
 
@@ -180,13 +200,13 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
-  
     <div>
-    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">November 27, 2024</p>
+      <p class="date">January 26, 2024</p>
     </div>
   </div>
+  
     
   </div>
   
@@ -195,46 +215,112 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>From the course outline:</p>
+<section id="reterminal" class="level2">
+<h2 class="anchored" data-anchor-id="reterminal">reTerminal</h2>
+<p>The <a href="https://www.seeedstudio.com/ReTerminal-with-CM4-p-4904.html">reTerminal</a> is a development board based on the Raspberry Pi Compute Module 4 (CM4) manufactured by Seeed Studio.</p>
+<p><img src="../assets/1-hardware-reterminal.png" class="img-fluid"></p>
+<p>Notable features:</p>
+<ul>
+<li>Compute Module 4 with 4GB RAM &amp; 32GB eMMC</li>
+<li>5-Inch IPS capacitive multi-touch screen at 1280 x 720 and 293 PPI</li>
+<li>Wireless connectivity with dual-band 2.4GHz/5GHz Wi-Fi and Bluetooth 5.0 BLE</li>
+<li>Cryptographic co-processor with secure hardware-based key storage</li>
+<li>Built-in modules such as accelerometer, light sensor, and RTC</li>
+</ul>
 <blockquote class="blockquote">
-<p>This course will introduce students to the basic principles of the Internet of Things (IoT), a connected network of objects sensing and exchanging data about the physical world. Students will learn to program a micro-controller or single board computer to read data from sensors and control actuators. By the end of the course, students will be able to build a stand-alone object that is securely connected to a cloud service provider in order to collect and analyze telemetry data associated with multiple devices</p>
+<p>See <a href="https://wiki.seeedstudio.com/reTerminal/">reTerminal Wiki page</a> for detailed specs and documentation</p>
 </blockquote>
-<section id="logistics" class="level2">
-<h2 class="anchored" data-anchor-id="logistics">Logistics</h2>
-<ul>
-<li><strong>Room, times, etc.:</strong> see Course Outline <a href="https://moodle.johnabbott.qc.ca/pluginfile.php/66254/mod_resource/content/4/WINTER2024.COMPUTER_SCIENCE.420-6P3-AB.HAAFM.pdf">(section 1)</a> <a href="https://moodle.johnabbott.qc.ca/pluginfile.php/66310/mod_resource/content/4/WINTER2024.COMPUTER_SCIENCE.420-6P3-AB.HAAFM.pdf">(section 2)</a>:</li>
-<li><strong>Office:</strong> Penfield 311</li>
-<li><strong>Office hours:</strong> Mon/Fri 11:00 - 12:30pm or so</li>
-<li><strong>Email:</strong> michael DOT haaf AT johnabbott DOT qc DOT ca</li>
-<li><strong>Course webpage:</strong> This website for all content, Moodle <a href="https://moodle.johnabbott.qc.ca/course/view.php?id=807">(section 1)</a>, <a href="https://moodle.johnabbott.qc.ca/course/view.php?id=808">(section 2)</a> for assignment/project/quiz submissions.</li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="assets/itsInTheSyllabus.png" class="img-fluid figure-img" style="width:80.0%"></p>
-<figcaption>Forgive me the smarmy comic, this is usually true…</figcaption>
-</figure>
-</div>
-<section id="communication" class="level3">
-<h3 class="anchored" data-anchor-id="communication">Communication</h3>
-<ul>
-<li>Teams - For communicating (fastest, most reliable that I will check it same-day)</li>
-<li>MIO - For communicating (non-time-critical)</li>
-<li>Email - For communicating (time-critical).&nbsp; Will aim for &lt;24hr response.</li>
-<li><a href="https://moodle.johnabbott.qc.ca/">Moodle</a> - For receiving &amp; submitting exercises/assignments/project and getting marks</li>
-</ul>
-</section>
-<section id="assessment" class="level3">
-<h3 class="anchored" data-anchor-id="assessment">Assessment</h3>
-<ul>
-<li>45% Assignments and Labs</li>
-<li>20% Test (first week of April)</li>
-<li>35% Project Milestones</li>
-</ul>
+<section id="power-supply" class="level3">
+<h3 class="anchored" data-anchor-id="power-supply">Power Supply</h3>
+<p><img src="https://media.digikey.com/Photos/Raspberry%20Pi/MFG_RPI%20USB-C%20POWER%20SUPPLY%20BLACK%20US.jpg" title=":size=250" class="img-fluid" alt="RPI USB-C POWER SUPPLY BLACK US"> The reTerminal requires a power supply that can provide a minimum of 3 Amps. The official <a href="https://www.raspberrypi.com/products/type-c-power-supply/">Raspberry Pi USB-C Power Supply</a> in included in the kit.</p>
 </section>
 </section>
-<section id="course-material" class="level2">
-<h2 class="anchored" data-anchor-id="course-material">Course material</h2>
-<p>There are no required textbooks for this course – this website will contain all of the content that you need to complete course deliverables. Additionally, each lecture will contain references to additional resources for exploring each topic in further detail beyond the scope of the course.</p>
+<section id="compute-module-4" class="level2">
+<h2 class="anchored" data-anchor-id="compute-module-4">Compute Module 4</h2>
+<p><img src="https://images.prismic.io/rpf-products/bfe15853-d10f-4ed9-b9f0-32540bd76e55_CM4%20Featured%20Image.jpg?ixlib=gatsbyFP&amp;auto=compress%2Cformat&amp;fit=max&amp;q=50&amp;w=600&amp;h=400" title=":size=300" class="img-fluid"> The <a href="https://www.raspberrypi.com/products/compute-module-4/?variant=raspberry-pi-cm4001000">Compute Module 4</a> (CM4) made by the Raspberry Pi Foundation is powering the reTerminal.</p>
+<p>Notable features:</p>
+<ul>
+<li>Processor: Broadcom BCM2711 quad-core Cortex-A72 (ARM v8) 64-bit SoC @ 1.5GHz</li>
+</ul>
+<blockquote class="blockquote">
+<p>See <a href="https://datasheets.raspberrypi.com/cm4/cm4-datasheet.pdf">CM4 datasheet</a> for details.</p>
+</blockquote>
+<p>See <a href="https://linuxhint.com/about-arm64-armel-armhf/">Difference Between ARM64, ARMel, and ARMhf</a> for more info on the different ARM architectures.</p>
+<section id="grove-base-hat-for-raspberry-pi" class="level3">
+<h3 class="anchored" data-anchor-id="grove-base-hat-for-raspberry-pi">Grove Base Hat for Raspberry Pi</h3>
+<p><img src="https://files.seeedstudio.com/wiki/Grove_Base_Hat_for_Raspberry_Pi/img/main.jpg" title=":size=300" class="img-fluid"></p>
+<p>In a typical Raspberry Pi, sensors would be connected via the 40-pin GPIO.</p>
+<p>To facilitate connections of the Grove sensors, this “Hat” (term for an add-on board of the Raspberry Pi) includes the following types of connection:</p>
+<ul>
+<li>6 Digital</li>
+<li>4 Analog</li>
+<li>3 I2C</li>
+<li>1 PWM</li>
+<li>1 UART</li>
+</ul>
+<blockquote class="blockquote">
+<p>See <a href="https://wiki.seeedstudio.com/Grove_Base_Hat_for_Raspberry_Pi/">Grove base hat Wiki</a> for details.</p>
+</blockquote>
+</section>
+</section>
+<section id="sensors" class="level2">
+<h2 class="anchored" data-anchor-id="sensors">Sensors</h2>
+<section id="aht20-i2c-temperature-humidity" class="level3">
+<h3 class="anchored" data-anchor-id="aht20-i2c-temperature-humidity">AHT20 I2C Temperature &amp; Humidity</h3>
+<p><img src="https://files.seeedstudio.com/wiki/Grove-AHT20_I2C_Industrial_Grade_Temperature_and_Humidity_Sensor/101990644_4_.png" title=":size=300" class="img-fluid"> See <a href="https://wiki.seeedstudio.com/Grove-AHT20-I2C-Industrial-Grade-Temperature&amp;Humidity-Sensor/">AHT20 I2C Industrial Grade Temperature &amp; Humidity Sensor wiki</a> for details.</p>
+<ul>
+<li>Temperature measurement range -40 ~ 85°C, Humidity measurement range 0 ~ 100% RH.</li>
+<li>Digital output, Grove I2C interface.</li>
+</ul>
+</section>
+<section id="aht20-libraries" class="level3">
+<h3 class="anchored" data-anchor-id="aht20-libraries">AHT20 Libraries</h3>
+<p>The main module for this sensor is provided by Seeed in <a href="https://github.com/Seeed-Studio/grove.py/blob/master/grove/grove_temperature_humidity_aht20.py">this Github repository</a> and can be installed with the <code>grove.py</code> library.</p>
+<p>Follow official <a href="https://wiki.seeedstudio.com/Grove_Base_Hat_for_Raspberry_Pi/#installation">Step by step installation</a> for python 3 (see below). Don’t use the one-click installation or it will install to the wrong location</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone <span class="pp">[</span><span class="ss">https://github.com/Seeed</span><span class="pp">-</span><span class="ss">Studio/grove.py</span><span class="pp">]</span><span class="er">(</span><span class="ex">https://github.com/Seeed-Studio/grove.py</span><span class="kw">)</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> grove.py</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> pip3 install .</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Alternatively, it’s also possible to use Adafruit’s <code>adafruit-circuitpython-ahtx0</code> library to communicate with the sensor (see <a href="https://pypi.org/project/adafruit-circuitpython-ahtx0/">library’s Pypi page</a>). However, to instantiate the provided sensor class, you will need to pass it an I2C bus instance. To instantiate an I2C bus instance, install and use the <code>adafruit-extended-bus</code> library (see <a href="https://pypi.org/project/adafruit-extended-bus/">Pypi page</a>).</p>
+</section>
+</section>
+<section id="actuators-motors" class="level2">
+<h2 class="anchored" data-anchor-id="actuators-motors">Actuators &amp; Motors</h2>
+<section id="led-socketed" class="level3">
+<h3 class="anchored" data-anchor-id="led-socketed">LED Socketed</h3>
+<p><img src="https://files.seeedstudio.com/wiki/Raspi_wiki/img/red_led.jpg" title=":size=300" class="img-fluid"></p>
+<p>LED in a removable socket and potentiometer for power adjustment. LED can be swapped with different colors.</p>
+<p>See <a href="https://wiki.seeedstudio.com/Grove-Red_LED/">LED wiki page</a> for details.</p>
+</section>
+<section id="cooling-fan" class="level3">
+<h3 class="anchored" data-anchor-id="cooling-fan">Cooling Fan</h3>
+<p><img src="https://abra-electronics.com/images/detailed/158/FAN-PI_1__lbhv-3b.jpg" title=":size=250" class="img-fluid"> 5V Cooling Fan 40mm x 10mm with 2-pin JST connector.</p>
+<ul>
+<li>See <a href="https://abra-electronics.com/thermal-management/fans/dc-fans-5v/5v-cooling-fan-40mm-x-10mm.html">product page here</a>.</li>
+</ul>
+</section>
+<section id="relay" class="level3">
+<h3 class="anchored" data-anchor-id="relay">Relay</h3>
+<p><img src="../assets/1-hardware-relay.png" title=":size=300" class="img-fluid"></p>
+<p>A digital switch. Controls the on/off flow of electricity with a small digital signal.</p>
+<ul>
+<li>Operate voltage: 3.3V-5V</li>
+<li>Input current: 100mA</li>
+<li>Rated load: 5A@250VAC 5A@30VDC</li>
+</ul>
+<p>See <a href="https://wiki.seeedstudio.com/Grove-Relay/">relay wiki page</a> for details.</p>
+</section>
+</section>
+<section id="cabling" class="level2">
+<h2 class="anchored" data-anchor-id="cabling">Cabling</h2>
+<p>The following cables are included in the base kit:</p>
+<ul>
+<li><a href="https://www.seeedstudio.com/Grove-Universal-4-Pin-Buckled-5cm-Cable-5-PCs-Pack.html">Grove Universal 4 Pin Buckled 5cm Cable</a>.</li>
+<li><a href="https://www.seeedstudio.com/Grove-Universal-4-Pin-20cm-Unbuckled-Cable-5-PCs-Pack-p-749.html">Grove Universal 4 Pin Buckled 20cm Cable</a>.</li>
+<li><a href="https://www.seeedstudio.com/Grove-4-pin-Female-Jumper-to-Grove-4-pin-Conversion-Cable-5-PCs-per-PAck.html?queryID=7204536b9cc818771ed75f0d099829e7&amp;objectID=2221&amp;indexName=bazaar_retailer_products">Grove 4 pin Female Jumper to Grove 4 pin Cable</a></li>
+<li><a href="https://www.seeedstudio.com/Grove-4-pin-Male-Jumper-to-Grove-4-pin-Conversion-Cable-5-PCs-per-Pack.html?queryID=9549a08ce2a46dc2ad12c0730ae087dd&amp;objectID=1321&amp;indexName=bazaar_retailer_products">Grove 4 pin Male Jumper to Grove 4 pin Cable</a></li>
+<li>40-pin flat ribbon cable 20cm (female-female).</li>
+<li><a href="https://abra-electronics.com/interconnects/connectors/jst-connectors/sm/con-jst-sm-2a-2-pin-jst-sm-plug-receptacle-cable-set.html">2-pin JST SM Plug</a>, one end open.</li>
+</ul>
 
 
 </section>

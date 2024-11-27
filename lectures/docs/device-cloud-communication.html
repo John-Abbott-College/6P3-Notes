@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2024-05-09">
 
-<title>Syllabus – Connected Objects</title>
+<title>Device to Cloud Communication – Connected Objects</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,29 +21,66 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../assets/favicon_io/favicon.ico" rel="icon">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-46ee400ebd2c19ba122ec631c5f961f9.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-ba0467802c581767bb15e37147f38c23.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-c33c405b63b127b4c2f41bbf661c04b0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-2bfe667330ba0a9fda6cba1a7076ee51.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<script src="../site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../assets/favicon_io/favicon.ico" rel="icon">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-46ee400ebd2c19ba122ec631c5f961f9.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-ba0467802c581767bb15e37147f38c23.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-bd05319d547d4417e98c75b5a20fed9a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-eabc42ce70820c9f2cebf332591e943c.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": true,
@@ -72,12 +110,11 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="Syllabus – Connected Objects">
-<meta property="og:description" content="Course description outlining goals, expectations, resources, and other important information.">
-<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/about/assets/itsInTheSyllabus.png">
+<meta property="og:title" content="Device to Cloud Communication – Connected Objects">
+<meta property="og:description" content="How to use Azure for bidrectional device-cloud communication">
+<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/lectures/assets/iot-hub-communication.drawio.svg">
 <meta property="og:site_name" content="Connected Objects">
-<meta property="og:image:height" content="681">
-<meta property="og:image:width" content="1000">
+<meta property="og:image:alt" content="Communication options between IoT Hub and devices">
 </head>
 
 <body class="nav-fixed">
@@ -87,10 +124,10 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../assets/favicon_io/favicon-32x32.png" alt="" class="navbar-logo">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../assets/favicon_io/favicon-32x32.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Connected Objects</span>
     </a>
   </div>
@@ -101,19 +138,19 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../about/index.html"> 
+    <a class="nav-link" href="../../about/index.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../announcements/index.html"> 
+    <a class="nav-link" href="../../announcements/index.html"> 
 <span class="menu-text">Announcements</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../lectures/index.html"> 
+    <a class="nav-link" href="../../lectures/index.html"> 
 <span class="menu-text">Lectures</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../reference/index.html"> 
+    <a class="nav-link" href="../../reference/index.html"> 
 <span class="menu-text">Reference</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -132,7 +169,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
   </li>
   <li class="nav-item compact">
-    <a class="nav-link" href="../announcements/index.xml"> <i class="bi bi-rss" role="img">
+    <a class="nav-link" href="../../announcements/index.xml"> <i class="bi bi-rss" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -157,12 +194,16 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#logistics" id="toc-logistics" class="nav-link active" data-scroll-target="#logistics">Logistics</a>
-  <ul class="collapse">
-  <li><a href="#communication" id="toc-communication" class="nav-link" data-scroll-target="#communication">Communication</a></li>
-  <li><a href="#assessment" id="toc-assessment" class="nav-link" data-scroll-target="#assessment">Assessment</a></li>
+  <li><a href="#azure-iot-protocols" id="toc-azure-iot-protocols" class="nav-link active" data-scroll-target="#azure-iot-protocols">Azure IoT Protocols</a></li>
+  <li><a href="#device-to-cloud-d2c-communication" id="toc-device-to-cloud-d2c-communication" class="nav-link" data-scroll-target="#device-to-cloud-d2c-communication">Device to Cloud (D2C) Communication</a></li>
+  <li><a href="#cloud-to-device-c2d-communication" id="toc-cloud-to-device-c2d-communication" class="nav-link" data-scroll-target="#cloud-to-device-c2d-communication">Cloud to Device (C2D) Communication</a></li>
+  <li><a href="#end-points" id="toc-end-points" class="nav-link" data-scroll-target="#end-points">End-points</a></li>
+  <li><a href="#message-anatomy" id="toc-message-anatomy" class="nav-link" data-scroll-target="#message-anatomy">Message Anatomy</a>
+  <ul>
+  <li><a href="#application-properties-in-python" id="toc-application-properties-in-python" class="nav-link" data-scroll-target="#application-properties-in-python">Application Properties in Python</a></li>
   </ul></li>
-  <li><a href="#course-material" id="toc-course-material" class="nav-link" data-scroll-target="#course-material">Course material</a></li>
+  <li><a href="#direct-methods" id="toc-direct-methods" class="nav-link" data-scroll-target="#direct-methods">Direct Methods</a></li>
+  <li><a href="#diving-deeper" id="toc-diving-deeper" class="nav-link" data-scroll-target="#diving-deeper">Diving Deeper 🤿</a></li>
   </ul>
 </nav>
     </div>
@@ -171,8 +212,8 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Syllabus</h1>
-<p class="subtitle lead">Course description outlining goals, expectations, resources, and other important information.</p>
+<h1 class="title">Device to Cloud Communication</h1>
+<p class="subtitle lead">How to use Azure for bidrectional device-cloud communication</p>
 </div>
 
 
@@ -180,6 +221,12 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 9, 2024</p>
+    </div>
+  </div>
   
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
@@ -195,46 +242,152 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>From the course outline:</p>
-<blockquote class="blockquote">
-<p>This course will introduce students to the basic principles of the Internet of Things (IoT), a connected network of objects sensing and exchanging data about the physical world. Students will learn to program a micro-controller or single board computer to read data from sensors and control actuators. By the end of the course, students will be able to build a stand-alone object that is securely connected to a cloud service provider in order to collect and analyze telemetry data associated with multiple devices</p>
-</blockquote>
-<section id="logistics" class="level2">
-<h2 class="anchored" data-anchor-id="logistics">Logistics</h2>
+<p>Communication for IoT systems should be bi-directional:</p>
 <ul>
-<li><strong>Room, times, etc.:</strong> see Course Outline <a href="https://moodle.johnabbott.qc.ca/pluginfile.php/66254/mod_resource/content/4/WINTER2024.COMPUTER_SCIENCE.420-6P3-AB.HAAFM.pdf">(section 1)</a> <a href="https://moodle.johnabbott.qc.ca/pluginfile.php/66310/mod_resource/content/4/WINTER2024.COMPUTER_SCIENCE.420-6P3-AB.HAAFM.pdf">(section 2)</a>:</li>
-<li><strong>Office:</strong> Penfield 311</li>
-<li><strong>Office hours:</strong> Mon/Fri 11:00 - 12:30pm or so</li>
-<li><strong>Email:</strong> michael DOT haaf AT johnabbott DOT qc DOT ca</li>
-<li><strong>Course webpage:</strong> This website for all content, Moodle <a href="https://moodle.johnabbott.qc.ca/course/view.php?id=807">(section 1)</a>, <a href="https://moodle.johnabbott.qc.ca/course/view.php?id=808">(section 2)</a> for assignment/project/quiz submissions.</li>
+<li>Device to Cloud (D2C)</li>
+<li>Cloud to Device (C2D)</li>
 </ul>
+<p>Azure offers a variety of ways of exchanging information in both directions. In this lesson we’ll look at the specifics of how these messaging systems work.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="assets/itsInTheSyllabus.png" class="img-fluid figure-img" style="width:80.0%"></p>
-<figcaption>Forgive me the smarmy comic, this is usually true…</figcaption>
+<p><a href="../assets/iot-hub-communication.drawio.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Communication options between IoT Hub and devices"><img src="../assets/iot-hub-communication.drawio.svg" class="img-fluid figure-img" alt="Communication options between IoT Hub and devices"></a></p>
+<figcaption>Communication options between IoT Hub and devices</figcaption>
 </figure>
 </div>
-<section id="communication" class="level3">
-<h3 class="anchored" data-anchor-id="communication">Communication</h3>
+<section id="azure-iot-protocols" class="level2">
+<h2 class="anchored" data-anchor-id="azure-iot-protocols">Azure IoT Protocols</h2>
+<p>IoT Hub allows devices to use the following protocols for device-side communications:</p>
 <ul>
-<li>Teams - For communicating (fastest, most reliable that I will check it same-day)</li>
-<li>MIO - For communicating (non-time-critical)</li>
-<li>Email - For communicating (time-critical).&nbsp; Will aim for &lt;24hr response.</li>
-<li><a href="https://moodle.johnabbott.qc.ca/">Moodle</a> - For receiving &amp; submitting exercises/assignments/project and getting marks</li>
+<li><a href="https://docs.oasis-open.org/mqtt/mqtt/v3.1.1/mqtt-v3.1.1.pdf">MQTT</a> (including over WebSockets)</li>
+<li><a href="https://docs.oasis-open.org/amqp/core/v1.0/os/amqp-core-complete-v1.0-os.pdf">AMQP</a> (including over WebSockets)</li>
+<li>HTTPS</li>
+</ul>
+<p>By now you are well familiar with MQTT and HTTPS.</p>
+<p>AMQP is not covered in this course, however, it is also a popular protocol for IoT communication. It is used for most of Azure IoT internal communication.</p>
+<p>AMQP is more complex and has slightly more over head than MQTT, thus consuming more bandwidth and device memory. However, it does not requires a broker (although one can be used) and has extra features for security and flow control.</p>
+<blockquote class="blockquote">
+<p>The choice of protocol is a design choice that is <strong>implemented when using libraries from the <a href="https://github.com/Azure/azure-iot-sdks">Azure IoT SDKs</a></strong> (ex.: when instantiating a client or a connection object).</p>
+<p>For example, the <strong>Azure IoT SDK for python uses MQTT by default</strong>.</p>
+</blockquote>
+<p>If you would like to know more about AMQP and how it differs from MQTT, see the video on “Diving Deeper”.</p>
+</section>
+<section id="device-to-cloud-d2c-communication" class="level2">
+<h2 class="anchored" data-anchor-id="device-to-cloud-d2c-communication">Device to Cloud (D2C) Communication</h2>
+<p>IoT Hub exposes three options for sending information from the device to the cloud or solution back end:</p>
+<ul>
+<li><p><a href="https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-messages-d2c">Device-to-cloud messages</a> for time series telemetry and alerts.</p></li>
+<li><p><a href="https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-file-upload">File uploads</a> for media files and large telemetry batches uploaded by intermittently connected devices.</p></li>
+<li><p><a href="https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-device-twins">Device twin’s reported properties</a> for reporting device state information such as configuration or last known state. <a href="../../topics/iot/docs/device-twins.qmd">Course notes on Device twins</a></p></li>
 </ul>
 </section>
-<section id="assessment" class="level3">
-<h3 class="anchored" data-anchor-id="assessment">Assessment</h3>
+<section id="cloud-to-device-c2d-communication" class="level2">
+<h2 class="anchored" data-anchor-id="cloud-to-device-c2d-communication">Cloud to Device (C2D) Communication</h2>
+<p>IoT Hub provides three options for devices to receive information and commands from the cloud or back-end app:</p>
 <ul>
-<li>45% Assignments and Labs</li>
-<li>20% Test (first week of April)</li>
-<li>35% Project Milestones</li>
+<li><p><a href="https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-messages-c2d">Cloud-to-device messages</a> for one-way notifications to the device.</p></li>
+<li><p><a href="https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-direct-methods">Direct methods</a> follow a request-response pattern and are meant for communications that require immediate confirmation of their result. For example, interactive control of the device, such as turning on a fan.</p></li>
+<li><p><a href="https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-device-twins">Twin’s desired properties</a> for long-running commands intended to put the device into a certain desired state. For example, set the telemetry send interval to 30 minutes. <a href="../../topics/iot/docs/device-twins.qmd">Course notes on Device twins</a></p></li>
 </ul>
 </section>
+<section id="end-points" class="level2">
+<h2 class="anchored" data-anchor-id="end-points">End-points</h2>
+<p>IoT Hub also exposes multiple end-points that act as data input and output to various other actors.</p>
+<p>For example, all messages received from a device are also forwarded to a “device to cloud message” end-point. An external client such as VS Code or Azure CLI can connect to this end-point and read the D2C messages sent to IoT Hub.</p>
+<blockquote class="blockquote">
+<p>You can think of <strong>IoT Hub as a broker</strong> and the <strong>end-points as topics</strong>. A client can subscribe to a topic and receive forwarded messages.</p>
+<p>By default, messages are routed to a built-in endpoint.</p>
+</blockquote>
+<p>IoT Hub allows data retention in the built-in end-points for a maximum of 7 days (1 day by default).</p>
+<p>For a list of all built-in end-points see <a href="https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-endpoints">IoT Hub endpoints reference</a>.</p>
+<p>The <a href="https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-sdks">Azure IoT SDKs</a> article describes the various ways to access these endpoints.</p>
 </section>
-<section id="course-material" class="level2">
-<h2 class="anchored" data-anchor-id="course-material">Course material</h2>
-<p>There are no required textbooks for this course – this website will contain all of the content that you need to complete course deliverables. Additionally, each lecture will contain references to additional resources for exploring each topic in further detail beyond the scope of the course.</p>
+<section id="message-anatomy" class="level2">
+<h2 class="anchored" data-anchor-id="message-anatomy">Message Anatomy</h2>
+<p>As previously mentioned, IoT Hub messages can be used for both D2C or C2D communication.</p>
+<p><strong>An IoT Hub message consists of:</strong></p>
+<ul>
+<li><p>A predetermined set of <strong>system properties</strong>.</p></li>
+<li><p>A set of <strong>application properties</strong>: A dictionary of string properties that the application can define and access, without needing to deserialize the message body.</p></li>
+<li><p>An opaque binary body (the payload / application data).</p></li>
+</ul>
+<p>(Property names and values can only contain ASCII alphanumeric characters).</p>
+<p><br> Below is an example of a message <strong>as they are received by the IoT Hub</strong>.</p>
+<blockquote class="blockquote">
+<p>Note that creating and manipulation of the message on the device-side will look different. Many properties are automatically set on message by the SDK.</p>
+</blockquote>
+<div class="sourceCode" id="cb1"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span> </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"message"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"systemProperties"</span><span class="fu">:</span> <span class="fu">{</span> </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"contentType"</span><span class="fu">:</span> <span class="st">"application/json"</span><span class="fu">,</span> </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"contentEncoding"</span><span class="fu">:</span> <span class="st">"UTF-8"</span><span class="fu">,</span> </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"iothub-message-source"</span><span class="fu">:</span> <span class="st">"deviceMessages"</span><span class="fu">,</span> </span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"iothub-enqueuedtime"</span><span class="fu">:</span> <span class="st">"2017-05-08T18:55:31.8514657Z"</span> </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">},</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>     </span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"appProperties"</span><span class="fu">:</span> <span class="fu">{</span> </span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"processingPath"</span><span class="fu">:</span> <span class="st">"{cold | warm | hot}"</span><span class="fu">,</span> </span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"verbose"</span><span class="fu">:</span> <span class="st">"{true, false}"</span><span class="fu">,</span> </span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"severity"</span><span class="fu">:</span> <span class="dv">1-5</span><span class="fu">,</span> </span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"testDevice"</span><span class="fu">:</span> <span class="st">"{true | false}"</span> </span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">},</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>     </span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"body"</span><span class="fu">:</span> <span class="st">"{</span><span class="ch">\"</span><span class="st">Weather</span><span class="ch">\"</span><span class="st">:{</span><span class="ch">\"</span><span class="st">Temperature</span><span class="ch">\"</span><span class="st">:50}}"</span> </span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">}</span> </span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>System properties are added for all users and identify content of the message. Users can selectively add application properties to the message.</p>
+<p>For a list of system and application properties that can be read or set on messages, see:</p>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-messages-construct#system-properties-of-d2c-iot-hub-messages">System Properties of D2C IoT Hub messages</a></li>
+<li><a href="https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-messages-construct#application-properties-of-d2c-iot-hub-messages">Application Properties of D2C IoT Hub messages</a></li>
+<li><a href="https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-messages-construct#system-properties-of-c2d-iot-hub-messages">System Properties of C2D IoT Hub messages</a></li>
+</ul>
+<section id="application-properties-in-python" class="level3">
+<h3 class="anchored" data-anchor-id="application-properties-in-python">Application Properties in Python</h3>
+<p>To send device-to-cloud messages the method <code>IoTHubDeviceClient.send_message(message)</code> is used. This method can receive a string or a <code>Message</code> object. Typically we’ve been passing a json string with the telemetry payload and the <code>Message</code>&nbsp;object is created automatically for you (<a href="https://docs.microsoft.com/en-us/python/api/azure-iot-device/azure.iot.device.iothubdeviceclient?view=azure-python#azure-iot-device-iothubdeviceclient-send-message" title="https://docs.microsoft.com/en-us/python/api/azure-iot-device/azure.iot.device.iothubdeviceclient?view=azure-python#azure-iot-device-iothubdeviceclient-send-message">as per the docs</a>).</p>
+<p>You can, however, have more control over the properties of the <code>Message</code>&nbsp;object to be sent. As mention in <a href="https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-messages-construct#application-properties-of-d2c-iot-hub-messages">Application Properties of D2C IoT Hub messages</a>, there are many properties you can set yourself, including <strong>custom application properties</strong>. See the <a href="https://docs.microsoft.com/en-us/python/api/azure-iot-device/azure.iot.device.message?view=azure-python" title="https://docs.microsoft.com/en-us/python/api/azure-iot-device/azure.iot.device.message?view=azure-python">docs for the <code>Message</code> class</a>.</p>
+<p>See the example in <a href="https://github.com/Azure/azure-iot-sdk-python" title="https://github.com/Azure/azure-iot-sdk-python">azure-iot-sdk-python</a>/<a href="https://github.com/Azure/azure-iot-sdk-python/tree/main/azure-iot-device" title="https://github.com/Azure/azure-iot-sdk-python/tree/main/azure-iot-device">azure-iot-device</a>/<a href="https://github.com/Azure/azure-iot-sdk-python/tree/main/azure-iot-device/samples" title="https://github.com/Azure/azure-iot-sdk-python/tree/main/azure-iot-device/samples">samples</a>/<a href="https://github.com/Azure/azure-iot-sdk-python/tree/main/azure-iot-device/samples/sync-samples" title="https://github.com/Azure/azure-iot-sdk-python/tree/main/azure-iot-device/samples/sync-samples">sync-samples</a>/<strong>send_message.py</strong> to understand how to set message properties.</p>
+<blockquote class="blockquote">
+<p>The messages described above (D2C and C2D communication) are typically created at the device or application with the help of a SDK (Software Development Kit) library.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>See notes on Azure IoT SDKs for references to libraries and examples provided by Azure.</p>
+</blockquote>
+</section>
+</section>
+<section id="direct-methods" class="level2">
+<h2 class="anchored" data-anchor-id="direct-methods">Direct Methods</h2>
+<p>IoT Hub gives you the ability to invoke direct methods on devices from the cloud. For example, to trigger a relay or ask the device to initiate a upload process.</p>
+<p>Similarly to HTTP, direct methods represent a request-reply interaction with a device. The request sender needs to know immediately if the request succeeded or failed. For example, turning on a light from a phone.</p>
+<p>The life-cycle of a Direct Method is as follows:</p>
+<p><a href="../../topics/assets/direct-method.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="../../topics/assets/direct-method.svg" class="img-fluid"></a></p>
+<ol type="1">
+<li><p>A service application (such as a back-end or mobile app) sends a Direct Method request to the device.</p>
+<ul>
+<li>This is typically done using a SDK library running on the application or “manually” via a HTTPS call to IoT Hub.</li>
+</ul></li>
+<li><p>The device receives the Direct Method, processes it and prepares a response.</p>
+<ul>
+<li>Also typically done using a SDK library running on the device.</li>
+</ul></li>
+<li><p>The response is sent back to the sender of the Direct Method.</p></li>
+<li><p>The application inspects the response using a call-back function and decides what to do next.</p>
+<ul>
+<li>Callback calls are typically provided by a SDK library running on the application or “manually” by processing the HTTP response.</li>
+</ul></li>
+</ol>
+<p>For details see <a href="https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-direct-methods">Understand and invoke direct methods from IoT Hub</a></p>
+<p>For examples of how to use Direct Methods, see <a href="https://learn.microsoft.com/en-us/azure/iot-hub/quickstart-control-device?pivots=programming-language-csharp">Quickstart: Control a device connected to an IoT hub</a>.</p>
+<p>You can also review <strong>Lab 6</strong> (<a href="https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=32610">Section 1</a>, <a href="https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=32633">Section 2</a>): we used the <strong>InvokeDeviceMethod</strong> sample service in this lab. You can use this code in your own project, modifying the direct method name to correspond to your use case (e.g.&nbsp;<strong>lights-on</strong> or <strong>door-unlock</strong>).</p>
+</section>
+<section id="diving-deeper" class="level2">
+<h2 class="anchored" data-anchor-id="diving-deeper">Diving Deeper 🤿</h2>
+<p>If you would like to have a “bigger picture” view of how the different Azure IoT services fit together, watch the video below by Blaize Stewart.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/UA15WTgZlYs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+<p>To learn more about AMQT and how it differs from MQTT, see the presentation below by Ken Giusti.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/g3e9lDlMn5M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
 
 
 </section>
@@ -810,12 +963,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="../about/this-site.html">
+    <a class="nav-link" href="../../about/this-site.html">
 <p>About</p>
 </a>
   </li>  
     <li class="nav-item">
-    <a class="nav-link" href="../about/this-site.html#copyright">
+    <a class="nav-link" href="../../about/this-site.html#copyright">
 <p>License</p>
 </a>
   </li>  
@@ -832,7 +985,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
  
   </li>  
     <li class="nav-item compact">
-    <a class="nav-link" href="../announcements/index.xml">
+    <a class="nav-link" href="../../announcements/index.xml">
       <i class="bi bi-rss" role="img">
 </i> 
     </a>
@@ -846,6 +999,38 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
