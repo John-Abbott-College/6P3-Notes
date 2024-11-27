@@ -1,0 +1,12 @@
+figure {
+  display: inline-block;
+  border: 1px dotted;
+  padding: 2rem;
+}
+figure img {
+  vertical-align: top;
+  max-width: 500px;
+}
+figure figcaption {
+  text-align: left;
+}

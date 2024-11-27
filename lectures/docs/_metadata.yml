@@ -1,7 +1,24 @@
 format:
-  html:
+  html: default
+  pdf:
+    # include-in-header:
+    #   - "/assets/tex/pdf-formatting.tex"
+    geometry:
+      - heightrounded
+    number-sections: true
     toc: true
-    toc-depth: 4
-    date-modified: last-modified
-    code-overflow: wrap
-    lightbox: true
+  revealjs:
+    theme: moon
+    transition: slide
+    margin: 0.2
+    smaller: false
+    scrollable: true
+    output-ext: htm
+    toc: true
+    toc-depth: 1
+    menu: true
+format-links:
+  - format: revealjs
+    text: Slides
+    icon: file-slides
+  - pdf

@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  title: "Connected Objects"
+  title: "{{< var course.title >}}"
   image: "assets/art_title_path_only.svg"
   favicon: "assets/favicon_io/favicon.ico"
   site-path: "/6P3-Notes/"
@@ -11,18 +11,20 @@ website:
   page-navigation: true
   back-to-top-navigation: true
   bread-crumbs: true
+
   search:
     show-item-context: true
     type: overlay
     copy-button: true
+
   page-footer:
+    left:
+      - text: "{{< var course.title >}}: {{< var course.semester >}}"
     center:
       - text: "About"
         href: about/this-site.qmd
       - text: "License"
         href: about/this-site.qmd#copyright
-      - text: "Source"
-        href: https://github.com/john-abbott-college/6P3-Notes/
     right:
       - text: "{{< iconify simple-icons moodle >}}"
         menu: 
@@ -62,3 +64,9 @@ format:
     theme:
       light: [united, assets/css/customizations-light.scss]
       dark: [united, assets/css/customizations-dark.scss]
+    toc: true
+    toc-depth: 4
+    date-modified: last-modified
+    code-overflow: wrap
+    lightbox: true
+    reference-location: margin
