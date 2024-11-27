@@ -1,0 +1,110 @@
+---
+title: Azure CLI Cheatsheet
+subtitle: "Reference for common Azure commands"
+date: 2024-05-09
+draft: true
+---
+
+## Azure CLI Cheatsheet
+
+Most of these commands where obtained from *[Quickstart: Send telemetry from a device to an IoT hub and monitor it with the Azure CLI](https://learn.microsoft.com/en-us/azure/iot-hub/quickstart-send-telemetry-cli)*.
+
+
+## Connection Strings
+
+### IoT Hub
+See detailes documentation at [az iot hub connection-string](https://learn.microsoft.com/en-us/cli/azure/iot/hub/connection-string?view=azure-cli-latest)
+
+#### IoT Hub Owner String
+
+Be advised: this connection string provides the highest level of access.
+
+```{.bash}
+az iot hub connection-string  show --hub-name {YourIoTHubName}
+```
+
+#### IoT Hub Service String
+
+Recommended level of access for external applications:
+
+```{.bash}
+az iot hub connection-string show --policy-name service --hub-name {YourIoTHubName} --output table
+```
+
+#### EventHub Compatible String
+
+Show the eventhub compatible connection string of the given IoT Hub's default eventhub:
+
+```{.bash}
+az iot hub connection-string show -n MyIotHub --default-eventhub
+```
+
+
+### Device Strings
+
+Manage IoT device's connection string with [az iot hub device-identity connection-string show](https://learn.microsoft.com/en-us/cli/azure/iot/hub/device-identity/connection-string?view=azure-cli-latest#az-iot-hub-device-identity-connection-string-show)
+
+```{.bash}
+az iot hub device-identity connection-string show --device-id {YourDevice}
+```
+
+
+## Simulating a Device
+
+```{.bash}
+az iot device simulate -d simDevice -n {YourIoTHubName}
+```
+
+By default, this command will:
+
+- Send D2C messages with a payload of `Ping from Az CLI IoT Extension`
+- Automatically receive and acknowledge C2D messages.
+
+See `az iot device simulate` [documentation for details](https://learn.microsoft.com/en-us/cli/azure/iot/device?view=azure-cli-latest#az-iot-device-simulate).
+
+## Messages
+
+### Monitor C2D Messages
+
+List all message details for all devices.
+
+```{.bash}
+az iot hub monitor-events --output table -p all -n {YourIoTHubName}
+```
+
+List message details for a specific device:
+
+```{.bash}
+az iot hub monitor-events --output table --device-id {YourDevice} --hub-name {YourIoTHubName}
+```
+
+
+### Send C2D Message
+
+Includes custom key, value properties. [See documentation](https://learn.microsoft.com/en-us/cli/azure/iot/device/c2d-message?view=azure-cli-latest#az-iot-device-c2d-message-send). 
+
+```{.bash}
+az iot device c2d-message send -d simDevice --data "Hello World" --props "key0=value0;key1=value1" -n {YourIoTHubName}
+```
+
+## Direct Methods
+
+### Invoke Direct Method on Device
+
+```{.bash}
+az iot hub invoke-device-method --mn MySampleMethod -d simDevice -n {YourIoTHubName}
+```
+
+## Device Twins
+
+### Update Device Twin Properties
+
+```{.bash}
+az iot hub device-twin update -d simDevice --desired '{"conditions":{"temperature":{"warning":98, "critical":107}}}' -n {YourIoTHubName}
+```
+
+### Get Device Twin Properties
+
+```{.bash}
+az iot hub device-twin show -d simDevice --query properties.reported -n {YourIoTHubName}
+```

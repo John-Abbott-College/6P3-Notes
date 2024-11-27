@@ -1,0 +1,320 @@
+---
+title: OOP
+subtitle: Tips and tricks for effective OOP in Python
+date: 2024-04-08
+categories: ["Quiz 2", "Python"]
+draft: true
+---
+
+
+## Overview
+
+This section explores intermediate Python topics that will write better IoT applications.
+
+We'll explore:
+
+- Type annotations for Python variables, functions, and classes
+- Inheritance, interfaces
+- Enums
+
+
+## Typings
+
+*This section adapted from https://docs.python.org/3/library/typing.html and https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html*
+
+This section is a quick cheat sheet showing how to use type annotations for various common types in Python.
+
+::: .callout-note
+The Python runtime does not enforce function and variable type annotations. They can be used by third party tools such as type checkers, IDEs, linters, etc. 
+:::
+
+### Variables
+
+Basics:
+
+```python
+# This is how you declare the type of a variable
+age: int = 1
+
+# You don't need to initialize a variable to annotate it
+a: int  # Ok (no value at runtime until assigned)
+
+# Doing so can be useful in conditional branches
+child: bool
+if age < 18:
+    child = True
+else:
+    child = False
+
+# built-in-types: basically what you'd expect
+```
+
+Useful build-in types:
+
+```python
+# the common basic "primitive" types in Python
+x: int = 1
+x: float = 1.0
+x: bool = True
+x: str = "test"
+x: bytes = b"test"
+
+# Collections (Python 3.9+)
+x: list[int] = [1]
+x: set[int] = {6, 7}
+
+# For mappings, we need the types of both keys and values
+x: dict[str, float] = {"field": 2.0}  # Python 3.9+
+
+# For tuples of fixed size, we specify the types of all the elements
+x: tuple[int, str, float] = (3, "yes", 7.5)  # Python 3.9+
+
+# For tuples of variable size, we use one type and ellipsis
+x: tuple[int, ...] = (1, 2, 3)  # Python 3.9+
+```
+
+### Functions
+
+```python
+from typing import Callable, Iterator, Union, Optional
+
+# This is how you annotate a function definition
+def stringify(num: int) -> str:
+    return str(num)
+
+# And here's how you specify multiple arguments
+def plus(num1: int, num2: int) -> int:
+    return num1 + num2
+
+# If a function does not return a value, use None as the return type
+# Default value for an argument goes after the type annotation
+def show(value: str, excitement: int = 10) -> None:
+    print(value + "!" * excitement)
+
+# Note that arguments without a type are dynamically typed (treated as Any)
+# and that functions without any annotations are not checked
+def untyped(x):
+    x.anything() + 1 + "string"  # no errors
+
+# You can of course split a function annotation over multiple lines
+def send_email(address: Union[str, list[str]],
+               sender: str,
+               cc: Optional[list[str]],
+               bcc: Optional[list[str]],
+               subject: str = '',
+               body: Optional[list[str]] = None
+               ) -> bool:
+    ...
+```
+
+### Classes
+
+```python
+class BankAccount:
+    # The "__init__" method doesn't return anything, so it gets return
+    # type "None" just like any other method that doesn't return anything
+    def __init__(self, account_name: str, initial_balance: int = 0) -> None:
+        # mypy will infer the correct types for these instance variables
+        # based on the types of the parameters.
+        self.account_name = account_name
+        self.balance = initial_balance
+
+    # For instance methods, omit type for "self"
+    def deposit(self, amount: int) -> None:
+        self.balance += amount
+
+    def withdraw(self, amount: int) -> None:
+        self.balance -= amount
+
+# User-defined classes are valid as types in annotations
+account: BankAccount = BankAccount("Alice", 400)
+def transfer(src: BankAccount, dst: BankAccount, amount: int) -> None:
+    src.withdraw(amount)
+    dst.deposit(amount)
+
+# Functions that accept BankAccount also accept any subclass of BankAccount!
+class AuditedBankAccount(BankAccount):
+    # You can optionally declare instance variables in the class body
+    audit_log: list[str]
+
+    def __init__(self, account_name: str, initial_balance: int = 0) -> None:
+        super().__init__(account_name, initial_balance)
+        self.audit_log: list[str] = []
+
+    def deposit(self, amount: int) -> None:
+        self.audit_log.append(f"Deposited {amount}")
+        self.balance += amount
+
+    def withdraw(self, amount: int) -> None:
+        self.audit_log.append(f"Withdrew {amount}")
+        self.balance -= amount
+
+audited = AuditedBankAccount("Bob", 300)
+transfer(audited, account, 100)  # type checks!
+```
+
+
+
+
+
+
+## Virtual Environments
+
+This section shows the use the python virtual environments (virt. envs.) with the `venv` build-in tool.
+
+`venv`  is the officially recommended way to manage virt. envs. but it's not the only one. Other tools such as [Conda](https://docs.conda.io/en/latest/index.html), [Pipenv](https://pipenv.pypa.io/en/latest/), [Poetry](https://python-poetry.org/) and [PDM](https://pdm.fming.dev/latest/) are other options.
+
+
+> **Short guide by *python.org***
+> 	- [Installing packages using pip and virtual environments](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/#installing-packages-using-pip-and-virtual-environments)
+> 
+> **Detailed guide by *RealPython.com***
+> 	- *[Python Virtual Environments: A Primer](https://realpython.com/python-virtual-environments-a-primer/) *
+
+
+### Why Virtual Environments?
+
+Python is not good at dependency management. We want to avoid:
+
+1. **Avoid system pollution**
+	- Installing packages to the OS’s global Python will mix them with OS relevant packages. This could have unexpected side effects on OS tasks.
+	- Because of the reason above, updating OS packages might overwrite or delete global Python packages.
+	
+2. **Avoid project dependency conflicts**
+	- Python projects might require different versions the same external library.
+	
+3. **Making projects reproducible in other environments.**
+	- Since all dependencies are isolated to a specific project, it is easier to identify and document them.
+	- Once the dependencies are "locked", the project depency can be easily reproduced in other environments.
+
+
+### Virtual Dependency Steps
+
+Creating and using virtual environments involved the following steps:
+
+1. Creation
+2. Activation
+3. Installing dependencies
+4. Deactivation
+5. Locking dependencies
+
+
+### Creating
+
+1. Create a new folder for the project (if one doesn't already exist).
+
+2. `cd`  into the folder and create a new virt. env.:
+
+```shell
+$ python3 -m venv my-env
+```
+
+Note that `my-env` is the name of your virtual environment. `venv` is a popular choice.
+
+### Activate & Deactivate
+
+Once created, the virt. env. needs to be activated.
+
+```shell
+# Linux
+$ source my-env/bin/activate
+
+# Windows
+$ my-env/Scripts/activate.bat
+```
+
+> **Note:** You can work with virtual environments without activating it.
+> To do this, [provide the full path](https://realpython.com/python-virtual-environments-a-primer/#it-runs-from-anywhere-with-absolute-paths) to its Python interpreter when executing a command.
+> 
+> Typically, you’ll want to activate the virtual environment to avoid repeatedly having to type long paths.
+
+To deactivate:
+
+```shell
+# Notice the shell prompt indicates a virt. env. is active
+$ (my-env) deactivate
+```
+
+
+### Installing Packages with `pip`
+
+Once a virtual environment is active, **packages installed with `pip` will be local to that virtual environment.**
+
+By default, project packages are installed in:
+
+```
+project-folder
+	|- <project-venv>
+	|		|- lib
+	|			|- python3.X
+	|					|- site-packages 
+```
+
+For example, installing `aiohttp`:
+
+```shell
+# Notice the shell prompt indicates a virt. env. is active
+$ (my-env) pip install aiohttp
+```
+
+
+### Using  `requirements.txt`
+
+Project dependencies can be listed in a file for portability. By convention, the file `requirements.txt` contains all the dependencies of a project created with a virtual environment.
+
+> This is analogous to `package.json` for Node.Js projects
+
+**To generate** a `requirements.txt` for an existing project:
+
+```shell
+$ pip freeze > requirements.txt
+```
+
+**To install** packages from a `requirements.txt`:
+
+```
+$ pip install -r requirements.txt
+```
+
+
+### Moving Virtual Environments
+
+If you move a project that uses virtual environments to a different folder, **you must re-initialize the virtual environment.**
+
+From the [official docs](https://docs.python.org/3/library/venv.html#how-venvs-work):
+
+> Scripts installed in environments contain the absolute paths to their environment’s interpreters.
+> 
+> - Because of this, environments are inherently non-portable. You should always have a simple means of recreating an environment (for example, have a requirements file `requirements.txt`, and invoke `pip install -r requirements.txt`.
+
+### Virtual Env Exercises
+
+The following exercises are meant for familiarization with `venv`.
+
+1. Compare packages installed with `pip` inside and outside of a new virtual environment (virt. env.):
+	1. List all globally installed `pip` packages: `pip list`
+	2. Create a new folder and use `venv` to create a virtual environment inside.
+	3. Activate the new virt. env..
+	4. List the `pip` packages as seen from inside the active virtual environment.
+	5. Deactivate the new virtual environment.
+	
+
+2. Complete the following steps inside the virtual environment (virt. env.) you created in the previous question.
+	1. Activate the virt. env.
+	2. install the following libraries:
+		- [howdoi](https://pypi.org/project/howdoi/)
+		- [pyjokes](https://pyjok.es/) 
+	3. List all pip packages to see the extra dependencies that got installed.
+	4. Have some fun using both installed packages (see their docs).
+	5. Export the dependency list to `requirements.txt` by using `pip freeze`.
+	6. Deactivate the virt. env.
+	7. Move `requirements.txt`  to one folder level above the project folder (so it's not deleted in the next step).
+	8. Delete the project folder.
+
+
+3. Create a new project and virtual environment using the `requirements.txt` from the previous exercise.
+	1. Create a new project folder with a virtual environment inside.
+	2. Move `requirements.txt` inside the new project folder.
+	3. Install project packages using `requirements.txt`
+
+

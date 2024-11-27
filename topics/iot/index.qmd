@@ -1,7 +1,0 @@
----
-title: "IoT"
-listing: 
-  sort: "date"
-  sort-ui: [date, title]
-  filter-ui: true
----

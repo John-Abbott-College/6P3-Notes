@@ -34,28 +34,17 @@ website:
         href: announcements/index.xml
       - text: "{{< iconify fa6-brands github >}}"
         href: https://github.com/John-Abbott-College/6P3-Notes
-  sidebar:
-    style: "floating"
-    align: center
-    contents: 
-      - index.qmd
-      - announcements/index.qmd
-      - section: "About"
-        contents: about/**
-      - section: "Topics"
-        contents: topics/**
 
-  navbar: 
+  navbar:
     left:
-      - index.qmd
+      - text: "About"
+        href: about/index.qmd
       - text: "Announcements"
         href: announcements/index.qmd
-      - text: "Calendar"
-        href: about/calendar.qmd
-      - text: "Syllabus"
-        href: about/syllabus.qmd
       - text: "Lectures"
-        href: topics/index.qmd
+        href: lectures/index.qmd
+      - text: "Reference"
+        href: reference/index.qmd
       - text: "{{< iconify simple-icons moodle >}}"
         menu: 
           - text: "Section 1 (8h30)"
@@ -70,8 +59,6 @@ website:
 
 format:
   html:
-    lightbox: true
-    css: styles.css
     theme:
       light: [united, assets/css/customizations-light.scss]
       dark: [united, assets/css/customizations-dark.scss]

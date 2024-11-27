@@ -1,0 +1,14 @@
+---
+title: "Lectures"
+subtitle: "Course lectures are posted here."
+listing:
+  type: table
+  filter-ui: true
+  sort-ui: [date, title]
+  sort: date
+  date-format: iso
+  categories: true
+  fields: [date, title, subtitle]
+  exclude:
+    filename: "*index.qmd"
+---

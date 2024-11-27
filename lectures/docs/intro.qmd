@@ -1,0 +1,10 @@
+---
+title: Introduction (for developers)
+subtitle: Python exercises
+date: 2024-01-29
+draft: true
+---
+
+Notes provided on a different platform,
+
+> See Interactive [notes in Google Colab](https://colab.research.google.com/drive/1w6pGQI2jMATej6Uxg9OmNbOXSZu8moTM?usp=sharing).
