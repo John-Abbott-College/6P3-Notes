@@ -214,8 +214,13 @@
 <li>Cloud to Device (C2D)</li>
 </ul>
 <p>Azure offers a variety of ways of exchanging information in both directions. In this lesson we’ll look at the specifics of how these messaging systems work.</p>
-
-<img data-src="../assets/iot-hub-communication.drawio.svg" class="r-stretch quarto-figure-center"><p class="caption">Communication options between IoT Hub and devices</p></section>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../assets/iot-hub-communication.drawio.svg"></p>
+<figcaption>Communication options between IoT Hub and devices</figcaption>
+</figure>
+</div>
+</section>
 <section id="azure-iot-protocols" class="slide level2">
 <h2>Azure IoT Protocols</h2>
 <p>IoT Hub allows devices to use the following protocols for device-side communications:</p>
@@ -320,8 +325,8 @@
 <p>IoT Hub gives you the ability to invoke direct methods on devices from the cloud. For example, to trigger a relay or ask the device to initiate a upload process.</p>
 <p>Similarly to HTTP, direct methods represent a request-reply interaction with a device. The request sender needs to know immediately if the request succeeded or failed. For example, turning on a light from a phone.</p>
 <p>The life-cycle of a Direct Method is as follows:</p>
-
-<img data-src="../../topics/assets/direct-method.svg" class="r-stretch"><ol type="1">
+<p><img data-src="../../topics/assets/direct-method.svg"></p>
+<ol type="1">
 <li><p>A service application (such as a back-end or mobile app) sends a Direct Method request to the device.</p>
 <ul>
 <li>This is typically done using a SDK library running on the application or “manually” via a HTTPS call to IoT Hub.</li>
@@ -354,7 +359,7 @@
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-
+<p>© Copyright 2024-2025 Michael Haaf. All rights reserved.</p>
 </div>
 </div></div>
 
@@ -387,7 +392,7 @@
 'autoAnimateUnmatched': true,
 'jumpToSlide': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
-'smaller': false,
+'smaller': true,
  
         // Display controls in the bottom right corner
         controls: false,

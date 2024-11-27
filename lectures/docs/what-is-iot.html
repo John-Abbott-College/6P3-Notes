@@ -41,8 +41,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-9ce514ed8e630688a95c435c0236eeb3.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-cc397c92adc8fb5d74b799d3cfad171d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-e3465198b19d6e30e145112fc7672f92.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-18c1d6f8a14e06bc5848febc90c45e06.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-3f1a5e84eaca7903315177c69e28cbfb.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script src="../../site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
 <script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
@@ -55,9 +55,7 @@ ul.task-list li input[type="checkbox"] {
   "type": "overlay",
   "limit": 50,
   "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
+    "ctrl+k"
   ],
   "show-item-context": true,
   "language": {
@@ -83,10 +81,10 @@ ul.task-list li input[type="checkbox"] {
 <meta property="og:image:alt" content="The Interconnection of communicating devices defines the “Internet of Things”">
 </head>
 
-<body class="nav-fixed">
+<body class="floating nav-fixed slimcontent">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -152,12 +150,40 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Intro to the Internet of Things</h1>
+            <p class="subtitle lead">Fundamental concepts and applications behind the ‘Internet of Things’ paradigm.</p>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">January 29, 2024</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Modified</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">November 27, 2024</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
    
   <ul>
   <li><a href="#internet-of-things-iot" id="toc-internet-of-things-iot" class="nav-link active" data-scroll-target="#internet-of-things-iot">Internet of Things (IoT)</a></li>
@@ -181,48 +207,31 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#diving-deeper" id="toc-diving-deeper" class="nav-link" data-scroll-target="#diving-deeper">Diving Deeper</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="what-is-iot.htm"><i class="bi bi-file-slides"></i>Slides</a></li><li><a href="what-is-iot.htm"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Intro to the Internet of Things</h1>
-<p class="subtitle lead">Fundamental concepts and applications behind the ‘Internet of Things’ paradigm.</p>
-</div>
+<main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content">
 
 
 
-<div class="quarto-title-meta">
-
-    
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">January 29, 2024</p>
-    </div>
-  </div>
-  
-    <div>
-    <div class="quarto-title-meta-heading">Modified</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date-modified">November 27, 2024</p>
-    </div>
-  </div>
-    
-  </div>
-  
 
 
-</header>
-
-
-<p><img src="../assets/iot-banner.webp" class="img-fluid" alt="The Interconnection of communicating devices defines the “Internet of Things”"> Image: © Irina Strelnikova / Adobe Stock</p>
-<section id="internet-of-things-iot" class="level2">
+<section id="internet-of-things-iot" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="internet-of-things-iot">Internet of Things (IoT)</h2>
 <p>The <strong>Internet of Things (IoT)</strong> is comprised of equipment, machines, products, and devices that are connected to the cloud and <strong>periodically collect, send and/or receive data.</strong></p>
-<blockquote class="blockquote">
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../assets/iot-banner.webp" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="The Interconnection of communicating devices defines the “Internet of Things”"><img src="../assets/iot-banner.webp" class="img-fluid figure-img" alt="The Interconnection of communicating devices defines the “Internet of Things”"></a></p>
+<figcaption>The Interconnection of communicating devices defines the “Internet of Things”</figcaption>
+</figure>
+</div>
+</div></div><blockquote class="blockquote">
 <p><strong>IoT</strong> refers to the <strong>entire network</strong> of:</p>
 <ul>
 <li>physical devices,</li>
@@ -243,23 +252,22 @@ ul.task-list li input[type="checkbox"] {
 <p>By analyzing the data collected by these connected objects, users and organisations can make informed decisions in near real-time and automate tightly integrated processes. This avoids decision making based on limited or out-dated data.</p>
 <p>This data can create quick feedback loops for automation. Data from one object can trigger actions or control several other objects with timing and precision that could not be achieved by humans.</p>
 </section>
-<section id="iot-examples" class="level2">
+<section id="iot-examples" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="iot-examples">IoT Examples</h2>
 <p>The use of IoT can be organised in two fields of application:</p>
 <ul>
 <li><strong>Industrial IoT (IIoT)</strong></li>
 <li><strong>Consumer IoT</strong></li>
 </ul>
+
+<div class="no-row-height column-margin column-container"><div class="">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../assets/1-iot-intro-industrial-vs-consumer.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Examples of industrial and consumer iot applications"><img src="../assets/1-iot-intro-industrial-vs-consumer.png" class="img-fluid figure-img" alt="Examples of industrial and consumer iot applications"></a></p>
-<figcaption>Examples of industrial and consumer iot applications</figcaption>
+<p><a href="../assets/1-iot-intro-industrial-vs-consumer.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Examples of industrial and consumer IoT applications. Image source: “The Internet of Things and its Benefit to U.S. Water Customers”"><img src="../assets/1-iot-intro-industrial-vs-consumer.png" class="img-fluid figure-img" alt="Examples of industrial and consumer IoT applications. Image source: “The Internet of Things and its Benefit to U.S. Water Customers”"></a></p>
+<figcaption>Examples of industrial and consumer IoT applications. Image source: <a href="https://www.kuritaamerica/the-splash/the-internet-of-things-and-its-benefit-to-us-water-customers">“The Internet of Things and its Benefit to U.S. Water Customers”</a></figcaption>
 </figure>
 </div>
-<p class="img-info">
-<a href="https://www.kuritaamerica.com/the-splash/the-internet-of-things-and-its-benefit-to-us-water-customers"> The Internet of Things and its Benefit to U.S. Water Customer </a> &nbsp; in kuritaamerica.com
-</p>
-<section id="consumer-iot" class="level3">
+</div></div><section id="consumer-iot" class="level3">
 <h3 class="anchored" data-anchor-id="consumer-iot">Consumer IoT</h3>
 <p>Examples of consumer IoT are:</p>
 <ul>
@@ -272,11 +280,6 @@ ul.task-list li input[type="checkbox"] {
 <section id="industrial-iot-iiot" class="level3">
 <h3 class="anchored" data-anchor-id="industrial-iot-iiot">Industrial IoT (IIoT)</h3>
 <p>Most people tend to first think of IoT as consumer devices. However, <strong>their main value added happens in industrial applications.</strong></p>
-<p><a href="https://miro.medium.com/max/1400/1*VKScdttTvAJZ7n663OwGPw.jpeg" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="https://miro.medium.com/max/1400/1*VKScdttTvAJZ7n663OwGPw.jpeg" class="img-fluid"></a></p>
-<p class="img-info">
-<a href="https://medium.com/@jaydev_21091/how-industrial-internet-of-things-are-impacting-our-lives-8af4163530ce">How Industrial Internet of Things are impacting our lives</a> by Bluechip Infocorp Pvt Ltd via Medium.
-</p>
-<p>Industrial IoT Examples:</p>
 <ul>
 <li><p><strong>Equipment Maintenance:</strong> <a href="https://www.rolls-royce.com/media/press-releases/2016/11-07-2016-rr-takes-totalcare-digital-with-microsoft-and-singapore-airlines.aspx">Rolls-Royce’s Total Care</a> provides a suite of predictive maintenance and repair services for its jet engines, including monitoring engine health, and modifying engines to increase reliability and durability.</p></li>
 <li><p><strong>Farming:</strong> <a href="https://www.iotforall.com/ces-2021-john-deere">John Deere</a> is building intelligence into its large tractors and sprayers through sensors that make the machines into mobile platforms capable of self-driving.</p></li>
@@ -290,7 +293,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 </section>
-<section id="high-level-components-of-an-iot-system" class="level2">
+<section id="high-level-components-of-an-iot-system" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="high-level-components-of-an-iot-system">High-level Components of an IoT System</h2>
 <p>IoT systems are compromised of five high-level components:</p>
 <ol type="1">
@@ -324,13 +327,15 @@ ul.task-list li input[type="checkbox"] {
 <li>Facilitate device management.</li>
 </ul></li>
 </ol>
+
+<div class="no-row-height column-margin column-container"><div class="">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="../assets/iot-high-components.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Icons of IoT High level components"><img src="../assets/iot-high-components.png" class="img-fluid figure-img" alt="Icons of IoT High level components"></a></p>
 <figcaption>Icons of IoT High level components</figcaption>
 </figure>
 </div>
-</section>
+</div></div></section>
 <section id="iot-cloud-service-providers" class="level2">
 <h2 class="anchored" data-anchor-id="iot-cloud-service-providers">IoT Cloud Service Providers</h2>
 <p>Since IoT objects typically move around, connectivity and data collection need to happen over wide geographical areas.</p>
@@ -342,13 +347,12 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Microsoft Azure</strong></li>
 <li><strong>Google Cloud</strong></li>
 </ul>
-<p><a href="../assets/1-iot-intro-cloud-service-providers.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="../assets/1-iot-intro-cloud-service-providers.png" class="img-fluid"></a></p>
 <p>There are many other Cloud providers such as <a href="https://www.ibm.com/cloud/internet-of-things">IBM Cloud IoT</a> and <a href="https://www.oracle.com/internet-of-things/">Oracle IoT</a>.</p>
 <blockquote class="blockquote">
 <p>In this course we will focus on <strong>Microsoft Azure</strong>. However, all three platforms offer similar functionality.</p>
 </blockquote>
 </section>
-<section id="azure-account-check" class="level2">
+<section id="azure-account-check" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="azure-account-check">Azure Account Check</h2>
 <p>Students get $100 of credit for 12 months and free <a href="https://portal.azure.com/#blade/Microsoft_Azure_Billing/FreeServicesBlade">developer tools</a> without a credit card.</p>
 <blockquote class="blockquote">
@@ -356,25 +360,27 @@ ul.task-list li input[type="checkbox"] {
 </blockquote>
 <p>The student account can be renewed annually (including $100 credits) for as long as you are a student.</p>
 <p>Most things we’ll do with Azure will use <strong>free services</strong>. We will occasionally use some of your free credits (~$20).</p>
-<section id="checking-your-balance" class="level3">
+<section id="checking-your-balance" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="checking-your-balance">Checking your balance 💸</h3>
 <p>As you experiment with Azure you might want to know your current balance.</p>
 <p><strong>TL:DR</strong></p>
 <ol type="1">
-<li><p>Sign in to the Azure portn in to the Azure portal.al.</p></li>
-<li><p>Search for <strong><em>Cost Management</em></strong> <img src="../assets/intro-azure-cost-management.png" title=":class=inline-img" class="img-fluid"></p></li>
-<li><p>Select <strong><em>Payment methods</em></strong></p></li>
-<li><p>Check your <strong><em>Azure credits</em></strong> panel.</p></li>
+<li>Sign in to the Azure portn in to the Azure portalal</li>
+<li>Search for <strong>Cost Management</strong></li>
+<li>Select <strong>Payment methods</strong></li>
+<li>Check your <strong>Azure credits</strong> panel.</li>
 </ol>
+
+<div class="no-row-height column-margin column-container"><div class="">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../assets/intro-azure-credit-check.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Credit check panel in Azure"><img src="../assets/intro-azure-credit-check.png" class="img-fluid figure-img" alt="Credit check panel in Azure"></a></p>
+<p><a href="../assets/intro-azure-credit-check.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Credit check panel in Azure"><img src="../assets/intro-azure-credit-check.png" class="img-fluid figure-img" alt="Credit check panel in Azure"></a></p>
 <figcaption>Credit check panel in Azure</figcaption>
 </figure>
 </div>
-<p>For details check <a href="https://docs.microsoft.com/en-us/azure/cost-management-billing/manage/mca-check-azure-credits-balance?tabs=portal#main">Track Microsoft Customer Agreement Azure credit balance</a></p>
+</div></div><p>For details check <a href="https://docs.microsoft.com/en-us/azure/cost-management-billing/manage/mca-check-azure-credits-balance?tabs=portal#main">Track Microsoft Customer Agreement Azure credit balance</a></p>
 </section>
-<section id="budget-alerts" class="level3">
+<section id="budget-alerts" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="budget-alerts">Budget Alerts</h3>
 <p>It’s possible to setup email alerts when your Azure spending exceeds a dollar threshold. This avoids unexpected spending of Azure credits.</p>
 <p>There are two approaches to setting up a Budget in the Azure Portal:</p>
@@ -389,29 +395,35 @@ ul.task-list li input[type="checkbox"] {
 <li>For details on using and managing budgets, see official tutorial: <a href="https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/tutorial-acm-create-budgets">Create and manage Azure budgets</a>.</li>
 </ul>
 </blockquote>
-<section id="create-a-budget-for-a-resource-group" class="level4">
+<section id="create-a-budget-for-a-resource-group" class="level4 page-columns page-full">
 <h4 class="anchored" data-anchor-id="create-a-budget-for-a-resource-group">Create a Budget for a Resource Group</h4>
 <ol type="1">
 <li>In the Azure Portal Home, select the <strong><em>Resource groups</em></strong> service.</li>
 <li>Select the resource group you want to monitor with a budget.</li>
 <li>In the left panel, select <strong><em>Budgets</em></strong> under the <em>Cost Management</em> group and select <strong><em>Add</em></strong>.</li>
 </ol>
+
+<div class="no-row-height column-margin column-container"><div class="">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../assets/12-budget-resource-group.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Menu for creating a budget for a resource group"><img src="../assets/12-budget-resource-group.png" class="img-fluid figure-img" alt="Menu for creating a budget for a resource group"></a></p>
+<p><a href="../assets/12-budget-resource-group.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Menu for creating a budget for a resource group"><img src="../assets/12-budget-resource-group.png" class="img-fluid figure-img" alt="Menu for creating a budget for a resource group"></a></p>
 <figcaption>Menu for creating a budget for a resource group</figcaption>
 </figure>
 </div>
-<ol start="4" type="1">
+</div></div><ol start="4" type="1">
 <li>Give your budget a name and an amount.</li>
 </ol>
-<p><a href="../assets/12-budget-name-ammount.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="../assets/12-budget-name-ammount.png" class="img-fluid"></a></p>
-<ol start="5" type="1">
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p><a href="../assets/12-budget-name-ammount.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="../assets/12-budget-name-ammount.png" class="img-fluid"></a></p>
+</div></div><ol start="5" type="1">
 <li>Select the <strong>percent spending</strong> for the alert and the <strong>email</strong> to receive the notification.</li>
 <li>Click <strong><em>Create</em></strong>.</li>
 </ol>
-<p><a href="../assets/12-budget-alert-percent-email.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="../assets/12-budget-alert-percent-email.png" class="img-fluid"></a></p>
-</section>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p><a href="../assets/12-budget-alert-percent-email.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="../assets/12-budget-alert-percent-email.png" class="img-fluid"></a></p>
+</div></div></section>
 </section>
 </section>
 <section id="exercises" class="level2">
@@ -421,15 +433,17 @@ ul.task-list li input[type="checkbox"] {
 <li><del>Read the Microsoft training module <a href="https://learn.microsoft.com/en-us/training/modules/introduction-iot-solution-architecture/"><strong>Examine the architecture of an IoT solution</strong></a> and complete the Moodle quiz on the module.</del></li>
 </ol>
 </section>
-<section id="diving-deeper" class="level2">
+<section id="diving-deeper" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="diving-deeper">Diving Deeper</h2>
 <p>Video (15:19): <strong>The 7 Principles of the IoT by Tom Bradicich</strong></p>
 <ul>
 <li>In depth explanation of the integration between IoT sub-systems and opportunities from a technical and business perspective.</li>
 </ul>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/u3IaXvjDiOE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="">
+
+<div class="no-row-height column-margin column-container"><div class="">
+<iframe src="https://www.youtube.com/embed/u3IaXvjDiOE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="">
 </iframe>
-</section>
+</div></div></section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
 <ol type="1">
@@ -1007,12 +1021,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-      <ul class="footer-items list-unstyled">
-    <li class="nav-item">
- Connected Objects: Winter 2025
-  </li>  
-</ul>
-    </div>   
+<p>© Copyright 2024-2025 Michael Haaf<br> All rights reserved.</p>
+</div>   
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
@@ -1029,6 +1039,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+ Connected Objects: Winter 2025
+  </li>  
     <li class="nav-item">
  
   </li>  

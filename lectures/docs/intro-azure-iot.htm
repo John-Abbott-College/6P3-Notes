@@ -156,8 +156,13 @@
 <blockquote>
 <p>PaaS is designed to support the complete web application life-cycle: building, testing, deploying, managing, and updating.</p>
 </blockquote>
-
-<img data-src="../assets/intro-azure-paas.png" class="r-stretch quarto-figure-center"><p class="caption">Compasion of SaaS, PaaS and IaaS platforms</p><p>Figure from: <a href="https://docs.microsoft.com/en-us/learn/modules/introduction-iot-solution-">SaaS vs PaaS vs IaaS</a>, What is PaaS?, Microsoft.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../assets/intro-azure-paas.png"></p>
+<figcaption>Compasion of SaaS, PaaS and IaaS platforms</figcaption>
+</figure>
+</div>
+<p>Figure from: <a href="https://docs.microsoft.com/en-us/learn/modules/introduction-iot-solution-">SaaS vs PaaS vs IaaS</a>, What is PaaS?, Microsoft.</p>
 <p>So far in this course, we have developed applications that are almost entirely local to our reTerminal (production) and workstation (development) environments. We did not worry ourselves terribly about data storage, application logic, authentication, etc. We could implement these things using Flask/Dash in Python, but we can also automate many of them using a PaaS framework.</p>
 <blockquote>
 <p>Moving forward, we will be implementing our IoT solutions using Microsoft Azure as PaaS.</p>
@@ -167,8 +172,13 @@
 <section id="iot-subsystems" class="slide level2">
 <h2>IoT Subsystems</h2>
 <p>We can breakdown an IoT solution into <strong>subsystems</strong> and explore how information flows between them:</p>
-
-<img data-src="https://docs.microsoft.com/en-us/learn/wwl-azure/introduction-iot-solution-architecture/media/m01-l02-core-subsystems-iot-architecture-8158ad9e.png" class="r-stretch quarto-figure-center"><p class="caption">Diagram that shows the core subsystems of the Azure IoT reference architecture.</p><p>Figure from: <a href="https://docs.microsoft.com/en-us/learn/modules/introduction-iot-solution-architecture/2-subsystems-iot-architecture">Subsystems of IoT architecture</a>, Examine systems of an IoT architecture, Microsoft.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://docs.microsoft.com/en-us/learn/wwl-azure/introduction-iot-solution-architecture/media/m01-l02-core-subsystems-iot-architecture-8158ad9e.png"></p>
+<figcaption>Diagram that shows the core subsystems of the Azure IoT reference architecture.</figcaption>
+</figure>
+</div>
+<p>Figure from: <a href="https://docs.microsoft.com/en-us/learn/modules/introduction-iot-solution-architecture/2-subsystems-iot-architecture">Subsystems of IoT architecture</a>, Examine systems of an IoT architecture, Microsoft.</p>
 <ul>
 <li><strong>IoT Devices</strong>: The physical devices and sensors where data originates.</li>
 <li><strong>Cloud Gateway</strong>: The Cloud Gateway provides a cloud hub for secure connectivity, telemetry, event ingestion and device management (including command and control) capabilities.</li>
@@ -184,8 +194,13 @@
 <section id="azure-iot-services" class="slide level2">
 <h2>Azure IoT Services</h2>
 <p>Azure offers many IoT-related services (see image below). In this course we’ll only explore a few.</p>
-
-<img data-src="https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/iot/images/iot-refarch.svg" class="r-stretch quarto-figure-center"><p class="caption">Azure IoT-related architecture</p><p><a href="https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/iot"><em>Azure IoT Reference Architecture</em></a>, <em>Microsoft learn</em></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/iot/images/iot-refarch.svg"></p>
+<figcaption>Azure IoT-related architecture</figcaption>
+</figure>
+</div>
+<p><a href="https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/iot"><em>Azure IoT Reference Architecture</em></a>, <em>Microsoft learn</em></p>
 </section>
 <section id="iot-hub-iot-central" class="slide level2">
 <h2>IoT Hub &amp; IoT Central</h2>
@@ -213,8 +228,8 @@
 <p><a href="https://docs.microsoft.com/en-us/azure/iot-hub/"><strong>Azure IoT Hub Documentation</strong></a> hosts most of the documentation we will be using.</p>
 <p>Please get familiar with the left-hand menu, including the “Quickstarts” and “How-to guides”</p>
 </blockquote>
-
-<img data-src="../assets/intro-azure-docs-page.png" class="r-stretch"></section>
+<p><img data-src="../assets/intro-azure-docs-page.png"></p>
+</section>
 <section id="azure-resource-group-zones" class="slide level2">
 <h2>Azure Resource Group &amp; Zones</h2>
 <p>A resource group is a “container” that holds related resources for an Azure solution (such as your IoT system).</p>
@@ -406,7 +421,7 @@
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-
+<p>© Copyright 2024-2025 Michael Haaf. All rights reserved.</p>
 </div>
 </div></div>
 
@@ -439,7 +454,7 @@
 'autoAnimateUnmatched': true,
 'jumpToSlide': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
-'smaller': false,
+'smaller': true,
  
         // Display controls in the bottom right corner
         controls: false,

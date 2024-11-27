@@ -241,8 +241,13 @@
 <ul>
 <li>Used along with desired properties to synchronize device configuration or conditions. <strong>The device app can set reported properties, and the solution back end can read and query them.</strong></li>
 </ul>
-
-<img data-src="https://docs.microsoft.com/en-us/azure/iot-hub/media/iot-hub-devguide-device-twins/twin.png" class="r-stretch quarto-figure-center"><p class="caption">Screenshot of device twin properties</p><p class="img-info">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://docs.microsoft.com/en-us/azure/iot-hub/media/iot-hub-devguide-device-twins/twin.png"></p>
+<figcaption>Screenshot of device twin properties</figcaption>
+</figure>
+</div>
+<p class="img-info">
 <a href="https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-device-twins"> Structure of a Device Twin Json document </a>&nbsp; Understand and use device twins in IoT Hub.
 </p>
 <p>Notice how the back-end has <strong>read/write access</strong> to the <em>Desired</em> properties but only has <strong>read access</strong> to the <em>Reported</em> properties.</p>
@@ -304,8 +309,13 @@
 <blockquote>
 <p>Notice that a tag can be set by a back-end application and is never sent to the device. Tags are used to organize and query devices.</p>
 </blockquote>
-
-<img data-src="../assets/17-device-twins-desired-flow.png" class="r-stretch quarto-figure-center"><p class="caption">Information flow for a desired property change</p><p class="img-info">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../assets/17-device-twins-desired-flow.png"></p>
+<figcaption>Information flow for a desired property change</figcaption>
+</figure>
+</div>
+<p class="img-info">
 <a href="https://docs.microsoft.com/en-us/azure/iot-hub/tutorial-device-twins"> Information flow for a desired property change from a back-end app </a>&nbsp; Tutorial: Configure your devices from a back-end service.
 </p>
 </section>
@@ -400,8 +410,8 @@
 <p>This is not your Event Hub compatible endpoint connection string.</p>
 </blockquote>
 <p>See image below for setting up a new shared access polity:</p>
-
-<img data-src="../assets/17-device-twins-access-permission.png" class="r-stretch"><h3 id="net-service-client-for-device-twin-updates">.NET Service Client for Device Twin Updates</h3>
+<p><img data-src="../assets/17-device-twins-access-permission.png"></p>
+<h3 id="net-service-client-for-device-twin-updates">.NET Service Client for Device Twin Updates</h3>
 <p>The .NET Azure IoT SDK includes two clients for device twin operations:</p>
 <ul>
 <li><code>DigitalTwinClient</code> <em>(recommended but slightly more complex)</em></li>
@@ -453,7 +463,7 @@
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-
+<p>© Copyright 2024-2025 Michael Haaf. All rights reserved.</p>
 </div>
 </div></div>
 
@@ -486,7 +496,7 @@
 'autoAnimateUnmatched': true,
 'jumpToSlide': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
-'smaller': false,
+'smaller': true,
  
         // Display controls in the bottom right corner
         controls: false,
