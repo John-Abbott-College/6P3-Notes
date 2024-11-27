@@ -1,5 +1,9 @@
 project:
   type: website
+  resources:
+    - "files/"
+  preview:
+    port: 6666
 
 website:
   title: "{{< var course.title >}}"
@@ -16,16 +20,19 @@ website:
     show-item-context: true
     type: overlay
     copy-button: true
+    keyboard-shortcut: "ctrl+k"
 
   page-footer:
-    left:
-      - text: "{{< var course.title >}}: {{< var course.semester >}}"
+    left: |
+      © Copyright 2024-2025 Michael Haaf<br>
+      All rights reserved.
     center:
       - text: "About"
         href: about/this-site.qmd
       - text: "License"
         href: about/this-site.qmd#copyright
     right:
+      - text: "{{< var course.title >}}: {{< var course.semester >}}"
       - text: "{{< iconify simple-icons moodle >}}"
         menu:
           - text: "Section 1 (8h30)"
@@ -66,7 +73,11 @@ format:
       dark: [united, assets/css/customizations-dark.scss]
     toc: true
     toc-depth: 4
+    toc-title: Table of contents
+    toc-location: left
     date-modified: last-modified
     code-overflow: wrap
+    code-copy: true
     lightbox: true
     reference-location: margin
+    title-block-banner: true

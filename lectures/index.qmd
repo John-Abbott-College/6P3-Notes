@@ -1,5 +1,5 @@
 ---
-title: "Lectures"
+title: "All lectures"
 subtitle: "Course lectures are posted here."
 listing:
   type: table

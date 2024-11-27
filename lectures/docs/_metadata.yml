@@ -4,13 +4,17 @@ format:
     theme: moon
     transition: slide
     margin: 0.2
-    smaller: false
+    smaller: true
     scrollable: true
     output-ext: htm
     toc: true
     toc-depth: 1
     menu: true
+    auto-stretch: false
+    footer: |
+      © Copyright 2024-2025 Michael Haaf. All rights reserved.
 format-links:
-  - format: revealjs
-    text: Slides
-    icon: file-slides
+  - html
+  # - format: revealjs
+  #   text: Slides
+  #   icon: file-slides
