@@ -16,11 +16,6 @@ jobs:
         with: 
           ref: winter2025
 
-      - name: Install system dependencies
-        uses: awalsh128/cache-apt-pkgs-action@latest
-        with:
-          packages: librsvg2-bin
-
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
         with:
