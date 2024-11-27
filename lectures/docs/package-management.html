@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.38">
+<meta name="generator" content="quarto-1.6.39">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -71,12 +71,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-46ee400ebd2c19ba122ec631c5f961f9.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-ba0467802c581767bb15e37147f38c23.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-a957dc18548de41df5b85d8eeea76957.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-9ce514ed8e630688a95c435c0236eeb3.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-bd05319d547d4417e98c75b5a20fed9a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-eabc42ce70820c9f2cebf332591e943c.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-9656153b131701881b5ee50c212159ca.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-2a5085f1d0b877add35a38dbfdbf3ad4.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script src="../../site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
@@ -110,7 +110,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta property="og:title" content="Package management – Connected Objects">
 <meta property="og:description" content="How to use OS package managers, virtual environments, and pip to manage python applications effectively.">
 <meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/lectures/docs/assets/art_title_path_only.svg">
-<meta property="og:site_name" content="Connected Objects">
+<meta property="og:site_name" content="{{< var course.title >}}">
 </head>
 
 <body class="nav-fixed">
@@ -208,10 +208,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#check-pythons-library-paths" id="toc-check-pythons-library-paths" class="nav-link" data-scroll-target="#check-pythons-library-paths">Check python’s library paths</a></li>
   </ul></li>
   </ul>
-</nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="package-management.htm"><i class="bi bi-file-slides"></i>Slides</a></li><li><a href="package-management.htm"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -258,10 +258,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Installing packages locally with <code>pip</code></li>
 </ul>
 </section>
-<section id="python-on-raspberry-pi" class="level2">
+<section id="python-on-raspberry-pi" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="python-on-raspberry-pi">Python on Raspberry Pi</h2>
 <p><em>Note: most of these notes were adapted directly from the Raspberry Pi docs: <a href="https://www.raspberrypi.com/documentation/computers/os.html#python-on-raspberry-pi">Python on Raspberry Pi</a></em> <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<p>Python 3 is installed by default on Raspberry Pi OS, and is used for many important functions. Interfering with the system Python installation can cause problems for your operating system, so it’s important that if you install third-party Python libraries, you use the correct package-management tools.</p>
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;Raspberry Pi documentation is copyright © 2012-2024 Raspberry Pi Ltd and is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International</a> (CC BY-SA) licence. Some content originates from the <a href="http://elinux.org/">eLinux wiki</a>, and is licensed under a <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported</a> licence.</p></div></div><p>Python 3 is installed by default on Raspberry Pi OS, and is used for many important functions. Interfering with the system Python installation can cause problems for your operating system, so it’s important that if you install third-party Python libraries, you use the correct package-management tools.</p>
 <p>There are two routes to installing libraries into the default <code>python</code> distribution. You can use <code>apt</code> and install pre-configured system packages, or you can use <code>pip</code> to install packages which are not distributed as part of Raspberry Pi OS.</p>
 </section>
 <section id="installing-python-packages-using-apt" class="level2">
@@ -574,12 +574,7 @@ version = 3.11</code></pre>
 </section>
 
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
-<ol>
-<li id="fn1"><p>Raspberry Pi documentation is copyright © 2012-2024 Raspberry Pi Ltd and is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International</a> (CC BY-SA) licence. Some content originates from the <a href="http://elinux.org/">eLinux wiki</a>, and is licensed under a <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported</a> licence.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section></div></main> <!-- /main -->
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1145,7 +1140,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-      &nbsp;
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+ Connected Objects: Winter 2025
+  </li>  
+</ul>
     </div>   
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
@@ -1157,11 +1156,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <li class="nav-item">
     <a class="nav-link" href="../../about/this-site.html#copyright">
 <p>License</p>
-</a>
-  </li>  
-    <li class="nav-item">
-    <a class="nav-link" href="https://github.com/john-abbott-college/6P3-Notes/">
-<p>Source</p>
 </a>
   </li>  
 </ul>

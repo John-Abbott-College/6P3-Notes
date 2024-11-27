@@ -5,16 +5,16 @@
       xmlns:dc="http://purl.org/dc/elements/1.1/" 
       version="2.0">
 <channel>
-<title>Connected Objects</title>
+<title>{{&lt; var course.title &gt;}}</title>
 <link>https://john-abbott-college.github.io/6P3-Notes/announcements/</link>
 <atom:link href="https://john-abbott-college.github.io/6P3-Notes/announcements/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <image>
 <url>https://john-abbott-college.github.io/6P3-Notes/assets/art_title_path_only.svg</url>
-<title>Connected Objects</title>
+<title>{{&lt; var course.title &gt;}}</title>
 <link>https://john-abbott-college.github.io/6P3-Notes/announcements/</link>
 </image>
-<generator>quarto-1.6.38</generator>
-<lastBuildDate>Wed, 27 Nov 2024 13:59:33 GMT</lastBuildDate>
+<generator>quarto-1.6.39</generator>
+<lastBuildDate>Wed, 27 Nov 2024 19:05:03 GMT</lastBuildDate>
 </channel>
 </rss>
