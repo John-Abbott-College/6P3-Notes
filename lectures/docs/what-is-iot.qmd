@@ -6,14 +6,15 @@ subtitle:
 date: 2024-01-29
 ---
 
-![The Interconnection of communicating devices defines the "Internet of Things"](../assets/iot-banner.webp)
-Image: © Irina Strelnikova / Adobe Stock
-
 ## Internet of Things (IoT)
 
 The **Internet of Things (IoT)** is comprised of equipment, machines, products,
 and devices that are connected to the cloud and **periodically collect, send
 and/or receive data.**
+
+::: {.column-margin}
+![The Interconnection of communicating devices defines the "Internet of Things"](../assets/iot-banner.webp)
+:::
 
 > **IoT** refers to the **entire network** of:
 >
@@ -47,10 +48,12 @@ The use of IoT can be organised in two fields of application:
 - **Industrial IoT (IIoT)**
 - **Consumer IoT**
 
-![Examples of industrial and consumer iot applications](../assets/1-iot-intro-industrial-vs-consumer.png)
+::: {.column-margin}
+![Examples of industrial and consumer IoT applications. Image source: ["The Internet of Things and its Benefit to U.S. Water Customers"][source-location]](../assets/1-iot-intro-industrial-vs-consumer.png)
+:::
 
-<p class=img-info>
-<a href="https://www.kuritaamerica.com/the-splash/the-internet-of-things-and-its-benefit-to-us-water-customers"> The Internet of Things and its Benefit to U.S. Water Customer </a> &nbsp; in kuritaamerica.com</p>
+[source-location]:
+  https://www.kuritaamerica/the-splash/the-internet-of-things-and-its-benefit-to-us-water-customers
 
 ### Consumer IoT
 
@@ -76,14 +79,6 @@ Examples of consumer IoT are:
 
 Most people tend to first think of IoT as consumer devices. However, **their
 main value added happens in industrial applications.**
-
-![](https://miro.medium.com/max/1400/1*VKScdttTvAJZ7n663OwGPw.jpeg)
-
-<p class=img-info>
-<a href="https://medium.com/@jaydev_21091/how-industrial-internet-of-things-are-impacting-our-lives-8af4163530ce">How Industrial Internet of Things are impacting our lives</a> by Bluechip Infocorp Pvt Ltd via Medium.
-</p>
-
-Industrial IoT Examples:
 
 - **Equipment Maintenance:**
   [Rolls-Royce’s Total Care](https://www.rolls-royce.com/media/press-releases/2016/11-07-2016-rr-takes-totalcare-digital-with-microsoft-and-singapore-airlines.aspx)
@@ -148,7 +143,9 @@ IoT systems are compromised of five high-level components:
     - Configure automatic actions;
     - Facilitate device management.
 
+::: {.column-margin}
 ![Icons of IoT High level components](../assets/iot-high-components.png)
+:::
 
 ## IoT Cloud Service Providers
 
@@ -168,8 +165,6 @@ The three main Cloud Service Providers in the IoT space are:
 - **Amazon Web Services (AWS)**
 - **Microsoft Azure**
 - **Google Cloud**
-
-![](../assets/1-iot-intro-cloud-service-providers.png)
 
 There are many other Cloud providers such as
 [IBM Cloud IoT](https://www.ibm.com/cloud/internet-of-things) and
@@ -199,15 +194,14 @@ As you experiment with Azure you might want to know your current balance.
 
 **TL:DR**
 
-1. Sign in to the Azure portn in to the Azure portal.al.
-2. Search for **_Cost Management_**
-   ![](../assets/intro-azure-cost-management.png ":class=inline-img")
+1. Sign in to the Azure portn in to the Azure portalal
+2. Search for **Cost Management**
+3. Select **Payment methods**
+4. Check your **Azure credits** panel.
 
-3. Select **_Payment methods_**
-
-4. Check your **_Azure credits_** panel.
-
+::: {.column-margin}
 ![Credit check panel in Azure](../assets/intro-azure-credit-check.png)
+:::
 
 For details check
 [Track Microsoft Customer Agreement Azure credit balance](https://docs.microsoft.com/en-us/azure/cost-management-billing/manage/mca-check-azure-credits-balance?tabs=portal#main)
@@ -241,17 +235,23 @@ The first approach involves a few less steps so it is described below.
 3. In the left panel, select **_Budgets_** under the _Cost Management_ group and
    select **_Add_**.
 
+::: {.column-margin}
 ![Menu for creating a budget for a resource group](../assets/12-budget-resource-group.png)
+:::
 
 4. Give your budget a name and an amount.
 
+::: {.column-margin}
 ![](../assets/12-budget-name-ammount.png)
+:::
 
 5. Select the **percent spending** for the alert and the **email** to receive
    the notification.
 6. Click **_Create_**.
 
+::: {.column-margin}
 ![](../assets/12-budget-alert-percent-email.png)
+:::
 
 ## Exercises
 
@@ -269,7 +269,9 @@ Video (15:19): **The 7 Principles of the IoT by Tom Bradicich**
 - In depth explanation of the integration between IoT sub-systems and
   opportunities from a technical and business perspective.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/u3IaXvjDiOE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+::: {.column-margin}
+<iframe src="https://www.youtube.com/embed/u3IaXvjDiOE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+:::
 
 ## References
 
