@@ -217,11 +217,23 @@
 </section>
 <section id="asynch-with-asyncio" class="slide level2 scrollable">
 <h2>Asynch with <code>asyncio</code></h2>
-<p>The library <code>asyncio</code> enables code to be <strong>run concurrently</strong>: - Tasks share the execution thread while appearing to be executing in parallel.</p>
+<p>The library <code>asyncio</code> enables code to be <strong>run concurrently</strong>:</p>
+<ul>
+<li>Tasks share the execution thread while appearing to be executing in parallel.</li>
+</ul>
 <blockquote>
-<p>Asyncio API: - <a href="https://docs.python.org/3/library/asyncio-task.html#asyncio-example-gather">Coroutines and Tasks</a> (good intro to <em>asyncio</em>).</p>
-<p>In-depth guide: - <a href="https://realpython.com/async-io-python/">Async IO in Python: A Complete Walkthrough</a> by realpython.com.</p>
-<p>Video Summary: - <a href="https://www.youtube.com/watch?v=2IW-ZEui4h4">How To Easily Do Asynchronous Programming With Asyncio</a> by ArjanCodes</p>
+<p>Asyncio API:</p>
+<ul>
+<li><a href="https://docs.python.org/3/library/asyncio-task.html#asyncio-example-gather">Coroutines and Tasks</a> (good intro to <em>asyncio</em>).</li>
+</ul>
+<p>In-depth guide:</p>
+<ul>
+<li><a href="https://realpython.com/async-io-python/">Async IO in Python: A Complete Walkthrough</a> by realpython.com.</li>
+</ul>
+<p>Video Summary:</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=2IW-ZEui4h4">How To Easily Do Asynchronous Programming With Asyncio</a> by ArjanCodes</li>
+</ul>
 </blockquote>
 <h3 id="concurrent-vs-parallel">Concurrent vs Parallel</h3>
 <p>It’s important to note that <strong>concurrent code does not necessarily mean parallel</strong>.</p>
@@ -278,7 +290,12 @@
 <p><em>Tasks yielding execution time with the <code>await</code> keyword. By <a href="https://learn.adafruit.com/cooperative-multitasking-in-circuitpython-with-asyncio">Adafruit.com</a></em></p>
 <p>In the image above, Task 1 (running function <code>f()</code>) yields execution time to Task 2 (running function <code>g()</code>) by using the <code>await</code> keyboard and vice-versa.</p>
 <h3 id="coroutines-tasks-event-loop">Coroutines, Tasks &amp; Event Loop</h3>
-<p>In Asyncio, there are 3 types of awaitable objects: - Coroutines - Tasks - Futures</p>
+<p>In Asyncio, there are 3 types of awaitable objects:</p>
+<ul>
+<li>Coroutines</li>
+<li>Tasks</li>
+<li>Futures</li>
+</ul>
 <h4 id="coroutines">Coroutines</h4>
 <p>Coroutines are functions that are awaitable.</p>
 <p>They must be declared with the <code>async</code> keyword</p>
@@ -382,7 +399,7 @@
 </ul>
 <h3 id="asyncio-exercises">Asyncio Exercises</h3>
 <ol type="1">
-<li>Create a program with <em>asyncio</em> that uses two function to display information “at the same time”. Call the functions with arguments of your choice.
+<li><p>Create a program with <em>asyncio</em> that uses two function to display information “at the same time”. Call the functions with arguments of your choice.</p>
 <ul>
 <li><code>countdown()</code>:
 <ul>
@@ -406,7 +423,7 @@
 </ul></li>
 </ul></li>
 </ul></li>
-<li>Use the <a href="https://docs.python-requests.org/en/latest/">library <code>requests</code></a> to fetch 5 random pokemon names from the <a href="https://pokeapi.co/docs/v2#info">Pokemon API</a>.
+<li><p>Use the <a href="https://docs.python-requests.org/en/latest/">library <code>requests</code></a> to fetch 5 random pokemon names from the <a href="https://pokeapi.co/docs/v2#info">Pokemon API</a>.</p>
 <ul>
 <li>Use a random number between 1 and 251 as the <strong>pokemon id</strong>.</li>
 <li>Use the <a href="https://pokeapi.co/docs/v2#pokemon">API endpoint: <code>https://pokeapi.co/api/v2/pokemon/{id or name}/</code></a>.</li>
@@ -415,7 +432,7 @@
 <li>For each request, display the name of the randomly selected pokemon.</li>
 <li>Time the total script execution with <a href="https://docs.python.org/3/library/time.html#time.perf_counter"><code>time.perf_counter()</code></a></li>
 </ul></li>
-<li>Use the <a href="https://docs.aiohttp.org/en/stable/client_quickstart.html">library <code>aiohttp</code></a> to fetch 5 “simultaneous” random pokemon names from the <a href="https://pokeapi.co/docs/v2#info">Pokemon API</a>.
+<li><p>Use the <a href="https://docs.aiohttp.org/en/stable/client_quickstart.html">library <code>aiohttp</code></a> to fetch 5 “simultaneous” random pokemon names from the <a href="https://pokeapi.co/docs/v2#info">Pokemon API</a>.</p>
 <ul>
 <li>Use a random number between 1 and 251 as the <strong>pokemon id</strong>.</li>
 <li>Use the <a href="https://pokeapi.co/docs/v2#pokemon">API endpoint: <code>https://pokeapi.co/api/v2/pokemon/{id or name}/</code></a>.</li>

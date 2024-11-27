@@ -168,7 +168,7 @@
 <h3 id="temperature">Temperature</h3>
 <p>The A/C and heating systems in a house are typically activated once the temperature reaches some minimum and maximum values.</p>
 <p>The chart below is tracking the temperature in a room as the A/C and heating systems are activated over a few days.</p>
-<img data-src="../assets/6-analog-digital-analog-temperature.png">
+<p><img data-src="../assets/6-analog-digital-analog-temperature.png"></p>
 <p class="img-info">
 <a href="https://info.sparkfun.com/hubfs/Poster%20Downloads/Analog%20vs%20Digital/Concept%20Poster%20Analog%20vs%20Digital%20WEB.pdf"> Temperature changes over time </a>&nbsp; Adapted from poster: Analog and Digital Signals by Digikey.
 </p>
@@ -216,14 +216,24 @@
 </blockquote>
 <p>Below is a the timing graph of a signal whose <strong>low voltage is 0 volts</strong> and <strong>high voltage is 5 volts</strong>.</p>
 <p>This type of signal is also known as a <strong>square waves</strong>.</p>
-<a href="https://cdn.sparkfun.com/assets/c/8/5/b/e/51c495ebce395f1b5a000000.png"><img data-src="https://cdn.sparkfun.com/assets/c/8/5/b/e/51c495ebce395f1b5a000000.png" alt="Square wave signal. Two values, either 0V or 5V."></a>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="https://cdn.sparkfun.com/assets/c/8/5/b/e/51c495ebce395f1b5a000000.png"><img data-src="https://cdn.sparkfun.com/assets/c/8/5/b/e/51c495ebce395f1b5a000000.png" alt="Square wave signal. Two values, either 0V or 5V."></a></p>
+<figcaption>Square wave signal. Two values, either 0V or 5V.</figcaption>
+</figure>
+</div>
 <p class="img-info">
 <a href="https://learn.sparkfun.com/tutorials/analog-vs-digital/all"> 0 to 5 volt “pulses” forming a square ware </a>&nbsp; - Analog vs.&nbsp;Digital by Digikey.
 </p>
 <h3 id="digital-simulating-analogue">Digital Simulating Analogue</h3>
 <p>A digital signal might be a discrete representation of an analog waveform.</p>
 <p>Viewed from afar, the wave function below may seem smooth and analog, but when you look closely there are tiny discrete <strong>steps</strong> as the signal tries to approximate analog values.</p>
-<a href="https://cdn.sparkfun.com/assets/0/2/8/4/6/51c85fbece395fbc03000000.png"><img data-src="https://cdn.sparkfun.com/assets/0/2/8/4/6/51c85fbece395fbc03000000.png" alt="Digital Sine Wave"></a>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="https://cdn.sparkfun.com/assets/0/2/8/4/6/51c85fbece395fbc03000000.png"><img data-src="https://cdn.sparkfun.com/assets/0/2/8/4/6/51c85fbece395fbc03000000.png" alt="Digital Sine Wave"></a></p>
+<figcaption>Digital Sine Wave</figcaption>
+</figure>
+</div>
 <p class="img-info">
 <a href="https://learn.sparkfun.com/tutorials/analog-vs-digital/all"> Oscillating voltage from -120V to 120V represented as a digital signal </a>&nbsp; - Analog vs.&nbsp;Digital by Digikey.
 </p>
@@ -239,8 +249,8 @@
 </blockquote>
 <p>ADC’s are specific to the type of analog signal they are trying to read (sound, voltage, temperature, light, etc).</p>
 <p>Referring to the room temperature example used earlier, if we used a digital thermometer to record the temperature, our graph might look like the following:</p>
-<img data-src="../assets/6-analog-digital-temp-sampling.png">
-<p class="img-info">
+
+<img data-src="../assets/6-analog-digital-temp-sampling.png" class="r-stretch"><p class="img-info">
 <a href="https://info.sparkfun.com/hubfs/Poster%20Downloads/Analog%20vs%20Digital/Concept%20Poster%20Analog%20vs%20Digital%20WEB.pdf"> Temperature represented as a digital reading </a>&nbsp; Poster: Analog and Digital Signals by Digikey.
 </p>
 <p>In the example above, a digital temperature reading was taken <strong>every 3hr</strong>.</p>
@@ -281,7 +291,7 @@
 </p>
 <p><strong>Sampling period examples:</strong></p>
 <ul>
-<li>If a signal is sampled every half second (0.5s sampling period, <strong><em>T</em></strong>), the sample frequency (<strong><em>f</em></strong>*) is 1/0.5s = 2 Hz (times per second).</li>
+<li>If a signal is sampled every half second (0.5s sampling period, <strong><em>T</em></strong>), the sample frequency (<strong>*f**</strong>) is 1/0.5s = 2 Hz (times per second).</li>
 <li>If the sample frequency (<strong><em>f</em></strong>) is 2000 Hz, the sampling period (<strong><em>T</em></strong>) is = 1/2000Hz = 0.0005 secs (0.5 milliseconds).</li>
 </ul>
 <p>The higher the sample rate, the more accurate the digital signal is.</p>
@@ -303,19 +313,19 @@
 <h3 id="encoding-procedure">Encoding Procedure</h3>
 <p>To approximate the numeric conversion from a voltage signal to a digital output, follow the steps below:</p>
 <ol type="1">
-<li>Identify the minimum and maximum voltage values that can be observed in the input.
+<li><p>Identify the minimum and maximum voltage values that can be observed in the input.</p>
 <ul>
 <li>Example: -1 to +1 volts (2 volt range)</li>
 </ul></li>
-<li>Identify the minimum and maximum binary values that can generated as the output. Note the amount of unique numbers represented by this range
+<li><p>Identify the minimum and maximum binary values that can generated as the output. Note the amount of unique numbers represented by this range</p>
 <ul>
 <li>Example: For a 3-bit number: 000 (decimal 0) is the minimum and 111 (decimal 7) is the maximum, making a total of 8 unique numbers.</li>
 </ul></li>
-<li>Divide the voltage range that will be observed (max voltage - min voltage) by the amount of unique binary numbers available. This will determine the voltage increment that each binary number represents.
+<li><p>Divide the voltage range that will be observed (max voltage - min voltage) by the amount of unique binary numbers available. This will determine the voltage increment that each binary number represents.</p>
 <ul>
 <li>Example: (+1V - (-1V)) / 8 = 2V/8 = 0.25V</li>
 </ul></li>
-<li>Layout each binary number and their increments and read where the voltage values lie.</li>
+<li><p>Layout each binary number and their increments and read where the voltage values lie.</p></li>
 </ol>
 <p>Assuming the ADC has a resolution of 3 bits, all voltage values (-1V to 1V) must be represented with at most 3 bits, or 2^3 = 8 unique values (0 is a unique value).</p>
 <div class="quarto-figure quarto-figure-center">
@@ -327,7 +337,13 @@
 <p class="img-info">
 <a href="https://www.usna.edu/ECE/ec312/Lessons/wireless/EC312_Lesson_20_Analog_to_Digital_Course_Notes.pdf"> Voltage signal between -1V and 1V converted to digital with a 3 bit resolution </a>&nbsp; - US Naval Academy.
 </p>
-<p>In this case: - 000 is assigned to the voltages from -0.75 V to -1.0 V, - 001 is assigned to the voltages from -0.5 V to -0.749 V, - 010 is assigned to the voltages from -0.25 V to -0.49 V, - and so on.</p>
+<p>In this case:</p>
+<ul>
+<li>000 is assigned to the voltages from -0.75 V to -1.0 V,</li>
+<li>001 is assigned to the voltages from -0.5 V to -0.749 V,</li>
+<li>010 is assigned to the voltages from -0.25 V to -0.49 V,</li>
+<li>and so on.</li>
+</ul>
 <p>The binary representation of the above signal is:</p>
 <p>110 101 100 011 011 100 110 110 100 010 000 000 001</p>
 <p>If the sampling is happening 2000 times per second (Hz) and for every sample we generate 3 bits, we are generating 2000 x 3 bits = 6000 bits/sec of information. This is also know as the bitrate.</p>
@@ -373,7 +389,7 @@ Solution
 <h3 id="video-reference">Video Reference</h3>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/64FSgQdWHrE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
 </iframe>
-<!-- 
+<!--
 ## Diving Deeper
 
 ### Is digital better?

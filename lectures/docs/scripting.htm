@@ -312,11 +312,11 @@
 <p>Why include a <code>if __name__ == "__main__":</code> in your script?</p>
 <p>There are two ways of executing Python code. Depending on how the code is executed, the global <em>string</em> variable <code>__name__</code> will take one of two values:</p>
 <ol type="1">
-<li>If the script is run by the Python interpreter :
+<li><p>If the script is run by the Python interpreter :</p>
 <ul>
 <li><code>__name__</code> has the value of <code>__main__</code></li>
 </ul></li>
-<li>Importing script as a separate Python module:
+<li><p>Importing script as a separate Python module:</p>
 <ul>
 <li><code>__name__</code> has the value of the <em>module name</em>.</li>
 </ul></li>
@@ -354,7 +354,7 @@
 <div class="code-with-filename-file">
 <pre><strong>your_script.py</strong></pre>
 </div>
-<div class="sourceCode" id="cb12" data-filename="your_script.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a> </span>
+<div class="sourceCode" id="cb12" data-filename="your_script.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a></span>
 <span id="cb12-2"><a></a><span class="bu">print</span>(<span class="st">'Inside your_script.py, variable `__name__` is: '</span>, <span class="va">__name__</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now modify <code>my_script.py</code> to import <code>your_script.py</code>:</p>
@@ -389,7 +389,7 @@
 <span id="cb15-4"><a></a>    <span class="co"># Include whatever code here.</span></span>
 <span id="cb15-5"><a></a></span>
 <span id="cb15-6"><a></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
-<span id="cb15-7"><a></a>    main()  <span class="co"># Will only run if executing file as a script. </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-7"><a></a>    main()  <span class="co"># Will only run if executing file as a script.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>

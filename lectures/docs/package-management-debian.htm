@@ -218,7 +218,11 @@
 <li>Many others, you can find a more complete list <a href="https://en.wikipedia.org/wiki/List_of_Linux_distributions#Debian-based">here</a></li>
 </ul>
 </blockquote>
-<p>Debian-derived distributions share the following: - the <code>.deb</code> package format - the <code>dpkg</code> package manager and its frontend <code>apt</code></p>
+<p>Debian-derived distributions share the following:</p>
+<ul>
+<li>the <code>.deb</code> package format</li>
+<li>the <code>dpkg</code> package manager and its frontend <code>apt</code></li>
+</ul>
 <p>For that reason, many of the commands and configuration for Raspberry Pi OS can be taken directly from Debian’s documentation.</p>
 </section>
 <section id="apt-debian-package-manger" class="slide level2">
@@ -235,8 +239,8 @@
 <table class="table-striped table-hover column-body-outset-right caption-top">
 <caption><code>apt</code>: the difference between <code>update</code> and <code>upgrade</code></caption>
 <colgroup>
-<col style="width: 25%">
-<col style="width: 74%">
+<col style="width: 26%">
+<col style="width: 73%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -257,63 +261,59 @@
 </table>
 <p>Combined, these two commands <strong>update and upgrade all of the currently operating system packages</strong> on your system:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a></a><span class="ex">$</span> sudo apt update <span class="kw">&amp;&amp;</span> <span class="fu">sudo</span> apt upgrade <span class="at">-y</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="callout callout-important callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Important</strong></p>
-</div>
-<div class="callout-content">
-<p>Important: see <a href="../../announcements/2024-03-14-pi-update.qmd">the March 14 announcement about upgrading your Pi</a> if at any point a system update causes hardware issues (e.g.&nbsp;your screen stops working)</p>
-</div>
-</div>
-</div>
+<p>::: {.callout-important} Important: see <a href="../../announcements/2024-03-14-pi-update.qmd">the March 14 announcement about upgrading your Pi</a> if at any point a system update causes hardware issues (e.g.&nbsp;your screen stops working) :::</p>
 <p>There are a few other <code>apt</code> commands worth knowing.</p>
 <table class="table-striped table-hover column-body-outset-right caption-top">
 <caption><code>apt</code>: a variety of other commands I find myself using now and again</caption>
 <colgroup>
-<col style="width: 20%">
-<col style="width: 32%">
-<col style="width: 47%">
+<col style="width: 8%">
+<col style="width: 22%">
+<col style="width: 24%">
+<col style="width: 44%">
 </colgroup>
 <thead>
 <tr class="header">
 <th>Command</th>
 <th>Description</th>
 <th>Example use case</th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><code>apt list</code></td>
 <td>list packages installed on your system based on package names.</td>
-<td><code>apt list | grep "package name"</code> Need to remember or check if you successfully installed an app? Combine <code>apt list</code> with <code>grep</code> and a pipe.</td>
+<td><code>apt list                                                            | grep "package name"</code>Need to remember or check if you successfully installed an app? Combine<code>apt list</code>with<code>grep</code> and a pipe.</td>
+<td></td>
 </tr>
 <tr class="even">
 <td><code>apt search &lt;query&gt;</code></td>
 <td>Returns all repository packages search in package descriptions</td>
 <td><code>apt search "package name"</code> Do you know part of the? Run after <code>apt</code></td>
+<td></td>
 </tr>
 <tr class="odd">
 <td><code>apt show &lt;package&gt;</code></td>
 <td>show package details</td>
+<td></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><code>apt install &lt;package&gt;</code></td>
 <td>install packages</td>
 <td></td>
+<td></td>
 </tr>
 <tr class="odd">
 <td><code>apt reinstall &lt;package&gt;</code></td>
 <td>reinstall packages</td>
 <td></td>
+<td></td>
 </tr>
 <tr class="even">
 <td><code>apt remove &lt;package&gt;</code></td>
 <td>remove packages</td>
+<td></td>
 <td></td>
 </tr>
 </tbody>

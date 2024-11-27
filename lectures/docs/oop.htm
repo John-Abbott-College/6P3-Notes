@@ -220,9 +220,7 @@
 <h2>Typings</h2>
 <p><em>This section adapted from https://docs.python.org/3/library/typing.html and https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html</em></p>
 <p>This section is a quick cheat sheet showing how to use type annotations for various common types in Python.</p>
-<div class=".callout-note">
-<p>The Python runtime does not enforce function and variable type annotations. They can be used by third party tools such as type checkers, IDEs, linters, etc.</p>
-</div>
+<p>::: .callout-note The Python runtime does not enforce function and variable type annotations. They can be used by third party tools such as type checkers, IDEs, linters, etc. :::</p>
 <h3 id="variables">Variables</h3>
 <p>Basics:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="co"># This is how you declare the type of a variable</span></span>
@@ -338,7 +336,7 @@
 <p><code>venv</code> is the officially recommended way to manage virt. envs. but it’s not the only one. Other tools such as <a href="https://docs.conda.io/en/latest/index.html">Conda</a>, <a href="https://pipenv.pypa.io/en/latest/">Pipenv</a>, <a href="https://python-poetry.org/">Poetry</a> and <a href="https://pdm.fming.dev/latest/">PDM</a> are other options.</p>
 <blockquote>
 <p><strong>Short guide by <em>python.org</em></strong> - <a href="https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/#installing-packages-using-pip-and-virtual-environments">Installing packages using pip and virtual environments</a></p>
-<p><strong>Detailed guide by <em>RealPython.com</em></strong> - <em><a href="https://realpython.com/python-virtual-environments-a-primer/">Python Virtual Environments: A Primer</a> </em></p>
+<p><strong>Detailed guide by <em>RealPython.com</em></strong> - <em><a href="https://realpython.com/python-virtual-environments-a-primer/">Python Virtual Environments: A Primer</a> &gt; </em></p>
 </blockquote>
 <h3 id="why-virtual-environments">Why Virtual Environments?</h3>
 <p>Python is not good at dependency management. We want to avoid:</p>
@@ -395,7 +393,7 @@
     |- &lt;project-venv&gt;
     |       |- lib
     |           |- python3.X
-    |                   |- site-packages </code></pre>
+    |                   |- site-packages</code></pre>
 <p>For example, installing <code>aiohttp</code>:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode numberSource shell number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a></a># Notice the shell prompt indicates a virt. env. is active</span>
 <span id="cb9-2"><a></a>$ (my-env) pip install aiohttp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -420,7 +418,7 @@
 <h3 id="virtual-env-exercises">Virtual Env Exercises</h3>
 <p>The following exercises are meant for familiarization with <code>venv</code>.</p>
 <ol type="1">
-<li>Compare packages installed with <code>pip</code> inside and outside of a new virtual environment (virt. env.):
+<li><p>Compare packages installed with <code>pip</code> inside and outside of a new virtual environment (virt. env.):</p>
 <ol type="1">
 <li>List all globally installed <code>pip</code> packages: <code>pip list</code></li>
 <li>Create a new folder and use <code>venv</code> to create a virtual environment inside.</li>
@@ -428,7 +426,7 @@
 <li>List the <code>pip</code> packages as seen from inside the active virtual environment.</li>
 <li>Deactivate the new virtual environment.</li>
 </ol></li>
-<li>Complete the following steps inside the virtual environment (virt. env.) you created in the previous question.
+<li><p>Complete the following steps inside the virtual environment (virt. env.) you created in the previous question.</p>
 <ol type="1">
 <li>Activate the virt. env.</li>
 <li>install the following libraries:
@@ -443,7 +441,7 @@
 <li>Move <code>requirements.txt</code> to one folder level above the project folder (so it’s not deleted in the next step).</li>
 <li>Delete the project folder.</li>
 </ol></li>
-<li>Create a new project and virtual environment using the <code>requirements.txt</code> from the previous exercise.
+<li><p>Create a new project and virtual environment using the <code>requirements.txt</code> from the previous exercise.</p>
 <ol type="1">
 <li>Create a new project folder with a virtual environment inside.</li>
 <li>Move <code>requirements.txt</code> inside the new project folder.</li>

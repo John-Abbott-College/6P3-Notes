@@ -241,54 +241,21 @@
 <p>The reTerminal is powered by a Raspberry Pi Compute Module 4 (CM4) which is a Quad-Core Cortex-A72 CPU running at 1.5GHz and a 5-inch IPS capacitive multi-touch screen with a resolution of 1280 x 720. It has sufficient amount of RAM (4GB) to perform multitasking and also has sufficient amount of eMMC storage (32GB) to install an operating system, enabling fast boot up times and smooth overall experience. It has wireless connectivity with dual-band 2.4GHz/5GHz Wi-Fi and Bluetooth 5.0 BLE.</p>
 <p>reTerminal consists of a high-speed expansion interface and rich I/O for more expandability. This device has security features such as a cryptographic co-processor with secure hardware-based key storage. It also has built-in modules such as an accelerometer, light sensor and an RTC (Real-Time Clock). reTerminal has a Gigabit Ethernet Port for faster network connections and also has dual USB 2.0 Type-A ports. The 40-pin header on the reTerminal opens it for a wide range of IoT applications.</p>
 <h3 id="firmware-version">Firmware &amp; Version</h3>
-<table class="caption-top">
-<colgroup>
-<col style="width: 17%">
-<col style="width: 45%">
-<col style="width: 18%">
-<col style="width: 18%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Released Date</th>
-<th style="text-align: left;">Pre-Installed OS</th>
-<th style="text-align: left;">Pre-Installed STM32 Firmware</th>
-<th style="text-align: left;">Board Version</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">06/15/2021</td>
-<td style="text-align: left;">2021-06-02-Raspbian(modified)-32-bit</td>
-<td style="text-align: left;">V1.0</td>
-<td style="text-align: left;">v1.3</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">08/03/2021</td>
-<td style="text-align: left;">2021-06-02-Raspbian(modified)-32-bit</td>
-<td style="text-align: left;">V1.1</td>
-<td style="text-align: left;">v1.4</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">09/03/2021</td>
-<td style="text-align: left;">2021-06-02-Raspbian(modified)-32-bit</td>
-<td style="text-align: left;">V1.6</td>
-<td style="text-align: left;">v1.6</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">11/02/2021</td>
-<td style="text-align: left;">2021-09-14-Raspbian(modified)-32-bit</td>
-<td style="text-align: left;">V1.8</td>
-<td style="text-align: left;">v1.6</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>Winter 2024</strong></td>
-<td style="text-align: left;"><strong>What OS did we install in Lab 1?</strong></td>
-<td style="text-align: left;">V1.8</td>
-<td style="text-align: left;">v1.6</td>
-</tr>
-</tbody>
-</table>
+</section>
+<section class="slide level2">
+
+<p>Released Date Pre-Installed OS Pre-Installed Board Version<br>
+STM32 Firmware</p>
+</section>
+<section class="slide level2">
+
+<p>06/15/2021 2021-06-02-Raspbian(modified)-32-bit V1.0 v1.3</p>
+<p>08/03/2021 2021-06-02-Raspbian(modified)-32-bit V1.1 v1.4</p>
+<p>09/03/2021 2021-06-02-Raspbian(modified)-32-bit V1.6 v1.6</p>
+<p>11/02/2021 2021-09-14-Raspbian(modified)-32-bit V1.8 v1.6</p>
+</section>
+<section id="winter-2024-what-os-did-we-install-in-lab-1-v1.8-v1.6" class="slide level2">
+<h2><strong>Winter 2024</strong> <strong>What OS did we install in Lab 1?</strong> V1.8 v1.6</h2>
 <p><strong>You can find a complete list of the reTerminal specifications here: <a href="https://wiki.seeedstudio.com/reTerminal/#specifications">reTerminal Specifications</a></strong></p>
 </section>
 <section id="raspberry-pi-os" class="slide level2">
@@ -314,10 +281,10 @@
 <p><img data-src="../assets/5-reterminal_leds.png" title=":size=400"></p>
 <p>The lights can be controlled at the OS level by editing files in the <code>/sys/class/leds/</code> directory. Use <code>ls -al</code> to list the files in this directory:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a></a><span class="ex">username@hostname:/sys/class/leds/usr_led0</span> $ ls <span class="at">-al</span></span>
-<span id="cb1-2"><a></a><span class="ex">total</span> 0            </span>
-<span id="cb1-3"><a></a><span class="ex">drwxr-xr-x</span> 3 root root    0 Jan 25 20:33 .               </span>
-<span id="cb1-4"><a></a><span class="ex">drwxr-xr-x</span> 8 root root    0 Jan 25 20:33 ..                                                                                                                                                                         </span>
-<span id="cb1-5"><a></a><span class="ex">-rw-r--r--</span> 1 root root 4096 Jan 26 22:02 brightness                                                                                                                                                                 </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a></a><span class="ex">total</span> 0</span>
+<span id="cb1-3"><a></a><span class="ex">drwxr-xr-x</span> 3 root root    0 Jan 25 20:33 .</span>
+<span id="cb1-4"><a></a><span class="ex">drwxr-xr-x</span> 8 root root    0 Jan 25 20:33 ..</span>
+<span id="cb1-5"><a></a><span class="ex">-rw-r--r--</span> 1 root root 4096 Jan 26 22:02 brightness</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="../assets/5-unix-permissions-cheatsheet.png"></p>
@@ -350,13 +317,13 @@
 </blockquote>
 <p>You can enter a <code>root</code> shell instance using the command <code>su</code> (switch user), or by using <code>sudo -i</code> or <code>sudo -s</code>:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a></a><span class="ex">user@hostname</span> $ sudo su</span>
-<span id="cb4-2"><a></a><span class="ex">root@hostname</span> <span class="co"># </span></span>
+<span id="cb4-2"><a></a><span class="ex">root@hostname</span> <span class="co">#</span></span>
 <span id="cb4-3"><a></a></span>
 <span id="cb4-4"><a></a><span class="ex">user@hostname</span> $ sudo <span class="at">-i</span></span>
-<span id="cb4-5"><a></a><span class="ex">root@hostname</span> <span class="co"># </span></span>
+<span id="cb4-5"><a></a><span class="ex">root@hostname</span> <span class="co">#</span></span>
 <span id="cb4-6"><a></a></span>
 <span id="cb4-7"><a></a><span class="ex">user@hostname</span> $ sudo <span class="at">-s</span></span>
-<span id="cb4-8"><a></a><span class="ex">root@hostname</span> <span class="co"># </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-8"><a></a><span class="ex">root@hostname</span> <span class="co">#</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Your shell should now display <code>root@hostname:~#</code>.</p>
 <p>Turn on the LED with maximum brightness</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a></a><span class="co"># echo 255 &gt; brightness</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -385,7 +352,7 @@
 <span id="cb9-10"><a></a>       <span class="ex">Copy</span> standard input to each FILE, and also to standard output.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>We have here a command that will read from standard input, and <em>write that same content from standard input into BOTH standard output AND files</em> – the files we can specify as arguments.</p>
 <p><strong>Challenge for Lab 2:</strong> where would you put <code>tee</code> and <code>sudo</code> in the command below, to fix our permissions problems?</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a></a><span class="ex">$</span> echo 255 <span class="kw">|</span> <span class="ex">/sys/class/leds/usr-led0/brightness</span> </span>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a></a><span class="ex">$</span> echo 255 <span class="kw">|</span> <span class="ex">/sys/class/leds/usr-led0/brightness</span></span>
 <span id="cb10-2"><a></a><span class="co"># this command is missing `tee` and `sudo`.... find where to put them, and you've learned a very important unix pattern!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <h3 id="luminosity-sensor">Luminosity Sensor</h3>
 <p>The digital light sensor can read the surrounding light levels.</p>
@@ -396,9 +363,9 @@
 <ol start="2" type="1">
 <li>Read the following file to obtain the light intensity value in <strong>Lux</strong></li>
 </ol>
-<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a></a><span class="fu">cat</span> in_illuminance_input </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a></a><span class="fu">cat</span> in_illuminance_input</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Output:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a></a><span class="ex">pi@raspberrypi:/sys/bus/iio/devices/iio:device0</span> $ cat in_illuminance_input </span>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a></a><span class="ex">pi@raspberrypi:/sys/bus/iio/devices/iio:device0</span> $ cat in_illuminance_input</span>
 <span id="cb13-2"><a></a><span class="ex">2719</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Note:</strong> We don’t need to be root to read this file. Its permissions are set to let all users read it, even-though it belongs to the root user:</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a></a><span class="ex">rw-r--r--</span> 1 root root 4096 Jan 30 22:16 in_illuminance_input</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>

@@ -341,16 +341,28 @@
 attempted relative import with no known parent package</code></pre>
 <p><strong>Solution</strong></p>
 <p>When running <code>myothermodule.py</code> as a stand-alone script, run Python using the <code>-m</code> option to run the file as a module. This will execute all the <code>__init__.py</code> files and load the module dependency.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a>python <span class="op">-</span>m mypackage.myothermodule </span>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a>python <span class="op">-</span>m mypackage.myothermodule</span>
 <span id="cb10-2"><a></a><span class="co"># Note the ".", NOT a "/", as in, the following won't work:</span></span>
 <span id="cb10-3"><a></a>python <span class="op">-</span>m mypackage<span class="op">/</span>myothermodule</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This will allow you to write modules that contain <code>main()</code> functions you can test separately – we took advantage of this pattern in Assignment 1.</p>
 </section>
 <section id="references" class="slide level2">
 <h2>References</h2>
-<p><strong>More on Modules and Packages:</strong> - <a href="https://realpython.com/python-modules-packages/">Python Modules and Packages – An Introduction</a> by RealPython.com</p>
-<p><strong>Project Structures</strong> - <a href="https://blog.ionelmc.ro/2014/05/25/python-packaging/">Packaging a python library</a> by ionel’s codelog.</p>
-<p><strong>Relative Imports</strong> - <a href="https://stackoverflow.com/questions/14132789/relative-imports-for-the-billionth-time/14132912#14132912">Relative imports for the billionth time</a> in StackOverlow - <a href="https://stackoverflow.com/questions/16981921/relative-imports-in-python-3">Relative imports in Python 3</a> in StackOverlow - <a href="https://docs.python.org/3/reference/import.html#package-relative-imports">The import system</a> in Python.org docs. - <a href="https://docs.python.org/3/tutorial/modules.html#packages">Modules: Packages</a> in Python.org docs.</p>
+<p><strong>More on Modules and Packages:</strong></p>
+<ul>
+<li><a href="https://realpython.com/python-modules-packages/">Python Modules and Packages – An Introduction</a> by RealPython.com</li>
+</ul>
+<p><strong>Project Structures</strong></p>
+<ul>
+<li><a href="https://blog.ionelmc.ro/2014/05/25/python-packaging/">Packaging a python library</a> by ionel’s codelog.</li>
+</ul>
+<p><strong>Relative Imports</strong></p>
+<ul>
+<li><a href="https://stackoverflow.com/questions/14132789/relative-imports-for-the-billionth-time/14132912#14132912">Relative imports for the billionth time</a> in StackOverlow</li>
+<li><a href="https://stackoverflow.com/questions/16981921/relative-imports-in-python-3">Relative imports in Python 3</a> in StackOverlow</li>
+<li><a href="https://docs.python.org/3/reference/import.html#package-relative-imports">The import system</a> in Python.org docs.</li>
+<li><a href="https://docs.python.org/3/tutorial/modules.html#packages">Modules: Packages</a> in Python.org docs.</li>
+</ul>
 
 
 </section>

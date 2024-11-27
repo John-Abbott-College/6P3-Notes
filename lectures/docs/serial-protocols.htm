@@ -342,7 +342,7 @@
 <a href="https://learn.sparkfun.com/tutorials/serial-peripheral-interface-spi"> Wiring diagram for two devices communicating over SPI</a>&nbsp; Serial Peripheral Interface (SPI), Sparkfun.
 </p>
 <p>Each peripheral device connected to the controller will need a separate CS line. To talk to a particular peripheral, the controller makes that peripheral’s CS line low and keep the rest of them high.</p>
-<img data-src="../assets/9-serial-spi-multi-peripherals.png">
+<p><img data-src="../assets/9-serial-spi-multi-peripherals.png"></p>
 <p class="img-info">
 <a href="https://learn.sparkfun.com/tutorials/serial-peripheral-interface-spi"> Multiple peripheral devices with unique CS lines talking to the same controller </a>&nbsp; Serial Peripheral Interface (SPI), Sparkfun.
 </p>
@@ -380,25 +380,31 @@
 <div class="sourceCode" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a></a><span class="ex">pi@raspberrypi:~</span> $ i2cdetect <span class="at">-y</span> 1</span>
 <span id="cb4-2"><a></a></span>
 <span id="cb4-3"><a></a>     <span class="ex">0</span>  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f</span>
-<span id="cb4-4"><a></a><span class="ex">00:</span>          <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> </span>
-<span id="cb4-5"><a></a><span class="ex">10:</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> UU <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> </span>
-<span id="cb4-6"><a></a><span class="ex">20:</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> UU <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> </span>
-<span id="cb4-7"><a></a><span class="ex">30:</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> UU <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> </span>
-<span id="cb4-8"><a></a><span class="ex">40:</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> UU <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> </span>
-<span id="cb4-9"><a></a><span class="ex">50:</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> </span>
-<span id="cb4-10"><a></a><span class="ex">60:</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> </span>
-<span id="cb4-11"><a></a><span class="ex">70:</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span>                         </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-4"><a></a><span class="ex">00:</span>          <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span></span>
+<span id="cb4-5"><a></a><span class="ex">10:</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> UU <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span></span>
+<span id="cb4-6"><a></a><span class="ex">20:</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> UU <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span></span>
+<span id="cb4-7"><a></a><span class="ex">30:</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> UU <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span></span>
+<span id="cb4-8"><a></a><span class="ex">40:</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> UU <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span></span>
+<span id="cb4-9"><a></a><span class="ex">50:</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span></span>
+<span id="cb4-10"><a></a><span class="ex">60:</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span></span>
+<span id="cb4-11"><a></a><span class="ex">70:</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span> <span class="at">--</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The output above shows peripheral devices with the hexadecimal addresses 0x19, 0x29, 0x38, 0x40.</p>
 <p>When communicating, messages are broken up into two types of frame:</p>
 <ul>
 <li>An address frame, where the controller indicates the peripheral to which the message is being sent.</li>
 <li>One or more data frames, which are 8-bit data messages passed from controller to peripheral or vice versa.</li>
 </ul>
-<img data-src="../assets/9-serial-i2c-frames.png">
+<p><img data-src="../assets/9-serial-i2c-frames.png"></p>
 <p class="img-info">
 <a href="https://learn.sparkfun.com/tutorials/i2c/all"> Clock and data lines for I2C, showing address and data frames </a>&nbsp; I2C, Sparkfun.
 </p>
-<p>Examples of I2C devices used in this course: - LCD driver of the reTerminal - <a href="https://wiki.seeedstudio.com/Grove-AHT20-I2C-Industrial-Grade-Temperature&amp;Humidity-Sensor/">AHT20 I2C Temperature &amp; Humidity Sensor</a> - reTerminal’s accelerometer. - reTerminal’s light sensor</p>
+<p>Examples of I2C devices used in this course:</p>
+<ul>
+<li>LCD driver of the reTerminal</li>
+<li><a href="https://wiki.seeedstudio.com/Grove-AHT20-I2C-Industrial-Grade-Temperature&amp;Humidity-Sensor/">AHT20 I2C Temperature &amp; Humidity Sensor</a></li>
+<li>reTerminal’s accelerometer.</li>
+<li>reTerminal’s light sensor</li>
+</ul>
 <h3 id="i2c-python-library">I2C Python Library</h3>
 <p>The <a href="https://pypi.org/project/smbus2/">python library smbus2</a> supports I2C protocol.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="im">from</span> smbus2 <span class="im">import</span> SMBus</span>
@@ -444,7 +450,11 @@
 <iframe width="560" height="315" src="https://www.youtube.com/embed/QWbNz_O1rT0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="">
 </iframe>
 <h3 id="pwm-python-library">PWM Python Library</h3>
-<p>The <a href="https://gpiozero.readthedocs.io/en/stable/installing.html">python library GPIO Zero</a> offers good support more a number of PWM devices: - <a href="https://gpiozero.readthedocs.io/en/stable/recipes.html#led-with-variable-brightness">LED with variable brightness</a> - <a href="https://gpiozero.readthedocs.io/en/stable/recipes.html#servo">Servo</a></p>
+<p>The <a href="https://gpiozero.readthedocs.io/en/stable/installing.html">python library GPIO Zero</a> offers good support more a number of PWM devices:</p>
+<ul>
+<li><a href="https://gpiozero.readthedocs.io/en/stable/recipes.html#led-with-variable-brightness">LED with variable brightness</a></li>
+<li><a href="https://gpiozero.readthedocs.io/en/stable/recipes.html#servo">Servo</a></li>
+</ul>
 <div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="co"># LED intensity modulated with PWM</span></span>
 <span id="cb6-2"><a></a></span>
 <span id="cb6-3"><a></a><span class="im">from</span> gpiozero <span class="im">import</span> PWMLED</span>

@@ -337,37 +337,28 @@
 </ul>
 <p>For example:</p>
 <div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Create</a></li><li><a href="#tabset-1-2">Extract</a></li><li><a href="#tabset-1-3">List</a></li></ul>
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Create</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1">
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a></a><span class="kw">(</span><span class="fu">env</span><span class="kw">)</span><span class="ex">jyourusername@yourhostname:~</span> $ which python</span>
 <span id="cb1-2"><a></a><span class="co"># &lt;double check that the python executable comes from your venv&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>When you create an archive, you <em>must</em> specify which files you want placed in the archive. If you do not specify any archive members, GNU <code>tar</code> will complain.</p>
-<div class="callout callout-important callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Important</strong></p>
-</div>
-<div class="callout-content">
-<p>When using <code>--create</code> or <code>-c</code>, it is very important to make sure there isn’t already a file in the working directory with the archive name you intend to use, or that you don’t care about its contents. Whenever you use ‘<samp>create</samp>’, <code>tar</code> will erase the current contents of the file named by <code>--file=archive-name</code> or <code>-f archive-name</code> if it exists. To add files to an existing archive, you need to use a different option, such as <code>--append</code> or <code>-r</code></p>
+<p>::: {.callout-important} When using <code>--create</code> or <code>-c</code>, it is very important to make sure there isn’t already a file in the working directory with the archive name you intend to use, or that you don’t care about its contents. Whenever you use ‘<samp>create</samp>’, <code>tar</code> will erase the current contents of the file named by <code>--file=archive-name</code> or <code>-f archive-name</code> if it exists. To add files to an existing archive, you need to use a different option, such as <code>--append</code> or <code>-r</code></p>
 </div>
 </div>
 </div>
-</div>
-<div id="tabset-1-2">
+</section>
+<section id="extract" class="slide level2">
+<h2>Extract</h2>
 <div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a></a><span class="kw">(</span><span class="fu">env</span><span class="kw">)</span><span class="ex">jyourusername@yourhostname:~</span> $ which python</span>
 <span id="cb2-2"><a></a><span class="co"># &lt;double check that the python executable comes from your venv&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="tabset-1-3">
+</section>
+<section id="list" class="slide level2">
+<h2>List</h2>
 <div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a></a><span class="kw">(</span><span class="fu">env</span><span class="kw">)</span><span class="ex">jyourusername@yourhostname:~</span> $ sudo su</span>
 <span id="cb3-2"><a></a><span class="kw">(</span><span class="fu">env</span><span class="kw">)</span><span class="ex">root@yourhostname:~</span> <span class="co"># which python</span></span>
 <span id="cb3-3"><a></a><span class="co"># &lt;you should see that the python executable is in a different place!, even though we still have "env"&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
+<p>:::</p>
 <p>Each of these operations is <strong>mutually exclusive</strong>, which makes some sense. You cannot <strong>create</strong> and <strong>extract</strong> an archive at the same time, that doesn’t make sense!</p>
 <h4 id="tar-options"><code>tar</code> Options</h4>
 <ul>
@@ -394,7 +385,7 @@
 <span id="cb6-2"><a></a><span class="ex">$</span> tar <span class="at">--create</span> <span class="at">--verbose</span> <span class="at">--file</span><span class="op">=</span>music.tar practice</span>
 <span id="cb6-3"><a></a><span class="ex">$</span> tar <span class="at">-cvf</span> music.tar practice</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="sourceCode" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a></a><span class="co"># tries to creates an archive file called "v" containing collection.tar, blues, folk, jazz; succeeds if collection.tar already exists, errors out if it does not.</span></span>
-<span id="cb7-2"><a></a><span class="ex">$</span> tar <span class="at">-cfv</span> collection.tar blues folk jazz </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-2"><a></a><span class="ex">$</span> tar <span class="at">-cfv</span> collection.tar blues folk jazz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>

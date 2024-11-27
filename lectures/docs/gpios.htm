@@ -284,19 +284,7 @@
 <h2>GPIO pinout</h2>
 <p>A GPIO reference can be accessed on your Raspberry Pi by opening a terminal window and running the command <code>pinout</code>. This tool is provided by the <a href="https://gpiozero.readthedocs.io/">GPIO Zero</a> Python library, which is installed by default in Raspberry Pi OS.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a></a><span class="ex">$</span> pinout</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="callout callout-important callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Important</strong></p>
-</div>
-<div class="callout-content">
-<p>While connecting up simple components to the GPIO pins is perfectly safe, it’s important to be careful how you wire things up. LEDs should have resistors to limit the current passing through them. Do not use 5V for 3.3V components. Do not connect motors directly to the GPIO pins, instead use an <a href="https://projects.raspberrypi.org/en/projects/physical-computing/14">H-bridge circuit or a motor controller board</a>.</p>
-</div>
-</div>
-</div>
+<p>::: {.callout-important} While connecting up simple components to the GPIO pins is perfectly safe, it’s important to be careful how you wire things up. LEDs should have resistors to limit the current passing through them. Do not use 5V for 3.3V components. Do not connect motors directly to the GPIO pins, instead use an <a href="https://projects.raspberrypi.org/en/projects/physical-computing/14">H-bridge circuit or a motor controller board</a>. :::</p>
 <h3 id="permissions">Permissions</h3>
 <p>In order to use the GPIO ports, your user must be a member of the <code>gpio</code> group. The default user account is a member by default, other users need to be added manually.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a></a><span class="co"># Only do this to add a NEW user to the gpio group</span></span>

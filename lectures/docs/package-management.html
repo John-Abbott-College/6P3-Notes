@@ -75,8 +75,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-9ce514ed8e630688a95c435c0236eeb3.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-9656153b131701881b5ee50c212159ca.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-2a5085f1d0b877add35a38dbfdbf3ad4.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-cc397c92adc8fb5d74b799d3cfad171d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-e3465198b19d6e30e145112fc7672f92.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script src="../../site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
@@ -266,19 +266,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="installing-python-packages-using-apt" class="level2">
 <h2 class="anchored" data-anchor-id="installing-python-packages-using-apt">Installing Python packages using apt</h2>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Installing packages using <code>apt</code> is the preferred method for installing Python libraries under Raspberry Pi OS.</p>
-</div>
-</div>
+<p>::: {.callout-important} Installing packages using <code>apt</code> is the preferred method for installing Python libraries under Raspberry Pi OS. :::</p>
 <p>Packages installed via <code>apt</code> are tested, are usually pre-compiled so they install faster, and are designed for Raspberry Pi OS. They won’t break your system. Installing via this route also means that all required dependencies are also installed, and a log of installation is maintained by the OS so installation can be easily rolled back (libraries can be uninstalled) if needed.</p>
 <p>You can see a complete list of Python apps maintained by Debian developers on the stable repositories <a href="https://packages.debian.org/stable/python/">here</a>. Many, but not all, popular open-source Python packages are maintained for Debian by professionals and hobbyists alike.</p>
 <p>To see an example: you may find yourself wanting to install the Python 3 library to support the Raspberry Pi <a href="https://www.raspberrypi.com/documentation/accessories/build-hat.html">BuildHAT</a> component. To install this using `apt1, you would:</p>
@@ -286,16 +274,7 @@ Important
 <p>…​to install the pre-built library.</p>
 <p>If you want to install a Python library called "foobar" you can use<code>apt search foobar</code> to find the exact package name – partial search matches are supported, so you don’t need to know the whole name in advance. Very useful!</p>
 <p>Using <code>apt</code> makes installing larger packages, like <code>numpy</code> (which has many native dependencies including a Fortran compiler), <em>much simpler and more predictable</em> than installing individual packages using Python’s own package-management system.</p>
-<div class="callout callout-style-simple callout-none no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>In <code>apt</code>, Python packages have a consistent naming scheme: you’ll find that the a given package “foobar” is going to be called <code>python-foobar</code> or <code>python3-foobar</code> in the <code>apt</code> repositories – this helps distinguish python packages from other packages on a debian system.</p>
-</div>
-</div>
-</div>
+<p>::: {.callout} In <code>apt</code>, Python packages have a consistent naming scheme: you’ll find that the a given package “foobar” is going to be called <code>python-foobar</code> or <code>python3-foobar</code> in the <code>apt</code> repositories – this helps distinguish python packages from other packages on a debian system. :::</p>
 </section>
 <section id="installing-python-packages-using-pip" class="level2">
 <h2 class="anchored" data-anchor-id="installing-python-packages-using-pip">Installing python packages using Pip</h2>
@@ -333,16 +312,7 @@ Important
 </section>
 <section id="using-pip-with-virtual-environments" class="level3">
 <h3 class="anchored" data-anchor-id="using-pip-with-virtual-environments">Using pip with virtual environments</h3>
-<div class="callout callout-style-simple callout-none no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>Any packages that cannot be installed using <code>apt</code> should instead installed onto a Python Virtual Environment using <code>venv</code> and <code>pip</code>.</p>
-</div>
-</div>
-</div>
+<p>::: {.callout} Any packages that cannot be installed using <code>apt</code> should instead installed onto a Python Virtual Environment using <code>venv</code> and <code>pip</code>. :::</p>
 <p>To use a virtual environment you will need to create a container to store the environment. There are several ways you can do this depending on how you want to work with Python.</p>
 </section>
 <section id="using-a-separate-environment-for-each-project" class="level3">
@@ -358,21 +328,9 @@ Important
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="ex">drwx------</span> 20 pi pi 4096 Oct  3 14:34 ..</span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  5 pi pi 4096 Oct  3 14:34 env</span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>Very important for Lab2:</strong></p>
+<p>::: {.callout-important} <strong>Very important for Lab2:</strong></p>
 <p>If you want to inherit the currently installed packages from the system Python, you should create your virtual environment using <code>python -m venv --system-site-packages env</code>.</p>
-<p>This will include the important Raspberry PI python modules that come with RaspberryPi OS in your venv.</p>
-</div>
-</div>
+<p>This will include the important Raspberry PI python modules that come with RaspberryPi OS in your venv. :::</p>
 <p>Inside this directory is a full Python distribution. How do we use it?</p>
 <p>A nice feature of venvs is that they <strong>must be activated to be used</strong>. This allows you to maintained several different venvs all over your machines to maintain many different projects with different versions of python.</p>
 <p>To activate your virtual environment and make that version of Python the one you’re currently using, you should type:</p>
@@ -430,16 +388,7 @@ Important
 <p>In this class, we will often use the RaspberryPi python packages that we install system-wide (<code>gpio</code>, <code>RPi</code>, etc), and we may want to access them in the same environment where we create local virtual environments.</p>
 <p>That is, while you still want to keep your projects in separate environments, you can save the effort of re-installing <code>gpio</code> or <code>RPi</code> into each of these projects.</p>
 <p>You can access all modules you’ve installed to your base Python’s site-packages directory by adding the <code>--system-site-packages</code> flag when creating your virtual environment.</p>
-<div class="callout callout-style-simple callout-none no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>Note: If you install any additional external packages, then Python will put them into the site-packages directory of your virtual environment. You only get read access to the system site-packages directory.</p>
-</div>
-</div>
-</div>
+<p>::: {.callout} Note: If you install any additional external packages, then Python will put them into the site-packages directory of your virtual environment. You only get read access to the system site-packages directory. :::</p>
 <p>Create a new virtual environment while passing this argument. You’ll see that in addition to your local site-packages directory, the path to your base Python’s site-packages directory will stick around in sys.path.</p>
 <p>To test this, you can create and activate a new virtual environment using the <code>--system-site-packages</code> argument:</p>
 <pre><code>$ python3 -m venv env --system-site-packages
@@ -451,16 +400,7 @@ home = /usr/bin
 include-system-site-packages = true
 version = 3.11</code></pre>
 <p>By default, the <code>include-system-site-packages</code> is set to false.</p>
-<div class="callout callout-style-simple callout-none no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>It is common to forget to include the <code>--system-site-packages</code> flag when creating a venv. <strong>If you create a virtual environment and forget to include system site packages, you can include them again by changing <code>include-system-site-packages</code> in your environment <code>env/pyvenv.cfg</code> to <code>true</code> in your venv</strong>.</p>
-</div>
-</div>
-</div>
+<p>::: {.callout} It is common to forget to include the <code>--system-site-packages</code> flag when creating a venv. <strong>If you create a virtual environment and forget to include system site packages, you can include them again by changing <code>include-system-site-packages</code> in your environment <code>env/pyvenv.cfg</code> to <code>true</code> in your venv</strong>. :::</p>
 <p>This change means that you’ll see an additional entry to sys.path, which allows the Python interpreter in your virtual environment to also access the system site-packages directory. Make sure your virtual environment is active, then start the Python interpreter to check the path variables:</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="fu">env</span><span class="kw">)</span> <span class="ex">$</span> python</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> import <span class="ex">sys</span></span>
@@ -533,7 +473,7 @@ version = 3.11</code></pre>
 <span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a><span class="ex">License:</span> MIT License</span>
 <span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a><span class="ex">Location:</span> /usr/local/lib/python3.7/dist-packages      <span class="co"># Library location</span></span>
 <span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a><span class="ex">Requires:</span> evdev</span>
-<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a><span class="ex">Required-by:</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a><span class="ex">Required-by:</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The library is installed at: <code>Location: /usr/local/lib/python3.7/dist-packages</code></p>
 </section>
 </section>

@@ -277,26 +277,26 @@
 <blockquote>
 <p>Note that creating and manipulation of the message on the device-side will look different. Many properties are automatically set on message by the SDK.</p>
 </blockquote>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource json number-lines code-with-copy"><code class="sourceCode json"><span id="cb1-1"><a></a><span class="fu">{</span> </span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource json number-lines code-with-copy"><code class="sourceCode json"><span id="cb1-1"><a></a><span class="fu">{</span></span>
 <span id="cb1-2"><a></a>  <span class="dt">"message"</span><span class="fu">:</span> <span class="fu">{</span></span>
-<span id="cb1-3"><a></a>   </span>
-<span id="cb1-4"><a></a>    <span class="dt">"systemProperties"</span><span class="fu">:</span> <span class="fu">{</span> </span>
-<span id="cb1-5"><a></a>      <span class="dt">"contentType"</span><span class="fu">:</span> <span class="st">"application/json"</span><span class="fu">,</span> </span>
-<span id="cb1-6"><a></a>      <span class="dt">"contentEncoding"</span><span class="fu">:</span> <span class="st">"UTF-8"</span><span class="fu">,</span> </span>
-<span id="cb1-7"><a></a>      <span class="dt">"iothub-message-source"</span><span class="fu">:</span> <span class="st">"deviceMessages"</span><span class="fu">,</span> </span>
-<span id="cb1-8"><a></a>      <span class="dt">"iothub-enqueuedtime"</span><span class="fu">:</span> <span class="st">"2017-05-08T18:55:31.8514657Z"</span> </span>
+<span id="cb1-3"><a></a></span>
+<span id="cb1-4"><a></a>    <span class="dt">"systemProperties"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb1-5"><a></a>      <span class="dt">"contentType"</span><span class="fu">:</span> <span class="st">"application/json"</span><span class="fu">,</span></span>
+<span id="cb1-6"><a></a>      <span class="dt">"contentEncoding"</span><span class="fu">:</span> <span class="st">"UTF-8"</span><span class="fu">,</span></span>
+<span id="cb1-7"><a></a>      <span class="dt">"iothub-message-source"</span><span class="fu">:</span> <span class="st">"deviceMessages"</span><span class="fu">,</span></span>
+<span id="cb1-8"><a></a>      <span class="dt">"iothub-enqueuedtime"</span><span class="fu">:</span> <span class="st">"2017-05-08T18:55:31.8514657Z"</span></span>
 <span id="cb1-9"><a></a>    <span class="fu">},</span></span>
-<span id="cb1-10"><a></a>     </span>
-<span id="cb1-11"><a></a>    <span class="dt">"appProperties"</span><span class="fu">:</span> <span class="fu">{</span> </span>
-<span id="cb1-12"><a></a>      <span class="dt">"processingPath"</span><span class="fu">:</span> <span class="st">"{cold | warm | hot}"</span><span class="fu">,</span> </span>
-<span id="cb1-13"><a></a>      <span class="dt">"verbose"</span><span class="fu">:</span> <span class="st">"{true, false}"</span><span class="fu">,</span> </span>
-<span id="cb1-14"><a></a>      <span class="dt">"severity"</span><span class="fu">:</span> <span class="dv">1-5</span><span class="fu">,</span> </span>
-<span id="cb1-15"><a></a>      <span class="dt">"testDevice"</span><span class="fu">:</span> <span class="st">"{true | false}"</span> </span>
+<span id="cb1-10"><a></a></span>
+<span id="cb1-11"><a></a>    <span class="dt">"appProperties"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb1-12"><a></a>      <span class="dt">"processingPath"</span><span class="fu">:</span> <span class="st">"{cold | warm | hot}"</span><span class="fu">,</span></span>
+<span id="cb1-13"><a></a>      <span class="dt">"verbose"</span><span class="fu">:</span> <span class="st">"{true, false}"</span><span class="fu">,</span></span>
+<span id="cb1-14"><a></a>      <span class="dt">"severity"</span><span class="fu">:</span> <span class="dv">1-5</span><span class="fu">,</span></span>
+<span id="cb1-15"><a></a>      <span class="dt">"testDevice"</span><span class="fu">:</span> <span class="st">"{true | false}"</span></span>
 <span id="cb1-16"><a></a>    <span class="fu">},</span></span>
-<span id="cb1-17"><a></a>     </span>
-<span id="cb1-18"><a></a>    <span class="dt">"body"</span><span class="fu">:</span> <span class="st">"{</span><span class="ch">\"</span><span class="st">Weather</span><span class="ch">\"</span><span class="st">:{</span><span class="ch">\"</span><span class="st">Temperature</span><span class="ch">\"</span><span class="st">:50}}"</span> </span>
-<span id="cb1-19"><a></a>  <span class="fu">}</span> </span>
-<span id="cb1-20"><a></a><span class="fu">}</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-17"><a></a></span>
+<span id="cb1-18"><a></a>    <span class="dt">"body"</span><span class="fu">:</span> <span class="st">"{</span><span class="ch">\"</span><span class="st">Weather</span><span class="ch">\"</span><span class="st">:{</span><span class="ch">\"</span><span class="st">Temperature</span><span class="ch">\"</span><span class="st">:50}}"</span></span>
+<span id="cb1-19"><a></a>  <span class="fu">}</span></span>
+<span id="cb1-20"><a></a><span class="fu">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>System properties are added for all users and identify content of the message. Users can selectively add application properties to the message.</p>
 <p>For a list of system and application properties that can be read or set on messages, see:</p>
 <ul>

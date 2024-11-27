@@ -222,12 +222,12 @@
 </blockquote>
 <p>HTTP is a common protocol for the web, however, some of its characteristics make it not ideal for IoT applications, as the next section explains.</p>
 <h3 id="typical-http-request">Typical HTTP request</h3>
-<img data-src="https://www3.ntu.edu.sg/home/ehchua/programming/webprogramming/images/HTTP_RequestMessageExample.png">
+<p><img data-src="https://www3.ntu.edu.sg/home/ehchua/programming/webprogramming/images/HTTP_RequestMessageExample.png"></p>
 <p class="img-info">
 <a href="https://cheapsslsecurity.com/p/http2-vs-http1/"> Example of an HTTP Request </a>&nbsp; cheapsslsecurity.com.
 </p>
 <h3 id="typical-http-response">Typical HTTP Response</h3>
-<img data-src="https://www3.ntu.edu.sg/home/ehchua/programming/webprogramming/images/HTTP_ResponseMessageExample.png">
+<p><img data-src="https://www3.ntu.edu.sg/home/ehchua/programming/webprogramming/images/HTTP_ResponseMessageExample.png"></p>
 <p class="img-info">
 <a href="https://cheapsslsecurity.com/p/http2-vs-http1/"> Example of an HTTP Response </a>&nbsp; cheapsslsecurity.com.
 </p>
@@ -423,7 +423,7 @@
 <p>When a client connects, it can provide the broker with a Last Will and Testament (LWT) message and topic.</p>
 <p>If the client disconnects unexpectedly, the broker sends the LWT message on behalf of the client.</p>
 <p><strong>This message notifies other clients when a client disconnects unexpectedly.</strong></p>
-<img data-src="../assets/11-iot-protocols-last-will.png">
+<p><img data-src="../assets/11-iot-protocols-last-will.png"></p>
 <p class="img-info">
 <a href="https://www.youtube.com/watch?v=LKz1jYngpcU"> Last Will &amp; Testament </a>&nbsp; Why HTTP isn’t the King of the IoT, Robert Bird, Akamai.
 </p>
@@ -435,7 +435,7 @@
 <blockquote>
 <p>Retained messages help newly-subscribed clients get a status update immediately after they subscribe to a topic.</p>
 </blockquote>
-<img data-src="../assets/11-iot-protocols-retained.png">
+<p><img data-src="../assets/11-iot-protocols-retained.png"></p>
 <p class="img-info">
 <a href="https://www.youtube.com/watch?v=LKz1jYngpcU"> Message with Retained Flag </a>&nbsp; Why HTTP isn’t the King of the IoT, Robert Bird, Akamai.
 </p>
@@ -497,7 +497,12 @@
 <section id="mqtt-client-examples" class="slide level2 scrollable">
 <h2>MQTT Client Examples</h2>
 <blockquote>
-<p>Examples of <strong>graphical</strong> MQTT clients: - <a href="https://mqttx.app/">MQTT X</a> (supports <code>cleanSession = False</code>) - <a href="https://mqtt-explorer.com/">MQTT Explorer</a> - VS Code <a href="https://marketplace.visualstudio.com/items?itemName=rpdswtk.vsmqtt">Extension VSMqtt</a> t</p>
+<p>Examples of <strong>graphical</strong> MQTT clients:</p>
+<ul>
+<li><a href="https://mqttx.app/">MQTT X</a> (supports <code>cleanSession = False</code>)</li>
+<li><a href="https://mqtt-explorer.com/">MQTT Explorer</a></li>
+<li>VS Code <a href="https://marketplace.visualstudio.com/items?itemName=rpdswtk.vsmqtt">Extension VSMqtt</a> t</li>
+</ul>
 </blockquote>
 <p>In this course you will write your own MQTT client. The next sections show an example of a simple MQTT client using Python that publishes and subscribes to messages.</p>
 <h3 id="public-brokers">Public Brokers</h3>
@@ -570,17 +575,17 @@
 <span id="cb5-21"><a></a></span>
 <span id="cb5-22"><a></a>    <span class="co"># Random integer between -10 and 30</span></span>
 <span id="cb5-23"><a></a>    temp <span class="op">=</span> rnd.randint(<span class="op">-</span><span class="dv">10</span>, <span class="dv">30</span>)</span>
-<span id="cb5-24"><a></a>    </span>
+<span id="cb5-24"><a></a></span>
 <span id="cb5-25"><a></a>    <span class="co"># Prepare json payload</span></span>
 <span id="cb5-26"><a></a>    payload <span class="op">=</span> json.dumps({<span class="st">'temperature'</span>: temp})</span>
 <span id="cb5-27"><a></a>    <span class="bu">print</span>(<span class="st">"Sending telemetry "</span>, payload)</span>
-<span id="cb5-28"><a></a>    </span>
+<span id="cb5-28"><a></a></span>
 <span id="cb5-29"><a></a>    <span class="co"># Send it off. QoS=0 and Retain=false</span></span>
 <span id="cb5-30"><a></a>    info <span class="op">=</span> mqtt_client.publish(topic_name, payload)</span>
-<span id="cb5-31"><a></a>    </span>
+<span id="cb5-31"><a></a></span>
 <span id="cb5-32"><a></a>    <span class="co"># Process network event. Handles incoming/outgoing data</span></span>
 <span id="cb5-33"><a></a>    mqtt_client.loop()</span>
-<span id="cb5-34"><a></a>    </span>
+<span id="cb5-34"><a></a></span>
 <span id="cb5-35"><a></a>    time.sleep(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <h3 id="subscriber-code">Subscriber Code</h3>
 <p>The MQTT client below subscribes to data from the publisher using the <strong>library’s default values</strong>.</p>
@@ -635,26 +640,34 @@
 <span id="cb8-29"><a></a></span>
 <span id="cb8-30"><a></a>    <span class="co"># Process network event. Handles incoming/outgoing data</span></span>
 <span id="cb8-31"><a></a>    mqtt_client.loop()</span>
-<span id="cb8-32"><a></a>    </span>
+<span id="cb8-32"><a></a></span>
 <span id="cb8-33"><a></a>    time.sleep(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="connectivity-issues" class="slide level2">
 <h2>Connectivity Issues</h2>
 <p>Connectivity is not always guaranteed. Things to think about when coding your application:</p>
-<p><strong>What happens if:</strong> - Connection is lost just prior to telemetry being published? - Client connection is lost just prior to broker forwarding messages?</p>
-<p><strong>How to make sure that:</strong> - The broker has received the most up to date telemetry data? - Client has the most recent command/data?</p>
+<p><strong>What happens if:</strong></p>
+<ul>
+<li>Connection is lost just prior to telemetry being published?</li>
+<li>Client connection is lost just prior to broker forwarding messages?</li>
+</ul>
+<p><strong>How to make sure that:</strong></p>
+<ul>
+<li>The broker has received the most up to date telemetry data?</li>
+<li>Client has the most recent command/data?</li>
+</ul>
 </section>
 <section id="exercises" class="slide level2 scrollable">
 <h2>Exercises</h2>
 <ol type="1">
-<li>Use a Graphical MQTT client such as <a href="https://mqttx.app/">MQTT X</a>, <a href="https://mqtt-explorer.com/">MQTT Explorer</a> or the VS Code <a href="https://marketplace.visualstudio.com/items?itemName=rpdswtk.vsmqtt">Extension VSMqtt</a> to publish and subscribe telemetry data to/from one of our Adafruit IO (AIO) feeds.
+<li><p>Use a Graphical MQTT client such as <a href="https://mqttx.app/">MQTT X</a>, <a href="https://mqtt-explorer.com/">MQTT Explorer</a> or the VS Code <a href="https://marketplace.visualstudio.com/items?itemName=rpdswtk.vsmqtt">Extension VSMqtt</a> to publish and subscribe telemetry data to/from one of our Adafruit IO (AIO) feeds.</p>
 <ol type="1">
 <li>See the <a href="https://io.adafruit.com/api/docs/mqtt.html#adafruit-io-mqtt-api">AIO MQTT API</a> documentation.</li>
 <li>Publish a MQTT message with a random value to one of your feeds.</li>
 <li>Subscribe to one of your AIO feeds.</li>
 <li>Using the AIO Web interface, write a value to feed you subscribed in the previous step. Your MQTT client should receive the new value as a published message</li>
 </ol></li>
-<li>Use a Graphical MQTT client (see previous question) to publish and subscribe to topics using the public <a href="https://test.mosquitto.org/">MQTT Mosquitto broker</a>.
+<li><p>Use a Graphical MQTT client (see previous question) to publish and subscribe to topics using the public <a href="https://test.mosquitto.org/">MQTT Mosquitto broker</a>.</p>
 <ol type="1">
 <li>Use the <a href="https://www.guidgen.com/">Online GUID generator</a> to generate a unique prefix to your username.</li>
 <li>Come-up with new topics and post new messages to them.</li>

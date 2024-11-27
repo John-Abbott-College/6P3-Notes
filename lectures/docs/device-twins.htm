@@ -214,8 +214,7 @@
 </blockquote>
 <p><strong>Device twins store device-related information that:</strong></p>
 <ul>
-<li>Contains device metadata from your solution back end.<br>
-</li>
+<li>Contains device metadata from your solution back end.</li>
 <li>Reports current state information such as available capabilities and conditions.</li>
 <li>Synchronizes the state of long-running workflows, such as firmware and configuration updates, between a device app and a back-end app.</li>
 </ul>
@@ -251,19 +250,19 @@
 <p>The following example shows a device twin JSON document:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource json number-lines code-with-copy"><code class="sourceCode json"><span id="cb1-1"><a></a><span class="fu">{</span></span>
 <span id="cb1-2"><a></a>    <span class="dt">"deviceId"</span><span class="fu">:</span> <span class="st">"devA"</span><span class="fu">,</span></span>
-<span id="cb1-3"><a></a>    <span class="dt">"etag"</span><span class="fu">:</span> <span class="st">"AAAAAAAAAAc="</span><span class="fu">,</span> </span>
+<span id="cb1-3"><a></a>    <span class="dt">"etag"</span><span class="fu">:</span> <span class="st">"AAAAAAAAAAc="</span><span class="fu">,</span></span>
 <span id="cb1-4"><a></a>    <span class="dt">"status"</span><span class="fu">:</span> <span class="st">"enabled"</span><span class="fu">,</span></span>
 <span id="cb1-5"><a></a>    <span class="dt">"statusReason"</span><span class="fu">:</span> <span class="st">"provisioned"</span><span class="fu">,</span></span>
 <span id="cb1-6"><a></a>    <span class="dt">"statusUpdateTime"</span><span class="fu">:</span> <span class="st">"0001-01-01T00:00:00"</span><span class="fu">,</span></span>
 <span id="cb1-7"><a></a>    <span class="dt">"connectionState"</span><span class="fu">:</span> <span class="st">"connected"</span><span class="fu">,</span></span>
 <span id="cb1-8"><a></a>    <span class="dt">"lastActivityTime"</span><span class="fu">:</span> <span class="st">"2015-02-30T16:24:48.789Z"</span><span class="fu">,</span></span>
-<span id="cb1-9"><a></a>    <span class="dt">"cloudToDeviceMessageCount"</span><span class="fu">:</span> <span class="dv">0</span><span class="fu">,</span> </span>
+<span id="cb1-9"><a></a>    <span class="dt">"cloudToDeviceMessageCount"</span><span class="fu">:</span> <span class="dv">0</span><span class="fu">,</span></span>
 <span id="cb1-10"><a></a>    <span class="dt">"authenticationType"</span><span class="fu">:</span> <span class="st">"sas"</span><span class="fu">,</span></span>
-<span id="cb1-11"><a></a>    <span class="dt">"x509Thumbprint"</span><span class="fu">:</span> <span class="fu">{</span>     </span>
-<span id="cb1-12"><a></a>        <span class="dt">"primaryThumbprint"</span><span class="fu">:</span> <span class="kw">null</span><span class="fu">,</span> </span>
-<span id="cb1-13"><a></a>        <span class="dt">"secondaryThumbprint"</span><span class="fu">:</span> <span class="kw">null</span> </span>
-<span id="cb1-14"><a></a>    <span class="fu">},</span> </span>
-<span id="cb1-15"><a></a>    <span class="dt">"version"</span><span class="fu">:</span> <span class="dv">2</span><span class="fu">,</span> </span>
+<span id="cb1-11"><a></a>    <span class="dt">"x509Thumbprint"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb1-12"><a></a>        <span class="dt">"primaryThumbprint"</span><span class="fu">:</span> <span class="kw">null</span><span class="fu">,</span></span>
+<span id="cb1-13"><a></a>        <span class="dt">"secondaryThumbprint"</span><span class="fu">:</span> <span class="kw">null</span></span>
+<span id="cb1-14"><a></a>    <span class="fu">},</span></span>
+<span id="cb1-15"><a></a>    <span class="dt">"version"</span><span class="fu">:</span> <span class="dv">2</span><span class="fu">,</span></span>
 <span id="cb1-16"><a></a>    <span class="dt">"tags"</span><span class="fu">:</span> <span class="fu">{</span></span>
 <span id="cb1-17"><a></a>        <span class="dt">"$etag"</span><span class="fu">:</span> <span class="st">"123"</span><span class="fu">,</span></span>
 <span id="cb1-18"><a></a>        <span class="dt">"deploymentLocation"</span><span class="fu">:</span> <span class="fu">{</span></span>
@@ -365,7 +364,7 @@
 </ol>
 <div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="kw">def</span> twin_patch_handler(twin_patch):</span>
 <span id="cb7-2"><a></a>    <span class="bu">print</span>(<span class="ss">f"Twin patch received: </span><span class="sc">{</span>twin_patch<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb7-3"><a></a>    </span>
+<span id="cb7-3"><a></a></span>
 <span id="cb7-4"><a></a>device_client.on_twin_desired_properties_patch_received <span class="op">=</span> twin_patch_handler</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="5" type="1">
 <li>Get the Device Twin document from the device instance and parse it if connecting for the first time (see the <a href="https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-device-twins#device-reconnection-flow">device reconnection flow</a>).</li>
