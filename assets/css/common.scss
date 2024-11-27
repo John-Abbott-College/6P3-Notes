@@ -1,13 +1,28 @@
-$min-contrast-ratio:   4.5 !default;
+$min-contrast-ratio: 4.5 !default;
 
 // Fonts
 
 // stylelint-disable-next-line value-keyword-case
-$font-family-sans-serif: "Fira Sans Condensed", Ubuntu, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$font-family-sans-serif:
+  "Fira Sans Condensed",
+  Ubuntu,
+  -apple-system,
+  BlinkMacSystemFont,
+  "Segoe UI",
+  Roboto,
+  "Helvetica Neue",
+  Arial,
+  sans-serif,
+  "Apple Color Emoji",
+  "Segoe UI Emoji",
+  "Segoe UI Symbol" !default;
 
 // stylelint-disable-next-line value-keyword-case
 // adapted from: https://qwtel.com/posts/software/the-monospaced-system-ui-css-font-stack/
-$font-family-monospace: "Fira Code", ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+$font-family-monospace: "Fira Code", ui-monospace, Menlo, Monaco,
+  "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono",
+  "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono",
+  "Courier New", monospace;
 
 /*-- scss:rules --*/
 

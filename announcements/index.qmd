@@ -1,7 +1,7 @@
 ---
 title: "Announcements"
 subtitle: "Course announcements"
-listing: 
+listing:
   type: default
   sort: "date desc"
   feed: true

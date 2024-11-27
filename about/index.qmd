@@ -1,6 +1,6 @@
 ---
 title: "About"
-listing: 
+listing:
   type: grid
 ---
 

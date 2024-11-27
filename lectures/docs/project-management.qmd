@@ -1,6 +1,8 @@
 ---
 title: "Project management"
-subtitle: Previously, we have focused on installing dependencies from other projects -- we expand on that knowledge to learn how to create our own projects
+subtitle:
+  Previously, we have focused on installing dependencies from other projects --
+  we expand on that knowledge to learn how to create our own projects
 date: 2024-04-8
 categories: ["Quiz 2", "Python"]
 draft: true
@@ -8,7 +10,10 @@ draft: true
 
 ## Overview
 
-Now that we're making larger applications with multiple dependecies from different sources, as well as multiple modules, code organization starts to be a noticable problem. Managing a "project" (for now, a directory containing your source code for a given task) becomes much easier with tools and configuration.
+Now that we're making larger applications with multiple dependecies from
+different sources, as well as multiple modules, code organization starts to be a
+noticable problem. Managing a "project" (for now, a directory containing your
+source code for a given task) becomes much easier with tools and configuration.
 
 We'll look at:
 
@@ -18,28 +23,32 @@ We'll look at:
 
 ## Python Projects & Import Statements
 
-For programmers coming from other languages, how to organize your project files and how to import modules and classes can be confusing.
+For programmers coming from other languages, how to organize your project files
+and how to import modules and classes can be confusing.
 
 ## Modules vs Packages
 
 Let's clarify the terminology and distinction between a module vs a package.
 
-*(Notes taken from [The Joy of Packaging, Making a Python Package](https://python-packaging-tutorial.readthedocs.io/en/2018/setup_py.html))*
+_(Notes taken from
+[The Joy of Packaging, Making a Python Package](https://python-packaging-tutorial.readthedocs.io/en/2018/setup_py.html))_
 
 ### Modules
 
-A module usually corresponds to a single file: `something.py`
-A python “module” is a single namespace, with a collection of values:
+A module usually corresponds to a single file: `something.py` A python “module”
+is a single namespace, with a collection of values:
 
--   functions
--   constants
--   class definitions
+- functions
+- constants
+- class definitions
 
 ### Packages
 
-A “package” is essentially a module, except it can have other modules (and indeed other packages) inside it.
+A “package” is essentially a module, except it can have other modules (and
+indeed other packages) inside it.
 
-A package usually corresponds to a directory with a file in it called `__init__.py` and any number of python files or **other package directories**:
+A package usually corresponds to a directory with a file in it called
+`__init__.py` and any number of python files or **other package directories**:
 
 ```sh
 a_package
@@ -54,7 +63,8 @@ a_package
 
 The code will be run when the package is imported (just like a module).
 
-Modules inside packages are not automatically imported. So, with the above structure:
+Modules inside packages are not automatically imported. So, with the above
+structure:
 
 ```sh
 import a_package
@@ -64,10 +74,11 @@ will run the code in `a_package/__init__.py`
 
 Any names defined in the `__init__.py` will be available in: `a_package.a_name`
 
-
 ## Project Structure
 
-There's no single way to do it. Below is a recommendation from RealPython.com on Python Application Layouts for [Application with Internal Packages](https://realpython.com/python-application-layouts/#application-with-internal-packages):
+There's no single way to do it. Below is a recommendation from RealPython.com on
+Python Application Layouts for
+[Application with Internal Packages](https://realpython.com/python-application-layouts/#application-with-internal-packages):
 
 ```sh
 helloworld/
@@ -109,7 +120,9 @@ helloworld/
 
 ## Relative Import Statements
 
-*(Taken from StackOverflow discussion [Relative imports in Python 3](https://stackoverflow.com/questions/16981921/relative-imports-in-python-3),  by [Aya](https://stackoverflow.com/users/172176/aya))*
+_(Taken from StackOverflow discussion
+[Relative imports in Python 3](https://stackoverflow.com/questions/16981921/relative-imports-in-python-3),
+by [Aya](https://stackoverflow.com/users/172176/aya))_
 
 Consider the project layout below:
 
@@ -158,7 +171,8 @@ if __name__ == '__main__':
     main()
 ```
 
-This works when running  `main.py` or `mypackage/mymodule.py`, but fails with `mypackage/myothermodule.py`, due to the relative import:
+This works when running `main.py` or `mypackage/mymodule.py`, but fails with
+`mypackage/myothermodule.py`, due to the relative import:
 
 ```python
 from .mymodule import as_int
@@ -169,31 +183,40 @@ Exception has occurred: ImportError
 attempted relative import with no known parent package
 ```
 
-
 **Solution**
 
-When running `myothermodule.py` as a stand-alone script, run Python using the `-m` option to run the file as a module.
-This will execute all the `__init__.py` files and load the module dependency.
+When running `myothermodule.py` as a stand-alone script, run Python using the
+`-m` option to run the file as a module. This will execute all the `__init__.py`
+files and load the module dependency.
 
 ```python
-python -m mypackage.myothermodule 
+python -m mypackage.myothermodule
 # Note the ".", NOT a "/", as in, the following won't work:
 python -m mypackage/myothermodule
 ```
 
-This will allow you to write modules that contain `main()` functions you can test separately -- we took advantage of this pattern in Assignment 1.
+This will allow you to write modules that contain `main()` functions you can
+test separately -- we took advantage of this pattern in Assignment 1.
 
 ## References
 
 **More on Modules and Packages:**
-- [Python Modules and Packages – An Introduction](https://realpython.com/python-modules-packages/) by RealPython.com
+
+- [Python Modules and Packages – An Introduction](https://realpython.com/python-modules-packages/)
+  by RealPython.com
 
 **Project Structures**
-- [Packaging a python library](https://blog.ionelmc.ro/2014/05/25/python-packaging/) by ionel's codelog.
+
+- [Packaging a python library](https://blog.ionelmc.ro/2014/05/25/python-packaging/)
+  by ionel's codelog.
 
 **Relative Imports**
-- [Relative imports for the billionth time](https://stackoverflow.com/questions/14132789/relative-imports-for-the-billionth-time/14132912#14132912) in StackOverlow
-- [Relative imports in Python 3](https://stackoverflow.com/questions/16981921/relative-imports-in-python-3) in StackOverlow
-- [The import system](https://docs.python.org/3/reference/import.html#package-relative-imports) in Python.org docs.
-- [Modules: Packages](https://docs.python.org/3/tutorial/modules.html#packages) in Python.org docs.
 
+- [Relative imports for the billionth time](https://stackoverflow.com/questions/14132789/relative-imports-for-the-billionth-time/14132912#14132912)
+  in StackOverlow
+- [Relative imports in Python 3](https://stackoverflow.com/questions/16981921/relative-imports-in-python-3)
+  in StackOverlow
+- [The import system](https://docs.python.org/3/reference/import.html#package-relative-imports)
+  in Python.org docs.
+- [Modules: Packages](https://docs.python.org/3/tutorial/modules.html#packages)
+  in Python.org docs.

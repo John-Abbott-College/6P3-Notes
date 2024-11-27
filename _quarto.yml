@@ -27,7 +27,7 @@ website:
         href: about/this-site.qmd#copyright
     right:
       - text: "{{< iconify simple-icons moodle >}}"
-        menu: 
+        menu:
           - text: "Section 1 (8h30)"
             href: https://moodle.johnabbott.qc.ca/course/view.php?id=807
           - text: "Section 2 (13h30)"
@@ -48,7 +48,7 @@ website:
       - text: "Reference"
         href: reference/index.qmd
       - text: "{{< iconify simple-icons moodle >}}"
-        menu: 
+        menu:
           - text: "Section 1 (8h30)"
             href: https://moodle.johnabbott.qc.ca/course/view.php?id=807
           - text: "Section 2 (13h30)"

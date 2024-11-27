@@ -1,50 +1,83 @@
 ---
 title: "Debugging Black Screen Issue"
-subtitle: Sometimes, the reTerminal display drivers fail. Here is an (incomplete) set of debugging steps you can take to try fixing the issue.
+subtitle:
+  Sometimes, the reTerminal display drivers fail. Here is an (incomplete) set of
+  debugging steps you can take to try fixing the issue.
 date: 2024-04-26
 draft: true
 ---
 
 {{< include /_reference-links.md >}}
 
-[raspi-boot-docs]: https://www.raspberrypi.com/documentation/computers/configuration.html#the-boot-folder
+[raspi-boot-docs]:
+  https://www.raspberrypi.com/documentation/computers/configuration.html#the-boot-folder
 
-So far, there have been two primary causes for the reTerminal screen to stop working:
+So far, there have been two primary causes for the reTerminal screen to stop
+working:
 
-1. System update using `apt`: during the semester, some changes that break raspberry pi and reTerminal compatibility were introduced in the update from Linux `6.1` to `6.6`.
-2. Errors introduced from mistakes when editing firmware files like `/boot/firmware/*.txt` and/or `/boot/cmdline.txt` and/or `/boot/config.txt`
+1. System update using `apt`: during the semester, some changes that break
+   raspberry pi and reTerminal compatibility were introduced in the update from
+   Linux `6.1` to `6.6`.
+2. Errors introduced from mistakes when editing firmware files like
+   `/boot/firmware/*.txt` and/or `/boot/cmdline.txt` and/or `/boot/config.txt`
 
-In the first case, the reTerminal boots just fine, but the screen doesn't work. In the second case, the reTerminal fails to boot at all.
+In the first case, the reTerminal boots just fine, but the screen doesn't work.
+In the second case, the reTerminal fails to boot at all.
 
-For each of these cases, I have a set of troubleshooting steps you can take to resolve these issues.
+For each of these cases, I have a set of troubleshooting steps you can take to
+resolve these issues.
 
 ## If you can `ssh` into your reTerminal
 
-1. Follow the steps from the announcment [On Updating Your Pi](/topics/announcements/2024-03-14-pi-update.qmd)
+1. Follow the steps from the announcment
+   [On Updating Your Pi](/topics/announcements/2024-03-14-pi-update.qmd)
 
 ## If you cannot `ssh` into your reTerminal
 
 ### Finding the problem
 
 1. Ask the teacher for a micro-usb to HDMI connector
-2. Plug the HDMI end into a workstation monitor, and the micro-usb end into your reTerminal (in the port labelled HDMI)
+2. Plug the HDMI end into a workstation monitor, and the micro-usb end into your
+   reTerminal (in the port labelled HDMI)
 3. Plug your reTerminal into a power supply to boot the reTerminal
-4. The monitor will show logs of your reTerminal booting. Observe these logs closely. **You are looking for specific error messages**.
-5. Write down the specific error messages. Search the course notes/[Raspberry Pi Documentation][raspi-boot-docs] for any concepts you don't understand. Think backl: have you made any changes to the `/boot` files that seem related to these errors?
-6. If you have a good idea of what happened and what needs to be fixed, proceed to the next section. Feel free to double check your understanding with the teacher at this point -- for educational purposes, I may not give you the answer directly, but I can guide you in a direction that will help save you some time.
+4. The monitor will show logs of your reTerminal booting. Observe these logs
+   closely. **You are looking for specific error messages**.
+5. Write down the specific error messages. Search the course notes/[Raspberry Pi
+   Documentation][raspi-boot-docs] for any concepts you don't understand. Think
+   backl: have you made any changes to the `/boot` files that seem related to
+   these errors?
+6. If you have a good idea of what happened and what needs to be fixed, proceed
+   to the next section. Feel free to double check your understanding with the
+   teacher at this point -- for educational purposes, I may not give you the
+   answer directly, but I can guide you in a direction that will help save you
+   some time.
 
 ### Solving `/boot/` firmare file problems
 
-If indeed the error comes from an incorrect `/boot` configuration file setting, we can fix the error *without reimaging the pi*. Instead, we will *mount the reTerminal storage* on to a workstation and then *fix the firmware files directly on that workstation*. 
+If indeed the error comes from an incorrect `/boot` configuration file setting,
+we can fix the error _without reimaging the pi_. Instead, we will _mount the
+reTerminal storage_ on to a workstation and then _fix the firmware files
+directly on that workstation_.
 
-The steps will look similar to Lab 1, except we won't be reimaging the device at the end. You should open Lab 1 instructions for reference while you are working for reference ([Lab 1 Section 1 link][lab1-sec1], [Lab 2 Section 2 link][lab1-sec2]). The following steps will be necessary:
+The steps will look similar to Lab 1, except we won't be reimaging the device at
+the end. You should open Lab 1 instructions for reference while you are working
+for reference ([Lab 1 Section 1 link][lab1-sec1], [Lab 2 Section 2
+link][lab1-sec2]). The following steps will be necessary:
 
 0. Make sure your reTerminal is entirely unplugged and powered off.
-1. Disassemble your reTerminal, *up to the step where you can toggle the Firmware Flash switch*. Toggle the switch. This step will let you mount the storage device onto your workstation. 
-2. On your lab workstation, find the program `rpibootloader` and run it. You should not need elevated access.
-3. While the `rpibootloader` program is running, plug your reTerminal into the workstation using a USB-C to USB-3 connector.
-4. You should see the `rpibootloader` acknowledge connection to your reterminal. A dozen or so logs will be printed to the `rpibootloader` program window. Once this is done: navigate to Windows Explorer (the file manager) and you should see the reTerminal (~28-32GB) as a connected drive on the workstation
+1. Disassemble your reTerminal, _up to the step where you can toggle the
+   Firmware Flash switch_. Toggle the switch. This step will let you mount the
+   storage device onto your workstation.
+2. On your lab workstation, find the program `rpibootloader` and run it. You
+   should not need elevated access.
+3. While the `rpibootloader` program is running, plug your reTerminal into the
+   workstation using a USB-C to USB-3 connector.
+4. You should see the `rpibootloader` acknowledge connection to your reterminal.
+   A dozen or so logs will be printed to the `rpibootloader` program window.
+   Once this is done: navigate to Windows Explorer (the file manager) and you
+   should see the reTerminal (~28-32GB) as a connected drive on the workstation
 5. The firmware files can now be edited directly to fix any mistakes made.
 
-Step (5) above will vary depending on your exact error -- this is why the "Finding the problem" step is important,to inform what fixes you should attempt first.
-
+Step (5) above will vary depending on your exact error -- this is why the
+"Finding the problem" step is important,to inform what fixes you should attempt
+first.

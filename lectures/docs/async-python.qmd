@@ -7,7 +7,8 @@ draft: true
 
 ## Overview
 
-This section explores advanced Python topics that will help us write better IoT applications.
+This section explores advanced Python topics that will help us write better IoT
+applications.
 
 We'll explore:
 
@@ -17,38 +18,48 @@ We'll explore:
 ## Asynch with `asyncio`
 
 The library `asyncio` enables code to be **run concurrently**:
+
 - Tasks share the execution thread while appearing to be executing in parallel.
 
 > Asyncio API:
-> -  [Coroutines and Tasks](https://docs.python.org/3/library/asyncio-task.html#asyncio-example-gather) (good intro to *asyncio*).
-> 
+>
+> - [Coroutines and Tasks](https://docs.python.org/3/library/asyncio-task.html#asyncio-example-gather)
+>   (good intro to _asyncio_).
+>
 > In-depth guide:
-> - [Async IO in Python: A Complete Walkthrough](https://realpython.com/async-io-python/) by realpython.com.
-> 
+>
+> - [Async IO in Python: A Complete Walkthrough](https://realpython.com/async-io-python/)
+>   by realpython.com.
+>
 > Video Summary:
-> - [How To Easily Do Asynchronous Programming With Asyncio](https://www.youtube.com/watch?v=2IW-ZEui4h4) by ArjanCodes
-
+>
+> - [How To Easily Do Asynchronous Programming With Asyncio](https://www.youtube.com/watch?v=2IW-ZEui4h4)
+>   by ArjanCodes
 
 ### Concurrent vs Parallel
 
-It's important to note that **concurrent code does not necessarily mean parallel**.
+It's important to note that **concurrent code does not necessarily mean
+parallel**.
 
 ![](https://tenthousandmeters.com/blog/python_bts_12/concurrency.png)
 
-*Concurrent does necessarily mean parallel execution. By [Ten thousand meters](https://tenthousandmeters.com/blog/python-behind-the-scenes-12-how-asyncawait-works-in-python/)*
+_Concurrent does necessarily mean parallel execution. By
+[Ten thousand meters](https://tenthousandmeters.com/blog/python-behind-the-scenes-12-how-asyncawait-works-in-python/)_
 
+> In Python, the only way to run parallel code is to use multiple CPU cores by
+> running multiple Python interpreters that interact. See
+> [multiprocessing module](https://docs.python.org/3/library/multiprocessing.html).
 
-> In Python, the only way to run parallel code is to use multiple CPU cores by running multiple Python interpreters that interact. See [multiprocessing module](https://docs.python.org/3/library/multiprocessing.html).
-
-
-Asyncio is used to run **multiple tasks or multiple threads** concurrently but never at the same time (in parallel).
-
+Asyncio is used to run **multiple tasks or multiple threads** concurrently but
+never at the same time (in parallel).
 
 ### Synchronous vs Async Execution
 
-In typical programming, most tasks and processes are synchronous, meaning, they run **one at the time, always waiting for the previous taks to finish**
+In typical programming, most tasks and processes are synchronous, meaning, they
+run **one at the time, always waiting for the previous taks to finish**
 
-Synchronous is disadvantageous when there are many tasks that need to wait for external input or output before it can proceed. For example:
+Synchronous is disadvantageous when there are many tasks that need to wait for
+external input or output before it can proceed. For example:
 
 - The code was asked to sleep.
 - Waiting for a HTTP response.
@@ -58,64 +69,74 @@ Synchronous is disadvantageous when there are many tasks that need to wait for e
 
 ![](https://files.realpython.com/media/IOBound.4810a888b457.png)
 
-*Synchronous code execution by [RealPython.com](https://realpython.com/python-concurrency/)*
+_Synchronous code execution by
+[RealPython.com](https://realpython.com/python-concurrency/)_
 
-**Asynchronous** execution enables the execution of the next task while waiting for the external input/output. 
+**Asynchronous** execution enables the execution of the next task while waiting
+for the external input/output.
 
 ![](https://files.realpython.com/media/Asyncio.31182d3731cf.png)
 
-*Asynchronous code execution by [RealPython.com](https://realpython.com/python-concurrency/)*
+_Asynchronous code execution by
+[RealPython.com](https://realpython.com/python-concurrency/)_
 
-
-> Note that the amount **CPU processing (blue area in the diagrams above) is the same** in both sync and async executions.
-> 
-> However, the async execution spends **less time waiting idle**. 
-
+> Note that the amount **CPU processing (blue area in the diagrams above) is the
+> same** in both sync and async executions.
+>
+> However, the async execution spends **less time waiting idle**.
 
 ### Asyncio vs Threads
 
-By default, asyncio works with task, not threads. However, it is possible to create new threads with asyncio.
+By default, asyncio works with task, not threads. However, it is possible to
+create new threads with asyncio.
 
 #### Threads
 
 Once a thread is created, it is managed by the Operating System (OS).
 
-Thread execution can be halted and resumed whenever the OS deems necessary, **without any control from the application side**.
+Thread execution can be halted and resumed whenever the OS deems necessary,
+**without any control from the application side**.
 
-> In Python all threads run in the same CPU core due to the [GIL (Global Interpreter Lock)](https://realpython.com/python-gil/)
+> In Python all threads run in the same CPU core due to the
+> [GIL (Global Interpreter Lock)](https://realpython.com/python-gil/)
 
-This type of time-slicing (execution time given for each thread) is called **preemptive multitasking**.
+This type of time-slicing (execution time given for each thread) is called
+**preemptive multitasking**.
 
 - Preemptive because the OS is anticipating the start and stop of each thread.
 
 ![](https://www.digikey.bg/maker-media/ac6c69ba-1ff1-4e5a-9275-50240049de58)
 
-*Thread execution time being managed by the OS. By [Digikey.com](https://www.digikey.bg/en/maker/projects/getting-started-with-asyncio-in-micropython-raspberry-pi-pico/110b4243a2f544b6af60411a85f0437c)*
-
+_Thread execution time being managed by the OS. By
+[Digikey.com](https://www.digikey.bg/en/maker/projects/getting-started-with-asyncio-in-micropython-raspberry-pi-pico/110b4243a2f544b6af60411a85f0437c)_
 
 #### Asyncio Tasks
 
-**Asyncio uses cooperative multitasking** to manage and share the CPU processing time (time-slicing).
+**Asyncio uses cooperative multitasking** to manage and share the CPU processing
+time (time-slicing).
 
-> In **cooperative multitasking**, each task must explicitly yield (or pass) execution time back to the main loop so that the next task can start/continue.
-> 
+> In **cooperative multitasking**, each task must explicitly yield (or pass)
+> execution time back to the main loop so that the next task can start/continue.
 
 ![](https://www.digikey.bg/maker-media/ad878381-74bb-43ef-9b9b-2eb149d179df)
 
-*Tasks yielding CPU execution time so that other tasks can run. By [Digikey.com](https://www.digikey.bg/en/maker/projects/getting-started-with-asyncio-in-micropython-raspberry-pi-pico/110b4243a2f544b6af60411a85f0437c)*
+_Tasks yielding CPU execution time so that other tasks can run. By
+[Digikey.com](https://www.digikey.bg/en/maker/projects/getting-started-with-asyncio-in-micropython-raspberry-pi-pico/110b4243a2f544b6af60411a85f0437c)_
 
 > In Asyncio, **tasks yield by using the `await` keyword.**
 
 ![](https://cdn-learn.adafruit.com/assets/assets/000/106/571/medium800/circuitpython_2tasks.png?1637163446)
 
-*Tasks yielding execution time with the `await` keyword. By [Adafruit.com](https://learn.adafruit.com/cooperative-multitasking-in-circuitpython-with-asyncio)*
+_Tasks yielding execution time with the `await` keyword. By
+[Adafruit.com](https://learn.adafruit.com/cooperative-multitasking-in-circuitpython-with-asyncio)_
 
-In the image above, Task 1 (running function `f()`) yields execution time to Task 2 (running function `g()`)  by using the `await` keyboard and vice-versa.
-
+In the image above, Task 1 (running function `f()`) yields execution time to
+Task 2 (running function `g()`) by using the `await` keyboard and vice-versa.
 
 ### Coroutines, Tasks & Event Loop
 
 In Asyncio, there are 3 types of awaitable objects:
+
 - Coroutines
 - Tasks
 - Futures
@@ -148,12 +169,14 @@ done!
 """
 ```
 
-In the example above, `countdown()`, `asyncio.sleep()` and `main()` are coroutines.
+In the example above, `countdown()`, `asyncio.sleep()` and `main()` are
+coroutines.
 
-`countdown()` and `asyncio.sleep()` were called with `await` , however, `main()` was called with `asyncio.run()`
+`countdown()` and `asyncio.sleep()` were called with `await` , however, `main()`
+was called with `asyncio.run()`
 
 > In asyncio, all awaitable objects must run **inside an event loop**.
-> 
+>
 > - The method `asyncio.run()` creates a "top-level" event loop
 
 #### Tasks
@@ -197,9 +220,11 @@ done!
 The scheduling and execution of each task is illustrated in the diagram below:
 ![](/topics/assets/10-python-create-task.png)
 
-Order of task execution. From [Qiita.com](https://qiita.com/everylittle/items/57da997d9e0507050085)
+Order of task execution. From
+[Qiita.com](https://qiita.com/everylittle/items/57da997d9e0507050085)
 
-Instead of creating Tasks and awaiting them individually, it's possible to run multiple coroutines concurrently and wait for all of them:
+Instead of creating Tasks and awaiting them individually, it's possible to run
+multiple coroutines concurrently and wait for all of them:
 
 ```python
 async def main():
@@ -229,50 +254,60 @@ Everything, everywhere, all at once
 """
 ```
 
-
-
 #### Futures
 
-A Future in Asyncio is the equivalent of a Promise in JavaScript. 
+A Future in Asyncio is the equivalent of a Promise in JavaScript.
 
 > It is rare that developers need to use a Future directly.
-
 
 ### Diving Further & References
 
 The following are excellent resources for learning more about Asyncio:
 
-- [Async IO in Python: A Complete Walkthrough](https://realpython.com/async-io-python/) by RealPython.com
+- [Async IO in Python: A Complete Walkthrough](https://realpython.com/async-io-python/)
+  by RealPython.com
 
 ### Asyncio Exercises
 
-1. Create a program with *asyncio* that uses two function to display information "at the same time". Call the functions with arguments of your choice.
-	- `countdown()`:
-		- Take it from the examples above.
-	- `blink()`:
-		- **Arguments**:
-			- A message that will be displayed periodically. Defaults to "Blink"
-			- The number of seconds to flash the message.
-			- How many times per second the message should be flashed.
-		- **Return**:
-			- The number of times the message was flashed.
-		- Example:
-			- calling `blink("Hello", 5, 2)` should return 10
+1. Create a program with _asyncio_ that uses two function to display information
+   "at the same time". Call the functions with arguments of your choice.
 
-2. Use the [library `requests`](https://docs.python-requests.org/en/latest/) to fetch 5 random pokemon names from the [Pokemon API](https://pokeapi.co/docs/v2#info).
-	- Use a random number between 1 and 251 as the **pokemon id**.
-	- Use the [API endpoint: `https://pokeapi.co/api/v2/pokemon/{id or name}/`](https://pokeapi.co/docs/v2#pokemon).
-	- Use the `requests` built-in json decoder: [JSON Response Content](https://docs.python-requests.org/en/latest/user/quickstart/#json-response-content) 
-	- Send 5 GET requests.
-	- For each request, display the name of the randomly selected pokemon.
-	- Time the total script execution with [`time.perf_counter()`](https://docs.python.org/3/library/time.html#time.perf_counter)
+   - `countdown()`:
+     - Take it from the examples above.
+   - `blink()`:
+     - **Arguments**:
+       - A message that will be displayed periodically. Defaults to "Blink"
+       - The number of seconds to flash the message.
+       - How many times per second the message should be flashed.
+     - **Return**:
+       - The number of times the message was flashed.
+     - Example:
+       - calling `blink("Hello", 5, 2)` should return 10
 
+2. Use the [library `requests`](https://docs.python-requests.org/en/latest/) to
+   fetch 5 random pokemon names from the
+   [Pokemon API](https://pokeapi.co/docs/v2#info).
 
-3. Use the [library `aiohttp`](https://docs.aiohttp.org/en/stable/client_quickstart.html) to fetch 5 "simultaneous" random pokemon names from the [Pokemon API](https://pokeapi.co/docs/v2#info).
-	- Use a random number between 1 and 251 as the **pokemon id**.
-	- Use the [API endpoint: `https://pokeapi.co/api/v2/pokemon/{id or name}/`](https://pokeapi.co/docs/v2#pokemon).
-	- Use the `aiohttp` built-in json decoder: [JSON Response Content](https://docs.aiohttp.org/en/stable/client_quickstart.html#json-response-content)
-	- Send 5 get requests at the same time using `asyncio`
-	- For each request, display the name of the randomly selected pokemon.
-	- Time the total script execution with [`time.perf_counter()`](https://docs.python.org/3/library/time.html#time.perf_counter)
+   - Use a random number between 1 and 251 as the **pokemon id**.
+   - Use the
+     [API endpoint: `https://pokeapi.co/api/v2/pokemon/{id or name}/`](https://pokeapi.co/docs/v2#pokemon).
+   - Use the `requests` built-in json decoder:
+     [JSON Response Content](https://docs.python-requests.org/en/latest/user/quickstart/#json-response-content)
+   - Send 5 GET requests.
+   - For each request, display the name of the randomly selected pokemon.
+   - Time the total script execution with
+     [`time.perf_counter()`](https://docs.python.org/3/library/time.html#time.perf_counter)
 
+3. Use the
+   [library `aiohttp`](https://docs.aiohttp.org/en/stable/client_quickstart.html)
+   to fetch 5 "simultaneous" random pokemon names from the
+   [Pokemon API](https://pokeapi.co/docs/v2#info).
+   - Use a random number between 1 and 251 as the **pokemon id**.
+   - Use the
+     [API endpoint: `https://pokeapi.co/api/v2/pokemon/{id or name}/`](https://pokeapi.co/docs/v2#pokemon).
+   - Use the `aiohttp` built-in json decoder:
+     [JSON Response Content](https://docs.aiohttp.org/en/stable/client_quickstart.html#json-response-content)
+   - Send 5 get requests at the same time using `asyncio`
+   - For each request, display the name of the randomly selected pokemon.
+   - Time the total script execution with
+     [`time.perf_counter()`](https://docs.python.org/3/library/time.html#time.perf_counter)
