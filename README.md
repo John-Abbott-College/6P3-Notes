@@ -48,14 +48,14 @@ Create a local copy of these notes:
 
 1. Install [Quarto](https://quarto.org/docs/get-started/) for your system
 
-2. Clone the
+1. Clone the
    [course GitHub repository](https://github.com/John-Abbott-College/6P3-Notes).
 
-3. Preview the website:
+1. Preview the website:
 
    `quarto preview .`
 
----
+______________________________________________________________________
 
 This work is licensed under a [Creative Commons Attribution-NonCommercial 4.0
 International License][cc-by-nc]. See the [Copyright statement][cc-statement] on
@@ -66,7 +66,5 @@ the course webpage.
 
 [cc-by-nc]: http://creativecommons.org/licenses/by-nc/4.0/
 [cc-by-nc-image]: https://licensebuttons.net/l/by-nc/4.0/88x31.png
-[cc-by-nc-shield]:
-  https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg
-[cc-statement]:
-  https://john-abbott-college.github.io/6P3-Notes/about/this-site.html#copyright
+[cc-by-nc-shield]: https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg
+[cc-statement]: https://john-abbott-college.github.io/6P3-Notes/about/this-site.html#copyright
