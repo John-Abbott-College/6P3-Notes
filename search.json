@@ -7,6 +7,48 @@
     "text": "No matching items\n\n Back to top"
   },
   {
+    "objectID": "about/this-site.html",
+    "href": "about/this-site.html",
+    "title": "About this website",
+    "section": "",
+    "text": "Course content, both for lectures and assignments, has been adapted by me from a variety of sources. This section serves the purpose of both acknowledging these references as well as pointing the way for curious students to begin investigating further into course material than we had time to cover.\n\n\nAll course content was either written by Mauricio Buschinelli, Michael Haaf, or explicitly adapted from external resources with attributions made clear. This course content retains the licenses of the original works where relevant, and is otherwise licensed under the Creative Commons Attribution 4.0 International License.\n\nTerms of use\nYou are free to:\n\nShare: copy and redistribute the material in any medium or format\nAdapt: remix, transform, and build upon the material for any purpose, even commercially.\n\nUnder the following terms:\n\nAttribution: You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.\n\nCreative Commons Attribution 4.0 International License"
+  },
+  {
+    "objectID": "about/this-site.html#course-content",
+    "href": "about/this-site.html#course-content",
+    "title": "About this website",
+    "section": "",
+    "text": "Course content, both for lectures and assignments, has been adapted by me from a variety of sources. This section serves the purpose of both acknowledging these references as well as pointing the way for curious students to begin investigating further into course material than we had time to cover.\n\n\nAll course content was either written by Mauricio Buschinelli, Michael Haaf, or explicitly adapted from external resources with attributions made clear. This course content retains the licenses of the original works where relevant, and is otherwise licensed under the Creative Commons Attribution 4.0 International License.\n\nTerms of use\nYou are free to:\n\nShare: copy and redistribute the material in any medium or format\nAdapt: remix, transform, and build upon the material for any purpose, even commercially.\n\nUnder the following terms:\n\nAttribution: You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.\n\nCreative Commons Attribution 4.0 International License"
+  },
+  {
+    "objectID": "about/this-site.html#course-website",
+    "href": "about/this-site.html#course-website",
+    "title": "About this website",
+    "section": "Course website",
+    "text": "Course website\nDetails about how this website was built follow.\n\nColophon\n\n\n\nFrom Wikipedia: In publishing, a colophon is a brief statement containing information about the publication of a book… Some web pages also have colophons, which frequently contain (X)HTML, CSS, or usability standards compliance information and links to website validation tests.\n\n\n\nMarkup: Markdown\nFramework: Quarto\nDeployment: GitHub Pages\n\nYou can follow along directly with course updates at the course repository.\n\n\nCopyright\nThis website was written and designed by the Michael Haaf. All code and assets related to this website, unless indicated otherwise, are licensed under the GNU General Public License v3.0\n\nTerms of use\nThis website’s code is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.\nThis website’s code is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.\nGNU General Public License Notice"
+  },
+  {
+    "objectID": "about/syllabus.html",
+    "href": "about/syllabus.html",
+    "title": "Syllabus",
+    "section": "",
+    "text": "From the course outline:"
+  },
+  {
+    "objectID": "about/syllabus.html#logistics",
+    "href": "about/syllabus.html#logistics",
+    "title": "Syllabus",
+    "section": "Logistics",
+    "text": "Logistics\n\nRoom, times, etc.: see Course Outline (section 1) (section 2):\nOffice: Penfield 311\nOffice hours: Mon/Fri 11:00 - 12:30pm or so\nEmail: michael DOT haaf AT johnabbott DOT qc DOT ca\nCourse webpage: This website for all content, Moodle (section 1), (section 2) for assignment/project/quiz submissions.\n\n\n\n\nForgive me the smarmy comic, this is usually true…\n\n\n\nCommunication\n\nTeams - For communicating (fastest, most reliable that I will check it same-day)\nMIO - For communicating (non-time-critical)\nEmail - For communicating (time-critical).  Will aim for &lt;24hr response.\nMoodle - For receiving & submitting exercises/assignments/project and getting marks\n\n\n\nAssessment\n\n45% Assignments and Labs\n20% Test (first week of April)\n35% Project Milestones"
+  },
+  {
+    "objectID": "about/syllabus.html#course-material",
+    "href": "about/syllabus.html#course-material",
+    "title": "Syllabus",
+    "section": "Course material",
+    "text": "Course material\nThere are no required textbooks for this course – this website will contain all of the content that you need to complete course deliverables. Additionally, each lecture will contain references to additional resources for exploring each topic in further detail beyond the scope of the course."
+  },
+  {
     "objectID": "reference/docs/course-hardware.html",
     "href": "reference/docs/course-hardware.html",
     "title": "Course Hardware",
@@ -49,32 +91,172 @@
     "text": "Cabling\nThe following cables are included in the base kit:\n\nGrove Universal 4 Pin Buckled 5cm Cable.\nGrove Universal 4 Pin Buckled 20cm Cable.\nGrove 4 pin Female Jumper to Grove 4 pin Cable\nGrove 4 pin Male Jumper to Grove 4 pin Cable\n40-pin flat ribbon cable 20cm (female-female).\n2-pin JST SM Plug, one end open."
   },
   {
-    "objectID": "about/syllabus.html",
-    "href": "about/syllabus.html",
-    "title": "Syllabus",
+    "objectID": "lectures/docs/device-cloud-communication.html",
+    "href": "lectures/docs/device-cloud-communication.html",
+    "title": "Device to Cloud Communication",
     "section": "",
-    "text": "From the course outline:"
+    "text": "Communication for IoT systems should be bi-directional:\nAzure offers a variety of ways of exchanging information in both directions. In this lesson we’ll look at the specifics of how these messaging systems work."
   },
   {
-    "objectID": "about/syllabus.html#logistics",
-    "href": "about/syllabus.html#logistics",
-    "title": "Syllabus",
-    "section": "Logistics",
-    "text": "Logistics\n\nRoom, times, etc.: see Course Outline (section 1) (section 2):\nOffice: Penfield 311\nOffice hours: Mon/Fri 11:00 - 12:30pm or so\nEmail: michael DOT haaf AT johnabbott DOT qc DOT ca\nCourse webpage: This website for all content, Moodle (section 1), (section 2) for assignment/project/quiz submissions.\n\n\n\n\nForgive me the smarmy comic, this is usually true…\n\n\n\nCommunication\n\nTeams - For communicating (fastest, most reliable that I will check it same-day)\nMIO - For communicating (non-time-critical)\nEmail - For communicating (time-critical).  Will aim for &lt;24hr response.\nMoodle - For receiving & submitting exercises/assignments/project and getting marks\n\n\n\nAssessment\n\n45% Assignments and Labs\n20% Test (first week of April)\n35% Project Milestones"
+    "objectID": "lectures/docs/device-cloud-communication.html#azure-iot-protocols",
+    "href": "lectures/docs/device-cloud-communication.html#azure-iot-protocols",
+    "title": "Device to Cloud Communication",
+    "section": "Azure IoT Protocols",
+    "text": "Azure IoT Protocols\nIoT Hub allows devices to use the following protocols for device-side communications:\n\nMQTT (including over WebSockets)\nAMQP (including over WebSockets)\nHTTPS\n\nBy now you are well familiar with MQTT and HTTPS.\nAMQP is not covered in this course, however, it is also a popular protocol for IoT communication. It is used for most of Azure IoT internal communication.\nAMQP is more complex and has slightly more over head than MQTT, thus consuming more bandwidth and device memory. However, it does not requires a broker (although one can be used) and has extra features for security and flow control.\n\nThe choice of protocol is a design choice that is implemented when using libraries from the Azure IoT SDKs (ex.: when instantiating a client or a connection object).\nFor example, the Azure IoT SDK for python uses MQTT by default.\n\nIf you would like to know more about AMQP and how it differs from MQTT, see the video on “Diving Deeper”."
   },
   {
-    "objectID": "about/syllabus.html#course-material",
-    "href": "about/syllabus.html#course-material",
-    "title": "Syllabus",
-    "section": "Course material",
-    "text": "Course material\nThere are no required textbooks for this course – this website will contain all of the content that you need to complete course deliverables. Additionally, each lecture will contain references to additional resources for exploring each topic in further detail beyond the scope of the course."
+    "objectID": "lectures/docs/device-cloud-communication.html#device-to-cloud-d2c-communication",
+    "href": "lectures/docs/device-cloud-communication.html#device-to-cloud-d2c-communication",
+    "title": "Device to Cloud Communication",
+    "section": "Device to Cloud (D2C) Communication",
+    "text": "Device to Cloud (D2C) Communication\nIoT Hub exposes three options for sending information from the device to the cloud or solution back end:\n\nDevice-to-cloud messages for time series telemetry and alerts.\nFile uploads for media files and large telemetry batches uploaded by intermittently connected devices.\nDevice twin’s reported properties for reporting device state information such as configuration or last known state. Course notes on Device twins"
   },
   {
-    "objectID": "about/index.html",
-    "href": "about/index.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site\n\n\n\n\n\n\n\n\n\n\n\n\nAbout this website\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCalendar\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSyllabus\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "objectID": "lectures/docs/device-cloud-communication.html#cloud-to-device-c2d-communication",
+    "href": "lectures/docs/device-cloud-communication.html#cloud-to-device-c2d-communication",
+    "title": "Device to Cloud Communication",
+    "section": "Cloud to Device (C2D) Communication",
+    "text": "Cloud to Device (C2D) Communication\nIoT Hub provides three options for devices to receive information and commands from the cloud or back-end app:\n\nCloud-to-device messages for one-way notifications to the device.\nDirect methods follow a request-response pattern and are meant for communications that require immediate confirmation of their result. For example, interactive control of the device, such as turning on a fan.\nTwin’s desired properties for long-running commands intended to put the device into a certain desired state. For example, set the telemetry send interval to 30 minutes. Course notes on Device twins"
+  },
+  {
+    "objectID": "lectures/docs/device-cloud-communication.html#end-points",
+    "href": "lectures/docs/device-cloud-communication.html#end-points",
+    "title": "Device to Cloud Communication",
+    "section": "End-points",
+    "text": "End-points\nIoT Hub also exposes multiple end-points that act as data input and output to various other actors.\nFor example, all messages received from a device are also forwarded to a “device to cloud message” end-point. An external client such as VS Code or Azure CLI can connect to this end-point and read the D2C messages sent to IoT Hub.\n\nYou can think of IoT Hub as a broker and the end-points as topics. A client can subscribe to a topic and receive forwarded messages.\nBy default, messages are routed to a built-in endpoint.\n\nIoT Hub allows data retention in the built-in end-points for a maximum of 7 days (1 day by default).\nFor a list of all built-in end-points see IoT Hub endpoints reference.\nThe Azure IoT SDKs article describes the various ways to access these endpoints."
+  },
+  {
+    "objectID": "lectures/docs/device-cloud-communication.html#message-anatomy",
+    "href": "lectures/docs/device-cloud-communication.html#message-anatomy",
+    "title": "Device to Cloud Communication",
+    "section": "Message Anatomy",
+    "text": "Message Anatomy\nAs previously mentioned, IoT Hub messages can be used for both D2C or C2D communication.\nAn IoT Hub message consists of:\n\nA predetermined set of system properties.\nA set of application properties: A dictionary of string properties that the application can define and access, without needing to deserialize the message body.\nAn opaque binary body (the payload / application data).\n\n(Property names and values can only contain ASCII alphanumeric characters).\n Below is an example of a message as they are received by the IoT Hub.\n\nNote that creating and manipulation of the message on the device-side will look different. Many properties are automatically set on message by the SDK.\n\n{\n  \"message\": {\n\n    \"systemProperties\": {\n      \"contentType\": \"application/json\",\n      \"contentEncoding\": \"UTF-8\",\n      \"iothub-message-source\": \"deviceMessages\",\n      \"iothub-enqueuedtime\": \"2017-05-08T18:55:31.8514657Z\"\n    },\n\n    \"appProperties\": {\n      \"processingPath\": \"{cold | warm | hot}\",\n      \"verbose\": \"{true, false}\",\n      \"severity\": 1-5,\n      \"testDevice\": \"{true | false}\"\n    },\n\n    \"body\": \"{\\\"Weather\\\":{\\\"Temperature\\\":50}}\"\n  }\n}\nSystem properties are added for all users and identify content of the message. Users can selectively add application properties to the message.\nFor a list of system and application properties that can be read or set on messages, see:\n\nSystem Properties of D2C IoT Hub messages\nApplication Properties of D2C IoT Hub messages\nSystem Properties of C2D IoT Hub messages\n\n\nApplication Properties in Python\nTo send device-to-cloud messages the method IoTHubDeviceClient.send_message(message) is used. This method can receive a string or a Message object. Typically we’ve been passing a json string with the telemetry payload and the Message object is created automatically for you (as per the docs).\nYou can, however, have more control over the properties of the Message object to be sent. As mention in Application Properties of D2C IoT Hub messages, there are many properties you can set yourself, including custom application properties. See the docs for the Message class.\nSee the example in azure-iot-sdk-python/azure-iot-device/samples/sync-samples/send_message.py to understand how to set message properties.\n\nThe messages described above (D2C and C2D communication) are typically created at the device or application with the help of a SDK (Software Development Kit) library.\n\n\nSee notes on Azure IoT SDKs for references to libraries and examples provided by Azure."
+  },
+  {
+    "objectID": "lectures/docs/device-cloud-communication.html#direct-methods",
+    "href": "lectures/docs/device-cloud-communication.html#direct-methods",
+    "title": "Device to Cloud Communication",
+    "section": "Direct Methods",
+    "text": "Direct Methods\nIoT Hub gives you the ability to invoke direct methods on devices from the cloud. For example, to trigger a relay or ask the device to initiate a upload process.\nSimilarly to HTTP, direct methods represent a request-reply interaction with a device. The request sender needs to know immediately if the request succeeded or failed. For example, turning on a light from a phone.\nThe life-cycle of a Direct Method is as follows:\n\n\nA service application (such as a back-end or mobile app) sends a Direct Method request to the device.\n\nThis is typically done using a SDK library running on the application or “manually” via a HTTPS call to IoT Hub.\n\nThe device receives the Direct Method, processes it and prepares a response.\n\nAlso typically done using a SDK library running on the device.\n\nThe response is sent back to the sender of the Direct Method.\nThe application inspects the response using a call-back function and decides what to do next.\n\nCallback calls are typically provided by a SDK library running on the application or “manually” by processing the HTTP response.\n\n\nFor details see Understand and invoke direct methods from IoT Hub\nFor examples of how to use Direct Methods, see Quickstart: Control a device connected to an IoT hub.\nYou can also review Lab 6 (Section 1, Section 2): we used the InvokeDeviceMethod sample service in this lab. You can use this code in your own project, modifying the direct method name to correspond to your use case (e.g. lights-on or door-unlock)."
+  },
+  {
+    "objectID": "lectures/docs/device-cloud-communication.html#diving-deeper",
+    "href": "lectures/docs/device-cloud-communication.html#diving-deeper",
+    "title": "Device to Cloud Communication",
+    "section": "Diving Deeper 🤿",
+    "text": "Diving Deeper 🤿\nIf you would like to have a “bigger picture” view of how the different Azure IoT services fit together, watch the video below by Blaize Stewart.\n\n\nTo learn more about AMQT and how it differs from MQTT, see the presentation below by Ken Giusti."
+  },
+  {
+    "objectID": "lectures/docs/device-cloud-communication.htm#azure-iot-protocols",
+    "href": "lectures/docs/device-cloud-communication.htm#azure-iot-protocols",
+    "title": "Device to Cloud Communication",
+    "section": "Azure IoT Protocols",
+    "text": "Azure IoT Protocols\nIoT Hub allows devices to use the following protocols for device-side communications:\n\nMQTT (including over WebSockets)\nAMQP (including over WebSockets)\nHTTPS\n\nBy now you are well familiar with MQTT and HTTPS.\nAMQP is not covered in this course, however, it is also a popular protocol for IoT communication. It is used for most of Azure IoT internal communication.\nAMQP is more complex and has slightly more over head than MQTT, thus consuming more bandwidth and device memory. However, it does not requires a broker (although one can be used) and has extra features for security and flow control.\n\nThe choice of protocol is a design choice that is implemented when using libraries from the Azure IoT SDKs (ex.: when instantiating a client or a connection object).\nFor example, the Azure IoT SDK for python uses MQTT by default.\n\nIf you would like to know more about AMQP and how it differs from MQTT, see the video on “Diving Deeper”."
+  },
+  {
+    "objectID": "lectures/docs/device-cloud-communication.htm#device-to-cloud-d2c-communication",
+    "href": "lectures/docs/device-cloud-communication.htm#device-to-cloud-d2c-communication",
+    "title": "Device to Cloud Communication",
+    "section": "Device to Cloud (D2C) Communication",
+    "text": "Device to Cloud (D2C) Communication\nIoT Hub exposes three options for sending information from the device to the cloud or solution back end:\n\nDevice-to-cloud messages for time series telemetry and alerts.\nFile uploads for media files and large telemetry batches uploaded by intermittently connected devices.\nDevice twin’s reported properties for reporting device state information such as configuration or last known state. Course notes on Device twins"
+  },
+  {
+    "objectID": "lectures/docs/device-cloud-communication.htm#cloud-to-device-c2d-communication",
+    "href": "lectures/docs/device-cloud-communication.htm#cloud-to-device-c2d-communication",
+    "title": "Device to Cloud Communication",
+    "section": "Cloud to Device (C2D) Communication",
+    "text": "Cloud to Device (C2D) Communication\nIoT Hub provides three options for devices to receive information and commands from the cloud or back-end app:\n\nCloud-to-device messages for one-way notifications to the device.\nDirect methods follow a request-response pattern and are meant for communications that require immediate confirmation of their result. For example, interactive control of the device, such as turning on a fan.\nTwin’s desired properties for long-running commands intended to put the device into a certain desired state. For example, set the telemetry send interval to 30 minutes. Course notes on Device twins"
+  },
+  {
+    "objectID": "lectures/docs/device-cloud-communication.htm#end-points",
+    "href": "lectures/docs/device-cloud-communication.htm#end-points",
+    "title": "Device to Cloud Communication",
+    "section": "End-points",
+    "text": "End-points\nIoT Hub also exposes multiple end-points that act as data input and output to various other actors.\nFor example, all messages received from a device are also forwarded to a “device to cloud message” end-point. An external client such as VS Code or Azure CLI can connect to this end-point and read the D2C messages sent to IoT Hub.\n\nYou can think of IoT Hub as a broker and the end-points as topics. A client can subscribe to a topic and receive forwarded messages.\nBy default, messages are routed to a built-in endpoint.\n\nIoT Hub allows data retention in the built-in end-points for a maximum of 7 days (1 day by default).\nFor a list of all built-in end-points see IoT Hub endpoints reference.\nThe Azure IoT SDKs article describes the various ways to access these endpoints."
+  },
+  {
+    "objectID": "lectures/docs/device-cloud-communication.htm#message-anatomy",
+    "href": "lectures/docs/device-cloud-communication.htm#message-anatomy",
+    "title": "Device to Cloud Communication",
+    "section": "Message Anatomy",
+    "text": "Message Anatomy\nAs previously mentioned, IoT Hub messages can be used for both D2C or C2D communication.\nAn IoT Hub message consists of:\n\nA predetermined set of system properties.\nA set of application properties: A dictionary of string properties that the application can define and access, without needing to deserialize the message body.\nAn opaque binary body (the payload / application data).\n\n(Property names and values can only contain ASCII alphanumeric characters).\n Below is an example of a message as they are received by the IoT Hub.\n\nNote that creating and manipulation of the message on the device-side will look different. Many properties are automatically set on message by the SDK.\n\n{\n  \"message\": {\n\n    \"systemProperties\": {\n      \"contentType\": \"application/json\",\n      \"contentEncoding\": \"UTF-8\",\n      \"iothub-message-source\": \"deviceMessages\",\n      \"iothub-enqueuedtime\": \"2017-05-08T18:55:31.8514657Z\"\n    },\n\n    \"appProperties\": {\n      \"processingPath\": \"{cold | warm | hot}\",\n      \"verbose\": \"{true, false}\",\n      \"severity\": 1-5,\n      \"testDevice\": \"{true | false}\"\n    },\n\n    \"body\": \"{\\\"Weather\\\":{\\\"Temperature\\\":50}}\"\n  }\n}\nSystem properties are added for all users and identify content of the message. Users can selectively add application properties to the message.\nFor a list of system and application properties that can be read or set on messages, see:\n\nSystem Properties of D2C IoT Hub messages\nApplication Properties of D2C IoT Hub messages\nSystem Properties of C2D IoT Hub messages\n\nApplication Properties in Python\nTo send device-to-cloud messages the method IoTHubDeviceClient.send_message(message) is used. This method can receive a string or a Message object. Typically we’ve been passing a json string with the telemetry payload and the Message object is created automatically for you (as per the docs).\nYou can, however, have more control over the properties of the Message object to be sent. As mention in Application Properties of D2C IoT Hub messages, there are many properties you can set yourself, including custom application properties. See the docs for the Message class.\nSee the example in azure-iot-sdk-python/azure-iot-device/samples/sync-samples/send_message.py to understand how to set message properties.\n\nThe messages described above (D2C and C2D communication) are typically created at the device or application with the help of a SDK (Software Development Kit) library.\n\n\nSee notes on Azure IoT SDKs for references to libraries and examples provided by Azure."
+  },
+  {
+    "objectID": "lectures/docs/device-cloud-communication.htm#direct-methods",
+    "href": "lectures/docs/device-cloud-communication.htm#direct-methods",
+    "title": "Device to Cloud Communication",
+    "section": "Direct Methods",
+    "text": "Direct Methods\nIoT Hub gives you the ability to invoke direct methods on devices from the cloud. For example, to trigger a relay or ask the device to initiate a upload process.\nSimilarly to HTTP, direct methods represent a request-reply interaction with a device. The request sender needs to know immediately if the request succeeded or failed. For example, turning on a light from a phone.\nThe life-cycle of a Direct Method is as follows:\n\n\nA service application (such as a back-end or mobile app) sends a Direct Method request to the device.\n\nThis is typically done using a SDK library running on the application or “manually” via a HTTPS call to IoT Hub.\n\nThe device receives the Direct Method, processes it and prepares a response.\n\nAlso typically done using a SDK library running on the device.\n\nThe response is sent back to the sender of the Direct Method.\nThe application inspects the response using a call-back function and decides what to do next.\n\nCallback calls are typically provided by a SDK library running on the application or “manually” by processing the HTTP response.\n\n\nFor details see Understand and invoke direct methods from IoT Hub\nFor examples of how to use Direct Methods, see Quickstart: Control a device connected to an IoT hub.\nYou can also review Lab 6 (Section 1, Section 2): we used the InvokeDeviceMethod sample service in this lab. You can use this code in your own project, modifying the direct method name to correspond to your use case (e.g. lights-on or door-unlock)."
+  },
+  {
+    "objectID": "lectures/docs/device-cloud-communication.htm#diving-deeper",
+    "href": "lectures/docs/device-cloud-communication.htm#diving-deeper",
+    "title": "Device to Cloud Communication",
+    "section": "Diving Deeper 🤿",
+    "text": "Diving Deeper 🤿\nIf you would like to have a “bigger picture” view of how the different Azure IoT services fit together, watch the video below by Blaize Stewart.\n\n\nTo learn more about AMQT and how it differs from MQTT, see the presentation below by Ken Giusti."
+  },
+  {
+    "objectID": "lectures/docs/what-is-iot.htm#internet-of-things-iot",
+    "href": "lectures/docs/what-is-iot.htm#internet-of-things-iot",
+    "title": "Intro to the Internet of Things",
+    "section": "Internet of Things (IoT)",
+    "text": "Internet of Things (IoT)\nThe Internet of Things (IoT) is comprised of equipment, machines, products, and devices that are connected to the cloud and periodically collect, send and/or receive data.\n\n\n\n\nThe Interconnection of communicating devices defines the “Internet of Things”\n\n\n\n\nIoT refers to the entire network of:\n\nphysical devices,\ntools,\nequipment, and\nsmart objects\n\nThese objects have the capability to collect and share data about:\n\nhow they are used\nthe environment around them\n\nIoT devices can also receive commands or updates via the cloud."
+  },
+  {
+    "objectID": "lectures/docs/what-is-iot.htm#why-collect-all-this-data",
+    "href": "lectures/docs/what-is-iot.htm#why-collect-all-this-data",
+    "title": "Intro to the Internet of Things",
+    "section": "Why collect all this data?",
+    "text": "Why collect all this data?\nBy analyzing the data collected by these connected objects, users and organisations can make informed decisions in near real-time and automate tightly integrated processes. This avoids decision making based on limited or out-dated data.\nThis data can create quick feedback loops for automation. Data from one object can trigger actions or control several other objects with timing and precision that could not be achieved by humans."
+  },
+  {
+    "objectID": "lectures/docs/what-is-iot.htm#iot-examples",
+    "href": "lectures/docs/what-is-iot.htm#iot-examples",
+    "title": "Intro to the Internet of Things",
+    "section": "IoT Examples",
+    "text": "IoT Examples\nThe use of IoT can be organised in two fields of application:\n\nIndustrial IoT (IIoT)\nConsumer IoT\n\n\n\n\n\nExamples of industrial and consumer IoT applications. Image source: “The Internet of Things and its Benefit to U.S. Water Customers”\n\n\n\nConsumer IoT\nExamples of consumer IoT are:\n\nHome Security: Sensors, alarms, cameras, lights, and microphones provide 24/7 security and surveillance. All of which can be controlled from a smart phone.\nSmart Home: Smart lighting, heating and sound systems can be automated to detect human present or receive instructions remotely. Voice Assistants can also control house appliances or and provide information.\nWearables: Smartwatches and fitness trackers can monitor blood pressure or heart rate, and physical activity and suggest workouts, breaks or medical assistance.\nAppliances: Smart fridges can keep track of food quantities and expiry dates and create shopping lists accordingly. Smart outlet plugs can measure electrical consumption and turn other appliances on/off.\n\nIndustrial IoT (IIoT)\nMost people tend to first think of IoT as consumer devices. However, their main value added happens in industrial applications.\n\nEquipment Maintenance: Rolls-Royce’s Total Care provides a suite of predictive maintenance and repair services for its jet engines, including monitoring engine health, and modifying engines to increase reliability and durability.\nFarming: John Deere is building intelligence into its large tractors and sprayers through sensors that make the machines into mobile platforms capable of self-driving.\nHeavy Machinery & Transportation: Rio Tinto, a global mining company uses a remote command center to orchestrate the actions of huge drills, excavators, trains, and trucks across multiple mining sites.\nRenewable Energies: Iberdrola and Siemens are using IoT to optimize the operation and maintenance of offshore wind power farms, the lifetime extension of wind turbines and the reducing the cost of energy.\nFacilities Management: Monitoring of buildings, infrastructure, and other spaces, allow to improve energy efficiency, space utilization, productivity, and safety. These insights may help:\n\nsave money by automating lighting or optimizing heating and cooling cycles.\nIncrease employee or occupant satisfaction by keep equipment running or ensuring that supplies are stocked."
+  },
+  {
+    "objectID": "lectures/docs/what-is-iot.htm#high-level-components-of-an-iot-system",
+    "href": "lectures/docs/what-is-iot.htm#high-level-components-of-an-iot-system",
+    "title": "Intro to the Internet of Things",
+    "section": "High-level Components of an IoT System",
+    "text": "High-level Components of an IoT System\nIoT systems are compromised of five high-level components:\n\nSensors:\n\nCollect data from the device’s environment (eg. velocity, GPS coordinates, temperature, etc).\nSensors might use different communication protocols.\n\nIoT Devices are computing devices that have:\n\nAbility to securely register with the cloud;\nConnectivity options for sending and receiving data with the cloud.\n\nCloud Gateway / Hub:\n\nSecurely ingests and sends data or commands to devices;\nOffers device management (provisioning) services (add, remove, update, group, etc).\n\nData Processing:\n\nData validation;\nIntegrate with business processes (check thresholds, send alerts, trigger action)\nPlace data in Storage;\nRetrieve data from Storage for deeper / long-term analysis;\n\nUser Interface:\n\nData visualization;\nTrigger manual actions;\nConfigure automatic actions;\nFacilitate device management.\n\n\n\n\n\n\nIcons of IoT High level components"
+  },
+  {
+    "objectID": "lectures/docs/what-is-iot.htm#iot-cloud-service-providers",
+    "href": "lectures/docs/what-is-iot.htm#iot-cloud-service-providers",
+    "title": "Intro to the Internet of Things",
+    "section": "IoT Cloud Service Providers",
+    "text": "IoT Cloud Service Providers\nSince IoT objects typically move around, connectivity and data collection need to happen over wide geographical areas.\nMost companies do not want to deal with setting-up the physical infrastructure and software required to have this level of distributed connectivity and reliability (servers, databases, backup systems, networking, container orchestration, etc).\nIt is typically far more practical and cost-effective to use the services of an established IoT Cloud Service Provider.\nThe three main Cloud Service Providers in the IoT space are:\n\nAmazon Web Services (AWS)\nMicrosoft Azure\nGoogle Cloud\n\nThere are many other Cloud providers such as IBM Cloud IoT and Oracle IoT.\n\nIn this course we will focus on Microsoft Azure. However, all three platforms offer similar functionality."
+  },
+  {
+    "objectID": "lectures/docs/what-is-iot.htm#azure-account-check",
+    "href": "lectures/docs/what-is-iot.htm#azure-account-check",
+    "title": "Intro to the Internet of Things",
+    "section": "Azure Account Check",
+    "text": "Azure Account Check\nStudents get $100 of credit for 12 months and free developer tools without a credit card.\n\nCreate an account and see details here.\n\nThe student account can be renewed annually (including $100 credits) for as long as you are a student.\nMost things we’ll do with Azure will use free services. We will occasionally use some of your free credits (~$20).\nChecking your balance 💸\nAs you experiment with Azure you might want to know your current balance.\nTL:DR\n\nSign in to the Azure portn in to the Azure portalal\nSearch for Cost Management\nSelect Payment methods\nCheck your Azure credits panel.\n\n\n\n\n\nCredit check panel in Azure\n\n\n\nFor details check Track Microsoft Customer Agreement Azure credit balance\nBudget Alerts\nIt’s possible to setup email alerts when your Azure spending exceeds a dollar threshold. This avoids unexpected spending of Azure credits.\nThere are two approaches to setting up a Budget in the Azure Portal:\n\nOpen the panel (aka “blade”) for the Resource Group in question, and then create a new Budget for that group.\nCreate a Budget for your account under Cost Management + Billing and then apply a filter according to ResourceGroupName in order to target a specific Resource Group.\n\nThe first approach involves a few less steps so it is described below.\n\n\n\nFor information on creating a budget from the Cost Management blade, see How to set up Azure budget alerts by TechTarget.com.\nFor details on using and managing budgets, see official tutorial: Create and manage Azure budgets.\n\n\n\nCreate a Budget for a Resource Group\n\nIn the Azure Portal Home, select the Resource groups service.\nSelect the resource group you want to monitor with a budget.\nIn the left panel, select Budgets under the Cost Management group and select Add.\n\n\n\n\n\nMenu for creating a budget for a resource group\n\n\n\n\nGive your budget a name and an amount.\n\n\n\n\n\nSelect the percent spending for the alert and the email to receive the notification.\nClick Create."
+  },
+  {
+    "objectID": "lectures/docs/what-is-iot.htm#exercises",
+    "href": "lectures/docs/what-is-iot.htm#exercises",
+    "title": "Intro to the Internet of Things",
+    "section": "Exercises",
+    "text": "Exercises\nNOTE: The exercise below is out of date. We will see IOT learning material later in the course.\n\nRead the Microsoft training module Examine the architecture of an IoT solution and complete the Moodle quiz on the module."
+  },
+  {
+    "objectID": "lectures/docs/what-is-iot.htm#diving-deeper",
+    "href": "lectures/docs/what-is-iot.htm#diving-deeper",
+    "title": "Intro to the Internet of Things",
+    "section": "Diving Deeper",
+    "text": "Diving Deeper\nVideo (15:19): The 7 Principles of the IoT by Tom Bradicich\n\nIn depth explanation of the integration between IoT sub-systems and opportunities from a technical and business perspective."
+  },
+  {
+    "objectID": "lectures/docs/what-is-iot.htm#references",
+    "href": "lectures/docs/what-is-iot.htm#references",
+    "title": "Intro to the Internet of Things",
+    "section": "References",
+    "text": "References\n\nWhat is IoT by Microsoft Azure.\nHow Industrial Internet of Things are impacting our lives by Bluechip Infocorp Pvt Ltd via Medium.\nAn Introduction to the Internet of Things by Pier Paolo Ippolito via FreeCodeCamp Blog."
   },
   {
     "objectID": "lectures/docs/what-is-iot.html",
@@ -142,69 +324,6 @@
   {
     "objectID": "lectures/docs/what-is-iot.html#references",
     "href": "lectures/docs/what-is-iot.html#references",
-    "title": "Intro to the Internet of Things",
-    "section": "References",
-    "text": "References\n\nWhat is IoT by Microsoft Azure.\nHow Industrial Internet of Things are impacting our lives by Bluechip Infocorp Pvt Ltd via Medium.\nAn Introduction to the Internet of Things by Pier Paolo Ippolito via FreeCodeCamp Blog."
-  },
-  {
-    "objectID": "lectures/docs/what-is-iot.htm#internet-of-things-iot",
-    "href": "lectures/docs/what-is-iot.htm#internet-of-things-iot",
-    "title": "Intro to the Internet of Things",
-    "section": "Internet of Things (IoT)",
-    "text": "Internet of Things (IoT)\nThe Internet of Things (IoT) is comprised of equipment, machines, products, and devices that are connected to the cloud and periodically collect, send and/or receive data.\n\n\n\n\nThe Interconnection of communicating devices defines the “Internet of Things”\n\n\n\n\nIoT refers to the entire network of:\n\nphysical devices,\ntools,\nequipment, and\nsmart objects\n\nThese objects have the capability to collect and share data about:\n\nhow they are used\nthe environment around them\n\nIoT devices can also receive commands or updates via the cloud."
-  },
-  {
-    "objectID": "lectures/docs/what-is-iot.htm#why-collect-all-this-data",
-    "href": "lectures/docs/what-is-iot.htm#why-collect-all-this-data",
-    "title": "Intro to the Internet of Things",
-    "section": "Why collect all this data?",
-    "text": "Why collect all this data?\nBy analyzing the data collected by these connected objects, users and organisations can make informed decisions in near real-time and automate tightly integrated processes. This avoids decision making based on limited or out-dated data.\nThis data can create quick feedback loops for automation. Data from one object can trigger actions or control several other objects with timing and precision that could not be achieved by humans."
-  },
-  {
-    "objectID": "lectures/docs/what-is-iot.htm#iot-examples",
-    "href": "lectures/docs/what-is-iot.htm#iot-examples",
-    "title": "Intro to the Internet of Things",
-    "section": "IoT Examples",
-    "text": "IoT Examples\nThe use of IoT can be organised in two fields of application:\n\nIndustrial IoT (IIoT)\nConsumer IoT\n\n\n\n\n\nExamples of industrial and consumer IoT applications. Image source: “The Internet of Things and its Benefit to U.S. Water Customers”\n\n\n\nConsumer IoT\nExamples of consumer IoT are:\n\nHome Security: Sensors, alarms, cameras, lights, and microphones provide 24/7 security and surveillance. All of which can be controlled from a smart phone.\nSmart Home: Smart lighting, heating and sound systems can be automated to detect human present or receive instructions remotely. Voice Assistants can also control house appliances or and provide information.\nWearables: Smartwatches and fitness trackers can monitor blood pressure or heart rate, and physical activity and suggest workouts, breaks or medical assistance.\nAppliances: Smart fridges can keep track of food quantities and expiry dates and create shopping lists accordingly. Smart outlet plugs can measure electrical consumption and turn other appliances on/off.\n\nIndustrial IoT (IIoT)\nMost people tend to first think of IoT as consumer devices. However, their main value added happens in industrial applications.\n\nEquipment Maintenance: Rolls-Royce’s Total Care provides a suite of predictive maintenance and repair services for its jet engines, including monitoring engine health, and modifying engines to increase reliability and durability.\nFarming: John Deere is building intelligence into its large tractors and sprayers through sensors that make the machines into mobile platforms capable of self-driving.\nHeavy Machinery & Transportation: Rio Tinto, a global mining company uses a remote command center to orchestrate the actions of huge drills, excavators, trains, and trucks across multiple mining sites.\nRenewable Energies: Iberdrola and Siemens are using IoT to optimize the operation and maintenance of offshore wind power farms, the lifetime extension of wind turbines and the reducing the cost of energy.\nFacilities Management: Monitoring of buildings, infrastructure, and other spaces, allow to improve energy efficiency, space utilization, productivity, and safety. These insights may help:\n\nsave money by automating lighting or optimizing heating and cooling cycles.\nIncrease employee or occupant satisfaction by keep equipment running or ensuring that supplies are stocked."
-  },
-  {
-    "objectID": "lectures/docs/what-is-iot.htm#high-level-components-of-an-iot-system",
-    "href": "lectures/docs/what-is-iot.htm#high-level-components-of-an-iot-system",
-    "title": "Intro to the Internet of Things",
-    "section": "High-level Components of an IoT System",
-    "text": "High-level Components of an IoT System\nIoT systems are compromised of five high-level components:\n\nSensors:\n\nCollect data from the device’s environment (eg. velocity, GPS coordinates, temperature, etc).\nSensors might use different communication protocols.\n\nIoT Devices are computing devices that have:\n\nAbility to securely register with the cloud;\nConnectivity options for sending and receiving data with the cloud.\n\nCloud Gateway / Hub:\n\nSecurely ingests and sends data or commands to devices;\nOffers device management (provisioning) services (add, remove, update, group, etc).\n\nData Processing:\n\nData validation;\nIntegrate with business processes (check thresholds, send alerts, trigger action)\nPlace data in Storage;\nRetrieve data from Storage for deeper / long-term analysis;\n\nUser Interface:\n\nData visualization;\nTrigger manual actions;\nConfigure automatic actions;\nFacilitate device management.\n\n\n\n\n\n\nIcons of IoT High level components"
-  },
-  {
-    "objectID": "lectures/docs/what-is-iot.htm#iot-cloud-service-providers",
-    "href": "lectures/docs/what-is-iot.htm#iot-cloud-service-providers",
-    "title": "Intro to the Internet of Things",
-    "section": "IoT Cloud Service Providers",
-    "text": "IoT Cloud Service Providers\nSince IoT objects typically move around, connectivity and data collection need to happen over wide geographical areas.\nMost companies do not want to deal with setting-up the physical infrastructure and software required to have this level of distributed connectivity and reliability (servers, databases, backup systems, networking, container orchestration, etc).\nIt is typically far more practical and cost-effective to use the services of an established IoT Cloud Service Provider.\nThe three main Cloud Service Providers in the IoT space are:\n\nAmazon Web Services (AWS)\nMicrosoft Azure\nGoogle Cloud\n\nThere are many other Cloud providers such as IBM Cloud IoT and Oracle IoT.\n\nIn this course we will focus on Microsoft Azure. However, all three platforms offer similar functionality."
-  },
-  {
-    "objectID": "lectures/docs/what-is-iot.htm#azure-account-check",
-    "href": "lectures/docs/what-is-iot.htm#azure-account-check",
-    "title": "Intro to the Internet of Things",
-    "section": "Azure Account Check",
-    "text": "Azure Account Check\nStudents get $100 of credit for 12 months and free developer tools without a credit card.\n\nCreate an account and see details here.\n\nThe student account can be renewed annually (including $100 credits) for as long as you are a student.\nMost things we’ll do with Azure will use free services. We will occasionally use some of your free credits (~$20).\nChecking your balance 💸\nAs you experiment with Azure you might want to know your current balance.\nTL:DR\n\nSign in to the Azure portn in to the Azure portalal\nSearch for Cost Management\nSelect Payment methods\nCheck your Azure credits panel.\n\n\n\n\n\nCredit check panel in Azure\n\n\n\nFor details check Track Microsoft Customer Agreement Azure credit balance\nBudget Alerts\nIt’s possible to setup email alerts when your Azure spending exceeds a dollar threshold. This avoids unexpected spending of Azure credits.\nThere are two approaches to setting up a Budget in the Azure Portal:\n\nOpen the panel (aka “blade”) for the Resource Group in question, and then create a new Budget for that group.\nCreate a Budget for your account under Cost Management + Billing and then apply a filter according to ResourceGroupName in order to target a specific Resource Group.\n\nThe first approach involves a few less steps so it is described below.\n\n\n\nFor information on creating a budget from the Cost Management blade, see How to set up Azure budget alerts by TechTarget.com.\nFor details on using and managing budgets, see official tutorial: Create and manage Azure budgets.\n\n\n\nCreate a Budget for a Resource Group\n\nIn the Azure Portal Home, select the Resource groups service.\nSelect the resource group you want to monitor with a budget.\nIn the left panel, select Budgets under the Cost Management group and select Add.\n\n\n\n\n\nMenu for creating a budget for a resource group\n\n\n\n\nGive your budget a name and an amount.\n\n\n\n\n\nSelect the percent spending for the alert and the email to receive the notification.\nClick Create."
-  },
-  {
-    "objectID": "lectures/docs/what-is-iot.htm#exercises",
-    "href": "lectures/docs/what-is-iot.htm#exercises",
-    "title": "Intro to the Internet of Things",
-    "section": "Exercises",
-    "text": "Exercises\nNOTE: The exercise below is out of date. We will see IOT learning material later in the course.\n\nRead the Microsoft training module Examine the architecture of an IoT solution and complete the Moodle quiz on the module."
-  },
-  {
-    "objectID": "lectures/docs/what-is-iot.htm#diving-deeper",
-    "href": "lectures/docs/what-is-iot.htm#diving-deeper",
-    "title": "Intro to the Internet of Things",
-    "section": "Diving Deeper",
-    "text": "Diving Deeper\nVideo (15:19): The 7 Principles of the IoT by Tom Bradicich\n\nIn depth explanation of the integration between IoT sub-systems and opportunities from a technical and business perspective."
-  },
-  {
-    "objectID": "lectures/docs/what-is-iot.htm#references",
-    "href": "lectures/docs/what-is-iot.htm#references",
     "title": "Intro to the Internet of Things",
     "section": "References",
     "text": "References\n\nWhat is IoT by Microsoft Azure.\nHow Industrial Internet of Things are impacting our lives by Bluechip Infocorp Pvt Ltd via Medium.\nAn Introduction to the Internet of Things by Pier Paolo Ippolito via FreeCodeCamp Blog."
@@ -287,116 +406,18 @@
     "text": "Troubleshooting\n\nCheck python’s library paths\nSimilarly to Linux, there are environmental variables that determine where python will look for installed modules/libraries.\nSee the paths where python is looking for libraries with sys.path. They should look something like:\n\nsystemvenv\n\n\npi@raspberrypi:~ $ python\n\n&gt;&gt;&gt; import sys      # Exposes configuration used by the python interpreter.\n&gt;&gt;&gt; sys.path        # Lists all paths where interpreter looks for modules.\n['', '/usr/lib/python311.zip', '/usr/lib/python3.11', '/usr/lib/python3.11/lib-dynload', '/usr/local/lib/python3.11/dist-packages', '/usr/lib/python3/dist-packages', '/usr/lib/python3.11/dist-packages']\n\n\n(env) pi@raspberrypi:~ $ python\n\n&gt;&gt;&gt; import sys      # Exposes configuration used by the python interpreter.\n&gt;&gt;&gt; sys.path        # Lists all paths where interpreter looks for modules.\n['', '/usr/lib/python311.zip', '/usr/lib/python3.11', '/usr/lib/python3.11/lib-dynload', '/home/pi/lab2/python/env/lib/python3.11/site-packages', '/usr/local/lib/python3.11/dist-packages', '/usr/lib/python3/dist-packages', '/usr/lib/python3.11/dist-packages']\n\n\n\nIf the output of pip show seeed-python-reterminal is not in this list, python will not find it when you import it.\n\nNote: the python shell above was started as the user pi. If you start python as root, sys.path might have different paths.\n\nNote that the user pi does not have permission to add content inside /usr.\nThus, all pip installations as the regular user go into /home/pi/.local/lib/python3.11/site-packages."
   },
   {
-    "objectID": "lectures/docs/device-cloud-communication.htm#azure-iot-protocols",
-    "href": "lectures/docs/device-cloud-communication.htm#azure-iot-protocols",
-    "title": "Device to Cloud Communication",
-    "section": "Azure IoT Protocols",
-    "text": "Azure IoT Protocols\nIoT Hub allows devices to use the following protocols for device-side communications:\n\nMQTT (including over WebSockets)\nAMQP (including over WebSockets)\nHTTPS\n\nBy now you are well familiar with MQTT and HTTPS.\nAMQP is not covered in this course, however, it is also a popular protocol for IoT communication. It is used for most of Azure IoT internal communication.\nAMQP is more complex and has slightly more over head than MQTT, thus consuming more bandwidth and device memory. However, it does not requires a broker (although one can be used) and has extra features for security and flow control.\n\nThe choice of protocol is a design choice that is implemented when using libraries from the Azure IoT SDKs (ex.: when instantiating a client or a connection object).\nFor example, the Azure IoT SDK for python uses MQTT by default.\n\nIf you would like to know more about AMQP and how it differs from MQTT, see the video on “Diving Deeper”."
-  },
-  {
-    "objectID": "lectures/docs/device-cloud-communication.htm#device-to-cloud-d2c-communication",
-    "href": "lectures/docs/device-cloud-communication.htm#device-to-cloud-d2c-communication",
-    "title": "Device to Cloud Communication",
-    "section": "Device to Cloud (D2C) Communication",
-    "text": "Device to Cloud (D2C) Communication\nIoT Hub exposes three options for sending information from the device to the cloud or solution back end:\n\nDevice-to-cloud messages for time series telemetry and alerts.\nFile uploads for media files and large telemetry batches uploaded by intermittently connected devices.\nDevice twin’s reported properties for reporting device state information such as configuration or last known state. Course notes on Device twins"
-  },
-  {
-    "objectID": "lectures/docs/device-cloud-communication.htm#cloud-to-device-c2d-communication",
-    "href": "lectures/docs/device-cloud-communication.htm#cloud-to-device-c2d-communication",
-    "title": "Device to Cloud Communication",
-    "section": "Cloud to Device (C2D) Communication",
-    "text": "Cloud to Device (C2D) Communication\nIoT Hub provides three options for devices to receive information and commands from the cloud or back-end app:\n\nCloud-to-device messages for one-way notifications to the device.\nDirect methods follow a request-response pattern and are meant for communications that require immediate confirmation of their result. For example, interactive control of the device, such as turning on a fan.\nTwin’s desired properties for long-running commands intended to put the device into a certain desired state. For example, set the telemetry send interval to 30 minutes. Course notes on Device twins"
-  },
-  {
-    "objectID": "lectures/docs/device-cloud-communication.htm#end-points",
-    "href": "lectures/docs/device-cloud-communication.htm#end-points",
-    "title": "Device to Cloud Communication",
-    "section": "End-points",
-    "text": "End-points\nIoT Hub also exposes multiple end-points that act as data input and output to various other actors.\nFor example, all messages received from a device are also forwarded to a “device to cloud message” end-point. An external client such as VS Code or Azure CLI can connect to this end-point and read the D2C messages sent to IoT Hub.\n\nYou can think of IoT Hub as a broker and the end-points as topics. A client can subscribe to a topic and receive forwarded messages.\nBy default, messages are routed to a built-in endpoint.\n\nIoT Hub allows data retention in the built-in end-points for a maximum of 7 days (1 day by default).\nFor a list of all built-in end-points see IoT Hub endpoints reference.\nThe Azure IoT SDKs article describes the various ways to access these endpoints."
-  },
-  {
-    "objectID": "lectures/docs/device-cloud-communication.htm#message-anatomy",
-    "href": "lectures/docs/device-cloud-communication.htm#message-anatomy",
-    "title": "Device to Cloud Communication",
-    "section": "Message Anatomy",
-    "text": "Message Anatomy\nAs previously mentioned, IoT Hub messages can be used for both D2C or C2D communication.\nAn IoT Hub message consists of:\n\nA predetermined set of system properties.\nA set of application properties: A dictionary of string properties that the application can define and access, without needing to deserialize the message body.\nAn opaque binary body (the payload / application data).\n\n(Property names and values can only contain ASCII alphanumeric characters).\n Below is an example of a message as they are received by the IoT Hub.\n\nNote that creating and manipulation of the message on the device-side will look different. Many properties are automatically set on message by the SDK.\n\n{\n  \"message\": {\n\n    \"systemProperties\": {\n      \"contentType\": \"application/json\",\n      \"contentEncoding\": \"UTF-8\",\n      \"iothub-message-source\": \"deviceMessages\",\n      \"iothub-enqueuedtime\": \"2017-05-08T18:55:31.8514657Z\"\n    },\n\n    \"appProperties\": {\n      \"processingPath\": \"{cold | warm | hot}\",\n      \"verbose\": \"{true, false}\",\n      \"severity\": 1-5,\n      \"testDevice\": \"{true | false}\"\n    },\n\n    \"body\": \"{\\\"Weather\\\":{\\\"Temperature\\\":50}}\"\n  }\n}\nSystem properties are added for all users and identify content of the message. Users can selectively add application properties to the message.\nFor a list of system and application properties that can be read or set on messages, see:\n\nSystem Properties of D2C IoT Hub messages\nApplication Properties of D2C IoT Hub messages\nSystem Properties of C2D IoT Hub messages\n\nApplication Properties in Python\nTo send device-to-cloud messages the method IoTHubDeviceClient.send_message(message) is used. This method can receive a string or a Message object. Typically we’ve been passing a json string with the telemetry payload and the Message object is created automatically for you (as per the docs).\nYou can, however, have more control over the properties of the Message object to be sent. As mention in Application Properties of D2C IoT Hub messages, there are many properties you can set yourself, including custom application properties. See the docs for the Message class.\nSee the example in azure-iot-sdk-python/azure-iot-device/samples/sync-samples/send_message.py to understand how to set message properties.\n\nThe messages described above (D2C and C2D communication) are typically created at the device or application with the help of a SDK (Software Development Kit) library.\n\n\nSee notes on Azure IoT SDKs for references to libraries and examples provided by Azure."
-  },
-  {
-    "objectID": "lectures/docs/device-cloud-communication.htm#direct-methods",
-    "href": "lectures/docs/device-cloud-communication.htm#direct-methods",
-    "title": "Device to Cloud Communication",
-    "section": "Direct Methods",
-    "text": "Direct Methods\nIoT Hub gives you the ability to invoke direct methods on devices from the cloud. For example, to trigger a relay or ask the device to initiate a upload process.\nSimilarly to HTTP, direct methods represent a request-reply interaction with a device. The request sender needs to know immediately if the request succeeded or failed. For example, turning on a light from a phone.\nThe life-cycle of a Direct Method is as follows:\n\n\nA service application (such as a back-end or mobile app) sends a Direct Method request to the device.\n\nThis is typically done using a SDK library running on the application or “manually” via a HTTPS call to IoT Hub.\n\nThe device receives the Direct Method, processes it and prepares a response.\n\nAlso typically done using a SDK library running on the device.\n\nThe response is sent back to the sender of the Direct Method.\nThe application inspects the response using a call-back function and decides what to do next.\n\nCallback calls are typically provided by a SDK library running on the application or “manually” by processing the HTTP response.\n\n\nFor details see Understand and invoke direct methods from IoT Hub\nFor examples of how to use Direct Methods, see Quickstart: Control a device connected to an IoT hub.\nYou can also review Lab 6 (Section 1, Section 2): we used the InvokeDeviceMethod sample service in this lab. You can use this code in your own project, modifying the direct method name to correspond to your use case (e.g. lights-on or door-unlock)."
-  },
-  {
-    "objectID": "lectures/docs/device-cloud-communication.htm#diving-deeper",
-    "href": "lectures/docs/device-cloud-communication.htm#diving-deeper",
-    "title": "Device to Cloud Communication",
-    "section": "Diving Deeper 🤿",
-    "text": "Diving Deeper 🤿\nIf you would like to have a “bigger picture” view of how the different Azure IoT services fit together, watch the video below by Blaize Stewart.\n\n\nTo learn more about AMQT and how it differs from MQTT, see the presentation below by Ken Giusti."
-  },
-  {
-    "objectID": "lectures/docs/device-cloud-communication.html",
-    "href": "lectures/docs/device-cloud-communication.html",
-    "title": "Device to Cloud Communication",
-    "section": "",
-    "text": "Communication for IoT systems should be bi-directional:\nAzure offers a variety of ways of exchanging information in both directions. In this lesson we’ll look at the specifics of how these messaging systems work."
-  },
-  {
-    "objectID": "lectures/docs/device-cloud-communication.html#azure-iot-protocols",
-    "href": "lectures/docs/device-cloud-communication.html#azure-iot-protocols",
-    "title": "Device to Cloud Communication",
-    "section": "Azure IoT Protocols",
-    "text": "Azure IoT Protocols\nIoT Hub allows devices to use the following protocols for device-side communications:\n\nMQTT (including over WebSockets)\nAMQP (including over WebSockets)\nHTTPS\n\nBy now you are well familiar with MQTT and HTTPS.\nAMQP is not covered in this course, however, it is also a popular protocol for IoT communication. It is used for most of Azure IoT internal communication.\nAMQP is more complex and has slightly more over head than MQTT, thus consuming more bandwidth and device memory. However, it does not requires a broker (although one can be used) and has extra features for security and flow control.\n\nThe choice of protocol is a design choice that is implemented when using libraries from the Azure IoT SDKs (ex.: when instantiating a client or a connection object).\nFor example, the Azure IoT SDK for python uses MQTT by default.\n\nIf you would like to know more about AMQP and how it differs from MQTT, see the video on “Diving Deeper”."
-  },
-  {
-    "objectID": "lectures/docs/device-cloud-communication.html#device-to-cloud-d2c-communication",
-    "href": "lectures/docs/device-cloud-communication.html#device-to-cloud-d2c-communication",
-    "title": "Device to Cloud Communication",
-    "section": "Device to Cloud (D2C) Communication",
-    "text": "Device to Cloud (D2C) Communication\nIoT Hub exposes three options for sending information from the device to the cloud or solution back end:\n\nDevice-to-cloud messages for time series telemetry and alerts.\nFile uploads for media files and large telemetry batches uploaded by intermittently connected devices.\nDevice twin’s reported properties for reporting device state information such as configuration or last known state. Course notes on Device twins"
-  },
-  {
-    "objectID": "lectures/docs/device-cloud-communication.html#cloud-to-device-c2d-communication",
-    "href": "lectures/docs/device-cloud-communication.html#cloud-to-device-c2d-communication",
-    "title": "Device to Cloud Communication",
-    "section": "Cloud to Device (C2D) Communication",
-    "text": "Cloud to Device (C2D) Communication\nIoT Hub provides three options for devices to receive information and commands from the cloud or back-end app:\n\nCloud-to-device messages for one-way notifications to the device.\nDirect methods follow a request-response pattern and are meant for communications that require immediate confirmation of their result. For example, interactive control of the device, such as turning on a fan.\nTwin’s desired properties for long-running commands intended to put the device into a certain desired state. For example, set the telemetry send interval to 30 minutes. Course notes on Device twins"
-  },
-  {
-    "objectID": "lectures/docs/device-cloud-communication.html#end-points",
-    "href": "lectures/docs/device-cloud-communication.html#end-points",
-    "title": "Device to Cloud Communication",
-    "section": "End-points",
-    "text": "End-points\nIoT Hub also exposes multiple end-points that act as data input and output to various other actors.\nFor example, all messages received from a device are also forwarded to a “device to cloud message” end-point. An external client such as VS Code or Azure CLI can connect to this end-point and read the D2C messages sent to IoT Hub.\n\nYou can think of IoT Hub as a broker and the end-points as topics. A client can subscribe to a topic and receive forwarded messages.\nBy default, messages are routed to a built-in endpoint.\n\nIoT Hub allows data retention in the built-in end-points for a maximum of 7 days (1 day by default).\nFor a list of all built-in end-points see IoT Hub endpoints reference.\nThe Azure IoT SDKs article describes the various ways to access these endpoints."
-  },
-  {
-    "objectID": "lectures/docs/device-cloud-communication.html#message-anatomy",
-    "href": "lectures/docs/device-cloud-communication.html#message-anatomy",
-    "title": "Device to Cloud Communication",
-    "section": "Message Anatomy",
-    "text": "Message Anatomy\nAs previously mentioned, IoT Hub messages can be used for both D2C or C2D communication.\nAn IoT Hub message consists of:\n\nA predetermined set of system properties.\nA set of application properties: A dictionary of string properties that the application can define and access, without needing to deserialize the message body.\nAn opaque binary body (the payload / application data).\n\n(Property names and values can only contain ASCII alphanumeric characters).\n Below is an example of a message as they are received by the IoT Hub.\n\nNote that creating and manipulation of the message on the device-side will look different. Many properties are automatically set on message by the SDK.\n\n{\n  \"message\": {\n\n    \"systemProperties\": {\n      \"contentType\": \"application/json\",\n      \"contentEncoding\": \"UTF-8\",\n      \"iothub-message-source\": \"deviceMessages\",\n      \"iothub-enqueuedtime\": \"2017-05-08T18:55:31.8514657Z\"\n    },\n\n    \"appProperties\": {\n      \"processingPath\": \"{cold | warm | hot}\",\n      \"verbose\": \"{true, false}\",\n      \"severity\": 1-5,\n      \"testDevice\": \"{true | false}\"\n    },\n\n    \"body\": \"{\\\"Weather\\\":{\\\"Temperature\\\":50}}\"\n  }\n}\nSystem properties are added for all users and identify content of the message. Users can selectively add application properties to the message.\nFor a list of system and application properties that can be read or set on messages, see:\n\nSystem Properties of D2C IoT Hub messages\nApplication Properties of D2C IoT Hub messages\nSystem Properties of C2D IoT Hub messages\n\n\nApplication Properties in Python\nTo send device-to-cloud messages the method IoTHubDeviceClient.send_message(message) is used. This method can receive a string or a Message object. Typically we’ve been passing a json string with the telemetry payload and the Message object is created automatically for you (as per the docs).\nYou can, however, have more control over the properties of the Message object to be sent. As mention in Application Properties of D2C IoT Hub messages, there are many properties you can set yourself, including custom application properties. See the docs for the Message class.\nSee the example in azure-iot-sdk-python/azure-iot-device/samples/sync-samples/send_message.py to understand how to set message properties.\n\nThe messages described above (D2C and C2D communication) are typically created at the device or application with the help of a SDK (Software Development Kit) library.\n\n\nSee notes on Azure IoT SDKs for references to libraries and examples provided by Azure."
-  },
-  {
-    "objectID": "lectures/docs/device-cloud-communication.html#direct-methods",
-    "href": "lectures/docs/device-cloud-communication.html#direct-methods",
-    "title": "Device to Cloud Communication",
-    "section": "Direct Methods",
-    "text": "Direct Methods\nIoT Hub gives you the ability to invoke direct methods on devices from the cloud. For example, to trigger a relay or ask the device to initiate a upload process.\nSimilarly to HTTP, direct methods represent a request-reply interaction with a device. The request sender needs to know immediately if the request succeeded or failed. For example, turning on a light from a phone.\nThe life-cycle of a Direct Method is as follows:\n\n\nA service application (such as a back-end or mobile app) sends a Direct Method request to the device.\n\nThis is typically done using a SDK library running on the application or “manually” via a HTTPS call to IoT Hub.\n\nThe device receives the Direct Method, processes it and prepares a response.\n\nAlso typically done using a SDK library running on the device.\n\nThe response is sent back to the sender of the Direct Method.\nThe application inspects the response using a call-back function and decides what to do next.\n\nCallback calls are typically provided by a SDK library running on the application or “manually” by processing the HTTP response.\n\n\nFor details see Understand and invoke direct methods from IoT Hub\nFor examples of how to use Direct Methods, see Quickstart: Control a device connected to an IoT hub.\nYou can also review Lab 6 (Section 1, Section 2): we used the InvokeDeviceMethod sample service in this lab. You can use this code in your own project, modifying the direct method name to correspond to your use case (e.g. lights-on or door-unlock)."
-  },
-  {
-    "objectID": "lectures/docs/device-cloud-communication.html#diving-deeper",
-    "href": "lectures/docs/device-cloud-communication.html#diving-deeper",
-    "title": "Device to Cloud Communication",
-    "section": "Diving Deeper 🤿",
-    "text": "Diving Deeper 🤿\nIf you would like to have a “bigger picture” view of how the different Azure IoT services fit together, watch the video below by Blaize Stewart.\n\n\nTo learn more about AMQT and how it differs from MQTT, see the presentation below by Ken Giusti."
-  },
-  {
     "objectID": "lectures/index.html",
     "href": "lectures/index.html",
     "title": "All lectures",
     "section": "",
     "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\nTitle\n\n\nSubtitle\n\n\n\n\n\n\n2024-01-29\n\n\nIntro to the Internet of Things\n\n\nFundamental concepts and applications behind the ‘Internet of Things’ paradigm.\n\n\n\n\n2024-02-19\n\n\nPackage management\n\n\nHow to use OS package managers, virtual environments, and pip to manage python applications effectively.\n\n\n\n\n2024-05-09\n\n\nDevice to Cloud Communication\n\n\nHow to use Azure for bidrectional device-cloud communication\n\n\n\n\n\nNo matching items\n\n Back to top"
+  },
+  {
+    "objectID": "reference/index.html",
+    "href": "reference/index.html",
+    "title": "Reference",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\nTitle\n\n\nSubtitle\n\n\n\n\n\n\n2024-01-26\n\n\nCourse Hardware\n\n\nList of hardware available for the course as well as their respective specifications and documentation.\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "about/calendar.html",
@@ -434,25 +455,11 @@
     "text": "May\n\nDeliverables\n\nTest 1: All course content (in-class May 3)\nProject Milestone 4: (May 10) Azure IoT for devices in project. Section 1, Section 2\nAssignment 2: (May 10) HVAC system using Azure IoT (9%). Section 1, Section 2\nProject Milestone 6: (May 21) Finalizing IoT Communications System. Section 1, Section 2\nProject Milestone 7: (May 23/24) Final Presentations. Section 1, Section 2\n\n\n\nSchedule\n\nMay 3 (Fri): Test 1\nMay 6 (Mon): Work on Assignment 2 and Milestone 4\nMay 10 (Fri): Milestone 2 and Assignment 4 due.\nMay 13 (Mon): Work on Milestone 6 + App Dev III\nMay 16 (Thursday, Friday schedule): Wrap up Milestone 6 + App Dev III\nMay 21 (Tuesday): Milestone 6 Due\nMay 23/24 (Thurs/Fri): Final presentations, all milestones due"
   },
   {
-    "objectID": "about/this-site.html",
-    "href": "about/this-site.html",
-    "title": "About this website",
+    "objectID": "about/index.html",
+    "href": "about/index.html",
+    "title": "About",
     "section": "",
-    "text": "Course content, both for lectures and assignments, has been adapted by me from a variety of sources. This section serves the purpose of both acknowledging these references as well as pointing the way for curious students to begin investigating further into course material than we had time to cover.\n\n\nAll course content was either written by Mauricio Buschinelli, Michael Haaf, or explicitly adapted from external resources with attributions made clear. This course content retains the licenses of the original works where relevant, and is otherwise licensed under the Creative Commons Attribution 4.0 International License.\n\nTerms of use\nYou are free to:\n\nShare: copy and redistribute the material in any medium or format\nAdapt: remix, transform, and build upon the material for any purpose, even commercially.\n\nUnder the following terms:\n\nAttribution: You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.\n\nCreative Commons Attribution 4.0 International License"
-  },
-  {
-    "objectID": "about/this-site.html#course-content",
-    "href": "about/this-site.html#course-content",
-    "title": "About this website",
-    "section": "",
-    "text": "Course content, both for lectures and assignments, has been adapted by me from a variety of sources. This section serves the purpose of both acknowledging these references as well as pointing the way for curious students to begin investigating further into course material than we had time to cover.\n\n\nAll course content was either written by Mauricio Buschinelli, Michael Haaf, or explicitly adapted from external resources with attributions made clear. This course content retains the licenses of the original works where relevant, and is otherwise licensed under the Creative Commons Attribution 4.0 International License.\n\nTerms of use\nYou are free to:\n\nShare: copy and redistribute the material in any medium or format\nAdapt: remix, transform, and build upon the material for any purpose, even commercially.\n\nUnder the following terms:\n\nAttribution: You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.\n\nCreative Commons Attribution 4.0 International License"
-  },
-  {
-    "objectID": "about/this-site.html#course-website",
-    "href": "about/this-site.html#course-website",
-    "title": "About this website",
-    "section": "Course website",
-    "text": "Course website\nDetails about how this website was built follow.\n\nColophon\n\n\n\nFrom Wikipedia: In publishing, a colophon is a brief statement containing information about the publication of a book… Some web pages also have colophons, which frequently contain (X)HTML, CSS, or usability standards compliance information and links to website validation tests.\n\n\n\nMarkup: Markdown\nFramework: Quarto\nDeployment: GitHub Pages\n\nYou can follow along directly with course updates at the course repository.\n\n\nCopyright\nThis website was written and designed by the Michael Haaf. All code and assets related to this website, unless indicated otherwise, are licensed under the GNU General Public License v3.0\n\nTerms of use\nThis website’s code is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.\nThis website’s code is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.\nGNU General Public License Notice"
+    "text": "About this site\n\n\n\n\n\n\n\n\n\n\n\n\nAbout this website\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCalendar\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSyllabus\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "index.html",
@@ -481,12 +488,5 @@
     "title": "Home",
     "section": "",
     "text": "This webpage is written in Markdown using the Quarto framework. The website is hosted via GitHub Pages\nSource code is open source and available on GitHub.\n\n\nCreate a local copy of these notes:\n\nInstall Quarto for your system\nClone the course GitHub repository.\nPreview the website:\nquarto preview .\n\n\nThis work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License. See the Copyright statement on the course webpage."
-  },
-  {
-    "objectID": "reference/index.html",
-    "href": "reference/index.html",
-    "title": "Reference",
-    "section": "",
-    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\nTitle\n\n\nSubtitle\n\n\n\n\n\n\n2024-01-26\n\n\nCourse Hardware\n\n\nList of hardware available for the course as well as their respective specifications and documentation.\n\n\n\n\n\nNo matching items\n\n Back to top"
   }
 ]

@@ -4,14 +4,6 @@
     "items": []
   },
   {
-    "listing": "/about/index.html",
-    "items": [
-      "/about/this-site.html",
-      "/about/calendar.html",
-      "/about/syllabus.html"
-    ]
-  },
-  {
     "listing": "/lectures/index.html",
     "items": [
       "/lectures/docs/what-is-iot.html",
@@ -23,6 +15,14 @@
     "listing": "/reference/index.html",
     "items": [
       "/reference/docs/course-hardware.html"
+    ]
+  },
+  {
+    "listing": "/about/index.html",
+    "items": [
+      "/about/this-site.html",
+      "/about/calendar.html",
+      "/about/syllabus.html"
     ]
   }
 ]
