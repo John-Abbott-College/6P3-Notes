@@ -1,0 +1,32 @@
+[project]
+name = "6P3-Notes"
+version = "4.0.0"
+description = " Website repository for Connected Objects course 420-6P3 "
+authors = [
+  { name = "michaelhaaf", email = "michael.haaf@johnabbott.qc.ca" },
+]
+dependencies = []
+requires-python = ">=3.9"
+readme = "README.md"
+license = { text = "GNU" }
+
+[tool.pdm]
+distribution = false
+
+[tool.pdm.scripts]
+format-python = "ruff format ."
+lint-python = "ruff check ."
+format-markdown = "mdformat ."
+lint-markdown = "pymarkdownlnt scan -r ."
+
+[dependency-groups]
+format = [
+    "mdformat>=0.7.21",
+    "mdformat-gfm>=0.4.1",
+    "mdformat-frontmatter>=2.0.8",
+    "mdformat-footnote>=0.1.1",
+    "mdformat-gfm-alerts>=1.0.1",
+    "ruff>=0.9.1",
+    "pymarkdownlnt>=0.9.26",
+    "mdformat-toc>=0.3.0",
+]
