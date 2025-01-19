@@ -1,7 +1,6 @@
 on:
-  workflow_dispatch:
   push:
-    branches: ["winter2025"]
+    branches: ["main"]
 
 name: Quarto Publish
 
@@ -27,3 +26,7 @@ jobs:
           target: gh-pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  #
+  # tag:
+  #   needs: [build-deploy]
+  #   uses: ./.github/workflows/tag.yml
