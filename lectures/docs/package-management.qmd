@@ -5,9 +5,7 @@ subtitle:
   python applications effectively.
 date: 2024-02-19
 categories: ["Quiz 1", "Python"]
-aliases:
-  - package-management-python.html
-order: 2
+draft: true
 ---
 
 ## Overview

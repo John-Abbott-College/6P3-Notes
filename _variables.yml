@@ -1,14 +1,42 @@
+site:
+  moodle: https://moodle.johnabbott.qc.ca/course/view.php?id=1361
+  repository: https://github.com/John-Abbott-College/6P3-Notes
+  url: https://john-abbott-college.github.io/6P3-Notes/
+  path: /6P3-Notes/
+
 instructor:
   name: Michael Haaf
   office: Penfield 311
-  office-hours: Posted on Léa and on office door
+  office-hours: Posted on Moodle, Léa, and on office door
   email: michael DOT haaf AT johnabbott DOT qc DOT ca
 
 course:
   title: Connected Objects
   number: 420-6P3-AB
   semester: Winter 2025
-  timetable: |+
-    - Monday, 11.30 AM – 1.00 PM (Room P-325/P-107)
-    - Tuesday, 2.30 PM – 5.30 PM (Room P-326/P-107)
-    - Thursday, 8.30 AM – 10.00 AM (Room P-326/P-107)
+  outline: https://moodle.johnabbott.qc.ca/mod/resource/view.php?id=48735
+  timetable:
+    section1: |+
+      - Monday, 10.30 – 12.30 (Room P-326)
+      - Friday, 8.30 – 11.00 (Room P-326)
+    section2: |+
+      - Monday, 13.00 – 15.00 (Room P-326)
+      - Friday, 13.00 – 15.30 (Room P-326)
+  assessments:
+    lab0: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=33678
+    lab1: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=33679
+    lab2: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=32606
+    lab3: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=32608
+    lab4: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=32609
+    lab5: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=34855
+    lab6: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=32610
+    lab7: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=32611
+    lab8: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=32612
+    a1: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=32614
+    a2: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=32615
+    project: https://moodle.johnabbott.qc.ca/course/view.php?id=807&section=2
+    m1: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=34975
+    m2: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=34976
+    m4: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=34977
+    m6: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=34978
+    m7: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=34979

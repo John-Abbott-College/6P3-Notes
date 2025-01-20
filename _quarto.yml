@@ -2,15 +2,13 @@ project:
   type: website
   resources:
     - "files/"
-  preview:
-    port: 6666
 
 website:
   title: "{{< var course.title >}}"
   image: "assets/art_title_path_only.svg"
   favicon: "assets/favicon_io/favicon.ico"
-  site-path: "/6P3-Notes/"
-  site-url: "https://john-abbott-college.github.io/6P3-Notes/"
+  site-path: "{{< site.path >}}"
+  site-url: "{{< site.url >}}"
   open-graph: true
   page-navigation: true
   back-to-top-navigation: true
@@ -23,26 +21,19 @@ website:
     keyboard-shortcut: "ctrl+k"
 
   page-footer:
-    left: |
-      © Copyright 2024-2025 Michael Haaf<br>
-      All rights reserved.
+    left:
+      - text: "{{< iconify simple-icons moodle >}}"
+        href: "{{< var site.moodle >}}"
+      - text: "{{< iconify fa6-brands github >}}"
+        href: "{{< var site.repository >}}"
+      - text: "{{< var course.title >}}: {{< var course.semester >}}"
     center:
       - text: "About"
         href: about/this-site.qmd
       - text: "License"
         href: about/this-site.qmd#copyright
-    right:
-      - text: "{{< var course.title >}}: {{< var course.semester >}}"
-      - text: "{{< iconify simple-icons moodle >}}"
-        menu:
-          - text: "Section 1 (8h30)"
-            href: https://moodle.johnabbott.qc.ca/course/view.php?id=807
-          - text: "Section 2 (13h30)"
-            href: https://moodle.johnabbott.qc.ca/course/view.php?id=808
-      - icon: rss
-        href: announcements/index.xml
-      - text: "{{< iconify fa6-brands github >}}"
-        href: https://github.com/John-Abbott-College/6P3-Notes
+    right: |
+      © Copyright 2024-2025 Michael Haaf
 
   navbar:
     left:
@@ -55,15 +46,9 @@ website:
       - text: "Reference"
         href: reference/index.qmd
       - text: "{{< iconify simple-icons moodle >}}"
-        menu:
-          - text: "Section 1 (8h30)"
-            href: https://moodle.johnabbott.qc.ca/course/view.php?id=807
-          - text: "Section 2 (13h30)"
-            href: https://moodle.johnabbott.qc.ca/course/view.php?id=808
-      - icon: rss
-        href: announcements/index.xml
+        href: "{{< var site.moodle >}}"
       - text: "{{< iconify fa6-brands github >}}"
-        href: https://github.com/John-Abbott-College/6P3-Notes
+        href: "{{< var site.repository >}}"
     logo: "assets/favicon_io/favicon-32x32.png"
 
 format:

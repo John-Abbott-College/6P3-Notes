@@ -6,7 +6,7 @@ authors = [
   { name = "michaelhaaf", email = "michael.haaf@johnabbott.qc.ca" },
   { name = "maubuz", email = "mauricio.buschinelli@johnabbott.qc.ca" },
 ]
-dependencies = []
+dependencies = ["mdformat-mkdocs>=4.1.1"]
 requires-python = ">=3.9"
 readme = "README.md"
 
@@ -16,10 +16,14 @@ format = [
     "mdformat-gfm>=0.4.1",
     "mdformat-frontmatter>=2.0.8",
     "mdformat-footnote>=0.1.1",
-    "mdformat-gfm-alerts>=1.0.1",
     "ruff>=0.9.1",
     "pymarkdownlnt>=0.9.26",
     "mdformat-toc>=0.3.0",
+    "mdformat-frontmatter>=2.0.8",
+    "mdformat-wikilink>=0.2.0",
+    "mdformat-web>=0.2.0",
+    "mdformat-config>=0.2.1",
+    "mdformat-ruff>=0.1.3",
 ]
 git = [
     "python-semantic-release>=9.16.1",

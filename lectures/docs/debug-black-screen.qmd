@@ -1,13 +1,11 @@
 ---
 title: "Debugging Black Screen Issue"
-subtitle:
+subtitle: >
   Sometimes, the reTerminal display drivers fail. Here is an (incomplete) set of
   debugging steps you can take to try fixing the issue.
 date: 2024-04-26
 draft: true
 ---
-
-{{< include /_reference-links.md >}}
 
 [raspi-boot-docs]:
   https://www.raspberrypi.com/documentation/computers/configuration.html#the-boot-folder
@@ -60,9 +58,8 @@ reTerminal storage_ on to a workstation and then _fix the firmware files
 directly on that workstation_.
 
 The steps will look similar to Lab 1, except we won't be reimaging the device at
-the end. You should open Lab 1 instructions for reference while you are working
-for reference ([Lab 1 Section 1 link][lab1-sec1], [Lab 2 Section 2
-link][lab1-sec2]). The following steps will be necessary:
+the end. You should open [Lab 1 instructions]({{< var course.assessments.lab1 >}}) 
+for reference while you are working. The following steps will be necessary:
 
 0. Make sure your reTerminal is entirely unplugged and powered off.
 1. Disassemble your reTerminal, _up to the step where you can toggle the

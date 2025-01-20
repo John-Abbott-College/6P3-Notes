@@ -2,9 +2,8 @@
 title: Device to Cloud Communication
 subtitle: "How to use Azure for bidrectional device-cloud communication"
 date: 2024-05-09
+draft: true
 ---
-
-{{< include /_reference-links.md >}}
 
 Communication for IoT systems should be bi-directional:
 
@@ -220,7 +219,7 @@ For details see
 For examples of how to use Direct Methods, see
 [Quickstart: Control a device connected to an IoT hub](https://learn.microsoft.com/en-us/azure/iot-hub/quickstart-control-device?pivots=programming-language-csharp).
 
-You can also review **Lab 6** ([Section 1][lab6-sec1], [Section 2][lab6-sec2]):
+You can also review [Lab 6]({{< var course.assessments.lab6 >}})
 we used the **InvokeDeviceMethod** sample service in this lab. You can use this
 code in your own project, modifying the direct method name to correspond to your
 use case (e.g. **lights-on** or **door-unlock**).

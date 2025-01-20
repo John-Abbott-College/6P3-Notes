@@ -4,6 +4,7 @@ subtitle:
   "Fundamental concepts and applications behind the 'Internet of Things'
   paradigm."
 date: 2024-01-29
+draft: true
 ---
 
 ## Internet of Things (IoT)
