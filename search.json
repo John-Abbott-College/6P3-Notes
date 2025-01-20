@@ -98,11 +98,39 @@
     "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\nTitle\n\n\nSubtitle\n\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
+    "objectID": "reference/docs/course-software.html",
+    "href": "reference/docs/course-software.html",
+    "title": "Course software",
+    "section": "",
+    "text": "The operating system running inside the reTerminal is Raspberry Pi OS.\n\nLinux Debian based.\nRequires basic use of BASH shell (eg. ssh, and environmental variables).\n\n\n\n\nIf using a Windows machine (lab computers and/or personal) for this course, you will need to set up Windows Subsystem for Linux (WSL).\n\nInstall Debian on WSL\n\nChoosing Debian as the Linux distribution\nSet up Windows Terminal\nSet up VS Code\nSet up git\n\nInstall dependencies:\n\n# Update system:\nsudo apt update && sudo apt upgrade -y\n# Verify python version is &gt;= 3.9: \npython3 --version\n# Ensure pip is installed:\nsudo apt install python3-pip\npip3 --version"
+  },
+  {
+    "objectID": "reference/docs/course-software.html#os-software",
+    "href": "reference/docs/course-software.html#os-software",
+    "title": "Course software",
+    "section": "",
+    "text": "The operating system running inside the reTerminal is Raspberry Pi OS.\n\nLinux Debian based.\nRequires basic use of BASH shell (eg. ssh, and environmental variables).\n\n\n\n\nIf using a Windows machine (lab computers and/or personal) for this course, you will need to set up Windows Subsystem for Linux (WSL).\n\nInstall Debian on WSL\n\nChoosing Debian as the Linux distribution\nSet up Windows Terminal\nSet up VS Code\nSet up git\n\nInstall dependencies:\n\n# Update system:\nsudo apt update && sudo apt upgrade -y\n# Verify python version is &gt;= 3.9: \npython3 --version\n# Ensure pip is installed:\nsudo apt install python3-pip\npip3 --version"
+  },
+  {
+    "objectID": "reference/docs/course-software.html#editor",
+    "href": "reference/docs/course-software.html#editor",
+    "title": "Course software",
+    "section": "Editor",
+    "text": "Editor\n\nRecommended: VS Code\n\nRemote - SSH by Microsoft: Open any folder on a remote machine using SSH and take advantage of VS Code’s full feature set.\nPython language support extension\nPython formatter/linter extension (ruff)"
+  },
+  {
+    "objectID": "reference/docs/course-software.html#cloud",
+    "href": "reference/docs/course-software.html#cloud",
+    "title": "Course software",
+    "section": "Cloud",
+    "text": "Cloud\n\nMicrosoft Azure\n\n\n\n\n\nAzure IoT Hub: Create Using Azure Portal | Build5Nines\n\n\nMicrosoft Azure will be used as the main platform that will:\n\nRegister and connect devices.\nStore and analyse data.\nManage the security layer.\nProvide libraries (SDKs) that can easily be integrated into our code.\nFor more information see Azure IoT page."
+  },
+  {
     "objectID": "reference/index.html",
     "href": "reference/index.html",
     "title": "Reference",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\nTitle\n\n\nSubtitle\n\n\n\n\n\n\n2025-01-20\n\n\nCourse Hardware\n\n\nList of hardware available for the course as well as their respective specifications and documentation.\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\nTitle\n\n\nSubtitle\n\n\n\n\n\n\n2025-01-20\n\n\nCourse software\n\n\nThe essential software that will be used for development during the course.\n\n\n\n\n2025-01-20\n\n\nCourse Hardware\n\n\nList of hardware available for the course as well as their respective specifications and documentation.\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "about/calendar.html",

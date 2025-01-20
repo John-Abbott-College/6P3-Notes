@@ -10,6 +10,7 @@
   {
     "listing": "/reference/index.html",
     "items": [
+      "/reference/docs/course-software.html",
       "/reference/docs/course-hardware.html"
     ]
   },
