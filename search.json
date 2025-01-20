@@ -49,6 +49,48 @@
     "text": "Course material\nThere are no required textbooks for this course – this website will contain all of the content that you need to complete course deliverables. Additionally, each lecture will contain references to additional resources for exploring each topic in further detail beyond the scope of the course."
   },
   {
+    "objectID": "reference/docs/course-hardware.html",
+    "href": "reference/docs/course-hardware.html",
+    "title": "Course Hardware",
+    "section": "",
+    "text": "The reTerminal is a development board based on the Raspberry Pi Compute Module 4 (CM4) manufactured by Seeed Studio.\n\n\n\n\n\nThe reTerminal device.\n\n\nNotable features:\n\nCompute Module 4 with 4GB RAM & 32GB eMMC\n5-Inch IPS capacitive multi-touch screen at 1280 x 720 and 293 PPI\nWireless connectivity with dual-band 2.4GHz/5GHz Wi-Fi and Bluetooth 5.0 BLE\nCryptographic co-processor with secure hardware-based key storage\nBuilt-in modules such as accelerometer, light sensor, and RTC\n\n\nSee reTerminal Wiki page for detailed specs and documentation\n\n\n\n\n\n\n\n\nRPI USB-C POWER SUPPLY BLACK US\n\n\nThe reTerminal requires a power supply that can provide a minimum of 3 Amps. The official Raspberry Pi USB-C Power Supply in included in the kit."
+  },
+  {
+    "objectID": "reference/docs/course-hardware.html#reterminal",
+    "href": "reference/docs/course-hardware.html#reterminal",
+    "title": "Course Hardware",
+    "section": "",
+    "text": "The reTerminal is a development board based on the Raspberry Pi Compute Module 4 (CM4) manufactured by Seeed Studio.\n\n\n\n\n\nThe reTerminal device.\n\n\nNotable features:\n\nCompute Module 4 with 4GB RAM & 32GB eMMC\n5-Inch IPS capacitive multi-touch screen at 1280 x 720 and 293 PPI\nWireless connectivity with dual-band 2.4GHz/5GHz Wi-Fi and Bluetooth 5.0 BLE\nCryptographic co-processor with secure hardware-based key storage\nBuilt-in modules such as accelerometer, light sensor, and RTC\n\n\nSee reTerminal Wiki page for detailed specs and documentation\n\n\n\n\n\n\n\n\nRPI USB-C POWER SUPPLY BLACK US\n\n\nThe reTerminal requires a power supply that can provide a minimum of 3 Amps. The official Raspberry Pi USB-C Power Supply in included in the kit."
+  },
+  {
+    "objectID": "reference/docs/course-hardware.html#compute-module-4",
+    "href": "reference/docs/course-hardware.html#compute-module-4",
+    "title": "Course Hardware",
+    "section": "Compute Module 4",
+    "text": "Compute Module 4\n\n\n\n\n\nRaspberry PI CM 4\n\n\nThe Compute Module 4 (CM4) made by the Raspberry Pi Foundation is powering the reTerminal.\nNotable features:\n\nProcessor: Broadcom BCM2711 quad-core Cortex-A72 (ARM v8) 64-bit SoC @ 1.5GHz\n\n\nSee CM4 datasheet for details.\n\nSee Difference Between ARM64, ARMel, and ARMhf for more info on the different ARM architectures.\n\nGrove Base Hat for Raspberry Pi\n\n\n\n\n\nGrove Base Hat for GPIO connections\n\n\nIn a typical Raspberry Pi, sensors would be connected via the 40-pin GPIO.\nTo facilitate connections of the Grove sensors, this “Hat” (term for an add-on board of the Raspberry Pi) includes the following types of connection:\n\n6 Digital\n4 Analog\n3 I2C\n1 PWM\n1 UART\n\n\nSee Grove base hat Wiki for details."
+  },
+  {
+    "objectID": "reference/docs/course-hardware.html#sensors",
+    "href": "reference/docs/course-hardware.html#sensors",
+    "title": "Course Hardware",
+    "section": "Sensors",
+    "text": "Sensors\n\nAHT20 I2C Temperature & Humidity\n\n\n\n\n\nAHT20 I2C temperature/humidity sensor\n\n\nSee AHT20 I2C Industrial Grade Temperature & Humidity Sensor wiki for details.\n\nTemperature measurement range -40 ~ 85°C, Humidity measurement range 0 ~ 100% RH.\nDigital output, Grove I2C interface.\n\n\n\nAHT20 Libraries\nThe main module for this sensor is provided by Seeed in this Github repository and can be installed with the grove.py library.\nFollow official Step by step installation for python 3 (see below). Don’t use the one-click installation or it will install to the wrong location\ngit clone [https://github.com/Seeed-Studio/grove.py](https://github.com/Seeed-Studio/grove.py)\ncd grove.py\nsudo pip3 install .\nAlternatively, it’s also possible to use Adafruit’s adafruit-circuitpython-ahtx0 library to communicate with the sensor (see library’s Pypi page). However, to instantiate the provided sensor class, you will need to pass it an I2C bus instance. To instantiate an I2C bus instance, install and use the adafruit-extended-bus library (see Pypi page)."
+  },
+  {
+    "objectID": "reference/docs/course-hardware.html#actuators-motors",
+    "href": "reference/docs/course-hardware.html#actuators-motors",
+    "title": "Course Hardware",
+    "section": "Actuators & Motors",
+    "text": "Actuators & Motors\n\nLED Socket\n\n\n\n\n\nLED\n\n\nLED in a removable socket and potentiometer for power adjustment. LED can be swapped with different colors.\nSee LED wiki page for details.\n\n\nCooling Fan\n\n\n\n\n\nCooling Fan\n\n\n5V Cooling Fan 40mm x 10mm with 2-pin JST connector.\n\nSee product page here.\n\n\n\nRelay\n\n\n\n\n\nRelay switch\n\n\nA digital switch. Controls the on/off flow of electricity with a small digital signal.\n\nOperate voltage: 3.3V-5V\nInput current: 100mA\nRated load: 5A@250VAC 5A@30VDC\n\nSee relay wiki page for details."
+  },
+  {
+    "objectID": "reference/docs/course-hardware.html#cabling",
+    "href": "reference/docs/course-hardware.html#cabling",
+    "title": "Course Hardware",
+    "section": "Cabling",
+    "text": "Cabling\nThe following cables are included in the base kit:\n\nGrove Universal 4 Pin Buckled 5cm Cable.\nGrove Universal 4 Pin Buckled 20cm Cable.\nGrove 4 pin Female Jumper to Grove 4 pin Cable\nGrove 4 pin Male Jumper to Grove 4 pin Cable\n40-pin flat ribbon cable 20cm (female-female).\n2-pin JST SM Plug, one end open."
+  },
+  {
     "objectID": "lectures/index.html",
     "href": "lectures/index.html",
     "title": "All lectures",
@@ -60,7 +102,7 @@
     "href": "reference/index.html",
     "title": "Reference",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\nTitle\n\n\nSubtitle\n\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\nTitle\n\n\nSubtitle\n\n\n\n\n\n\n2025-01-20\n\n\nCourse Hardware\n\n\nList of hardware available for the course as well as their respective specifications and documentation.\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "about/calendar.html",

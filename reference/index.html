@@ -82,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
     const options = {
       valueNames: ['listing-date','listing-title','listing-subtitle',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
       
-      searchColumns: [],
+      searchColumns: ["listing-date","listing-title","listing-author"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -220,7 +220,7 @@ window.Quarto = {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(0)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
 
@@ -270,6 +270,17 @@ Subtitle
 </tr>
 </thead>
 <tbody class="list">
+<tr data-index="0" data-listing-date-sort="1737331200000" data-listing-file-modified-sort="1737384279933" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="472" data-listing-title-sort="Course Hardware" data-listing-filename-sort="course-hardware.qmd">
+<td>
+<span class="listing-date">2025-01-20</span>
+</td>
+<td>
+<a href="../reference/docs/course-hardware.html" class="title listing-title">Course Hardware</a>
+</td>
+<td>
+<span class="listing-subtitle">List of hardware available for the course as well as their respective specifications and documentation.</span>
+</td>
+</tr>
 </tbody>
 </table>
 <div class="listing-no-matching d-none">

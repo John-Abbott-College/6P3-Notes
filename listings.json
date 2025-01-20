@@ -9,7 +9,9 @@
   },
   {
     "listing": "/reference/index.html",
-    "items": []
+    "items": [
+      "/reference/docs/course-hardware.html"
+    ]
   },
   {
     "listing": "/about/index.html",
