@@ -1,0 +1,65 @@
+---
+title: Course software
+subtitle:
+  "The essential software that will be used for development during
+  the course."
+date: 2025-01-20
+---
+
+## OS Software
+
+### Raspberry Pi OS
+
+The operating system running inside the reTerminal is Raspberry Pi OS.
+
+- Linux Debian based.
+- Requires basic use of BASH shell (eg. ssh, and environmental variables).
+
+### Recommended: Linux WSL
+
+If using a Windows machine (lab computers and/or personal) for this course, you will need to set up Windows Subsystem for Linux (WSL).
+
+- [Install Debian on WSL](https://learn.microsoft.com/en-us/windows/wsl/setup/environment)
+  - [Choosing Debian as the Linux distribution](https://learn.microsoft.com/en-ca/windows/wsl/install#change-the-default-linux-distribution-installed)
+  - [Set up Windows Terminal](https://learn.microsoft.com/en-ca/windows/wsl/setup/environment#set-up-windows-terminal)
+  - [Set up VS Code](https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-vscode)
+  - [Set up git](https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-git)
+- Install dependencies:
+
+```bash
+# Update system:
+sudo apt update && sudo apt upgrade -y
+# Verify python version is >= 3.9: 
+python3 --version
+# Ensure pip is installed:
+sudo apt install python3-pip
+pip3 --version
+```
+
+## Editor
+
+### Recommended: VS Code
+
+1. [Remote - SSH by Microsoft](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh):
+   Open any folder on a remote machine using SSH and take advantage of VS Code's
+   full feature set.
+1. [Python language support extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+1. [Python formatter/linter extension (ruff)](https://marketplace.visualstudio.com/items?itemName=charliermarsh.ruff)
+
+
+## Cloud
+
+### Microsoft Azure
+
+:::{.column-margin}
+![Azure IoT Hub: Create Using Azure Portal | Build5Nines](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi1.wp.com%2Fbuild5nines.com%2Fwp-content%2Fuploads%2F2019%2F12%2FAzure_IoT_Hub_Featured_Image.jpg%3Fresize%3D1080%252C675%26ssl%3D1&f=1&nofb=1 ":size=400")
+:::
+
+Microsoft Azure will be used as the main platform that will:
+
+- Register and connect devices.
+- Store and analyse data.
+- Manage the security layer.
+- Provide libraries (SDKs) that can easily be integrated into our code.
+- For more information see
+  [Azure IoT page](https://azure.microsoft.com/en-us/overview/iot/).
