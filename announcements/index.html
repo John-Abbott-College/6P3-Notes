@@ -132,7 +132,7 @@ window.Quarto = {
 
 <link rel="alternate" type="application/rss+xml" title="{{< var course.title >}}" href="index.xml" data-external="1"><meta property="og:title" content="Announcements – Connected Objects">
 <meta property="og:description" content="Course announcements">
-<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/announcements/assets/art_title_path_only.svg">
+<meta property="og:image" content="{{< site.url >}}/announcements/assets/art_title_path_only.svg">
 <meta property="og:site_name" content="{{< var course.title >}}">
 </head>
 
@@ -172,25 +172,9 @@ window.Quarto = {
     <a class="nav-link" href="../reference/index.html"> 
 <span class="menu-text">Reference</span></a>
   </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-iconify-simple-icons-moodle-" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text"><iconify-icon inline="" icon="simple-icons:moodle" aria-label="Icon moodle from simple-icons Iconify.design set." title="Icon moodle from simple-icons Iconify.design set."></iconify-icon></span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-iconify-simple-icons-moodle-">    
-        <li>
-    <a class="dropdown-item" href="https://moodle.johnabbott.qc.ca/course/view.php?id=807">
- <span class="dropdown-text">Section 1 (8h30)</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="https://moodle.johnabbott.qc.ca/course/view.php?id=808">
- <span class="dropdown-text">Section 2 (13h30)</span></a>
-  </li>  
-    </ul>
-  </li>
-  <li class="nav-item compact">
-    <a class="nav-link" href="../announcements/index.xml"> <i class="bi bi-rss" role="img">
-</i> 
-<span class="menu-text"></span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="https://moodle.johnabbott.qc.ca/course/view.php?id=1361"> 
+<span class="menu-text"><iconify-icon inline="" icon="simple-icons:moodle" aria-label="Icon moodle from simple-icons Iconify.design set." title="Icon moodle from simple-icons Iconify.design set."></iconify-icon></span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="https://github.com/John-Abbott-College/6P3-Notes"> 
@@ -496,7 +480,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/john-abbott-college\.github\.io\/6P3-Notes\/");
+      var filterRegex = new RegExp("{{< site\.url >}}");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -827,8 +811,22 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>© Copyright 2024-2025 Michael Haaf<br> All rights reserved.</p>
-</div>   
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="{{< var site.moodle >}}">
+<p><iconify-icon inline="" icon="simple-icons:moodle" aria-label="Icon moodle from simple-icons Iconify.design set." title="Icon moodle from simple-icons Iconify.design set."></iconify-icon></p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="{{< var site.repository >}}">
+<p><iconify-icon inline="" icon="fa6-brands:github" aria-label="Icon github from fa6-brands Iconify.design set." title="Icon github from fa6-brands Iconify.design set."></iconify-icon></p>
+</a>
+  </li>  
+    <li class="nav-item">
+ Connected Objects: Winter 2025
+  </li>  
+</ul>
+    </div>   
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
@@ -844,26 +842,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </ul>
     </div>
     <div class="nav-footer-right">
-      <ul class="footer-items list-unstyled">
-    <li class="nav-item">
- Connected Objects: Winter 2025
-  </li>  
-    <li class="nav-item">
- 
-  </li>  
-    <li class="nav-item compact">
-    <a class="nav-link" href="../announcements/index.xml">
-      <i class="bi bi-rss" role="img">
-</i> 
-    </a>
-  </li>  
-    <li class="nav-item">
-    <a class="nav-link" href="https://github.com/John-Abbott-College/6P3-Notes">
-<p><iconify-icon inline="" icon="fa6-brands:github" aria-label="Icon github from fa6-brands Iconify.design set." title="Icon github from fa6-brands Iconify.design set."></iconify-icon></p>
-</a>
-  </li>  
-</ul>
-    </div>
+<p>© Copyright 2024-2025 Michael Haaf</p>
+</div>
   </div>
 </footer>
 

@@ -125,7 +125,7 @@
   </style>
 <meta property="og:title" content="Introduction (for developers) – Connected Objects">
 <meta property="og:description" content="Python exercises">
-<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/lectures/docs/assets/art_title_path_only.svg">
+<meta property="og:image" content="{{< site.url >}}/lectures/docs/assets/art_title_path_only.svg">
 <meta property="og:site_name" content="{{< var course.title >}}">
 </head>
 <body class="quarto-dark">
@@ -452,7 +452,7 @@
       }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
         var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp("https:\/\/john-abbott-college\.github\.io\/6P3-Notes\/");
+          var filterRegex = new RegExp("{{< site\.url >}}");
         var isInternal = (href) => {
             return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }

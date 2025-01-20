@@ -190,7 +190,7 @@
   </style>
 <meta property="og:title" content="Device to Cloud Communication – Connected Objects">
 <meta property="og:description" content="How to use Azure for bidrectional device-cloud communication">
-<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/lectures/docs/assets/art_title_path_only.svg">
+<meta property="og:image" content="{{< site.url >}}/lectures/docs/assets/art_title_path_only.svg">
 <meta property="og:site_name" content="{{< var course.title >}}">
 </head>
 <body class="quarto-dark">
@@ -343,7 +343,7 @@
 </ol>
 <p>For details see <a href="https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-direct-methods">Understand and invoke direct methods from IoT Hub</a></p>
 <p>For examples of how to use Direct Methods, see <a href="https://learn.microsoft.com/en-us/azure/iot-hub/quickstart-control-device?pivots=programming-language-csharp">Quickstart: Control a device connected to an IoT hub</a>.</p>
-<p>You can also review <strong>Lab 6</strong> ([Section 1][lab6-sec1], [Section 2][lab6-sec2]): we used the <strong>InvokeDeviceMethod</strong> sample service in this lab. You can use this code in your own project, modifying the direct method name to correspond to your use case (e.g.&nbsp;<strong>lights-on</strong> or <strong>door-unlock</strong>).</p>
+<p>You can also review <a href="https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=32610">Lab 6</a> we used the <strong>InvokeDeviceMethod</strong> sample service in this lab. You can use this code in your own project, modifying the direct method name to correspond to your use case (e.g.&nbsp;<strong>lights-on</strong> or <strong>door-unlock</strong>).</p>
 </section>
 <section id="diving-deeper" class="slide level2">
 <h2>Diving Deeper 🤿</h2>
@@ -658,7 +658,7 @@
       }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
         var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp("https:\/\/john-abbott-college\.github\.io\/6P3-Notes\/");
+          var filterRegex = new RegExp("{{< site\.url >}}");
         var isInternal = (href) => {
             return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }

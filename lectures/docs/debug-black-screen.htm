@@ -125,7 +125,7 @@
   </style>
 <meta property="og:title" content="Debugging Black Screen Issue – Connected Objects">
 <meta property="og:description" content="Sometimes, the reTerminal display drivers fail. Here is an (incomplete) set of debugging steps you can take to try fixing the issue.">
-<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/lectures/docs/assets/art_title_path_only.svg">
+<meta property="og:image" content="{{< site.url >}}/lectures/docs/assets/art_title_path_only.svg">
 <meta property="og:site_name" content="{{< var course.title >}}">
 </head>
 <body class="quarto-dark">
@@ -134,7 +134,7 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Debugging Black Screen Issue</h1>
-  <p class="subtitle">Sometimes, the reTerminal display drivers fail. Here is an (incomplete) set of debugging steps you can take to try fixing the issue.</p>
+  <p class="subtitle"></p><p>Sometimes, the reTerminal display drivers fail. Here is an (incomplete) set of debugging steps you can take to try fixing the issue.</p><p></p>
 
 <div class="quarto-title-authors">
 </div>
@@ -170,7 +170,7 @@
 </ol>
 <h3 id="solving-boot-firmare-file-problems">Solving <code>/boot/</code> firmare file problems</h3>
 <p>If indeed the error comes from an incorrect <code>/boot</code> configuration file setting, we can fix the error <em>without reimaging the pi</em>. Instead, we will <em>mount the reTerminal storage</em> on to a workstation and then <em>fix the firmware files directly on that workstation</em>.</p>
-<p>The steps will look similar to Lab 1, except we won’t be reimaging the device at the end. You should open Lab 1 instructions for reference while you are working for reference ([Lab 1 Section 1 link][lab1-sec1], [Lab 2 Section 2 link][lab1-sec2]). The following steps will be necessary:</p>
+<p>The steps will look similar to Lab 1, except we won’t be reimaging the device at the end. You should open <a href="https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=33679">Lab 1 instructions</a> for reference while you are working. The following steps will be necessary:</p>
 <ol start="0" type="1">
 <li>Make sure your reTerminal is entirely unplugged and powered off.</li>
 <li>Disassemble your reTerminal, <em>up to the step where you can toggle the Firmware Flash switch</em>. Toggle the switch. This step will let you mount the storage device onto your workstation.</li>
@@ -485,7 +485,7 @@
       }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
         var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp("https:\/\/john-abbott-college\.github\.io\/6P3-Notes\/");
+          var filterRegex = new RegExp("{{< site\.url >}}");
         var isInternal = (href) => {
             return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }

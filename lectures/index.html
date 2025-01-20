@@ -82,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
     const options = {
       valueNames: ['listing-date','listing-title','listing-subtitle',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author"],
+      searchColumns: [],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -132,7 +132,7 @@ window.Quarto = {
 
 <meta property="og:title" content="All lectures – Connected Objects">
 <meta property="og:description" content="Course lectures are posted here.">
-<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/lectures/assets/art_title_path_only.svg">
+<meta property="og:image" content="{{< site.url >}}/lectures/assets/art_title_path_only.svg">
 <meta property="og:site_name" content="{{< var course.title >}}">
 </head>
 
@@ -172,25 +172,9 @@ window.Quarto = {
     <a class="nav-link" href="../reference/index.html"> 
 <span class="menu-text">Reference</span></a>
   </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-iconify-simple-icons-moodle-" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text"><iconify-icon inline="" icon="simple-icons:moodle" aria-label="Icon moodle from simple-icons Iconify.design set." title="Icon moodle from simple-icons Iconify.design set."></iconify-icon></span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-iconify-simple-icons-moodle-">    
-        <li>
-    <a class="dropdown-item" href="https://moodle.johnabbott.qc.ca/course/view.php?id=807">
- <span class="dropdown-text">Section 1 (8h30)</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="https://moodle.johnabbott.qc.ca/course/view.php?id=808">
- <span class="dropdown-text">Section 2 (13h30)</span></a>
-  </li>  
-    </ul>
-  </li>
-  <li class="nav-item compact">
-    <a class="nav-link" href="../announcements/index.xml"> <i class="bi bi-rss" role="img">
-</i> 
-<span class="menu-text"></span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="https://moodle.johnabbott.qc.ca/course/view.php?id=1361"> 
+<span class="menu-text"><iconify-icon inline="" icon="simple-icons:moodle" aria-label="Icon moodle from simple-icons Iconify.design set." title="Icon moodle from simple-icons Iconify.design set."></iconify-icon></span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="https://github.com/John-Abbott-College/6P3-Notes"> 
@@ -236,7 +220,7 @@ window.Quarto = {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(3)</span></div><div class="category" data-category="UHl0aG9u">Python <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UXVpeiUyMDE=">Quiz 1 <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(0)</span></div></div></div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
 
@@ -286,39 +270,6 @@ Subtitle
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-listing-date-sort="1706486400000" data-listing-file-modified-sort="1737351383725" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1284" data-listing-title-sort="Intro to the Internet of Things" data-listing-filename-sort="what-is-iot.qmd">
-<td>
-<span class="listing-date">2024-01-29</span>
-</td>
-<td>
-<a href="../lectures/docs/what-is-iot.html" class="title listing-title">Intro to the Internet of Things</a>
-</td>
-<td>
-<span class="listing-subtitle">Fundamental concepts and applications behind the ‘Internet of Things’ paradigm.</span>
-</td>
-</tr>
-<tr data-index="1" data-categories="UXVpeiUyMDElMkNQeXRob24=" data-listing-date-sort="1708300800000" data-listing-file-modified-sort="1737351383724" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2335" data-listing-title-sort="Package management" data-listing-filename-sort="package-management.qmd">
-<td>
-<span class="listing-date">2024-02-19</span>
-</td>
-<td>
-<a href="../lectures/docs/package-management.html" class="title listing-title">Package management</a>
-</td>
-<td>
-<span class="listing-subtitle">How to use OS package managers, virtual environments, and <code>pip</code> to manage python applications effectively.</span>
-</td>
-</tr>
-<tr data-index="2" data-listing-date-sort="1715212800000" data-listing-file-modified-sort="1737351383723" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1211" data-listing-title-sort="Device to Cloud Communication" data-listing-filename-sort="device-cloud-communication.qmd">
-<td>
-<span class="listing-date">2024-05-09</span>
-</td>
-<td>
-<a href="../lectures/docs/device-cloud-communication.html" class="title listing-title">Device to Cloud Communication</a>
-</td>
-<td>
-<span class="listing-subtitle">How to use Azure for bidrectional device-cloud communication</span>
-</td>
-</tr>
 </tbody>
 </table>
 <div class="listing-no-matching d-none">
@@ -559,7 +510,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/john-abbott-college\.github\.io\/6P3-Notes\/");
+      var filterRegex = new RegExp("{{< site\.url >}}");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -890,8 +841,22 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>© Copyright 2024-2025 Michael Haaf<br> All rights reserved.</p>
-</div>   
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="{{< var site.moodle >}}">
+<p><iconify-icon inline="" icon="simple-icons:moodle" aria-label="Icon moodle from simple-icons Iconify.design set." title="Icon moodle from simple-icons Iconify.design set."></iconify-icon></p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="{{< var site.repository >}}">
+<p><iconify-icon inline="" icon="fa6-brands:github" aria-label="Icon github from fa6-brands Iconify.design set." title="Icon github from fa6-brands Iconify.design set."></iconify-icon></p>
+</a>
+  </li>  
+    <li class="nav-item">
+ Connected Objects: Winter 2025
+  </li>  
+</ul>
+    </div>   
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
@@ -907,26 +872,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </ul>
     </div>
     <div class="nav-footer-right">
-      <ul class="footer-items list-unstyled">
-    <li class="nav-item">
- Connected Objects: Winter 2025
-  </li>  
-    <li class="nav-item">
- 
-  </li>  
-    <li class="nav-item compact">
-    <a class="nav-link" href="../announcements/index.xml">
-      <i class="bi bi-rss" role="img">
-</i> 
-    </a>
-  </li>  
-    <li class="nav-item">
-    <a class="nav-link" href="https://github.com/John-Abbott-College/6P3-Notes">
-<p><iconify-icon inline="" icon="fa6-brands:github" aria-label="Icon github from fa6-brands Iconify.design set." title="Icon github from fa6-brands Iconify.design set."></iconify-icon></p>
-</a>
-  </li>  
-</ul>
-    </div>
+<p>© Copyright 2024-2025 Michael Haaf</p>
+</div>
   </div>
 </footer>
 

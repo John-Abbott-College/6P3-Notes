@@ -5,17 +5,11 @@
   },
   {
     "listing": "/lectures/index.html",
-    "items": [
-      "/lectures/docs/what-is-iot.html",
-      "/lectures/docs/package-management.html",
-      "/lectures/docs/device-cloud-communication.html"
-    ]
+    "items": []
   },
   {
     "listing": "/reference/index.html",
-    "items": [
-      "/reference/docs/course-hardware.html"
-    ]
+    "items": []
   },
   {
     "listing": "/about/index.html",

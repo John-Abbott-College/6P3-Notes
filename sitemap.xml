@@ -1,63 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/announcements/index.html</loc>
-    <lastmod>2025-01-20T05:36:23.576Z</lastmod>
+    <loc>{{&lt; site.url &gt;}}/announcements/index.html</loc>
+    <lastmod>2025-01-20T05:51:06.763Z</lastmod>
   </url>
   <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/about/this-site.html</loc>
-    <lastmod>2025-01-20T05:36:23.576Z</lastmod>
+    <loc>{{&lt; site.url &gt;}}/about/this-site.html</loc>
+    <lastmod>2025-01-20T05:51:06.763Z</lastmod>
   </url>
   <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/about/syllabus.html</loc>
-    <lastmod>2025-01-20T05:36:23.576Z</lastmod>
+    <loc>{{&lt; site.url &gt;}}/about/syllabus.html</loc>
+    <lastmod>2025-01-20T05:51:06.763Z</lastmod>
   </url>
   <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/reference/docs/course-hardware.html</loc>
-    <lastmod>2025-01-20T05:36:23.725Z</lastmod>
+    <loc>{{&lt; site.url &gt;}}/lectures/index.html</loc>
+    <lastmod>2025-01-20T05:51:06.912Z</lastmod>
   </url>
   <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/lectures/docs/device-cloud-communication.html</loc>
-    <lastmod>2025-01-20T05:36:23.723Z</lastmod>
+    <loc>{{&lt; site.url &gt;}}/reference/index.html</loc>
+    <lastmod>2025-01-20T05:51:06.913Z</lastmod>
   </url>
   <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/lectures/docs/device-cloud-communication.htm</loc>
-    <lastmod>2025-01-20T05:36:23.723Z</lastmod>
+    <loc>{{&lt; site.url &gt;}}/about/calendar.html</loc>
+    <lastmod>2025-01-20T05:51:06.763Z</lastmod>
   </url>
   <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/lectures/docs/what-is-iot.htm</loc>
-    <lastmod>2025-01-20T05:36:23.725Z</lastmod>
+    <loc>{{&lt; site.url &gt;}}/about/index.html</loc>
+    <lastmod>2025-01-20T05:51:06.763Z</lastmod>
   </url>
   <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/lectures/docs/what-is-iot.html</loc>
-    <lastmod>2025-01-20T05:36:23.725Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/lectures/docs/package-management.htm</loc>
-    <lastmod>2025-01-20T05:36:23.724Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/lectures/docs/package-management.html</loc>
-    <lastmod>2025-01-20T05:36:23.724Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/lectures/index.html</loc>
-    <lastmod>2025-01-20T05:36:23.725Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/reference/index.html</loc>
-    <lastmod>2025-01-20T05:36:23.725Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/about/calendar.html</loc>
-    <lastmod>2025-01-20T05:36:23.576Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/about/index.html</loc>
-    <lastmod>2025-01-20T05:36:23.576Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/index.html</loc>
-    <lastmod>2025-01-20T05:36:23.577Z</lastmod>
+    <loc>{{&lt; site.url &gt;}}/index.html</loc>
+    <lastmod>2025-01-20T05:51:06.764Z</lastmod>
   </url>
 </urlset>
