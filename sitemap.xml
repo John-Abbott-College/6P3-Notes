@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>{{&lt; site.url &gt;}}/announcements/index.html</loc>
-    <lastmod>2025-01-20T14:59:39.653Z</lastmod>
+    <loc>{{&lt; var site.url &gt;}}/announcements/index.html</loc>
+    <lastmod>2025-01-21T17:49:11.409Z</lastmod>
   </url>
   <url>
-    <loc>{{&lt; site.url &gt;}}/about/this-site.html</loc>
-    <lastmod>2025-01-20T14:59:39.653Z</lastmod>
+    <loc>{{&lt; var site.url &gt;}}/about/this-site.html</loc>
+    <lastmod>2025-01-21T17:49:11.409Z</lastmod>
   </url>
   <url>
-    <loc>{{&lt; site.url &gt;}}/about/syllabus.html</loc>
-    <lastmod>2025-01-20T14:59:39.653Z</lastmod>
+    <loc>{{&lt; var site.url &gt;}}/about/syllabus.html</loc>
+    <lastmod>2025-01-21T17:49:11.409Z</lastmod>
   </url>
   <url>
-    <loc>{{&lt; site.url &gt;}}/reference/docs/course-hardware.html</loc>
-    <lastmod>2025-01-20T14:59:39.802Z</lastmod>
+    <loc>{{&lt; var site.url &gt;}}/reference/docs/course-hardware.html</loc>
+    <lastmod>2025-01-21T17:49:11.566Z</lastmod>
   </url>
   <url>
-    <loc>{{&lt; site.url &gt;}}/lectures/index.html</loc>
-    <lastmod>2025-01-20T14:59:39.802Z</lastmod>
+    <loc>{{&lt; var site.url &gt;}}/lectures/index.html</loc>
+    <lastmod>2025-01-21T17:49:11.565Z</lastmod>
   </url>
   <url>
-    <loc>{{&lt; site.url &gt;}}/reference/docs/course-software.html</loc>
-    <lastmod>2025-01-20T14:59:39.802Z</lastmod>
+    <loc>{{&lt; var site.url &gt;}}/reference/docs/course-software.html</loc>
+    <lastmod>2025-01-21T17:49:11.566Z</lastmod>
   </url>
   <url>
-    <loc>{{&lt; site.url &gt;}}/reference/index.html</loc>
-    <lastmod>2025-01-20T14:59:39.802Z</lastmod>
+    <loc>{{&lt; var site.url &gt;}}/reference/index.html</loc>
+    <lastmod>2025-01-21T17:49:11.566Z</lastmod>
   </url>
   <url>
-    <loc>{{&lt; site.url &gt;}}/about/calendar.html</loc>
-    <lastmod>2025-01-20T14:59:39.653Z</lastmod>
+    <loc>{{&lt; var site.url &gt;}}/about/calendar.html</loc>
+    <lastmod>2025-01-21T17:49:11.409Z</lastmod>
   </url>
   <url>
-    <loc>{{&lt; site.url &gt;}}/about/index.html</loc>
-    <lastmod>2025-01-20T14:59:39.653Z</lastmod>
+    <loc>{{&lt; var site.url &gt;}}/about/index.html</loc>
+    <lastmod>2025-01-21T17:49:11.409Z</lastmod>
   </url>
   <url>
-    <loc>{{&lt; site.url &gt;}}/index.html</loc>
-    <lastmod>2025-01-20T14:59:39.654Z</lastmod>
+    <loc>{{&lt; var site.url &gt;}}/index.html</loc>
+    <lastmod>2025-01-21T17:49:11.410Z</lastmod>
   </url>
 </urlset>

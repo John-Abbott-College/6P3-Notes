@@ -1,1 +1,1 @@
-Sitemap: {{< site.url >}}/sitemap.xml
+Sitemap: {{< var site.url >}}/sitemap.xml

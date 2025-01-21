@@ -190,7 +190,7 @@
   </style>
 <meta property="og:title" content="GPIOs: Inputs and Outputs – Connected Objects">
 <meta property="og:description" content="Understanding the General Purpose Input and Output (GPIO) pins our reSeed terminal chassis makes available to us. Voltage, digital vs.&nbsp;analog, python libraries for GPIO.">
-<meta property="og:image" content="{{< site.url >}}/lectures/docs/assets/art_title_path_only.svg">
+<meta property="og:image" content="{{< var site.url >}}/lectures/docs/assets/art_title_path_only.svg">
 <meta property="og:site_name" content="{{< var course.title >}}">
 </head>
 <body class="quarto-dark">
@@ -657,7 +657,7 @@
       }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
         var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp("{{< site\.url >}}");
+          var filterRegex = new RegExp("?var:site\.url");
         var isInternal = (href) => {
             return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }

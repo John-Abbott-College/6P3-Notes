@@ -132,7 +132,7 @@ window.Quarto = {
 
 <meta property="og:title" content="Reference – Connected Objects">
 <meta property="og:description" content="TBD">
-<meta property="og:image" content="{{< site.url >}}/reference/assets/art_title_path_only.svg">
+<meta property="og:image" content="{{< var site.url >}}/reference/assets/art_title_path_only.svg">
 <meta property="og:site_name" content="{{< var course.title >}}">
 </head>
 
@@ -205,7 +205,7 @@ window.Quarto = {
       <div>
       <div class="quarto-title-meta-heading">Modified</div>
       <div class="quarto-title-meta-contents">
-        <p class="date-modified">January 20, 2025</p>
+        <p class="date-modified">January 21, 2025</p>
       </div>
     </div>
       
@@ -270,7 +270,7 @@ Subtitle
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-listing-date-sort="1737331200000" data-listing-file-modified-sort="1737385179802" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="201" data-listing-title-sort="Course software" data-listing-filename-sort="course-software.qmd">
+<tr data-index="0" data-listing-date-sort="1737331200000" data-listing-file-modified-sort="1737481751566" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="201" data-listing-title-sort="Course software" data-listing-filename-sort="course-software.qmd">
 <td>
 <span class="listing-date">2025-01-20</span>
 </td>
@@ -281,7 +281,7 @@ Subtitle
 <span class="listing-subtitle">The essential software that will be used for development during the course.</span>
 </td>
 </tr>
-<tr data-index="1" data-listing-date-sort="1737331200000" data-listing-file-modified-sort="1737385179802" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="472" data-listing-title-sort="Course Hardware" data-listing-filename-sort="course-hardware.qmd">
+<tr data-index="1" data-listing-date-sort="1737331200000" data-listing-file-modified-sort="1737481751566" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="472" data-listing-title-sort="Course Hardware" data-listing-filename-sort="course-hardware.qmd">
 <td>
 <span class="listing-date">2025-01-20</span>
 </td>
@@ -532,7 +532,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("{{< site\.url >}}");
+      var filterRegex = new RegExp("?var:site\.url");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

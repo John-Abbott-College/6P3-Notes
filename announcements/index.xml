@@ -6,15 +6,15 @@
       version="2.0">
 <channel>
 <title>{{&lt; var course.title &gt;}}</title>
-<link>{{&lt; site.url &gt;}}/announcements/</link>
-<atom:link href="{{&lt; site.url &gt;}}/announcements/index.xml" rel="self" type="application/rss+xml"/>
+<link>{{&lt; var site.url &gt;}}/announcements/</link>
+<atom:link href="{{&lt; var site.url &gt;}}/announcements/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <image>
-<url>{{< site.url >}}/assets/art_title_path_only.svg</url>
+<url>{{< var site.url >}}/assets/art_title_path_only.svg</url>
 <title>{{&lt; var course.title &gt;}}</title>
-<link>{{< site.url >}}/announcements/</link>
+<link>{{< var site.url >}}/announcements/</link>
 </image>
 <generator>quarto-1.6.40</generator>
-<lastBuildDate>Mon, 20 Jan 2025 15:00:42 GMT</lastBuildDate>
+<lastBuildDate>Tue, 21 Jan 2025 17:50:21 GMT</lastBuildDate>
 </channel>
 </rss>
