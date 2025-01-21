@@ -7,8 +7,8 @@ website:
   title: "{{< var course.title >}}"
   image: "assets/art_title_path_only.svg"
   favicon: "assets/favicon_io/favicon.ico"
-  site-path: "{{< site.path >}}"
-  site-url: "{{< site.url >}}"
+  site-path: "{{< var site.path >}}"
+  site-url: "{{< var site.url >}}"
   open-graph: true
   page-navigation: true
   back-to-top-navigation: true

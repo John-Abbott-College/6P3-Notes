@@ -12,11 +12,11 @@ date: 2025-01-20
 
 ## Logistics
 
-- **Room, times, etc.:** see [Course Outline]({{< course.outline >}})
+- **Room, times, etc.:** see [Course Outline]({{< var course.outline >}})
 - **Office:** Penfield 311
 - **Office hours:** Mon/Fri 11:00 - 12:30pm or so
 - **Email:** michael DOT haaf AT johnabbott DOT qc DOT ca
-- **Course webpage:** This website for all content, [Moodle]({{< site.moodle >}}) for assignment/project/quiz submissions.
+- **Course webpage:** This website for all content, [Moodle]({{< var site.moodle >}}) for assignment/project/quiz submissions.
 
 :::{.column-margin}
 ![Forgive me the smarmy comic, this is usually true...](assets/itsInTheSyllabus.png)
@@ -28,7 +28,7 @@ date: 2025-01-20
   same-day)
 - MIO - For communicating (non-time-critical)
 - Email - For communicating (time-critical). Will aim for <24hr response.
-- [Moodle]({{< site.moodle >}}) - For receiving & submitting exercises/assignments/project
+- [Moodle]({{< var site.moodle >}}) - For receiving & submitting exercises/assignments/project
   and getting marks
 
 ### Assessment
