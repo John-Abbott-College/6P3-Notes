@@ -57,26 +57,4 @@ Details about how this website was built follow.
 - Framework: [Quarto](https://quarto.org/)
 - Deployment: [GitHub Pages](https://pages.github.com/)
 
-You can follow along directly with course updates at the
-[course repository](https://github.com/john-abbott-college/6P3-Notes).
-
-### Copyright
-
-This website was written and designed by the
-[Michael Haaf](https://github.com/michaelhaaf). All code and assets related to
-this website, unless indicated otherwise, are licensed under the
-[GNU General Public License v3.0](https://github.com/michaelhaaf/2W6-W23/blob/main/LICENSE)
-
-> **Terms of use**
->
-> This website's code is free software: you can redistribute it and/or modify it
-> under the terms of the GNU General Public License as published by the Free
-> Software Foundation, either version 3 of the License, or (at your option) any
-> later version.
->
-> This website's code is distributed in the hope that it will be useful, but
-> WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
-> FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
-> details.
->
-> [GNU General Public License Notice](https://www.gnu.org/licenses/gpl-howto.html)
+You can follow along directly with course updates at the [course repository]({{< var site.repository >}}).
