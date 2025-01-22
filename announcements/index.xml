@@ -6,15 +6,15 @@
       version="2.0">
 <channel>
 <title>{{&lt; var course.title &gt;}}</title>
-<link>{{&lt; var site.url &gt;}}/announcements/</link>
-<atom:link href="{{&lt; var site.url &gt;}}/announcements/index.xml" rel="self" type="application/rss+xml"/>
+<link>https://john-abbott-college.github.io/6P3-Notes/announcements/</link>
+<atom:link href="https://john-abbott-college.github.io/6P3-Notes/announcements/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <image>
-<url>{{< var site.url >}}/assets/art_title_path_only.svg</url>
+<url>https://john-abbott-college.github.io/6P3-Notes/assets/art_title_path_only.svg</url>
 <title>{{&lt; var course.title &gt;}}</title>
-<link>{{< var site.url >}}/announcements/</link>
+<link>https://john-abbott-college.github.io/6P3-Notes/announcements/</link>
 </image>
 <generator>quarto-1.6.40</generator>
-<lastBuildDate>Wed, 22 Jan 2025 06:44:50 GMT</lastBuildDate>
+<lastBuildDate>Wed, 22 Jan 2025 07:17:34 GMT</lastBuildDate>
 </channel>
 </rss>

@@ -1,1 +1,1 @@
-Sitemap: {{< var site.url >}}/sitemap.xml
+Sitemap: https://john-abbott-college.github.io/6P3-Notes/sitemap.xml

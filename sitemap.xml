@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>{{&lt; var site.url &gt;}}/announcements/index.html</loc>
-    <lastmod>2025-01-22T06:43:40.533Z</lastmod>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/announcements/index.html</loc>
+    <lastmod>2025-01-22T07:16:31.864Z</lastmod>
   </url>
   <url>
-    <loc>{{&lt; var site.url &gt;}}/about/this-site.html</loc>
-    <lastmod>2025-01-22T06:43:40.533Z</lastmod>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/about/this-site.html</loc>
+    <lastmod>2025-01-22T07:16:31.864Z</lastmod>
   </url>
   <url>
-    <loc>{{&lt; var site.url &gt;}}/about/syllabus.html</loc>
-    <lastmod>2025-01-22T06:43:40.533Z</lastmod>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/about/syllabus.html</loc>
+    <lastmod>2025-01-22T07:16:31.864Z</lastmod>
   </url>
   <url>
-    <loc>{{&lt; var site.url &gt;}}/reference/docs/course-hardware.html</loc>
-    <lastmod>2025-01-22T06:43:40.683Z</lastmod>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/reference/docs/course-hardware.html</loc>
+    <lastmod>2025-01-22T07:16:32.014Z</lastmod>
   </url>
   <url>
-    <loc>{{&lt; var site.url &gt;}}/lectures/index.html</loc>
-    <lastmod>2025-01-22T06:43:40.683Z</lastmod>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/lectures/index.html</loc>
+    <lastmod>2025-01-22T07:16:32.013Z</lastmod>
   </url>
   <url>
-    <loc>{{&lt; var site.url &gt;}}/reference/docs/course-software.html</loc>
-    <lastmod>2025-01-22T06:43:40.683Z</lastmod>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/reference/docs/course-software.html</loc>
+    <lastmod>2025-01-22T07:16:32.014Z</lastmod>
   </url>
   <url>
-    <loc>{{&lt; var site.url &gt;}}/reference/index.html</loc>
-    <lastmod>2025-01-22T06:43:40.683Z</lastmod>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/reference/index.html</loc>
+    <lastmod>2025-01-22T07:16:32.014Z</lastmod>
   </url>
   <url>
-    <loc>{{&lt; var site.url &gt;}}/about/calendar.html</loc>
-    <lastmod>2025-01-22T06:43:40.533Z</lastmod>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/about/calendar.html</loc>
+    <lastmod>2025-01-22T07:16:31.864Z</lastmod>
   </url>
   <url>
-    <loc>{{&lt; var site.url &gt;}}/about/index.html</loc>
-    <lastmod>2025-01-22T06:43:40.533Z</lastmod>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/about/index.html</loc>
+    <lastmod>2025-01-22T07:16:31.864Z</lastmod>
   </url>
   <url>
-    <loc>{{&lt; var site.url &gt;}}/index.html</loc>
-    <lastmod>2025-01-22T06:43:40.534Z</lastmod>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/index.html</loc>
+    <lastmod>2025-01-22T07:16:31.865Z</lastmod>
   </url>
 </urlset>
