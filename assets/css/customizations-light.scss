@@ -1,7 +1,6 @@
 /*-- scss:defaults --*/
 @import "colors-light";
 @import "color-chromas";
-@import "common";
 
 // Theme
 $primary: $pink-800 !default;
@@ -47,3 +46,6 @@ $table-dark-border-color: darken($dark, 5%) !default;
     color: $body-color;
   }
 }
+
+// Common customizations
+@import "common";

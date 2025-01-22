@@ -24,8 +24,6 @@ $font-family-monospace: "Fira Code", ui-monospace, Menlo, Monaco,
   "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono",
   "Courier New", monospace;
 
-/*-- scss:rules --*/
-
 // Variables
 
 $ubuntu-web-font-path: "https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" !default;
@@ -42,3 +40,29 @@ $firacode-web-font-path: "https://fonts.googleapis.com/css2?family=Fira+Code:wgh
 @if $firacode-web-font-path {
   @import url($firacode-web-font-path);
 }
+
+
+/*-- scss:rules --*/
+
+.quarto-title-block {
+  border-bottom: 1px solid $gray-300;
+}
+
+div.sourceCode,
+pre
+{
+  border-radius: 0 !important;
+}
+
+// figure {
+//   display: inline-block;
+//   border: 1px dotted;
+//   padding: 2rem;
+// }
+// figure img {
+//   vertical-align: top;
+//   max-width: 500px;
+// }
+// figure figcaption {
+//   text-align: left;
+// }

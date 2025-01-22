@@ -1,7 +1,6 @@
 /*-- scss:defaults --*/
 @import "colors-dark";
 @import "color-chromas";
-@import "common";
 
 // Theme
 $primary: $pink-700 !default;
@@ -26,7 +25,7 @@ $link-color: $blue !default;
 // Code blocks
 // $code-block-bg:	rgba($primary, 0.1) !default;
 $code-block-border-left: $primary;
-$code-block-border-left-size: 0.5rem;
+$code-block-border-left-size: 0.25rem;
 $code-block-bg-alpha: -0.9;
 // $btn-code-copy-color: $white;
 // $btn-code-copy-color-active: $primary;
@@ -50,3 +49,6 @@ $table-dark-border-color: darken($dark, 5%) !default;
 
 // Panels
 $nav-tabs-link-active-color: $body-color;
+
+// Common customizations
+@import "common";
