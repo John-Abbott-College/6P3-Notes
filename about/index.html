@@ -41,8 +41,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-351b7baa9c39ece3266d3b8dfba665a7.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-de0941e58d458d308eae5f15f9039def.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-296a8166e773454e47beb8131d41e688.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-a86e01d9b6e34b92baa21e9e9057cb36.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-711141bfe7aa9561a9e43653668351ed.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script src="../site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
@@ -79,9 +79,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-file-modified','listing-image','listing-title',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -130,7 +130,6 @@ window.Quarto = {
 </script>
 
 <meta property="og:title" content="About – Connected Objects">
-<meta property="og:description" content="">
 <meta property="og:image" content="{{< var site.url >}}/about/assets/art_title_path_only.svg">
 <meta property="og:site_name" content="{{< var course.title >}}">
 </head>
@@ -138,7 +137,7 @@ window.Quarto = {
 <body class="floating nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -188,29 +187,7 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title">About</h1>
-                      </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta">
-
-      
-    
-      <div>
-      <div class="quarto-title-meta-heading">Modified</div>
-      <div class="quarto-title-meta-contents">
-        <p class="date-modified">January 22, 2025</p>
-      </div>
-    </div>
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     
@@ -220,87 +197,104 @@ window.Quarto = {
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
-
-
-
-
-<p>About this site</p>
-
-
-
-
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-listing-date-sort="1737331200000" data-listing-file-modified-sort="1737520299958" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="247">
-<a href="../about/this-site.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="assets/colophon.jpg" alt="From Wikipedia: In publishing, a colophon is a brief statement containing information about the publication of a book… Some web pages also have colophons, which frequently contain (X)HTML, CSS, or usability standards compliance information and links to website validation tests." style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-About this website
-</h5>
-<div class="card-text listing-description">
-Course content, both for lectures and assignments, has been adapted by me from a variety of sources. This section serves the purpose of both acknowledging these references…
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">About</h1>
 </div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
 
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">January 22, 2025</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+
+</header>
+
+
+
+
+
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1737331200000" data-listing-file-modified-sort="1737528220533" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="247">
+<div class="thumbnail">
+<p><a href="../about/this-site.html" class="no-external"></a></p><a href="../about/this-site.html" class="no-external">
+<p class="card-img-top"><img src="assets/colophon.jpg" alt="From Wikipedia: In publishing, a colophon is a brief statement containing information about the publication of a book… Some web pages also have colophons, which frequently contain (X)HTML, CSS, or usability standards compliance information and links to website validation tests."  class="thumbnail-image card-img"/></p>
+</a><p><a href="../about/this-site.html" class="no-external"></a></p>
 </div>
-<div class="listing-date">
-Jan 20, 2025
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../about/this-site.html" class="no-external">About this website</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../about/this-site.html" class="no-external">Description of technologies and resources used to build this website. Acknowledgements, copyright, terms of use, etc. can be found on this page.</a>
 </div>
 </div>
-</div>
+<div class="metadata">
+<p><a href="../about/this-site.html" class="no-external"></a></p><a href="../about/this-site.html" class="no-external">
+<div class="metadata-value listing-file-modified">
+1/22/25, 6:43:40 AM
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-listing-date-sort="1737331200000" data-listing-file-modified-sort="1737520299958" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="77">
-<a href="../about/calendar.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="assets/ticktock.jpg" alt="The focused pupil keeps watch on Time" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Calendar
-</h5>
-<div class="card-text listing-description">
-This is the authoritative calendar for content covered in class, and for content you should expect to see covered as we continue through the course.
 </div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-
+<div class="quarto-post image-right" data-index="1" data-listing-date-sort="1737331200000" data-listing-file-modified-sort="1737528220533" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="77">
+<div class="thumbnail">
+<p><a href="../about/calendar.html" class="no-external"></a></p><a href="../about/calendar.html" class="no-external">
+<p class="card-img-top"><img src="assets/ticktock.jpg" alt="The focused pupil keeps watch on Time"  class="thumbnail-image card-img"/></p>
+</a><p><a href="../about/calendar.html" class="no-external"></a></p>
 </div>
-<div class="listing-date">
-Jan 20, 2025
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../about/calendar.html" class="no-external">Calendar</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../about/calendar.html" class="no-external">Roadmap for course deliverables; record of lectures &amp; activites we have covered along the way. </a>
 </div>
 </div>
+<div class="metadata">
+<p><a href="../about/calendar.html" class="no-external"></a></p><a href="../about/calendar.html" class="no-external">
+<div class="metadata-value listing-file-modified">
+1/22/25, 6:43:40 AM
 </div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-listing-date-sort="1737331200000" data-listing-file-modified-sort="1737528220533" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="155">
+<div class="thumbnail">
+<p><a href="../about/syllabus.html" class="no-external"></a></p><a href="../about/syllabus.html" class="no-external">
+<p class="card-img-top"><img src="assets/itsInTheSyllabus.png" alt="Forgive me the smarmy comic, this is usually true…"  class="thumbnail-image card-img"/></p>
+</a><p><a href="../about/syllabus.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../about/syllabus.html" class="no-external">Syllabus</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../about/syllabus.html" class="no-external">Course description outlining goals, expectations, resources, and other important information. </a>
+</div>
+</div>
+<div class="metadata">
+<p><a href="../about/syllabus.html" class="no-external"></a></p><a href="../about/syllabus.html" class="no-external">
+<div class="metadata-value listing-file-modified">
+1/22/25, 6:43:40 AM
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-listing-date-sort="1737331200000" data-listing-file-modified-sort="1737520299958" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="155">
-<a href="../about/syllabus.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="assets/itsInTheSyllabus.png" alt="Forgive me the smarmy comic, this is usually true…" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Syllabus
-</h5>
-<div class="card-text listing-description">
-There are no required textbooks for this course – this website will contain all of the content that you need to complete course deliverables. Additionally, each lecture will…
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-
-</div>
-<div class="listing-date">
-Jan 20, 2025
-</div>
-</div>
-</div>
-</div>
-</a>
 </div>
 </div>
 <div class="listing-no-matching d-none">
