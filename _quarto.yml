@@ -55,3 +55,7 @@ format:
     reference-location: margin
     title-block-banner: true
     page-layout: article
+    license:
+      text: >
+        CC BY-NC 4.0. ©2022-25 Mauricio Buschinelli & Michael Haaf.
+      url: http://creativecommons.org/licenses/by-nc/4.0/
