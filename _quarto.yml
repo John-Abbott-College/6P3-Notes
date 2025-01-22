@@ -15,25 +15,17 @@ website:
   bread-crumbs: true
 
   search:
+    location: navbar
     show-item-context: true
-    type: overlay
+    type: textbox
     copy-button: true
     keyboard-shortcut: "ctrl+k"
 
-  page-footer:
-    left:
-      - text: "{{< iconify simple-icons moodle >}}"
-        href: "{{< var site.moodle >}}"
-      - text: "{{< iconify fa6-brands github >}}"
-        href: "{{< var site.repository >}}"
-      - text: "{{< var course.title >}}: {{< var course.semester >}}"
-    center:
-      - text: "About"
-        href: about/this-site.qmd
-      - text: "License"
-        href: about/this-site.qmd#copyright
-    right: |
-      © Copyright 2024-2025 Michael Haaf
+  body-footer: |
+    :::{.footer .nav-footer}
+      ©2022-25 [Mauricio Buschinelli](https://github.com/maubuz) & [Michael Haaf](https://github.com/michaelhaaf/), [CC BY-NC 4.0](http://creativecommons.org/licenses/by-nc/4.0/).
+      [Link to source]({{< var site.repository >}})
+    :::
 
   navbar:
     left:
@@ -50,19 +42,22 @@ website:
       - text: "{{< iconify fa6-brands github >}}"
         href: "{{< var site.repository >}}"
     logo: "assets/favicon_io/favicon-32x32.png"
+    pinned: true
 
 format:
   html:
     theme:
-      light: [united, assets/css/customizations-light.scss]
-      dark: [united, assets/css/customizations-dark.scss]
+      light: [journal, assets/css/customizations-light.scss]
+      dark: [journal, assets/css/customizations-dark.scss]
     toc: true
     toc-depth: 4
-    toc-title: Table of contents
+    toc-title: On this page
     toc-location: left
+    number-sections: true
     date-modified: last-modified
     code-overflow: wrap
     code-copy: true
     lightbox: true
     reference-location: margin
     title-block-banner: true
+    page-layout: article
