@@ -21,12 +21,6 @@ website:
     copy-button: true
     keyboard-shortcut: "ctrl+k"
 
-  body-footer: |
-    :::{.footer .nav-footer}
-      ©2022-25 [Mauricio Buschinelli](https://github.com/maubuz) & [Michael Haaf](https://github.com/michaelhaaf/), [CC BY-NC 4.0](http://creativecommons.org/licenses/by-nc/4.0/).
-      [Link to source]({{< var site.repository >}})
-    :::
-
   navbar:
     left:
       - text: "About"
