@@ -4,7 +4,7 @@
     "href": "announcements/index.html",
     "title": "Announcements",
     "section": "",
-    "text": "No matching items\n\n Back to top"
+    "text": "No matching items\n\n\n©2022-25 Mauricio Buschinelli & Michael Haaf, CC BY-NC 4.0. Link to source\n Back to top"
   },
   {
     "objectID": "about/this-site.html",
@@ -24,8 +24,8 @@
     "objectID": "about/this-site.html#course-website",
     "href": "about/this-site.html#course-website",
     "title": "About this website",
-    "section": "Course website",
-    "text": "Course website\nDetails about how this website was built follow.\n\nColophon\n\n\n\n\n\nFrom Wikipedia: In publishing, a colophon is a brief statement containing information about the publication of a book… Some web pages also have colophons, which frequently contain (X)HTML, CSS, or usability standards compliance information and links to website validation tests.\n\n\n\nMarkup: Markdown\nFramework: Quarto\nDeployment: GitHub Pages\n\nYou can follow along directly with course updates at the course repository.\n\n\nCopyright\nThis website was written and designed by the Michael Haaf. All code and assets related to this website, unless indicated otherwise, are licensed under the GNU General Public License v3.0\n\nTerms of use\nThis website’s code is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.\nThis website’s code is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.\nGNU General Public License Notice"
+    "section": "2 Course website",
+    "text": "2 Course website\nDetails about how this website was built follow.\n\n2.1 Colophon\n\n\n\n\n\nFrom Wikipedia: In publishing, a colophon is a brief statement containing information about the publication of a book… Some web pages also have colophons, which frequently contain (X)HTML, CSS, or usability standards compliance information and links to website validation tests.\n\n\n\nMarkup: Markdown\nFramework: Quarto\nDeployment: GitHub Pages\n\nYou can follow along directly with course updates at the course repository.\n\n\n2.2 Copyright\nThis website was written and designed by the Michael Haaf. All code and assets related to this website, unless indicated otherwise, are licensed under the GNU General Public License v3.0\n\nTerms of use\nThis website’s code is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.\nThis website’s code is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.\nGNU General Public License Notice"
   },
   {
     "objectID": "about/syllabus.html",
@@ -45,8 +45,8 @@
     "objectID": "about/syllabus.html#course-material",
     "href": "about/syllabus.html#course-material",
     "title": "Syllabus",
-    "section": "Course material",
-    "text": "Course material\nThere are no required textbooks for this course – this website will contain all of the content that you need to complete course deliverables. Additionally, each lecture will contain references to additional resources for exploring each topic in further detail beyond the scope of the course."
+    "section": "2 Course material",
+    "text": "2 Course material\nThere are no required textbooks for this course – this website will contain all of the content that you need to complete course deliverables. Additionally, each lecture will contain references to additional resources for exploring each topic in further detail beyond the scope of the course."
   },
   {
     "objectID": "reference/docs/course-hardware.html",
@@ -66,36 +66,36 @@
     "objectID": "reference/docs/course-hardware.html#compute-module-4",
     "href": "reference/docs/course-hardware.html#compute-module-4",
     "title": "Course Hardware",
-    "section": "Compute Module 4",
-    "text": "Compute Module 4\n\n\n\n\n\nRaspberry PI CM 4\n\n\nThe Compute Module 4 (CM4) made by the Raspberry Pi Foundation is powering the reTerminal.\nNotable features:\n\nProcessor: Broadcom BCM2711 quad-core Cortex-A72 (ARM v8) 64-bit SoC @ 1.5GHz\n\n\nSee CM4 datasheet for details.\n\nSee Difference Between ARM64, ARMel, and ARMhf for more info on the different ARM architectures.\n\nGrove Base Hat for Raspberry Pi\n\n\n\n\n\nGrove Base Hat for GPIO connections\n\n\nIn a typical Raspberry Pi, sensors would be connected via the 40-pin GPIO.\nTo facilitate connections of the Grove sensors, this “Hat” (term for an add-on board of the Raspberry Pi) includes the following types of connection:\n\n6 Digital\n4 Analog\n3 I2C\n1 PWM\n1 UART\n\n\nSee Grove base hat Wiki for details."
+    "section": "2 Compute Module 4",
+    "text": "2 Compute Module 4\n\n\n\n\n\nRaspberry PI CM 4\n\n\nThe Compute Module 4 (CM4) made by the Raspberry Pi Foundation is powering the reTerminal.\nNotable features:\n\nProcessor: Broadcom BCM2711 quad-core Cortex-A72 (ARM v8) 64-bit SoC @ 1.5GHz\n\n\nSee CM4 datasheet for details.\n\nSee Difference Between ARM64, ARMel, and ARMhf for more info on the different ARM architectures.\n\n2.1 Grove Base Hat for Raspberry Pi\n\n\n\n\n\nGrove Base Hat for GPIO connections\n\n\nIn a typical Raspberry Pi, sensors would be connected via the 40-pin GPIO.\nTo facilitate connections of the Grove sensors, this “Hat” (term for an add-on board of the Raspberry Pi) includes the following types of connection:\n\n6 Digital\n4 Analog\n3 I2C\n1 PWM\n1 UART\n\n\nSee Grove base hat Wiki for details."
   },
   {
     "objectID": "reference/docs/course-hardware.html#sensors",
     "href": "reference/docs/course-hardware.html#sensors",
     "title": "Course Hardware",
-    "section": "Sensors",
-    "text": "Sensors\n\nAHT20 I2C Temperature & Humidity\n\n\n\n\n\nAHT20 I2C temperature/humidity sensor\n\n\nSee AHT20 I2C Industrial Grade Temperature & Humidity Sensor wiki for details.\n\nTemperature measurement range -40 ~ 85°C, Humidity measurement range 0 ~ 100% RH.\nDigital output, Grove I2C interface.\n\n\n\nAHT20 Libraries\nThe main module for this sensor is provided by Seeed in this Github repository and can be installed with the grove.py library.\nFollow official Step by step installation for python 3 (see below). Don’t use the one-click installation or it will install to the wrong location\ngit clone [https://github.com/Seeed-Studio/grove.py](https://github.com/Seeed-Studio/grove.py)\ncd grove.py\nsudo pip3 install .\nAlternatively, it’s also possible to use Adafruit’s adafruit-circuitpython-ahtx0 library to communicate with the sensor (see library’s Pypi page). However, to instantiate the provided sensor class, you will need to pass it an I2C bus instance. To instantiate an I2C bus instance, install and use the adafruit-extended-bus library (see Pypi page)."
+    "section": "3 Sensors",
+    "text": "3 Sensors\n\n3.1 AHT20 I2C Temperature & Humidity\n\n\n\n\n\nAHT20 I2C temperature/humidity sensor\n\n\nSee AHT20 I2C Industrial Grade Temperature & Humidity Sensor wiki for details.\n\nTemperature measurement range -40 ~ 85°C, Humidity measurement range 0 ~ 100% RH.\nDigital output, Grove I2C interface.\n\n\n\n3.2 AHT20 Libraries\nThe main module for this sensor is provided by Seeed in this Github repository and can be installed with the grove.py library.\nFollow official Step by step installation for python 3 (see below). Don’t use the one-click installation or it will install to the wrong location\ngit clone [https://github.com/Seeed-Studio/grove.py](https://github.com/Seeed-Studio/grove.py)\ncd grove.py\nsudo pip3 install .\nAlternatively, it’s also possible to use Adafruit’s adafruit-circuitpython-ahtx0 library to communicate with the sensor (see library’s Pypi page). However, to instantiate the provided sensor class, you will need to pass it an I2C bus instance. To instantiate an I2C bus instance, install and use the adafruit-extended-bus library (see Pypi page)."
   },
   {
     "objectID": "reference/docs/course-hardware.html#actuators-motors",
     "href": "reference/docs/course-hardware.html#actuators-motors",
     "title": "Course Hardware",
-    "section": "Actuators & Motors",
-    "text": "Actuators & Motors\n\nLED Socket\n\n\n\n\n\nLED\n\n\nLED in a removable socket and potentiometer for power adjustment. LED can be swapped with different colors.\nSee LED wiki page for details.\n\n\nCooling Fan\n\n\n\n\n\nCooling Fan\n\n\n5V Cooling Fan 40mm x 10mm with 2-pin JST connector.\n\nSee product page here.\n\n\n\nRelay\n\n\n\n\n\nRelay switch\n\n\nA digital switch. Controls the on/off flow of electricity with a small digital signal.\n\nOperate voltage: 3.3V-5V\nInput current: 100mA\nRated load: 5A@250VAC 5A@30VDC\n\nSee relay wiki page for details."
+    "section": "4 Actuators & Motors",
+    "text": "4 Actuators & Motors\n\n4.1 LED Socket\n\n\n\n\n\nLED\n\n\nLED in a removable socket and potentiometer for power adjustment. LED can be swapped with different colors.\nSee LED wiki page for details.\n\n\n4.2 Cooling Fan\n\n\n\n\n\nCooling Fan\n\n\n5V Cooling Fan 40mm x 10mm with 2-pin JST connector.\n\nSee product page here.\n\n\n\n4.3 Relay\n\n\n\n\n\nRelay switch\n\n\nA digital switch. Controls the on/off flow of electricity with a small digital signal.\n\nOperate voltage: 3.3V-5V\nInput current: 100mA\nRated load: 5A@250VAC 5A@30VDC\n\nSee relay wiki page for details."
   },
   {
     "objectID": "reference/docs/course-hardware.html#cabling",
     "href": "reference/docs/course-hardware.html#cabling",
     "title": "Course Hardware",
-    "section": "Cabling",
-    "text": "Cabling\nThe following cables are included in the base kit:\n\nGrove Universal 4 Pin Buckled 5cm Cable.\nGrove Universal 4 Pin Buckled 20cm Cable.\nGrove 4 pin Female Jumper to Grove 4 pin Cable\nGrove 4 pin Male Jumper to Grove 4 pin Cable\n40-pin flat ribbon cable 20cm (female-female).\n2-pin JST SM Plug, one end open."
+    "section": "5 Cabling",
+    "text": "5 Cabling\nThe following cables are included in the base kit:\n\nGrove Universal 4 Pin Buckled 5cm Cable.\nGrove Universal 4 Pin Buckled 20cm Cable.\nGrove 4 pin Female Jumper to Grove 4 pin Cable\nGrove 4 pin Male Jumper to Grove 4 pin Cable\n40-pin flat ribbon cable 20cm (female-female).\n2-pin JST SM Plug, one end open."
   },
   {
     "objectID": "lectures/index.html",
     "href": "lectures/index.html",
     "title": "All lectures",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\nTitle\n\n\nSubtitle\n\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\nTitle\n\n\nSubtitle\n\n\n\n\n\n\n\nNo matching items\n\n\n©2022-25 Mauricio Buschinelli & Michael Haaf, CC BY-NC 4.0. Link to source\n Back to top"
   },
   {
     "objectID": "reference/docs/course-software.html",
@@ -115,22 +115,22 @@
     "objectID": "reference/docs/course-software.html#editor",
     "href": "reference/docs/course-software.html#editor",
     "title": "Course software",
-    "section": "Editor",
-    "text": "Editor\n\nRecommended: VS Code\n\nRemote - SSH by Microsoft: Open any folder on a remote machine using SSH and take advantage of VS Code’s full feature set.\nPython language support extension\nPython formatter/linter extension (ruff)"
+    "section": "2 Editor",
+    "text": "2 Editor\n\n2.1 Recommended: VS Code\n\nRemote - SSH by Microsoft: Open any folder on a remote machine using SSH and take advantage of VS Code’s full feature set.\nPython language support extension\nPython formatter/linter extension (ruff)"
   },
   {
     "objectID": "reference/docs/course-software.html#cloud",
     "href": "reference/docs/course-software.html#cloud",
     "title": "Course software",
-    "section": "Cloud",
-    "text": "Cloud\n\nMicrosoft Azure\n\n\n\n\n\nAzure IoT Hub: Create Using Azure Portal | Build5Nines\n\n\nMicrosoft Azure will be used as the main platform that will:\n\nRegister and connect devices.\nStore and analyse data.\nManage the security layer.\nProvide libraries (SDKs) that can easily be integrated into our code.\nFor more information see Azure IoT page."
+    "section": "3 Cloud",
+    "text": "3 Cloud\n\n3.1 Microsoft Azure\n\n\n\n\n\nAzure IoT Hub: Create Using Azure Portal | Build5Nines\n\n\nMicrosoft Azure will be used as the main platform that will:\n\nRegister and connect devices.\nStore and analyse data.\nManage the security layer.\nProvide libraries (SDKs) that can easily be integrated into our code.\nFor more information see Azure IoT page."
   },
   {
     "objectID": "reference/index.html",
     "href": "reference/index.html",
     "title": "Reference",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\nTitle\n\n\nSubtitle\n\n\n\n\n\n\n2025-01-20\n\n\nCourse software\n\n\nThe essential software that will be used for development during the course.\n\n\n\n\n2025-01-20\n\n\nCourse Hardware\n\n\nList of hardware available for the course as well as their respective specifications and documentation.\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\nTitle\n\n\nSubtitle\n\n\n\n\n\n\n2025-01-20\n\n\nCourse software\n\n\nThe essential software that will be used for development during the course.\n\n\n\n\n2025-01-20\n\n\nCourse Hardware\n\n\nList of hardware available for the course as well as their respective specifications and documentation.\n\n\n\n\n\nNo matching items\n\n\n©2022-25 Mauricio Buschinelli & Michael Haaf, CC BY-NC 4.0. Link to source\n Back to top"
   },
   {
     "objectID": "about/calendar.html",
@@ -143,43 +143,43 @@
     "objectID": "about/calendar.html#january",
     "href": "about/calendar.html#january",
     "title": "Calendar",
-    "section": "January",
-    "text": "January\n\nDeliverables\n\nLab 1: TBD\n\n\n\nSchedule\n\nJan 20: Introduction to course"
+    "section": "1 January",
+    "text": "1 January\n\n1.1 Deliverables\n\nLab 1: TBD\n\n\n\n1.2 Schedule\n\nJan 20: Introduction to course"
   },
   {
     "objectID": "about/calendar.html#february",
     "href": "about/calendar.html#february",
     "title": "Calendar",
-    "section": "February",
-    "text": "February\n\nDeliverables\n\n\nSchedule"
+    "section": "2 February",
+    "text": "2 February\n\n2.1 Deliverables\n\n\n2.2 Schedule"
   },
   {
     "objectID": "about/calendar.html#march",
     "href": "about/calendar.html#march",
     "title": "Calendar",
-    "section": "March",
-    "text": "March\n\nDeliverables\n\n\nSchedule"
+    "section": "3 March",
+    "text": "3 March\n\n3.1 Deliverables\n\n\n3.2 Schedule"
   },
   {
     "objectID": "about/calendar.html#april",
     "href": "about/calendar.html#april",
     "title": "Calendar",
-    "section": "April",
-    "text": "April\n\nDeliverables\n\n\nSchedule"
+    "section": "4 April",
+    "text": "4 April\n\n4.1 Deliverables\n\n\n4.2 Schedule"
   },
   {
     "objectID": "about/calendar.html#may",
     "href": "about/calendar.html#may",
     "title": "Calendar",
-    "section": "May",
-    "text": "May\n\nDeliverables\n\n\nSchedule"
+    "section": "5 May",
+    "text": "5 May\n\n5.1 Deliverables\n\n\n5.2 Schedule"
   },
   {
     "objectID": "about/index.html",
     "href": "about/index.html",
     "title": "About",
     "section": "",
-    "text": "About this site\n\n\n\n\n\n\n\n\n\n\n\n\nAbout this website\n\n\n\n\n\n\n\n\n\nJan 20, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nCalendar\n\n\n\n\n\n\n\n\n\nJan 20, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nSyllabus\n\n\n\n\n\n\n\n\n\nJan 20, 2025\n\n\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "About this site\n\n\n\n\n\n\n\n\n\n\n\n\nAbout this website\n\n\n\n\n\n\n\n\n\nJan 20, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nCalendar\n\n\n\n\n\n\n\n\n\nJan 20, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nSyllabus\n\n\n\n\n\n\n\n\n\nJan 20, 2025\n\n\n\n\n\n\n\n\nNo matching items\n\n\n©2022-25 Mauricio Buschinelli & Michael Haaf, CC BY-NC 4.0. Link to source\n Back to top"
   },
   {
     "objectID": "index.html",
