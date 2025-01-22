@@ -2,42 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>{{&lt; var site.url &gt;}}/announcements/index.html</loc>
-    <lastmod>2025-01-22T03:56:06.219Z</lastmod>
+    <lastmod>2025-01-22T04:04:22.715Z</lastmod>
   </url>
   <url>
     <loc>{{&lt; var site.url &gt;}}/about/this-site.html</loc>
-    <lastmod>2025-01-22T03:56:06.219Z</lastmod>
+    <lastmod>2025-01-22T04:04:22.715Z</lastmod>
   </url>
   <url>
     <loc>{{&lt; var site.url &gt;}}/about/syllabus.html</loc>
-    <lastmod>2025-01-22T03:56:06.219Z</lastmod>
+    <lastmod>2025-01-22T04:04:22.715Z</lastmod>
   </url>
   <url>
     <loc>{{&lt; var site.url &gt;}}/reference/docs/course-hardware.html</loc>
-    <lastmod>2025-01-22T03:56:06.368Z</lastmod>
+    <lastmod>2025-01-22T04:04:22.865Z</lastmod>
   </url>
   <url>
     <loc>{{&lt; var site.url &gt;}}/lectures/index.html</loc>
-    <lastmod>2025-01-22T03:56:06.368Z</lastmod>
+    <lastmod>2025-01-22T04:04:22.864Z</lastmod>
   </url>
   <url>
     <loc>{{&lt; var site.url &gt;}}/reference/docs/course-software.html</loc>
-    <lastmod>2025-01-22T03:56:06.368Z</lastmod>
+    <lastmod>2025-01-22T04:04:22.865Z</lastmod>
   </url>
   <url>
     <loc>{{&lt; var site.url &gt;}}/reference/index.html</loc>
-    <lastmod>2025-01-22T03:56:06.369Z</lastmod>
+    <lastmod>2025-01-22T04:04:22.865Z</lastmod>
   </url>
   <url>
     <loc>{{&lt; var site.url &gt;}}/about/calendar.html</loc>
-    <lastmod>2025-01-22T03:56:06.219Z</lastmod>
+    <lastmod>2025-01-22T04:04:22.715Z</lastmod>
   </url>
   <url>
     <loc>{{&lt; var site.url &gt;}}/about/index.html</loc>
-    <lastmod>2025-01-22T03:56:06.219Z</lastmod>
+    <lastmod>2025-01-22T04:04:22.715Z</lastmod>
   </url>
   <url>
     <loc>{{&lt; var site.url &gt;}}/index.html</loc>
-    <lastmod>2025-01-22T03:56:06.220Z</lastmod>
+    <lastmod>2025-01-22T04:04:22.716Z</lastmod>
   </url>
 </urlset>
