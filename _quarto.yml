@@ -53,7 +53,7 @@ format:
     code-copy: true
     lightbox: true
     reference-location: margin
-    title-block-banner: true
+    title-block-banner: false
     page-layout: article
     license:
       text: >

@@ -1,7 +1,6 @@
 ---
 title: "About"
 listing:
-  type: grid
+  type: default
+  fields: [file-modified, image, title]
 ---
-
-About this site

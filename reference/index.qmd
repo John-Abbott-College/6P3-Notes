@@ -2,13 +2,10 @@
 title: "Reference"
 subtitle: "TBD"
 listing:
-  type: table
   filter-ui: true
-  sort-ui: [date, title]
+  sort-ui: [date, file-modified, title]
   sort: date
   date-format: iso
   categories: true
-  fields: [date, title, subtitle]
-  exclude:
-    filename: "*index.qmd"
+  fields: [date, file-modified, title, subtitle, image, reading-time]
 ---
