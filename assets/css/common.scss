@@ -54,6 +54,12 @@ pre
   border-radius: 0 !important;
 }
 
+.lead {
+  font-size: 1rem !important;
+}
+
+// TODO: put these and other non-$var using styles in style.css
+//
 // figure {
 //   display: inline-block;
 //   border: 1px dotted;

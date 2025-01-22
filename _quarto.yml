@@ -8,7 +8,7 @@ website:
   image: "assets/art_title_path_only.svg"
   favicon: "assets/favicon_io/favicon.ico"
   site-path: "{{< var site.path >}}"
-  site-url: "{{< var site.url >}}"
+  site-url: https://john-abbott-college.github.io/6P3-Notes/
   open-graph: true
   page-navigation: true
   back-to-top-navigation: true

@@ -2,11 +2,12 @@ desktop.ini
 node_modules/
 __pycache__
 
-# For Python demo code
+# For Python environment
 .env
 .venv
+.pdm-python
 
-# For .NET demo code
+# For .NET environment
 bin/
 obj/
 
