@@ -6,14 +6,25 @@ subtitle:
 date: 2025-01-20
 ---
 
-## OS Software
+## Required woftware
 
-### Raspberry Pi OS
+The operating system running inside the reTerminal is Raspberry Pi OS, which is based on Debian Linux.
 
-The operating system running inside the reTerminal is Raspberry Pi OS.
+We will make use of the following tools:
 
-- Linux Debian based.
-- Requires basic use of BASH shell (eg. ssh, and environmental variables).
+- `bash` and `python` and related packaging tools
+- `git` and related configuration
+- a Unix shell and package manager for installing and managing dependencies compatible with RasperryPi OS
+- (later this semester) Azure and GitHub CLI tools
+- (later this semester) `.NET` for interfacing with the App Dev III code
+
+We will achieve that in one of the following ways, depending on the computer you are using:
+
+- (on Windows computers such as the lab computers) by creating a Debian WSL container
+- (on OS X computers) using `brew`
+- (on Linux computers) using your system package manager.
+
+See below for further instructions for each.
 
 ### Recommended: Linux WSL
 
