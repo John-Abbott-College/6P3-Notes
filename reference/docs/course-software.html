@@ -74,8 +74,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-351b7baa9c39ece3266d3b8dfba665a7.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-ff57f16fe66c02f9f6df178965648c37.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-6f2b10fdb5d4eb8fd03b44aebcc83bd1.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-a5e9273dd86ce57c043f97890d9a2042.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-9357aeb147418578c4a8ddccdd200604.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script src="../../site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
 <script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
@@ -173,10 +173,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#os-software" id="toc-os-software" class="nav-link active" data-scroll-target="#os-software"><span class="header-section-number">1</span> OS Software</a>
+  <li><a href="#required-woftware" id="toc-required-woftware" class="nav-link active" data-scroll-target="#required-woftware"><span class="header-section-number">1</span> Required woftware</a>
   <ul>
-  <li><a href="#raspberry-pi-os" id="toc-raspberry-pi-os" class="nav-link" data-scroll-target="#raspberry-pi-os"><span class="header-section-number">1.1</span> Raspberry Pi OS</a></li>
-  <li><a href="#recommended-linux-wsl" id="toc-recommended-linux-wsl" class="nav-link" data-scroll-target="#recommended-linux-wsl"><span class="header-section-number">1.2</span> Recommended: Linux WSL</a></li>
+  <li><a href="#recommended-linux-wsl" id="toc-recommended-linux-wsl" class="nav-link" data-scroll-target="#recommended-linux-wsl"><span class="header-section-number">1.1</span> Recommended: Linux WSL</a></li>
   </ul></li>
   <li><a href="#editor" id="toc-editor" class="nav-link" data-scroll-target="#editor"><span class="header-section-number">2</span> Editor</a>
   <ul>
@@ -217,7 +216,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">January 22, 2025</p>
+      <p class="date-modified">January 23, 2025</p>
     </div>
   </div>
     
@@ -228,18 +227,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="os-software" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="os-software"><span class="header-section-number">1</span> OS Software</h2>
-<section id="raspberry-pi-os" class="level3" data-number="1.1">
-<h3 data-number="1.1" class="anchored" data-anchor-id="raspberry-pi-os"><span class="header-section-number">1.1</span> Raspberry Pi OS</h3>
-<p>The operating system running inside the reTerminal is Raspberry Pi OS.</p>
+<section id="required-woftware" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="required-woftware"><span class="header-section-number">1</span> Required woftware</h2>
+<p>The operating system running inside the reTerminal is Raspberry Pi OS, which is based on Debian Linux.</p>
+<p>We will make use of the following tools:</p>
 <ul>
-<li>Linux Debian based.</li>
-<li>Requires basic use of BASH shell (eg. ssh, and environmental variables).</li>
+<li><code>bash</code> and <code>python</code> and related packaging tools</li>
+<li><code>git</code> and related configuration</li>
+<li>a Unix shell and package manager for installing and managing dependencies compatible with RasperryPi OS</li>
+<li>(later this semester) Azure and GitHub CLI tools</li>
+<li>(later this semester) <code>.NET</code> for interfacing with the App Dev III code</li>
 </ul>
-</section>
-<section id="recommended-linux-wsl" class="level3" data-number="1.2">
-<h3 data-number="1.2" class="anchored" data-anchor-id="recommended-linux-wsl"><span class="header-section-number">1.2</span> Recommended: Linux WSL</h3>
+<p>We will achieve that in one of the following ways, depending on the computer you are using:</p>
+<ul>
+<li>(on Windows computers such as the lab computers) by creating a Debian WSL container</li>
+<li>(on OS X computers) using <code>brew</code></li>
+<li>(on Linux computers) using your system package manager.</li>
+</ul>
+<p>See below for further instructions for each.</p>
+<section id="recommended-linux-wsl" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="recommended-linux-wsl"><span class="header-section-number">1.1</span> Recommended: Linux WSL</h3>
 <p>If using a Windows machine (lab computers and/or personal) for this course, you will need to set up Windows Subsystem for Linux (WSL).</p>
 <ul>
 <li><a href="https://learn.microsoft.com/en-us/windows/wsl/setup/environment">Install Debian on WSL</a>

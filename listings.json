@@ -1,13 +1,5 @@
 [
   {
-    "listing": "/announcements/index.html",
-    "items": []
-  },
-  {
-    "listing": "/lectures/index.html",
-    "items": []
-  },
-  {
     "listing": "/reference/index.html",
     "items": [
       "/reference/docs/course-software.html",
@@ -21,5 +13,13 @@
       "/about/calendar.html",
       "/about/syllabus.html"
     ]
+  },
+  {
+    "listing": "/announcements/index.html",
+    "items": []
+  },
+  {
+    "listing": "/lectures/index.html",
+    "items": []
   }
 ]

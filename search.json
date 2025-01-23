@@ -1,52 +1,31 @@
 [
   {
-    "objectID": "announcements/index.html",
-    "href": "announcements/index.html",
-    "title": "Announcements",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Home",
     "section": "",
-    "text": "No matching items\n\n Back to topReuseCC BY-NC 4.0. ©2022-25 Mauricio Buschinelli & Michael Haaf.\n(View License)"
+    "text": "This companion site for the 420-6P3 course includes:\n\n\nLecture slides / documents\nExercises\nReferences & Resources\n\n\nWebsite accessible at john-abbott-college.github.io/6P3-Notes\n\n\nThis course will introduce students to the principles of the Internet of Things (IoT). Students will use Linux and Python to program a Raspberry Pi in order to read data from sensors and control actuators.\nBy the end of the course, students build and deploy an IoT product that is securely connected to the Azure ecosystem in order to collect and analyse telemetry data as well as respond to remote commands.\n\n\n\n\nExperience using Object Oriented Programming to create applications in any language.\nFamiliarity using the Bash shell and basic Linux CLI.\nFamiliarity with Python.\nA Raspberry Pi with various sensors and actuators (see page Hardware List).\nA Microsoft Azure account: create a free Azure for Students account if necessary.\nVS Code configured for Python programming and remote development (see page Dev Setup).\n\n\n\n\nThis webpage is written in Markdown using the Quarto framework. The website is hosted via GitHub Pages\nSource code is open source and available on GitHub.\n\n\nCreate a local copy of these notes:\n\nInstall Quarto for your system\nClone the course GitHub repository.\nPreview the website:\nquarto preview .\n\n\nThis work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License. See the Copyright statement on the course webpage."
   },
   {
-    "objectID": "about/this-site.html",
-    "href": "about/this-site.html",
-    "title": "About this website",
+    "objectID": "index.html#description",
+    "href": "index.html#description",
+    "title": "Home",
     "section": "",
-    "text": "Course content, both for lectures and assignments, has been adapted by me from a variety of sources. This section serves the purpose of both acknowledging these references as well as pointing the way for curious students to begin investigating further into course material than we had time to cover.\n\n\nAll course content was either written by Mauricio Buschinelli, Michael Haaf, or explicitly adapted from external resources with attributions made clear. This course content retains the licenses of the original works where relevant, and is otherwise licensed under the Creative Commons Attribution 4.0 International License.\n\nTerms of use\nYou are free to:\n\nShare: copy and redistribute the material in any medium or format\nAdapt: remix, transform, and build upon the material for any purpose, even commercially.\n\nUnder the following terms:\n\nAttribution: You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.\n\nCreative Commons Attribution 4.0 International License"
+    "text": "This course will introduce students to the principles of the Internet of Things (IoT). Students will use Linux and Python to program a Raspberry Pi in order to read data from sensors and control actuators.\nBy the end of the course, students build and deploy an IoT product that is securely connected to the Azure ecosystem in order to collect and analyse telemetry data as well as respond to remote commands."
   },
   {
-    "objectID": "about/this-site.html#course-content",
-    "href": "about/this-site.html#course-content",
-    "title": "About this website",
+    "objectID": "index.html#requirements",
+    "href": "index.html#requirements",
+    "title": "Home",
     "section": "",
-    "text": "Course content, both for lectures and assignments, has been adapted by me from a variety of sources. This section serves the purpose of both acknowledging these references as well as pointing the way for curious students to begin investigating further into course material than we had time to cover.\n\n\nAll course content was either written by Mauricio Buschinelli, Michael Haaf, or explicitly adapted from external resources with attributions made clear. This course content retains the licenses of the original works where relevant, and is otherwise licensed under the Creative Commons Attribution 4.0 International License.\n\nTerms of use\nYou are free to:\n\nShare: copy and redistribute the material in any medium or format\nAdapt: remix, transform, and build upon the material for any purpose, even commercially.\n\nUnder the following terms:\n\nAttribution: You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.\n\nCreative Commons Attribution 4.0 International License"
+    "text": "Experience using Object Oriented Programming to create applications in any language.\nFamiliarity using the Bash shell and basic Linux CLI.\nFamiliarity with Python.\nA Raspberry Pi with various sensors and actuators (see page Hardware List).\nA Microsoft Azure account: create a free Azure for Students account if necessary.\nVS Code configured for Python programming and remote development (see page Dev Setup)."
   },
   {
-    "objectID": "about/this-site.html#course-website",
-    "href": "about/this-site.html#course-website",
-    "title": "About this website",
-    "section": "2 Course website",
-    "text": "2 Course website\nDetails about how this website was built follow.\n\n2.1 Colophon\n\n\n\n\n\nFrom Wikipedia: In publishing, a colophon is a brief statement containing information about the publication of a book… Some web pages also have colophons, which frequently contain (X)HTML, CSS, or usability standards compliance information and links to website validation tests.\n\n\n\nMarkup: Markdown\nFramework: Quarto\nDeployment: GitHub Pages\n\nYou can follow along directly with course updates at the course repository."
-  },
-  {
-    "objectID": "about/syllabus.html",
-    "href": "about/syllabus.html",
-    "title": "Syllabus",
+    "objectID": "index.html#source-code",
+    "href": "index.html#source-code",
+    "title": "Home",
     "section": "",
-    "text": "Room, times, etc.: see Course Outline\nOffice: Penfield 311\nOffice hours: Mon/Fri 11:00 - 12:30pm or so\nEmail: michael DOT haaf AT johnabbott DOT qc DOT ca\nCourse webpage: This website for all content, Moodle for assignment/project/quiz submissions.\n\n\n\n\n\n\nForgive me the smarmy comic, this is usually true…\n\n\n\n\n\nTeams - For communicating (fastest, most reliable that I will check it same-day)\nMIO - For communicating (non-time-critical)\nEmail - For communicating (time-critical). Will aim for &lt;24hr response.\nMoodle - For receiving & submitting exercises/assignments/project and getting marks\n\n\n\n\n\n45% Assignments and Labs\n20% Test (first week of April)\n35% Project Milestones"
-  },
-  {
-    "objectID": "about/syllabus.html#logistics",
-    "href": "about/syllabus.html#logistics",
-    "title": "Syllabus",
-    "section": "",
-    "text": "Room, times, etc.: see Course Outline\nOffice: Penfield 311\nOffice hours: Mon/Fri 11:00 - 12:30pm or so\nEmail: michael DOT haaf AT johnabbott DOT qc DOT ca\nCourse webpage: This website for all content, Moodle for assignment/project/quiz submissions.\n\n\n\n\n\n\nForgive me the smarmy comic, this is usually true…\n\n\n\n\n\nTeams - For communicating (fastest, most reliable that I will check it same-day)\nMIO - For communicating (non-time-critical)\nEmail - For communicating (time-critical). Will aim for &lt;24hr response.\nMoodle - For receiving & submitting exercises/assignments/project and getting marks\n\n\n\n\n\n45% Assignments and Labs\n20% Test (first week of April)\n35% Project Milestones"
-  },
-  {
-    "objectID": "about/syllabus.html#course-material",
-    "href": "about/syllabus.html#course-material",
-    "title": "Syllabus",
-    "section": "2 Course material",
-    "text": "2 Course material\nThere are no required textbooks for this course – this website will contain all of the content that you need to complete course deliverables. Additionally, each lecture will contain references to additional resources for exploring each topic in further detail beyond the scope of the course."
+    "text": "This webpage is written in Markdown using the Quarto framework. The website is hosted via GitHub Pages\nSource code is open source and available on GitHub.\n\n\nCreate a local copy of these notes:\n\nInstall Quarto for your system\nClone the course GitHub repository.\nPreview the website:\nquarto preview .\n\n\nThis work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License. See the Copyright statement on the course webpage."
   },
   {
     "objectID": "reference/docs/course-hardware.html",
@@ -91,46 +70,32 @@
     "text": "5 Cabling\nThe following cables are included in the base kit:\n\nGrove Universal 4 Pin Buckled 5cm Cable.\nGrove Universal 4 Pin Buckled 20cm Cable.\nGrove 4 pin Female Jumper to Grove 4 pin Cable\nGrove 4 pin Male Jumper to Grove 4 pin Cable\n40-pin flat ribbon cable 20cm (female-female).\n2-pin JST SM Plug, one end open."
   },
   {
-    "objectID": "lectures/index.html",
-    "href": "lectures/index.html",
-    "title": "All lectures",
-    "section": "",
-    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Modified - Oldest\n        \n         \n          Modified - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nNo matching items\n\n Back to topReuseCC BY-NC 4.0. ©2022-25 Mauricio Buschinelli & Michael Haaf.\n(View License)"
-  },
-  {
-    "objectID": "reference/docs/course-software.html",
-    "href": "reference/docs/course-software.html",
-    "title": "Course software",
-    "section": "",
-    "text": "The operating system running inside the reTerminal is Raspberry Pi OS.\n\nLinux Debian based.\nRequires basic use of BASH shell (eg. ssh, and environmental variables).\n\n\n\n\nIf using a Windows machine (lab computers and/or personal) for this course, you will need to set up Windows Subsystem for Linux (WSL).\n\nInstall Debian on WSL\n\nChoosing Debian as the Linux distribution\nSet up Windows Terminal\nSet up VS Code\nSet up git\n\nInstall dependencies:\n\n# Update system:\nsudo apt update && sudo apt upgrade -y\n# Verify python version is &gt;= 3.9: \npython3 --version\n# Ensure pip is installed:\nsudo apt install python3-pip\npip3 --version"
-  },
-  {
-    "objectID": "reference/docs/course-software.html#os-software",
-    "href": "reference/docs/course-software.html#os-software",
-    "title": "Course software",
-    "section": "",
-    "text": "The operating system running inside the reTerminal is Raspberry Pi OS.\n\nLinux Debian based.\nRequires basic use of BASH shell (eg. ssh, and environmental variables).\n\n\n\n\nIf using a Windows machine (lab computers and/or personal) for this course, you will need to set up Windows Subsystem for Linux (WSL).\n\nInstall Debian on WSL\n\nChoosing Debian as the Linux distribution\nSet up Windows Terminal\nSet up VS Code\nSet up git\n\nInstall dependencies:\n\n# Update system:\nsudo apt update && sudo apt upgrade -y\n# Verify python version is &gt;= 3.9: \npython3 --version\n# Ensure pip is installed:\nsudo apt install python3-pip\npip3 --version"
-  },
-  {
-    "objectID": "reference/docs/course-software.html#editor",
-    "href": "reference/docs/course-software.html#editor",
-    "title": "Course software",
-    "section": "2 Editor",
-    "text": "2 Editor\n\n2.1 Recommended: VS Code\n\nRemote - SSH by Microsoft: Open any folder on a remote machine using SSH and take advantage of VS Code’s full feature set.\nPython language support extension\nPython formatter/linter extension (ruff)"
-  },
-  {
-    "objectID": "reference/docs/course-software.html#cloud",
-    "href": "reference/docs/course-software.html#cloud",
-    "title": "Course software",
-    "section": "3 Cloud",
-    "text": "3 Cloud\n\n3.1 Microsoft Azure\n\n\n\n\n\nAzure IoT Hub: Create Using Azure Portal | Build5Nines\n\n\nMicrosoft Azure will be used as the main platform that will:\n\nRegister and connect devices.\nStore and analyse data.\nManage the security layer.\nProvide libraries (SDKs) that can easily be integrated into our code.\nFor more information see Azure IoT page."
-  },
-  {
     "objectID": "reference/index.html",
     "href": "reference/index.html",
     "title": "Reference",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Modified - Oldest\n        \n         \n          Modified - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nCourse software\n\n\nThe essential software that will be used for development during the course.\n\n\n\n\n\n2025-01-20\n\n\n2 min\n\n\n2025-01-22\n\n\n\n\n\n\n\n\n\n\n\n\nCourse Hardware\n\n\nList of hardware available for the course as well as their respective specifications and documentation.\n\n\n\n\n\n2025-01-20\n\n\n3 min\n\n\n2025-01-22\n\n\n\n\n\n\nNo matching items\n\n Back to topReuseCC BY-NC 4.0. ©2022-25 Mauricio Buschinelli & Michael Haaf.\n(View License)"
+    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Modified - Oldest\n        \n         \n          Modified - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nCourse software\n\n\nThe essential software that will be used for development during the course.\n\n\n\n\n\n2025-01-20\n\n\n2 min\n\n\n2025-01-23\n\n\n\n\n\n\n\n\n\n\n\n\nCourse Hardware\n\n\nList of hardware available for the course as well as their respective specifications and documentation.\n\n\n\n\n\n2025-01-20\n\n\n3 min\n\n\n2025-01-23\n\n\n\n\n\n\nNo matching items\n\n Back to topReuseCC BY-NC 4.0. ©2022-25 Mauricio Buschinelli & Michael Haaf.\n(View License)"
+  },
+  {
+    "objectID": "about/syllabus.html",
+    "href": "about/syllabus.html",
+    "title": "Syllabus",
+    "section": "",
+    "text": "Room, times, etc.: see Course Outline\nOffice: Penfield 311\nOffice hours: Mon/Fri 11:00 - 12:30pm or so\nEmail: michael DOT haaf AT johnabbott DOT qc DOT ca\nCourse webpage: This website for all content, Moodle for assignment/project/quiz submissions.\n\n\n\n\n\n\nForgive me the smarmy comic, this is usually true…\n\n\n\n\n\nTeams - For communicating (fastest, most reliable that I will check it same-day)\nMIO - For communicating (non-time-critical)\nEmail - For communicating (time-critical). Will aim for &lt;24hr response.\nMoodle - For receiving & submitting exercises/assignments/project and getting marks\n\n\n\n\n\n45% Assignments and Labs\n20% Test (first week of April)\n35% Project Milestones"
+  },
+  {
+    "objectID": "about/syllabus.html#logistics",
+    "href": "about/syllabus.html#logistics",
+    "title": "Syllabus",
+    "section": "",
+    "text": "Room, times, etc.: see Course Outline\nOffice: Penfield 311\nOffice hours: Mon/Fri 11:00 - 12:30pm or so\nEmail: michael DOT haaf AT johnabbott DOT qc DOT ca\nCourse webpage: This website for all content, Moodle for assignment/project/quiz submissions.\n\n\n\n\n\n\nForgive me the smarmy comic, this is usually true…\n\n\n\n\n\nTeams - For communicating (fastest, most reliable that I will check it same-day)\nMIO - For communicating (non-time-critical)\nEmail - For communicating (time-critical). Will aim for &lt;24hr response.\nMoodle - For receiving & submitting exercises/assignments/project and getting marks\n\n\n\n\n\n45% Assignments and Labs\n20% Test (first week of April)\n35% Project Milestones"
+  },
+  {
+    "objectID": "about/syllabus.html#course-material",
+    "href": "about/syllabus.html#course-material",
+    "title": "Syllabus",
+    "section": "2 Course material",
+    "text": "2 Course material\nThere are no required textbooks for this course – this website will contain all of the content that you need to complete course deliverables. Additionally, each lecture will contain references to additional resources for exploring each topic in further detail beyond the scope of the course."
   },
   {
     "objectID": "about/calendar.html",
@@ -175,38 +140,73 @@
     "text": "5 May\n\n5.1 Deliverables\n\n\n5.2 Schedule"
   },
   {
+    "objectID": "about/this-site.html",
+    "href": "about/this-site.html",
+    "title": "About this website",
+    "section": "",
+    "text": "Course content, both for lectures and assignments, has been adapted by me from a variety of sources. This section serves the purpose of both acknowledging these references as well as pointing the way for curious students to begin investigating further into course material than we had time to cover.\n\n\nAll course content was either written by Mauricio Buschinelli, Michael Haaf, or explicitly adapted from external resources with attributions made clear. This course content retains the licenses of the original works where relevant, and is otherwise licensed under the Creative Commons Attribution 4.0 International License.\n\nTerms of use\nYou are free to:\n\nShare: copy and redistribute the material in any medium or format\nAdapt: remix, transform, and build upon the material for any purpose, even commercially.\n\nUnder the following terms:\n\nAttribution: You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.\n\nCreative Commons Attribution 4.0 International License"
+  },
+  {
+    "objectID": "about/this-site.html#course-content",
+    "href": "about/this-site.html#course-content",
+    "title": "About this website",
+    "section": "",
+    "text": "Course content, both for lectures and assignments, has been adapted by me from a variety of sources. This section serves the purpose of both acknowledging these references as well as pointing the way for curious students to begin investigating further into course material than we had time to cover.\n\n\nAll course content was either written by Mauricio Buschinelli, Michael Haaf, or explicitly adapted from external resources with attributions made clear. This course content retains the licenses of the original works where relevant, and is otherwise licensed under the Creative Commons Attribution 4.0 International License.\n\nTerms of use\nYou are free to:\n\nShare: copy and redistribute the material in any medium or format\nAdapt: remix, transform, and build upon the material for any purpose, even commercially.\n\nUnder the following terms:\n\nAttribution: You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.\n\nCreative Commons Attribution 4.0 International License"
+  },
+  {
+    "objectID": "about/this-site.html#course-website",
+    "href": "about/this-site.html#course-website",
+    "title": "About this website",
+    "section": "2 Course website",
+    "text": "2 Course website\nDetails about how this website was built follow.\n\n2.1 Colophon\n\n\n\n\n\nFrom Wikipedia: In publishing, a colophon is a brief statement containing information about the publication of a book… Some web pages also have colophons, which frequently contain (X)HTML, CSS, or usability standards compliance information and links to website validation tests.\n\n\n\nMarkup: Markdown\nFramework: Quarto\nDeployment: GitHub Pages\n\nYou can follow along directly with course updates at the course repository."
+  },
+  {
     "objectID": "about/index.html",
     "href": "about/index.html",
     "title": "About",
     "section": "",
-    "text": "About this website\n\n\nDescription of technologies and resources used to build this website. Acknowledgements, copyright, terms of use, etc. can be found on this page.\n\n\n\n\n\n1/22/25, 7:16:31 AM\n\n\n\n\n\n\n\n\n\n\n\n\nCalendar\n\n\nRoadmap for course deliverables; record of lectures & activites we have covered along the way. \n\n\n\n\n\n1/22/25, 7:16:31 AM\n\n\n\n\n\n\n\n\n\n\n\n\nSyllabus\n\n\nCourse description outlining goals, expectations, resources, and other important information. \n\n\n\n\n\n1/22/25, 7:16:31 AM\n\n\n\n\n\n\nNo matching items\n\n Back to topReuseCC BY-NC 4.0. ©2022-25 Mauricio Buschinelli & Michael Haaf.\n(View License)"
+    "text": "About this website\n\n\nDescription of technologies and resources used to build this website. Acknowledgements, copyright, terms of use, etc. can be found on this page.\n\n\n\n\n\n1/23/25, 11:13:10 PM\n\n\n\n\n\n\n\n\n\n\n\n\nCalendar\n\n\nRoadmap for course deliverables; record of lectures & activites we have covered along the way. \n\n\n\n\n\n1/23/25, 11:13:10 PM\n\n\n\n\n\n\n\n\n\n\n\n\nSyllabus\n\n\nCourse description outlining goals, expectations, resources, and other important information. \n\n\n\n\n\n1/23/25, 11:13:10 PM\n\n\n\n\n\n\nNo matching items\n\n Back to topReuseCC BY-NC 4.0. ©2022-25 Mauricio Buschinelli & Michael Haaf.\n(View License)"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Home",
+    "objectID": "reference/docs/course-software.html",
+    "href": "reference/docs/course-software.html",
+    "title": "Course software",
     "section": "",
-    "text": "This companion site for the 420-6P3 course includes:\n\n\nLecture slides / documents\nExercises\nReferences & Resources\n\n\nWebsite accessible at john-abbott-college.github.io/6P3-Notes\n\n\nThis course will introduce students to the principles of the Internet of Things (IoT). Students will use Linux and Python to program a Raspberry Pi in order to read data from sensors and control actuators.\nBy the end of the course, students build and deploy an IoT product that is securely connected to the Azure ecosystem in order to collect and analyse telemetry data as well as respond to remote commands.\n\n\n\n\nExperience using Object Oriented Programming to create applications in any language.\nFamiliarity using the Bash shell and basic Linux CLI.\nFamiliarity with Python.\nA Raspberry Pi with various sensors and actuators (see page Hardware List).\nA Microsoft Azure account: create a free Azure for Students account if necessary.\nVS Code configured for Python programming and remote development (see page Dev Setup).\n\n\n\n\nThis webpage is written in Markdown using the Quarto framework. The website is hosted via GitHub Pages\nSource code is open source and available on GitHub.\n\n\nCreate a local copy of these notes:\n\nInstall Quarto for your system\nClone the course GitHub repository.\nPreview the website:\nquarto preview .\n\n\nThis work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License. See the Copyright statement on the course webpage."
+    "text": "The operating system running inside the reTerminal is Raspberry Pi OS, which is based on Debian Linux.\nWe will make use of the following tools:\n\nbash and python and related packaging tools\ngit and related configuration\na Unix shell and package manager for installing and managing dependencies compatible with RasperryPi OS\n(later this semester) Azure and GitHub CLI tools\n(later this semester) .NET for interfacing with the App Dev III code\n\nWe will achieve that in one of the following ways, depending on the computer you are using:\n\n(on Windows computers such as the lab computers) by creating a Debian WSL container\n(on OS X computers) using brew\n(on Linux computers) using your system package manager.\n\nSee below for further instructions for each.\n\n\nIf using a Windows machine (lab computers and/or personal) for this course, you will need to set up Windows Subsystem for Linux (WSL).\n\nInstall Debian on WSL\n\nChoosing Debian as the Linux distribution\nSet up Windows Terminal\nSet up VS Code\nSet up git\n\nInstall dependencies:\n\n# Update system:\nsudo apt update && sudo apt upgrade -y\n# Verify python version is &gt;= 3.9: \npython3 --version\n# Ensure pip is installed:\nsudo apt install python3-pip\npip3 --version"
   },
   {
-    "objectID": "index.html#description",
-    "href": "index.html#description",
-    "title": "Home",
+    "objectID": "reference/docs/course-software.html#required-woftware",
+    "href": "reference/docs/course-software.html#required-woftware",
+    "title": "Course software",
     "section": "",
-    "text": "This course will introduce students to the principles of the Internet of Things (IoT). Students will use Linux and Python to program a Raspberry Pi in order to read data from sensors and control actuators.\nBy the end of the course, students build and deploy an IoT product that is securely connected to the Azure ecosystem in order to collect and analyse telemetry data as well as respond to remote commands."
+    "text": "The operating system running inside the reTerminal is Raspberry Pi OS, which is based on Debian Linux.\nWe will make use of the following tools:\n\nbash and python and related packaging tools\ngit and related configuration\na Unix shell and package manager for installing and managing dependencies compatible with RasperryPi OS\n(later this semester) Azure and GitHub CLI tools\n(later this semester) .NET for interfacing with the App Dev III code\n\nWe will achieve that in one of the following ways, depending on the computer you are using:\n\n(on Windows computers such as the lab computers) by creating a Debian WSL container\n(on OS X computers) using brew\n(on Linux computers) using your system package manager.\n\nSee below for further instructions for each.\n\n\nIf using a Windows machine (lab computers and/or personal) for this course, you will need to set up Windows Subsystem for Linux (WSL).\n\nInstall Debian on WSL\n\nChoosing Debian as the Linux distribution\nSet up Windows Terminal\nSet up VS Code\nSet up git\n\nInstall dependencies:\n\n# Update system:\nsudo apt update && sudo apt upgrade -y\n# Verify python version is &gt;= 3.9: \npython3 --version\n# Ensure pip is installed:\nsudo apt install python3-pip\npip3 --version"
   },
   {
-    "objectID": "index.html#requirements",
-    "href": "index.html#requirements",
-    "title": "Home",
-    "section": "",
-    "text": "Experience using Object Oriented Programming to create applications in any language.\nFamiliarity using the Bash shell and basic Linux CLI.\nFamiliarity with Python.\nA Raspberry Pi with various sensors and actuators (see page Hardware List).\nA Microsoft Azure account: create a free Azure for Students account if necessary.\nVS Code configured for Python programming and remote development (see page Dev Setup)."
+    "objectID": "reference/docs/course-software.html#editor",
+    "href": "reference/docs/course-software.html#editor",
+    "title": "Course software",
+    "section": "2 Editor",
+    "text": "2 Editor\n\n2.1 Recommended: VS Code\n\nRemote - SSH by Microsoft: Open any folder on a remote machine using SSH and take advantage of VS Code’s full feature set.\nPython language support extension\nPython formatter/linter extension (ruff)"
   },
   {
-    "objectID": "index.html#source-code",
-    "href": "index.html#source-code",
-    "title": "Home",
+    "objectID": "reference/docs/course-software.html#cloud",
+    "href": "reference/docs/course-software.html#cloud",
+    "title": "Course software",
+    "section": "3 Cloud",
+    "text": "3 Cloud\n\n3.1 Microsoft Azure\n\n\n\n\n\nAzure IoT Hub: Create Using Azure Portal | Build5Nines\n\n\nMicrosoft Azure will be used as the main platform that will:\n\nRegister and connect devices.\nStore and analyse data.\nManage the security layer.\nProvide libraries (SDKs) that can easily be integrated into our code.\nFor more information see Azure IoT page."
+  },
+  {
+    "objectID": "announcements/index.html",
+    "href": "announcements/index.html",
+    "title": "Announcements",
     "section": "",
-    "text": "This webpage is written in Markdown using the Quarto framework. The website is hosted via GitHub Pages\nSource code is open source and available on GitHub.\n\n\nCreate a local copy of these notes:\n\nInstall Quarto for your system\nClone the course GitHub repository.\nPreview the website:\nquarto preview .\n\n\nThis work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License. See the Copyright statement on the course webpage."
+    "text": "No matching items\n\n Back to topReuseCC BY-NC 4.0. ©2022-25 Mauricio Buschinelli & Michael Haaf.\n(View License)"
+  },
+  {
+    "objectID": "lectures/index.html",
+    "href": "lectures/index.html",
+    "title": "All lectures",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Modified - Oldest\n        \n         \n          Modified - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nNo matching items\n\n Back to topReuseCC BY-NC 4.0. ©2022-25 Mauricio Buschinelli & Michael Haaf.\n(View License)"
   }
 ]
