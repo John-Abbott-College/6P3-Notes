@@ -1,2 +1,1405 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"></html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.40">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2025-01-24">
+
+<title>OOP in Python – Connected Objects</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../assets/favicon_io/favicon.ico" rel="icon">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-6d33242e58a021848cf9e6f9b6e6855a.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-351b7baa9c39ece3266d3b8dfba665a7.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-a5e9273dd86ce57c043f97890d9a2042.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-9357aeb147418578c4a8ddccdd200604.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": true,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "ctrl+k"
+  ],
+  "show-item-context": true,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<meta property="og:title" content="OOP in Python – Connected Objects">
+<meta property="og:description" content="How to use object oriented programming techniques in Python.">
+<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/reference/docs/assets/art_title_path_only.svg">
+<meta property="og:site_name" content="{{< var course.title >}}">
+</head>
+
+<body class="floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../assets/favicon_io/favicon-32x32.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Connected Objects</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about/index.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../announcements/index.html"> 
+<span class="menu-text">Announcements</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../lectures/index.html"> 
+<span class="menu-text">Lectures</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../reference/index.html"> 
+<span class="menu-text">Reference</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://moodle.johnabbott.qc.ca/course/view.php?id=1361"> 
+<span class="menu-text"><iconify-icon inline="" icon="simple-icons:moodle" aria-label="Icon moodle from simple-icons Iconify.design set." title="Icon moodle from simple-icons Iconify.design set."></iconify-icon></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/John-Abbott-College/6P3-Notes"> 
+<span class="menu-text"><iconify-icon inline="" icon="fa6-brands:github" aria-label="Icon github from fa6-brands Iconify.design set." title="Icon github from fa6-brands Iconify.design set."></iconify-icon></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><span class="header-section-number">1</span> Overview</a></li>
+  <li><a href="#what-is-object-oriented-programming-in-python" id="toc-what-is-object-oriented-programming-in-python" class="nav-link" data-scroll-target="#what-is-object-oriented-programming-in-python"><span class="header-section-number">2</span> What Is Object-Oriented Programming in Python?</a>
+  <ul>
+  <li><a href="#encapsulation" id="toc-encapsulation" class="nav-link" data-scroll-target="#encapsulation"><span class="header-section-number">2.1</span> Encapsulation</a></li>
+  <li><a href="#inheritance" id="toc-inheritance" class="nav-link" data-scroll-target="#inheritance"><span class="header-section-number">2.2</span> Inheritance</a></li>
+  <li><a href="#abstraction" id="toc-abstraction" class="nav-link" data-scroll-target="#abstraction"><span class="header-section-number">2.3</span> Abstraction</a></li>
+  <li><a href="#polymorphism" id="toc-polymorphism" class="nav-link" data-scroll-target="#polymorphism"><span class="header-section-number">2.4</span> Polymorphism</a></li>
+  </ul></li>
+  <li><a href="#how-do-you-define-a-class-in-python" id="toc-how-do-you-define-a-class-in-python" class="nav-link" data-scroll-target="#how-do-you-define-a-class-in-python"><span class="header-section-number">3</span> How Do You Define a Class in Python?</a>
+  <ul>
+  <li><a href="#classes-vs-instances" id="toc-classes-vs-instances" class="nav-link" data-scroll-target="#classes-vs-instances"><span class="header-section-number">3.1</span> Classes vs Instances</a></li>
+  <li><a href="#class-definition" id="toc-class-definition" class="nav-link" data-scroll-target="#class-definition"><span class="header-section-number">3.2</span> Class Definition</a></li>
+  </ul></li>
+  <li><a href="#how-do-you-instantiate-a-class-in-python" id="toc-how-do-you-instantiate-a-class-in-python" class="nav-link" data-scroll-target="#how-do-you-instantiate-a-class-in-python"><span class="header-section-number">4</span> How Do You Instantiate a Class in Python?</a>
+  <ul>
+  <li><a href="#class-and-instance-attributes" id="toc-class-and-instance-attributes" class="nav-link" data-scroll-target="#class-and-instance-attributes"><span class="header-section-number">4.1</span> Class and Instance Attributes</a></li>
+  </ul></li>
+  <li><a href="#how-do-you-inherit-from-another-class-in-python" id="toc-how-do-you-inherit-from-another-class-in-python" class="nav-link" data-scroll-target="#how-do-you-inherit-from-another-class-in-python"><span class="header-section-number">5</span> How Do You Inherit From Another Class in Python?</a>
+  <ul>
+  <li><a href="#example-dog-park" id="toc-example-dog-park" class="nav-link" data-scroll-target="#example-dog-park"><span class="header-section-number">5.1</span> Example: Dog Park</a></li>
+  </ul></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">6</span> Summary</a></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">OOP in Python</h1>
+<p class="subtitle lead">How to use object oriented programming techniques in Python.</p>
+  <div class="quarto-categories">
+    <div class="quarto-category">Python</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">January 24, 2025</p>
+    </div>
+  </div>
+  
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">January 24, 2025</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://files.realpython.com/media/Object-Oriented-Programming-OOP_Watermarked.df1bfba08d93.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Image: https://realpython.com/courses/object-oriented-programming-exercises/"><img src="https://files.realpython.com/media/Object-Oriented-Programming-OOP_Watermarked.df1bfba08d93.jpg" class="img-fluid figure-img" alt="Image: https://realpython.com/courses/object-oriented-programming-exercises/"></a></p>
+<figcaption>Image: <a href="https://realpython.com/courses/object-oriented-programming-exercises/" class="uri">https://realpython.com/courses/object-oriented-programming-exercises/</a></figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>These notes have been adapted from <a href="https://realpython.com/python3-object-oriented-programming/" class="uri">https://realpython.com/python3-object-oriented-programming/</a> with very few modifications.</p>
+<p>There is WAY more detail in this document than you need for now. Don’t feel the need to read this whole document, top-to-bottom, unless you are finding it useful. Instead, jump to the parts that are useful to you.</p>
+</div>
+</div>
+<section id="overview" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="overview"><span class="header-section-number">1</span> Overview</h2>
+<p>Object-oriented programming (OOP) in Python helps you structure your code by grouping related data and behaviors into objects. You start by defining classes, which act as blueprints, and then create objects from them. OOP simplifies modeling real-world concepts in your programs and enables you to build systems that are more reusable and scalable.</p>
+<p><strong>By the end of this tutorial, you’ll understand that:</strong></p>
+<ul>
+<li><strong>Object-oriented programming in Python</strong> involves creating classes as blueprints for objects. These objects contain data and the methods needed to manipulate that data.</li>
+<li><strong>The four key concepts of OOP in Python</strong> are encapsulation, inheritance, abstraction, and polymorphism.</li>
+<li>You <strong>create an object</strong> in Python by <strong>instantiating a class</strong>, which involves calling the class name followed by parentheses.</li>
+<li><strong>Class inheritance</strong> in Python allows a class to inherit attributes and methods from another class, known as the parent class.</li>
+<li>You use super() in Python to call a method from the parent class, allowing you to <strong>extend or modify</strong> inherited behavior.</li>
+</ul>
+<p>You’ll explore how to define classes, instantiate classes to create objects, and leverage inheritance to build robust systems in Python.</p>
+<p><strong>Note:</strong> This tutorial is adapted from the chapter “Object-Oriented Programming (OOP)” in <a href="https://realpython.com/products/python-basics-book/"><em>Python Basics: A Practical Introduction to Python 3</em></a>.</p>
+</section>
+<section id="what-is-object-oriented-programming-in-python" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="what-is-object-oriented-programming-in-python"><span class="header-section-number">2</span> What Is Object-Oriented Programming in Python?</h2>
+<p>Object-oriented programming is a <a href="http://en.wikipedia.org/wiki/Programming_paradigm">programming paradigm</a> that provides a means of structuring programs so that properties and behaviors are bundled into individual <strong>objects</strong>.</p>
+<p>For example, an object could represent a person with <strong>properties</strong> like a name, age, and address and <strong>behaviors</strong> such as walking, talking, breathing, and running. Or it could represent an <a href="https://realpython.com/python-send-email/">email</a> with properties like a recipient list, subject, and body and behaviors like adding attachments and sending.</p>
+<p>Put another way, object-oriented programming is an approach for modeling concrete, real-world things, like cars, as well as relations between things, like companies and employees or students and teachers. OOP models real-world entities as software objects that have some data associated with them and can perform certain operations.</p>
+<p>OOP also exists in other programming languages and is often described to center around the four pillars, or <strong>four tenants of OOP</strong>:</p>
+<section id="encapsulation" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="encapsulation"><span class="header-section-number">2.1</span> Encapsulation</h3>
+<p><strong>Encapsulation</strong> allows you to bundle data (attributes) and behaviors (methods) within a class to create a cohesive unit. By defining methods to control access to attributes and its modification, encapsulation helps maintain data integrity and promotes modular, secure code.</p>
+</section>
+<section id="inheritance" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="inheritance"><span class="header-section-number">2.2</span> Inheritance</h3>
+<p><strong>Inheritance</strong> enables the creation of hierarchical relationships between classes, allowing a subclass to inherit attributes and methods from a parent class. This promotes code reuse and reduces duplication.</p>
+</section>
+<section id="abstraction" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="abstraction"><span class="header-section-number">2.3</span> Abstraction</h3>
+<p><strong>Abstraction</strong> focuses on hiding implementation details and exposing only the essential functionality of an object. By enforcing a consistent interface, abstraction simplifies interactions with objects, allowing developers to focus on what an object does rather than how it achieves its functionality.</p>
+</section>
+<section id="polymorphism" class="level3" data-number="2.4">
+<h3 data-number="2.4" class="anchored" data-anchor-id="polymorphism"><span class="header-section-number">2.4</span> Polymorphism</h3>
+<p><strong>Polymorphism</strong> allows you to treat objects of different types as instances of the same base type, as long as they implement a common interface or behavior. Python’s <a href="https://realpython.com/duck-typing-python/">duck typing</a> make it especially suited for polymorphism, as it allows you to access attributes and methods on objects without needing to worry about their actual class.</p>
+</section>
+</section>
+<section id="how-do-you-define-a-class-in-python" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="how-do-you-define-a-class-in-python"><span class="header-section-number">3</span> How Do You Define a Class in Python?</h2>
+<p>In Python, you define a class by using the <code>class</code> keyword followed by a name and a colon. Then you use <code>.__init__()</code> to declare which attributes each instance of the class should have:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode" id="cb1" data-filename="Python"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Worker:</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, age):</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.age <span class="op">=</span> age</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>But what does all of that mean? And why do you even need classes in the first place? Take a step back and consider using built-in, primitive <a href="https://realpython.com/courses/python-data-types/">data structures</a> as an alternative.</p>
+<p>Primitive data structures—like <a href="https://realpython.com/python-numbers/">numbers</a>, <a href="https://realpython.com/python-strings/">strings</a>, and <a href="https://realpython.com/python-list/">lists</a>—are designed to represent straightforward pieces of information, such as the cost of an apple, the name of a poem, or your favorite colors, respectively. What if you want to represent something more complex?</p>
+<p>For example, you might want to track employees in an organization. You need to store some basic information about each employee, such as their name, age, position, and the year they started working.</p>
+<p>One way to do this is to represent each worker as a <a href="https://realpython.com/python-list/">list</a>:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode" id="cb2" data-filename="Python"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>kirk <span class="op">=</span> [<span class="st">"James Kirk"</span>, <span class="dv">34</span>, <span class="st">"Captain"</span>, <span class="dv">2265</span>]</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>spock <span class="op">=</span> [<span class="st">"Spock"</span>, <span class="dv">35</span>, <span class="st">"Science Officer"</span>, <span class="dv">2254</span>]</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>mccoy <span class="op">=</span> [<span class="st">"Leonard McCoy"</span>, <span class="st">"Chief Medical Officer"</span>, <span class="dv">2266</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>There are a number of issues with this approach.</p>
+<p>First, it can make larger code files more difficult to manage. If you reference <code>kirk[0]</code> several lines away from where you declared the <code>kirk</code> list, will you remember that the element with <a href="https://realpython.com/python-strings/#string-indexing">index</a> <code>0</code> is the employee’s name?</p>
+<p>Second, it can introduce errors if employees don’t have the same number of elements in their respective lists. In the <code>mccoy</code> list above, the age is missing, so <code>mccoy[1]</code> will return <code>"Chief Medical Officer"</code> instead of <a href="https://en.wikipedia.org/wiki/Leonard_McCoy">Dr.&nbsp;McCoy’s</a> age.</p>
+<p>A great way to make this type of code more manageable and more maintainable is to use <strong>classes</strong>.</p>
+<section id="classes-vs-instances" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="classes-vs-instances"><span class="header-section-number">3.1</span> Classes vs Instances</h3>
+<p><a href="https://realpython.com/python-classes/">Classes</a> allow you to create user-defined data structures. Classes define functions called <strong>methods</strong>, which identify the behaviors and actions that an object created from the class can perform with its data.</p>
+<p>In this tutorial, you’ll create a <code>Dog</code> class that stores some information about the characteristics and behaviors that an individual dog can have.</p>
+<p>A class is a blueprint for how to define something. It doesn’t actually contain any data. The <code>Dog</code> class specifies that a name and an age are necessary for defining a dog, but it doesn’t contain the name or age of any specific dog.</p>
+<p>While the class is the blueprint, an <strong>instance</strong> is an object that’s built from a class and contains real data. An instance of the <code>Dog</code> class is not a blueprint anymore. It’s an actual dog with a name, like Miles, who’s four years old.</p>
+<p>Put another way, a class is like a form or questionnaire. An instance is like a form that you’ve filled out with information. Just like many people can fill out the same form with their own unique information, you can create many instances from a single class.</p>
+</section>
+<section id="class-definition" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="class-definition"><span class="header-section-number">3.2</span> Class Definition</h3>
+<p>You start all class definitions with the <code>class</code> keyword, then add the name of the class and a colon. Python will consider any code that you indent below the class definition as part of the class’s body.</p>
+<p>Here’s an example of a <code>Dog</code> class:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode" id="cb3" data-filename="Python"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Dog:</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The body of the <code>Dog</code> class consists of a single statement: the <a href="https://realpython.com/python-pass/"><code>pass</code></a> keyword. Python programmers often use <code>pass</code> as a placeholder indicating where code will eventually go. It allows you to run this code without Python throwing an error.</p>
+<blockquote class="blockquote">
+<p><strong>Note:</strong> Python class names are written in <a href="https://en.wikipedia.org/wiki/Camel_case#Variations_and_synonyms">CapitalizedWords notation</a> by convention. For example, a class for a specific breed of dog, like the Jack Russell Terrier, would be written as <code>JackRussellTerrier</code>.</p>
+</blockquote>
+<p>The <code>Dog</code> class isn’t very interesting right now, so you’ll spruce it up a bit by defining some properties that all <code>Dog</code> objects should have. There are several properties that you can choose from, including name, age, coat color, and breed. To keep the example small in scope, you’ll just use name and age.</p>
+<p>You define the properties that all <code>Dog</code> objects must have in a method called <code>.__init__()</code>. Every time you create a new <code>Dog</code> object, <code>.__init__()</code> sets the initial <strong>state</strong> of the object by assigning the values of the object’s properties. That is, <code>.__init__()</code> initializes each new instance of the class.</p>
+<p>You can give <code>.__init__()</code> any number of parameters, but the first parameter will always be a <a href="https://realpython.com/python-variables/">variable</a> called <code>self</code>. When you create a new class instance, then Python automatically passes the instance to the <code>self</code> parameter in <code>.__init__()</code> so that Python can define the new <strong>attributes</strong> on the object.</p>
+<p>Update the <code>Dog</code> class with an <code>.__init__()</code> method that creates <code>.name</code> and <code>.age</code> attributes:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode" id="cb4" data-filename="Python"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Dog:</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, age):</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.age <span class="op">=</span> age</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Make sure that you indent the <code>.__init__()</code> method’s signature by four spaces, and the body of the method by eight spaces. This indentation is vitally important. It tells Python that the <code>.__init__()</code> method belongs to the <code>Dog</code> class.</p>
+<p>In the body of <code>.__init__()</code>, there are two statements using the <code>self</code> variable:</p>
+<ol type="1">
+<li><strong><code>self.name = name</code></strong> creates an attribute called <code>name</code> and assigns the value of the <code>name</code> parameter to it.</li>
+<li><strong><code>self.age = age</code></strong> creates an attribute called <code>age</code> and assigns the value of the <code>age</code> parameter to it.</li>
+</ol>
+<p>Attributes created in <code>.__init__()</code> are called <strong>instance attributes</strong>. An instance attribute’s value is specific to a particular instance of the class. All <code>Dog</code> objects have a name and an age, but the values for the <code>name</code> and <code>age</code> attributes will vary depending on the <code>Dog</code> instance.</p>
+<p>On the other hand, <a href="https://realpython.com/python-classes/#class-attributes">class attributes</a> are attributes that have the same value for all class instances. You can define a class attribute by assigning a value to a <a href="https://realpython.com/python-variables/">variable</a> name outside of <code>.__init__()</code>.</p>
+<p>For example, the following <code>Dog</code> class has a class attribute called <code>species</code> with the value <code>"Canis familiaris"</code>:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode" id="cb5" data-filename="Python"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Dog:</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    species <span class="op">=</span> <span class="st">"Canis familiaris"</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, age):</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.age <span class="op">=</span> age</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>You define class attributes directly beneath the first line of the class name and indent them by four spaces. You always need to assign them an initial value. When you create an instance of the class, then Python automatically creates and assigns class attributes to their initial values.</p>
+<p>Use class attributes to define properties that should have the same value for every class instance. Use instance attributes for properties that vary from one instance to another.</p>
+<p>Now that you have a <code>Dog</code> class, it’s time to create some dogs!</p>
+</section>
+</section>
+<section id="how-do-you-instantiate-a-class-in-python" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="how-do-you-instantiate-a-class-in-python"><span class="header-section-number">4</span> How Do You Instantiate a Class in Python?</h2>
+<p>Creating a new object from a class is called <strong>instantiating</strong> a class. You can create a new object by typing the name of the class, followed by opening and closing parentheses:</p>
+<p><code>bash {filename=Python Interpreter} &gt;&gt;&gt; class Dog: ...     pass ... &gt;&gt;&gt; Dog() &lt;__main__.Dog object at 0x106702d30&gt;</code></p>
+<p>You first create a new <code>Dog</code> class with no attributes or methods, and then you instantiate the <code>Dog</code> class to create a <code>Dog</code> object.</p>
+<p>In the output above, you can see that you now have a new <code>Dog</code> object at <code>0x106702d30</code>. This funny-looking string of letters and numbers is a <strong>memory address</strong> that indicates where Python stores the <code>Dog</code> object in your computer’s memory. Note that the address on your screen will be different.</p>
+<p>Now instantiate the <code>Dog</code> class a second time to create another <code>Dog</code> object:</p>
+<p><code>bash {filename=Python Interpreter} &gt;&gt;&gt; Dog() &lt;__main__.Dog object at 0x0004ccc90&gt;</code></p>
+<p>The new <code>Dog</code> instance is located at a different memory address. That’s because it’s an entirely new instance and is completely unique from the first <code>Dog</code> object that you created.</p>
+<p><code>bash {filename=Python Interpreter} &gt;&gt;&gt; a = Dog() &gt;&gt;&gt; b = Dog() &gt;&gt;&gt; a == b False</code></p>
+<p>In this code, you create two new <code>Dog</code> objects and assign them to the variables <code>a</code> and <code>b</code>. When you compare <code>a</code> and <code>b</code> using the <code>==</code> operator, the result is <code>False</code>. Even though <code>a</code> and <code>b</code> are both instances of the <code>Dog</code> class, they represent two distinct objects in memory.</p>
+<section id="class-and-instance-attributes" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="class-and-instance-attributes"><span class="header-section-number">4.1</span> Class and Instance Attributes</h3>
+<p>Now create a new <code>Dog</code> class with a class attribute called <code>.species</code> and two instance attributes called <code>.name</code> and <code>.age</code>:</p>
+<p><code>bash {filename=Python Interpreter}     &gt;&gt;&gt; class Dog:     ...     species = "Canis familiaris"     ...     def __init__(self, name, age):     ...         self.name = name     ...         self.age = age     ...</code></p>
+<p>To instantiate this <code>Dog</code> class, you need to provide values for <code>name</code> and <code>age</code>. If you don’t, then Python raises a <code>TypeError</code>:</p>
+<p><code>bash {filename=Python Interpreter} &gt;&gt;&gt; Dog() Traceback (most recent call last):   ... TypeError: __init__() missing 2 required positional arguments: 'name' and 'age'</code></p>
+<p>To pass arguments to the <code>name</code> and <code>age</code> parameters, put values into the parentheses after the class name:</p>
+<p><code>bash {filename=Python Interpreter} &gt;&gt;&gt; miles = Dog("Miles", 4) &gt;&gt;&gt; buddy = Dog("Buddy", 9)</code></p>
+<p>This creates two new <code>Dog</code> instances—one for a four-year-old dog named Miles and one for a nine-year-old dog named Buddy.</p>
+<p>The <code>Dog</code> class’s <code>.__init__()</code> method has three parameters, so why are you only passing two arguments to it in the example?</p>
+<p>When you instantiate the <code>Dog</code> class, Python creates a new instance of <code>Dog</code> and passes it to the first parameter of <code>.__init__()</code>. This essentially removes the <code>self</code> parameter, so you only need to worry about the <code>name</code> and <code>age</code> parameters.</p>
+<p><strong>Note:</strong> Behind the scenes, Python both creates and initializes a new object when you use this syntax. If you want to dive deeper, then you can read the dedicated tutorial about the <a href="https://realpython.com/python-class-constructor/">Python class constructor</a>.</p>
+<p>After you create the <code>Dog</code> instances, you can access their instance attributes using <strong>dot notation</strong>:</p>
+<p>```bash {filename=Python Interpreter} &gt;&gt;&gt; miles.name ‘Miles’ &gt;&gt;&gt; miles.age 4</p>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>buddy.name ‘Buddy’ buddy.age 9</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<pre><code>
+You can access class attributes the same way:
+
+```bash {filename=Python Interpreter}
+&gt;&gt;&gt; buddy.species
+'Canis familiaris'</code></pre>
+<p>One of the biggest advantages of using classes to organize data is that instances are guaranteed to have the attributes you expect. All <code>Dog</code> instances have <code>.species</code>, <code>.name</code>, and <code>.age</code> attributes, so you can use those attributes with confidence, knowing that they’ll always return a value.</p>
+<p>Although the attributes are guaranteed to exist, their values <em>can</em> change dynamically:</p>
+<p>```bash {filename=Python Interpreter} &gt;&gt;&gt; buddy.age = 10 &gt;&gt;&gt; buddy.age 10</p>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>miles.species = “Felis silvestris” miles.species ‘Felis silvestris’</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<pre><code>
+In this example, you change the `.age` attribute of the `buddy` object to `10`. Then you
+change the `.species` attribute of the `miles` object to `"Felis silvestris"`, which is a
+species of cat. That makes Miles a pretty strange dog, but it's valid Python!
+
+The key takeaway here is that custom objects are mutable by default. An object is mutable
+if you can alter it dynamically. For example, lists and
+[dictionaries](https://realpython.com/python-dicts/) are mutable, but strings and tuples
+are [immutable](https://realpython.com/python-mutable-vs-immutable-types/).
+
+### Instance Methods
+
+**Instance methods** are functions that you define inside a class and can only call on an
+instance of that class. Just like `.__init__()`, an instance method always takes `self` as
+its first parameter.
+
+Open a new editor window in IDLE and type in the following `Dog` class:
+
+```python {filename=Python}
+class Dog:
+    species = "Canis familiaris"
+
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    # Instance method
+    def description(self):
+        return f"{self.name} is {self.age} years old"
+
+    # Another instance method
+    def speak(self, sound):
+        return f"{self.name} says {sound}"</code></pre>
+<p>This <code>Dog</code> class has two instance methods:</p>
+<ol type="1">
+<li><strong><code>.description()</code></strong> returns a string displaying the name and age of the dog.</li>
+<li><strong><code>.speak()</code></strong> has one parameter called <code>sound</code> and returns a string containing the dog’s name and the sound that the dog makes.</li>
+</ol>
+<p>```bash {filename=Python Interpreter} &gt;&gt;&gt; miles = Dog(“Miles”, 4)</p>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>miles.description() ‘Miles is 4 years old’</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>miles.speak(“Woof Woof”) ‘Miles says Woof Woof’</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>miles.speak(“Bow Wow”) ‘Miles says Bow Wow’</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<pre><code>
+In the above `Dog` class, `.description()` returns a string containing information about
+the `Dog` instance `miles`. When writing your own classes, it's a good idea to have a
+method that returns a string containing useful information about an instance of the class.
+However, `.description()` isn't the most
+[Pythonic](https://realpython.com/learning-paths/writing-pythonic-code/) way of doing
+this.
+
+When you create a `list` object, you can use `print()` to display a string that looks like
+the list:
+
+```bash {filename=Python Interpreter}
+&gt;&gt;&gt; names = ["Miles", "Buddy", "Jack"]
+&gt;&gt;&gt; print(names)
+['Miles', 'Buddy', 'Jack']</code></pre>
+<p>Go ahead and print the <code>miles</code> object to see what output you get:</p>
+<p><code>bash {filename=Python Interpreter} &gt;&gt;&gt; print(miles) &lt;__main__.Dog object at 0x00aeff70&gt;</code></p>
+<p>When you print <code>miles</code>, you get a cryptic-looking message telling you that <code>miles</code> is a <code>Dog</code> object at the memory address <code>0x00aeff70</code>. This message isn’t very helpful. You can change what gets printed by defining a special instance method called <code>.__str__()</code>.</p>
+<p>In the editor window, change the name of the <code>Dog</code> class’s <code>.description()</code> method to <code>.__str__()</code>:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode" id="cb9" data-filename="Python"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Dog:</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ...</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss"> is </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>age<span class="sc">}</span><span class="ss"> years old"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Methods like <code>.__init__()</code> and <code>.__str__()</code> are called <strong>dunder methods</strong> because they begin and end with <a href="https://realpython.com/python-double-underscore/">double underscores</a>. There are many dunder methods that you can use to customize classes in Python. <a href="https://realpython.com/python-classes/#special-methods-and-protocols">Understanding dunder methods</a> is an important part of mastering object-oriented programming in Python, but for your first exploration of the topic, you’ll stick with these two dunder methods.</p>
+<p><strong>Note:</strong> Check out <a href="https://realpython.com/python-repr-vs-str/">When Should You Use <code>.__repr__()</code> vs <code>.__str__()</code> in Python?</a> to learn more about <code>.__str__()</code> and its cousin <code>.__repr__()</code>.</p>
+</section>
+</section>
+<section id="how-do-you-inherit-from-another-class-in-python" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="how-do-you-inherit-from-another-class-in-python"><span class="header-section-number">5</span> How Do You Inherit From Another Class in Python?</h2>
+<p><a href="https://realpython.com/inheritance-composition-python/">Inheritance</a> is the process by which one class takes on the attributes and methods of another. Newly formed classes are called <strong>child classes</strong>, and the classes that you derive child classes from are called <strong>parent classes</strong>.</p>
+<p>You inherit from a parent class by creating a new class and putting the name of the parent class into parentheses:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode" id="cb10" data-filename="Python"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Parent:</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    hair_color <span class="op">=</span> <span class="st">"brown"</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Child(Parent):</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>In this minimal example, the child class <code>Child</code> inherits from the parent class <code>Parent</code>. Because child classes take on the attributes and methods of parent classes, <code>Child.hair_color</code> is also <code>"brown"</code> without your explicitly defining that.</p>
+<p><strong>Note:</strong> This tutorial is adapted from the chapter “Object-Oriented Programming (OOP)” in <a href="https://realpython.com/products/python-basics-book/"><em>Python Basics: A Practical Introduction to Python 3</em></a>. If you enjoy what you’re reading, then be sure to check out <a href="https://realpython.com/products/python-basics-book/">the rest of the book</a> and the <a href="https://realpython.com/learning-paths/python-basics/">learning path</a>.</p>
+<p>You can also check out the <a href="https://realpython.com/courses/python-basics-class/">Python Basics: Building Systems With Classes</a> video course to reinforce the skills that you’ll develop in this section of the tutorial.</p>
+<p>Child classes can override or extend the attributes and methods of parent classes. In other words, child classes inherit all of the parent’s attributes and methods but can also specify attributes and methods that are unique to themselves.</p>
+<p>Although the analogy isn’t perfect, you can think of object inheritance sort of like genetic inheritance.</p>
+<p>You may have inherited your hair color from your parents. It’s an attribute that you were born with. But maybe you decide to color your hair purple. Assuming that your parents don’t have purple hair, you’ve just <strong>overridden</strong> the hair color attribute that you inherited from your parents:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode" id="cb11" data-filename="Python"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Parent:</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    hair_color <span class="op">=</span> <span class="st">"brown"</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Child(Parent):</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    hair_color <span class="op">=</span> <span class="st">"purple"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>If you change the code example like this, then <code>Child.hair_color</code> will be <code>"purple"</code>.</p>
+<p>You also inherit, in a sense, your language from your parents. If your parents speak English, then you’ll also speak English. Now imagine you decide to learn a second language, like German. In this case, you’ve <strong>extended</strong> your attributes because you’ve added an attribute that your parents don’t have:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode" id="cb12" data-filename="Python"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Parent:</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    speaks <span class="op">=</span> [<span class="st">"English"</span>]</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Child(Parent):</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>().<span class="fu">__init__</span>()</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.speaks.append(<span class="st">"German"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>You’ll learn more about how the code above works in the sections below. But before you dive deeper into inheritance in Python, you’ll take a walk to a dog park to better understand why you might want to use inheritance in your own code.</p>
+<section id="example-dog-park" class="level3" data-number="5.1">
+<h3 data-number="5.1" class="anchored" data-anchor-id="example-dog-park"><span class="header-section-number">5.1</span> Example: Dog Park</h3>
+<p>Pretend for a moment that you’re at a dog park. There are many dogs of different breeds at the park, all engaging in various dog behaviors.</p>
+<p>Suppose now that you want to model the dog park with Python classes. The <code>Dog</code> class that you wrote in the previous section can distinguish dogs by name and age but not by breed.</p>
+<p>You could modify the <code>Dog</code> class in the editor window by adding a <code>.breed</code> attribute:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode" id="cb13" data-filename="Python"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Dog:</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    species <span class="op">=</span> <span class="st">"Canis familiaris"</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, age, breed):</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.age <span class="op">=</span> age</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.breed <span class="op">=</span> breed</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss"> is </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>age<span class="sc">}</span><span class="ss"> years old"</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> speak(<span class="va">self</span>, sound):</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss"> says </span><span class="sc">{</span>sound<span class="sc">}</span><span class="ss">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><code>bash {filename=Python interpreter} &gt;&gt;&gt; miles = Dog("Miles", 4, "Jack Russell Terrier") &gt;&gt;&gt; buddy = Dog("Buddy", 9, "Dachshund") &gt;&gt;&gt; jack = Dog("Jack", 3, "Bulldog") &gt;&gt;&gt; jim = Dog("Jim", 5, "Bulldog")</code></p>
+<p>Each breed of dog has slightly different behaviors. For example, bulldogs have a low bark that sounds like <em>woof</em>, but dachshunds have a higher-pitched bark that sounds more like <em>yap</em>.</p>
+<p>Using just the <code>Dog</code> class, you must supply a string for the <code>sound</code> argument of <code>.speak()</code> every time you call it on a <code>Dog</code> instance:</p>
+<p>```bash {filename=Python Interpreter} &gt;&gt;&gt; buddy.speak(“Yap”) ‘Buddy says Yap’</p>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>jim.speak(“Woof”) ‘Jim says Woof’</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>jack.speak(“Woof”) ‘Jack says Woof’</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<pre><code>
+Passing a string to every call to `.speak()` is repetitive and inconvenient. Moreover, the
+`.breed` attribute should determine the string representing the sound that each `Dog`
+instance makes, but here you have to manually pass the correct string to `.speak()` every
+time you call it.
+
+You can simplify the experience of working with the `Dog` class by creating a child class
+for each breed of dog. This allows you to extend the functionality that each child class
+inherits, including specifying a default argument for `.speak()`.
+
+(/account/join/){.small .text-muted rel="nofollow"}
+
+### Parent Classes vs Child Classes
+
+In this section, you'll create a child class for each of the three breeds mentioned above:
+Jack Russell terrier, dachshund, and bulldog.
+
+For reference, here's the full definition of the `Dog` class that you're currently working
+with:
+
+```python {filename=Python}
+class Dog:
+    species = "Canis familiaris"
+
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def __str__(self):
+        return f"{self.name} is {self.age} years old"
+
+    def speak(self, sound):
+        return f"{self.name} says {sound}"</code></pre>
+<p>After doing the <a href="#example-dog-park">dog park example</a> in the previous section, you’ve removed <code>.breed</code> again. You’ll now write code to keep track of a dog’s breed using child classes instead.</p>
+<p>To create a child class, you create a new class with its own name and then put the name of the parent class in parentheses. Add the following to the <code>dog.py</code> file to create three new child classes of the <code>Dog</code> class:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode" id="cb15" data-filename="Python"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> JackRussellTerrier(Dog):</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Dachshund(Dog):</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Bulldog(Dog):</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><code>bash {filename=Python Interpreter} &gt;&gt;&gt; miles = JackRussellTerrier("Miles", 4) &gt;&gt;&gt; buddy = Dachshund("Buddy", 9) &gt;&gt;&gt; jack = Bulldog("Jack", 3) &gt;&gt;&gt; jim = Bulldog("Jim", 5)</code></p>
+<p>Instances of child classes inherit all of the attributes and methods of the parent class:</p>
+<p>```bash {filename=Python Interpreter} &gt;&gt;&gt; miles.species ‘Canis familiaris’</p>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>buddy.name ‘Buddy’</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>print(jack) Jack is 3 years old</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>jim.speak(“Woof”) ‘Jim says Woof’</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<pre><code>
+To determine which class a given object belongs to, you can use the built-in `type()`:
+
+```bash {filename=Python Interpreter}
+&gt;&gt;&gt; type(miles)
+&lt;class '__main__.JackRussellTerrier'&gt;</code></pre>
+<p>What if you want to determine if <code>miles</code> is also an instance of the <code>Dog</code> class? You can do this with the built-in <code>isinstance()</code>:</p>
+<p><code>bash {filename=Python Interpreter} &gt;&gt;&gt; isinstance(miles, Dog) True</code></p>
+<p>Notice that <code>isinstance()</code> takes two arguments, an object and a class. In the example above, <code>isinstance()</code> checks if <code>miles</code> is an instance of the <code>Dog</code> class and returns <code>True</code>.</p>
+<p>The <code>miles</code>, <code>buddy</code>, <code>jack</code>, and <code>jim</code> objects are all <code>Dog</code> instances, but <code>miles</code> isn’t a <code>Bulldog</code> instance, and <code>jack</code> isn’t a <code>Dachshund</code> instance:</p>
+<p>```bash {filename=Python Interpreter} &gt;&gt;&gt; isinstance(miles, Bulldog) False</p>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>isinstance(jack, Dachshund) False</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<pre><code>
+More generally, all objects created from a child class are instances of the parent class,
+although they may not be instances of other child classes.
+
+Now that you've created child classes for some different breeds of dogs, you can give each
+breed its own sound.
+
+### Parent Class Functionality Extension
+
+Since different breeds of dogs have slightly different barks, you want to provide a
+default value for the `sound` argument of their respective `.speak()` methods. To do this,
+you need to override `.speak()` in the class definition for each breed.
+
+To override a method defined on the parent class, you define a method with the same name
+on the child class. Here's what that looks like for the `JackRussellTerrier` class:
+
+```python {filename=Python}
+# ...
+
+
+class JackRussellTerrier(Dog):
+    def speak(self, sound="Arf"):
+        return f"{self.name} says {sound}"
+
+
+# ...</code></pre>
+<p>Now <code>.speak()</code> is defined on the <code>JackRussellTerrier</code> class with the default argument for <code>sound</code> set to <code>"Arf"</code>.</p>
+<p>Update <code>dog.py</code> with the new <code>JackRussellTerrier</code> class. You can now call <code>.speak()</code> on a <code>JackRussellTerrier</code> instance without passing an argument to <code>sound</code>:</p>
+<p><code>bash {filename=Python interpreter} &gt;&gt;&gt; miles = JackRussellTerrier("Miles", 4) &gt;&gt;&gt; miles.speak() 'Miles says Arf'</code></p>
+<p>Sometimes dogs make different noises, so if Miles gets angry and growls, you can still call <code>.speak()</code> with a different sound:</p>
+<p><code>bash {filename=Python Interpreter} &gt;&gt;&gt; miles.speak("Grrr") 'Miles says Grrr'</code></p>
+<p>One thing to keep in mind about class inheritance is that changes to the parent class automatically propagate to child classes. This occurs as long as the attribute or method being changed isn’t overridden in the child class.</p>
+<p>For example, in the editor window, change the string returned by <code>.speak()</code> in the <code>Dog</code> class:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode" id="cb18" data-filename="Python"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Dog:</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ...</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> speak(<span class="va">self</span>, sound):</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss"> barks: </span><span class="sc">{</span>sound<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now, when you create a new <code>Bulldog</code> instance named <code>jim</code>, <code>jim.speak()</code> returns the new string:</p>
+<p><code>bash {filename=Python Interpreter} &gt;&gt;&gt; jim = Bulldog("Jim", 5) &gt;&gt;&gt; jim.speak("Woof") 'Jim barks: Woof'</code></p>
+<p>However, calling <code>.speak()</code> on a <code>JackRussellTerrier</code> instance won’t show the new style of output:</p>
+<p><code>bash {filename=Python Interpreter} &gt;&gt;&gt; miles = JackRussellTerrier("Miles", 4) &gt;&gt;&gt; miles.speak() 'Miles says Arf'</code></p>
+<p>Sometimes it makes sense to completely override a method from a parent class. But in this case, you don’t want the <code>JackRussellTerrier</code> class to lose any changes that you might make to the formatting of the <code>Dog.speak()</code> output string.</p>
+<p>To do this, you still need to define a <code>.speak()</code> method on the child <code>JackRussellTerrier</code> class. But instead of explicitly defining the output string, you need to call the <code>Dog</code> class’s <code>.speak()</code> from <em>inside</em> the child class’s <code>.speak()</code> using the same arguments that you passed to <code>JackRussellTerrier.speak()</code>.</p>
+<p>You can access the parent class from inside a method of a child class by using <a href="https://realpython.com/python-super/"><code>super()</code></a>:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode" id="cb19" data-filename="Python"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> JackRussellTerrier(Dog):</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> speak(<span class="va">self</span>, sound<span class="op">=</span><span class="st">"Arf"</span>):</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">super</span>().speak(sound)</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>When you call <code>super().speak(sound)</code> inside <code>JackRussellTerrier</code>, Python searches the parent class, <code>Dog</code>, for a <code>.speak()</code> method and calls it with the variable <code>sound</code>.</p>
+<p>Update <code>dog.py</code> with the new <code>JackRussellTerrier</code> class:</p>
+<p><code>bash {filename=Python Interpreter} &gt;&gt;&gt; miles = JackRussellTerrier("Miles", 4) &gt;&gt;&gt; miles.speak() 'Miles barks: Arf'</code></p>
+<p>Now when you call <code>miles.speak()</code>, you’ll see output reflecting the new formatting in the <code>Dog</code> class.</p>
+<p><strong>Note:</strong> In the above examples, the <strong>class hierarchy</strong> is very straightforward. The <code>JackRussellTerrier</code> class has a single parent class, <code>Dog</code>. In real-world examples, the class hierarchy can get quite complicated.</p>
+<p>The <code>super()</code> function does much more than just search the parent class for a method or an attribute. It traverses the entire class hierarchy for a matching method or attribute. If you aren’t careful, <code>super()</code> can have surprising results.</p>
+</section>
+</section>
+<section id="summary" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="summary"><span class="header-section-number">6</span> Summary</h2>
+<p>In this tutorial, you learned about object-oriented programming (OOP) in Python. Many modern programming languages, such as <a href="https://go.java/">Java</a>, <a href="https://docs.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/">C#</a>, and <a href="https://www.cplusplus.com/info/description/">C++</a>, follow OOP principles, so the knowledge that you gained here will be applicable no matter where your programming career takes you.</p>
+<p>In Python, you learned how to:</p>
+<ul>
+<li>Define a <strong>class</strong>, which is a sort of blueprint for an object</li>
+<li>Instantiate a class to create an <strong>object</strong></li>
+<li>Use <strong>attributes</strong> and <strong>methods</strong> to define the <strong>properties</strong> and <strong>behaviors</strong> of an object</li>
+<li>Use <strong>inheritance</strong> to create <strong>child classes</strong> from a <strong>parent class</strong></li>
+<li>Reference a method on a parent class using <strong><code>super()</code></strong></li>
+<li>Check if an object inherits from another class using <strong><code>isinstance()</code></strong></li>
+</ul>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div>CC BY-NC 4.0. ©2022-25 Mauricio Buschinelli &amp; Michael Haaf.
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">(View License)</a></div></div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/john-abbott-college\.github\.io\/6P3-Notes\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
+
+</body></html>

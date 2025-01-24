@@ -11,7 +11,10 @@
     "listing": "/reference/index.html",
     "items": [
       "/reference/docs/course-software.html",
-      "/reference/docs/course-hardware.html"
+      "/reference/docs/course-hardware.html",
+      "/reference/docs/bash-commands.html",
+      "/reference/docs/python-oop.html",
+      "/reference/docs/python-collections.html"
     ]
   },
   {
