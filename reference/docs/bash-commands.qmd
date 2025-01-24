@@ -3,7 +3,7 @@ title: Bash commands
 subtitle: Useful bash commands
 date: 2025-01-24
 categories: [Bash]
-draft: true
+draft: false
 ---
 
 ![Image: <https://www.svgrepo.com/svg/353475/bash>](../assets/bash-svgrepo-com.png)

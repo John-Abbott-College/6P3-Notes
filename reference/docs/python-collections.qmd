@@ -3,7 +3,7 @@ title: Python collection types and operations
 subtitle: Useful python collection types and operations
 date: 2025-01-24
 categories: [Python]
-draft: true
+draft: false
 ---
 
 ![Image: <https://realpython.com/python-lambda/>](https://realpython.com/cdn-cgi/image/width=960,format=auto/https://files.realpython.com/media/How-to-Use-Python-Lambda-Functions_Watermarked.2afa4f5ea5d4.jpg)
@@ -124,6 +124,7 @@ Here is a simple example of a generator function which returns 7 random integers
 ```python {filename=Python}
 import random
 
+
 def lottery():
     # returns 6 numbers between 1 and 40
     for i in range(6):
@@ -132,8 +133,9 @@ def lottery():
     # returns a 7th number between 1 and 15
     yield random.randint(1, 15)
 
+
 for random_number in lottery():
-        print("And the next number is... %d!" %(random_number))
+    print("And the next number is... %d!" % (random_number))
 ```
 
 This function decides how to generate the random numbers on its own, and executes the
@@ -148,6 +150,7 @@ whenever we need to use it.
 ```python {filename=Python}
 def sum(a, b):
     return a + b
+
 
 a = 1
 b = 2

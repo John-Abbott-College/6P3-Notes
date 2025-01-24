@@ -1,24 +1,25 @@
 ---
 title: Course software
-subtitle:
-  "The essential software that will be used for development during
-  the course."
+subtitle: The essential software that will be used for development during the course.
 date: 2025-01-20
 ---
 
 ## Required woftware
 
-The operating system running inside the reTerminal is Raspberry Pi OS, which is based on Debian Linux.
+The operating system running inside the reTerminal is Raspberry Pi OS, which is based on
+Debian Linux.
 
 We will make use of the following tools:
 
 - `bash` and `python` and related packaging tools
 - `git` and related configuration
-- a Unix shell and package manager for installing and managing dependencies compatible with RasperryPi OS
+- a Unix shell and package manager for installing and managing dependencies compatible
+    with RasperryPi OS
 - (later this semester) Azure and GitHub CLI tools
 - (later this semester) `.NET` for interfacing with the App Dev III code
 
-We will achieve that in one of the following ways, depending on the computer you are using:
+We will achieve that in one of the following ways, depending on the computer you are
+using:
 
 - (on Windows computers such as the lab computers) by creating a Debian WSL container
 - (on OS X computers) using `brew`
@@ -28,13 +29,14 @@ See below for further instructions for each.
 
 ### Recommended: Linux WSL
 
-If using a Windows machine (lab computers and/or personal) for this course, you will need to set up Windows Subsystem for Linux (WSL).
+If using a Windows machine (lab computers and/or personal) for this course, you will need
+to set up Windows Subsystem for Linux (WSL).
 
 - [Install Debian on WSL](https://learn.microsoft.com/en-us/windows/wsl/setup/environment)
-  - [Choosing Debian as the Linux distribution](https://learn.microsoft.com/en-ca/windows/wsl/install#change-the-default-linux-distribution-installed)
-  - [Set up Windows Terminal](https://learn.microsoft.com/en-ca/windows/wsl/setup/environment#set-up-windows-terminal)
-  - [Set up VS Code](https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-vscode)
-  - [Set up git](https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-git)
+    - [Choosing Debian as the Linux distribution](https://learn.microsoft.com/en-ca/windows/wsl/install#change-the-default-linux-distribution-installed)
+    - [Set up Windows Terminal](https://learn.microsoft.com/en-ca/windows/wsl/setup/environment#set-up-windows-terminal)
+    - [Set up VS Code](https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-vscode)
+    - [Set up git](https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-git)
 - Install dependencies:
 
 ```bash
@@ -52,11 +54,10 @@ pip3 --version
 ### Recommended: VS Code
 
 1. [Remote - SSH by Microsoft](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh):
-   Open any folder on a remote machine using SSH and take advantage of VS Code's
-   full feature set.
+    Open any folder on a remote machine using SSH and take advantage of VS Code's full
+    feature set.
 1. [Python language support extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
 1. [Python formatter/linter extension (ruff)](https://marketplace.visualstudio.com/items?itemName=charliermarsh.ruff)
-
 
 ## Cloud
 
@@ -73,4 +74,4 @@ Microsoft Azure will be used as the main platform that will:
 - Manage the security layer.
 - Provide libraries (SDKs) that can easily be integrated into our code.
 - For more information see
-  [Azure IoT page](https://azure.microsoft.com/en-us/overview/iot/).
+    [Azure IoT page](https://azure.microsoft.com/en-us/overview/iot/).
