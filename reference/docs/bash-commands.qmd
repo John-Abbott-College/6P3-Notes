@@ -1,0 +1,33 @@
+---
+title: Bash commands
+subtitle: Useful bash commands
+date: 2025-01-24
+categories: [Bash]
+draft: true
+---
+
+![Image: <https://www.svgrepo.com/svg/353475/bash>](../assets/bash-svgrepo-com.png)
+
+## Tips & tricks
+
+### `man` & `--help`
+
+### Keyboard shortcuts
+
+### Configuration
+
+## Common commands
+
+### `cd`
+
+### `cat`
+
+### `file`
+
+### `find`
+
+### `grep`
+
+### `du`
+
+### `ssh`
