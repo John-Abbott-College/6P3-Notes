@@ -2,6 +2,7 @@
 title: OOP in Python
 subtitle: How to use object oriented programming techniques in Python.
 date: 2025-01-24
+categories: ["Python"]
 draft: true
 ---
 
