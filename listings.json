@@ -1,17 +1,17 @@
 [
   {
-    "listing": "/reference/index.html",
-    "items": [
-      "/reference/docs/course-software.html",
-      "/reference/docs/course-hardware.html"
-    ]
-  },
-  {
     "listing": "/about/index.html",
     "items": [
       "/about/this-site.html",
       "/about/calendar.html",
       "/about/syllabus.html"
+    ]
+  },
+  {
+    "listing": "/reference/index.html",
+    "items": [
+      "/reference/docs/course-software.html",
+      "/reference/docs/course-hardware.html"
     ]
   },
   {
