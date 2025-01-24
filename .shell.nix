@@ -5,5 +5,6 @@ in pkgs.mkShell {
     pkgs.python312
     pkgs.python312Packages.pip
     pkgs.pdm
+    pkgs.htmlq
   ];
 }
