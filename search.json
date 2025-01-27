@@ -144,7 +144,7 @@
     "href": "about/index.html",
     "title": "About",
     "section": "",
-    "text": "About this website\n\n\nDescription of technologies and resources used to build this website. Acknowledgements, copyright, terms of use, etc. can be found on this page.\n\n\n\n\n\n1/27/25, 1:38:35 PM\n\n\n\n\n\n\n\n\n\n\n\n\nCalendar\n\n\nRoadmap for course deliverables; record of lectures & activites we have covered along the way. \n\n\n\n\n\n1/27/25, 1:38:35 PM\n\n\n\n\n\n\n\n\n\n\n\n\nSyllabus\n\n\nCourse description outlining goals, expectations, resources, and other important information. \n\n\n\n\n\n1/27/25, 1:38:35 PM\n\n\n\n\n\n\nNo matching items\n\n Back to topReuseCC BY-NC 4.0. ©2022-25 Mauricio Buschinelli & Michael Haaf.\n(View License)"
+    "text": "About this website\n\n\nDescription of technologies and resources used to build this website. Acknowledgements, copyright, terms of use, etc. can be found on this page.\n\n\n\n\n\n1/27/25, 2:20:05 PM\n\n\n\n\n\n\n\n\n\n\n\n\nCalendar\n\n\nRoadmap for course deliverables; record of lectures & activites we have covered along the way. \n\n\n\n\n\n1/27/25, 2:20:05 PM\n\n\n\n\n\n\n\n\n\n\n\n\nSyllabus\n\n\nCourse description outlining goals, expectations, resources, and other important information. \n\n\n\n\n\n1/27/25, 2:20:05 PM\n\n\n\n\n\n\nNo matching items\n\n Back to topReuseCC BY-NC 4.0. ©2022-25 Mauricio Buschinelli & Michael Haaf.\n(View License)"
   },
   {
     "objectID": "about/this-site.html",
@@ -294,8 +294,8 @@
     "text": "The operating system running inside the reTerminal is Raspberry Pi OS, which is based on Debian Linux.\nWe will make use of the following tools:\n\nbash and python and related packaging tools\ngit and related configuration\na Unix shell and package manager for installing and managing dependencies compatible with RasperryPi OS\n(later this semester) Azure and GitHub CLI tools\n(later this semester) .NET for interfacing with the App Dev III code\n\nWe will achieve that in one of the following ways, depending on the computer you are using:\n\n(on Windows computers such as the lab computers) by creating a Debian WSL container\n(on OS X computers) using brew\n(on Linux computers) using your system package manager.\n\nSee below for further instructions for each.\n\n\nIf using a Windows machine (lab computers and/or personal) for this course, you will need to set up Windows Subsystem for Linux (WSL).\n\nInstall Debian on WSL\n\nChoosing Debian as the Linux distribution\nSet up Windows Terminal\nSet up VS Code\nSet up git\n\nInstall dependencies:\n\n# Update system:\nsudo apt update && sudo apt upgrade -y\n# Verify python version is &gt;= 3.9: \npython3 --version\n# Ensure pip is installed:\nsudo apt install python3-pip\npip3 --version"
   },
   {
-    "objectID": "reference/docs/course-software.html#required-woftware",
-    "href": "reference/docs/course-software.html#required-woftware",
+    "objectID": "reference/docs/course-software.html#required-software",
+    "href": "reference/docs/course-software.html#required-software",
     "title": "Course software",
     "section": "",
     "text": "The operating system running inside the reTerminal is Raspberry Pi OS, which is based on Debian Linux.\nWe will make use of the following tools:\n\nbash and python and related packaging tools\ngit and related configuration\na Unix shell and package manager for installing and managing dependencies compatible with RasperryPi OS\n(later this semester) Azure and GitHub CLI tools\n(later this semester) .NET for interfacing with the App Dev III code\n\nWe will achieve that in one of the following ways, depending on the computer you are using:\n\n(on Windows computers such as the lab computers) by creating a Debian WSL container\n(on OS X computers) using brew\n(on Linux computers) using your system package manager.\n\nSee below for further instructions for each.\n\n\nIf using a Windows machine (lab computers and/or personal) for this course, you will need to set up Windows Subsystem for Linux (WSL).\n\nInstall Debian on WSL\n\nChoosing Debian as the Linux distribution\nSet up Windows Terminal\nSet up VS Code\nSet up git\n\nInstall dependencies:\n\n# Update system:\nsudo apt update && sudo apt upgrade -y\n# Verify python version is &gt;= 3.9: \npython3 --version\n# Ensure pip is installed:\nsudo apt install python3-pip\npip3 --version"
@@ -305,7 +305,7 @@
     "href": "reference/docs/course-software.html#editor",
     "title": "Course software",
     "section": "2 Editor",
-    "text": "2 Editor\n\n2.1 Recommended: VS Code\n\nRemote - SSH by Microsoft: Open any folder on a remote machine using SSH and take advantage of VS Code’s full feature set.\nPython language support extension\nPython formatter/linter extension (ruff)"
+    "text": "2 Editor\n\n2.1 Recommended: VS Code\n\nRemote - SSH by Microsoft: Open any folder on a remote machine using SSH and take advantage of VS Code’s full feature set.\nPython language support extension\nPython formatter/linter extension (ruff)\nSetting up git credentials\n\nOnce you have set up git on your developer environment, VSCode will automatically pick up any --global configurations you have set\nThere remains one more important task: setting up VSCode to use your github token"
   },
   {
     "objectID": "reference/docs/course-software.html#cloud",

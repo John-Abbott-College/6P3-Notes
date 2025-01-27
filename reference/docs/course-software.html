@@ -173,7 +173,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#required-woftware" id="toc-required-woftware" class="nav-link active" data-scroll-target="#required-woftware"><span class="header-section-number">1</span> Required woftware</a>
+  <li><a href="#required-software" id="toc-required-software" class="nav-link active" data-scroll-target="#required-software"><span class="header-section-number">1</span> Required software</a>
   <ul>
   <li><a href="#recommended-linux-wsl" id="toc-recommended-linux-wsl" class="nav-link" data-scroll-target="#recommended-linux-wsl"><span class="header-section-number">1.1</span> Recommended: Linux WSL</a></li>
   </ul></li>
@@ -227,8 +227,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="required-woftware" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="required-woftware"><span class="header-section-number">1</span> Required woftware</h2>
+<section id="required-software" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="required-software"><span class="header-section-number">1</span> Required software</h2>
 <p>The operating system running inside the reTerminal is Raspberry Pi OS, which is based on Debian Linux.</p>
 <p>We will make use of the following tools:</p>
 <ul>
@@ -275,6 +275,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh">Remote - SSH by Microsoft</a>: Open any folder on a remote machine using SSH and take advantage of VS Code’s full feature set.</li>
 <li><a href="https://marketplace.visualstudio.com/items?itemName=ms-python.python">Python language support extension</a></li>
 <li><a href="https://marketplace.visualstudio.com/items?itemName=charliermarsh.ruff">Python formatter/linter extension (ruff)</a></li>
+<li>Setting up <code>git</code> credentials
+<ul>
+<li>Once you have set up <code>git</code> on your developer environment, VSCode will automatically pick up any <code>--global</code> configurations you have set</li>
+<li>There remains one more important task: setting up VSCode to use your <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens">github token</a></li>
+</ul></li>
 </ol>
 </section>
 </section>
