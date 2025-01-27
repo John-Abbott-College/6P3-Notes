@@ -60,7 +60,7 @@
     "href": "reference/docs/course-hardware.html#actuators-motors",
     "title": "Course Hardware",
     "section": "4 Actuators & Motors",
-    "text": "4 Actuators & Motors\n\n4.1 LED Socket\n:::{.column-margin}  :::\nLED in a removable socket and potentiometer for power adjustment. LED can be swapped with different colors.\nSee LED wiki page for details.\n\n\n4.2 Cooling Fan\n\n\n\n\n\nCooling Fan\n\n\n5V Cooling Fan 40mm x 10mm with 2-pin JST connector.\n\nSee product page here.\n\n\n\n4.3 Relay\n\n\n :::\nA digital switch. Controls the on/off flow of electricity with a small digital signal.\n\nOperate voltage: 3.3V-5V\nInput current: 100mA\nRated load: 5A@250VAC 5A@30VDC\n\nSee relay wiki page for details.\n\n5 Cabling\nThe following cables are included in the base kit:\n\nGrove Universal 4 Pin Buckled 5cm Cable.\nGrove Universal 4 Pin Buckled 20cm Cable.\nGrove 4 pin Female Jumper to Grove 4 pin Cable\nGrove 4 pin Male Jumper to Grove 4 pin Cable\n40-pin flat ribbon cable 20cm (female-female).\n2-pin JST SM Plug, one end open."
+    "text": "4 Actuators & Motors\n\n4.1 LED Socket\n\n\n\n\n\nLED\n\n\nLED in a removable socket and potentiometer for power adjustment. LED can be swapped with different colors.\nSee LED wiki page for details.\n\n\n4.2 Cooling Fan\n\n\n\n\n\nCooling Fan\n\n\n5V Cooling Fan 40mm x 10mm with 2-pin JST connector.\n\nSee product page here.\n\n\n\n4.3 Relay\n\n\n\n\n\nRelay switch\n\n\nA digital switch. Controls the on/off flow of electricity with a small digital signal.\n\nOperate voltage: 3.3V-5V\nInput current: 100mA\nRated load: 5A@250VAC 5A@30VDC\n\nSee relay wiki page for details."
   },
   {
     "objectID": "reference/docs/course-hardware.html#cabling",
@@ -144,7 +144,7 @@
     "href": "about/index.html",
     "title": "About",
     "section": "",
-    "text": "About this website\n\n\nDescription of technologies and resources used to build this website. Acknowledgements, copyright, terms of use, etc. can be found on this page.\n\n\n\n\n\n1/24/25, 2:18:49 PM\n\n\n\n\n\n\n\n\n\n\n\n\nCalendar\n\n\nRoadmap for course deliverables; record of lectures & activites we have covered along the way. \n\n\n\n\n\n1/24/25, 2:18:49 PM\n\n\n\n\n\n\n\n\n\n\n\n\nSyllabus\n\n\nCourse description outlining goals, expectations, resources, and other important information. \n\n\n\n\n\n1/24/25, 2:18:49 PM\n\n\n\n\n\n\nNo matching items\n\n Back to topReuseCC BY-NC 4.0. ©2022-25 Mauricio Buschinelli & Michael Haaf.\n(View License)"
+    "text": "About this website\n\n\nDescription of technologies and resources used to build this website. Acknowledgements, copyright, terms of use, etc. can be found on this page.\n\n\n\n\n\n1/27/25, 1:38:35 PM\n\n\n\n\n\n\n\n\n\n\n\n\nCalendar\n\n\nRoadmap for course deliverables; record of lectures & activites we have covered along the way. \n\n\n\n\n\n1/27/25, 1:38:35 PM\n\n\n\n\n\n\n\n\n\n\n\n\nSyllabus\n\n\nCourse description outlining goals, expectations, resources, and other important information. \n\n\n\n\n\n1/27/25, 1:38:35 PM\n\n\n\n\n\n\nNo matching items\n\n Back to topReuseCC BY-NC 4.0. ©2022-25 Mauricio Buschinelli & Michael Haaf.\n(View License)"
   },
   {
     "objectID": "about/this-site.html",
@@ -179,7 +179,7 @@
     "href": "about/calendar.html#january",
     "title": "Calendar",
     "section": "1 January",
-    "text": "1 January\n\n1.1 Deliverables\n\nLab 1: TBD\n\n\n\n1.2 Schedule\n\nJan 20: Introduction to course"
+    "text": "1 January\n\n1.1 Deliverables\n\nLab 0: Due January 31\n\n\n\n1.2 Schedule\n\nJan 20: Introduction to course\nJan 24: Setting up our developer environment\nJan 27: Review bash, begin Lab 0"
   },
   {
     "objectID": "about/calendar.html#february",
@@ -235,7 +235,7 @@
     "href": "reference/index.html",
     "title": "Reference",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Modified - Oldest\n        \n         \n          Modified - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nCourse software\n\n\nThe essential software that will be used for development during the course.\n\n\n\n\n\n2025-01-20\n\n\n2 min\n\n\n2025-01-24\n\n\n\n\n\n\n\n\n\n\n\n\nCourse Hardware\n\n\nList of hardware available for the course as well as their respective specifications and documentation.\n\n\n\n\n\n2025-01-20\n\n\n3 min\n\n\n2025-01-24\n\n\n\n\n\n\n\n\n\n\n\n\nBash commands\n\n\nUseful bash commands\n\n\n\n\n\n2025-01-24\n\n\n1 min\n\n\n2025-01-24\n\n\n\n\n\n\n\n\n\n\n\n\nOOP in Python\n\n\nHow to use object oriented programming techniques in Python.\n\n\n\n\n\n2025-01-24\n\n\n22 min\n\n\n2025-01-24\n\n\n\n\n\n\n\n\n\n\n\n\nPython collection types and operations\n\n\nUseful python collection types and operations\n\n\n\n\n\n2025-01-24\n\n\n5 min\n\n\n2025-01-24\n\n\n\n\n\n\nNo matching items\n\n Back to topReuseCC BY-NC 4.0. ©2022-25 Mauricio Buschinelli & Michael Haaf.\n(View License)"
+    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Modified - Oldest\n        \n         \n          Modified - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nCourse software\n\n\nThe essential software that will be used for development during the course.\n\n\n\n\n\n2025-01-20\n\n\n2 min\n\n\n2025-01-27\n\n\n\n\n\n\n\n\n\n\n\n\nCourse Hardware\n\n\nList of hardware available for the course as well as their respective specifications and documentation.\n\n\n\n\n\n2025-01-20\n\n\n3 min\n\n\n2025-01-27\n\n\n\n\n\n\n\n\n\n\n\n\nBash commands\n\n\nUseful bash commands\n\n\n\n\n\n2025-01-24\n\n\n1 min\n\n\n2025-01-27\n\n\n\n\n\n\n\n\n\n\n\n\nOOP in Python\n\n\nHow to use object oriented programming techniques in Python.\n\n\n\n\n\n2025-01-24\n\n\n22 min\n\n\n2025-01-27\n\n\n\n\n\n\n\n\n\n\n\n\nPython collection types and operations\n\n\nUseful python collection types and operations\n\n\n\n\n\n2025-01-24\n\n\n5 min\n\n\n2025-01-27\n\n\n\n\n\n\nNo matching items\n\n Back to topReuseCC BY-NC 4.0. ©2022-25 Mauricio Buschinelli & Michael Haaf.\n(View License)"
   },
   {
     "objectID": "reference/docs/python-oop.html",
