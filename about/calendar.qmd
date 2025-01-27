@@ -24,7 +24,7 @@ to see where this course has deviated from the original outline.
 
 ### Deliverables
 
-1. [Lab 0][lab-0]: Due January 31
+<!-- 1. [Lab 0][lab-0]: Due January 31 -->
 
 [lab-0]: https://classroom.github.com/a/SsBGSO3A
 
