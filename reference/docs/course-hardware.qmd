@@ -119,7 +119,8 @@ instantiate an I2C bus instance, install and use the `adafruit-extended-bus` lib
 
 ### LED Socket
 
-:::{.column-margin} ![LED](https://files.seeedstudio.com/wiki/Raspi_wiki/img/red_led.jpg)
+:::{.column-margin}
+![LED](https://files.seeedstudio.com/wiki/Raspi_wiki/img/red_led.jpg)
 :::
 
 LED in a removable socket and potentiometer for power adjustment. LED can be swapped with
@@ -141,7 +142,8 @@ See [LED wiki page](https://wiki.seeedstudio.com/Grove-Red_LED/) for details.
 ### Relay
 
 :::{.column-margin}
-![Relay switch](https://files.seeedstudio.com/wiki/Grove-Relay/img/Twig-Relay.jpg) :::
+![Relay switch](https://files.seeedstudio.com/wiki/Grove-Relay/img/Twig-Relay.jpg) 
+:::
 
 A digital switch. Controls the on/off flow of electricity with a small digital signal.
 

@@ -58,6 +58,24 @@ pre
   font-size: 1rem !important;
 }
 
+/* Baseline for default links: https://moderncss.dev/modern-css-for-dynamic-component-based-architecture/ */
+a:not([class]) {
+  /* Relatively sized thickness and offset */
+  text-decoration: underline !important;
+  text-decoration-thickness: max(0.08em, 1px) !important;
+  text-underline-offset: 0.15em !important;
+}
+
+/* Scroll margin allowance above anchor links */
+:target {
+  scroll-padding-block-start: 2rem;
+}
+/* Scroll margin allowance below focused elements 
+  to ensure they are clearly in view */
+:focus {
+  scroll-padding-block-end: 8vh;
+}
+
 // TODO: put these and other non-$var using styles in style.css
 //
 // figure {
