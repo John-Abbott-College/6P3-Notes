@@ -23,16 +23,16 @@ website:
 
   navbar:
     left:
-      - text: "About"
-        href: about/index.qmd
-      - text: "Announcements"
-        href: announcements/index.qmd
-      - text: "Lectures"
-        href: lectures/index.qmd
-      - text: "Reference"
-        href: reference/index.qmd
       - text: "{{< iconify simple-icons moodle >}}"
         href: "{{< var site.moodle >}}"
+      - text: "Syllabus"
+        href: about/syllabus/index.qmd
+      - text: "Calendar"
+        href: about/calendar/index.qmd
+      - text: "Course Notes"
+        href: notes/index.qmd
+      - text: "About"
+        href: about/this-site/index.qmd
       - text: "{{< iconify fa6-brands github >}}"
         href: "{{< var site.repository >}}"
     logo: "assets/favicon_io/favicon-32x32.png"
