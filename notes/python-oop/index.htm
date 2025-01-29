@@ -94,7 +94,27 @@
     code span.va { color: #00e0e0; } /* Variable */
     code span.vs { color: #abe338; } /* VerbatimString */
     code span.wa { color: #dcc6e0; } /* Warning */
-  </style>
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-ab7a322b4ca39adb1086c9e0171297e3.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -223,7 +243,7 @@
 <p><strong>Note</strong></p>
 </div>
 <div class="callout-content">
-<p>These notes have been adapted from <a href="https://realpython.com/python3-object-oriented-programming/" class="uri">https://realpython.com/python3-object-oriented-programming/</a> with very few modifications.</p>
+<p>These notes have been adapted from <a href="https://realpython.com/python3-object-oriented-programming/" class="uri">https://realpython.com/python3-object-oriented-programming/</a> <span class="citation" data-cites="csik2021">(<a href="#/summary" role="doc-biblioref" onclick="">Csik 2021</a>)</span> with very few modifications.</p>
 <p>There is WAY more detail in this document than you need for now. Don’t feel the need to read this whole document, top-to-bottom, unless you are finding it useful. Instead, jump to the parts that are useful to you.</p>
 </div>
 </div>
@@ -739,7 +759,7 @@ class JackRussellTerrier(Dog):
 <p><strong>Note:</strong> In the above examples, the <strong>class hierarchy</strong> is very straightforward. The <code>JackRussellTerrier</code> class has a single parent class, <code>Dog</code>. In real-world examples, the class hierarchy can get quite complicated.</p>
 <p>The <code>super()</code> function does much more than just search the parent class for a method or an attribute. It traverses the entire class hierarchy for a matching method or attribute. If you aren’t careful, <code>super()</code> can have surprising results.</p>
 </section>
-<section id="summary" class="slide level2">
+<section id="summary" class="slide level2 smaller scrollable">
 <h2>Summary</h2>
 <p>In this tutorial, you learned about object-oriented programming (OOP) in Python. Many modern programming languages, such as <a href="https://go.java/">Java</a>, <a href="https://docs.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/">C#</a>, and <a href="https://www.cplusplus.com/info/description/">C++</a>, follow OOP principles, so the knowledge that you gained here will be applicable no matter where your programming career takes you.</p>
 <p>In Python, you learned how to:</p>
@@ -753,6 +773,11 @@ class JackRussellTerrier(Dog):
 </ul>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-csik2021" class="csl-entry" role="listitem">
+Csik, Samantha. 2021. <span>“Why Create Presentation Slides about Blogging When You Can Just Blog about It Instead?”</span> September 24, 2021. <a href="https://samanthacsik.github.io/posts/2021-09-21-distill-blogs/">https://samanthacsik.github.io/posts/2021-09-21-distill-blogs/</a>.
+</div>
+</div>
 </section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
