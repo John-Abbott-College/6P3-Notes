@@ -1,28 +1,12 @@
 [
   {
-    "listing": "/about/index.html",
+    "listing": "/notes/index.html",
     "items": [
-      "/about/this-site.html",
-      "/about/calendar.html",
-      "/about/syllabus.html"
+      "/notes/course-software/index.html",
+      "/notes/course-hardware/index.html",
+      "/notes/bash-commands/index.html",
+      "/notes/python-oop/index.html",
+      "/notes/python-collections/index.html"
     ]
-  },
-  {
-    "listing": "/reference/index.html",
-    "items": [
-      "/reference/docs/course-software.html",
-      "/reference/docs/course-hardware.html",
-      "/reference/docs/bash-commands.html",
-      "/reference/docs/python-oop.html",
-      "/reference/docs/python-collections.html"
-    ]
-  },
-  {
-    "listing": "/announcements/index.html",
-    "items": []
-  },
-  {
-    "listing": "/lectures/index.html",
-    "items": []
   }
 ]
