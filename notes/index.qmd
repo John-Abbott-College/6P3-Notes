@@ -1,0 +1,60 @@
+---
+title: "Course Notes"
+subtitle: "All content covered in class will be posted here."
+date: 2025-01-30
+format:
+  html:
+    page-layout: full
+listing:
+  - id: default-view
+    filter-ui: true
+    sort-ui: [date, file-modified, title]
+    sort: date
+    date-format: iso
+    categories: true
+    fields: [date, file-modified, title, subtitle, image, reading-time]
+    page-size: 99
+    include:
+      filename: "**/index.qmd"
+  - id: table-view
+    type: table
+    filter-ui: true
+    sort-ui: [date, file-modified, title]
+    sort: date
+    date-format: iso
+    categories: true
+    fields: [date, file-modified, title, subtitle, reading-time]
+    page-size: 99
+    include:
+      filename: "**/index.qmd"
+  - id: grid-view
+    type: grid
+    filter-ui: true
+    sort-ui: [date, file-modified, title]
+    sort: date
+    date-format: iso
+    categories: true
+    fields: [date, file-modified, title, subtitle, image, reading-time]
+    page-size: 99
+    include:
+      filename: "**/index.qmd"
+---
+
+::: {.panel-tabset}
+
+## Default view
+
+:::{#default-view}
+:::
+
+## Table view
+
+:::{#table-view}
+:::
+
+## Grid view
+
+:::{#grid-view}
+:::
+
+:::

@@ -20,40 +20,15 @@ you should expect to see covered as we continue through the course.
 You can compare this calendar with the calendar from the [Course Outline]({{< var course.outline >}})
 to see where this course has deviated from the original outline.
 
-## January
+## Deliverables
 
-### Deliverables
-
-1. [Lab 0][lab-0]: Due January 31
+1. [Lab 0][lab-0]: Due January 31 (Demo: in-class. Code: end of day 11:59pm)
 
 [lab-0]: https://classroom.github.com/a/SsBGSO3A
 
-### Schedule
+## Lectures
 
-- **Jan 20:** Introduction to course
-- **Jan 24:** Setting up our developer environment
-- **Jan 27:** Review bash, begin Lab 0
-
-## February
-
-### Deliverables
-
-### Schedule
-
-## March
-
-### Deliverables
-
-### Schedule
-
-## April
-
-### Deliverables
-
-### Schedule
-
-## May
-
-### Deliverables
-
-### Schedule
+- Jan 20: Introduction to course
+- Jan 24: Setting up developer environment
+- Jan 27: Review bash, begin Lab 0
+- Jan 31: 

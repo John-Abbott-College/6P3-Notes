@@ -1,6 +1,0 @@
----
-title: "About"
-listing:
-  type: default
-  fields: [file-modified, image, title]
----
