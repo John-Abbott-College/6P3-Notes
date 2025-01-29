@@ -3,7 +3,8 @@ title: OOP in Python
 subtitle: How to use object oriented programming techniques in Python.
 date: 2025-01-24
 categories: [Python]
-draft: false
+bibliography: references.bib
+draft: true
 ---
 
 ![Image: <https://realpython.com/courses/object-oriented-programming-exercises/>](https://files.realpython.com/media/Object-Oriented-Programming-OOP_Watermarked.df1bfba08d93.jpg)
@@ -11,7 +12,7 @@ draft: false
 ::: {.callout-note}
 
 These notes have been adapted from
-<https://realpython.com/python3-object-oriented-programming/> with very few modifications.
+<https://realpython.com/python3-object-oriented-programming/> [@csik2021] with very few modifications.
 
 There is WAY more detail in this document than you need for now. Don't feel the need to
 read this whole document, top-to-bottom, unless you are finding it useful. Instead, jump
