@@ -1,0 +1,95 @@
+---
+title: Bash essentials
+subtitle: >
+  The core bash commands everyone should know. How to use bash interactively and in scripts.
+  How to use redirects.
+date: 2025-01-24
+categories: [Bash, Scripting, CLI]
+draft: false
+---
+
+![Image: <https://www.svgrepo.com/svg/353475/bash>](assets/bash-svgrepo-com.png)
+
+## Bare necessities
+
+### Getting around: `cd` and `ls`
+
+### Viewing files: `cat` and `tac`
+
+### Creating files: `mkdir` and `touch`
+
+### Moving files: `mv` and `cp`
+
+### Managing permissions: `chmod` and `chown`
+
+### Deleting files: `rm`
+
+## Using CLI effectively
+
+### Keyboard shortcuts
+
+### `man` & `--help`
+
+## Core utilities
+
+### `sudo`
+
+### `ssh`
+
+### `tar`
+
+### `git`
+
+## The five fingers of death
+
+### `less` is `more`
+
+### `find` files and `grep` content
+
+### `tr` characters and `cut` fields
+
+### `sort` data and `uniq` duplicates
+
+### know `head` from `tail`
+
+## Advanced
+
+### the less `sed` the better
+
+### `awk`
+
+## Tools for Composition
+
+### Pipes
+
+### Redirects
+
+## Theory
+
+### Variables
+
+### Scope
+
+### Conditionals
+
+### Functions
+
+### Exit codes
+
+## Quirks
+
+### Filenames
+
+#### Hidden files
+
+#### Filenames that are a Bad Idea
+
+- Filenames with spaces: 
+- `-`: Special character for parameter flags.
+
+## Configuration
+
+### `.bashrc`
+
+### `.inputrc`
+
