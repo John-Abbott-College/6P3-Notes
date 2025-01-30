@@ -1,9 +1,13 @@
 ---
-title: OOP in Python
-subtitle: How to use object oriented programming techniques in Python.
-date: 2025-01-24
-categories: [Python]
+title: Object Oriented Python
+subtitle: >
+  Introduction to object oriented programming techniques in Python.
+  Learn how to create custom classes and objects, and how to use inheritance.
+date: 2025-02-03
+categories: [Python, OOP]
 bibliography: references.bib
+nocite: |
+  @*
 draft: true
 ---
 
@@ -12,7 +16,7 @@ draft: true
 ::: {.callout-note}
 
 These notes have been adapted from
-<https://realpython.com/python3-object-oriented-programming/> [@csik2021] with very few modifications.
+<https://realpython.com/python3-object-oriented-programming/> with very few modifications.
 
 There is WAY more detail in this document than you need for now. Don't feel the need to
 read this whole document, top-to-bottom, unless you are finding it useful. Instead, jump
@@ -263,7 +267,7 @@ Now that you have a `Dog` class, it's time to create some dogs!
 Creating a new object from a class is called **instantiating** a class. You can create a
 new object by typing the name of the class, followed by opening and closing parentheses:
 
-```bash {filename=Python Interpreter}
+```bash {filename=PyInterpreter}
 >>> class Dog:
 ...     pass
 ...
@@ -281,7 +285,7 @@ your screen will be different.
 
 Now instantiate the `Dog` class a second time to create another `Dog` object:
 
-```bash {filename=Python Interpreter}
+```bash {filename=PyInterpreter}
 >>> Dog()
 <__main__.Dog object at 0x0004ccc90>
 ```
@@ -290,7 +294,7 @@ The new `Dog` instance is located at a different memory address. That's because 
 entirely new instance and is completely unique from the first `Dog` object that you
 created.
 
-```bash {filename=Python Interpreter}
+```bash {filename=PyInterpreter}
 >>> a = Dog()
 >>> b = Dog()
 >>> a == b
@@ -307,7 +311,7 @@ objects in memory.
 Now create a new `Dog` class with a class attribute called `.species` and two instance
 attributes called `.name` and `.age`:
 
-```bash {filename=Python Interpreter}
+```bash {filename=PyInterpreter}
     >>> class Dog:
     ...     species = "Canis familiaris"
     ...     def __init__(self, name, age):
@@ -319,7 +323,7 @@ attributes called `.name` and `.age`:
 To instantiate this `Dog` class, you need to provide values for `name` and `age`. If you
 don't, then Python raises a `TypeError`:
 
-```bash {filename=Python Interpreter}
+```bash {filename=PyInterpreter}
 >>> Dog()
 Traceback (most recent call last):
   ...
@@ -329,7 +333,7 @@ TypeError: __init__() missing 2 required positional arguments: 'name' and 'age'
 To pass arguments to the `name` and `age` parameters, put values into the parentheses
 after the class name:
 
-```bash {filename=Python Interpreter}
+```bash {filename=PyInterpreter}
 >>> miles = Dog("Miles", 4)
 >>> buddy = Dog("Buddy", 9)
 ```
@@ -351,7 +355,7 @@ the [Python class constructor](https://realpython.com/python-class-constructor/)
 After you create the `Dog` instances, you can access their instance attributes using **dot
 notation**:
 
-```bash {filename=Python Interpreter}
+```bash {filename=PyInterpreter}
 >>> miles.name
 'Miles'
 >>> miles.age
@@ -365,7 +369,7 @@ notation**:
 
 You can access class attributes the same way:
 
-```bash {filename=Python Interpreter}
+```bash {filename=PyInterpreter}
 >>> buddy.species
 'Canis familiaris'
 ```
@@ -377,7 +381,7 @@ that they'll always return a value.
 
 Although the attributes are guaranteed to exist, their values *can* change dynamically:
 
-```bash {filename=Python Interpreter}
+```bash {filename=PyInterpreter}
 >>> buddy.age = 10
 >>> buddy.age
 10
@@ -427,7 +431,7 @@ This `Dog` class has two instance methods:
 1. **`.speak()`** has one parameter called `sound` and returns a string containing the
     dog's name and the sound that the dog makes.
 
-```bash {filename=Python Interpreter}
+```bash {filename=PyInterpreter}
 >>> miles = Dog("Miles", 4)
 
 >>> miles.description()
@@ -450,7 +454,7 @@ this.
 When you create a `list` object, you can use `print()` to display a string that looks like
 the list:
 
-```bash {filename=Python Interpreter}
+```bash {filename=PyInterpreter}
 >>> names = ["Miles", "Buddy", "Jack"]
 >>> print(names)
 ['Miles', 'Buddy', 'Jack']
@@ -458,7 +462,7 @@ the list:
 
 Go ahead and print the `miles` object to see what output you get:
 
-```bash {filename=Python Interpreter}
+```bash {filename=PyInterpreter}
 >>> print(miles)
 <__main__.Dog object at 0x00aeff70>
 ```
@@ -591,7 +595,7 @@ class Dog:
         return f"{self.name} says {sound}"
 ```
 
-```bash {filename=Python interpreter}
+```bash {filename=PyInterpreter}
 >>> miles = Dog("Miles", 4, "Jack Russell Terrier")
 >>> buddy = Dog("Buddy", 9, "Dachshund")
 >>> jack = Dog("Jack", 3, "Bulldog")
@@ -605,7 +609,7 @@ that sounds like *woof*, but dachshunds have a higher-pitched bark that sounds m
 Using just the `Dog` class, you must supply a string for the `sound` argument of
 `.speak()` every time you call it on a `Dog` instance:
 
-```bash {filename=Python Interpreter}
+```bash {filename=PyInterpreter}
 >>> buddy.speak("Yap")
 'Buddy says Yap'
 
@@ -660,8 +664,6 @@ new child classes of the `Dog` class:
 
 ```python {filename=Python}
 # ...
-
-
 class JackRussellTerrier(Dog):
     pass
 
@@ -669,12 +671,12 @@ class JackRussellTerrier(Dog):
 class Dachshund(Dog):
     pass
 
-
 class Bulldog(Dog):
     pass
+# ...
 ```
 
-```bash {filename=Python Interpreter}
+```bash {filename=PyInterpreter}
 >>> miles = JackRussellTerrier("Miles", 4)
 >>> buddy = Dachshund("Buddy", 9)
 >>> jack = Bulldog("Jack", 3)
@@ -683,7 +685,7 @@ class Bulldog(Dog):
 
 Instances of child classes inherit all of the attributes and methods of the parent class:
 
-```bash {filename=Python Interpreter}
+```bash {filename=PyInterpreter}
 >>> miles.species
 'Canis familiaris'
 
@@ -699,7 +701,7 @@ Jack is 3 years old
 
 To determine which class a given object belongs to, you can use the built-in `type()`:
 
-```bash {filename=Python Interpreter}
+```bash {filename=PyInterpreter}
 >>> type(miles)
 <class '__main__.JackRussellTerrier'>
 ```
@@ -707,7 +709,7 @@ To determine which class a given object belongs to, you can use the built-in `ty
 What if you want to determine if `miles` is also an instance of the `Dog` class? You can
 do this with the built-in `isinstance()`:
 
-```bash {filename=Python Interpreter}
+```bash {filename=PyInterpreter}
 >>> isinstance(miles, Dog)
 True
 ```
@@ -719,7 +721,7 @@ above, `isinstance()` checks if `miles` is an instance of the `Dog` class and re
 The `miles`, `buddy`, `jack`, and `jim` objects are all `Dog` instances, but `miles` isn't
 a `Bulldog` instance, and `jack` isn't a `Dachshund` instance:
 
-```bash {filename=Python Interpreter}
+```bash {filename=PyInterpreter}
 >>> isinstance(miles, Bulldog)
 False
 
@@ -745,11 +747,9 @@ on the child class. Here's what that looks like for the `JackRussellTerrier` cla
 ```python {filename=Python}
 # ...
 
-
 class JackRussellTerrier(Dog):
     def speak(self, sound="Arf"):
         return f"{self.name} says {sound}"
-
 
 # ...
 ```
@@ -760,7 +760,7 @@ Now `.speak()` is defined on the `JackRussellTerrier` class with the default arg
 Update `dog.py` with the new `JackRussellTerrier` class. You can now call `.speak()` on a
 `JackRussellTerrier` instance without passing an argument to `sound`:
 
-```bash {filename=Python interpreter}
+```bash {filename=Pyinterpreter}
 >>> miles = JackRussellTerrier("Miles", 4)
 >>> miles.speak()
 'Miles says Arf'
@@ -769,7 +769,7 @@ Update `dog.py` with the new `JackRussellTerrier` class. You can now call `.spea
 Sometimes dogs make different noises, so if Miles gets angry and growls, you can still
 call `.speak()` with a different sound:
 
-```bash {filename=Python Interpreter}
+```bash {filename=PyInterpreter}
 >>> miles.speak("Grrr")
 'Miles says Grrr'
 ```
@@ -795,7 +795,7 @@ class Dog:
 Now, when you create a new `Bulldog` instance named `jim`, `jim.speak()` returns the new
 string:
 
-```bash {filename=Python Interpreter}
+```bash {filename=PyInterpreter}
 >>> jim = Bulldog("Jim", 5)
 >>> jim.speak("Woof")
 'Jim barks: Woof'
@@ -804,7 +804,7 @@ string:
 However, calling `.speak()` on a `JackRussellTerrier` instance won't show the new style of
 output:
 
-```bash {filename=Python Interpreter}
+```bash {filename=PyInterpreter}
 >>> miles = JackRussellTerrier("Miles", 4)
 >>> miles.speak()
 'Miles says Arf'
@@ -824,13 +824,9 @@ You can access the parent class from inside a method of a child class by using
 
 ```python {filename=Python}
 # ...
-
-
 class JackRussellTerrier(Dog):
     def speak(self, sound="Arf"):
         return super().speak(sound)
-
-
 # ...
 ```
 
@@ -839,7 +835,7 @@ parent class, `Dog`, for a `.speak()` method and calls it with the variable `sou
 
 Update `dog.py` with the new `JackRussellTerrier` class:
 
-```bash {filename=Python Interpreter}
+```bash {filename=PyInterpreter}
 >>> miles = JackRussellTerrier("Miles", 4)
 >>> miles.speak()
 'Miles barks: Arf'

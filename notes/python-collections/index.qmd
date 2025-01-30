@@ -1,9 +1,9 @@
 ---
 title: Python collection types and operations
 subtitle: Useful python collection types and operations
-date: 2025-01-24
-categories: [Python]
-draft: false
+date: 2025-02-03
+categories: [Python, Collections]
+draft: true
 ---
 
 ![Image: <https://realpython.com/python-lambda/>](https://realpython.com/cdn-cgi/image/width=960,format=auto/https://files.realpython.com/media/How-to-Use-Python-Lambda-Functions_Watermarked.2afa4f5ea5d4.jpg)
