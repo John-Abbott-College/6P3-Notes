@@ -10,8 +10,8 @@
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-8ea72dc5fed832574809a9c94082fbbb.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.6.40">
 
-  <meta name="dcterms.date" content="2025-01-24">
-  <title>{{&lt; var course.title &gt;}} – OOP in Python</title>
+  <meta name="dcterms.date" content="2025-02-03">
+  <title>{{&lt; var course.title &gt;}} – Object Oriented Python</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -208,8 +208,8 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="OOP in Python – Connected Objects">
-<meta property="og:description" content="How to use object oriented programming techniques in Python.">
+<meta property="og:title" content="Object Oriented Python – Connected Objects">
+<meta property="og:description" content="Introduction to object oriented programming techniques in Python. Learn how to create custom classes and objects, and how to use inheritance.">
 <meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/notes/python-oop/assets/art_title_path_only.svg">
 <meta property="og:site_name" content="{{< var course.title >}}">
 </head>
@@ -218,13 +218,13 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">OOP in Python</h1>
-  <p class="subtitle">How to use object oriented programming techniques in Python.</p>
+  <h1 class="title">Object Oriented Python</h1>
+  <p class="subtitle"></p><p>Introduction to object oriented programming techniques in Python. Learn how to create custom classes and objects, and how to use inheritance.</p><p></p>
 
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">2025-01-24</p>
+  <p class="date">2025-02-03</p>
 </section>
 <section class="slide level2">
 
@@ -243,7 +243,7 @@
 <p><strong>Note</strong></p>
 </div>
 <div class="callout-content">
-<p>These notes have been adapted from <a href="https://realpython.com/python3-object-oriented-programming/" class="uri">https://realpython.com/python3-object-oriented-programming/</a> <span class="citation" data-cites="csik2021">(<a href="#/summary" role="doc-biblioref" onclick="">Csik 2021</a>)</span> with very few modifications.</p>
+<p>These notes have been adapted from <a href="https://realpython.com/python3-object-oriented-programming/" class="uri">https://realpython.com/python3-object-oriented-programming/</a> with very few modifications.</p>
 <p>There is WAY more detail in this document than you need for now. Don’t feel the need to read this whole document, top-to-bottom, unless you are finding it useful. Instead, jump to the parts that are useful to you.</p>
 </div>
 </div>
@@ -366,138 +366,182 @@
 <section id="how-do-you-instantiate-a-class-in-python" class="slide level2 scrollable">
 <h2>How Do You Instantiate a Class in Python?</h2>
 <p>Creating a new object from a class is called <strong>instantiating</strong> a class. You can create a new object by typing the name of the class, followed by opening and closing parentheses:</p>
-<p><code>bash {filename=Python Interpreter} &gt;&gt;&gt; class Dog: ...     pass ... &gt;&gt;&gt; Dog() &lt;__main__.Dog object at 0x106702d30&gt;</code></p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>PyInterpreter</strong></pre>
+</div>
+<div class="sourceCode" id="cb6" data-filename="PyInterpreter"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a></a><span class="op">&gt;&gt;&gt;</span> class <span class="ex">Dog:</span></span>
+<span id="cb6-2"><a></a><span class="ex">...</span>     pass</span>
+<span id="cb6-3"><a></a><span class="ex">...</span></span>
+<span id="cb6-4"><a></a><span class="op">&gt;&gt;&gt;</span> Dog<span class="kw">()</span></span>
+<span id="cb6-5"><a></a><span class="op">&lt;</span>__main__.Dog <span class="ex">object</span> at 0x106702d30<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>You first create a new <code>Dog</code> class with no attributes or methods, and then you instantiate the <code>Dog</code> class to create a <code>Dog</code> object.</p>
 <p>In the output above, you can see that you now have a new <code>Dog</code> object at <code>0x106702d30</code>. This funny-looking string of letters and numbers is a <strong>memory address</strong> that indicates where Python stores the <code>Dog</code> object in your computer’s memory. Note that the address on your screen will be different.</p>
 <p>Now instantiate the <code>Dog</code> class a second time to create another <code>Dog</code> object:</p>
-<p><code>bash {filename=Python Interpreter} &gt;&gt;&gt; Dog() &lt;__main__.Dog object at 0x0004ccc90&gt;</code></p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>PyInterpreter</strong></pre>
+</div>
+<div class="sourceCode" id="cb7" data-filename="PyInterpreter"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a></a><span class="op">&gt;&gt;&gt;</span> Dog<span class="kw">()</span></span>
+<span id="cb7-2"><a></a><span class="op">&lt;</span>__main__.Dog <span class="ex">object</span> at 0x0004ccc90<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>The new <code>Dog</code> instance is located at a different memory address. That’s because it’s an entirely new instance and is completely unique from the first <code>Dog</code> object that you created.</p>
-<p><code>bash {filename=Python Interpreter} &gt;&gt;&gt; a = Dog() &gt;&gt;&gt; b = Dog() &gt;&gt;&gt; a == b False</code></p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>PyInterpreter</strong></pre>
+</div>
+<div class="sourceCode" id="cb8" data-filename="PyInterpreter"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a></a><span class="op">&gt;&gt;&gt;</span> a <span class="ex">=</span> Dog<span class="er">(</span><span class="kw">)</span></span>
+<span id="cb8-2"><a></a><span class="op">&gt;&gt;&gt;</span> b <span class="ex">=</span> Dog<span class="er">(</span><span class="kw">)</span></span>
+<span id="cb8-3"><a></a><span class="op">&gt;&gt;&gt;</span> a <span class="ex">==</span> b</span>
+<span id="cb8-4"><a></a><span class="ex">False</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>In this code, you create two new <code>Dog</code> objects and assign them to the variables <code>a</code> and <code>b</code>. When you compare <code>a</code> and <code>b</code> using the <code>==</code> operator, the result is <code>False</code>. Even though <code>a</code> and <code>b</code> are both instances of the <code>Dog</code> class, they represent two distinct objects in memory.</p>
 <h3 id="class-and-instance-attributes">Class and Instance Attributes</h3>
 <p>Now create a new <code>Dog</code> class with a class attribute called <code>.species</code> and two instance attributes called <code>.name</code> and <code>.age</code>:</p>
-<p><code>bash {filename=Python Interpreter}     &gt;&gt;&gt; class Dog:     ...     species = "Canis familiaris"     ...     def __init__(self, name, age):     ...         self.name = name     ...         self.age = age     ...</code></p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>PyInterpreter</strong></pre>
+</div>
+<div class="sourceCode" id="cb9" data-filename="PyInterpreter"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a></a>    <span class="op">&gt;&gt;&gt;</span> class <span class="ex">Dog:</span></span>
+<span id="cb9-2"><a></a>    <span class="ex">...</span>     species = <span class="st">"Canis familiaris"</span></span>
+<span id="cb9-3"><a></a>    <span class="ex">...</span>     def __init__<span class="er">(</span><span class="ex">self,</span> name, age<span class="kw">)</span><span class="bu">:</span></span>
+<span id="cb9-4"><a></a>    <span class="ex">...</span>         self.name = name</span>
+<span id="cb9-5"><a></a>    <span class="ex">...</span>         self.age = age</span>
+<span id="cb9-6"><a></a>    <span class="ex">...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>To instantiate this <code>Dog</code> class, you need to provide values for <code>name</code> and <code>age</code>. If you don’t, then Python raises a <code>TypeError</code>:</p>
-<p><code>bash {filename=Python Interpreter} &gt;&gt;&gt; Dog() Traceback (most recent call last):   ... TypeError: __init__() missing 2 required positional arguments: 'name' and 'age'</code></p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>PyInterpreter</strong></pre>
+</div>
+<div class="sourceCode" id="cb10" data-filename="PyInterpreter"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a></a><span class="op">&gt;&gt;&gt;</span> Dog<span class="kw">()</span></span>
+<span id="cb10-2"><a></a><span class="ex">Traceback</span> <span class="er">(</span><span class="ex">most</span> recent call last<span class="kw">)</span><span class="bu">:</span></span>
+<span id="cb10-3"><a></a>  <span class="ex">...</span></span>
+<span id="cb10-4"><a></a><span class="ex">TypeError:</span> __init__<span class="er">(</span><span class="kw">)</span> <span class="ex">missing</span> 2 required positional arguments: <span class="st">'name'</span> and <span class="st">'age'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>To pass arguments to the <code>name</code> and <code>age</code> parameters, put values into the parentheses after the class name:</p>
-<p><code>bash {filename=Python Interpreter} &gt;&gt;&gt; miles = Dog("Miles", 4) &gt;&gt;&gt; buddy = Dog("Buddy", 9)</code></p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>PyInterpreter</strong></pre>
+</div>
+<div class="sourceCode" id="cb11" data-filename="PyInterpreter"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a></a><span class="op">&gt;&gt;&gt;</span> miles <span class="ex">=</span> Dog<span class="er">(</span><span class="st">"Miles"</span><span class="ex">,</span> 4<span class="kw">)</span></span>
+<span id="cb11-2"><a></a><span class="op">&gt;&gt;&gt;</span> buddy <span class="ex">=</span> Dog<span class="er">(</span><span class="st">"Buddy"</span><span class="ex">,</span> 9<span class="kw">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>This creates two new <code>Dog</code> instances—one for a four-year-old dog named Miles and one for a nine-year-old dog named Buddy.</p>
 <p>The <code>Dog</code> class’s <code>.__init__()</code> method has three parameters, so why are you only passing two arguments to it in the example?</p>
 <p>When you instantiate the <code>Dog</code> class, Python creates a new instance of <code>Dog</code> and passes it to the first parameter of <code>.__init__()</code>. This essentially removes the <code>self</code> parameter, so you only need to worry about the <code>name</code> and <code>age</code> parameters.</p>
 <p><strong>Note:</strong> Behind the scenes, Python both creates and initializes a new object when you use this syntax. If you want to dive deeper, then you can read the dedicated tutorial about the <a href="https://realpython.com/python-class-constructor/">Python class constructor</a>.</p>
 <p>After you create the <code>Dog</code> instances, you can access their instance attributes using <strong>dot notation</strong>:</p>
-<p>```bash {filename=Python Interpreter} &gt;&gt;&gt; miles.name ‘Miles’ &gt;&gt;&gt; miles.age 4</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>buddy.name ‘Buddy’ buddy.age 9</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<pre><code>
-You can access class attributes the same way:
-
-```bash {filename=Python Interpreter}
-&gt;&gt;&gt; buddy.species
-'Canis familiaris'</code></pre>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>PyInterpreter</strong></pre>
+</div>
+<div class="sourceCode" id="cb12" data-filename="PyInterpreter"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a></a><span class="op">&gt;&gt;&gt;</span> miles.name</span>
+<span id="cb12-2"><a></a><span class="st">'Miles'</span></span>
+<span id="cb12-3"><a></a><span class="op">&gt;&gt;&gt;</span> miles.age</span>
+<span id="cb12-4"><a></a><span class="ex">4</span></span>
+<span id="cb12-5"><a></a></span>
+<span id="cb12-6"><a></a><span class="op">&gt;&gt;&gt;</span> buddy.name</span>
+<span id="cb12-7"><a></a><span class="st">'Buddy'</span></span>
+<span id="cb12-8"><a></a><span class="op">&gt;&gt;&gt;</span> buddy.age</span>
+<span id="cb12-9"><a></a><span class="ex">9</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>You can access class attributes the same way:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>PyInterpreter</strong></pre>
+</div>
+<div class="sourceCode" id="cb13" data-filename="PyInterpreter"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a></a><span class="op">&gt;&gt;&gt;</span> buddy.species</span>
+<span id="cb13-2"><a></a><span class="st">'Canis familiaris'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>One of the biggest advantages of using classes to organize data is that instances are guaranteed to have the attributes you expect. All <code>Dog</code> instances have <code>.species</code>, <code>.name</code>, and <code>.age</code> attributes, so you can use those attributes with confidence, knowing that they’ll always return a value.</p>
 <p>Although the attributes are guaranteed to exist, their values <em>can</em> change dynamically:</p>
-<p>```bash {filename=Python Interpreter} &gt;&gt;&gt; buddy.age = 10 &gt;&gt;&gt; buddy.age 10</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>miles.species = “Felis silvestris” miles.species ‘Felis silvestris’</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<pre><code>
-In this example, you change the `.age` attribute of the `buddy` object to `10`. Then you
-change the `.species` attribute of the `miles` object to `"Felis silvestris"`, which is a
-species of cat. That makes Miles a pretty strange dog, but it's valid Python!
-
-The key takeaway here is that custom objects are mutable by default. An object is mutable
-if you can alter it dynamically. For example, lists and
-[dictionaries](https://realpython.com/python-dicts/) are mutable, but strings and tuples
-are [immutable](https://realpython.com/python-mutable-vs-immutable-types/).
-
-### Instance Methods
-
-**Instance methods** are functions that you define inside a class and can only call on an
-instance of that class. Just like `.__init__()`, an instance method always takes `self` as
-its first parameter.
-
-Open a new editor window in IDLE and type in the following `Dog` class:
-
-```python {filename=Python}
-class Dog:
-    species = "Canis familiaris"
-
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
-
-    # Instance method
-    def description(self):
-        return f"{self.name} is {self.age} years old"
-
-    # Another instance method
-    def speak(self, sound):
-        return f"{self.name} says {sound}"</code></pre>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>PyInterpreter</strong></pre>
+</div>
+<div class="sourceCode" id="cb14" data-filename="PyInterpreter"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a></a><span class="op">&gt;&gt;&gt;</span> buddy.age <span class="ex">=</span> 10</span>
+<span id="cb14-2"><a></a><span class="op">&gt;&gt;&gt;</span> buddy.age</span>
+<span id="cb14-3"><a></a><span class="ex">10</span></span>
+<span id="cb14-4"><a></a></span>
+<span id="cb14-5"><a></a><span class="op">&gt;&gt;&gt;</span> miles.species <span class="ex">=</span> <span class="st">"Felis silvestris"</span></span>
+<span id="cb14-6"><a></a><span class="op">&gt;&gt;&gt;</span> miles.species</span>
+<span id="cb14-7"><a></a><span class="st">'Felis silvestris'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>In this example, you change the <code>.age</code> attribute of the <code>buddy</code> object to <code>10</code>. Then you change the <code>.species</code> attribute of the <code>miles</code> object to <code>"Felis silvestris"</code>, which is a species of cat. That makes Miles a pretty strange dog, but it’s valid Python!</p>
+<p>The key takeaway here is that custom objects are mutable by default. An object is mutable if you can alter it dynamically. For example, lists and <a href="https://realpython.com/python-dicts/">dictionaries</a> are mutable, but strings and tuples are <a href="https://realpython.com/python-mutable-vs-immutable-types/">immutable</a>.</p>
+<h3 id="instance-methods">Instance Methods</h3>
+<p><strong>Instance methods</strong> are functions that you define inside a class and can only call on an instance of that class. Just like <code>.__init__()</code>, an instance method always takes <code>self</code> as its first parameter.</p>
+<p>Open a new editor window in IDLE and type in the following <code>Dog</code> class:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode" id="cb15" data-filename="Python"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a></a><span class="kw">class</span> Dog:</span>
+<span id="cb15-2"><a></a>    species <span class="op">=</span> <span class="st">"Canis familiaris"</span></span>
+<span id="cb15-3"><a></a></span>
+<span id="cb15-4"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, age):</span>
+<span id="cb15-5"><a></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
+<span id="cb15-6"><a></a>        <span class="va">self</span>.age <span class="op">=</span> age</span>
+<span id="cb15-7"><a></a></span>
+<span id="cb15-8"><a></a>    <span class="co"># Instance method</span></span>
+<span id="cb15-9"><a></a>    <span class="kw">def</span> description(<span class="va">self</span>):</span>
+<span id="cb15-10"><a></a>        <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss"> is </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>age<span class="sc">}</span><span class="ss"> years old"</span></span>
+<span id="cb15-11"><a></a></span>
+<span id="cb15-12"><a></a>    <span class="co"># Another instance method</span></span>
+<span id="cb15-13"><a></a>    <span class="kw">def</span> speak(<span class="va">self</span>, sound):</span>
+<span id="cb15-14"><a></a>        <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss"> says </span><span class="sc">{</span>sound<span class="sc">}</span><span class="ss">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>This <code>Dog</code> class has two instance methods:</p>
 <ol type="1">
 <li><strong><code>.description()</code></strong> returns a string displaying the name and age of the dog.</li>
 <li><strong><code>.speak()</code></strong> has one parameter called <code>sound</code> and returns a string containing the dog’s name and the sound that the dog makes.</li>
 </ol>
-<p>```bash {filename=Python Interpreter} &gt;&gt;&gt; miles = Dog(“Miles”, 4)</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>miles.description() ‘Miles is 4 years old’</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>miles.speak(“Woof Woof”) ‘Miles says Woof Woof’</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>miles.speak(“Bow Wow”) ‘Miles says Bow Wow’</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<pre><code>
-In the above `Dog` class, `.description()` returns a string containing information about
-the `Dog` instance `miles`. When writing your own classes, it's a good idea to have a
-method that returns a string containing useful information about an instance of the class.
-However, `.description()` isn't the most
-[Pythonic](https://realpython.com/learning-paths/writing-pythonic-code/) way of doing
-this.
-
-When you create a `list` object, you can use `print()` to display a string that looks like
-the list:
-
-```bash {filename=Python Interpreter}
-&gt;&gt;&gt; names = ["Miles", "Buddy", "Jack"]
-&gt;&gt;&gt; print(names)
-['Miles', 'Buddy', 'Jack']</code></pre>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>PyInterpreter</strong></pre>
+</div>
+<div class="sourceCode" id="cb16" data-filename="PyInterpreter"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a></a><span class="op">&gt;&gt;&gt;</span> miles <span class="ex">=</span> Dog<span class="er">(</span><span class="st">"Miles"</span><span class="ex">,</span> 4<span class="kw">)</span></span>
+<span id="cb16-2"><a></a></span>
+<span id="cb16-3"><a></a><span class="op">&gt;&gt;&gt;</span> miles.description<span class="kw">()</span></span>
+<span id="cb16-4"><a></a><span class="st">'Miles is 4 years old'</span></span>
+<span id="cb16-5"><a></a></span>
+<span id="cb16-6"><a></a><span class="op">&gt;&gt;&gt;</span> miles.speak<span class="kw">(</span><span class="st">"Woof Woof"</span><span class="kw">)</span></span>
+<span id="cb16-7"><a></a><span class="st">'Miles says Woof Woof'</span></span>
+<span id="cb16-8"><a></a></span>
+<span id="cb16-9"><a></a><span class="op">&gt;&gt;&gt;</span> miles.speak<span class="kw">(</span><span class="st">"Bow Wow"</span><span class="kw">)</span></span>
+<span id="cb16-10"><a></a><span class="st">'Miles says Bow Wow'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>In the above <code>Dog</code> class, <code>.description()</code> returns a string containing information about the <code>Dog</code> instance <code>miles</code>. When writing your own classes, it’s a good idea to have a method that returns a string containing useful information about an instance of the class. However, <code>.description()</code> isn’t the most <a href="https://realpython.com/learning-paths/writing-pythonic-code/">Pythonic</a> way of doing this.</p>
+<p>When you create a <code>list</code> object, you can use <code>print()</code> to display a string that looks like the list:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>PyInterpreter</strong></pre>
+</div>
+<div class="sourceCode" id="cb17" data-filename="PyInterpreter"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a></a><span class="op">&gt;&gt;&gt;</span> names <span class="ex">=</span> [<span class="st">"Miles"</span>, <span class="st">"Buddy"</span>, <span class="st">"Jack"</span>]</span>
+<span id="cb17-2"><a></a><span class="op">&gt;&gt;&gt;</span> print<span class="kw">(</span><span class="ex">names</span><span class="kw">)</span></span>
+<span id="cb17-3"><a></a><span class="ex">[</span><span class="st">'Miles'</span><span class="ex">,</span> <span class="st">'Buddy'</span>, <span class="st">'Jack'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>Go ahead and print the <code>miles</code> object to see what output you get:</p>
-<p><code>bash {filename=Python Interpreter} &gt;&gt;&gt; print(miles) &lt;__main__.Dog object at 0x00aeff70&gt;</code></p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>PyInterpreter</strong></pre>
+</div>
+<div class="sourceCode" id="cb18" data-filename="PyInterpreter"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a></a><span class="op">&gt;&gt;&gt;</span> print<span class="kw">(</span><span class="ex">miles</span><span class="kw">)</span></span>
+<span id="cb18-2"><a></a><span class="op">&lt;</span>__main__.Dog <span class="ex">object</span> at 0x00aeff70<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>When you print <code>miles</code>, you get a cryptic-looking message telling you that <code>miles</code> is a <code>Dog</code> object at the memory address <code>0x00aeff70</code>. This message isn’t very helpful. You can change what gets printed by defining a special instance method called <code>.__str__()</code>.</p>
 <p>In the editor window, change the name of the <code>Dog</code> class’s <code>.description()</code> method to <code>.__str__()</code>:</p>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode" id="cb9" data-filename="Python"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a><span class="kw">class</span> Dog:</span>
-<span id="cb9-2"><a></a>    <span class="co"># ...</span></span>
-<span id="cb9-3"><a></a></span>
-<span id="cb9-4"><a></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
-<span id="cb9-5"><a></a>        <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss"> is </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>age<span class="sc">}</span><span class="ss"> years old"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb19" data-filename="Python"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a></a><span class="kw">class</span> Dog:</span>
+<span id="cb19-2"><a></a>    <span class="co"># ...</span></span>
+<span id="cb19-3"><a></a></span>
+<span id="cb19-4"><a></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
+<span id="cb19-5"><a></a>        <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss"> is </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>age<span class="sc">}</span><span class="ss"> years old"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Methods like <code>.__init__()</code> and <code>.__str__()</code> are called <strong>dunder methods</strong> because they begin and end with <a href="https://realpython.com/python-double-underscore/">double underscores</a>. There are many dunder methods that you can use to customize classes in Python. <a href="https://realpython.com/python-classes/#special-methods-and-protocols">Understanding dunder methods</a> is an important part of mastering object-oriented programming in Python, but for your first exploration of the topic, you’ll stick with these two dunder methods.</p>
 <p><strong>Note:</strong> Check out <a href="https://realpython.com/python-repr-vs-str/">When Should You Use <code>.__repr__()</code> vs <code>.__str__()</code> in Python?</a> to learn more about <code>.__str__()</code> and its cousin <code>.__repr__()</code>.</p>
@@ -510,12 +554,12 @@ the list:
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode" id="cb10" data-filename="Python"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a><span class="kw">class</span> Parent:</span>
-<span id="cb10-2"><a></a>    hair_color <span class="op">=</span> <span class="st">"brown"</span></span>
-<span id="cb10-3"><a></a></span>
-<span id="cb10-4"><a></a></span>
-<span id="cb10-5"><a></a><span class="kw">class</span> Child(Parent):</span>
-<span id="cb10-6"><a></a>    <span class="cf">pass</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb20" data-filename="Python"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a></a><span class="kw">class</span> Parent:</span>
+<span id="cb20-2"><a></a>    hair_color <span class="op">=</span> <span class="st">"brown"</span></span>
+<span id="cb20-3"><a></a></span>
+<span id="cb20-4"><a></a></span>
+<span id="cb20-5"><a></a><span class="kw">class</span> Child(Parent):</span>
+<span id="cb20-6"><a></a>    <span class="cf">pass</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>In this minimal example, the child class <code>Child</code> inherits from the parent class <code>Parent</code>. Because child classes take on the attributes and methods of parent classes, <code>Child.hair_color</code> is also <code>"brown"</code> without your explicitly defining that.</p>
 <p><strong>Note:</strong> This tutorial is adapted from the chapter “Object-Oriented Programming (OOP)” in <a href="https://realpython.com/products/python-basics-book/"><em>Python Basics: A Practical Introduction to Python 3</em></a>. If you enjoy what you’re reading, then be sure to check out <a href="https://realpython.com/products/python-basics-book/">the rest of the book</a> and the <a href="https://realpython.com/learning-paths/python-basics/">learning path</a>.</p>
@@ -527,12 +571,12 @@ the list:
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode" id="cb11" data-filename="Python"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a><span class="kw">class</span> Parent:</span>
-<span id="cb11-2"><a></a>    hair_color <span class="op">=</span> <span class="st">"brown"</span></span>
-<span id="cb11-3"><a></a></span>
-<span id="cb11-4"><a></a></span>
-<span id="cb11-5"><a></a><span class="kw">class</span> Child(Parent):</span>
-<span id="cb11-6"><a></a>    hair_color <span class="op">=</span> <span class="st">"purple"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb21" data-filename="Python"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a></a><span class="kw">class</span> Parent:</span>
+<span id="cb21-2"><a></a>    hair_color <span class="op">=</span> <span class="st">"brown"</span></span>
+<span id="cb21-3"><a></a></span>
+<span id="cb21-4"><a></a></span>
+<span id="cb21-5"><a></a><span class="kw">class</span> Child(Parent):</span>
+<span id="cb21-6"><a></a>    hair_color <span class="op">=</span> <span class="st">"purple"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>If you change the code example like this, then <code>Child.hair_color</code> will be <code>"purple"</code>.</p>
 <p>You also inherit, in a sense, your language from your parents. If your parents speak English, then you’ll also speak English. Now imagine you decide to learn a second language, like German. In this case, you’ve <strong>extended</strong> your attributes because you’ve added an attribute that your parents don’t have:</p>
@@ -540,14 +584,14 @@ the list:
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode" id="cb12" data-filename="Python"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a><span class="kw">class</span> Parent:</span>
-<span id="cb12-2"><a></a>    speaks <span class="op">=</span> [<span class="st">"English"</span>]</span>
-<span id="cb12-3"><a></a></span>
-<span id="cb12-4"><a></a></span>
-<span id="cb12-5"><a></a><span class="kw">class</span> Child(Parent):</span>
-<span id="cb12-6"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
-<span id="cb12-7"><a></a>        <span class="bu">super</span>().<span class="fu">__init__</span>()</span>
-<span id="cb12-8"><a></a>        <span class="va">self</span>.speaks.append(<span class="st">"German"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb22" data-filename="Python"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a></a><span class="kw">class</span> Parent:</span>
+<span id="cb22-2"><a></a>    speaks <span class="op">=</span> [<span class="st">"English"</span>]</span>
+<span id="cb22-3"><a></a></span>
+<span id="cb22-4"><a></a></span>
+<span id="cb22-5"><a></a><span class="kw">class</span> Child(Parent):</span>
+<span id="cb22-6"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb22-7"><a></a>        <span class="bu">super</span>().<span class="fu">__init__</span>()</span>
+<span id="cb22-8"><a></a>        <span class="va">self</span>.speaks.append(<span class="st">"German"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>You’ll learn more about how the code above works in the sections below. But before you dive deeper into inheritance in Python, you’ll take a walk to a dog park to better understand why you might want to use inheritance in your own code.</p>
 <h3 id="example-dog-park">Example: Dog Park</h3>
@@ -558,183 +602,207 @@ the list:
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode" id="cb13" data-filename="Python"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a><span class="kw">class</span> Dog:</span>
-<span id="cb13-2"><a></a>    species <span class="op">=</span> <span class="st">"Canis familiaris"</span></span>
-<span id="cb13-3"><a></a></span>
-<span id="cb13-4"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, age, breed):</span>
-<span id="cb13-5"><a></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
-<span id="cb13-6"><a></a>        <span class="va">self</span>.age <span class="op">=</span> age</span>
-<span id="cb13-7"><a></a>        <span class="va">self</span>.breed <span class="op">=</span> breed</span>
-<span id="cb13-8"><a></a></span>
-<span id="cb13-9"><a></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
-<span id="cb13-10"><a></a>        <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss"> is </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>age<span class="sc">}</span><span class="ss"> years old"</span></span>
-<span id="cb13-11"><a></a></span>
-<span id="cb13-12"><a></a>    <span class="kw">def</span> speak(<span class="va">self</span>, sound):</span>
-<span id="cb13-13"><a></a>        <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss"> says </span><span class="sc">{</span>sound<span class="sc">}</span><span class="ss">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb23" data-filename="Python"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a></a><span class="kw">class</span> Dog:</span>
+<span id="cb23-2"><a></a>    species <span class="op">=</span> <span class="st">"Canis familiaris"</span></span>
+<span id="cb23-3"><a></a></span>
+<span id="cb23-4"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, age, breed):</span>
+<span id="cb23-5"><a></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
+<span id="cb23-6"><a></a>        <span class="va">self</span>.age <span class="op">=</span> age</span>
+<span id="cb23-7"><a></a>        <span class="va">self</span>.breed <span class="op">=</span> breed</span>
+<span id="cb23-8"><a></a></span>
+<span id="cb23-9"><a></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
+<span id="cb23-10"><a></a>        <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss"> is </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>age<span class="sc">}</span><span class="ss"> years old"</span></span>
+<span id="cb23-11"><a></a></span>
+<span id="cb23-12"><a></a>    <span class="kw">def</span> speak(<span class="va">self</span>, sound):</span>
+<span id="cb23-13"><a></a>        <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss"> says </span><span class="sc">{</span>sound<span class="sc">}</span><span class="ss">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><code>bash {filename=Python interpreter} &gt;&gt;&gt; miles = Dog("Miles", 4, "Jack Russell Terrier") &gt;&gt;&gt; buddy = Dog("Buddy", 9, "Dachshund") &gt;&gt;&gt; jack = Dog("Jack", 3, "Bulldog") &gt;&gt;&gt; jim = Dog("Jim", 5, "Bulldog")</code></p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>PyInterpreter</strong></pre>
+</div>
+<div class="sourceCode" id="cb24" data-filename="PyInterpreter"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a></a><span class="op">&gt;&gt;&gt;</span> miles <span class="ex">=</span> Dog<span class="er">(</span><span class="st">"Miles"</span><span class="ex">,</span> 4, <span class="st">"Jack Russell Terrier"</span><span class="kw">)</span></span>
+<span id="cb24-2"><a></a><span class="op">&gt;&gt;&gt;</span> buddy <span class="ex">=</span> Dog<span class="er">(</span><span class="st">"Buddy"</span><span class="ex">,</span> 9, <span class="st">"Dachshund"</span><span class="kw">)</span></span>
+<span id="cb24-3"><a></a><span class="op">&gt;&gt;&gt;</span> jack <span class="ex">=</span> Dog<span class="er">(</span><span class="st">"Jack"</span><span class="ex">,</span> 3, <span class="st">"Bulldog"</span><span class="kw">)</span></span>
+<span id="cb24-4"><a></a><span class="op">&gt;&gt;&gt;</span> jim <span class="ex">=</span> Dog<span class="er">(</span><span class="st">"Jim"</span><span class="ex">,</span> 5, <span class="st">"Bulldog"</span><span class="kw">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>Each breed of dog has slightly different behaviors. For example, bulldogs have a low bark that sounds like <em>woof</em>, but dachshunds have a higher-pitched bark that sounds more like <em>yap</em>.</p>
 <p>Using just the <code>Dog</code> class, you must supply a string for the <code>sound</code> argument of <code>.speak()</code> every time you call it on a <code>Dog</code> instance:</p>
-<p>```bash {filename=Python Interpreter} &gt;&gt;&gt; buddy.speak(“Yap”) ‘Buddy says Yap’</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>jim.speak(“Woof”) ‘Jim says Woof’</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>jack.speak(“Woof”) ‘Jack says Woof’</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<pre><code>
-Passing a string to every call to `.speak()` is repetitive and inconvenient. Moreover, the
-`.breed` attribute should determine the string representing the sound that each `Dog`
-instance makes, but here you have to manually pass the correct string to `.speak()` every
-time you call it.
-
-You can simplify the experience of working with the `Dog` class by creating a child class
-for each breed of dog. This allows you to extend the functionality that each child class
-inherits, including specifying a default argument for `.speak()`.
-
-(/account/join/){.small .text-muted rel="nofollow"}
-
-### Parent Classes vs Child Classes
-
-In this section, you'll create a child class for each of the three breeds mentioned above:
-Jack Russell terrier, dachshund, and bulldog.
-
-For reference, here's the full definition of the `Dog` class that you're currently working
-with:
-
-```python {filename=Python}
-class Dog:
-    species = "Canis familiaris"
-
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
-
-    def __str__(self):
-        return f"{self.name} is {self.age} years old"
-
-    def speak(self, sound):
-        return f"{self.name} says {sound}"</code></pre>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>PyInterpreter</strong></pre>
+</div>
+<div class="sourceCode" id="cb25" data-filename="PyInterpreter"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a></a><span class="op">&gt;&gt;&gt;</span> buddy.speak<span class="kw">(</span><span class="st">"Yap"</span><span class="kw">)</span></span>
+<span id="cb25-2"><a></a><span class="st">'Buddy says Yap'</span></span>
+<span id="cb25-3"><a></a></span>
+<span id="cb25-4"><a></a><span class="op">&gt;&gt;&gt;</span> jim.speak<span class="kw">(</span><span class="st">"Woof"</span><span class="kw">)</span></span>
+<span id="cb25-5"><a></a><span class="st">'Jim says Woof'</span></span>
+<span id="cb25-6"><a></a></span>
+<span id="cb25-7"><a></a><span class="op">&gt;&gt;&gt;</span> jack.speak<span class="kw">(</span><span class="st">"Woof"</span><span class="kw">)</span></span>
+<span id="cb25-8"><a></a><span class="st">'Jack says Woof'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Passing a string to every call to <code>.speak()</code> is repetitive and inconvenient. Moreover, the <code>.breed</code> attribute should determine the string representing the sound that each <code>Dog</code> instance makes, but here you have to manually pass the correct string to <code>.speak()</code> every time you call it.</p>
+<p>You can simplify the experience of working with the <code>Dog</code> class by creating a child class for each breed of dog. This allows you to extend the functionality that each child class inherits, including specifying a default argument for <code>.speak()</code>.</p>
+<p>(/account/join/){.small .text-muted rel=“nofollow”}</p>
+<h3 id="parent-classes-vs-child-classes">Parent Classes vs Child Classes</h3>
+<p>In this section, you’ll create a child class for each of the three breeds mentioned above: Jack Russell terrier, dachshund, and bulldog.</p>
+<p>For reference, here’s the full definition of the <code>Dog</code> class that you’re currently working with:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode" id="cb26" data-filename="Python"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a></a><span class="kw">class</span> Dog:</span>
+<span id="cb26-2"><a></a>    species <span class="op">=</span> <span class="st">"Canis familiaris"</span></span>
+<span id="cb26-3"><a></a></span>
+<span id="cb26-4"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, age):</span>
+<span id="cb26-5"><a></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
+<span id="cb26-6"><a></a>        <span class="va">self</span>.age <span class="op">=</span> age</span>
+<span id="cb26-7"><a></a></span>
+<span id="cb26-8"><a></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
+<span id="cb26-9"><a></a>        <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss"> is </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>age<span class="sc">}</span><span class="ss"> years old"</span></span>
+<span id="cb26-10"><a></a></span>
+<span id="cb26-11"><a></a>    <span class="kw">def</span> speak(<span class="va">self</span>, sound):</span>
+<span id="cb26-12"><a></a>        <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss"> says </span><span class="sc">{</span>sound<span class="sc">}</span><span class="ss">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>After doing the <a href="#/example-dog-park">dog park example</a> in the previous section, you’ve removed <code>.breed</code> again. You’ll now write code to keep track of a dog’s breed using child classes instead.</p>
 <p>To create a child class, you create a new class with its own name and then put the name of the parent class in parentheses. Add the following to the <code>dog.py</code> file to create three new child classes of the <code>Dog</code> class:</p>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode" id="cb15" data-filename="Python"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a></a><span class="co"># ...</span></span>
-<span id="cb15-2"><a></a></span>
-<span id="cb15-3"><a></a></span>
-<span id="cb15-4"><a></a><span class="kw">class</span> JackRussellTerrier(Dog):</span>
-<span id="cb15-5"><a></a>    <span class="cf">pass</span></span>
-<span id="cb15-6"><a></a></span>
-<span id="cb15-7"><a></a></span>
-<span id="cb15-8"><a></a><span class="kw">class</span> Dachshund(Dog):</span>
-<span id="cb15-9"><a></a>    <span class="cf">pass</span></span>
-<span id="cb15-10"><a></a></span>
-<span id="cb15-11"><a></a></span>
-<span id="cb15-12"><a></a><span class="kw">class</span> Bulldog(Dog):</span>
-<span id="cb15-13"><a></a>    <span class="cf">pass</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb27" data-filename="Python"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a></a><span class="co"># ...</span></span>
+<span id="cb27-2"><a></a><span class="kw">class</span> JackRussellTerrier(Dog):</span>
+<span id="cb27-3"><a></a>    <span class="cf">pass</span></span>
+<span id="cb27-4"><a></a></span>
+<span id="cb27-5"><a></a></span>
+<span id="cb27-6"><a></a><span class="kw">class</span> Dachshund(Dog):</span>
+<span id="cb27-7"><a></a>    <span class="cf">pass</span></span>
+<span id="cb27-8"><a></a></span>
+<span id="cb27-9"><a></a><span class="kw">class</span> Bulldog(Dog):</span>
+<span id="cb27-10"><a></a>    <span class="cf">pass</span></span>
+<span id="cb27-11"><a></a><span class="co"># ...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><code>bash {filename=Python Interpreter} &gt;&gt;&gt; miles = JackRussellTerrier("Miles", 4) &gt;&gt;&gt; buddy = Dachshund("Buddy", 9) &gt;&gt;&gt; jack = Bulldog("Jack", 3) &gt;&gt;&gt; jim = Bulldog("Jim", 5)</code></p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>PyInterpreter</strong></pre>
+</div>
+<div class="sourceCode" id="cb28" data-filename="PyInterpreter"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a></a><span class="op">&gt;&gt;&gt;</span> miles <span class="ex">=</span> JackRussellTerrier<span class="er">(</span><span class="st">"Miles"</span><span class="ex">,</span> 4<span class="kw">)</span></span>
+<span id="cb28-2"><a></a><span class="op">&gt;&gt;&gt;</span> buddy <span class="ex">=</span> Dachshund<span class="er">(</span><span class="st">"Buddy"</span><span class="ex">,</span> 9<span class="kw">)</span></span>
+<span id="cb28-3"><a></a><span class="op">&gt;&gt;&gt;</span> jack <span class="ex">=</span> Bulldog<span class="er">(</span><span class="st">"Jack"</span><span class="ex">,</span> 3<span class="kw">)</span></span>
+<span id="cb28-4"><a></a><span class="op">&gt;&gt;&gt;</span> jim <span class="ex">=</span> Bulldog<span class="er">(</span><span class="st">"Jim"</span><span class="ex">,</span> 5<span class="kw">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>Instances of child classes inherit all of the attributes and methods of the parent class:</p>
-<p>```bash {filename=Python Interpreter} &gt;&gt;&gt; miles.species ‘Canis familiaris’</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>buddy.name ‘Buddy’</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>print(jack) Jack is 3 years old</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>jim.speak(“Woof”) ‘Jim says Woof’</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<pre><code>
-To determine which class a given object belongs to, you can use the built-in `type()`:
-
-```bash {filename=Python Interpreter}
-&gt;&gt;&gt; type(miles)
-&lt;class '__main__.JackRussellTerrier'&gt;</code></pre>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>PyInterpreter</strong></pre>
+</div>
+<div class="sourceCode" id="cb29" data-filename="PyInterpreter"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a></a><span class="op">&gt;&gt;&gt;</span> miles.species</span>
+<span id="cb29-2"><a></a><span class="st">'Canis familiaris'</span></span>
+<span id="cb29-3"><a></a></span>
+<span id="cb29-4"><a></a><span class="op">&gt;&gt;&gt;</span> buddy.name</span>
+<span id="cb29-5"><a></a><span class="st">'Buddy'</span></span>
+<span id="cb29-6"><a></a></span>
+<span id="cb29-7"><a></a><span class="op">&gt;&gt;&gt;</span> print<span class="kw">(</span><span class="ex">jack</span><span class="kw">)</span></span>
+<span id="cb29-8"><a></a><span class="ex">Jack</span> is 3 years old</span>
+<span id="cb29-9"><a></a></span>
+<span id="cb29-10"><a></a><span class="op">&gt;&gt;&gt;</span> jim.speak<span class="kw">(</span><span class="st">"Woof"</span><span class="kw">)</span></span>
+<span id="cb29-11"><a></a><span class="st">'Jim says Woof'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>To determine which class a given object belongs to, you can use the built-in <code>type()</code>:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>PyInterpreter</strong></pre>
+</div>
+<div class="sourceCode" id="cb30" data-filename="PyInterpreter"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a></a><span class="op">&gt;&gt;&gt;</span> type<span class="kw">(</span><span class="ex">miles</span><span class="kw">)</span></span>
+<span id="cb30-2"><a></a><span class="op">&lt;</span>class <span class="st">'__main__.JackRussellTerrier'</span><span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>What if you want to determine if <code>miles</code> is also an instance of the <code>Dog</code> class? You can do this with the built-in <code>isinstance()</code>:</p>
-<p><code>bash {filename=Python Interpreter} &gt;&gt;&gt; isinstance(miles, Dog) True</code></p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>PyInterpreter</strong></pre>
+</div>
+<div class="sourceCode" id="cb31" data-filename="PyInterpreter"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a></a><span class="op">&gt;&gt;&gt;</span> isinstance<span class="kw">(</span><span class="ex">miles,</span> Dog<span class="kw">)</span></span>
+<span id="cb31-2"><a></a><span class="ex">True</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>Notice that <code>isinstance()</code> takes two arguments, an object and a class. In the example above, <code>isinstance()</code> checks if <code>miles</code> is an instance of the <code>Dog</code> class and returns <code>True</code>.</p>
 <p>The <code>miles</code>, <code>buddy</code>, <code>jack</code>, and <code>jim</code> objects are all <code>Dog</code> instances, but <code>miles</code> isn’t a <code>Bulldog</code> instance, and <code>jack</code> isn’t a <code>Dachshund</code> instance:</p>
-<p>```bash {filename=Python Interpreter} &gt;&gt;&gt; isinstance(miles, Bulldog) False</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>isinstance(jack, Dachshund) False</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<pre><code>
-More generally, all objects created from a child class are instances of the parent class,
-although they may not be instances of other child classes.
-
-Now that you've created child classes for some different breeds of dogs, you can give each
-breed its own sound.
-
-### Parent Class Functionality Extension
-
-Since different breeds of dogs have slightly different barks, you want to provide a
-default value for the `sound` argument of their respective `.speak()` methods. To do this,
-you need to override `.speak()` in the class definition for each breed.
-
-To override a method defined on the parent class, you define a method with the same name
-on the child class. Here's what that looks like for the `JackRussellTerrier` class:
-
-```python {filename=Python}
-# ...
-
-
-class JackRussellTerrier(Dog):
-    def speak(self, sound="Arf"):
-        return f"{self.name} says {sound}"
-
-
-# ...</code></pre>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>PyInterpreter</strong></pre>
+</div>
+<div class="sourceCode" id="cb32" data-filename="PyInterpreter"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a></a><span class="op">&gt;&gt;&gt;</span> isinstance<span class="kw">(</span><span class="ex">miles,</span> Bulldog<span class="kw">)</span></span>
+<span id="cb32-2"><a></a><span class="ex">False</span></span>
+<span id="cb32-3"><a></a></span>
+<span id="cb32-4"><a></a><span class="op">&gt;&gt;&gt;</span> isinstance<span class="kw">(</span><span class="ex">jack,</span> Dachshund<span class="kw">)</span></span>
+<span id="cb32-5"><a></a><span class="ex">False</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>More generally, all objects created from a child class are instances of the parent class, although they may not be instances of other child classes.</p>
+<p>Now that you’ve created child classes for some different breeds of dogs, you can give each breed its own sound.</p>
+<h3 id="parent-class-functionality-extension">Parent Class Functionality Extension</h3>
+<p>Since different breeds of dogs have slightly different barks, you want to provide a default value for the <code>sound</code> argument of their respective <code>.speak()</code> methods. To do this, you need to override <code>.speak()</code> in the class definition for each breed.</p>
+<p>To override a method defined on the parent class, you define a method with the same name on the child class. Here’s what that looks like for the <code>JackRussellTerrier</code> class:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode" id="cb33" data-filename="Python"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a></a><span class="co"># ...</span></span>
+<span id="cb33-2"><a></a></span>
+<span id="cb33-3"><a></a><span class="kw">class</span> JackRussellTerrier(Dog):</span>
+<span id="cb33-4"><a></a>    <span class="kw">def</span> speak(<span class="va">self</span>, sound<span class="op">=</span><span class="st">"Arf"</span>):</span>
+<span id="cb33-5"><a></a>        <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss"> says </span><span class="sc">{</span>sound<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb33-6"><a></a></span>
+<span id="cb33-7"><a></a><span class="co"># ...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>Now <code>.speak()</code> is defined on the <code>JackRussellTerrier</code> class with the default argument for <code>sound</code> set to <code>"Arf"</code>.</p>
 <p>Update <code>dog.py</code> with the new <code>JackRussellTerrier</code> class. You can now call <code>.speak()</code> on a <code>JackRussellTerrier</code> instance without passing an argument to <code>sound</code>:</p>
-<p><code>bash {filename=Python interpreter} &gt;&gt;&gt; miles = JackRussellTerrier("Miles", 4) &gt;&gt;&gt; miles.speak() 'Miles says Arf'</code></p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Pyinterpreter</strong></pre>
+</div>
+<div class="sourceCode" id="cb34" data-filename="Pyinterpreter"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb34-1"><a></a><span class="op">&gt;&gt;&gt;</span> miles <span class="ex">=</span> JackRussellTerrier<span class="er">(</span><span class="st">"Miles"</span><span class="ex">,</span> 4<span class="kw">)</span></span>
+<span id="cb34-2"><a></a><span class="op">&gt;&gt;&gt;</span> miles.speak<span class="kw">()</span></span>
+<span id="cb34-3"><a></a><span class="st">'Miles says Arf'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>Sometimes dogs make different noises, so if Miles gets angry and growls, you can still call <code>.speak()</code> with a different sound:</p>
-<p><code>bash {filename=Python Interpreter} &gt;&gt;&gt; miles.speak("Grrr") 'Miles says Grrr'</code></p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>PyInterpreter</strong></pre>
+</div>
+<div class="sourceCode" id="cb35" data-filename="PyInterpreter"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb35-1"><a></a><span class="op">&gt;&gt;&gt;</span> miles.speak<span class="kw">(</span><span class="st">"Grrr"</span><span class="kw">)</span></span>
+<span id="cb35-2"><a></a><span class="st">'Miles says Grrr'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>One thing to keep in mind about class inheritance is that changes to the parent class automatically propagate to child classes. This occurs as long as the attribute or method being changed isn’t overridden in the child class.</p>
 <p>For example, in the editor window, change the string returned by <code>.speak()</code> in the <code>Dog</code> class:</p>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode" id="cb18" data-filename="Python"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a></a><span class="kw">class</span> Dog:</span>
-<span id="cb18-2"><a></a>    <span class="co"># ...</span></span>
-<span id="cb18-3"><a></a></span>
-<span id="cb18-4"><a></a>    <span class="kw">def</span> speak(<span class="va">self</span>, sound):</span>
-<span id="cb18-5"><a></a>        <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss"> barks: </span><span class="sc">{</span>sound<span class="sc">}</span><span class="ss">"</span></span>
-<span id="cb18-6"><a></a></span>
-<span id="cb18-7"><a></a></span>
-<span id="cb18-8"><a></a><span class="co"># ...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb36" data-filename="Python"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a></a><span class="kw">class</span> Dog:</span>
+<span id="cb36-2"><a></a>    <span class="co"># ...</span></span>
+<span id="cb36-3"><a></a></span>
+<span id="cb36-4"><a></a>    <span class="kw">def</span> speak(<span class="va">self</span>, sound):</span>
+<span id="cb36-5"><a></a>        <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss"> barks: </span><span class="sc">{</span>sound<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb36-6"><a></a></span>
+<span id="cb36-7"><a></a></span>
+<span id="cb36-8"><a></a><span class="co"># ...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now, when you create a new <code>Bulldog</code> instance named <code>jim</code>, <code>jim.speak()</code> returns the new string:</p>
-<p><code>bash {filename=Python Interpreter} &gt;&gt;&gt; jim = Bulldog("Jim", 5) &gt;&gt;&gt; jim.speak("Woof") 'Jim barks: Woof'</code></p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>PyInterpreter</strong></pre>
+</div>
+<div class="sourceCode" id="cb37" data-filename="PyInterpreter"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb37-1"><a></a><span class="op">&gt;&gt;&gt;</span> jim <span class="ex">=</span> Bulldog<span class="er">(</span><span class="st">"Jim"</span><span class="ex">,</span> 5<span class="kw">)</span></span>
+<span id="cb37-2"><a></a><span class="op">&gt;&gt;&gt;</span> jim.speak<span class="kw">(</span><span class="st">"Woof"</span><span class="kw">)</span></span>
+<span id="cb37-3"><a></a><span class="st">'Jim barks: Woof'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>However, calling <code>.speak()</code> on a <code>JackRussellTerrier</code> instance won’t show the new style of output:</p>
-<p><code>bash {filename=Python Interpreter} &gt;&gt;&gt; miles = JackRussellTerrier("Miles", 4) &gt;&gt;&gt; miles.speak() 'Miles says Arf'</code></p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>PyInterpreter</strong></pre>
+</div>
+<div class="sourceCode" id="cb38" data-filename="PyInterpreter"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb38-1"><a></a><span class="op">&gt;&gt;&gt;</span> miles <span class="ex">=</span> JackRussellTerrier<span class="er">(</span><span class="st">"Miles"</span><span class="ex">,</span> 4<span class="kw">)</span></span>
+<span id="cb38-2"><a></a><span class="op">&gt;&gt;&gt;</span> miles.speak<span class="kw">()</span></span>
+<span id="cb38-3"><a></a><span class="st">'Miles says Arf'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>Sometimes it makes sense to completely override a method from a parent class. But in this case, you don’t want the <code>JackRussellTerrier</code> class to lose any changes that you might make to the formatting of the <code>Dog.speak()</code> output string.</p>
 <p>To do this, you still need to define a <code>.speak()</code> method on the child <code>JackRussellTerrier</code> class. But instead of explicitly defining the output string, you need to call the <code>Dog</code> class’s <code>.speak()</code> from <em>inside</em> the child class’s <code>.speak()</code> using the same arguments that you passed to <code>JackRussellTerrier.speak()</code>.</p>
 <p>You can access the parent class from inside a method of a child class by using <a href="https://realpython.com/python-super/"><code>super()</code></a>:</p>
@@ -742,19 +810,22 @@ class JackRussellTerrier(Dog):
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode" id="cb19" data-filename="Python"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a></a><span class="co"># ...</span></span>
-<span id="cb19-2"><a></a></span>
-<span id="cb19-3"><a></a></span>
-<span id="cb19-4"><a></a><span class="kw">class</span> JackRussellTerrier(Dog):</span>
-<span id="cb19-5"><a></a>    <span class="kw">def</span> speak(<span class="va">self</span>, sound<span class="op">=</span><span class="st">"Arf"</span>):</span>
-<span id="cb19-6"><a></a>        <span class="cf">return</span> <span class="bu">super</span>().speak(sound)</span>
-<span id="cb19-7"><a></a></span>
-<span id="cb19-8"><a></a></span>
-<span id="cb19-9"><a></a><span class="co"># ...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb39" data-filename="Python"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a></a><span class="co"># ...</span></span>
+<span id="cb39-2"><a></a><span class="kw">class</span> JackRussellTerrier(Dog):</span>
+<span id="cb39-3"><a></a>    <span class="kw">def</span> speak(<span class="va">self</span>, sound<span class="op">=</span><span class="st">"Arf"</span>):</span>
+<span id="cb39-4"><a></a>        <span class="cf">return</span> <span class="bu">super</span>().speak(sound)</span>
+<span id="cb39-5"><a></a><span class="co"># ...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>When you call <code>super().speak(sound)</code> inside <code>JackRussellTerrier</code>, Python searches the parent class, <code>Dog</code>, for a <code>.speak()</code> method and calls it with the variable <code>sound</code>.</p>
 <p>Update <code>dog.py</code> with the new <code>JackRussellTerrier</code> class:</p>
-<p><code>bash {filename=Python Interpreter} &gt;&gt;&gt; miles = JackRussellTerrier("Miles", 4) &gt;&gt;&gt; miles.speak() 'Miles barks: Arf'</code></p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>PyInterpreter</strong></pre>
+</div>
+<div class="sourceCode" id="cb40" data-filename="PyInterpreter"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb40-1"><a></a><span class="op">&gt;&gt;&gt;</span> miles <span class="ex">=</span> JackRussellTerrier<span class="er">(</span><span class="st">"Miles"</span><span class="ex">,</span> 4<span class="kw">)</span></span>
+<span id="cb40-2"><a></a><span class="op">&gt;&gt;&gt;</span> miles.speak<span class="kw">()</span></span>
+<span id="cb40-3"><a></a><span class="st">'Miles barks: Arf'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>Now when you call <code>miles.speak()</code>, you’ll see output reflecting the new formatting in the <code>Dog</code> class.</p>
 <p><strong>Note:</strong> In the above examples, the <strong>class hierarchy</strong> is very straightforward. The <code>JackRussellTerrier</code> class has a single parent class, <code>Dog</code>. In real-world examples, the class hierarchy can get quite complicated.</p>
 <p>The <code>super()</code> function does much more than just search the parent class for a method or an attribute. It traverses the entire class hierarchy for a matching method or attribute. If you aren’t careful, <code>super()</code> can have surprising results.</p>
@@ -774,8 +845,8 @@ class JackRussellTerrier(Dog):
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-csik2021" class="csl-entry" role="listitem">
-Csik, Samantha. 2021. <span>“Why Create Presentation Slides about Blogging When You Can Just Blog about It Instead?”</span> September 24, 2021. <a href="https://samanthacsik.github.io/posts/2021-09-21-distill-blogs/">https://samanthacsik.github.io/posts/2021-09-21-distill-blogs/</a>.
+<div id="ref-rp-oop2024" class="csl-entry" role="listitem">
+Amos, David. 2024. <span>“Object-Oriented Programming (OOP) in Python.”</span> December 15, 2024. <a href="https://realpython.com/python3-object-oriented-programming/">https://realpython.com/python3-object-oriented-programming/</a>.
 </div>
 </div>
 </section>

@@ -70,12 +70,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-6d33242e58a021848cf9e6f9b6e6855a.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-351b7baa9c39ece3266d3b8dfba665a7.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-8f8696b25f170733353d9cd24f6983bf.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-8f8696b25f170733353d9cd24f6983bf.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-3d1f2dca5e139e3cd63a01c08fe075b5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-6beb8bdb4d721013e99d4c916e6852d3.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-59b882070b18826a1c80704d2998af31.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-55274a285b45b9e500264e051db2f916.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script src="../../site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
 <script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
@@ -225,7 +225,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">January 29, 2025</p>
+      <p class="date-modified">January 30, 2025</p>
     </div>
   </div>
     
@@ -336,9 +336,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 data-number="3.2" class="anchored" data-anchor-id="aht20-libraries"><span class="header-section-number">3.2</span> AHT20 Libraries</h3>
 <p>The main module for this sensor is provided by Seeed in <a href="https://github.com/Seeed-Studio/grove.py/blob/master/grove/grove_temperature_humidity_aht20.py">this Github repository</a> and can be installed with the <code>grove.py</code> library.</p>
 <p>Follow official <a href="https://wiki.seeedstudio.com/Grove_Base_Hat_for_Raspberry_Pi/#installation">Step by step installation</a> for python 3 (see below). Don’t use the one-click installation or it will install to the wrong location</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone <span class="pp">[</span><span class="ss">https://github.com/Seeed</span><span class="pp">-</span><span class="ss">Studio/grove.py</span><span class="pp">]</span><span class="er">(</span><span class="ex">https://github.com/Seeed-Studio/grove.py</span><span class="kw">)</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> grove.py</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> pip3 install .</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">git</span> clone <span class="pp">[</span><span class="ss">https://github.com/Seeed</span><span class="pp">-</span><span class="ss">Studio/grove.py</span><span class="pp">]</span><span class="er">(</span><span class="ex">https://github.com/Seeed-Studio/grove.py</span><span class="kw">)</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="bu">cd</span> grove.py</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">sudo</span> pip3 install .</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Alternatively, it’s also possible to use Adafruit’s <code>adafruit-circuitpython-ahtx0</code> library to communicate with the sensor (see <a href="https://pypi.org/project/adafruit-circuitpython-ahtx0/">library’s Pypi page</a>). However, to instantiate the provided sensor class, you will need to pass it an I2C bus instance. To instantiate an I2C bus instance, install and use the <code>adafruit-extended-bus</code> library (see <a href="https://pypi.org/project/adafruit-extended-bus/">Pypi page</a>).</p>
 </section>
 </section>
