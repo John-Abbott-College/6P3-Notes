@@ -51,6 +51,8 @@ format:
     date-modified: last-modified
     code-overflow: wrap
     code-copy: true
+    code-line-numbers: true
+    highlight-style: monokai
     lightbox: true
     reference-location: margin
     title-block-banner: false

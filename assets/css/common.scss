@@ -20,9 +20,9 @@ $font-family-sans-serif:
 // stylelint-disable-next-line value-keyword-case
 // adapted from: https://qwtel.com/posts/software/the-monospaced-system-ui-css-font-stack/
 $font-family-monospace: "Fira Code", ui-monospace, Menlo, Monaco,
-  "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono",
+  "Segoe UI Mono", "Roboto Mono", "Oxygen Mono",
   "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono",
-  "Courier New", monospace;
+  "Courier New", monospace !default;
 
 // Variables
 
@@ -41,7 +41,6 @@ $firacode-web-font-path: "https://fonts.googleapis.com/css2?family=Fira+Code:wgh
   @import url($firacode-web-font-path);
 }
 
-
 /*-- scss:rules --*/
 
 .quarto-title-block {
@@ -56,6 +55,10 @@ pre
 
 .lead {
   font-size: 1rem !important;
+}
+
+.quarto-dark .code-with-filename-file {
+  background-color: $gray-300 !important;
 }
 
 /* Baseline for default links: https://moderncss.dev/modern-css-for-dynamic-component-based-architecture/ */

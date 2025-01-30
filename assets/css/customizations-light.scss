@@ -23,17 +23,15 @@ $link-color: $blue-800 !default;
 // $navbar-bg: $pink-900 !default;
 
 // Code blocks
-// $code-block-bg:	rgba($primary, 0.1) !default;
-$code-block-border-left: $pink-500;
-$code-block-border-left-size: 0.25rem;
-$code-block-bg-alpha: -0.9;
-// $btn-code-copy-color: $white;
-// $btn-code-copy-color-active: $primary;
+// $code-block-bg: rgba($secondary, 0.1) !default;
+// $code-block-bg-alpha: -0.9;
+$btn-code-copy-color: $white;
+$btn-code-copy-color-active: $primary;
 
 $code-bg: rgba($secondary, 0.1) !default;
 $code-color: $dark !default;
 
-$callout-border-width: 0.25rem;
+// $callout-border-width: 0.25rem;
 // $callout-border-scale: 50%;
 
 // Tables
