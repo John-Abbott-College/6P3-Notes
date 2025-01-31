@@ -12,7 +12,7 @@ listing:
     sort: date
     date-format: iso
     categories: true
-    fields: [date, file-modified, title, subtitle, image, reading-time]
+    fields: [date, file-modified, title, subtitle, reading-time]
     page-size: 99
     include:
       filename: "**/index.qmd"
@@ -34,7 +34,7 @@ listing:
     sort: date
     date-format: iso
     categories: true
-    fields: [date, file-modified, title, subtitle, image, reading-time]
+    fields: [date, file-modified, title, subtitle, reading-time]
     page-size: 99
     include:
       filename: "**/index.qmd"
