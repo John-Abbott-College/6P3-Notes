@@ -1,5 +1,4 @@
-_This section was adapted from www.gnu.org:
-[Introduction to tar](https://www.gnu.org/software/tar/manual/html_chapter/Tutorial.html)_
+_This section was adapted from www.gnu.org [@gnu_2023]._
 
 All three tools are used for efficient **storage**, **transfer**, and **backup** of
 collections of files, particularly large files via **compression.**
