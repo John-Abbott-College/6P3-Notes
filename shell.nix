@@ -7,4 +7,8 @@ in pkgs.mkShell {
     pkgs.pdm
     pkgs.htmlq
   ];
+
+  shellHook = ''
+      eval $(pdm venv activate in-project)
+  '';
 }
