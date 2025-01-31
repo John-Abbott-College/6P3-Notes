@@ -1,95 +1,456 @@
 ---
 title: Bash essentials
 subtitle: >
-  The core bash commands everyone should know. How to use bash interactively and in scripts.
-  How to use redirects.
-date: 2025-01-24
-categories: [Bash, Scripting, CLI]
+  Tips for using the bash interactive shell CLI effectively.
+  The core bash commands everyone should know.
+  How to combine commands using pipes and redirects.
+date: 2025-01-31
+categories: [bash, lab-0]
 draft: false
 ---
 
-![Image: <https://www.svgrepo.com/svg/353475/bash>](assets/bash-svgrepo-com.png)
+::: {.column-margin}
 
-## Bare necessities
+![[Image source](https://tiswww.case.edu/php/chet/bash/bashtop.html)](https://tiswww.case.edu/php/chet/img/bash-logo-web.png)
 
-### Getting around: `cd` and `ls`
-
-### Viewing files: `cat` and `tac`
-
-### Creating files: `mkdir` and `touch`
-
-### Moving files: `mv` and `cp`
-
-### Managing permissions: `chmod` and `chown`
-
-### Deleting files: `rm`
+:::
 
 ## Using CLI effectively
 
+First things first: the terminal can feel awkward to use. What can we do about this?
+
+Each section below is some set of tips for using the interactive bash CLI effectively.
+
 ### Keyboard shortcuts
 
-### `man` & `--help`
+::: {.callout-note collapse="true"}
 
-## Core utilities
+## Keyboard Shortcuts: details & examples
 
-### `sudo`
+{{< include keyboard-shortcuts.qmd >}}
 
-### `ssh`
+:::
 
-### `tar`
+### Configuration
 
-### `git`
+::: {.callout-note collapse="true"}
+
+## `.bashrc` details & examples
+
+{{< include bashrc.qmd >}}
+
+:::
+
+::: {.callout-note collapse="true"}
+
+## `.inputrc` details & examples
+
+{{< include inputrc.qmd >}}
+
+:::
+
+## Bare necessities
+
+The following sections explain the purpose of each command and show a few use cases and
+useful options.
+
+These are commands you probably already know -- if you don't, you'll know by the end of
+`lab-0`, as you'll need them all!
+
+### Getting around: `cd` and `ls`
+
+:::{.column-page-right}
+
+```sh
+NAME
+  cd - change the current directory
+  ls - list directory contents
+
+SYNOPSIS
+  cd [DIR]
+  ls [OPTION]... [FILE]...
+```
+
+:::
+
+::: {.callout-note collapse="true"}
+
+## `cd` & `ls` details & examples
+
+{{< include cd-ls.qmd >}}
+
+:::
+
+### Viewing files: `cat` and `tac`
+
+:::{.column-page-right}
+
+```sh
+NAME
+  cat - concatenate files and print on the standard output
+  tac - concatenate and print files in reverse
+
+SYNOPSIS
+  cat [OPTION]... [FILE]...
+  tac [OPTION]... [FILE]...
+```
+
+:::
+
+### Creating files: `touch` and `mkdir`
+
+:::{.column-page-right}
+
+```sh
+NAME
+  touch - Update the modification times of each `FILE` to the current time.
+          Creates the files if they do not exist.
+  mkdir - Create the given DIRECTORY(ies) if they do not exist
+
+SYNOPSIS
+  touch [FILE]...
+  mkdir [-p/--parents] [DIRECTORY]...
+```
+
+:::
+
+### Moving files: `mv` and `cp`
+
+:::{.column-page-right}
+
+```sh
+NAME
+  mv - Move `SOURCE` to `DEST`, or multiple `SOURCE`(s) to `DIRECTORY`.
+  cp - Copy SOURCE to DEST, or multiple SOURCE(s) to DIRECTORY.
+
+SYNOPSIS
+  mv  [-f/--force] [-i/--interactive] [-g/--progress] [SOURCE]... [DEST]
+  cp  [-f/--force] [-i/--interactive] [-g/--progress] [-R/--recursive] [SOURCE]... [DEST]
+```
+
+:::
+
+### Managing permissions: `chmod` and `chown`
+
+:::{.column-page-right}
+
+```sh
+NAME
+  chmod - Change the permissions mode of each FILE to MODE.
+  chown - Change file owner and group of each FILE to USER:GROUP
+
+SYNOPSIS
+  chmod [-R/--recursive] [MODE] [FILE]
+  chown [-R/--recursive] [USER:GROUP] [FILE]
+```
+
+:::
+
+### Deleting files: `rm`
+
+:::{.column-page-right}
+
+```sh
+NAME
+  rm - Remove the FILE(s)
+
+SYNOPSIS
+  rm [-f/--force] [-i/--interactive] [-r/--recursive] [FILE]...
+```
+
+:::
 
 ## The five fingers of death
 
-### `less` is `more`
+:::{.column-margin}
+
+![[Image source](https://theactionelite.com/five-fingers-of-death-1972-review/)](https://theactionelite.com/wp-content/uploads/2019/04/GetAttachmentThumbnail.jpg)
+
+:::
 
 ### `find` files and `grep` content
 
+:::{.column-page-right}
+
+```sh
+NAME
+  find - search for files that match a given expression
+  grep - print lines in file(s) that match a given pattern
+
+SYNOPSIS
+  find [STARTING-POINT...] [EXPRESSION]
+  grep [OPTION...] PATTERNS [FILE...]
+```
+
+:::
+
+::: {.callout-note collapse="true"}
+
+## `find` & `grep` details & examples
+
+{{< include find-grep.qmd >}}
+
+:::
+
 ### `tr` characters and `cut` fields
+
+:::{.column-page-right}
+
+```sh
+NAME
+  tr - Translate characters matching STRING1 in stdin/FILE to STRING2 writing to stdout
+  cut - Prints specified columns from each line of stdin, writes to stdout
+
+SYNOPSIS
+  tr [OPTION]... STRING1 STRING2
+  cut [-d/--delimiter] [-f|--fields] [FILE]
+```
+
+:::
+
+::: {.callout-note collapse="true"}
+
+## `tr` & `cut` details & examples
+
+{{< include tr-cut.qmd >}}
+
+:::
 
 ### `sort` data and `uniq` duplicates
 
+:::{.column-page-right}
+
+```sh
+NAME
+  sort - Display sorted concatenation of all FILE(s). With no FILE, or when FILE is -, read stdin
+  uniq - Report or omit repeated lines.
+
+SYNOPSIS
+  sort [FILE]...
+  uniq [-d/--repeated] [FILE]...
+```
+
+:::
+
+::: {.callout-note collapse="true"}
+
+## `sort` and `uniq` details & examples
+
+{{< include sort-uniq.qmd >}}
+
+:::
+
 ### know `head` from `tail`
 
-## Advanced
+:::{.column-page-right}
 
-### the less `sed` the better
+```sh
+NAME
+  head - Print the first 10 lines of each `FILE` to standard output. With no `FILE`, or when `FILE` is `-`, read stdin
+  tail - Print the last 10 lines of each `FILE` to standard output. With no `FILE`, or when `FILE` is `-`, read stdin
 
-### `awk`
+SYNOPSIS
+  head [-n/--lines] [FILE]...
+  tail [-n/--lines] [-f/--follow] [FILE]...
+```
 
-## Tools for Composition
+:::
 
-### Pipes
+::: {.callout-note collapse="true"}
 
-### Redirects
+## `head` & `tail` details & examples
 
-## Theory
+{{< include head-tail.qmd >}}
 
-### Variables
+:::
 
-### Scope
+### `tree` and `tee`
 
-### Conditionals
+:::{.column-page-right}
 
-### Functions
+```sh
+NAME
+  tree - list contents of DIRECTORIES in a tree-like format.
+  tee - Copy standard input to each FILE, and also to standard output.
 
-### Exit codes
+SYNOPSIS
+  tree [-L level] [DIRECTORY]...
+  tee [FILE]...
+```
 
-## Quirks
+:::
 
-### Filenames
+::: {.callout-note collapse="true"}
 
-#### Hidden files
+## `tree` & `tee` details & examples
 
-#### Filenames that are a Bad Idea
+{{< include tree-tee.qmd >}}
 
-- Filenames with spaces: 
-- `-`: Special character for parameter flags.
+:::
 
-## Configuration
+## Redirection and Pipes
 
-### `.bashrc`
+_This section was adapted from www.ss64.com:
+[How-to: Redirection and Process Substitution](https://ss64.com/bash/syntax-redirection.html)_
 
-### `.inputrc`
+:::{.column-page-right}
 
+```bash
+command  >  filename     Redirect command output (stdout) into a file
+command  >  /dev/null    Discard stdout of command
+command  2> filename     Redirect error output (stderr) to a file
+command  2>  /dev/null   Discard stderr of command
+command  2>&1 filename   Redirect stderr to stdout 
+command  1>&2 filename   Redirect stdout to stderr
+command  >> filename     Redirect command output and APPEND into a file
+command  <  filename     Redirect a file into a command
+command  &> filename     Redirect every output of command to filename
+
+commandA | commandB       Redirect stdout of commandA to commandB
+commandA |& commandB      Redirect stdERR of commandA to commandB
+commandA | tee filename   Redirect commandA into filename AND stdout
+```
+
+:::
+
+## Core utilities
+
+### `ssh`
+
+:::{.column-page-right}
+
+```sh
+NAME
+  ssh - OpenSSH remote login client
+
+SYNOPSIS
+  ssh [-l login_name] [-p port] DESTINATION [command [argument...]
+```
+
+:::
+
+`ssh` is a program for logging into a remote machine and for executing commands on a
+remote machine. It is intended to provide secure encrypted communications between two
+untrusted hosts over an insecure network.
+
+ssh connects and logs into the specified destination, which may be specified as either
+`[user@]hostname` or a URI of the form `ssh://[user@]hostname[:port]`.
+
+If a `command` is specified, it will be executed on the remote host instead of a login
+shell.
+
+::: {.callout-note collapse="true"}
+
+## `ssh` details & examples
+
+<!-- {{< include ssh.qmd >}} -->
+
+There'heapds nothing here yet... stay tuned!
+
+:::
+
+### `rsync`
+
+:::{.column-page-right}
+
+```sh
+NAME
+  rsync - a fast, versatile, remote (and local) file-copying tool
+
+SYNOPSIS
+  Local:
+    rsync [OPTION...] SRC... [DEST]
+  Access via remote shell:
+    Pull:
+        rsync [OPTION...] [USER@]HOST:SRC... [DEST]
+    Push:
+        rsync [OPTION...] SRC... [USER@]HOST:DEST
+```
+
+:::
+
+Rsync is a fast and extraordinarily versatile file copying tool. It can copy locally,
+to/from another host over any remote shell, or to/from a remote rsync daemon.
+
+It is famous for sending only the differences between the source files and the existing
+files in the destination, increasing efficiency for repetitive synchronization between
+source and destination.
+
+Rsync is widely used for backups and mirroring, and as an improved `cp` command for
+everyday use.
+
+::: {.callout-note collapse="true"}
+
+## `rsync` details & examples
+
+<!-- {{< include rsync.qmd >}} -->
+
+There's nothing here yet... stay tuned!
+
+:::
+
+### `tar`, `zip`, and `unzip`
+
+:::{.column-page-right}
+
+```sh
+NAME
+  tar - a general archiving utility for creation/extraction/compression and more
+  zip - package and compress files into a ZIP archive
+  unzip - list, test and extract compressed files from a ZIP archive
+
+SYNOPSIS
+  tar --create/--extract [--file ARCHIVE] [OPTIONS] [FILE...]
+  zip [OPTIONS] [ARCHIVE] [FILE...]
+  unzip [ARCHIVE] [-d OUTPUTDIR]
+```
+
+:::
+
+The `tar`, `zip`, and `unzip` programs provide the ability to create, extract, and
+otherwise manipulate **archives** of files, where an **archive** of files is simply a file
+that stores a collection of other files.
+
+::: {.callout-note collapse="true"}
+
+## `tar`, `zip`, and `unzip` details & examples
+
+{{< include tar.qmd >}}
+
+:::
+
+You can read more:
+
+- [the usecases and history of tar at (gnu.org)](https://www.gnu.org/software/tar/manual/html_chapter/Introduction.html#What-tar-Does)
+- [A helpful comparison between `tar` and `zip` (stackoverflow)](https://stackoverflow.com/a/10540952)
+- [A reallyy thorough breakdown of compression in `tar` and `zip` (stackoverflow)](https://stackoverflow.com/a/20765054)
+
+### `git`
+
+:::{.column-page-right}
+
+```sh
+NAME
+  git - the stupid content tracker
+
+SYNOPSIS
+  git <command> [<args>]
+```
+
+:::
+
+Git is a fast, scalable, distributed revision control system with an unusually rich
+command set that provides both high-level operations and full access to internals.
+
+See `man 7 gittutorial` to get started, then see `man 7 giteveryday` for a useful minimum
+set of commands.
+
+::: {.callout-note collapse="true"}
+
+## `git` details & examples
+
+<!-- {{< include git.qmd >}} -->
+
+There's nothing here yet... stay tuned!
+
+:::

@@ -1,0 +1,37 @@
+---
+title: Bash essentials
+subtitle: >
+  Tips for scripting in bash effectively.
+  Managing environment and permissions in bash.
+  The capabilities and limitations of programming in bash.
+date: 2025-01-30
+categories: [bash, lab-1]
+draft: true
+---
+
+## Bash Theory
+
+### Variables
+
+### Scope
+
+### Conditionals
+
+### Functions
+
+### Exit codes
+
+## OS Theory
+
+### Shell
+
+### Permissions
+
+### Filesystem
+
+## Programming with `sed` and `awk`
+
+### `sed`
+
+### `awk`
+
