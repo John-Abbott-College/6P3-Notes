@@ -23,8 +23,8 @@ $link-color: $blue !default;
 $navbar-bg: $pink-800 !default;
 
 // Code blocks
-// $code-block-bg: rgba($primary, 0.1) !default;
-// $code-block-bg-alpha: -0.9;
+$code-block-bg: rgba($secondary, 0.1) !default;
+$code-block-bg-alpha: -0.9;
 $btn-code-copy-color: $white;
 $btn-code-copy-color-active: $primary;
 
@@ -37,13 +37,6 @@ $code-color: $light !default;
 // Tables
 $table-dark-bg: $dark !default;
 $table-dark-border-color: darken($dark, 5%) !default;
-
-// Indicators
-.badge {
-  &.bg-light {
-    color: $body-color;
-  }
-}
 
 // Panels
 $nav-tabs-link-active-color: $body-color;

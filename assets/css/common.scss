@@ -1,6 +1,10 @@
 $min-contrast-ratio: 4.5 !default;
 
 // Fonts
+@font-face {
+  font-family: "IosevkaSS05";
+  src: local("assets/fonts/IosevkaSS05-Regular.ttc");
+}
 
 // stylelint-disable-next-line value-keyword-case
 $font-family-sans-serif:
@@ -19,7 +23,7 @@ $font-family-sans-serif:
 
 // stylelint-disable-next-line value-keyword-case
 // adapted from: https://qwtel.com/posts/software/the-monospaced-system-ui-css-font-stack/
-$font-family-monospace: "Fira Code", ui-monospace, Menlo, Monaco,
+$font-family-monospace: "IosevkaSS05", "Fira Code", ui-monospace, Menlo, Monaco,
   "Segoe UI Mono", "Roboto Mono", "Oxygen Mono",
   "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono",
   "Courier New", monospace !default;
@@ -51,6 +55,7 @@ div.sourceCode,
 pre
 {
   border-radius: 0 !important;
+  padding: 1em;
 }
 
 .lead {
@@ -90,6 +95,22 @@ a:not([class]) {
 //   vertical-align: top;
 //   max-width: 500px;
 // }
-// figure figcaption {
-//   text-align: left;
-// }
+figure figcaption {
+  // text-align: left;
+  font-size: 0.75rem;
+}
+.column-margin figure figcaption {
+  text-align: right;
+  font-size: 0.75rem;
+}
+
+//
+
+// Indicators
+.badge {
+  &.bg-light {
+    color: $body-color;
+  }
+}
+
+

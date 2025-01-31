@@ -49,10 +49,8 @@ format:
     toc-location: left
     number-sections: true
     date-modified: last-modified
-    code-overflow: wrap
     code-copy: true
-    code-line-numbers: true
-    highlight-style: monokai
+    highlight-style: gruvbox
     lightbox: true
     reference-location: margin
     title-block-banner: false
