@@ -1,5 +1,5 @@
 ---
-title: Bash essentials
+title: Bash programming
 subtitle: >
   Tips for scripting in bash effectively.
   Managing environment and permissions in bash.

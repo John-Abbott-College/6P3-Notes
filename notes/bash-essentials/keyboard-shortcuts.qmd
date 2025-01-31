@@ -1,5 +1,4 @@
-_This section was adapted from www.ss64.com:
-[How-to: Redirection and Process Substitution](https://ss64.com/bash/syntax-redirection.html)_
+_This section was adapted from www.ss64.com [@ss64_2025]._
 
 #### Completions
 

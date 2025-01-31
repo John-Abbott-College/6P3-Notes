@@ -6,6 +6,9 @@ subtitle: >
   How to combine commands using pipes and redirects.
 date: 2025-01-31
 categories: [bash, lab-0]
+bibliography: references.bib
+nocite: |
+  @*
 draft: false
 ---
 
