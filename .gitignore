@@ -1,6 +1,7 @@
 desktop.ini
 node_modules/
 __pycache__
+.python-version
 
 # For Python environment
 .env
