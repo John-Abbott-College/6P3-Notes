@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-01-20">
 
-<title>Calendar – Connected Objects</title>
+<title>tar – {{&lt; var course.title &gt;}}</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -43,9 +76,6 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/bootstrap/bootstrap-e1f65d1f4fb8a69794a125553cd66382.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../../site_libs/bootstrap/bootstrap-dark-dee13f711f33958449e20bc6e73fcb05.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script src="../../site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
-<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": true,
@@ -73,11 +103,10 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="Calendar – Connected Objects">
-<meta property="og:description" content="Roadmap for course deliverables; record of lectures &amp; activites we have covered along the way.">
-<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/about/calendar/assets/ticktock.jpg">
+<meta property="og:title" content="Connected Objects">
+<meta property="og:description" content="">
+<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/notes/bash-essentials/assets/art_title_path_only.svg">
 <meta property="og:site_name" content="{{< var course.title >}}">
-<meta property="og:image:alt" content="The focused pupil keeps watch on Time">
 </head>
 
 <body class="floating nav-fixed slimcontent">
@@ -109,7 +138,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Syllabus</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../../about/calendar/index.html" aria-current="page"> 
+    <a class="nav-link" href="../../about/calendar/index.html"> 
 <span class="menu-text">Calendar</span></a>
   </li>  
   <li class="nav-item">
@@ -140,8 +169,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#deliverables" id="toc-deliverables" class="nav-link active" data-scroll-target="#deliverables"><span class="header-section-number">1</span> Deliverables</a></li>
-  <li><a href="#lectures" id="toc-lectures" class="nav-link" data-scroll-target="#lectures"><span class="header-section-number">2</span> Lectures</a></li>
+  <li><a href="#operations" id="toc-operations" class="nav-link active" data-scroll-target="#operations"><span class="header-section-number">0.0.1</span> Operations</a></li>
   </ul>
 </nav>
 </nav>
@@ -154,8 +182,6 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Calendar</h1>
-<p class="subtitle lead"></p><p>Roadmap for course deliverables; record of lectures &amp; activites we have covered along the way.</p><p></p>
 </div>
 
 
@@ -163,12 +189,6 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">January 20, 2025</p>
-    </div>
-  </div>
   
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
@@ -184,30 +204,105 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This is the authoritative calendar for content covered in class, and for content you should expect to see covered as we continue through the course.</p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="assets/ticktock.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="The focused pupil keeps watch on Time"><img src="assets/ticktock.jpg" class="img-fluid figure-img" alt="The focused pupil keeps watch on Time"></a></p>
-<figcaption>The focused pupil keeps watch on Time</figcaption>
-</figure>
-</div>
-</div></div><p>You can compare this calendar with the calendar from the <a href="https://moodle.johnabbott.qc.ca/mod/resource/view.php?id=48735">Course Outline</a> to see where this course has deviated from the original outline.</p>
-<section id="deliverables" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="deliverables"><span class="header-section-number">1</span> Deliverables</h2>
-<ol type="1">
-<li><a href="https://classroom.github.com/a/SsBGSO3A">Lab 0</a>: Due January 31 (Demo: in-class. Code: end of day 11:59pm)</li>
-</ol>
-</section>
-<section id="lectures" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="lectures"><span class="header-section-number">2</span> Lectures</h2>
+<p><em>This section was adapted from www.gnu.org <span class="citation" data-cites="gnu_2023">[@gnu_2023]</span>.</em></p>
+<p>All three tools are used for efficient <strong>storage</strong>, <strong>transfer</strong>, and <strong>backup</strong> of collections of files, particularly large files via <strong>compression.</strong></p>
+<p>The specific usecases for <code>tar</code>/<code>zip</code>/<code>unzip</code> are similar but vary slightly:</p>
 <ul>
-<li>Jan 20: Introduction to course</li>
-<li>Jan 24: Setting up developer environment</li>
-<li>Jan 27: Review bash, begin Lab 0</li>
-<li>Jan 31:</li>
+<li><code>tar</code>:
+<ul>
+<li>default: create/extract an <em>uncompressed</em> archive (<code>.tar</code>) of a collection of files</li>
+<li>with <code>--gzip/-z</code>: create/extract a <em>compressed</em> archive (<code>.tar.gz</code>) of a collection of files</li>
+<li>with <code>--bzip2/-j</code>: create/extract a <em>compressed</em> archive (<code>.tar.bz2</code>) of a collection of files</li>
+</ul></li>
+<li><code>zip</code>:
+<ul>
+<li>create a compressed collection of files (<code>.zip</code>)</li>
+</ul></li>
+<li><code>unzip</code>:
+<ul>
+<li>extract a compressed collection of files (<code>.zip</code>)</li>
+</ul></li>
 </ul>
+<section id="operations" class="level4 page-columns page-full" data-number="0.0.1">
+<h4 data-number="0.0.1" class="anchored" data-anchor-id="operations"><span class="header-section-number">0.0.1</span> Operations</h4>
+<p>There are three main operations of interest for archiving programs:</p>
+<ul>
+<li>create: create a new archive (<code>.zip</code>, <code>.tar</code>, <code>.tar.gz</code>, <code>tar.bz2</code>)</li>
+<li>extract: extract the files of an archive to a directory</li>
+</ul>
+<p>Examples of each follow below:</p>
+<div class="tabset-margin-container page-columns page-full"><div class="no-row-height column-margin column-container"><div class="callout callout-style-default callout-important callout-titled tabset-margin-content tabset-1-1-tab-margin-content">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When using <code>--create</code> or <code>-c</code>, <code>tar</code> will <strong>overwrite</strong> current contents of the file named by <code>-f</code>. To add files to an existing archive, you need to use <code>--append</code> or <code>-r</code>.</p>
+</div>
+</div></div></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Create</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Extract</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Assume you have a directory called music/ and three folders inside it:</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tree music</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">music/</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> blues</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> └── nina-simone</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> folk</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> └── phil-ochs</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="ex">└──</span> jazz</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="ex">└──</span> charles-mingus</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Create an uncompressed archive (.tar) of all three files</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tar <span class="at">--create</span> <span class="at">--file</span><span class="op">=</span>collection.tar music</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Creates a compressed archive (.zip, .tar.gz, .tar.bz2)</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> zip <span class="at">-r</span> collection.zip music</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tar <span class="at">--create</span> <span class="at">--gzip</span> <span class="at">--file</span><span class="op">=</span>collection.tar.gz music</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tar <span class="at">--create</span> <span class="at">--bzip2</span> <span class="at">--file</span><span class="op">=</span>collection.tar.bz2 music</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># tar has shorthand versions of the above parameters</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tar <span class="at">-c</span> <span class="at">-f</span> collection.tar music</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tar <span class="at">-c</span> <span class="at">-z</span> <span class="at">-f</span> collection.tar.gz music</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tar <span class="at">-cjf</span> collection.tar.bz2 music</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Assume you have the archives from the Create example:</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tar <span class="at">--list</span> collection.tar</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">music/</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> blues</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> └── nina-simone</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> folk</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> └── phil-ochs</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="ex">└──</span> jazz</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="ex">└──</span> charles-mingus</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract all files from an uncompressed archive (.tar) to the current directory</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tar <span class="at">--extract</span> <span class="at">--file</span><span class="op">=</span>collection.tar</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract all files from a compressed archive (.zip, .tar.gz, .tar.bz2) to the current directory</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> unzip collection.zip</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tar <span class="at">--extract</span> <span class="at">--gzip</span> <span class="at">--file</span><span class="op">=</span>collection.tar.gz</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tar <span class="at">--extract</span> <span class="at">--bzip2</span> <span class="at">--file</span><span class="op">=</span>collection.tar.bz2</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract all files from a compressed archive, specifying a different output directory</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> unzip collection.zip <span class="at">-d</span> ~/some-folder</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tar <span class="at">--extract</span> <span class="at">--gzip</span> <span class="at">--file</span><span class="op">=</span>collection.tar.gz <span class="at">--directory</span> ~/music</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tar <span class="at">--extract</span> <span class="at">--bzip2</span> <span class="at">--file</span><span class="op">=</span>collection.tar.bz2 <span class="at">--directory</span> /tmp/music</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="co"># tar has shorthand versions of the above parameters</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tar <span class="at">-x</span> <span class="at">-f</span> collection.tar</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tar <span class="at">-x</span> <span class="at">-z</span> <span class="at">-f</span> collection.tar.gz <span class="at">-C</span> ~/music</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tar <span class="at">-xjf</span> collection.tar.bz2 <span class="at">-C</span> /tmp/music</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<p>Each of these operations is <strong>mutually exclusive</strong>, which makes some sense. You cannot <strong>create</strong> and <strong>extract</strong> an archive at the same time, that doesn’t make sense!</p>
 
 
 </section>
@@ -776,38 +871,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
-(function() {
-  let previousOnload = window.onload;
-  window.onload = () => {
-    if (previousOnload) {
-      previousOnload();
-    }
-    lightboxQuarto.on('slide_before_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      const href = trigger.getAttribute('href');
-      if (href !== null) {
-        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-        if (imgEl !== null) {
-          const srcAttr = imgEl.getAttribute("src");
-          if (srcAttr && srcAttr.startsWith("data:")) {
-            slideConfig.href = srcAttr;
-          }
-        }
-      } 
-    });
-  
-    lightboxQuarto.on('slide_after_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(slideNode);
-      }
-    });
-  
-  };
-  
-})();
-          </script>
 
 
 

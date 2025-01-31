@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-01-20">
 
-<title>Calendar – Connected Objects</title>
+<title>cd-ls – {{&lt; var course.title &gt;}}</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -43,9 +76,6 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/bootstrap/bootstrap-e1f65d1f4fb8a69794a125553cd66382.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../../site_libs/bootstrap/bootstrap-dark-dee13f711f33958449e20bc6e73fcb05.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script src="../../site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
-<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": true,
@@ -73,14 +103,13 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="Calendar – Connected Objects">
-<meta property="og:description" content="Roadmap for course deliverables; record of lectures &amp; activites we have covered along the way.">
-<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/about/calendar/assets/ticktock.jpg">
+<meta property="og:title" content="Connected Objects">
+<meta property="og:description" content="">
+<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/notes/bash-essentials/assets/art_title_path_only.svg">
 <meta property="og:site_name" content="{{< var course.title >}}">
-<meta property="og:image:alt" content="The focused pupil keeps watch on Time">
 </head>
 
-<body class="floating nav-fixed slimcontent">
+<body class="floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -109,7 +138,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Syllabus</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../../about/calendar/index.html" aria-current="page"> 
+    <a class="nav-link" href="../../about/calendar/index.html"> 
 <span class="menu-text">Calendar</span></a>
   </li>  
   <li class="nav-item">
@@ -140,8 +169,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#deliverables" id="toc-deliverables" class="nav-link active" data-scroll-target="#deliverables"><span class="header-section-number">1</span> Deliverables</a></li>
-  <li><a href="#lectures" id="toc-lectures" class="nav-link" data-scroll-target="#lectures"><span class="header-section-number">2</span> Lectures</a></li>
+  <li><a href="#cd" id="toc-cd" class="nav-link active" data-scroll-target="#cd"><span class="header-section-number">0.0.1</span> <code>cd</code></a></li>
+  <li><a href="#ls" id="toc-ls" class="nav-link" data-scroll-target="#ls"><span class="header-section-number">0.0.2</span> <code>ls</code></a></li>
   </ul>
 </nav>
 </nav>
@@ -150,12 +179,10 @@ ul.task-list li input[type="checkbox"] {
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Calendar</h1>
-<p class="subtitle lead"></p><p>Roadmap for course deliverables; record of lectures &amp; activites we have covered along the way.</p><p></p>
 </div>
 
 
@@ -163,12 +190,6 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">January 20, 2025</p>
-    </div>
-  </div>
   
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
@@ -184,30 +205,30 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This is the authoritative calendar for content covered in class, and for content you should expect to see covered as we continue through the course.</p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="assets/ticktock.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="The focused pupil keeps watch on Time"><img src="assets/ticktock.jpg" class="img-fluid figure-img" alt="The focused pupil keeps watch on Time"></a></p>
-<figcaption>The focused pupil keeps watch on Time</figcaption>
-</figure>
-</div>
-</div></div><p>You can compare this calendar with the calendar from the <a href="https://moodle.johnabbott.qc.ca/mod/resource/view.php?id=48735">Course Outline</a> to see where this course has deviated from the original outline.</p>
-<section id="deliverables" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="deliverables"><span class="header-section-number">1</span> Deliverables</h2>
-<ol type="1">
-<li><a href="https://classroom.github.com/a/SsBGSO3A">Lab 0</a>: Due January 31 (Demo: in-class. Code: end of day 11:59pm)</li>
-</ol>
+<section id="cd" class="level4" data-number="0.0.1">
+<h4 data-number="0.0.1" class="anchored" data-anchor-id="cd"><span class="header-section-number">0.0.1</span> <code>cd</code></h4>
+<p>Useful shorthands for <code>cd</code> to know:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Change to user home directory </span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># (usually: /home/username)</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd ~</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># WSL: Change to Windows mounted directory</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd /mnt/c/</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Return to previous directory</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd <span class="at">-</span>    <span class="co"># in this case, /home/username</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="lectures" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="lectures"><span class="header-section-number">2</span> Lectures</h2>
-<ul>
-<li>Jan 20: Introduction to course</li>
-<li>Jan 24: Setting up developer environment</li>
-<li>Jan 27: Review bash, begin Lab 0</li>
-<li>Jan 31:</li>
-</ul>
+<section id="ls" class="level4" data-number="0.0.2">
+<h4 data-number="0.0.2" class="anchored" data-anchor-id="ls"><span class="header-section-number">0.0.2</span> <code>ls</code></h4>
+<p>Useful <code>ls</code> options:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-l</span>                     use a long listing format</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">-a,</span> <span class="at">--all</span>              do not ignore entries starting with .</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">-d,</span> <span class="at">--directory</span>        list directories themselves, not their contents</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ex">-s,</span> <span class="at">--size</span>             print the allocated size of each file, in blocks</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ex">-t</span>                     sort by time, newest first<span class="kw">;</span> <span class="ex">see</span> <span class="at">--time</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="ex">-h,</span> <span class="at">--human-readable</span>   with <span class="at">-l</span> and <span class="at">-s,</span> print sizes like 1K 234M 2G etc.</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="ex">--si</span>               likewise, but use powers of 1000 not 1024</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="ex">-R,</span> <span class="at">--recursive</span>        list subdirectories recursively</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>
@@ -776,38 +797,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
-(function() {
-  let previousOnload = window.onload;
-  window.onload = () => {
-    if (previousOnload) {
-      previousOnload();
-    }
-    lightboxQuarto.on('slide_before_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      const href = trigger.getAttribute('href');
-      if (href !== null) {
-        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-        if (imgEl !== null) {
-          const srcAttr = imgEl.getAttribute("src");
-          if (srcAttr && srcAttr.startsWith("data:")) {
-            slideConfig.href = srcAttr;
-          }
-        }
-      } 
-    });
-  
-    lightboxQuarto.on('slide_after_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(slideNode);
-      }
-    });
-  
-  };
-  
-})();
-          </script>
 
 
 
