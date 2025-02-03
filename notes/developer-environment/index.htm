@@ -10,8 +10,8 @@
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-8ea72dc5fed832574809a9c94082fbbb.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.6.40">
 
-  <meta name="dcterms.date" content="2024-01-26">
-  <title>{{&lt; var course.title &gt;}} – Developer setup</title>
+  <meta name="dcterms.date" content="2025-01-20">
+  <title>{{&lt; var course.title &gt;}} – Developer environment setup</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -188,8 +188,8 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="Developer setup – Connected Objects">
-<meta property="og:description" content="Here’s how to set up the software that will be used for development during the course.">
+<meta property="og:title" content="Developer environment setup – Connected Objects">
+<meta property="og:description" content="Instructions for setting up classroom and personal computers for programming in this course, including: setting up a Debian container on WSL; restoring your WSL container from backup quickly; installing needed dependencies on WSL, Mac/OSX, and Linux; verifying that needed dependencies have been installed.">
 <meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/notes/developer-environment/assets/art_title_path_only.svg">
 <meta property="og:site_name" content="{{< var course.title >}}">
 </head>
@@ -198,84 +198,297 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Developer setup</h1>
-  <p class="subtitle">Here’s how to set up the software that will be used for development during the course.</p>
+  <h1 class="title">Developer environment setup</h1>
+  <p class="subtitle"></p><p>Instructions for setting up classroom and personal computers for programming in this course, including: setting up a Debian container on WSL; restoring your WSL container from backup quickly; installing needed dependencies on WSL, Mac/OSX, and Linux; verifying that needed dependencies have been installed.</p><p></p>
 
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">2024-01-26</p>
+  <p class="date">2025-01-20</p>
 </section>
-<section id="vs-code" class="slide level2 scrollable">
-<h2>VS Code</h2>
-<p>Below are the recommended steps to setup your VS Code for this course.</p>
-<p>You can <a href="https://code.visualstudio.com/Download">download VS Code from this link</a></p>
-<h3 id="vs-code-extensions">VS Code Extensions</h3>
-<ol type="1">
-<li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh">Remote - SSH by Microsoft</a>: Open any folder on a remote machine using SSH and take advantage of VS Code’s full feature set.</li>
-</ol>
-<p>(the Python dev setup will required additional VS Code extensions, see below)</p>
-</section>
-<section id="python-development" class="slide level2 scrollable">
-<h2>Python Development</h2>
-<h3 id="base-setup">Base Setup</h3>
-<p>Follow the official guide <a href="https://code.visualstudio.com/docs/python/python-tutorial">Getting Started with Python in VS Code</a></p>
-<p>The guide covers the following steps:</p>
-<ol type="1">
-<li>Install the VS Code extension <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.python">Python</a> by Microsoft. This extension includes:
-<ul>
-<li>IntelliSense: with Pylance</li>
-<li>Linting: Pylint (default) and Flake8</li>
-<li>Code formatting: autopep (default), black or yapf</li>
-<li>Debugging</li>
-<li>Testing: Test Explorer or pytest</li>
-<li>Jupter Notebooks</li>
-<li>Virtual Environment support</li>
-</ul></li>
-</ol>
+<section class="slide level2">
+
+<div class="column-margin">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../assets/1-Pasted image 20220121010400.png"></p>
-<figcaption>Python extension in Visual Studio Code’s Marketplace</figcaption>
+<p><img data-src="./assets/vintage-drill-press.jpg"></p>
+<figcaption><a href="https://www.pexels.com/photo/a-vintage-drilling-machine-5846273/">Photo by Tima Miroshnichenko</a></figcaption>
 </figure>
 </div>
-<ol start="2" type="1">
-<li>Install a Python interpreter (if not already installed).</li>
-<li>Verify your Python installation.</li>
-<li>Create a test project with a Hello World Python file.</li>
-<li>Run the Hello World file from VS Code.</li>
-<li>Configure and run the integrated debugger.</li>
-</ol>
-<h3 id="enable-static-type-checking-with-pylance">Enable Static Type Checking with Pylance</h3>
-<p><a href="https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance">Pylance</a> is the default language support for <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.python">Python in Visual Studio Code</a> extension. Pylance uses the <a href="https://github.com/microsoft/pyright">Pyright</a> static type checker under the hood to supercharge Python IntelliSense in VS Code.</p>
-<p><strong>Type checking is not enabled by default in Pylance</strong>. To enable it, set the following VS Code configuration:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource json number-lines code-with-copy"><code class="sourceCode json"><span id="cb1-1"><a></a><span class="fu">{</span></span>
-<span id="cb1-2"><a></a>  <span class="dt">"python.analysis.typeCheckingMode"</span><span class="fu">:</span> <span class="st">"basic"</span></span>
-<span id="cb1-3"><a></a><span class="fu">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Alternatively, use the VS Code configuration UI:</p>
-<p><img data-src="../assets/python-pylance-type-check.png"></p>
-<h3 id="formatting-linting">Formatting &amp; Linting</h3>
-<p>Formatting will not fix your code, however, it will help you write more readable code.</p>
-<p>Linting will analyze your code as you save it and tell you about errors before you run the code (remember, Python is an interpreted language, there is no compilation).</p>
-<h4 id="formatting-w-autopep8">Formatting w/ autopep8</h4>
-<p>To help you write consistent Python, make sure the autopep8 code formatter is enabled.</p>
-<ol type="1">
-<li><p>Open a Python file and press the code formatting shortcut for your machine: <strong>Linux</strong>: Ctrl + Shift + I <strong>Window</strong>: Alt + Shift + F <strong>macOS</strong>: ⇧⌥F</p></li>
-<li><p>Follow instructions to setup autopep8.</p></li>
-</ol>
-<p>For details, see section “Formatting” of <a href="https://code.visualstudio.com/docs/python/editing">Editing Python in Visual Studio Code</a></p>
-<h4 id="linting-w-pylint">Linting w/ Pylint</h4>
-<p>Follow the first step “Enable linters” in the guide <a href="https://code.visualstudio.com/docs/python/linting">Linting Python in Visual Studio Code</a></p>
-<p>To learn more about the benefits of formatting and linting</p>
+</div>
 </section>
-<section id="resources" class="slide level2">
-<h2>Resources</h2>
-<p>To learn more about the benefits of formatting and linting, see the video below:</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/P1B0ytn6VPU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
-</iframe>
-<p>For examples of other VS Code extensions that can improve your dev experience, see the video below:</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Z3i04RoI9Fk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
-</iframe>
+<section id="overview" class="slide level2">
+<h2>Overview</h2>
+<p>Throughout this semester, we will make regular use of <code>bash</code>, <code>python</code>, <code>git</code>, and other 3rd party command line tools such as <code>azure-cli</code> and <code>gh-cli</code>.</p>
+<p>No matter what hardware you have available at home, everyone should be comfortable completing coding assignments on their personal computers and on classroom computers.</p>
+<p>Everyone will need the following set up:</p>
+<ul>
+<li>on a classroom computer:
+<ul>
+<li>a Debian WSL container with all class dependencies installed using <code>apt</code></li>
+</ul></li>
+<li>on personal computers:
+<ul>
+<li>If Windows: a Debian WSL container with all class dependencies installed using <code>apt</code></li>
+<li>If macOS: all class dependencies installed using <code>brew</code></li>
+<li>If Linux: all class dependencies installed using distribution package manager</li>
+</ul></li>
+</ul>
+<p>The sections below show how to do that, and how to verify the installation, in each case.</p>
+</section>
+<section id="classroom-computers-linux-wsl" class="slide level2 scrollable">
+<h2>Classroom computers: Linux WSL</h2>
+<p>If using a Windows machine (lab computers and/or personal) for this course, you will need to set up Windows Subsystem for Linux (WSL).</p>
+<h3 id="ensure-necessary-windows-software-installed">Ensure necessary Windows software installed</h3>
+<p>These programs should already be installed on your Windows machine, but in case they are not:</p>
+<ul>
+<li><a href="https://git-scm.com/downloads/win">Link for installing git on Windows</a></li>
+<li><a href="https://www.microsoft.com/store/apps/9n0dx20hk701">Link for installing Windows Terminal</a></li>
+</ul>
+<h4 id="vs-code-extensions">VS Code Extensions</h4>
+<p>If you have not already, <a href="https://code.visualstudio.com/download">install VSCode</a>.</p>
+<p>Then, install the following extensions:</p>
+<ol type="1">
+<li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack">Remote Development extension pack by Microsoft</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=ms-python.python">Python language support extension</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=charliermarsh.ruff">Python formatter/linter extension (ruff)</a></li>
+</ol>
+<h3 id="install-debian-wsl">Install Debian WSL</h3>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Powershell</strong></pre>
+</div>
+<div class="sourceCode" id="cb1" data-filename="Powershell"><pre class="sourceCode numberSource powershell number-lines code-with-copy"><code class="sourceCode powershell"><span id="cb1-1"><a></a><span class="co"># Verify that Debian is an available OS to install</span></span>
+<span id="cb1-2"><a></a><span class="fu">PS</span> <span class="op">&gt;</span> wsl <span class="op">--</span>list <span class="op">--</span>online <span class="co"># Debian should be one of the results</span></span>
+<span id="cb1-3"><a></a></span>
+<span id="cb1-4"><a></a><span class="co"># Install Debian</span></span>
+<span id="cb1-5"><a></a><span class="fu">PS</span> <span class="op">&gt;</span> wsl <span class="op">--</span>install <span class="op">-</span>d Debian</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>You will be prompted to create a username and password:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Powershell</strong></pre>
+</div>
+<div class="sourceCode" id="cb2" data-filename="Powershell"><pre class="sourceCode numberSource powershell number-lines code-with-copy"><code class="sourceCode powershell"><span id="cb2-1"><a></a><span class="co"># Recommended: All lower case. Something easy to type, e.g. your first name</span></span>
+<span id="cb2-2"><a></a>Enter new UNIX username<span class="op">:</span></span>
+<span id="cb2-3"><a></a><span class="co"># Recommended: Don't overthink this, you can always change this later</span></span>
+<span id="cb2-4"><a></a>New password<span class="op">:</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="column-margin">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>If you forget the password for your WSL container, you can easily reset it.</p>
+<p>See the Microsoft article <a href="https://learn.microsoft.com/en-us/windows/wsl/setup/environment#set-up-your-linux-username-and-password">Set up your linux username and password</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<p>After this, your installation is complete.</p>
+<p>See the following links for more details if needed:</p>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/windows/wsl/setup/environment">Install Debian on WSL</a></li>
+<li><a href="https://learn.microsoft.com/en-ca/windows/wsl/install#change-the-default-linux-distribution-installed">Choosing Debian as the Linux distribution</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows/wsl/troubleshooting">Troubleshooting WSL installation</a></li>
+</ul>
+<h3 id="configure-terminal-to-use-wsl">Configure terminal to use WSL</h3>
+<p>Follow the steps in <a href="https://learn.microsoft.com/en-us/windows/wsl/setup/environment#set-up-windows-terminal">Set up Windows Terminal</a>, particularly:</p>
+<div class="column-margin">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://learn.microsoft.com/en-us/windows/wsl/media/terminal.png"></p>
+<figcaption>We’re going to spend a lot of time in terminal environments – you might as well enjoy using it. I find it motivating to use terminals that look and feel good to use. <a href="https://learn.microsoft.com/en-us/windows/wsl/setup/environment#set-up-windows-terminal">Image source</a></figcaption>
+</figure>
+</div>
+</div>
+<ul>
+<li><p>Ensure your <code>Debian</code> WSL instance is the <a href="https://learn.microsoft.com/en-us/windows/terminal/customize-settings/startup#default-profile">default profile</a></p>
+<ul>
+<li>Then, pin Windows Terminal to your taskbar, ideally as the first app</li>
+<li>Use <code>Win+1</code> to open Windows Terminal automatically.</li>
+</ul></li>
+<li><p><a href="https://learn.microsoft.com/en-us/windows/terminal/customize-settings/appearance#theme">Choose a theme</a></p></li>
+<li><p><a href="https://learn.microsoft.com/en-us/windows/terminal/customize-settings/color-schemes">Choose a color scheme</a></p>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/windows/terminal/custom-terminal-gallery/custom-schemes">Customizing a color scheme</a></li>
+</ul></li>
+<li><p><a href="https://learn.microsoft.com/en-us/windows/terminal/search">Practise searching through terminal output using <code>Ctrl+Shift+F</code></a></p></li>
+<li><p><a href="https://learn.microsoft.com/en-us/windows/terminal/tips-and-tricks#copypaste">Make sure you know how to copy/paste text in Windows Terminal</a></p>
+<ul>
+<li>You can also use <code>Ctrl+Shift+c</code> and <code>Ctrl+Shift+v</code> to copy/paste in terminals</li>
+<li>You can also use <code>Ctrl+Insert</code> and <code>Shift+Insert</code> to copy paste in terminals</li>
+</ul></li>
+<li><p>Use <code>Ctrl+Shift+P</code> to open the command palette to do almost any terminal config command (very similar to VSCode).</p>
+<ul>
+<li>This is very useful for learning hotkeys for the following things:
+<ul>
+<li>making terminal panes</li>
+<li>changing focus</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>See <a href="https://learn.microsoft.com/en-us/windows/terminal/troubleshooting">Troubleshooting Windows Terminal</a> for more details.</p>
+<h3 id="install-dependencies">Install dependencies</h3>
+<h4 id="perform-system-update">Perform system update</h4>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>bash</strong></pre>
+</div>
+<div class="sourceCode" id="cb3" data-filename="bash"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a></a><span class="co"># Update system:</span></span>
+<span id="cb3-2"><a></a><span class="fu">sudo</span> apt update <span class="kw">&amp;&amp;</span> <span class="fu">sudo</span> apt upgrade <span class="at">-y</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<h4 id="install-python">Install python</h4>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>bash</strong></pre>
+</div>
+<div class="sourceCode" id="cb4" data-filename="bash"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a></a><span class="co"># Verify python version is &gt;= 3.9:</span></span>
+<span id="cb4-2"><a></a><span class="ex">python3</span> <span class="at">--version</span></span>
+<span id="cb4-3"><a></a><span class="co"># Ensure pip is installed:</span></span>
+<span id="cb4-4"><a></a><span class="fu">sudo</span> apt install python3-pip</span>
+<span id="cb4-5"><a></a><span class="ex">pip3</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<h4 id="set-up-git">Set up git</h4>
+<p>You’ll need to do the following to set up <code>git</code> on both your WSL:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>bash</strong></pre>
+</div>
+<div class="sourceCode" id="cb5" data-filename="bash"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a></a><span class="fu">sudo</span> apt install git</span>
+<span id="cb5-2"><a></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"Your Name"</span></span>
+<span id="cb5-3"><a></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"youremail@domain.com"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>See <a href="https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-git#installing-git">Installing Git</a> for more detail if needed.</p>
+<h4 id="install-other-needed-tools">Install other needed tools</h4>
+<p>We’re going to need the following packages:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>bash</strong></pre>
+</div>
+<div class="sourceCode" id="cb6" data-filename="bash"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a></a><span class="fu">sudo</span> apt install man ssh wget ca-certificates rsync pass pass-extension-otp zbar-tools vim</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><em>Last update to this command: <strong>?meta:date-modified</strong></em></p>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>If, when running <code>sudo apt install</code>, you have an error like this:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>bash</strong></pre>
+</div>
+<div class="sourceCode" id="cb7" data-filename="bash"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a></a><span class="ex">E:</span> Failed to fetch <span class="op">&lt;</span>url<span class="op">&gt;</span> 404 Not Found [IP: <span class="op">&lt;</span>ip<span class="op">&gt;</span>]</span>
+<span id="cb7-2"><a></a><span class="ex">E:</span> Unable to fetch some archives, maybe run apt get update or try with <span class="at">--fix-missing</span><span class="pp">?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Make sure you update the system:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>bash</strong></pre>
+</div>
+<div class="sourceCode" id="cb8" data-filename="bash"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a></a><span class="co"># you can also run sudo apt upgrade -y, but it's not necessary all the time.</span></span>
+<span id="cb8-2"><a></a><span class="fu">sudo</span> apt update</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Then, try the installation command again.</p>
+</div>
+</div>
+</div>
+<p>I’ll keep this command updated throughout the semester as we encounter more packages we need.</p>
+<h3 id="backup-container-to-onedrive">Backup container to OneDrive</h3>
+<p>Once the initial setup is complete, backups of the WSL container are easy to make.</p>
+<p>Once a backup is made, it’s easy to:</p>
+<ul>
+<li>recreate the exact same image on a new machine</li>
+<li>restore your image in case the disk is wiped (this seems to be happening to our lab computers…)</li>
+</ul>
+<h4 id="backup-command">Backup command</h4>
+<p>First, let’s ensure you have a folder to keep your backups.</p>
+<p>Recommendation: store WSL images on your college OneDrive account. That way, you can easily share your image with your personal computer, and restore your image automatically using any college computer.</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Powershell</strong></pre>
+</div>
+<div class="sourceCode" id="cb9" data-filename="Powershell"><pre class="sourceCode numberSource powershell number-lines code-with-copy"><code class="sourceCode powershell"><span id="cb9-1"><a></a><span class="fu">PS</span> <span class="op">&gt;</span> <span class="fu">md</span> <span class="op">-</span>Force <span class="st">"C:\Users\&lt;your-username&gt;\OneDrive\420-6P3-W25"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Then, we’ll use <code>wsl --export</code> to make a backup copy of your WSL container:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Powershell</strong></pre>
+</div>
+<div class="sourceCode" id="cb10" data-filename="Powershell"><pre class="sourceCode numberSource powershell number-lines code-with-copy"><code class="sourceCode powershell"><span id="cb10-1"><a></a><span class="co"># This can take around 5 minutes to finish.</span></span>
+<span id="cb10-2"><a></a><span class="fu">PS</span> <span class="op">&gt;</span> wsl <span class="op">--</span>export Debian <span class="st">"C:\Users\&lt;your-username\OneDrive\420-6P3-W25\debian.tar</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<h4 id="restore-command">Restore command</h4>
+<p>On a new machine (or on a machine with a freshly wiped hard drive…) you can <code>--import</code> the backup image you created:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Powershell</strong></pre>
+</div>
+<div class="sourceCode" id="cb11" data-filename="Powershell"><pre class="sourceCode numberSource powershell number-lines code-with-copy"><code class="sourceCode powershell"><span id="cb11-1"><a></a><span class="co"># This can take around 5 minutes to finish.</span></span>
+<span id="cb11-2"><a></a><span class="fu">PS</span> <span class="op">&gt;</span> wsl <span class="op">--</span>import Debian <span class="op">.</span>\Debian <span class="st">"C:\Users\&lt;your-username&gt;\OneDrive\debian.tar"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="personal-computers" class="slide level2">
+<h2>Personal computers</h2>
+<h3 id="windows-wsl">Windows (WSL)</h3>
+<p>After <a href="#/classroom-computers-linux-wsl">setting up WSL</a> on a classroom computer, and <a href="#/backup-command">backing up your WSL</a> to OneDrive, the easiest way to set up WSL on your personal computer is to <a href="http://localhost:7848/notes/developer-environment/#restore-command">import your backup WSL image</a> on your personal computer.</p>
+<p>Note that any changes made to either container, after the import, will not be automatically synchronized.</p>
+<p>If you are making many customizations, you might want to keep your backup up-to-date.</p>
+<h3 id="macos-linux">macOS / Linux</h3>
+<p>On a terminal on your computer, install the packages below.</p>
+<p>On OS X we’ll use <code>brew</code>, on Linux you can use your system’s package manager:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>bash</strong></pre>
+</div>
+<div class="sourceCode" id="cb12" data-filename="bash"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a></a><span class="co"># Update system:</span></span>
+<span id="cb12-2"><a></a><span class="ex">brew</span> update <span class="kw">&amp;&amp;</span> <span class="ex">brew</span> upgrade</span>
+<span id="cb12-3"><a></a><span class="co"># Verify python version is &gt;= 3.9:</span></span>
+<span id="cb12-4"><a></a><span class="ex">python3</span> <span class="at">--version</span></span>
+<span id="cb12-5"><a></a><span class="co"># Ensure pip is installed:</span></span>
+<span id="cb12-6"><a></a><span class="ex">python3</span> <span class="at">-m</span> pip install <span class="at">--upgrade</span> pip</span>
+<span id="cb12-7"><a></a></span>
+<span id="cb12-8"><a></a><span class="co"># Install other dependencies</span></span>
+<span id="cb12-9"><a></a><span class="ex">brew</span> install wget ca-certificates rsync pass pass-otp zbar vim</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><em>Last update to this command: <strong>?meta:date-modified</strong></em></p>
+<p>Also ensure you have <a href="#/vs-code-extensions">installed VSCode and configured its extensions</a></p>
+</section>
+<section id="verify-environment" class="slide level2">
+<h2>Verify environment</h2>
+<p>Your developer environment, whether on WSL, macOS, or Linux, should be able to run the following commands with the following results:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>bash</strong></pre>
+</div>
+<div class="sourceCode" id="cb13" data-filename="bash"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a></a><span class="co"># Verify python version is &gt;= 3.9 and pip is installed</span></span>
+<span id="cb13-2"><a></a><span class="ex">python3</span> <span class="at">--version</span></span>
+<span id="cb13-3"><a></a><span class="ex">pip3</span> <span class="at">--version</span> <span class="co"># or pip --version</span></span>
+<span id="cb13-4"><a></a></span>
+<span id="cb13-5"><a></a><span class="co"># Verify git config set up: ensure the output makes sense for you</span></span>
+<span id="cb13-6"><a></a><span class="fu">git</span> config user.name</span>
+<span id="cb13-7"><a></a><span class="fu">git</span> config user.email</span>
+<span id="cb13-8"><a></a></span>
+<span id="cb13-9"><a></a><span class="co"># For the following no specific version is required</span></span>
+<span id="cb13-10"><a></a><span class="co"># but, these commands should not fail (show error message or exit error code 1)</span></span>
+<span id="cb13-11"><a></a><span class="fu">man</span> <span class="at">-V</span></span>
+<span id="cb13-12"><a></a><span class="fu">ssh</span> <span class="at">-V</span></span>
+<span id="cb13-13"><a></a><span class="fu">rsync</span> <span class="at">--version</span></span>
+<span id="cb13-14"><a></a><span class="ex">pass</span> <span class="at">--version</span></span>
+<span id="cb13-15"><a></a><span class="ex">pass</span> otp <span class="at">--version</span></span>
+<span id="cb13-16"><a></a><span class="ex">zbarimg</span> <span class="at">--version</span></span>
+<span id="cb13-17"><a></a><span class="ex">vim</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
 </section>
