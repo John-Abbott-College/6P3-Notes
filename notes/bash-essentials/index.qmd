@@ -5,7 +5,7 @@ subtitle: >
   The core bash commands everyone should know.
   How to combine commands using pipes and redirects.
 date: 2025-01-31
-categories: [bash, lab-0]
+categories: [bash, lab-0, lab-1]
 bibliography: references.bib
 nocite: |
   @*
@@ -301,18 +301,22 @@ _This section was adapted from www.ss64.com:
 ```bash
 command  >  filename     Redirect command output (stdout) into a file
 command  >  /dev/null    Discard stdout of command
-command  2> filename     Redirect error output (stderr) to a file
-command  2>  /dev/null   Discard stderr of command
-command  2>&1 filename   Redirect stderr to stdout 
-command  1>&2 filename   Redirect stdout to stderr
+command  2> /dev/null   Discard stderr of command
+
 command  >> filename     Redirect command output and APPEND into a file
 command  <  filename     Redirect a file into a command
-command  &> filename     Redirect every output of command to filename
 
-commandA | commandB       Redirect stdout of commandA to commandB
-commandA |& commandB      Redirect stdERR of commandA to commandB
-commandA | tee filename   Redirect commandA into filename AND stdout
+commandA | commandB       Pipe stdout of commandA to commandB
+commandA | tee filename   Pipe stdout of commandA into filename AND stdout
 ```
+
+:::
+
+::: {.callout-note collapse="true"}
+
+## Redirection explained further
+
+{{< include redirection.qmd >}}
 
 :::
 

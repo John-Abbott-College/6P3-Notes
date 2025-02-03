@@ -1,0 +1,130 @@
+
+_This section was adapted from wiki.bash-hackers.org [@bashhackers_2023]_
+
+#### stdin, stdout, stderr
+
+When Bash starts, normally, 3 file descriptors are opened, 0, 1 and 2 also known as
+standard input (stdin), standard output (stdout) and standard error (stderr).
+
+For example, with Bash running in a Linux terminal emulator, you'll see:
+
+```bash {filename=bash}
+$ lsof +f g -ap $BASHPID -d 0,1,2
+COMMAND   PID USER   FD   TYPE FILE-FLAG DEVICE SIZE/OFF NODE NAME
+bash    12135 root    0u   CHR     RW,LG 136,13      0t0   16 /dev/pts/5
+bash    12135 root    1u   CHR     RW,LG 136,13      0t0   16 /dev/pts/5
+bash    12135 root    2u   CHR     RW,LG 136,13      0t0   16 /dev/pts/5
+```
+
+This `/dev/pts/5` is a pseudo terminal used to emulate a real terminal. Bash reads
+(`stdin`) from this terminal and prints via `stdout` and `stderr` to this terminal.
+
+```
+                  ---       +-----------------------+
+standard input   ( 0 ) ---->| /dev/pts/5            |
+                  ---       +-----------------------+
+
+                  ---       +-----------------------+
+standard output  ( 1 ) ---->| /dev/pts/5            |
+                  ---       +-----------------------+
+
+                  ---       +-----------------------+
+standard error   ( 2 ) ---->| /dev/pts/5            |
+                  ---       +-----------------------+
+```
+
+When a command, a compound command, a subshell etc. is executed, it inherits these file
+descriptors. For instance `echo foo` will send the text `foo` to the file descriptor `1`
+inherited from the shell, which is connected to `/dev/pts/5`.
+
+#### Output Redirection `n> file`
+
+`>` is probably the simplest redirection.
+
+`echo foo > file`
+
+the `>` file after the command alters the file descriptors belonging to the command echo.
+It changes the file descriptor 1 (> file is the same as 1>file) so that it points to the
+file file. They will look like:
+
+```
+                  ---       +-----------------------+
+standard input   ( 0 ) ---->| /dev/pts/5            |
+                  ---       +-----------------------+
+
+                  ---       +-----------------------+
+standard output  ( 1 ) ---->| file                  |
+                  ---       +-----------------------+
+
+                  ---       +-----------------------+
+standard error   ( 2 ) ---->| /dev/pts/5            |
+                  ---       +-----------------------+
+```
+
+Now characters written by our command, echo, that are sent to the standard output, i.e.,
+the file descriptor 1, end up in the file named file.
+
+In the same way, `command 2> file` will change the standard error and will make it point
+to file. For example, `command 2> /dev/null` will *delete* all errors outputted by
+`command`:
+
+```
+                  ---       +-----------------------+
+standard input   ( 0 ) ---->| /dev/pts/5            |
+                  ---       +-----------------------+
+
+                  ---       +-----------------------+
+standard output  ( 1 ) ---->| /dev/pts/5            |
+                  ---       +-----------------------+
+
+                  ---       +-----------------------+
+standard error   ( 2 ) ---->| /dev/null             |
+                  ---       +-----------------------+
+```
+
+#### Input Redirection `n< file`
+
+When you run a command using `command < file`, it changes the file descriptor `0` so that it
+looks like:
+
+```
+                  ---       +-----------------------+
+standard input   ( 0 ) <----| file                  |
+                  ---       +-----------------------+
+
+                  ---       +-----------------------+
+standard output  ( 1 ) ---->| /dev/pts/5            |
+                  ---       +-----------------------+
+
+                  ---       +-----------------------+
+standard error   ( 2 ) ---->| /dev/pts/5            |
+                  ---       +-----------------------+
+```
+
+If the command reads from stdin, it now will read from file and not from the console.
+
+#### Pipes `|`
+
+What does this `|` do? Among other things, it connects the standard output of the command on
+the left to the standard input of the command on the right. That is, it creates a special
+file, a pipe, which is opened as a write destination for the left command, and as a read
+source for the right command.
+
+```
+command:   echo foo               |                cat
+
+ ---       +--------------+               ---       +--------------+
+( 0 ) ---->| /dev/pts/5   |     ------>  ( 0 ) ---->|pipe (read)   |
+ ---       +--------------+    /          ---       +--------------+
+                              /
+ ---       +--------------+  /            ---       +--------------+
+( 1 ) ---->| pipe (write) | /            ( 1 ) ---->| /dev/pts     |
+ ---       +--------------+               ---       +--------------+
+
+ ---       +--------------+               ---       +--------------+
+( 2 ) ---->| /dev/pts/5   |              ( 2 ) ---->| /dev/pts/    |
+ ---       +--------------+               ---       +--------------+
+```
+
+This is possible because the redirections are set up by the shell before the commands are
+executed, and the commands inherit the file descriptors.
