@@ -1,113 +1,307 @@
 ---
-title: Developer setup
-subtitle:
-  "Here's how to set up the software that will be used for development during
-  the course."
-date: 2024-01-26
-draft: true
+title: Developer environment setup
+subtitle: >
+  Instructions for setting up classroom and personal computers for programming in this course, including:
+  setting up a Debian container on WSL;
+  restoring your WSL container from backup quickly;
+  installing needed dependencies on WSL, Mac/OSX, and Linux;
+  verifying that needed dependencies have been installed.
+date: 2025-01-20
+format:
+  html:
+    toc-expand: 2
 ---
 
-## VS Code
+::: {.column-margin}
 
-Below are the recommended steps to setup your VS Code for this course.
+![[Photo by Tima Miroshnichenko](https://www.pexels.com/photo/a-vintage-drilling-machine-5846273/)](./assets/vintage-drill-press.jpg)
 
-You can
-[download VS Code from this link](https://code.visualstudio.com/Download)
+:::
 
-### VS Code Extensions
+## Overview
 
-1. [Remote - SSH by Microsoft](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh):
-   Open any folder on a remote machine using SSH and take advantage of VS Code's
-   full feature set.
+Throughout this semester, we will make regular use of `bash`, `python`, `git`, and other
+3rd party command line tools such as `azure-cli` and `gh-cli`.
 
-(the Python dev setup will required additional VS Code extensions, see below)
+No matter what hardware you have available at home, everyone should be comfortable
+completing coding assignments on their personal computers and on classroom computers.
 
-## Python Development
+Everyone will need the following set up:
 
-### Base Setup
+- on a classroom computer:
+    - a Debian WSL container with all class dependencies installed using `apt`
+- on personal computers:
+    - If Windows: a Debian WSL container with all class dependencies installed using `apt`
+    - If macOS: all class dependencies installed using `brew`
+    - If Linux: all class dependencies installed using distribution package manager
 
-Follow the official guide
-[Getting Started with Python in VS Code](https://code.visualstudio.com/docs/python/python-tutorial)
+The sections below show how to do that, and how to verify the installation, in each case.
 
-The guide covers the following steps:
+## Classroom computers: Linux WSL
 
-1. Install the VS Code extension
-   [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
-   by Microsoft. This extension includes:
-   - IntelliSense: with Pylance
-   - Linting: Pylint (default) and Flake8
-   - Code formatting: autopep (default), black or yapf
-   - Debugging
-   - Testing: Test Explorer or pytest
-   - Jupter Notebooks
-   - Virtual Environment support
+If using a Windows machine (lab computers and/or personal) for this course, you will need
+to set up Windows Subsystem for Linux (WSL).
 
-![Python extension in Visual Studio Code's Marketplace](../assets/1-Pasted%20image%2020220121010400.png)
+### Ensure necessary Windows software installed
 
-2. Install a Python interpreter (if not already installed).
-3. Verify your Python installation.
-4. Create a test project with a Hello World Python file.
-5. Run the Hello World file from VS Code.
-6. Configure and run the integrated debugger.
+These programs should already be installed on your Windows machine, but in case they are
+not:
 
-### Enable Static Type Checking with Pylance
+- [Link for installing git on Windows](https://git-scm.com/downloads/win)
+- [Link for installing Windows Terminal](https://www.microsoft.com/store/apps/9n0dx20hk701)
 
-[Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance)
-is the default language support for
-[Python in Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
-extension. Pylance uses the [Pyright](https://github.com/microsoft/pyright)
-static type checker under the hood to supercharge Python IntelliSense in VS
-Code.
+#### VS Code Extensions
 
-**Type checking is not enabled by default in Pylance**. To enable it, set the
-following VS Code configuration:
+If you have not already, [install VSCode](https://code.visualstudio.com/download).
 
-```json
-{
-  "python.analysis.typeCheckingMode": "basic"
-}
+Then, install the following extensions:
+
+1. [Remote Development extension pack by Microsoft](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack)
+1. [Python language support extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+1. [Python formatter/linter extension (ruff)](https://marketplace.visualstudio.com/items?itemName=charliermarsh.ruff)
+
+### Install Debian WSL
+
+```powershell {filename=Powershell}
+# Verify that Debian is an available OS to install
+PS > wsl --list --online # Debian should be one of the results
+
+# Install Debian
+PS > wsl --install -d Debian
 ```
 
-Alternatively, use the VS Code configuration UI:
+You will be prompted to create a username and password:
 
-![](../assets/python-pylance-type-check.png)
+```powershell {filename=Powershell}
+# Recommended: All lower case. Something easy to type, e.g. your first name
+Enter new UNIX username:
+# Recommended: Don't overthink this, you can always change this later
+New password:
+```
 
-### Formatting & Linting
+::: {.callout-note .column-margin}
 
-Formatting will not fix your code, however, it will help you write more readable
-code.
+If you forget the password for your WSL container, you can easily reset it.
 
-Linting will analyze your code as you save it and tell you about errors before
-you run the code (remember, Python is an interpreted language, there is no
-compilation).
+See the Microsoft article
+[Set up your linux username and password](https://learn.microsoft.com/en-us/windows/wsl/setup/environment#set-up-your-linux-username-and-password).
 
-#### Formatting w/ autopep8
+:::
 
-To help you write consistent Python, make sure the autopep8 code formatter is
-enabled.
+After this, your installation is complete.
 
-1. Open a Python file and press the code formatting shortcut for your machine:
-   **Linux**: Ctrl + Shift + I **Window**: Alt + Shift + F **macOS**: ⇧⌥F
+See the following links for more details if needed:
 
-2. Follow instructions to setup autopep8.
+- [Install Debian on WSL](https://learn.microsoft.com/en-us/windows/wsl/setup/environment)
+- [Choosing Debian as the Linux distribution](https://learn.microsoft.com/en-ca/windows/wsl/install#change-the-default-linux-distribution-installed)
+- [Troubleshooting WSL installation](https://learn.microsoft.com/en-us/windows/wsl/troubleshooting)
 
-For details, see section "Formatting" of
-[Editing Python in Visual Studio Code](https://code.visualstudio.com/docs/python/editing)
+### Configure terminal to use WSL
 
-#### Linting w/ Pylint
+Follow the steps in
+[Set up Windows Terminal](https://learn.microsoft.com/en-us/windows/wsl/setup/environment#set-up-windows-terminal),
+particularly:
 
-Follow the first step "Enable linters" in the guide
-[Linting Python in Visual Studio Code](https://code.visualstudio.com/docs/python/linting)
+::: {.column-margin}
 
-To learn more about the benefits of formatting and linting
+![We're going to spend a lot of time in terminal environments -- you might as well enjoy using it. I find it motivating to use terminals that look and feel good to use. [Image source](https://learn.microsoft.com/en-us/windows/wsl/setup/environment#set-up-windows-terminal)](https://learn.microsoft.com/en-us/windows/wsl/media/terminal.png)
 
-## Resources
+:::
 
-To learn more about the benefits of formatting and linting, see the video below:
+- Ensure your `Debian` WSL instance is the
+    [default profile](https://learn.microsoft.com/en-us/windows/terminal/customize-settings/startup#default-profile)
+    
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/P1B0ytn6VPU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    - Then, pin Windows Terminal to your taskbar, ideally as the first app
+    - Use `Win+1` to open Windows Terminal automatically.
 
-For examples of other VS Code extensions that can improve your dev experience,
-see the video below:
+- [Choose a theme](https://learn.microsoft.com/en-us/windows/terminal/customize-settings/appearance#theme)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Z3i04RoI9Fk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+- [Choose a color scheme](https://learn.microsoft.com/en-us/windows/terminal/customize-settings/color-schemes)
+
+    - [Customizing a color scheme](https://learn.microsoft.com/en-us/windows/terminal/custom-terminal-gallery/custom-schemes)
+
+- [Practise searching through terminal output using `Ctrl+Shift+F`](https://learn.microsoft.com/en-us/windows/terminal/search)
+
+- [Make sure you know how to copy/paste text in Windows Terminal](https://learn.microsoft.com/en-us/windows/terminal/tips-and-tricks#copypaste)
+
+    - You can also use `Ctrl+Shift+c` and `Ctrl+Shift+v` to copy/paste in terminals
+    - You can also use `Ctrl+Insert` and `Shift+Insert` to copy paste in terminals
+
+- Use `Ctrl+Shift+P` to open the command palette to do almost any terminal config command
+    (very similar to VSCode).
+
+    - This is very useful for learning hotkeys for the following things:
+        - making terminal panes
+        - changing focus
+
+See
+[Troubleshooting Windows Terminal](https://learn.microsoft.com/en-us/windows/terminal/troubleshooting)
+for more details.
+
+### Install dependencies
+
+#### Perform system update
+
+```bash {filename=bash}
+# Update system:
+sudo apt update && sudo apt upgrade -y
+```
+
+#### Install python
+
+```bash {filename=bash}
+# Verify python version is >= 3.9:
+python3 --version
+# Ensure pip is installed:
+sudo apt install python3-pip
+pip3 --version
+```
+
+#### Set up git
+
+You'll need to do the following to set up `git` on both your WSL:
+
+```bash {filename=bash}
+sudo apt install git
+git config --global user.name "Your Name"
+git config --global user.email "youremail@domain.com"
+```
+
+See
+[Installing Git](https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-git#installing-git)
+for more detail if needed.
+
+#### Install other needed tools
+
+We're going to need the following packages:
+
+```bash {filename=bash}
+sudo apt install man ssh wget ca-certificates rsync pass pass-extension-otp zbar-tools vim
+```
+
+*Last update to this command: {{< meta date-modified >}}*
+
+::: {.callout-note}
+
+If, when running `sudo apt install`, you have an error like this:
+
+```bash {filename=bash}
+E: Failed to fetch <url> 404 Not Found [IP: <ip>]
+E: Unable to fetch some archives, maybe run apt get update or try with --fix-missing?
+```
+
+Make sure you update the system:
+
+```bash {filename=bash}
+# you can also run sudo apt upgrade -y, but it's not necessary all the time.
+sudo apt update
+```
+
+Then, try the installation command again.
+
+:::
+
+I'll keep this command updated throughout the semester as we encounter more packages we
+need.
+
+### Backup container to OneDrive
+
+Once the initial setup is complete, backups of the WSL container are easy to make.
+
+Once a backup is made, it's easy to:
+
+- recreate the exact same image on a new machine
+- restore your image in case the disk is wiped (this seems to be happening to our lab
+    computers...)
+
+#### Backup command
+
+First, let's ensure you have a folder to keep your backups.
+
+Recommendation: store WSL images on your college OneDrive account. That way, you can
+easily share your image with your personal computer, and restore your image automatically
+using any college computer.
+
+```powershell {filename=Powershell}
+PS > md -Force "C:\Users\<your-username>\OneDrive\420-6P3-W25"
+```
+
+Then, we'll use `wsl --export` to make a backup copy of your WSL container:
+
+```powershell {filename=Powershell}
+# This can take around 5 minutes to finish.
+PS > wsl --export Debian "C:\Users\<your-username\OneDrive\420-6P3-W25\debian.tar
+```
+
+#### Restore command
+
+On a new machine (or on a machine with a freshly wiped hard drive...) you can `--import`
+the backup image you created:
+
+```powershell {filename=Powershell}
+# This can take around 5 minutes to finish.
+PS > wsl --import Debian .\Debian "C:\Users\<your-username>\OneDrive\debian.tar"
+```
+
+## Personal computers
+
+### Windows (WSL)
+
+After [setting up WSL](#classroom-computers-linux-wsl) on a classroom computer, and
+[backing up your WSL](#backup-command) to OneDrive, the easiest way to set up WSL on your
+personal computer is to
+[import your backup WSL image](http://localhost:7848/notes/developer-environment/#restore-command)
+on your personal computer.
+
+Note that any changes made to either container, after the import, will not be
+automatically synchronized.
+
+If you are making many customizations, you might want to keep your backup up-to-date.
+
+### macOS / Linux
+
+On a terminal on your computer, install the packages below.
+
+On OS X we'll use `brew`, on Linux you can use your system's package manager:
+
+```bash {filename=bash}
+# Update system:
+brew update && brew upgrade
+# Verify python version is >= 3.9:
+python3 --version
+# Ensure pip is installed:
+python3 -m pip install --upgrade pip
+
+# Install other dependencies
+brew install wget ca-certificates rsync pass pass-otp zbar vim
+```
+
+*Last update to this command: {{< meta date-modified >}}*
+
+Also ensure you have [installed VSCode and configured its extensions](#vs-code-extensions)
+
+## Verify environment
+
+Your developer environment, whether on WSL, macOS, or Linux, should be able to run the
+following commands with the following results:
+
+```bash {filename=bash}
+# Verify python version is >= 3.9 and pip is installed
+python3 --version
+pip3 --version # or pip --version
+
+# Verify git config set up: ensure the output makes sense for you
+git config user.name
+git config user.email
+
+# For the following no specific version is required
+# but, these commands should not fail (show error message or exit error code 1)
+man -V
+ssh -V
+rsync --version
+pass --version
+pass otp --version
+zbarimg --version
+vim --version
+```

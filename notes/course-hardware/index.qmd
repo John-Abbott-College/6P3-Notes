@@ -4,15 +4,15 @@ subtitle: List of hardware available for the course as well as their respective 
 date: 2025-01-20
 ---
 
+:::{.column-margin}
+![The reTerminal device. [Image source](https://wiki.seeedstudio.com/reTerminal/)](https://files.seeedstudio.com/wiki/ReTerminal/wiki_thumb.png)
+:::
+
 ## reTerminal
 
 The [reTerminal](https://www.seeedstudio.com/ReTerminal-with-CM4-p-4904.html) is a
 development board based on the Raspberry Pi Compute Module 4 (CM4) manufactured by Seeed
 Studio.
-
-:::{.column-margin}
-![The reTerminal device.](https://files.seeedstudio.com/wiki/ReTerminal/wiki_thumb.png)
-:::
 
 Notable features:
 

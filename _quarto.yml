@@ -44,6 +44,7 @@ format:
       light: [journal, assets/css/customizations-light.scss]
       dark: [journal, assets/css/customizations-dark.scss]
     toc: true
+    toc-expand: 1
     toc-depth: 4
     toc-title: On this page
     toc-location: left
