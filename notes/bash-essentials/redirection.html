@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-01-30">
 
-<title>Course Notes – Connected Objects</title>
+<title>redirection – {{&lt; var course.title &gt;}}</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,30 +20,62 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../assets/favicon_io/favicon.ico" rel="icon">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-6fd3254f7cd08bfc924e68d2e8d0dac1.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-74ddb3cc18965282cc06ba12481b4dd1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-e1f65d1f4fb8a69794a125553cd66382.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-dee13f711f33958449e20bc6e73fcb05.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<script src="../site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../assets/favicon_io/favicon.ico" rel="icon">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-6fd3254f7cd08bfc924e68d2e8d0dac1.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-74ddb3cc18965282cc06ba12481b4dd1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-e1f65d1f4fb8a69794a125553cd66382.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-dee13f711f33958449e20bc6e73fcb05.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": true,
@@ -70,125 +101,11 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-default-view .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-file-modified','listing-title','listing-subtitle','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-default-view'] = new List('listing-default-view', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-table-view .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-file-modified','listing-title','listing-subtitle','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-title-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-table-view'] = new List('listing-table-view', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-grid-view .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-file-modified','listing-title','listing-subtitle','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-grid-view'] = new List('listing-grid-view', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<meta property="og:title" content="Course Notes – Connected Objects">
-<meta property="og:description" content="All content covered in class will be posted here.">
-<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/notes/assets/art_title_path_only.svg">
+<meta property="og:title" content="Connected Objects">
+<meta property="og:description" content="">
+<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/notes/bash-essentials/assets/art_title_path_only.svg">
 <meta property="og:site_name" content="{{< var course.title >}}">
 </head>
 
@@ -199,10 +116,10 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../assets/favicon_io/favicon-32x32.png" alt="" class="navbar-logo">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../assets/favicon_io/favicon-32x32.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Connected Objects</span>
     </a>
   </div>
@@ -217,19 +134,19 @@ window.Quarto = {
 <span class="menu-text"><iconify-icon inline="" icon="simple-icons:moodle" aria-label="Icon moodle from simple-icons Iconify.design set." title="Icon moodle from simple-icons Iconify.design set."></iconify-icon></span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../about/syllabus/index.html"> 
+    <a class="nav-link" href="../../about/syllabus/index.html"> 
 <span class="menu-text">Syllabus</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../about/calendar/index.html"> 
+    <a class="nav-link" href="../../about/calendar/index.html"> 
 <span class="menu-text">Calendar</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../notes/index.html" aria-current="page"> 
+    <a class="nav-link" href="../../notes/index.html"> 
 <span class="menu-text">Course Notes</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../about/this-site/index.html"> 
+    <a class="nav-link" href="../../about/this-site/index.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
@@ -245,33 +162,36 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="1">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#stdin-stdout-stderr" id="toc-stdin-stdout-stderr" class="nav-link active" data-scroll-target="#stdin-stdout-stderr"><span class="header-section-number">0.0.1</span> stdin, stdout, stderr</a></li>
+  <li><a href="#output-redirection-n-file" id="toc-output-redirection-n-file" class="nav-link" data-scroll-target="#output-redirection-n-file"><span class="header-section-number">0.0.2</span> Output Redirection <code>n&gt; file</code></a></li>
+  <li><a href="#input-redirection-n-file" id="toc-input-redirection-n-file" class="nav-link" data-scroll-target="#input-redirection-n-file"><span class="header-section-number">0.0.3</span> Input Redirection <code>n&lt; file</code></a></li>
+  <li><a href="#pipes" id="toc-pipes" class="nav-link" data-scroll-target="#pipes"><span class="header-section-number">0.0.4</span> Pipes <code>|</code></a></li>
+  </ul>
+</nav>
+</nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(9)</span></div><div class="category" data-category="YmFzaA==">bash <span class="quarto-category-count">(3)</span></div><div class="category" data-category="bGFiLTA=">lab-0 <span class="quarto-category-count">(3)</span></div><div class="category" data-category="bGFiLTE=">lab-1 <span class="quarto-category-count">(3)</span></div></div></div>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Course Notes</h1>
-<p class="subtitle lead">All content covered in class will be posted here.</p>
 </div>
 
 
 
-<div class="quarto-title-meta column-page-left">
+<div class="quarto-title-meta">
 
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">January 30, 2025</p>
-    </div>
-  </div>
   
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
@@ -287,347 +207,101 @@ window.Quarto = {
 </header>
 
 
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Default view</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Table view</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Grid view</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<div id="listing-default-view" class="quarto-listing quarto-listing-container-default">
-<div class="listing-actions-group">
-   <div class="input-group input-group-sm quarto-listing-sort">
-     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-     <select id="listing-default-view-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-default-view'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-       <option value="" disabled="" selected="" hidden="">Order By</option>
-       <option value="index" data-direction="asc">Default</option>
-         <option value="listing-date-sort" data-direction="asc">
-          Date - Oldest
-        </option>
-         <option value="listing-date-sort" data-direction="desc">
-          Date - Newest
-        </option>
-         <option value="listing-file-modified-sort" data-direction="asc">
-          Modified - Oldest
-        </option>
-         <option value="listing-file-modified-sort" data-direction="desc">
-          Modified - Newest
-        </option>
-         <option value="listing-title" data-direction="asc">
-          Title
-        </option>
-     </select>
-  </div>
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
-</div>
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1737331200000" data-listing-file-modified-sort="1738572029092" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="481">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../notes/course-hardware/index.html" class="no-external">Course Hardware</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../notes/course-hardware/index.html" class="no-external">List of hardware available for the course as well as their respective specifications and documentation.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="../notes/course-hardware/index.html" class="no-external">
-<div class="listing-date">
-2025-01-20
-</div>
-<div class="listing-reading-time">
-3 min
-</div>
-<div class="metadata-value listing-file-modified">
-2025-02-03
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-listing-date-sort="1737331200000" data-listing-file-modified-sort="1738572029092" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1111">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../notes/developer-environment/index.html" class="no-external">Developer environment setup</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../notes/developer-environment/index.html" class="no-external">Instructions for setting up classroom and personal computers for programming in this course, including: setting up a Debian container on WSL; restoring your WSL container from backup quickly; installing needed dependencies on WSL, Mac/OSX, and Linux; verifying that needed dependencies have been installed. </a>
-</div>
-</div>
-<div class="metadata">
-<a href="../notes/developer-environment/index.html" class="no-external">
-<div class="listing-date">
-2025-01-20
-</div>
-<div class="listing-reading-time">
-6 min
-</div>
-<div class="metadata-value listing-file-modified">
-2025-02-03
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="YmFzaCUyQ2xhYi0wJTJDbGFiLTE=" data-listing-date-sort="1738281600000" data-listing-file-modified-sort="1738572029091" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1151">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../notes/bash-essentials/index.html" class="no-external">Bash essentials</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../notes/bash-essentials/index.html" class="no-external">Tips for using the bash interactive shell CLI effectively. The core bash commands everyone should know. How to combine commands using pipes and redirects. </a>
-</div>
-</div>
-<div class="metadata">
-<a href="../notes/bash-essentials/index.html" class="no-external">
-<div class="listing-date">
-2025-01-31
-</div>
-<div class="listing-reading-time">
-6 min
-</div>
-<div class="metadata-value listing-file-modified">
-2025-02-03
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<div id="listing-table-view" class="quarto-listing quarto-listing-container-table">
-<div class="listing-actions-group">
-   <div class="input-group input-group-sm quarto-listing-sort">
-     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-     <select id="listing-table-view-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-table-view'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-       <option value="" disabled="" selected="" hidden="">Order By</option>
-       <option value="index" data-direction="asc">Default</option>
-         <option value="listing-date-sort" data-direction="asc">
-          Date - Oldest
-        </option>
-         <option value="listing-date-sort" data-direction="desc">
-          Date - Newest
-        </option>
-         <option value="listing-file-modified-sort" data-direction="asc">
-          Modified - Oldest
-        </option>
-         <option value="listing-file-modified-sort" data-direction="desc">
-          Modified - Newest
-        </option>
-         <option value="listing-title-sort" data-direction="asc">
-          Title
-        </option>
-     </select>
-  </div>
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
-</div>
-<table class="quarto-listing-table table">
-<thead>
-<tr>
-<th>
-<a class="sort" data-sort="listing-date-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Date</a>
-</th>
-<th>
-<a class="sort" data-sort="listing-file-modified-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Modified</a>
-</th>
-<th>
-<a class="sort" data-sort="listing-title-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Title</a>
-</th>
-<th>
-Subtitle
-</th>
-<th>
-Reading Time
-</th>
-</tr>
-</thead>
-<tbody class="list">
-<tr data-index="0" data-listing-date-sort="1737331200000" data-listing-file-modified-sort="1738572029092" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="481" data-listing-title-sort="Course Hardware" data-listing-filename-sort="index.qmd">
-<td>
-<span class="listing-date">2025-01-20</span>
-</td>
-<td>
-<span class="listing-file-modified">2025-02-03</span>
-</td>
-<td>
-<a href="../notes/course-hardware/index.html" class="title listing-title">Course Hardware</a>
-</td>
-<td>
-<span class="listing-subtitle">List of hardware available for the course as well as their respective specifications and documentation.</span>
-</td>
-<td>
-<span class="listing-reading-time">3 min</span>
-</td>
-</tr>
-<tr data-index="1" data-listing-date-sort="1737331200000" data-listing-file-modified-sort="1738572029092" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1111" data-listing-title-sort="Developer environment setup" data-listing-filename-sort="index.qmd">
-<td>
-<span class="listing-date">2025-01-20</span>
-</td>
-<td>
-<span class="listing-file-modified">2025-02-03</span>
-</td>
-<td>
-<a href="../notes/developer-environment/index.html" class="title listing-title">Developer environment setup</a>
-</td>
-<td>
-<span class="listing-subtitle">Instructions for setting up classroom and personal computers for programming in this course, including: setting up a Debian container on WSL; restoring your WSL container from backup quickly; installing needed dependencies on WSL, Mac/OSX, and Linux; verifying that needed dependencies have been installed. </span>
-</td>
-<td>
-<span class="listing-reading-time">6 min</span>
-</td>
-</tr>
-<tr data-index="2" data-categories="YmFzaCUyQ2xhYi0wJTJDbGFiLTE=" data-listing-date-sort="1738281600000" data-listing-file-modified-sort="1738572029091" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1151" data-listing-title-sort="Bash essentials" data-listing-filename-sort="index.qmd">
-<td>
-<span class="listing-date">2025-01-31</span>
-</td>
-<td>
-<span class="listing-file-modified">2025-02-03</span>
-</td>
-<td>
-<a href="../notes/bash-essentials/index.html" class="title listing-title">Bash essentials</a>
-</td>
-<td>
-<span class="listing-subtitle">Tips for using the bash interactive shell CLI effectively. The core bash commands everyone should know. How to combine commands using pipes and redirects. </span>
-</td>
-<td>
-<span class="listing-reading-time">6 min</span>
-</td>
-</tr>
-</tbody>
-</table>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div>
-</div>
-<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<div id="listing-grid-view" class="quarto-listing quarto-listing-container-grid">
-<div class="listing-actions-group">
-   <div class="input-group input-group-sm quarto-listing-sort">
-     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-     <select id="listing-grid-view-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-grid-view'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-       <option value="" disabled="" selected="" hidden="">Order By</option>
-       <option value="index" data-direction="asc">Default</option>
-         <option value="listing-date-sort" data-direction="asc">
-          Date - Oldest
-        </option>
-         <option value="listing-date-sort" data-direction="desc">
-          Date - Newest
-        </option>
-         <option value="listing-file-modified-sort" data-direction="asc">
-          Modified - Oldest
-        </option>
-         <option value="listing-file-modified-sort" data-direction="desc">
-          Modified - Newest
-        </option>
-         <option value="listing-title" data-direction="asc">
-          Title
-        </option>
-     </select>
-  </div>
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
-</div>
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-listing-date-sort="1737331200000" data-listing-file-modified-sort="1738572029092" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="481">
-<a href="../notes/course-hardware/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Course Hardware
-</h5>
-<div class="card-subtitle listing-subtitle">
-List of hardware available for the course as well as their respective specifications and documentation.
-</div>
-<div class="listing-reading-time card-text text-muted">
-3 min
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-2025-01-20
-</div>
-</div>
-</div>
-<div class="card-footer">
-<div class="card-file-modified listing-file-modified">
-<p>2025-02-03</p>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-listing-date-sort="1737331200000" data-listing-file-modified-sort="1738572029092" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1111">
-<a href="../notes/developer-environment/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Developer environment setup
-</h5>
-<div class="card-subtitle listing-subtitle">
-<p>Instructions for setting up classroom and personal computers for programming in this course, including: setting up a Debian container on WSL; restoring your WSL container from backup quickly; installing needed dependencies on WSL, Mac/OSX, and Linux; verifying that needed dependencies have been installed.</p>
-</div>
-<div class="listing-reading-time card-text text-muted">
-6 min
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-2025-01-20
-</div>
-</div>
-</div>
-<div class="card-footer">
-<div class="card-file-modified listing-file-modified">
-<p>2025-02-03</p>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="YmFzaCUyQ2xhYi0wJTJDbGFiLTE=" data-listing-date-sort="1738281600000" data-listing-file-modified-sort="1738572029091" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1151">
-<a href="../notes/bash-essentials/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Bash essentials
-</h5>
-<div class="card-subtitle listing-subtitle">
-<p>Tips for using the bash interactive shell CLI effectively. The core bash commands everyone should know. How to combine commands using pipes and redirects.</p>
-</div>
-<div class="listing-reading-time card-text text-muted">
-6 min
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-2025-01-31
-</div>
-</div>
-</div>
-<div class="card-footer">
-<div class="card-file-modified listing-file-modified">
-<p>2025-02-03</p>
-</div>
-</div>
-</div>
-</a>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div>
-</div>
-</div>
-</div>
+<p><em>This section was adapted from wiki.bash-hackers.org <span class="citation" data-cites="bashhackers_2023">[@bashhackers_2023]</span></em></p>
+<section id="stdin-stdout-stderr" class="level4" data-number="0.0.1">
+<h4 data-number="0.0.1" class="anchored" data-anchor-id="stdin-stdout-stderr"><span class="header-section-number">0.0.1</span> stdin, stdout, stderr</h4>
+<p>When Bash starts, normally, 3 file descriptors are opened, 0, 1 and 2 also known as standard input (stdin), standard output (stdout) and standard error (stderr).</p>
+<p>For example, with Bash running in a Linux terminal emulator, you’ll see:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>bash</strong></pre>
+</div>
+<div class="sourceCode" id="cb1" data-filename="bash"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> lsof +f g <span class="at">-ap</span> <span class="va">$BASHPID</span> <span class="at">-d</span> 0,1,2</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">COMMAND</span>   PID USER   FD   TYPE FILE-FLAG DEVICE SIZE/OFF NODE NAME</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span>    12135 root    0u   CHR     RW,LG 136,13      0t0   16 /dev/pts/5</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span>    12135 root    1u   CHR     RW,LG 136,13      0t0   16 /dev/pts/5</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span>    12135 root    2u   CHR     RW,LG 136,13      0t0   16 /dev/pts/5</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This <code>/dev/pts/5</code> is a pseudo terminal used to emulate a real terminal. Bash reads (<code>stdin</code>) from this terminal and prints via <code>stdout</code> and <code>stderr</code> to this terminal.</p>
+<pre><code>                  ---       +-----------------------+
+standard input   ( 0 ) ----&gt;| /dev/pts/5            |
+                  ---       +-----------------------+
+
+                  ---       +-----------------------+
+standard output  ( 1 ) ----&gt;| /dev/pts/5            |
+                  ---       +-----------------------+
+
+                  ---       +-----------------------+
+standard error   ( 2 ) ----&gt;| /dev/pts/5            |
+                  ---       +-----------------------+</code></pre>
+<p>When a command, a compound command, a subshell etc. is executed, it inherits these file descriptors. For instance <code>echo foo</code> will send the text <code>foo</code> to the file descriptor <code>1</code> inherited from the shell, which is connected to <code>/dev/pts/5</code>.</p>
+</section>
+<section id="output-redirection-n-file" class="level4" data-number="0.0.2">
+<h4 data-number="0.0.2" class="anchored" data-anchor-id="output-redirection-n-file"><span class="header-section-number">0.0.2</span> Output Redirection <code>n&gt; file</code></h4>
+<p><code>&gt;</code> is probably the simplest redirection.</p>
+<p><code>echo foo &gt; file</code></p>
+<p>the <code>&gt;</code> file after the command alters the file descriptors belonging to the command echo. It changes the file descriptor 1 (&gt; file is the same as 1&gt;file) so that it points to the file file. They will look like:</p>
+<pre><code>                  ---       +-----------------------+
+standard input   ( 0 ) ----&gt;| /dev/pts/5            |
+                  ---       +-----------------------+
+
+                  ---       +-----------------------+
+standard output  ( 1 ) ----&gt;| file                  |
+                  ---       +-----------------------+
+
+                  ---       +-----------------------+
+standard error   ( 2 ) ----&gt;| /dev/pts/5            |
+                  ---       +-----------------------+</code></pre>
+<p>Now characters written by our command, echo, that are sent to the standard output, i.e., the file descriptor 1, end up in the file named file.</p>
+<p>In the same way, <code>command 2&gt; file</code> will change the standard error and will make it point to file. For example, <code>command 2&gt; /dev/null</code> will <em>delete</em> all errors outputted by <code>command</code>:</p>
+<pre><code>                  ---       +-----------------------+
+standard input   ( 0 ) ----&gt;| /dev/pts/5            |
+                  ---       +-----------------------+
+
+                  ---       +-----------------------+
+standard output  ( 1 ) ----&gt;| /dev/pts/5            |
+                  ---       +-----------------------+
+
+                  ---       +-----------------------+
+standard error   ( 2 ) ----&gt;| /dev/null             |
+                  ---       +-----------------------+</code></pre>
+</section>
+<section id="input-redirection-n-file" class="level4" data-number="0.0.3">
+<h4 data-number="0.0.3" class="anchored" data-anchor-id="input-redirection-n-file"><span class="header-section-number">0.0.3</span> Input Redirection <code>n&lt; file</code></h4>
+<p>When you run a command using <code>command &lt; file</code>, it changes the file descriptor <code>0</code> so that it looks like:</p>
+<pre><code>                  ---       +-----------------------+
+standard input   ( 0 ) &lt;----| file                  |
+                  ---       +-----------------------+
+
+                  ---       +-----------------------+
+standard output  ( 1 ) ----&gt;| /dev/pts/5            |
+                  ---       +-----------------------+
+
+                  ---       +-----------------------+
+standard error   ( 2 ) ----&gt;| /dev/pts/5            |
+                  ---       +-----------------------+</code></pre>
+<p>If the command reads from stdin, it now will read from file and not from the console.</p>
+</section>
+<section id="pipes" class="level4" data-number="0.0.4">
+<h4 data-number="0.0.4" class="anchored" data-anchor-id="pipes"><span class="header-section-number">0.0.4</span> Pipes <code>|</code></h4>
+<p>What does this <code>|</code> do? Among other things, it connects the standard output of the command on the left to the standard input of the command on the right. That is, it creates a special file, a pipe, which is opened as a write destination for the left command, and as a read source for the right command.</p>
+<pre><code>command:   echo foo               |                cat
+
+ ---       +--------------+               ---       +--------------+
+( 0 ) ----&gt;| /dev/pts/5   |     ------&gt;  ( 0 ) ----&gt;|pipe (read)   |
+ ---       +--------------+    /          ---       +--------------+
+                              /
+ ---       +--------------+  /            ---       +--------------+
+( 1 ) ----&gt;| pipe (write) | /            ( 1 ) ----&gt;| /dev/pts     |
+ ---       +--------------+               ---       +--------------+
+
+ ---       +--------------+               ---       +--------------+
+( 2 ) ----&gt;| /dev/pts/5   |              ( 2 ) ----&gt;| /dev/pts/    |
+ ---       +--------------+               ---       +--------------+</code></pre>
+<p>This is possible because the redirections are set up by the shell before the commands are executed, and the commands inherit the file descriptors.</p>
 
 
-
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div>CC BY-NC 4.0. ©2022-25 Mauricio Buschinelli &amp; Michael Haaf.
 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">(View License)</a></div></div></section></div></main> <!-- /main -->

@@ -240,6 +240,7 @@ div.csl-indent {
   <div class="quarto-categories">
     <div class="quarto-category">bash</div>
     <div class="quarto-category">lab-0</div>
+    <div class="quarto-category">lab-1</div>
   </div>
   </div>
 
@@ -692,17 +693,121 @@ Keyboard Shortcuts: details &amp; examples
 <div class="column-page-right">
 <div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">command</span>  <span class="op">&gt;</span>  filename     Redirect command output <span class="er">(</span><span class="ex">stdout</span><span class="kw">)</span> <span class="ex">into</span> a file</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="bu">command</span>  <span class="op">&gt;</span>  /dev/null    Discard stdout of command</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="bu">command</span>  <span class="dv">2</span><span class="op">&gt;</span> filename     Redirect error output <span class="er">(</span><span class="ex">stderr</span><span class="kw">)</span> <span class="ex">to</span> a file</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="bu">command</span>  <span class="dv">2</span><span class="op">&gt;</span>  /dev/null   Discard stderr of command</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="bu">command</span>  <span class="dv">2</span><span class="op">&gt;&amp;</span><span class="dv">1</span> filename   Redirect stderr to stdout </span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="bu">command</span>  <span class="dv">1</span><span class="op">&gt;&amp;</span><span class="dv">2</span> filename   Redirect stdout to stderr</span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="bu">command</span>  <span class="op">&gt;&gt;</span> filename     Redirect command output and APPEND into a file</span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="bu">command</span>  <span class="op">&lt;</span>  filename     Redirect a file into a command</span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="bu">command</span>  <span class="op">&amp;&gt;</span> filename     Redirect every output of command to filename</span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="ex">commandA</span> <span class="kw">|</span> <span class="ex">commandB</span>       Redirect stdout of commandA to commandB</span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="ex">commandA</span> <span class="kw">|&amp;</span> <span class="ex">commandB</span>      Redirect stdERR of commandA to commandB</span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="ex">commandA</span> <span class="kw">|</span> <span class="fu">tee</span> filename   Redirect commandA into filename AND stdout</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="bu">command</span>  <span class="dv">2</span><span class="op">&gt;</span> /dev/null   Discard stderr of command</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="bu">command</span>  <span class="op">&gt;&gt;</span> filename     Redirect command output and APPEND into a file</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="bu">command</span>  <span class="op">&lt;</span>  filename     Redirect a file into a command</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="ex">commandA</span> <span class="kw">|</span> <span class="ex">commandB</span>       Pipe stdout of commandA to commandB</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="ex">commandA</span> <span class="kw">|</span> <span class="fu">tee</span> filename   Pipe stdout of commandA into filename AND stdout</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Redirection explained further
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><em>This section was adapted from wiki.bash-hackers.org <span class="citation" data-cites="bashhackers_2023">(<a href="#ref-bashhackers_2023" role="doc-biblioref"><span>“Illustrated <span>Redirection</span> <span>Tutorial</span> [<span>Bash</span> <span>Hackers</span> <span>Wiki</span>]”</span> 2023</a>)</span></em></p>
+<section id="stdin-stdout-stderr" class="level4" data-number="4.0.1">
+<h4 data-number="4.0.1" class="anchored" data-anchor-id="stdin-stdout-stderr"><span class="header-section-number">4.0.1</span> stdin, stdout, stderr</h4>
+<p>When Bash starts, normally, 3 file descriptors are opened, 0, 1 and 2 also known as standard input (stdin), standard output (stdout) and standard error (stderr).</p>
+<p>For example, with Bash running in a Linux terminal emulator, you’ll see:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>bash</strong></pre>
+</div>
+<div class="sourceCode" id="cb15" data-filename="bash"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> lsof +f g <span class="at">-ap</span> <span class="va">$BASHPID</span> <span class="at">-d</span> 0,1,2</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="ex">COMMAND</span>   PID USER   FD   TYPE FILE-FLAG DEVICE SIZE/OFF NODE NAME</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span>    12135 root    0u   CHR     RW,LG 136,13      0t0   16 /dev/pts/5</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span>    12135 root    1u   CHR     RW,LG 136,13      0t0   16 /dev/pts/5</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span>    12135 root    2u   CHR     RW,LG 136,13      0t0   16 /dev/pts/5</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This <code>/dev/pts/5</code> is a pseudo terminal used to emulate a real terminal. Bash reads (<code>stdin</code>) from this terminal and prints via <code>stdout</code> and <code>stderr</code> to this terminal.</p>
+<pre><code>                  ---       +-----------------------+
+standard input   ( 0 ) ----&gt;| /dev/pts/5            |
+                  ---       +-----------------------+
+
+                  ---       +-----------------------+
+standard output  ( 1 ) ----&gt;| /dev/pts/5            |
+                  ---       +-----------------------+
+
+                  ---       +-----------------------+
+standard error   ( 2 ) ----&gt;| /dev/pts/5            |
+                  ---       +-----------------------+</code></pre>
+<p>When a command, a compound command, a subshell etc. is executed, it inherits these file descriptors. For instance <code>echo foo</code> will send the text <code>foo</code> to the file descriptor <code>1</code> inherited from the shell, which is connected to <code>/dev/pts/5</code>.</p>
+</section>
+<section id="output-redirection-n-file" class="level4" data-number="4.0.2">
+<h4 data-number="4.0.2" class="anchored" data-anchor-id="output-redirection-n-file"><span class="header-section-number">4.0.2</span> Output Redirection <code>n&gt; file</code></h4>
+<p><code>&gt;</code> is probably the simplest redirection.</p>
+<p><code>echo foo &gt; file</code></p>
+<p>the <code>&gt;</code> file after the command alters the file descriptors belonging to the command echo. It changes the file descriptor 1 (&gt; file is the same as 1&gt;file) so that it points to the file file. They will look like:</p>
+<pre><code>                  ---       +-----------------------+
+standard input   ( 0 ) ----&gt;| /dev/pts/5            |
+                  ---       +-----------------------+
+
+                  ---       +-----------------------+
+standard output  ( 1 ) ----&gt;| file                  |
+                  ---       +-----------------------+
+
+                  ---       +-----------------------+
+standard error   ( 2 ) ----&gt;| /dev/pts/5            |
+                  ---       +-----------------------+</code></pre>
+<p>Now characters written by our command, echo, that are sent to the standard output, i.e., the file descriptor 1, end up in the file named file.</p>
+<p>In the same way, <code>command 2&gt; file</code> will change the standard error and will make it point to file. For example, <code>command 2&gt; /dev/null</code> will <em>delete</em> all errors outputted by <code>command</code>:</p>
+<pre><code>                  ---       +-----------------------+
+standard input   ( 0 ) ----&gt;| /dev/pts/5            |
+                  ---       +-----------------------+
+
+                  ---       +-----------------------+
+standard output  ( 1 ) ----&gt;| /dev/pts/5            |
+                  ---       +-----------------------+
+
+                  ---       +-----------------------+
+standard error   ( 2 ) ----&gt;| /dev/null             |
+                  ---       +-----------------------+</code></pre>
+</section>
+<section id="input-redirection-n-file" class="level4" data-number="4.0.3">
+<h4 data-number="4.0.3" class="anchored" data-anchor-id="input-redirection-n-file"><span class="header-section-number">4.0.3</span> Input Redirection <code>n&lt; file</code></h4>
+<p>When you run a command using <code>command &lt; file</code>, it changes the file descriptor <code>0</code> so that it looks like:</p>
+<pre><code>                  ---       +-----------------------+
+standard input   ( 0 ) &lt;----| file                  |
+                  ---       +-----------------------+
+
+                  ---       +-----------------------+
+standard output  ( 1 ) ----&gt;| /dev/pts/5            |
+                  ---       +-----------------------+
+
+                  ---       +-----------------------+
+standard error   ( 2 ) ----&gt;| /dev/pts/5            |
+                  ---       +-----------------------+</code></pre>
+<p>If the command reads from stdin, it now will read from file and not from the console.</p>
+</section>
+<section id="pipes" class="level4" data-number="4.0.4">
+<h4 data-number="4.0.4" class="anchored" data-anchor-id="pipes"><span class="header-section-number">4.0.4</span> Pipes <code>|</code></h4>
+<p>What does this <code>|</code> do? Among other things, it connects the standard output of the command on the left to the standard input of the command on the right. That is, it creates a special file, a pipe, which is opened as a write destination for the left command, and as a read source for the right command.</p>
+<pre><code>command:   echo foo               |                cat
+
+ ---       +--------------+               ---       +--------------+
+( 0 ) ----&gt;| /dev/pts/5   |     ------&gt;  ( 0 ) ----&gt;|pipe (read)   |
+ ---       +--------------+    /          ---       +--------------+
+                              /
+ ---       +--------------+  /            ---       +--------------+
+( 1 ) ----&gt;| pipe (write) | /            ( 1 ) ----&gt;| /dev/pts     |
+ ---       +--------------+               ---       +--------------+
+
+ ---       +--------------+               ---       +--------------+
+( 2 ) ----&gt;| /dev/pts/5   |              ( 2 ) ----&gt;| /dev/pts/    |
+ ---       +--------------+               ---       +--------------+</code></pre>
+<p>This is possible because the redirections are set up by the shell before the commands are executed, and the commands inherit the file descriptors.</p>
+</section>
+</div>
+</div>
 </div>
 </section>
 <section id="core-utilities" class="level2 page-columns page-full" data-number="5">
@@ -710,17 +815,17 @@ Keyboard Shortcuts: details &amp; examples
 <section id="ssh" class="level3 page-columns page-full" data-number="5.1">
 <h3 data-number="5.1" class="anchored" data-anchor-id="ssh"><span class="header-section-number">5.1</span> <code>ssh</code></h3>
 <div class="column-page-right">
-<div class="sourceCode" id="cb15"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">NAME</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ssh</span> <span class="at">-</span> OpenSSH remote login client</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="ex">SYNOPSIS</span></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ssh</span> [-l login_name] [-p port] DESTINATION [command <span class="pp">[</span><span class="ss">argument...</span><span class="pp">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">NAME</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ssh</span> <span class="at">-</span> OpenSSH remote login client</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="ex">SYNOPSIS</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ssh</span> [-l login_name] [-p port] DESTINATION [command <span class="pp">[</span><span class="ss">argument...</span><span class="pp">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><code>ssh</code> is a program for logging into a remote machine and for executing commands on a remote machine. It is intended to provide secure encrypted communications between two untrusted hosts over an insecure network.</p>
 <p>ssh connects and logs into the specified destination, which may be specified as either <code>[user@]hostname</code> or a URI of the form <code>ssh://[user@]hostname[:port]</code>.</p>
 <p>If a <code>command</code> is specified, it will be executed on the remote host instead of a login shell.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -729,7 +834,7 @@ Keyboard Shortcuts: details &amp; examples
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <!-- {{< include ssh.qmd >}} -->
 <p>There’heapds nothing here yet… stay tuned!</p>
@@ -740,23 +845,23 @@ Keyboard Shortcuts: details &amp; examples
 <section id="rsync" class="level3 page-columns page-full" data-number="5.2">
 <h3 data-number="5.2" class="anchored" data-anchor-id="rsync"><span class="header-section-number">5.2</span> <code>rsync</code></h3>
 <div class="column-page-right">
-<div class="sourceCode" id="cb16"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">NAME</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rsync</span> <span class="at">-</span> a fast, versatile, remote <span class="er">(</span><span class="ex">and</span> local<span class="kw">)</span> <span class="ex">file-copying</span> tool</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="ex">SYNOPSIS</span></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="ex">Local:</span></span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rsync</span> <span class="pp">[</span><span class="ss">OPTION...</span><span class="pp">]</span> SRC... <span class="pp">[</span><span class="ss">DEST</span><span class="pp">]</span></span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>  <span class="ex">Access</span> via remote shell:</span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Pull:</span></span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>        <span class="fu">rsync</span> <span class="pp">[</span><span class="ss">OPTION...</span><span class="pp">]</span> <span class="pp">[</span><span class="ss">USER@</span><span class="pp">]</span>HOST:SRC... <span class="pp">[</span><span class="ss">DEST</span><span class="pp">]</span></span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Push:</span></span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>        <span class="fu">rsync</span> <span class="pp">[</span><span class="ss">OPTION...</span><span class="pp">]</span> SRC... <span class="pp">[</span><span class="ss">USER@</span><span class="pp">]</span>HOST:DEST</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">NAME</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rsync</span> <span class="at">-</span> a fast, versatile, remote <span class="er">(</span><span class="ex">and</span> local<span class="kw">)</span> <span class="ex">file-copying</span> tool</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="ex">SYNOPSIS</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>  <span class="ex">Local:</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rsync</span> <span class="pp">[</span><span class="ss">OPTION...</span><span class="pp">]</span> SRC... <span class="pp">[</span><span class="ss">DEST</span><span class="pp">]</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>  <span class="ex">Access</span> via remote shell:</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Pull:</span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>        <span class="fu">rsync</span> <span class="pp">[</span><span class="ss">OPTION...</span><span class="pp">]</span> <span class="pp">[</span><span class="ss">USER@</span><span class="pp">]</span>HOST:SRC... <span class="pp">[</span><span class="ss">DEST</span><span class="pp">]</span></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Push:</span></span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>        <span class="fu">rsync</span> <span class="pp">[</span><span class="ss">OPTION...</span><span class="pp">]</span> SRC... <span class="pp">[</span><span class="ss">USER@</span><span class="pp">]</span>HOST:DEST</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Rsync is a fast and extraordinarily versatile file copying tool. It can copy locally, to/from another host over any remote shell, or to/from a remote rsync daemon.</p>
 <p>It is famous for sending only the differences between the source files and the existing files in the destination, increasing efficiency for repetitive synchronization between source and destination.</p>
 <p>Rsync is widely used for backups and mirroring, and as an improved <code>cp</code> command for everyday use.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -765,7 +870,7 @@ Keyboard Shortcuts: details &amp; examples
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <!-- {{< include rsync.qmd >}} -->
 <p>There’s nothing here yet… stay tuned!</p>
@@ -776,19 +881,19 @@ Keyboard Shortcuts: details &amp; examples
 <section id="tar-zip-and-unzip" class="level3 page-columns page-full" data-number="5.3">
 <h3 data-number="5.3" class="anchored" data-anchor-id="tar-zip-and-unzip"><span class="header-section-number">5.3</span> <code>tar</code>, <code>zip</code>, and <code>unzip</code></h3>
 <div class="column-page-right">
-<div class="sourceCode" id="cb17"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">NAME</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tar</span> <span class="at">-</span> a general archiving utility for creation/extraction/compression and more</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">zip</span> <span class="at">-</span> package and compress files into a ZIP archive</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unzip</span> <span class="at">-</span> list, test and extract compressed files from a ZIP archive</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="ex">SYNOPSIS</span></span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tar</span> <span class="at">--create</span>/--extract [--file ARCHIVE] <span class="pp">[</span><span class="ss">OPTIONS</span><span class="pp">]</span> <span class="pp">[</span><span class="ss">FILE...</span><span class="pp">]</span></span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">zip</span> <span class="pp">[</span><span class="ss">OPTIONS</span><span class="pp">]</span> <span class="pp">[</span><span class="ss">ARCHIVE</span><span class="pp">]</span> <span class="pp">[</span><span class="ss">FILE...</span><span class="pp">]</span></span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unzip</span> <span class="pp">[</span><span class="ss">ARCHIVE</span><span class="pp">]</span> [-d OUTPUTDIR]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">NAME</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tar</span> <span class="at">-</span> a general archiving utility for creation/extraction/compression and more</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">zip</span> <span class="at">-</span> package and compress files into a ZIP archive</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unzip</span> <span class="at">-</span> list, test and extract compressed files from a ZIP archive</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="ex">SYNOPSIS</span></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tar</span> <span class="at">--create</span>/--extract [--file ARCHIVE] <span class="pp">[</span><span class="ss">OPTIONS</span><span class="pp">]</span> <span class="pp">[</span><span class="ss">FILE...</span><span class="pp">]</span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">zip</span> <span class="pp">[</span><span class="ss">OPTIONS</span><span class="pp">]</span> <span class="pp">[</span><span class="ss">ARCHIVE</span><span class="pp">]</span> <span class="pp">[</span><span class="ss">FILE...</span><span class="pp">]</span></span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unzip</span> <span class="pp">[</span><span class="ss">ARCHIVE</span><span class="pp">]</span> [-d OUTPUTDIR]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The <code>tar</code>, <code>zip</code>, and <code>unzip</code> programs provide the ability to create, extract, and otherwise manipulate <strong>archives</strong> of files, where an <strong>archive</strong> of files is simply a file that stores a collection of other files.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -797,7 +902,7 @@ Keyboard Shortcuts: details &amp; examples
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><em>This section was adapted from www.gnu.org <span class="citation" data-cites="gnu_2023">(<a href="#ref-gnu_2023" role="doc-biblioref"><span>“<span>GNU</span> Tar 1.35: 2 <span>Tutorial</span> <span>Introduction</span> to Tar”</span> n.d.</a>)</span>.</em></p>
 <p>All three tools are used for efficient <strong>storage</strong>, <strong>transfer</strong>, and <strong>backup</strong> of collections of files, particularly large files via <strong>compression.</strong></p>
@@ -830,58 +935,58 @@ Keyboard Shortcuts: details &amp; examples
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Create</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Extract</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Assume you have a directory called music/ and three folders inside it:</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tree music</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="ex">music/</span></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> blues</span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> └── nina-simone</span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> folk</span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> └── phil-ochs</span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="ex">└──</span> jazz</span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>    <span class="ex">└──</span> charles-mingus</span>
-<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Create an uncompressed archive (.tar) of all three files</span></span>
-<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tar <span class="at">--create</span> <span class="at">--file</span><span class="op">=</span>collection.tar music</span>
-<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Creates a compressed archive (.zip, .tar.gz, .tar.bz2)</span></span>
-<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> zip <span class="at">-r</span> collection.zip music</span>
-<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tar <span class="at">--create</span> <span class="at">--gzip</span> <span class="at">--file</span><span class="op">=</span>collection.tar.gz music</span>
-<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tar <span class="at">--create</span> <span class="at">--bzip2</span> <span class="at">--file</span><span class="op">=</span>collection.tar.bz2 music</span>
-<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a><span class="co"># tar has shorthand versions of the above parameters</span></span>
-<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tar <span class="at">-c</span> <span class="at">-f</span> collection.tar music</span>
-<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tar <span class="at">-c</span> <span class="at">-z</span> <span class="at">-f</span> collection.tar.gz music</span>
-<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tar <span class="at">-cjf</span> collection.tar.bz2 music</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Assume you have a directory called music/ and three folders inside it:</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tree music</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="ex">music/</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> blues</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> └── nina-simone</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> folk</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> └── phil-ochs</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="ex">└──</span> jazz</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>    <span class="ex">└──</span> charles-mingus</span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Create an uncompressed archive (.tar) of all three files</span></span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tar <span class="at">--create</span> <span class="at">--file</span><span class="op">=</span>collection.tar music</span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Creates a compressed archive (.zip, .tar.gz, .tar.bz2)</span></span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> zip <span class="at">-r</span> collection.zip music</span>
+<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tar <span class="at">--create</span> <span class="at">--gzip</span> <span class="at">--file</span><span class="op">=</span>collection.tar.gz music</span>
+<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tar <span class="at">--create</span> <span class="at">--bzip2</span> <span class="at">--file</span><span class="op">=</span>collection.tar.bz2 music</span>
+<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a><span class="co"># tar has shorthand versions of the above parameters</span></span>
+<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tar <span class="at">-c</span> <span class="at">-f</span> collection.tar music</span>
+<span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tar <span class="at">-c</span> <span class="at">-z</span> <span class="at">-f</span> collection.tar.gz music</span>
+<span id="cb24-22"><a href="#cb24-22" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tar <span class="at">-cjf</span> collection.tar.bz2 music</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Assume you have the archives from the Create example:</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tar <span class="at">--list</span> collection.tar</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="ex">music/</span></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> blues</span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> └── nina-simone</span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> folk</span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> └── phil-ochs</span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="ex">└──</span> jazz</span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>    <span class="ex">└──</span> charles-mingus</span>
-<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract all files from an uncompressed archive (.tar) to the current directory</span></span>
-<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tar <span class="at">--extract</span> <span class="at">--file</span><span class="op">=</span>collection.tar</span>
-<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract all files from a compressed archive (.zip, .tar.gz, .tar.bz2) to the current directory</span></span>
-<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> unzip collection.zip</span>
-<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tar <span class="at">--extract</span> <span class="at">--gzip</span> <span class="at">--file</span><span class="op">=</span>collection.tar.gz</span>
-<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tar <span class="at">--extract</span> <span class="at">--bzip2</span> <span class="at">--file</span><span class="op">=</span>collection.tar.bz2</span>
-<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract all files from a compressed archive, specifying a different output directory</span></span>
-<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> unzip collection.zip <span class="at">-d</span> ~/some-folder</span>
-<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tar <span class="at">--extract</span> <span class="at">--gzip</span> <span class="at">--file</span><span class="op">=</span>collection.tar.gz <span class="at">--directory</span> ~/music</span>
-<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tar <span class="at">--extract</span> <span class="at">--bzip2</span> <span class="at">--file</span><span class="op">=</span>collection.tar.bz2 <span class="at">--directory</span> /tmp/music</span>
-<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a><span class="co"># tar has shorthand versions of the above parameters</span></span>
-<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tar <span class="at">-x</span> <span class="at">-f</span> collection.tar</span>
-<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tar <span class="at">-x</span> <span class="at">-z</span> <span class="at">-f</span> collection.tar.gz <span class="at">-C</span> ~/music</span>
-<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tar <span class="at">-xjf</span> collection.tar.bz2 <span class="at">-C</span> /tmp/music</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Assume you have the archives from the Create example:</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tar <span class="at">--list</span> collection.tar</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="ex">music/</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> blues</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> └── nina-simone</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> folk</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> └── phil-ochs</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a><span class="ex">└──</span> jazz</span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>    <span class="ex">└──</span> charles-mingus</span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract all files from an uncompressed archive (.tar) to the current directory</span></span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tar <span class="at">--extract</span> <span class="at">--file</span><span class="op">=</span>collection.tar</span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract all files from a compressed archive (.zip, .tar.gz, .tar.bz2) to the current directory</span></span>
+<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> unzip collection.zip</span>
+<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tar <span class="at">--extract</span> <span class="at">--gzip</span> <span class="at">--file</span><span class="op">=</span>collection.tar.gz</span>
+<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tar <span class="at">--extract</span> <span class="at">--bzip2</span> <span class="at">--file</span><span class="op">=</span>collection.tar.bz2</span>
+<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract all files from a compressed archive, specifying a different output directory</span></span>
+<span id="cb25-20"><a href="#cb25-20" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> unzip collection.zip <span class="at">-d</span> ~/some-folder</span>
+<span id="cb25-21"><a href="#cb25-21" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tar <span class="at">--extract</span> <span class="at">--gzip</span> <span class="at">--file</span><span class="op">=</span>collection.tar.gz <span class="at">--directory</span> ~/music</span>
+<span id="cb25-22"><a href="#cb25-22" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tar <span class="at">--extract</span> <span class="at">--bzip2</span> <span class="at">--file</span><span class="op">=</span>collection.tar.bz2 <span class="at">--directory</span> /tmp/music</span>
+<span id="cb25-23"><a href="#cb25-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-24"><a href="#cb25-24" aria-hidden="true" tabindex="-1"></a><span class="co"># tar has shorthand versions of the above parameters</span></span>
+<span id="cb25-25"><a href="#cb25-25" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tar <span class="at">-x</span> <span class="at">-f</span> collection.tar</span>
+<span id="cb25-26"><a href="#cb25-26" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tar <span class="at">-x</span> <span class="at">-z</span> <span class="at">-f</span> collection.tar.gz <span class="at">-C</span> ~/music</span>
+<span id="cb25-27"><a href="#cb25-27" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tar <span class="at">-xjf</span> collection.tar.bz2 <span class="at">-C</span> /tmp/music</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -890,7 +995,7 @@ Keyboard Shortcuts: details &amp; examples
 </div>
 </div>
 </div>
-<div class="no-row-height column-margin column-container"><div class="callout callout-style-default callout-important callout-titled callout-13-contents callout-collapse collapse callout-margin-content">
+<div class="no-row-height column-margin column-container"><div class="callout callout-style-default callout-important callout-titled callout-14-contents callout-collapse collapse callout-margin-content">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -912,16 +1017,16 @@ Important
 <section id="git" class="level3 page-columns page-full" data-number="5.4">
 <h3 data-number="5.4" class="anchored" data-anchor-id="git"><span class="header-section-number">5.4</span> <code>git</code></h3>
 <div class="column-page-right">
-<div class="sourceCode" id="cb20"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">NAME</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">git</span> <span class="at">-</span> the stupid content tracker</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="ex">SYNOPSIS</span></span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">git</span> <span class="op">&lt;</span>command<span class="op">&gt;</span> [<span class="op">&lt;</span>args<span class="op">&gt;</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="ex">NAME</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">git</span> <span class="at">-</span> the stupid content tracker</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="ex">SYNOPSIS</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">git</span> <span class="op">&lt;</span>command<span class="op">&gt;</span> [<span class="op">&lt;</span>args<span class="op">&gt;</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Git is a fast, scalable, distributed revision control system with an unusually rich command set that provides both high-level operations and full access to internals.</p>
 <p>See <code>man 7 gittutorial</code> to get started, then see <code>man 7 giteveryday</code> for a useful minimum set of commands.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -930,7 +1035,7 @@ Important
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <!-- {{< include git.qmd >}} -->
 <p>There’s nothing here yet… stay tuned!</p>
@@ -949,6 +1054,9 @@ Important
 </div>
 <div id="ref-ss64_2025" class="csl-entry" role="listitem">
 <span>“How-<span>To</span>: <span>Redirection</span> and <span>Process</span> <span>Substitution</span> - <span>Linux</span> - <span>SS64</span>.com.”</span> n.d. Accessed January 31, 2025. <a href="https://ss64.com/bash/syntax-redirection.html">https://ss64.com/bash/syntax-redirection.html</a>.
+</div>
+<div id="ref-bashhackers_2023" class="csl-entry" role="listitem">
+<span>“Illustrated <span>Redirection</span> <span>Tutorial</span> [<span>Bash</span> <span>Hackers</span> <span>Wiki</span>].”</span> 2023. <a href="https://web.archive.org/web/20230315225157/https://wiki.bash-hackers.org/howto/redirection_tutorial">https://web.archive.org/web/20230315225157/https://wiki.bash-hackers.org/howto/redirection_tutorial</a>.
 </div>
 </div></section><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div>CC BY-NC 4.0. ©2022-25 Mauricio Buschinelli &amp; Michael Haaf.
 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">(View License)</a></div></div></section></div></main> <!-- /main -->
