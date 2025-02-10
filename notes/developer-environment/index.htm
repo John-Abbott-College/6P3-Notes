@@ -437,6 +437,31 @@
 <div class="sourceCode" id="cb11" data-filename="Powershell"><pre class="sourceCode numberSource powershell number-lines code-with-copy"><code class="sourceCode powershell"><span id="cb11-1"><a></a><span class="co"># This can take around 5 minutes to finish.</span></span>
 <span id="cb11-2"><a></a><span class="fu">PS</span> <span class="op">&gt;</span> wsl <span class="op">--</span>import Debian <span class="op">.</span>\Debian <span class="st">"C:\Users\&lt;your-username&gt;\OneDrive\debian.tar"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>After restoring WSL, you will find that you are automatically logged in as <code>root</code> instead of your username.</p>
+<p>The way to set a default user in a WSL container instance is to create a <code>[user]</code> entry in the container’s <code>/etc/wsl.conf</code> file:</p>
+<p>Open your wsl instance and add the following entry to <code>/etc/wsl.conf</code>:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>/etc/wsl.conf</strong></pre>
+</div>
+<pre data-filename="/etc/wsl.conf"><code>[user]
+default=username</code></pre>
+</div>
+<p>Exit your distro/instance, then run a <code>wsl --terminate &lt;distroname&gt;</code> from PowerShell.</p>
+<p>When you restart, the default user should be set to <code>username</code>.</p>
+<p>For more detail: https://superuser.com/a/1627461</p>
+</div>
+</div>
+</div>
 </section>
 <section id="personal-computers" class="slide level2">
 <h2>Personal computers</h2>
@@ -451,15 +476,15 @@
 <div class="code-with-filename-file">
 <pre><strong>bash</strong></pre>
 </div>
-<div class="sourceCode" id="cb12" data-filename="bash"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a></a><span class="co"># Update system:</span></span>
-<span id="cb12-2"><a></a><span class="ex">brew</span> update <span class="kw">&amp;&amp;</span> <span class="ex">brew</span> upgrade</span>
-<span id="cb12-3"><a></a><span class="co"># Verify python version is &gt;= 3.9:</span></span>
-<span id="cb12-4"><a></a><span class="ex">python3</span> <span class="at">--version</span></span>
-<span id="cb12-5"><a></a><span class="co"># Ensure pip is installed:</span></span>
-<span id="cb12-6"><a></a><span class="ex">python3</span> <span class="at">-m</span> pip install <span class="at">--upgrade</span> pip</span>
-<span id="cb12-7"><a></a></span>
-<span id="cb12-8"><a></a><span class="co"># Install other dependencies</span></span>
-<span id="cb12-9"><a></a><span class="ex">brew</span> install wget ca-certificates rsync pass pass-otp zbar vim</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13" data-filename="bash"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a></a><span class="co"># Update system:</span></span>
+<span id="cb13-2"><a></a><span class="ex">brew</span> update <span class="kw">&amp;&amp;</span> <span class="ex">brew</span> upgrade</span>
+<span id="cb13-3"><a></a><span class="co"># Verify python version is &gt;= 3.9:</span></span>
+<span id="cb13-4"><a></a><span class="ex">python3</span> <span class="at">--version</span></span>
+<span id="cb13-5"><a></a><span class="co"># Ensure pip is installed:</span></span>
+<span id="cb13-6"><a></a><span class="ex">python3</span> <span class="at">-m</span> pip install <span class="at">--upgrade</span> pip</span>
+<span id="cb13-7"><a></a></span>
+<span id="cb13-8"><a></a><span class="co"># Install other dependencies</span></span>
+<span id="cb13-9"><a></a><span class="ex">brew</span> install wget ca-certificates rsync pass pass-otp zbar vim</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><em>Last update to this command: <strong>?meta:date-modified</strong></em></p>
 <p>Also ensure you have <a href="#/vs-code-extensions">installed VSCode and configured its extensions</a></p>
@@ -471,23 +496,23 @@
 <div class="code-with-filename-file">
 <pre><strong>bash</strong></pre>
 </div>
-<div class="sourceCode" id="cb13" data-filename="bash"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a></a><span class="co"># Verify python version is &gt;= 3.9 and pip is installed</span></span>
-<span id="cb13-2"><a></a><span class="ex">python3</span> <span class="at">--version</span></span>
-<span id="cb13-3"><a></a><span class="ex">pip3</span> <span class="at">--version</span> <span class="co"># or pip --version</span></span>
-<span id="cb13-4"><a></a></span>
-<span id="cb13-5"><a></a><span class="co"># Verify git config set up: ensure the output makes sense for you</span></span>
-<span id="cb13-6"><a></a><span class="fu">git</span> config user.name</span>
-<span id="cb13-7"><a></a><span class="fu">git</span> config user.email</span>
-<span id="cb13-8"><a></a></span>
-<span id="cb13-9"><a></a><span class="co"># For the following no specific version is required</span></span>
-<span id="cb13-10"><a></a><span class="co"># but, these commands should not fail (show error message or exit error code 1)</span></span>
-<span id="cb13-11"><a></a><span class="fu">man</span> <span class="at">-V</span></span>
-<span id="cb13-12"><a></a><span class="fu">ssh</span> <span class="at">-V</span></span>
-<span id="cb13-13"><a></a><span class="fu">rsync</span> <span class="at">--version</span></span>
-<span id="cb13-14"><a></a><span class="ex">pass</span> <span class="at">--version</span></span>
-<span id="cb13-15"><a></a><span class="ex">pass</span> otp <span class="at">--version</span></span>
-<span id="cb13-16"><a></a><span class="ex">zbarimg</span> <span class="at">--version</span></span>
-<span id="cb13-17"><a></a><span class="ex">vim</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14" data-filename="bash"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a></a><span class="co"># Verify python version is &gt;= 3.9 and pip is installed</span></span>
+<span id="cb14-2"><a></a><span class="ex">python3</span> <span class="at">--version</span></span>
+<span id="cb14-3"><a></a><span class="ex">pip3</span> <span class="at">--version</span> <span class="co"># or pip --version</span></span>
+<span id="cb14-4"><a></a></span>
+<span id="cb14-5"><a></a><span class="co"># Verify git config set up: ensure the output makes sense for you</span></span>
+<span id="cb14-6"><a></a><span class="fu">git</span> config user.name</span>
+<span id="cb14-7"><a></a><span class="fu">git</span> config user.email</span>
+<span id="cb14-8"><a></a></span>
+<span id="cb14-9"><a></a><span class="co"># For the following no specific version is required</span></span>
+<span id="cb14-10"><a></a><span class="co"># but, these commands should not fail (show error message or exit error code 1)</span></span>
+<span id="cb14-11"><a></a><span class="fu">man</span> <span class="at">-V</span></span>
+<span id="cb14-12"><a></a><span class="fu">ssh</span> <span class="at">-V</span></span>
+<span id="cb14-13"><a></a><span class="fu">rsync</span> <span class="at">--version</span></span>
+<span id="cb14-14"><a></a><span class="ex">pass</span> <span class="at">--version</span></span>
+<span id="cb14-15"><a></a><span class="ex">pass</span> otp <span class="at">--version</span></span>
+<span id="cb14-16"><a></a><span class="ex">zbarimg</span> <span class="at">--version</span></span>
+<span id="cb14-17"><a></a><span class="ex">vim</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
