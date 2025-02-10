@@ -22,13 +22,19 @@ to see where this course has deviated from the original outline.
 
 ## Deliverables
 
-1. [Lab 0][lab-0]: Due January 31 (Demo: in-class. Code: end of day 11:59pm)
+1. [Lab 0: dev env setup and bash review][lab-0]: Due January 31 (Demo: in-class. Code: end of day 11:59pm)
+1. [Lab 1: git good, bash better][lab-1]: Due February 10 end of day 11:59pm
 
-[lab-0]: https://classroom.github.com/a/SsBGSO3A
+[lab-0]: https://www.gradescope.ca/courses/24517/assignments/127573
+[lab-1]: https://www.gradescope.ca/courses/24517/assignments/127640
+
 
 ## Lectures
 
 - Jan 20: Introduction to course
 - Jan 24: Setting up developer environment
 - Jan 27: Review bash, begin Lab 0
-- Jan 31: 
+- Jan 31: Work on Lab 0
+- Feb 3: Begin Lab 1
+- Feb 7: (class cancelled, continue lab 1)
+- Feb 10: Finish Lab 1
