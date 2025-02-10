@@ -244,6 +244,27 @@ the backup image you created:
 PS > wsl --import Debian .\Debian "C:\Users\<your-username>\OneDrive\debian.tar"
 ```
 
+::: {.callout-note}
+
+After restoring WSL, you will find that you are automatically logged in as `root` instead of your username.
+
+The way to set a default user in a WSL container instance is to create a `[user]` entry in the container's `/etc/wsl.conf` file:
+
+Open your wsl instance and add the following entry to `/etc/wsl.conf`:
+
+``` {filename=/etc/wsl.conf}
+[user]
+default=username
+```
+
+Exit your distro/instance, then run a `wsl --terminate <distroname>` from PowerShell.
+
+When you restart, the default user should be set to `username`.
+
+For more detail: https://superuser.com/a/1627461
+
+:::
+
 ## Personal computers
 
 ### Windows (WSL)
