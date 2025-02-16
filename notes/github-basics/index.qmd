@@ -1,9 +1,9 @@
 ---
-title: GitHub authentication
+title: GitHub basics
 subtitle: >
-  Using VSCode to log in to GitHub
-  Using a personal access token for authentication on GitHub outside of VSCode
-  Using the `pass` password manager to store access tokens safely
+  Integrating 
+  Using a personal access token for authentication on GitHub outside of VSCode.
+  Using the `pass` password manager to store access tokens safely.
 date: 2025-02-10
 categories: [git, lab-1]
 draft: false
@@ -15,7 +15,54 @@ draft: false
 
 :::
 
-## Using personal access tokens
+## Overview
+
+## Branch management
+
+### Creating a branch using the GitHub website
+
+You can add branches to your repository directly by clicking the "Branches" icon, and then "New Branch" on the subsequent window (screenshots below).
+
+You'll need the following information:
+
+- **New branch name**: the lab name (e.g. `lab-0`).
+- **Source**: the `instructions` branch from your own repository
+
+::: {#fig-new-branch layout-ncol=2}
+
+<img src="assets/new-branch-1.png" alt="Creating a new branch" />  
+
+<img src="assets/new-branch.png" alt="Naming a new branch" /> 
+
+The user interface for creating branches on GitHub.
+:::
+
+### Creating a branch using VSCode
+
+You can create branches within your project using VSCode:
+
+
+::: {#fig-vscode-new-branch}
+
+![](assets/vscode-create-branch.png)
+
+Clicking on the branch button (bottom left) launches a dialog which allows for a few branch operations: you can create a new branch, switch to a local branch, switch/pull a remote branch, etc.
+:::
+
+### Creating a branch using the command line
+
+```bash
+# make sure you are on the `instructions` branch before proceeding
+git status
+# the switch command switches branches, -c flag stands for "create"
+git switch -c lab-0
+# upload your branch to the remote repository
+git push -u origin
+# ensure your new lab-0 branch is up to date with new remote lab-0 branch
+git status
+```
+
+## Authentication
 
 Many `git` operations require authentication to get permission. Some
 examples:
