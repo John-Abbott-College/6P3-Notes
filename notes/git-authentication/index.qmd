@@ -1,20 +1,17 @@
 ---
-title: Git essentials
+title: GitHub authentication
 subtitle: >
-  Tips for using git effectively.
-  Using a personal access token for authentication
-  The core git commands everyone should know.
+  Using VSCode to log in to GitHub.
+  Using a personal access token for authentication on GitHub outside of VSCode.
+  Using the `pass` password manager to store access tokens safely.
 date: 2025-02-10
-categories: [git, lab-0, lab-1, lab-2]
-bibliography: references.bib
-nocite: |
-  @*
+categories: [git, lab-1]
 draft: false
 ---
 
 ::: {.column-margin}
 
-![](assets/git-logo.png)
+![](assets/git-logo.svg)
 
 :::
 

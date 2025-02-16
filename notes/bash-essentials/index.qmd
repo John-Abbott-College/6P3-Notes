@@ -461,3 +461,11 @@ set of commands.
 There's nothing here yet... stay tuned!
 
 :::
+
+## More resources
+
+- [LinuxCommand.org](https://linuxcommand.org/index.php)
+  - Short guides on learning bash shell and bash scripting.
+  - Links to interactive learning games under "Adventures".
+  [Basic Shell Features](https://devdocs.io/bash/basic-shell-features)
+  - Complete reference with examples.
