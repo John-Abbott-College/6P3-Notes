@@ -1,5 +1,5 @@
 ---
-title: Git authentication
+title: GitHub authentication
 subtitle: >
   Using VSCode to log in to GitHub
   Using a personal access token for authentication on GitHub outside of VSCode
