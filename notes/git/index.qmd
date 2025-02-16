@@ -5,7 +5,7 @@ subtitle: >
   Using a personal access token for authentication
   The core git commands everyone should know.
 date: 2025-02-10
-categories: [git, 0, lab-1]
+categories: [git, lab-0, lab-1, lab-2]
 bibliography: references.bib
 nocite: |
   @*
