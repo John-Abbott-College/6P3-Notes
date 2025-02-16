@@ -12,5 +12,11 @@ __pycache__
 bin/
 obj/
 
+# For Nix environment
+.envrc
+.direnv
+shell.nix
+
 /.quarto/
 **/_site/
+

@@ -1,20 +1,20 @@
 format:
   html: default
-  revealjs:
-    theme: moon
-    transition: slide
-    margin: 0.2
-    smaller: true
-    scrollable: true
-    output-ext: htm
-    toc: true
-    toc-depth: 1
-    menu: true
-    auto-stretch: false
-    footer: |
-      © Copyright 2024-2025 Michael Haaf. All rights reserved.
-format-links:
-  - html
+#   revealjs:
+#     theme: moon
+#     transition: slide
+#     margin: 0.2
+#     smaller: true
+#     scrollable: true
+#     output-ext: htm
+#     toc: true
+#     toc-depth: 1
+#     menu: true
+#     auto-stretch: false
+#     footer: |
+#       © Copyright 2024-2025 Michael Haaf. All rights reserved.
+# format-links:
+#   - html
   # - format: revealjs
   #   text: Slides
   #   icon: file-slides

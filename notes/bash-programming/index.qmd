@@ -5,7 +5,7 @@ subtitle: >
   Managing environment and permissions in bash.
   The capabilities and limitations of programming in bash.
 date: 2025-01-30
-categories: [bash, lab-1]
+categories: [bash, lab-1, lab-2]
 draft: true
 ---
 
