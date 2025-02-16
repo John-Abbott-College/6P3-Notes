@@ -1,8 +1,10 @@
 ---
 title: Python scripting
-subtitle: Tips and tricks for effective scripting in Python
+subtitle: >
+  Tips and tricks for effective scripting in Python
 categories: [python]
 draft: true
+date: 2025-02-24
 ---
 
 ## Overview

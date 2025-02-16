@@ -11,7 +11,7 @@ draft: false
 
 ::: {.column-margin}
 
-![](assets/git-logo.svg)
+![](assets/github-mark.svg)
 
 :::
 

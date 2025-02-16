@@ -10,35 +10,68 @@ listing:
     filter-ui: true
     sort-ui: [date, file-modified, title]
     sort: date
-    date-format: iso
-    categories: true
-    fields: [date, file-modified, title, subtitle, reading-time]
+    date-format: medium
+    categories: unnumbered
+    fields: [date, image, file-modified, title, categories, subtitle, reading-time]
     page-size: 99
+    image-height: 150px
     include:
       filename: "**/index.qmd"
+
   - id: table-view
     type: table
     filter-ui: true
     sort-ui: [date, file-modified, title]
     sort: date
-    date-format: iso
-    categories: true
-    fields: [date, file-modified, title, subtitle, reading-time]
+    date-format: "MMM D"
+    categories: unnumbered
+    table-hover: true
+    fields: [date, title, subtitle, file-modified]
     page-size: 99
     include:
       filename: "**/index.qmd"
+
   - id: grid-view
     type: grid
     filter-ui: true
     sort-ui: [date, file-modified, title]
     sort: date
-    date-format: iso
-    categories: true
-    fields: [date, file-modified, title, subtitle, reading-time]
+    date-format: medium
+    categories: unnumbered
+    fields: [date, image, file-modified, title, subtitle, reading-time, categories]
     page-size: 99
     include:
       filename: "**/index.qmd"
+
 ---
+
+<style>
+
+h3.listing-title a {
+  font-weight: bold;
+}
+
+td .listing-date {
+  display: inline-block;
+  width: 50px;
+}
+
+div.listing-date:before {
+  content: "Published: ";
+  font-weight: bold;
+}
+
+div.listing-reading-time:before {
+  content: "Reading time: ";
+  font-weight: bold;
+}
+
+div.listing-file-modified:before {
+  content: "Last modified: ";
+  font-weight: bold;
+}
+
+</style>
 
 ::: {.panel-tabset}
 

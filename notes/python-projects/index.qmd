@@ -1,5 +1,12 @@
 ---
+title: Python project management
+subtitle: >
+  Managing python development and runtime dependencies.
+  Using virtual environments.
+  Configuring python linters and formatters.
+categories: [python]
 draft: true
+date: 2025-02-24
 ---
 
 ## Virtual Environments

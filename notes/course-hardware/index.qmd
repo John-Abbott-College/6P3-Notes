@@ -1,7 +1,9 @@
 ---
 title: Course Hardware
-subtitle: List of hardware available for the course as well as their respective specifications and documentation.
+subtitle: >
+  List of hardware available for the course as well as their respective specifications and documentation.
 date: 2025-01-20
+categories: [lab-3]
 ---
 
 :::{.column-margin}
