@@ -18,7 +18,7 @@ The specific usecases for `tar`/`zip`/`unzip` are similar but vary slightly:
 
 #### Operations
 
-There are three main operations of interest for archiving programs:
+There are two main operations of interest for archiving programs:
 
 - create: create a new archive (`.zip`, `.tar`, `.tar.gz`, `tar.bz2`)
 - extract: extract the files of an archive to a directory
