@@ -74,10 +74,6 @@ a:not([class]) {
   text-underline-offset: 0.15em !important;
 }
 
-/* Scroll margin allowance above anchor links */
-:target {
-  scroll-padding-block-start: 2rem;
-}
 /* Scroll margin allowance below focused elements 
   to ensure they are clearly in view */
 :focus {
@@ -85,7 +81,7 @@ a:not([class]) {
 }
 /* The stuff above doesn't seem to totally take care of the problem */
 section {
-  scroll-margin-top: 2rem;
+  scroll-margin-top: 3rem;
 }
 
 // TODO: put these and other non-$var using styles in style.css
