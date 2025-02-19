@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-02-10">
+<meta name="dcterms.date" content="2025-02-17">
 
-<title>GitHub basics – Connected Objects</title>
+<title>Bash scripting – Connected Objects</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -107,9 +73,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<meta property="og:title" content="GitHub basics – Connected Objects">
-<meta property="og:description" content="Integrating Using a personal access token for authentication on GitHub outside of VSCode. Using the pass password manager to store access tokens safely.">
-<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/notes/github-basics/assets/github-mark.svg">
+<meta property="og:title" content="Bash scripting – Connected Objects">
+<meta property="og:description" content="Tips for scripting in bash effectively. Managing environment and permissions in bash. The capabilities and limitations of programming in bash.">
+<meta property="og:image" content="https://tudoubaba.net/assets/img/shebang.72b91b53.png">
 <meta property="og:site_name" content="{{< var course.title >}}">
 </head>
 
@@ -173,26 +139,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><span class="header-section-number">1</span> Overview</a></li>
-  <li><a href="#branch-management" id="toc-branch-management" class="nav-link" data-scroll-target="#branch-management"><span class="header-section-number">2</span> Branch management</a>
+  <li><a href="#bash-theory" id="toc-bash-theory" class="nav-link active" data-scroll-target="#bash-theory"><span class="header-section-number">1</span> Bash Theory</a>
   <ul>
-  <li><a href="#creating-a-branch-using-the-github-website" id="toc-creating-a-branch-using-the-github-website" class="nav-link" data-scroll-target="#creating-a-branch-using-the-github-website"><span class="header-section-number">2.1</span> Creating a branch using the GitHub website</a></li>
-  <li><a href="#creating-a-branch-using-vscode" id="toc-creating-a-branch-using-vscode" class="nav-link" data-scroll-target="#creating-a-branch-using-vscode"><span class="header-section-number">2.2</span> Creating a branch using VSCode</a></li>
-  <li><a href="#creating-a-branch-using-the-command-line" id="toc-creating-a-branch-using-the-command-line" class="nav-link" data-scroll-target="#creating-a-branch-using-the-command-line"><span class="header-section-number">2.3</span> Creating a branch using the command line</a></li>
+  <li><a href="#variables" id="toc-variables" class="nav-link" data-scroll-target="#variables"><span class="header-section-number">1.1</span> Variables</a></li>
+  <li><a href="#scope" id="toc-scope" class="nav-link" data-scroll-target="#scope"><span class="header-section-number">1.2</span> Scope</a></li>
+  <li><a href="#conditionals" id="toc-conditionals" class="nav-link" data-scroll-target="#conditionals"><span class="header-section-number">1.3</span> Conditionals</a></li>
+  <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions"><span class="header-section-number">1.4</span> Functions</a></li>
+  <li><a href="#exit-codes" id="toc-exit-codes" class="nav-link" data-scroll-target="#exit-codes"><span class="header-section-number">1.5</span> Exit codes</a></li>
   </ul></li>
-  <li><a href="#authentication" id="toc-authentication" class="nav-link" data-scroll-target="#authentication"><span class="header-section-number">3</span> Authentication</a>
+  <li><a href="#os-theory" id="toc-os-theory" class="nav-link" data-scroll-target="#os-theory"><span class="header-section-number">2</span> OS Theory</a>
   <ul>
-  <li><a href="#creating-a-personal-access-token" id="toc-creating-a-personal-access-token" class="nav-link" data-scroll-target="#creating-a-personal-access-token"><span class="header-section-number">3.1</span> Creating a personal access token</a></li>
-  <li><a href="#using-a-password-manager-to-store-your-token" id="toc-using-a-password-manager-to-store-your-token" class="nav-link" data-scroll-target="#using-a-password-manager-to-store-your-token"><span class="header-section-number">3.2</span> Using a password manager to store your token</a>
-  <ul class="collapse">
-  <li><a href="#install-pass-dependencies" id="toc-install-pass-dependencies" class="nav-link" data-scroll-target="#install-pass-dependencies"><span class="header-section-number">3.2.1</span> Install <code>pass</code> dependencies</a></li>
-  <li><a href="#set-up-gpg" id="toc-set-up-gpg" class="nav-link" data-scroll-target="#set-up-gpg"><span class="header-section-number">3.2.2</span> Set up <code>gpg</code></a></li>
-  <li><a href="#store-personal-access-token-in-pass" id="toc-store-personal-access-token-in-pass" class="nav-link" data-scroll-target="#store-personal-access-token-in-pass"><span class="header-section-number">3.2.3</span> Store personal access token in <code>pass</code></a></li>
+  <li><a href="#shell" id="toc-shell" class="nav-link" data-scroll-target="#shell"><span class="header-section-number">2.1</span> Shell</a></li>
+  <li><a href="#permissions" id="toc-permissions" class="nav-link" data-scroll-target="#permissions"><span class="header-section-number">2.2</span> Permissions</a></li>
+  <li><a href="#filesystem" id="toc-filesystem" class="nav-link" data-scroll-target="#filesystem"><span class="header-section-number">2.3</span> Filesystem</a></li>
   </ul></li>
-  <li><a href="#troubleshooting" id="toc-troubleshooting" class="nav-link" data-scroll-target="#troubleshooting"><span class="header-section-number">3.3</span> Troubleshooting</a>
-  <ul class="collapse">
-  <li><a href="#no-secret-key" id="toc-no-secret-key" class="nav-link" data-scroll-target="#no-secret-key"><span class="header-section-number">3.3.1</span> <code>No secret key</code></a></li>
-  </ul></li>
+  <li><a href="#programming-with-sed-and-awk" id="toc-programming-with-sed-and-awk" class="nav-link" data-scroll-target="#programming-with-sed-and-awk"><span class="header-section-number">3</span> Programming with <code>sed</code> and <code>awk</code></a>
+  <ul>
+  <li><a href="#sed" id="toc-sed" class="nav-link" data-scroll-target="#sed"><span class="header-section-number">3.1</span> <code>sed</code></a></li>
+  <li><a href="#awk" id="toc-awk" class="nav-link" data-scroll-target="#awk"><span class="header-section-number">3.2</span> <code>awk</code></a></li>
   </ul></li>
   </ul>
 </nav>
@@ -206,11 +170,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">GitHub basics</h1>
-<p class="subtitle lead"></p><p>Integrating Using a personal access token for authentication on GitHub outside of VSCode. Using the <code>pass</code> password manager to store access tokens safely.</p><p></p>
+<h1 class="title">Bash scripting</h1>
+<p class="subtitle lead"></p><p>Tips for scripting in bash effectively. Managing environment and permissions in bash. The capabilities and limitations of programming in bash.</p><p></p>
   <div class="quarto-categories">
-    <div class="quarto-category">git</div>
-    <div class="quarto-category">lab-1</div>
+    <div class="quarto-category">bash</div>
+    <div class="quarto-category">lab-2</div>
   </div>
   </div>
 
@@ -222,7 +186,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">February 10, 2025</p>
+      <p class="date">February 17, 2025</p>
     </div>
   </div>
   
@@ -242,197 +206,51 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <div class="no-row-height column-margin column-container"><div class="">
-<p><a href="assets/github-mark.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="assets/github-mark.svg" class="img-fluid"></a></p>
-</div></div><section id="overview" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="overview"><span class="header-section-number">1</span> Overview</h2>
-<p>These notes cover the basics for using GitHub in this class.</p>
-</section>
-<section id="branch-management" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="branch-management"><span class="header-section-number">2</span> Branch management</h2>
-<p>Almost all of our lab and assignment work will take place on <strong>branches</strong>.</p>
-<section id="creating-a-branch-using-the-github-website" class="level3" data-number="2.1">
-<h3 data-number="2.1" class="anchored" data-anchor-id="creating-a-branch-using-the-github-website"><span class="header-section-number">2.1</span> Creating a branch using the GitHub website</h3>
-<p>You can add branches to your repository directly by clicking the “Branches” icon, and then “New Branch” on the subsequent window (screenshots below).</p>
-<p>You’ll need the following information:</p>
-<ul>
-<li><strong>New branch name</strong>: the lab name (e.g.&nbsp;<code>lab-0</code>).</li>
-<li><strong>Source</strong>: the <code>instructions</code> branch from your own repository</li>
-</ul>
-<div id="fig-new-branch" class="quarto-layout-panel">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-new-branch-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<p><img src="assets/new-branch-1.png" alt="Creating a new branch" class="figure-img"></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<p><img src="assets/new-branch.png" alt="Naming a new branch" class="figure-img"></p>
-</div>
-</div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-new-branch-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: The user interface for creating branches on GitHub.
-</figcaption>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://tudoubaba.net/assets/img/shebang.72b91b53.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Image source: tudoubaba.net"><img src="https://tudoubaba.net/assets/img/shebang.72b91b53.png" class="img-fluid figure-img" alt="Image source: tudoubaba.net"></a></p>
+<figcaption>Image source: <a href="https://tudoubaba.net/ProgrammingHandbook/python/python_shebang.html">tudoubaba.net</a></figcaption>
 </figure>
 </div>
+</div></div><section id="bash-theory" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="bash-theory"><span class="header-section-number">1</span> Bash Theory</h2>
+<section id="variables" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="variables"><span class="header-section-number">1.1</span> Variables</h3>
 </section>
-<section id="creating-a-branch-using-vscode" class="level3" data-number="2.2">
-<h3 data-number="2.2" class="anchored" data-anchor-id="creating-a-branch-using-vscode"><span class="header-section-number">2.2</span> Creating a branch using VSCode</h3>
-<p>You can create branches within your project using VSCode:</p>
-<div id="fig-vscode-new-branch" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-vscode-new-branch-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="assets/vscode-create-branch.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;2: Clicking on the branch button (bottom left) launches a dialog which allows for a few branch operations: you can create a new branch, switch to a local branch, switch/pull a remote branch, etc."><img src="assets/vscode-create-branch.png" class="img-fluid figure-img"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-vscode-new-branch-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Clicking on the branch button (bottom left) launches a dialog which allows for a few branch operations: you can create a new branch, switch to a local branch, switch/pull a remote branch, etc.
-</figcaption>
-</figure>
-</div>
+<section id="scope" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="scope"><span class="header-section-number">1.2</span> Scope</h3>
 </section>
-<section id="creating-a-branch-using-the-command-line" class="level3" data-number="2.3">
-<h3 data-number="2.3" class="anchored" data-anchor-id="creating-a-branch-using-the-command-line"><span class="header-section-number">2.3</span> Creating a branch using the command line</h3>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># make sure you are on the `instructions` branch before proceeding</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># the switch command switches branches, -c flag stands for "create"</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> switch <span class="at">-c</span> lab-0</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># upload your branch to the remote repository</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># ensure your new lab-0 branch is up to date with new remote lab-0 branch</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="conditionals" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="conditionals"><span class="header-section-number">1.3</span> Conditionals</h3>
+</section>
+<section id="functions" class="level3" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="functions"><span class="header-section-number">1.4</span> Functions</h3>
+</section>
+<section id="exit-codes" class="level3" data-number="1.5">
+<h3 data-number="1.5" class="anchored" data-anchor-id="exit-codes"><span class="header-section-number">1.5</span> Exit codes</h3>
 </section>
 </section>
-<section id="authentication" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="authentication"><span class="header-section-number">3</span> Authentication</h2>
-<p>Many <code>git</code> operations require authentication to get permission. Some examples:</p>
-<ul>
-<li>Pushing to a repository</li>
-<li>Pulling from a private repository</li>
-<li>Using <a href="https://cli.github.com/"><em>GitHub CLI</em></a></li>
-</ul>
-<p>Since July 2021, <a href="https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/#what-you-need-to-do-today"><em>GitHub no longer accepts account passwords</em></a> to authenticate git operations. You have probably run into this error many times when trying to push changes or clone your private repositories on a new machine.</p>
-<p>The only reason VSCode works out of the box is because VSCode and GitHub are integrated by default, both being owned by Microsoft.</p>
-<p>The following sections gives us more flexible and useful ways to authenticate <code>git</code> commands with GitHub.</p>
-<section id="creating-a-personal-access-token" class="level3" data-number="3.1">
-<h3 data-number="3.1" class="anchored" data-anchor-id="creating-a-personal-access-token"><span class="header-section-number">3.1</span> Creating a personal access token</h3>
-<p>Read <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens"><em>“Managing your personal access tokens”</em></a> on Github, and create a <strong>classic</strong> (not fine-grained) <strong>personal access token</strong>.</p>
-<p>At the very least, select the <strong>repo</strong> scope – this will give your token the ability to authenticate using git on the CLI. You can select all other scopes as well if you like.</p>
-<p>Once you’re finished, you’ll see your token is a string of the following form:</p>
-<pre><code>ghp_&lt;long string of letters and numbers&gt;</code></pre>
-<p>Keep this window open – the string of characters will disappear as soon as you refresh the page.</p>
-<p>We need to configure a secure storage location for this string. For this, we will use the tool <code>pass</code>.</p>
+<section id="os-theory" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="os-theory"><span class="header-section-number">2</span> OS Theory</h2>
+<section id="shell" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="shell"><span class="header-section-number">2.1</span> Shell</h3>
 </section>
-<section id="using-a-password-manager-to-store-your-token" class="level3" data-number="3.2">
-<h3 data-number="3.2" class="anchored" data-anchor-id="using-a-password-manager-to-store-your-token"><span class="header-section-number">3.2</span> Using a password manager to store your token</h3>
-<p><em>Secrets</em> like personal access tokens need to be readily accessible to be useful – but they also should be <em>secret</em>, so that others cannot easily impersonate you using the token.</p>
-<p>A common method for managing secrets is to use a password manager. In our course we use <a href="https://www.passwordstore.org/"><em>pass</em></a> to securely manage our personal access tokens on our developer environment.</p>
-<section id="install-pass-dependencies" class="level4" data-number="3.2.1">
-<h4 data-number="3.2.1" class="anchored" data-anchor-id="install-pass-dependencies"><span class="header-section-number">3.2.1</span> Install <code>pass</code> dependencies</h4>
-<p>First, ensure <code>pass</code> and some useful related dependencies are installed:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># On WSL / Linux</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install pass pass-extension-otp zbar-tools</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># On macOS</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install pass pass-otp zbar</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="permissions" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="permissions"><span class="header-section-number">2.2</span> Permissions</h3>
 </section>
-<section id="set-up-gpg" class="level4" data-number="3.2.2">
-<h4 data-number="3.2.2" class="anchored" data-anchor-id="set-up-gpg"><span class="header-section-number">3.2.2</span> Set up <code>gpg</code></h4>
-<p><code>pass</code> works by using asymmetric key encryption to store secrets. That means: you posess the private key that can <em>decrypt</em> secrets, and you make the public key available which can <em>encrypt</em> secrets.</p>
-<p>This scheme is not only useful for private communication (something similar is used by apps like Signal and Telegram), but also for storing any secrets – for us, we will store our github token as a secret.</p>
-<p>To get started, you’ll need to generated a <code>gpg</code> key-pair in order to use <code>pass</code>.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The GitHub instructions mention using <code>git bash</code> – ignore them, you have a developer environment to use instead.</p>
-<p>In general, when I link to external instructions, you will need to pay attention to what parts of them may be different in our class. This is a good skill in general for making effective use of resources posted online when learning a new skill.</p>
-</div>
-</div>
-<p>Follow the instructions below:</p>
-<ol type="1">
-<li>Create the gpg key-pair following the instructions on GitHub: <a href="https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key"><em>Generating a new GPG key</em></a></li>
-<li>run <code>gpg --full-generate-key</code> to get started.</li>
-<li>Recommended: You can accept the default key type (RSA)</li>
-<li>Recommended: Choose 4096 bits for the keysize.</li>
-<li>Recommended: You can accept the default “does not expire” option.</li>
-<li>Enter user ID information. This information should match what you have provided to GitHub already (username/email address)</li>
-<li>You have to choose a password for GPG keys. Choose something strong that you can remember.</li>
-<li>Add the public key to your GitHub account following the instructions: <a href="https://docs.github.com/en/authentication/managing-commit-signature-verification/adding-a-gpg-key-to-your-github-account"><em>Adding a GPG Key to your GitHub account</em></a>.</li>
-</ol>
-<p>The name of the key on GitHub does not matter (Personal GPG Key is fine)</p>
-<p>The command: <code>gpg --armor --export</code> prints your key to the console, you can copy/paste this output for GitHub</p>
-<p>Even better: use a pipe to <code>clip.exe</code> to put the key in your clipboard automatically with <code>gpg --armor --export | clip.exe</code></p>
-<ul>
-<li>on macOS: use <code>pbcopy</code> instead of <code>clip.exe</code></li>
-<li>on Linux: use <code>xclip</code> or <code>wl-copy</code> instead of <code>clip.exe</code></li>
-</ul>
-</section>
-<section id="store-personal-access-token-in-pass" class="level4" data-number="3.2.3">
-<h4 data-number="3.2.3" class="anchored" data-anchor-id="store-personal-access-token-in-pass"><span class="header-section-number">3.2.3</span> Store personal access token in <code>pass</code></h4>
-<p>Once you’ve created the <code>gpg</code> key-pair, we can now set up <code>pass</code>:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pass</span> init <span class="op">&lt;</span>the-email-you-used-for-gpg-key<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Finally, copy the token string from GitHub to your clipboard. Then, open your developer terminal:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> pass insert github/token</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Enter</span> password for github/token: <span class="co"># paste your token here, then press enter</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Once you’ve done this, you should be able to access your token using <code>pass github/token</code>, or <code>pass github/token | clip.exe</code> to place it on your clipboard directly.</p>
+<section id="filesystem" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="filesystem"><span class="header-section-number">2.3</span> Filesystem</h3>
 </section>
 </section>
-<section id="troubleshooting" class="level3" data-number="3.3">
-<h3 data-number="3.3" class="anchored" data-anchor-id="troubleshooting"><span class="header-section-number">3.3</span> Troubleshooting</h3>
-<p>Some common errors that arise with using <code>gpg</code>:</p>
-<section id="no-secret-key" class="level4" data-number="3.3.1">
-<h4 data-number="3.3.1" class="anchored" data-anchor-id="no-secret-key"><span class="header-section-number">3.3.1</span> <code>No secret key</code></h4>
-<p>This error looks like:</p>
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>bash</strong></pre>
-</div>
-<div class="sourceCode" id="cb6" data-filename="bash"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> pass github/token</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">gpg:</span> decryption failed: No secret key</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Try the following:</p>
-<section id="double-check-the-password-store-setup" class="level5" data-number="3.3.1.1">
-<h5 data-number="3.3.1.1" class="anchored" data-anchor-id="double-check-the-password-store-setup"><span class="header-section-number">3.3.1.1</span> Double check the password store setup</h5>
-<p>Confirm that your password store is encrypted with the gpg key you expect:</p>
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>bash</strong></pre>
-</div>
-<div class="sourceCode" id="cb7" data-filename="bash"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This command prints out your gpg key information</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> gpg <span class="at">-k</span> </span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># This command shows the gpg key used to encrypt your password-store</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cat ~/.password-store/.gpg-id</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># The id and/or email address should match for both!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<section id="programming-with-sed-and-awk" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="programming-with-sed-and-awk"><span class="header-section-number">3</span> Programming with <code>sed</code> and <code>awk</code></h2>
+<section id="sed" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="sed"><span class="header-section-number">3.1</span> <code>sed</code></h3>
 </section>
-<section id="restart-gpg-daemon" class="level5" data-number="3.3.1.2">
-<h5 data-number="3.3.1.2" class="anchored" data-anchor-id="restart-gpg-daemon"><span class="header-section-number">3.3.1.2</span> Restart <code>gpg</code> daemon</h5>
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>bash</strong></pre>
-</div>
-<div class="sourceCode" id="cb8" data-filename="bash"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> gpgconf <span class="at">--kill</span> gpg-agent</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>If that doesn’t work, try restarting your WSL instance. In powershell:</p>
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>Powershell</strong></pre>
-</div>
-<div class="sourceCode" id="cb9" data-filename="Powershell"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">PS</span> <span class="op">&gt;</span> wsl <span class="op">--</span>shutdown <span class="op">&lt;</span>distro-name<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>After the shutdown attempt, retry using <code>pass</code> in the WSL again.</p>
+<section id="awk" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="awk"><span class="header-section-number">3.2</span> <code>awk</code></h3>
 
 
-</section>
-</section>
 </section>
 </section>
 
