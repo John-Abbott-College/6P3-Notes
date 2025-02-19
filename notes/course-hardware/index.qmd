@@ -4,6 +4,7 @@ subtitle: >
   List of hardware available for the course as well as their respective specifications and documentation.
 date: 2025-01-20
 categories: [lab-3]
+image: https://files.seeedstudio.com/wiki/ReTerminal/wiki_thumb.png
 ---
 
 :::{.column-margin}

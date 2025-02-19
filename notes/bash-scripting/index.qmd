@@ -1,13 +1,17 @@
 ---
-title: Bash programming
+title: Bash scripting
 subtitle: >
   Tips for scripting in bash effectively.
   Managing environment and permissions in bash.
   The capabilities and limitations of programming in bash.
-date: 2025-01-30
-categories: [bash, lab-1, lab-2]
-draft: true
+date: 2025-02-17
+categories: [bash, lab-2]
+image: https://tudoubaba.net/assets/img/shebang.72b91b53.png
 ---
+
+:::{.column-margin}
+![Image source: [tudoubaba.net](https://tudoubaba.net/ProgrammingHandbook/python/python_shebang.html)](https://tudoubaba.net/assets/img/shebang.72b91b53.png)
+:::
 
 ## Bash Theory
 

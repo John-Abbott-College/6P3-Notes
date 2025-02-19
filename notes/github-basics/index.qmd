@@ -17,7 +17,11 @@ draft: false
 
 ## Overview
 
+These notes cover the basics for using GitHub in this class.
+
 ## Branch management
+
+Almost all of our lab and assignment work will take place on **branches**. 
 
 ### Creating a branch using the GitHub website
 
@@ -92,23 +96,20 @@ all other scopes as well if you like.
 Once you're finished, you'll see your token is a string of the following form:
 
 ```
-ghp_<long string of letters and numbers
+ghp_<long string of letters and numbers>
 ```
 
-Copy this string to your clipboard. Then, open your developer terminal:
+Keep this window open -- the string of characters will disappear as soon as you refresh the page.
 
-```bash
-$ pass insert github/token
-Enter password for github/token: # paste your token here, then press enter
-```
-
-Once you've done this, you should be able to access your token using `pass github/token`, or `pass github/token | clip.exe` to place it on your clipboard directly.
+We need to configure a secure storage location for this string. For this, we will use the tool `pass`.
 
 ### Using a password manager to store your token
 
 *Secrets* like personal access tokens need to be readily accessible to be useful -- but they also should be *secret*, so that others cannot easily impersonate you using the token.
 
 A common method for managing secrets is to use a password manager. In our course we use [*pass*](https://www.passwordstore.org/) to securely manage our personal access tokens on our developer environment.
+
+#### Install `pass` dependencies
 
 First, ensure `pass` and some useful related dependencies are installed:
 
@@ -120,13 +121,22 @@ sudo apt install pass pass-extension-otp zbar-tools
 brew install pass pass-otp zbar
 ```
 
-You'll need to generated a `gpg` key-pair in order to use `pass`. Follow the instructions below:
+#### Set up `gpg`
 
-> [!NOTE]
-> The GitHub instructions mention using `git bash` -- ignore them, you have a developer environment to use instead.
->
-> In general, when I link to external instructions, you will need to pay attention to what parts of them may be different
-> in our class. This is a good skill in general for making effective use of resources posted online when learning a new skill.
+`pass` works by using asymmetric key encryption to store secrets. That means: you posess the private key that can *decrypt* secrets, and you make the public key available which can *encrypt* secrets.
+
+This scheme is not only useful for private communication (something similar is used by apps like Signal and Telegram), but also for storing any secrets -- for us, we will store our github token as a secret.
+
+To get started, you'll need to generated a `gpg` key-pair in order to use `pass`. 
+
+:::{.callout-note}
+The GitHub instructions mention using `git bash` -- ignore them, you have a developer environment to use instead.
+
+In general, when I link to external instructions, you will need to pay attention to what parts of them may be different
+in our class. This is a good skill in general for making effective use of resources posted online when learning a new skill.
+:::
+
+Follow the instructions below:
 
 1. Create the gpg key-pair following the instructions on GitHub: [*Generating a new GPG key*](https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key)
 1. run `gpg --full-generate-key` to get started.
@@ -146,19 +156,30 @@ Even better: use a pipe to `clip.exe` to put the key in your clipboard automatic
 - on macOS: use `pbcopy` instead of `clip.exe`
 - on Linux: use `xclip` or `wl-copy` instead of `clip.exe`
 
+#### Store personal access token in `pass`
+
 Once you've created the `gpg` key-pair, we can now set up `pass`:
 
 ```bash
 pass init <the-email-you-used-for-gpg-key>
 ```
 
-In the next step, we're going to create a GitHub Personal Access Token and store it in your `pass` store for easy and secure access.
+Finally, copy the token string from GitHub to your clipboard. Then, open your developer terminal:
+
+```bash
+$ pass insert github/token
+Enter password for github/token: # paste your token here, then press enter
+```
+
+Once you've done this, you should be able to access your token using `pass github/token`, or `pass github/token | clip.exe` to place it on your clipboard directly.
 
 ### Troubleshooting
 
 Some common errors that arise with using `gpg`:
 
 #### `No secret key`
+
+This error looks like:
 
 ```bash {filename=bash}
 $ pass github/token
@@ -167,10 +188,24 @@ gpg: decryption failed: No secret key
 
 Try the following:
 
+##### Double check the password store setup
+
+Confirm that your password store is encrypted with the gpg key you expect:
+
+```bash {filename=bash}
+# This command prints out your gpg key information
+$ gpg -k 
+
+# This command shows the gpg key used to encrypt your password-store
+$ cat ~/.password-store/.gpg-id
+
+# The id and/or email address should match for both!
+```
+
+##### Restart `gpg` daemon
+
 ```bash {filename=bash}
 $ gpgconf --kill gpg-agent
-
-$ pass gitub/token
 ```
 
 If that doesn't work, try restarting your WSL instance. In powershell:

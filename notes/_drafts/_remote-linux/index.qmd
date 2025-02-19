@@ -16,7 +16,7 @@ Login into the R.Pi without password by setting up SSH credentials
 - Follow guide by Raspberry Pi Foundation:
   - [Passwordless SSH Access](https://www.raspberrypi.com/documentation/computers/remote-access.html#manually-configure-an-ssh-key)
 
-### SCP: Copy files from Remote
+### `scp`: Copy files from Remote
 
 - Follow guide by Raspberry Pi Foundation:
   - [Using Secure Copy](https://www.raspberrypi.com/documentation/computers/remote-access.html#using-secure-copy)
@@ -40,9 +40,7 @@ situation.
 
 To enable SSH keep-alive, follow these simple steps:
 
-1.  Open your SSH client `config` file, typically located inside:
-    - `~/.ssh/` (for unix-based systems e.g. Linux/macOS)
-    - `%userprofile%\.ssh\` (for Windows).
+1.  Open your SSH client `config` file, typically located inside `~/.ssh/config`
 2.  Add the following lines to the configuration file:
 
 ```bash
@@ -67,13 +65,8 @@ network instability and reduce connection setup overhead.
 
 To enable SSH multiplexing, follow these steps:
 
-1.  Open your SSH client configuration file (`~/.ssh/config` or
-    `%userprofile%\.ssh\config`).
-2.  Add the following lines to the configuration file:{#39ef}
-
-::: {.panel-tabset}
-
-## Unix Client (Linux/mac os)
+1.  Open your SSH client configuration file (`~/.ssh/config`)
+2.  Add the following lines to the configuration file:
 
 ```bash
 Host *
@@ -81,17 +74,6 @@ Host *
     ControlPath ~/.ssh/master-%r@%h:%p
     ControlPersist 5m
 ```
-
-## Windows Client (lab computers)
-
-```bash
-Host *
-    ControlMaster auto
-    ControlPath %userprofile%/.ssh/master-%r@%h:%p
-    ControlPersist 5m
-```
-
-:::
 
 Save the configuration file.
 
@@ -125,68 +107,6 @@ In the above example, the `ClientAliveInterval` option sets the time interval
 `ClientAliveCountMax` defines the number of unanswered messages allowed before
 the server terminates the connection.
 
-### tmux
+## VNC
 
 More to come soon...
-
-####
-
-## Tools
-
-More to come soon...
-
-### Install NeoVim on RPI
-
-```bash
-# Update source repositories -- a good idea any time you are installing a package.
-sudo apt update -y
-# Install xclip for clipboard support with ssh graphical session `-Y`
-sudo apt install xclip -y
-sudo apt-get install neovim
-```
-
-#### Install AstroNVIM
-
-After installing nvim:
-
-```bash
-# Install a Nerd Fonts (FiraCode)
-cd ~/Downloads
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/FiraCode.zip
-unzip FiraCode.zip
-
-# Font installation according to Debian's docs: https://wiki.debian.org/Fonts
-# Move to systam-wide font folder
-sudo mv *.ttf /usr/local/share/fonts/
-# update the font cache
-fc-cache
-```
-
-```bash
-# Follow AstroNvim install instructions: https://astronvim.github.io/#%EF%B8%8F-installation
-
-# Make a backup of your current nvim folder
-mv ~/.config/nvim ~/.config/nvim.bak
-# Clean neovim folders (Optional but recommended)
-mv ~/.local/share/nvim ~/.local/share/nvim.bak
-mv ~/.local/state/nvim ~/.local/state/nvim.bak
-mv ~/.cache/nvim ~/.cache/nvim.bak
-# Clone the repository
-git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
-```
-
-#### Install Node
-
-Installing node is not required but will improve compatibility with modern nvim
-features:
-
-```bash
-# Install Node.js using nvm according to https://github.com/nvm-sh/nvm
-;wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
-# source .bashrc to pickup env variables
-source ~/.bashrc
-# install the latest version of node
-nvm install node
-# Install Tree-sitter CLI
-npm install tree-sitter-cli
-```

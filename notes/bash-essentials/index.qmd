@@ -9,7 +9,7 @@ categories: [bash, lab-0, lab-1]
 bibliography: references.bib
 nocite: |
   @*
-draft: false
+image: https://tiswww.case.edu/php/chet/img/bash-logo-web.png
 ---
 
 ::: {.column-margin}
@@ -352,7 +352,7 @@ shell.
 
 <!-- {{< include ssh.qmd >}} -->
 
-There'heapds nothing here yet... stay tuned!
+There's nothing here yet... stay tuned!
 
 :::
 
