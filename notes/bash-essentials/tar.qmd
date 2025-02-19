@@ -1,9 +1,9 @@
-_This section was adapted from www.gnu.org [@gnu_2023]._
+_This section was adapted from [@GNUTar135]._
+
+The specific usecases for `tar`/`zip`/`unzip` are similar but vary slightly.
 
 All three tools are used for efficient **storage**, **transfer**, and **backup** of
 collections of files, particularly large files via **compression.**
-
-The specific usecases for `tar`/`zip`/`unzip` are similar but vary slightly:
 
 - `tar`:
     - default: create/extract an *uncompressed* archive (`.tar`) of a collection of files

@@ -1,5 +1,5 @@
 
-_This section was adapted from wiki.bash-hackers.org [@bashhackers_2023]_
+_This section was adapted from [@IllustratedRedirectionTutorial2023]_
 
 #### stdin, stdout, stderr
 

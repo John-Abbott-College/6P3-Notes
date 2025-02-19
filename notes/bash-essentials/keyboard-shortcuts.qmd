@@ -1,4 +1,4 @@
-_This section was adapted from www.ss64.com [@ss64_2025]._
+_This section was adapted from [@BashKeyboardShortcuts]._
 
 #### Completions
 
