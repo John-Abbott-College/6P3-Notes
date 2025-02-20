@@ -1,3 +1,61 @@
+_This section was adapted from [@HowToBashStartup]._
 
-There's nothing here yet... stay tuned!
+The library that is used to implement a command line interface for bash is called the
+[Readline library](https://en.wikipedia.org/wiki/GNU_Readline). While it comes with a set
+of default keybindings (see the #keyboard-shortcuts section), it is possible to modify
+these and other behaviors of the CLI interface by putting commands into a `.inputrc` file,
+typically in the home directory.
+
+The configuration options in `.inputrc` are particularly useful for customising the way
+Tab-completion works, e.g. with the `ls` command
+
+The inputrc variable syntax is simple:
+
+```
+set variable value
+```
+
+Below are a list of variables I find particularly useful, as well as a sample `.inputrc`
+file showing how each of these are set.
+
+- `bell-style`
+
+    Controls what happens when Readline wants to ring the terminal bell. If set to ‘none’,
+    Readline never rings the bell. If set to ‘visible’, Readline uses a visible bell if
+    one is available. If set to ‘audible’ (the default), Readline attempts to ring the
+    terminal’s bell.
+
+- `completion-ignore-case`
+
+    If set to ‘on’, Readline performs filename matching and completion in a case-insensitive
+    fashion. The default value is ‘off’.
+
+- `editing-mode`
+
+    The editing-mode variable controls which default set of key bindings is used. By
+    default, Readline starts up in Emacs editing mode, where the keystrokes are most
+    similar to Emacs. This variable can be set to either ‘emacs’ or ‘vi’.
+
+- `mark-symlinked-directories`
+
+    If set to ‘on’, completed names which are symbolic links to directories have a slash
+    appended (subject to the value of mark-directories). The default is ‘off’.
+
+- `show-all-if-ambiguous`
+
+    This alters the default behavior of the completion functions. If set to ‘on’, words
+    which have more than one possible completion cause the matches to be listed
+    immediately instead of ringing the bell. The default value is ‘off’.
+
+A sample `~/.inputrc` file with these variables in use:
+
+```bash {filename=~/.inputrc}
+set bell-style none
+set completion-ignore-case On
+set editing-mode vi
+set mark-symlinked-directories On
+set show-all-if-ambiguous On
+```
+
+You can find many more configuration options in [@HowToBashStartup].
 
