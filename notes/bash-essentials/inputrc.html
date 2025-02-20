@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -153,7 +187,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">February 19, 2025</p>
+      <p class="date-modified">February 20, 2025</p>
     </div>
   </div>
     
@@ -164,7 +198,37 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>There’s nothing here yet… stay tuned!</p>
+<p><em>This section was adapted from <span class="citation" data-cites="HowToBashStartup">[@HowToBashStartup]</span>.</em></p>
+<p>The library that is used to implement a command line interface for bash is called the <a href="https://en.wikipedia.org/wiki/GNU_Readline">Readline library</a>.</p>
+<p>While it comes with a set of default keybindings (see the #keyboard-shortcuts section), it is possible to modify these and other behaviors of the CLI interface by putting commands into a <code>.inputrc</code> file, typically in the home directory.</p>
+<p>The configuration options in <code>.inputrc</code> are particularly useful for customising the way Tab-completion works, e.g.&nbsp;with the <code>ls</code> command.</p>
+<p>The inputrc variable syntax is simple:</p>
+<pre><code>set variable value</code></pre>
+<p>Below are a list of variables I find particularly useful, as well as a sample <code>.inputrc</code> file showing how each of these are set.</p>
+<ul>
+<li><p><code>bell-style</code></p>
+<p>Controls what happens when Readline wants to ring the terminal bell. If set to ‘none’, Readline never rings the bell. If set to ‘visible’, Readline uses a visible bell if one is available. If set to ‘audible’ (the default), Readline attempts to ring the terminal’s bell.</p></li>
+<li><p><code>completion-ignore-case</code></p>
+<p>If set to ‘on’, Readline performs filename matching and completion in a case-insensitive fashion. The default value is ‘off’.</p></li>
+<li><p><code>editing-mode</code></p>
+<p>The editing-mode variable controls which default set of key bindings is used. By default, Readline starts up in Emacs editing mode, where the keystrokes are most similar to Emacs. This variable can be set to either ‘emacs’ or ‘vi’.</p></li>
+<li><p><code>mark-symlinked-directories</code></p>
+<p>If set to ‘on’, completed names which are symbolic links to directories have a slash appended (subject to the value of mark-directories). The default is ‘off’.</p></li>
+<li><p><code>show-all-if-ambiguous</code></p>
+<p>This alters the default behavior of the completion functions. If set to ‘on’, words which have more than one possible completion cause the matches to be listed immediately instead of ringing the bell. The default value is ‘off’.</p></li>
+</ul>
+<p>A sample <code>~/.inputrc</code> file with these variables in use:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>~/.inputrc</strong></pre>
+</div>
+<div class="sourceCode" id="cb2" data-filename="~/.inputrc"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">set</span> bell-style none</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">set</span> completion-ignore-case On</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">set</span> editing-mode vi</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="bu">set</span> mark-symlinked-directories On</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="bu">set</span> show-all-if-ambiguous On</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>You can find many more configuration options in <span class="citation" data-cites="HowToBashStartup">[@HowToBashStartup]</span>.</p>
 
 
 

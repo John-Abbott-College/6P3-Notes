@@ -2,86 +2,90 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://john-abbott-college.github.io/6P3-Notes/about/this-site/index.html</loc>
-    <lastmod>2025-02-19T23:57:25.844Z</lastmod>
+    <lastmod>2025-02-20T23:30:25.603Z</lastmod>
   </url>
   <url>
     <loc>https://john-abbott-college.github.io/6P3-Notes/index.html</loc>
-    <lastmod>2025-02-19T23:57:26.215Z</lastmod>
+    <lastmod>2025-02-20T23:30:25.984Z</lastmod>
   </url>
   <url>
     <loc>https://john-abbott-college.github.io/6P3-Notes/notes/index.html</loc>
-    <lastmod>2025-02-19T23:57:26.368Z</lastmod>
+    <lastmod>2025-02-20T23:30:26.137Z</lastmod>
   </url>
   <url>
     <loc>https://john-abbott-college.github.io/6P3-Notes/notes/developer-environment/index.html</loc>
-    <lastmod>2025-02-19T23:57:26.367Z</lastmod>
+    <lastmod>2025-02-20T23:30:26.136Z</lastmod>
   </url>
   <url>
     <loc>https://john-abbott-college.github.io/6P3-Notes/notes/bash-essentials/find-grep.html</loc>
-    <lastmod>2025-02-19T23:57:26.366Z</lastmod>
+    <lastmod>2025-02-20T23:30:26.135Z</lastmod>
   </url>
   <url>
     <loc>https://john-abbott-college.github.io/6P3-Notes/notes/bash-essentials/tar.html</loc>
-    <lastmod>2025-02-19T23:57:26.366Z</lastmod>
+    <lastmod>2025-02-20T23:30:26.135Z</lastmod>
   </url>
   <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/notes/bash-essentials/index.html</loc>
-    <lastmod>2025-02-19T23:57:26.366Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/notes/bash-essentials/sort-uniq.html</loc>
-    <lastmod>2025-02-19T23:57:26.366Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/notes/bash-essentials/tr-cut.html</loc>
-    <lastmod>2025-02-19T23:57:26.366Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/notes/bash-essentials/inputrc.html</loc>
-    <lastmod>2025-02-19T23:57:26.366Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/notes/course-hardware/index.html</loc>
-    <lastmod>2025-02-19T23:57:26.366Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/notes/github-basics/index.html</loc>
-    <lastmod>2025-02-19T23:57:26.368Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/notes/bash-scripting/index.html</loc>
-    <lastmod>2025-02-19T23:57:26.366Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/notes/bash-essentials/head-tail.html</loc>
-    <lastmod>2025-02-19T23:57:26.366Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/notes/bash-essentials/cd-ls.html</loc>
-    <lastmod>2025-02-19T23:57:26.366Z</lastmod>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/notes/bash-essentials/profile.html</loc>
+    <lastmod>2025-02-20T23:30:26.135Z</lastmod>
   </url>
   <url>
     <loc>https://john-abbott-college.github.io/6P3-Notes/notes/bash-essentials/redirection.html</loc>
-    <lastmod>2025-02-19T23:57:26.366Z</lastmod>
+    <lastmod>2025-02-20T23:30:26.135Z</lastmod>
+  </url>
+  <url>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/notes/bash-essentials/cd-ls.html</loc>
+    <lastmod>2025-02-20T23:30:26.135Z</lastmod>
+  </url>
+  <url>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/notes/bash-essentials/head-tail.html</loc>
+    <lastmod>2025-02-20T23:30:26.135Z</lastmod>
+  </url>
+  <url>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/notes/bash-scripting/index.html</loc>
+    <lastmod>2025-02-20T23:30:26.136Z</lastmod>
+  </url>
+  <url>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/notes/github-basics/index.html</loc>
+    <lastmod>2025-02-20T23:30:26.137Z</lastmod>
+  </url>
+  <url>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/notes/course-hardware/index.html</loc>
+    <lastmod>2025-02-20T23:30:26.136Z</lastmod>
+  </url>
+  <url>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/notes/bash-essentials/inputrc.html</loc>
+    <lastmod>2025-02-20T23:30:26.135Z</lastmod>
+  </url>
+  <url>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/notes/bash-essentials/tr-cut.html</loc>
+    <lastmod>2025-02-20T23:30:26.135Z</lastmod>
+  </url>
+  <url>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/notes/bash-essentials/sort-uniq.html</loc>
+    <lastmod>2025-02-20T23:30:26.135Z</lastmod>
+  </url>
+  <url>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/notes/bash-essentials/index.html</loc>
+    <lastmod>2025-02-20T23:30:26.135Z</lastmod>
   </url>
   <url>
     <loc>https://john-abbott-college.github.io/6P3-Notes/notes/bash-essentials/tree-tee.html</loc>
-    <lastmod>2025-02-19T23:57:26.366Z</lastmod>
+    <lastmod>2025-02-20T23:30:26.135Z</lastmod>
   </url>
   <url>
     <loc>https://john-abbott-college.github.io/6P3-Notes/notes/bash-essentials/keyboard-shortcuts.html</loc>
-    <lastmod>2025-02-19T23:57:26.366Z</lastmod>
+    <lastmod>2025-02-20T23:30:26.135Z</lastmod>
   </url>
   <url>
     <loc>https://john-abbott-college.github.io/6P3-Notes/notes/bash-essentials/bashrc.html</loc>
-    <lastmod>2025-02-19T23:57:26.366Z</lastmod>
+    <lastmod>2025-02-20T23:30:26.135Z</lastmod>
   </url>
   <url>
     <loc>https://john-abbott-college.github.io/6P3-Notes/about/syllabus/index.html</loc>
-    <lastmod>2025-02-19T23:57:25.843Z</lastmod>
+    <lastmod>2025-02-20T23:30:25.602Z</lastmod>
   </url>
   <url>
     <loc>https://john-abbott-college.github.io/6P3-Notes/about/calendar/index.html</loc>
-    <lastmod>2025-02-19T23:57:25.841Z</lastmod>
+    <lastmod>2025-02-20T23:30:25.600Z</lastmod>
   </url>
 </urlset>
