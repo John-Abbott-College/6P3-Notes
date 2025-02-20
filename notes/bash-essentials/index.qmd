@@ -46,6 +46,14 @@ Each section below is some set of tips for using the interactive bash CLI effect
 
 ::: {.callout-note collapse="true"}
 
+## `.profile` details & examples
+
+{{< include profile.qmd >}}
+
+:::
+
+::: {.callout-note collapse="true"}
+
 ## `.inputrc` details & examples
 
 {{< include inputrc.qmd >}}

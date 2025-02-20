@@ -1,13 +1,14 @@
 _This section was adapted from [@HowToBashStartup]._
 
 The library that is used to implement a command line interface for bash is called the
-[Readline library](https://en.wikipedia.org/wiki/GNU_Readline). While it comes with a set
-of default keybindings (see the #keyboard-shortcuts section), it is possible to modify
-these and other behaviors of the CLI interface by putting commands into a `.inputrc` file,
-typically in the home directory.
+[Readline library](https://en.wikipedia.org/wiki/GNU_Readline).
+
+While it comes with a set of default keybindings (see the #keyboard-shortcuts section), it
+is possible to modify these and other behaviors of the CLI interface by putting commands
+into a `.inputrc` file, typically in the home directory.
 
 The configuration options in `.inputrc` are particularly useful for customising the way
-Tab-completion works, e.g. with the `ls` command
+Tab-completion works, e.g. with the `ls` command.
 
 The inputrc variable syntax is simple:
 
@@ -58,4 +59,3 @@ set show-all-if-ambiguous On
 ```
 
 You can find many more configuration options in [@HowToBashStartup].
-
