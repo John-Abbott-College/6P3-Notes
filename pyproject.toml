@@ -14,7 +14,6 @@ dependencies = []
 format = [
     "mdformat>=0.7.21",
     "mdformat-gfm>=0.4.1",
-    "mdformat-frontmatter>=2.0.8",
     "ruff>=0.9.1",
     "pymarkdownlnt>=0.9.26",
     "mdformat-toc>=0.3.0",
@@ -28,7 +27,8 @@ format = [
     "mdformat-shfmt>=0.2.0",
     "mdformat-pyproject>=0.0.2",
     "mdformat-deflist>=0.1.3",
-    "mdformat-myst>=0.2.1",
+    "mdformat-footnote>=0.1.1",
+    "mdformat-mkdocs>=4.1.2",
 ]
 git = [
     "python-semantic-release>=9.16.1",

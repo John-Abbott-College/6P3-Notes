@@ -5,7 +5,7 @@
 groups = ["default", "format", "git"]
 strategy = ["inherit_metadata"]
 lock_version = "4.5.0"
-content_hash = "sha256:c6fec902239e2fbf50000434e16311873fa20902112b3e83f5cb4b870d28a453"
+content_hash = "sha256:56bfbc4154cf752925c7fa8fe50da414813ab6c0101f576bd3c0b71050675b0b"
 
 [[metadata.targets]]
 requires_python = ">=3.9"
@@ -508,22 +508,20 @@ files = [
 ]
 
 [[package]]
-name = "mdformat-myst"
-version = "0.2.1"
-requires_python = ">=3.7"
-summary = "Mdformat plugin for MyST compatibility."
+name = "mdformat-mkdocs"
+version = "4.1.2"
+requires_python = ">=3.9.0"
+summary = "An mdformat plugin for `mkdocs`."
 groups = ["format"]
 dependencies = [
-    "mdformat-footnote>=0.1.1",
-    "mdformat-frontmatter>=0.3.2",
-    "mdformat-tables>=0.4.0",
-    "mdformat<0.8.0,>=0.7.0",
-    "mdit-py-plugins>=0.3.0",
-    "ruamel-yaml>=0.16.0",
+    "mdformat-gfm>=0.3.6",
+    "mdformat>=0.7.19",
+    "mdit-py-plugins>=0.4.1",
+    "more-itertools>=10.5.0",
 ]
 files = [
-    {file = "mdformat_myst-0.2.1-py3-none-any.whl", hash = "sha256:ba338b063c664d75ede0eeda1b4f85dc4f4be5a2b678d44fa402035dee3b96b1"},
-    {file = "mdformat_myst-0.2.1.tar.gz", hash = "sha256:b45ebbf73c78c42bd6059c6ed910170488477a6285870561df7ac9d782978784"},
+    {file = "mdformat_mkdocs-4.1.2-py3-none-any.whl", hash = "sha256:330774b40d27dc34ac56d216617968a7889de6adfb8641c510fb11d43ca257cf"},
+    {file = "mdformat_mkdocs-4.1.2.tar.gz", hash = "sha256:85017aa4cd6bcff68ca1c11a232bceef33fa7bfa181996f9c5004876af960de6"},
 ]
 
 [[package]]
@@ -667,6 +665,17 @@ groups = ["format", "git"]
 files = [
     {file = "mdurl-0.1.2-py3-none-any.whl", hash = "sha256:84008a41e51615a49fc9966191ff91509e3c40b939176e643fd50a5c2196b8f8"},
     {file = "mdurl-0.1.2.tar.gz", hash = "sha256:bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"},
+]
+
+[[package]]
+name = "more-itertools"
+version = "10.6.0"
+requires_python = ">=3.9"
+summary = "More routines for operating on iterables, beyond itertools"
+groups = ["format"]
+files = [
+    {file = "more-itertools-10.6.0.tar.gz", hash = "sha256:2cd7fad1009c31cc9fb6a035108509e6547547a7a738374f10bd49a09eb3ee3b"},
+    {file = "more_itertools-10.6.0-py3-none-any.whl", hash = "sha256:6eb054cb4b6db1473f6e15fcc676a08e4732548acd47c708f0e179c2c7c01e89"},
 ]
 
 [[package]]
