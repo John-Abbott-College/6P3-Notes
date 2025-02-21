@@ -5,7 +5,7 @@
 groups = ["default", "format", "git"]
 strategy = ["inherit_metadata"]
 lock_version = "4.5.0"
-content_hash = "sha256:5187936b0f8ee63fe000d5b45547ac673974d15f3cec8df9a34c09cfd385a86e"
+content_hash = "sha256:c6fec902239e2fbf50000434e16311873fa20902112b3e83f5cb4b870d28a453"
 
 [[metadata.targets]]
 requires_python = ">=3.9"
@@ -276,7 +276,7 @@ name = "importlib-metadata"
 version = "8.6.1"
 requires_python = ">=3.9"
 summary = "Read metadata from Python packages"
-groups = ["default", "format"]
+groups = ["format"]
 marker = "python_version < \"3.10\""
 dependencies = [
     "typing-extensions>=3.6.4; python_version < \"3.8\"",
@@ -333,7 +333,7 @@ name = "markdown-it-py"
 version = "3.0.0"
 requires_python = ">=3.8"
 summary = "Python port of markdown-it. Markdown parsing, done right!"
-groups = ["default", "format", "git"]
+groups = ["format", "git"]
 dependencies = [
     "mdurl~=0.1",
 ]
@@ -417,7 +417,7 @@ name = "mdformat"
 version = "0.7.21"
 requires_python = ">=3.9"
 summary = "CommonMark compliant Markdown formatter"
-groups = ["default", "format"]
+groups = ["format"]
 dependencies = [
     "importlib-metadata>=3.6.0; python_version < \"3.10\"",
     "markdown-it-py<4.0.0,>=1.0.0",
@@ -442,6 +442,21 @@ dependencies = [
 files = [
     {file = "mdformat_config-0.2.1-py3-none-any.whl", hash = "sha256:484a867c067366f85c9e4b91e36d8a92c80141490db59e481befe0ec8055f02d"},
     {file = "mdformat_config-0.2.1.tar.gz", hash = "sha256:753aa1179198c791e4791099a0e9b1684a649fbbcd52db7c4d2e911a4c2c69ae"},
+]
+
+[[package]]
+name = "mdformat-deflist"
+version = "0.1.3"
+requires_python = ">=3.7"
+summary = "An mdformat plugin for markdown-it-deflist."
+groups = ["format"]
+dependencies = [
+    "mdformat<0.8.0,>=0.7.0",
+    "mdit-py-plugins>=0.2.7",
+]
+files = [
+    {file = "mdformat_deflist-0.1.3-py3-none-any.whl", hash = "sha256:03a69b10e7359233eb1e40551cff890af669c340f2a606477d86e0315364944e"},
+    {file = "mdformat_deflist-0.1.3.tar.gz", hash = "sha256:b25091ce1705a37c0cc87ddb1c78a3e7eb43d50adcdb5ad4763411f743ae6f7e"},
 ]
 
 [[package]]
@@ -480,7 +495,7 @@ name = "mdformat-gfm"
 version = "0.4.1"
 requires_python = ">=3.9"
 summary = "Mdformat plugin for GitHub Flavored Markdown compatibility"
-groups = ["default", "format"]
+groups = ["format"]
 dependencies = [
     "markdown-it-py",
     "mdformat-tables>=0.4.0",
@@ -493,20 +508,37 @@ files = [
 ]
 
 [[package]]
-name = "mdformat-mkdocs"
-version = "4.1.1"
-requires_python = ">=3.9.0"
-summary = "An mdformat plugin for `mkdocs`."
-groups = ["default"]
+name = "mdformat-myst"
+version = "0.2.1"
+requires_python = ">=3.7"
+summary = "Mdformat plugin for MyST compatibility."
+groups = ["format"]
 dependencies = [
-    "mdformat-gfm>=0.3.6",
-    "mdformat>=0.7.19",
-    "mdit-py-plugins>=0.4.1",
-    "more-itertools>=10.5.0",
+    "mdformat-footnote>=0.1.1",
+    "mdformat-frontmatter>=0.3.2",
+    "mdformat-tables>=0.4.0",
+    "mdformat<0.8.0,>=0.7.0",
+    "mdit-py-plugins>=0.3.0",
+    "ruamel-yaml>=0.16.0",
 ]
 files = [
-    {file = "mdformat_mkdocs-4.1.1-py3-none-any.whl", hash = "sha256:00defc794f8adb07bd792a7f260df91a1d3a125718b3bea5e312f386a19ad94a"},
-    {file = "mdformat_mkdocs-4.1.1.tar.gz", hash = "sha256:f58a06b45c3d22116425c28d6b4a72464223ca02abea2e009e1763ae9130cb2f"},
+    {file = "mdformat_myst-0.2.1-py3-none-any.whl", hash = "sha256:ba338b063c664d75ede0eeda1b4f85dc4f4be5a2b678d44fa402035dee3b96b1"},
+    {file = "mdformat_myst-0.2.1.tar.gz", hash = "sha256:b45ebbf73c78c42bd6059c6ed910170488477a6285870561df7ac9d782978784"},
+]
+
+[[package]]
+name = "mdformat-pyproject"
+version = "0.0.2"
+requires_python = ">=3.7"
+summary = "An mdformat plugin for..."
+groups = ["format"]
+dependencies = [
+    "mdformat~=0.7",
+    "tomli~=2.0; python_version < \"3.11\"",
+]
+files = [
+    {file = "mdformat_pyproject-0.0.2-py3-none-any.whl", hash = "sha256:e0791a335e53264d5589be353c519e230ac555b64fa076005bc64ca037717710"},
+    {file = "mdformat_pyproject-0.0.2.tar.gz", hash = "sha256:1638c4be0d239f49eea72089aafd06dc4ec603068ccc4868f91f0958b15b82c8"},
 ]
 
 [[package]]
@@ -524,11 +556,39 @@ files = [
 ]
 
 [[package]]
+name = "mdformat-shfmt"
+version = "0.2.0"
+requires_python = ">=3.9"
+summary = "Mdformat plugin to format shell code blocks"
+groups = ["format"]
+dependencies = [
+    "mdformat>=0.3.5",
+]
+files = [
+    {file = "mdformat_shfmt-0.2.0-py3-none-any.whl", hash = "sha256:61ae5f25b6ad0dc39bb64928663254efd357b7bf4a018f9b3e0c8c8c845f0e3b"},
+    {file = "mdformat_shfmt-0.2.0.tar.gz", hash = "sha256:0c0f662b4f11a3fb1d175cf629330b08057afe91cdc259682bc8e856fcdf0b7a"},
+]
+
+[[package]]
+name = "mdformat-simple-breaks"
+version = "0.0.1"
+requires_python = ">=3.7"
+summary = "An mdformat plugin for..."
+groups = ["format"]
+dependencies = [
+    "mdformat<0.8.0,>=0.7.0",
+]
+files = [
+    {file = "mdformat_simple_breaks-0.0.1-py3-none-any.whl", hash = "sha256:3dde7209d509620fdd2bf11e780ae32d5f61a80ea145a598252e2703f8571407"},
+    {file = "mdformat_simple_breaks-0.0.1.tar.gz", hash = "sha256:36dbd4981e177526c08cfd9b36272dd2caf230d7a2c2834c852e57a1649f676a"},
+]
+
+[[package]]
 name = "mdformat-tables"
 version = "1.0.0"
 requires_python = ">=3.7.0"
 summary = "An mdformat plugin for rendering tables."
-groups = ["default", "format"]
+groups = ["format"]
 dependencies = [
     "mdformat<0.8.0,>=0.7.5",
     "wcwidth>=0.2.13",
@@ -589,7 +649,7 @@ name = "mdit-py-plugins"
 version = "0.4.2"
 requires_python = ">=3.8"
 summary = "Collection of plugins for markdown-it-py"
-groups = ["default", "format"]
+groups = ["format"]
 dependencies = [
     "markdown-it-py<4.0.0,>=1.0.0",
 ]
@@ -603,21 +663,10 @@ name = "mdurl"
 version = "0.1.2"
 requires_python = ">=3.7"
 summary = "Markdown URL utilities"
-groups = ["default", "format", "git"]
+groups = ["format", "git"]
 files = [
     {file = "mdurl-0.1.2-py3-none-any.whl", hash = "sha256:84008a41e51615a49fc9966191ff91509e3c40b939176e643fd50a5c2196b8f8"},
     {file = "mdurl-0.1.2.tar.gz", hash = "sha256:bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"},
-]
-
-[[package]]
-name = "more-itertools"
-version = "10.6.0"
-requires_python = ">=3.9"
-summary = "More routines for operating on iterables, beyond itertools"
-groups = ["default"]
-files = [
-    {file = "more-itertools-10.6.0.tar.gz", hash = "sha256:2cd7fad1009c31cc9fb6a035108509e6547547a7a738374f10bd49a09eb3ee3b"},
-    {file = "more_itertools-10.6.0-py3-none-any.whl", hash = "sha256:6eb054cb4b6db1473f6e15fcc676a08e4732548acd47c708f0e179c2c7c01e89"},
 ]
 
 [[package]]
@@ -1066,7 +1115,7 @@ name = "tomli"
 version = "2.2.1"
 requires_python = ">=3.8"
 summary = "A lil' TOML parser"
-groups = ["default", "format"]
+groups = ["format"]
 files = [
     {file = "tomli-2.2.1-cp311-cp311-macosx_10_9_x86_64.whl", hash = "sha256:678e4fa69e4575eb77d103de3df8a895e1591b48e740211bd1067378c69e8249"},
     {file = "tomli-2.2.1-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:023aa114dd824ade0100497eb2318602af309e5a55595f76b626d6d9f3b7b0a6"},
@@ -1150,7 +1199,7 @@ files = [
 name = "wcwidth"
 version = "0.2.13"
 summary = "Measures the displayed width of unicode strings in a terminal"
-groups = ["default", "format"]
+groups = ["format"]
 dependencies = [
     "backports-functools-lru-cache>=1.2.1; python_version < \"3.2\"",
 ]
@@ -1164,7 +1213,7 @@ name = "zipp"
 version = "3.21.0"
 requires_python = ">=3.9"
 summary = "Backport of pathlib-compatible object wrapper for zip files"
-groups = ["default", "format", "git"]
+groups = ["format", "git"]
 marker = "python_version < \"3.10\""
 files = [
     {file = "zipp-3.21.0-py3-none-any.whl", hash = "sha256:ac1bbe05fd2991f160ebce24ffbac5f6d11d83dc90891255885223d42b3cd931"},
