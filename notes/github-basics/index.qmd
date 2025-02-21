@@ -1,12 +1,11 @@
 ---
 title: GitHub basics
 subtitle: >
-  Integrating 
+  Basics of cloning a repository hosted on Github and creating branches.
   Using a personal access token for authentication on GitHub outside of VSCode.
   Using the `pass` password manager to store access tokens safely.
 date: 2025-02-10
 categories: [git, lab-1]
-draft: false
 ---
 
 ::: {.column-margin}
@@ -138,14 +137,18 @@ in our class. This is a good skill in general for making effective use of resour
 
 Follow the instructions below:
 
-1. Create the gpg key-pair following the instructions on GitHub: [*Generating a new GPG key*](https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key)
+1. Create the gpg key-pair following the instructions on GitHub:
+    [*Generating a new GPG key*](https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key)
 1. run `gpg --full-generate-key` to get started.
 1. Recommended: You can accept the default key type (RSA)
 1. Recommended: Choose 4096 bits for the keysize.
 1. Recommended: You can accept the default "does not expire" option.
-1. Enter user ID information. This information should match what you have provided to GitHub already (username/email address)
-1. You have to choose a password for GPG keys. Choose something strong that you can remember.
-1. Add the public key to your GitHub account following the instructions: [*Adding a GPG Key to your GitHub account*](https://docs.github.com/en/authentication/managing-commit-signature-verification/adding-a-gpg-key-to-your-github-account).
+1. Enter user ID information. This information should match what you have provided to
+    GitHub already (username/email address)
+1. You have to choose a password for GPG keys. Choose something strong that you can
+    remember.
+1. Add the public key to your GitHub account following the instructions:
+    [*Adding a GPG Key to your GitHub account*](https://docs.github.com/en/authentication/managing-commit-signature-verification/adding-a-gpg-key-to-your-github-account#adding-a-gpg-key).
 
 The name of the key on GitHub does not matter (Personal GPG Key is fine)
 
