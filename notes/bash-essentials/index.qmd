@@ -303,12 +303,21 @@ SYNOPSIS
 
 _This section was adapted from [@HowToRedirectionProcess]_
 
+When Bash starts, normally, 3 file descriptors are opened, 0, 1 and 2 also known as
+standard input (stdin), standard output (stdout) and standard error (stderr).
+
+You can use the `>` operator to "redirect" the output of commands (which normally goes to
+stdout) to different files or other file descriptors. Some common examples are shown
+below:
+
 :::{.column-page-right}
 
 ```bash
 command  >  filename     Redirect command output (stdout) into a file
 command  >  /dev/null    Discard stdout of command
-command  2> /dev/null   Discard stderr of command
+command  2> /dev/null    Discard stderr of command
+
+command  >&2             Redirect command output (stdout) to stderr
 
 command  >> filename     Redirect command output and APPEND into a file
 command  <  filename     Redirect a file into a command

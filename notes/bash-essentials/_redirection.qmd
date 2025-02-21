@@ -1,43 +1,7 @@
 
 _This section was adapted from [@IllustratedRedirectionTutorial2023]_
 
-#### stdin, stdout, stderr
-
-When Bash starts, normally, 3 file descriptors are opened, 0, 1 and 2 also known as
-standard input (stdin), standard output (stdout) and standard error (stderr).
-
-For example, with Bash running in a Linux terminal emulator, you'll see:
-
-```bash {filename=bash}
-$ lsof +f g -ap $BASHPID -d 0,1,2
-COMMAND   PID USER   FD   TYPE FILE-FLAG DEVICE SIZE/OFF NODE NAME
-bash    12135 root    0u   CHR     RW,LG 136,13      0t0   16 /dev/pts/5
-bash    12135 root    1u   CHR     RW,LG 136,13      0t0   16 /dev/pts/5
-bash    12135 root    2u   CHR     RW,LG 136,13      0t0   16 /dev/pts/5
-```
-
-This `/dev/pts/5` is a pseudo terminal used to emulate a real terminal. Bash reads
-(`stdin`) from this terminal and prints via `stdout` and `stderr` to this terminal.
-
-```
-                  ---       +-----------------------+
-standard input   ( 0 ) ---->| /dev/pts/5            |
-                  ---       +-----------------------+
-
-                  ---       +-----------------------+
-standard output  ( 1 ) ---->| /dev/pts/5            |
-                  ---       +-----------------------+
-
-                  ---       +-----------------------+
-standard error   ( 2 ) ---->| /dev/pts/5            |
-                  ---       +-----------------------+
-```
-
-When a command, a compound command, a subshell etc. is executed, it inherits these file
-descriptors. For instance `echo foo` will send the text `foo` to the file descriptor `1`
-inherited from the shell, which is connected to `/dev/pts/5`.
-
-#### Output Redirection `n> file`
+### Output Redirection `n> file`
 
 `>` is probably the simplest redirection.
 
@@ -82,7 +46,7 @@ standard error   ( 2 ) ---->| /dev/null             |
                   ---       +-----------------------+
 ```
 
-#### Input Redirection `n< file`
+### Input Redirection `n< file`
 
 When you run a command using `command < file`, it changes the file descriptor `0` so that it
 looks like:
@@ -103,7 +67,7 @@ standard error   ( 2 ) ---->| /dev/pts/5            |
 
 If the command reads from stdin, it now will read from file and not from the console.
 
-#### Pipes `|`
+### Pipes `|`
 
 What does this `|` do? Among other things, it connects the standard output of the command on
 the left to the standard input of the command on the right. That is, it creates a special
