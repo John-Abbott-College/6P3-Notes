@@ -24,10 +24,11 @@ to see where this course has deviated from the original outline.
 
 1. [Lab 0: dev env setup and bash review][lab-0]: Due January 31 (Demo: in-class. Code: end of day 11:59pm)
 1. [Lab 1: git good, bash better][lab-1]: Due February 10 end of day 11:59pm
+1. [Lab 2: Reusing functions in bash][lab-2]: Due February 24 end of day 11:59pm
 
 [lab-0]: https://www.gradescope.ca/courses/24517/assignments/127573
 [lab-1]: https://www.gradescope.ca/courses/24517/assignments/127640
-
+[lab-2]: https://www.gradescope.ca/courses/24517/assignments/130309
 
 ## Lectures
 
@@ -38,3 +39,7 @@ to see where this course has deviated from the original outline.
 - Feb 3: Begin Lab 1
 - Feb 7: (class cancelled, continue lab 1)
 - Feb 10: Finish Lab 1
+- Feb 14: Start Lab 2
+- Feb 17: Class cancelled due to storm
+- Feb 21: Continue work on Lab 2
+- Feb 24: Begin Lab 3
