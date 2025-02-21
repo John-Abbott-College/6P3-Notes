@@ -21,7 +21,61 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -139,7 +193,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#bash-theory" id="toc-bash-theory" class="nav-link active" data-scroll-target="#bash-theory"><span class="header-section-number">1</span> Bash Theory</a>
+  <li><a href="#bash-theory" id="toc-bash-theory" class="nav-link active" data-scroll-target="#bash-theory"><span class="header-section-number">1</span> Bash theory</a>
   <ul>
   <li><a href="#variables" id="toc-variables" class="nav-link" data-scroll-target="#variables"><span class="header-section-number">1.1</span> Variables</a></li>
   <li><a href="#scope" id="toc-scope" class="nav-link" data-scroll-target="#scope"><span class="header-section-number">1.2</span> Scope</a></li>
@@ -147,16 +201,20 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions"><span class="header-section-number">1.4</span> Functions</a></li>
   <li><a href="#exit-codes" id="toc-exit-codes" class="nav-link" data-scroll-target="#exit-codes"><span class="header-section-number">1.5</span> Exit codes</a></li>
   </ul></li>
-  <li><a href="#os-theory" id="toc-os-theory" class="nav-link" data-scroll-target="#os-theory"><span class="header-section-number">2</span> OS Theory</a>
+  <li><a href="#os-theory" id="toc-os-theory" class="nav-link" data-scroll-target="#os-theory"><span class="header-section-number">2</span> OS theory</a>
   <ul>
   <li><a href="#shell" id="toc-shell" class="nav-link" data-scroll-target="#shell"><span class="header-section-number">2.1</span> Shell</a></li>
   <li><a href="#permissions" id="toc-permissions" class="nav-link" data-scroll-target="#permissions"><span class="header-section-number">2.2</span> Permissions</a></li>
   <li><a href="#filesystem" id="toc-filesystem" class="nav-link" data-scroll-target="#filesystem"><span class="header-section-number">2.3</span> Filesystem</a></li>
   </ul></li>
-  <li><a href="#programming-with-sed-and-awk" id="toc-programming-with-sed-and-awk" class="nav-link" data-scroll-target="#programming-with-sed-and-awk"><span class="header-section-number">3</span> Programming with <code>sed</code> and <code>awk</code></a>
+  <li><a href="#code-reuse" id="toc-code-reuse" class="nav-link" data-scroll-target="#code-reuse"><span class="header-section-number">3</span> Code reuse</a>
   <ul>
-  <li><a href="#sed" id="toc-sed" class="nav-link" data-scroll-target="#sed"><span class="header-section-number">3.1</span> <code>sed</code></a></li>
-  <li><a href="#awk" id="toc-awk" class="nav-link" data-scroll-target="#awk"><span class="header-section-number">3.2</span> <code>awk</code></a></li>
+  <li><a href="#source" id="toc-source" class="nav-link" data-scroll-target="#source"><span class="header-section-number">3.1</span> <code>source</code></a>
+  <ul class="collapse">
+  <li><a href="#function-libraries" id="toc-function-libraries" class="nav-link" data-scroll-target="#function-libraries"><span class="header-section-number">3.1.1</span> Function Libraries</a></li>
+  </ul></li>
+  <li><a href="#scripts" id="toc-scripts" class="nav-link" data-scroll-target="#scripts"><span class="header-section-number">3.2</span> Scripts</a></li>
+  <li><a href="#shebangs" id="toc-shebangs" class="nav-link" data-scroll-target="#shebangs"><span class="header-section-number">3.3</span> Shebangs</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -193,7 +251,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">February 20, 2025</p>
+      <p class="date-modified">February 21, 2025</p>
     </div>
   </div>
     
@@ -213,7 +271,7 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 </div></div><section id="bash-theory" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="bash-theory"><span class="header-section-number">1</span> Bash Theory</h2>
+<h2 data-number="1" class="anchored" data-anchor-id="bash-theory"><span class="header-section-number">1</span> Bash theory</h2>
 <section id="variables" class="level3" data-number="1.1">
 <h3 data-number="1.1" class="anchored" data-anchor-id="variables"><span class="header-section-number">1.1</span> Variables</h3>
 </section>
@@ -231,7 +289,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 </section>
 <section id="os-theory" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="os-theory"><span class="header-section-number">2</span> OS Theory</h2>
+<h2 data-number="2" class="anchored" data-anchor-id="os-theory"><span class="header-section-number">2</span> OS theory</h2>
 <section id="shell" class="level3" data-number="2.1">
 <h3 data-number="2.1" class="anchored" data-anchor-id="shell"><span class="header-section-number">2.1</span> Shell</h3>
 </section>
@@ -242,19 +300,68 @@ ul.task-list li input[type="checkbox"] {
 <h3 data-number="2.3" class="anchored" data-anchor-id="filesystem"><span class="header-section-number">2.3</span> Filesystem</h3>
 </section>
 </section>
-<section id="programming-with-sed-and-awk" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="programming-with-sed-and-awk"><span class="header-section-number">3</span> Programming with <code>sed</code> and <code>awk</code></h2>
-<section id="sed" class="level3" data-number="3.1">
-<h3 data-number="3.1" class="anchored" data-anchor-id="sed"><span class="header-section-number">3.1</span> <code>sed</code></h3>
+<section id="code-reuse" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="code-reuse"><span class="header-section-number">3</span> Code reuse</h2>
+<section id="source" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="source"><span class="header-section-number">3.1</span> <code>source</code></h3>
+<p><em>This section was adapted from <span class="citation" data-cites="LinuxCommandLine">(<a href="#ref-LinuxCommandLine" role="doc-biblioref"><span>“Linux <span>Command Line Adventure</span>: Source”</span> n.d.</a>)</span></em></p>
+<p>Most programming languages permit programmers to specify external files to be included within their programs. This is often used to add “boilerplate” code to programs for such things as defining standard constants and referencing external library function definitions.</p>
+<p>Bash has a builtin command, <code>source</code>, that implements this feature. This section will cover the ways it can make our scripts more powerful and easier to maintain.</p>
+<p><code>source</code> reads a specified file and executes the commands within it using the current shell. It works both with the interactive command line and within a script. Using the command line for example, we can reload the <code>.bashrc</code> file by executing the following command:</p>
+<p><code>me@linuxbox: ~$ source ~/.bashrc</code></p>
+<p>Note that the <code>source</code> command can be abbreviated by a single dot character like so:</p>
+<p><code>me@linuxbox: ~$ . ~/.bashrc</code></p>
+<p>When source is used on the command line, the commands in the file are treated as if they are being typed directly at the keyboard. In a shell script, the commands are treated as though they are part of the script.</p>
+<section id="function-libraries" class="level4" data-number="3.1.1">
+<h4 data-number="3.1.1" class="anchored" data-anchor-id="function-libraries"><span class="header-section-number">3.1.1</span> Function Libraries</h4>
+<p><code>source</code> is a natural way to share functions across many bash programs. For example, it makes sense to have a shared function to display error messages:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>bash</strong></pre>
+</div>
+<div class="sourceCode" id="cb1" data-filename="bash"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ---------------------------------------------------------------------------</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Send message to std error</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#   Options:    none</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">#   Arguments:  1 error_message</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">#   Notes:      Use this function to report errors to standard error. Does</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">#               not generate an error status.</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># ---------------------------------------------------------------------------</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">error_msg()</span> <span class="kw">{</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="bu">printf</span> <span class="st">"%s\n"</span> <span class="st">"</span><span class="va">$1</span><span class="st">"</span> <span class="op">&gt;&amp;</span><span class="dv">2</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="kw">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>To share these functions across other scripts, we could build a library of functions and source that library. As an example, we could put all the common code in a file called <code>/usr/local/lib/bmulib.sh</code> and add the following code to both scripts to source that file:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>bash</strong></pre>
+</div>
+<div class="sourceCode" id="cb2" data-filename="bash"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="va">FUNCLIB</span><span class="op">=</span>/usr/local/lib/bmulib.sh</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">[[</span> <span class="ot">-r</span> <span class="st">"</span><span class="va">$FUNCLIB</span><span class="st">"</span> <span class="kw">]];</span> <span class="cf">then</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">source</span> <span class="st">"</span><span class="va">$FUNCLIB</span><span class="st">"</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">"Cannot read function library!"</span> <span class="op">&gt;&amp;</span><span class="dv">2</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">exit</span> 1</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="awk" class="level3" data-number="3.2">
-<h3 data-number="3.2" class="anchored" data-anchor-id="awk"><span class="header-section-number">3.2</span> <code>awk</code></h3>
+</section>
+<section id="scripts" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="scripts"><span class="header-section-number">3.2</span> Scripts</h3>
+</section>
+<section id="shebangs" class="level3" data-number="3.3">
+
+
 
 
 </section>
 </section>
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div>CC BY-NC 4.0. ©2022-25 Mauricio Buschinelli &amp; Michael Haaf.
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">3.3 Shebangs</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-LinuxCommandLine" class="csl-entry" role="listitem">
+<span>“Linux <span>Command Line Adventure</span>: Source.”</span> n.d. Accessed February 21, 2025. <a href="https://linuxcommand.org/lc3_adv_source.php">https://linuxcommand.org/lc3_adv_source.php</a>.
+</div>
+</div></section><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div>CC BY-NC 4.0. ©2022-25 Mauricio Buschinelli &amp; Michael Haaf.
 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">(View License)</a></div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {

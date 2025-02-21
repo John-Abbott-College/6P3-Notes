@@ -260,7 +260,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">February 20, 2025</p>
+      <p class="date-modified">February 21, 2025</p>
     </div>
   </div>
     
@@ -436,17 +436,20 @@ Keyboard Shortcuts: details &amp; examples
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="bu">alias</span> ll=<span class="st">"ls -l"</span> <span class="co"># create new alias ll for a long list</span></span>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="bu">alias</span> cp=<span class="st">"cp -iv"</span> <span class="co"># replace default cp command with interactive/verbose cp</span></span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="co"># See https://ss64.com/bash/alias.html for more alias info and examples</span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Source all bash files in ~/.bashrc.d/</span></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">[</span> <span class="ot">-d</span> ~/.bashrc.d <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> rc <span class="kw">in</span> ~/.bashrc.d/<span class="pp">*</span><span class="kw">;</span> <span class="cf">do</span></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="bu">[</span> <span class="ot">-f</span> <span class="st">"</span><span class="va">$rc</span><span class="st">"</span> <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>            <span class="bu">source</span> <span class="st">"</span><span class="va">$rc</span><span class="st">"</span></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>        <span class="cf">fi</span></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>    <span class="cf">done</span></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="bu">unset</span> <span class="va">rc</span></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="co"># See https://ss64.com/bash/source.html for more info on sourcing</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Note that aliases cannot handle complex logic or accept positional parameters</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="co"># For that, we would need functions.</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Source all bash files in ~/.bashrc.d/</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="co"># This lets you define functions in various shell files in this folder and source them at startup.</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">[</span> <span class="ot">-d</span> ~/.bashrc.d <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> rc <span class="kw">in</span> ~/.bashrc.d/<span class="pp">*</span><span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="bu">[</span> <span class="ot">-f</span> <span class="st">"</span><span class="va">$rc</span><span class="st">"</span> <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>            <span class="bu">source</span> <span class="st">"</span><span class="va">$rc</span><span class="st">"</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>        <span class="cf">fi</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>    <span class="cf">done</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="bu">unset</span> <span class="va">rc</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="co"># See https://ss64.com/bash/source.html for more info on sourcing</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -962,7 +965,7 @@ standard error   ( 2 ) ----&gt;| /dev/pts/5            |
 </div>
 <div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<!-- {{< include ssh.qmd >}} -->
+<!-- {{< include _ssh.qmd >}} -->
 <p>There’s nothing here yet… stay tuned!</p>
 </div>
 </div>
@@ -998,7 +1001,7 @@ standard error   ( 2 ) ----&gt;| /dev/pts/5            |
 </div>
 <div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<!-- {{< include rsync.qmd >}} -->
+<!-- {{< include _rsync.qmd >}} -->
 <p>There’s nothing here yet… stay tuned!</p>
 </div>
 </div>
@@ -1163,7 +1166,7 @@ Important
 </div>
 <div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<!-- {{< include git.qmd >}} -->
+<!-- {{< include _git.qmd >}} -->
 <p>There’s nothing here yet… stay tuned!</p>
 </div>
 </div>
