@@ -6,6 +6,9 @@ subtitle: >
   The capabilities and limitations of programming in bash.
 date: 2025-02-17
 categories: [bash, lab-2]
+bibliography: references.bib
+nocite: |
+  @*
 image: https://tudoubaba.net/assets/img/shebang.72b91b53.png
 ---
 
@@ -13,7 +16,7 @@ image: https://tudoubaba.net/assets/img/shebang.72b91b53.png
 ![Image source: [tudoubaba.net](https://tudoubaba.net/ProgrammingHandbook/python/python_shebang.html)](https://tudoubaba.net/assets/img/shebang.72b91b53.png)
 :::
 
-## Bash Theory
+## Bash theory
 
 ### Variables
 
@@ -25,7 +28,7 @@ image: https://tudoubaba.net/assets/img/shebang.72b91b53.png
 
 ### Exit codes
 
-## OS Theory
+## OS theory
 
 ### Shell
 
@@ -33,9 +36,67 @@ image: https://tudoubaba.net/assets/img/shebang.72b91b53.png
 
 ### Filesystem
 
-## Programming with `sed` and `awk`
+## Code reuse
 
-### `sed`
+### `source`
 
-### `awk`
+_This section was adapted from [@LinuxCommandLine]_
 
+Most programming languages permit programmers to specify external files to be included
+within their programs. This is often used to add "boilerplate" code to programs for such
+things as defining standard constants and referencing external library function
+definitions.
+
+Bash has a builtin command, `source`, that implements this feature. This section will
+cover the ways it can make our scripts more powerful and easier to maintain.
+
+`source` reads a specified file and executes the commands within it using the
+current shell. It works both with the interactive command line and within a script. Using
+the command line for example, we can reload the `.bashrc` file by executing the following
+command:
+
+`me@linuxbox: ~$ source ~/.bashrc`
+
+Note that the `source` command can be abbreviated by a single dot character like so:
+
+`me@linuxbox: ~$ . ~/.bashrc`
+
+When source is used on the command line, the commands in the file are treated as if they
+are being typed directly at the keyboard. In a shell script, the commands are treated as
+though they are part of the script.
+
+#### Function Libraries
+
+`source` is a natural way to share functions across many bash programs.
+For example, it makes sense to have a shared function to display error messages:
+
+```bash {filename=bash}
+# ---------------------------------------------------------------------------
+# Send message to std error
+#   Options:    none
+#   Arguments:  1 error_message
+#   Notes:      Use this function to report errors to standard error. Does
+#               not generate an error status.
+# ---------------------------------------------------------------------------
+error_msg() {
+  printf "%s\n" "$1" >&2
+}
+```
+
+To share these functions across other scripts, we could build a library of functions and source that library. 
+As an example, we could put all the common code in a file called `/usr/local/lib/bmulib.sh` and add the following code to both scripts to source that file:
+
+```bash {filename=bash}
+FUNCLIB=/usr/local/lib/bmulib.sh
+
+if [[ -r "$FUNCLIB" ]]; then
+    source "$FUNCLIB"
+else
+    echo "Cannot read function library!" >&2
+    exit 1
+fi
+```
+
+### Scripts
+
+### Shebangs

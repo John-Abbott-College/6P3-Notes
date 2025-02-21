@@ -35,8 +35,11 @@ export EDITOR="code" # vscode (overwrites previous line)
 alias ll="ls -l" # create new alias ll for a long list
 alias cp="cp -iv" # replace default cp command with interactive/verbose cp
 # See https://ss64.com/bash/alias.html for more alias info and examples
+# Note that aliases cannot handle complex logic or accept positional parameters
+# For that, we would need functions.
 
 # Source all bash files in ~/.bashrc.d/
+# This lets you define functions in various shell files in this folder and source them at startup.
 if [ -d ~/.bashrc.d ]; then
 	for rc in ~/.bashrc.d/*; do
 		if [ -f "$rc" ]; then
