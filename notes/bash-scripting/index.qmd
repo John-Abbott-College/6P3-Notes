@@ -20,6 +20,89 @@ image: https://tudoubaba.net/assets/img/shebang.72b91b53.png
 
 ### Variables
 
+### Quoting
+
+_This section was adapted from [@Quoting]_
+
+Quoting means just that, bracketing a string in quotes. This has the effect of protecting
+**special** characters in the string from reinterpretation or expansion by the shell or
+shell script.
+
+> A character is **special** if it has an interpretation other than its literal meaning.
+> For example, the asterisk `*` represents a wild card character in globbing and Regular
+> Expressions.
+
+```bash {filename=bash}
+$ ls -l [Vv]*
+-rw-rw-r--    1 bozo  bozo       324 Apr  2 15:05 VIEWDATA.BAT
+-rw-rw-r--    1 bozo  bozo       507 May  4 14:25 vartrace.sh
+-rw-rw-r--    1 bozo  bozo       539 Apr 14 17:11 viewdata.sh
+
+$ ls -l '[Vv]*'
+ls: [Vv]*: No such file or directory
+
+$ ls -l '[vv]*'
+ls: [vv]*: no such file or directory
+```
+
+#### Quoting variables
+
+When referencing a variable, it is generally advisable to enclose its name in double
+quotes, like so:
+
+```bash {filename=bash}
+$ local var="string-with-special-characters#*;>,"
+$ echo "$var"
+string-with-special-characters#*;>,
+```
+
+This prevents reinterpretation of all special characters within the quoted string, with
+the following exceptions:
+
+- `$` (used for variable dereferencing)
+- `\` (escape character)
+
+Keeping `$` as a special character within double quotes permits referencing a quoted
+variable (`$variable`), that is, replacing the variable with its value in the resulting
+string.
+
+Using double quotes also prevents word splitting. An argument enclosed in double quotes
+presents itself as a *single word*, even if it contains whitespace separators.
+
+```bash {filename=bash}
+List="one two three"
+
+for a in $List     # Splits the variable in parts at whitespace.
+do
+  echo "$a"
+done
+# one
+# two
+# three
+
+echo "---"
+
+for a in "$List"   # Preserves whitespace in a single variable.
+do #     ^     ^
+  echo "$a"
+done
+# one two three
+```
+
+#### Single quotes
+
+Single quotes `'` operate similarly to double quotes, but do not permit referencing
+variables, since the special meaning of `$` is turned off.
+
+Within single quotes, *every special character except `'` gets interpreted literally*.
+Consider single quotes ('full quoting') to be a stricter method of quoting than double
+quotes ("partial quoting").
+
+Note
+
+Since even the escape character `\` gets a literal interpretation within single quotes,
+trying to enclose a single quote within single quotes will not yield the expected result.
+
 ### Scope
 
 ### Conditionals
@@ -50,7 +133,8 @@ times, first for the Owner, then the Group and lastly Others (world)
 The command to modify permissions is `chmod`. There are two ways to modify permissions,
 with numbers or with letters.
 
-Check out this this [chmod](https://ss64.com/bash/chmod.html) documentation for a really great interactive demo.
+Check out this this [chmod](https://ss64.com/bash/chmod.html) documentation for a really
+great interactive demo.
 
 ##### Numeric
 
@@ -82,7 +166,8 @@ Some examples:
 - Allow read permission to everyone: `$ chmod a+r file`
 - Make a file readable and writable by the group and others: `$ chmod go+rw file`
 - Make a shell script executable by the user/owner: `$ chmod u+x myscript.sh`
-- Allow everyone to read, write, and execute the file and turn on the set group-ID: `$ chmod =rwx,g+s file`
+- Allow everyone to read, write, and execute the file and turn on the set group-ID:
+    `$ chmod =rwx,g+s file`
 
 Some files are configured to have very restrictive permissions to prevent unauthorized
 access. Changing these permissions can create security problems.
@@ -95,7 +180,8 @@ when using sudo!
 
 #### Recursive Permission Changes
 
-`chmod -R` will change all the permissions of each file and folder under a specified directory at once.
+`chmod -R` will change all the permissions of each file and folder under a specified
+directory at once.
 
 For example, `$ chmod 777 -R /path/to/Dir` will grant read/write/execute permissions to
 all users for ALL files in `/path/to/Dir`.
@@ -125,7 +211,6 @@ chown can also change the owner and group in a single command:
 
 `$ sudo chown tux:mygroup file1.txt`
 
-
 ### Filesystem
 
 ## Code reuse
@@ -142,9 +227,9 @@ definitions.
 Bash has a builtin command, `source`, that implements this feature. This section will
 cover the ways it can make our scripts more powerful and easier to maintain.
 
-`source` reads a specified file and executes the commands within it using the
-current shell. It works both with the interactive command line and within a script. Using
-the command line for example, we can reload the `.bashrc` file by executing the following
+`source` reads a specified file and executes the commands within it using the current
+shell. It works both with the interactive command line and within a script. Using the
+command line for example, we can reload the `.bashrc` file by executing the following
 command:
 
 `me@linuxbox: ~$ source ~/.bashrc`
@@ -159,8 +244,8 @@ though they are part of the script.
 
 #### Function Libraries
 
-`source` is a natural way to share functions and variables across many bash programs.
-For example, it makes sense to have a shared function to display error messages:
+`source` is a natural way to share functions and variables across many bash programs. For
+example, it makes sense to have a shared function to display error messages:
 
 ```bash {filename=bash}
 error_msg() {
@@ -190,4 +275,4 @@ be available each time you open a new terminal instance.
 
 ### Shebangs
 
----
+______________________________________________________________________
