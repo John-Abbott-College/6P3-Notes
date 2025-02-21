@@ -263,13 +263,13 @@
     "href": "about/calendar/index.html#deliverables",
     "title": "Calendar",
     "section": "1 Deliverables",
-    "text": "1 Deliverables\n\nLab 0: dev env setup and bash review: Due January 31 (Demo: in-class. Code: end of day 11:59pm)\nLab 1: git good, bash better: Due February 10 end of day 11:59pm"
+    "text": "1 Deliverables\n\nLab 0: dev env setup and bash review: Due January 31 (Demo: in-class. Code: end of day 11:59pm)\nLab 1: git good, bash better: Due February 10 end of day 11:59pm\nLab 2: Reusing functions in bash: Due February 24 end of day 11:59pm"
   },
   {
     "objectID": "about/calendar/index.html#lectures",
     "href": "about/calendar/index.html#lectures",
     "title": "Calendar",
     "section": "2 Lectures",
-    "text": "2 Lectures\n\nJan 20: Introduction to course\nJan 24: Setting up developer environment\nJan 27: Review bash, begin Lab 0\nJan 31: Work on Lab 0\nFeb 3: Begin Lab 1\nFeb 7: (class cancelled, continue lab 1)\nFeb 10: Finish Lab 1"
+    "text": "2 Lectures\n\nJan 20: Introduction to course\nJan 24: Setting up developer environment\nJan 27: Review bash, begin Lab 0\nJan 31: Work on Lab 0\nFeb 3: Begin Lab 1\nFeb 7: (class cancelled, continue lab 1)\nFeb 10: Finish Lab 1\nFeb 14: Start Lab 2\nFeb 17: Class cancelled due to storm\nFeb 21: Continue work on Lab 2\nFeb 24: Begin Lab 3"
   }
 ]
