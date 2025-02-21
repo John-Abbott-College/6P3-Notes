@@ -50,3 +50,12 @@ fi
 unset rc
 # See https://ss64.com/bash/source.html for more info on sourcing
 ```
+
+#### Ever Wonder Why it’s Called .bashrc?
+
+There are many files that end with the mysterious suffix `rc` like `.bashrc`, `.vimrc`, etc. 
+Why is that? It’s a holdover from ancient Unix. Its original meaning was "run commands," but it later became
+"run-control." A run-control file is generally some kind of script or configuration file
+that prepares an environment for a program to use. In the case of `.bashrc` for example,
+it’s a script that prepares a user’s bash shell environment.
+
