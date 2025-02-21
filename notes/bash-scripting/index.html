@@ -204,7 +204,13 @@ div.csl-indent {
   <li><a href="#os-theory" id="toc-os-theory" class="nav-link" data-scroll-target="#os-theory"><span class="header-section-number">2</span> OS theory</a>
   <ul>
   <li><a href="#shell" id="toc-shell" class="nav-link" data-scroll-target="#shell"><span class="header-section-number">2.1</span> Shell</a></li>
-  <li><a href="#permissions" id="toc-permissions" class="nav-link" data-scroll-target="#permissions"><span class="header-section-number">2.2</span> Permissions</a></li>
+  <li><a href="#permissions" id="toc-permissions" class="nav-link" data-scroll-target="#permissions"><span class="header-section-number">2.2</span> Permissions</a>
+  <ul class="collapse">
+  <li><a href="#view-permissions-with-ls" id="toc-view-permissions-with-ls" class="nav-link" data-scroll-target="#view-permissions-with-ls"><span class="header-section-number">2.2.1</span> View permissions with <code>ls</code></a></li>
+  <li><a href="#edit-permissions-with-chmod" id="toc-edit-permissions-with-chmod" class="nav-link" data-scroll-target="#edit-permissions-with-chmod"><span class="header-section-number">2.2.2</span> Edit permissions with <code>chmod</code></a></li>
+  <li><a href="#recursive-permission-changes" id="toc-recursive-permission-changes" class="nav-link" data-scroll-target="#recursive-permission-changes"><span class="header-section-number">2.2.3</span> Recursive Permission Changes</a></li>
+  <li><a href="#changing-ownership-and-group-membership" id="toc-changing-ownership-and-group-membership" class="nav-link" data-scroll-target="#changing-ownership-and-group-membership"><span class="header-section-number">2.2.4</span> Changing Ownership and Group membership</a></li>
+  </ul></li>
   <li><a href="#filesystem" id="toc-filesystem" class="nav-link" data-scroll-target="#filesystem"><span class="header-section-number">2.3</span> Filesystem</a></li>
   </ul></li>
   <li><a href="#code-reuse" id="toc-code-reuse" class="nav-link" data-scroll-target="#code-reuse"><span class="header-section-number">3</span> Code reuse</a>
@@ -295,6 +301,74 @@ div.csl-indent {
 </section>
 <section id="permissions" class="level3" data-number="2.2">
 <h3 data-number="2.2" class="anchored" data-anchor-id="permissions"><span class="header-section-number">2.2</span> Permissions</h3>
+<p><em>This section was adapted from <span class="citation" data-cites="HowToSetPermissions">(<a href="#ref-HowToSetPermissions" role="doc-biblioref"><span>“How-<span>To</span>: <span>Set</span> Permissions in Bash - <span>Linux</span> - <span>SS64</span>.com”</span> n.d.</a>)</span></em></p>
+<section id="view-permissions-with-ls" class="level4" data-number="2.2.1">
+<h4 data-number="2.2.1" class="anchored" data-anchor-id="view-permissions-with-ls"><span class="header-section-number">2.2.1</span> View permissions with <code>ls</code></h4>
+<p>The ouptut of <code>ls -l</code> will show the current permissions for files and folders:</p>
+<p><code>-rwxr--rw- 1 user user 0 Jan 19 12:59 file1.txt</code></p>
+<p>The letters <code>rwx</code> stand for Read/Write/Execute permission. These rights are shown three times, first for the Owner, then the Group and lastly Others (world)</p>
+</section>
+<section id="edit-permissions-with-chmod" class="level4" data-number="2.2.2">
+<h4 data-number="2.2.2" class="anchored" data-anchor-id="edit-permissions-with-chmod"><span class="header-section-number">2.2.2</span> Edit permissions with <code>chmod</code></h4>
+<p>The command to modify permissions is <code>chmod</code>. There are two ways to modify permissions, with numbers or with letters.</p>
+<p>Check out this this <a href="https://ss64.com/bash/chmod.html">chmod</a> documentation for a really great interactive demo.</p>
+<section id="numeric" class="level5" data-number="2.2.2.1">
+<h5 data-number="2.2.2.1" class="anchored" data-anchor-id="numeric"><span class="header-section-number">2.2.2.1</span> Numeric</h5>
+<ul>
+<li><p><code>chmod 400 file</code> - Read by owner</p></li>
+<li><p><code>chmod 040 file</code> - Read by group</p></li>
+<li><p><code>chmod 004 file</code> - Read by world</p></li>
+<li><p><code>chmod 200 file</code> - Write by owner</p></li>
+<li><p><code>chmod 020 file</code> - Write by group</p></li>
+<li><p><code>chmod 002 file</code> - Write by world</p></li>
+<li><p><code>chmod 100 file</code> - execute by owner</p></li>
+<li><p><code>chmod 010 file</code> - execute by group</p></li>
+<li><p><code>chmod 001 file</code> - execute by world</p></li>
+</ul>
+<p>To combine these, just add the numbers together:</p>
+<ul>
+<li><code>chmod 444 file</code> - Allow read permission to owner and group and world</li>
+<li><code>chmod 777 file</code> - Allow everyone to read, write, and execute file</li>
+</ul>
+</section>
+<section id="symbolic" class="level5" data-number="2.2.2.2">
+<h5 data-number="2.2.2.2" class="anchored" data-anchor-id="symbolic"><span class="header-section-number">2.2.2.2</span> Symbolic</h5>
+<p><code>chmod</code> also accepts symbolic arguments for permission changes, where:</p>
+<ul>
+<li><code>rwx</code>: read/write/execute</li>
+<li><code>ugo</code>: user/group/world</li>
+</ul>
+<p>Some examples:</p>
+<ul>
+<li>Deny execute permission to everyone: <code>$ chmod a-x file</code></li>
+<li>Allow read permission to everyone: <code>$ chmod a+r file</code></li>
+<li>Make a file readable and writable by the group and others: <code>$ chmod go+rw file</code></li>
+<li>Make a shell script executable by the user/owner: <code>$ chmod u+x myscript.sh</code></li>
+<li>Allow everyone to read, write, and execute the file and turn on the set group-ID: <code>$ chmod =rwx,g+s file</code></li>
+</ul>
+<p>Some files are configured to have very restrictive permissions to prevent unauthorized access. Changing these permissions can create security problems.</p>
+<p>To change or edit files that are owned by root, sudo chmod must be used. Note that changing permissions incorrectly can quickly make your system unusable! Please be careful when using sudo!</p>
+<p><code>$ sudo chmod o+x /usr/local/bin/somefile</code></p>
+</section>
+</section>
+<section id="recursive-permission-changes" class="level4" data-number="2.2.3">
+<h4 data-number="2.2.3" class="anchored" data-anchor-id="recursive-permission-changes"><span class="header-section-number">2.2.3</span> Recursive Permission Changes</h4>
+<p><code>chmod -R</code> will change all the permissions of each file and folder under a specified directory at once.</p>
+<p>For example, <code>$ chmod 777 -R /path/to/Dir</code> will grant read/write/execute permissions to all users for ALL files in <code>/path/to/Dir</code>.</p>
+<p>To assign reasonably secure permissions to files and folders/directories, it’s common to give files a permission of 644, and directories a 755 permission, using the <code>find</code> command and a pipe we can target just files or just folders as in the following examples.</p>
+<pre><code>$ sudo find /path/to/Dir -type f -print0 | xargs -0 sudo chmod 644`
+$ sudo find /path/to/Dir -type d -print0 | xargs -0 sudo chmod 755</code></pre>
+<p>Again if using sudo be careful, in particular watch for extra spaces in your command/path.</p>
+</section>
+<section id="changing-ownership-and-group-membership" class="level4" data-number="2.2.4">
+<h4 data-number="2.2.4" class="anchored" data-anchor-id="changing-ownership-and-group-membership"><span class="header-section-number">2.2.4</span> Changing Ownership and Group membership</h4>
+<p>A file’s owner can be changed using the <code>chown</code> command.</p>
+<p><code>$ sudo chown kate file1.txt</code></p>
+<p>A file’s group can also be changed using the <code>chown</code> command.</p>
+<p><code>$ sudo chown :mygroup file1.txt</code></p>
+<p>chown can also change the owner and group in a single command:</p>
+<p><code>$ sudo chown tux:mygroup file1.txt</code></p>
+</section>
 </section>
 <section id="filesystem" class="level3" data-number="2.3">
 <h3 data-number="2.3" class="anchored" data-anchor-id="filesystem"><span class="header-section-number">2.3</span> Filesystem</h3>
@@ -314,36 +388,30 @@ div.csl-indent {
 <p>When source is used on the command line, the commands in the file are treated as if they are being typed directly at the keyboard. In a shell script, the commands are treated as though they are part of the script.</p>
 <section id="function-libraries" class="level4" data-number="3.1.1">
 <h4 data-number="3.1.1" class="anchored" data-anchor-id="function-libraries"><span class="header-section-number">3.1.1</span> Function Libraries</h4>
-<p><code>source</code> is a natural way to share functions across many bash programs. For example, it makes sense to have a shared function to display error messages:</p>
+<p><code>source</code> is a natural way to share functions and variables across many bash programs. For example, it makes sense to have a shared function to display error messages:</p>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>bash</strong></pre>
 </div>
-<div class="sourceCode" id="cb1" data-filename="bash"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ---------------------------------------------------------------------------</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Send message to std error</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#   Options:    none</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">#   Arguments:  1 error_message</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">#   Notes:      Use this function to report errors to standard error. Does</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">#               not generate an error status.</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># ---------------------------------------------------------------------------</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">error_msg()</span> <span class="kw">{</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="bu">printf</span> <span class="st">"%s\n"</span> <span class="st">"</span><span class="va">$1</span><span class="st">"</span> <span class="op">&gt;&amp;</span><span class="dv">2</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="kw">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2" data-filename="bash"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">error_msg()</span> <span class="kw">{</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">printf</span> <span class="st">"%s\n"</span> <span class="st">"</span><span class="va">$1</span><span class="st">"</span> <span class="op">&gt;&amp;</span><span class="dv">2</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>To share these functions across other scripts, we could build a library of functions and source that library. As an example, we could put all the common code in a file called <code>/usr/local/lib/bmulib.sh</code> and add the following code to both scripts to source that file:</p>
+<p>To share these functions across other scripts, we could build a library of functions and source that library. As an example, we could put all the common code in a file called <code>~/bash-scripts.sh</code> and add the following code to both scripts to source that file:</p>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>bash</strong></pre>
 </div>
-<div class="sourceCode" id="cb2" data-filename="bash"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="va">FUNCLIB</span><span class="op">=</span>/usr/local/lib/bmulib.sh</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">[[</span> <span class="ot">-r</span> <span class="st">"</span><span class="va">$FUNCLIB</span><span class="st">"</span> <span class="kw">]];</span> <span class="cf">then</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">source</span> <span class="st">"</span><span class="va">$FUNCLIB</span><span class="st">"</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">"Cannot read function library!"</span> <span class="op">&gt;&amp;</span><span class="dv">2</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">exit</span> 1</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3" data-filename="bash"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="va">FUNCLIB</span><span class="op">=</span>~/bash-scripts.sh</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">[[</span> <span class="ot">-r</span> <span class="st">"</span><span class="va">$FUNCLIB</span><span class="st">"</span> <span class="kw">]];</span> <span class="cf">then</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">source</span> <span class="st">"</span><span class="va">$FUNCLIB</span><span class="st">"</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">"Cannot read function library!"</span> <span class="op">&gt;&amp;</span><span class="dv">2</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">exit</span> 1</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>If you put <code>source</code> statements like this in your <code>~/.bashrc</code>, your functions will always be available each time you open a new terminal instance.</p>
 </section>
 </section>
 <section id="scripts" class="level3" data-number="3.2">
@@ -358,6 +426,9 @@ div.csl-indent {
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">3.3 Shebangs</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-HowToSetPermissions" class="csl-entry" role="listitem">
+<span>“How-<span>To</span>: <span>Set</span> Permissions in Bash - <span>Linux</span> - <span>SS64</span>.com.”</span> n.d. Accessed February 21, 2025. <a href="https://ss64.com/bash/syntax-permissions.html">https://ss64.com/bash/syntax-permissions.html</a>.
+</div>
 <div id="ref-LinuxCommandLine" class="csl-entry" role="listitem">
 <span>“Linux <span>Command Line Adventure</span>: Source.”</span> n.d. Accessed February 21, 2025. <a href="https://linuxcommand.org/lc3_adv_source.php">https://linuxcommand.org/lc3_adv_source.php</a>.
 </div>
