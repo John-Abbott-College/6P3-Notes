@@ -30,7 +30,7 @@ Each section below is some set of tips for using the interactive bash CLI effect
 
 ## Keyboard Shortcuts: details & examples
 
-{{< include keyboard-shortcuts.qmd >}}
+{{< include _keyboard-shortcuts.qmd >}}
 
 :::
 
@@ -40,7 +40,7 @@ Each section below is some set of tips for using the interactive bash CLI effect
 
 ## `.bashrc` details & examples
 
-{{< include bashrc.qmd >}}
+{{< include _bashrc.qmd >}}
 
 :::
 
@@ -48,7 +48,7 @@ Each section below is some set of tips for using the interactive bash CLI effect
 
 ## `.profile` details & examples
 
-{{< include profile.qmd >}}
+{{< include _profile.qmd >}}
 
 :::
 
@@ -56,7 +56,7 @@ Each section below is some set of tips for using the interactive bash CLI effect
 
 ## `.inputrc` details & examples
 
-{{< include inputrc.qmd >}}
+{{< include _inputrc.qmd >}}
 
 :::
 
@@ -88,7 +88,7 @@ SYNOPSIS
 
 ## `cd` & `ls` details & examples
 
-{{< include cd-ls.qmd >}}
+{{< include _cd-ls.qmd >}}
 
 :::
 
@@ -199,7 +199,7 @@ SYNOPSIS
 
 ## `find` & `grep` details & examples
 
-{{< include find-grep.qmd >}}
+{{< include _find-grep.qmd >}}
 
 :::
 
@@ -223,7 +223,7 @@ SYNOPSIS
 
 ## `tr` & `cut` details & examples
 
-{{< include tr-cut.qmd >}}
+{{< include _tr-cut.qmd >}}
 
 :::
 
@@ -247,7 +247,7 @@ SYNOPSIS
 
 ## `sort` and `uniq` details & examples
 
-{{< include sort-uniq.qmd >}}
+{{< include _sort-uniq.qmd >}}
 
 :::
 
@@ -271,7 +271,7 @@ SYNOPSIS
 
 ## `head` & `tail` details & examples
 
-{{< include head-tail.qmd >}}
+{{< include _head-tail.qmd >}}
 
 :::
 
@@ -295,7 +295,7 @@ SYNOPSIS
 
 ## `tree` & `tee` details & examples
 
-{{< include tree-tee.qmd >}}
+{{< include _tree-tee.qmd >}}
 
 :::
 
@@ -323,7 +323,7 @@ commandA | tee filename   Pipe stdout of commandA into filename AND stdout
 
 ## Redirection explained further
 
-{{< include redirection.qmd >}}
+{{< include _redirection.qmd >}}
 
 :::
 
@@ -357,7 +357,7 @@ shell.
 
 ## `ssh` details & examples
 
-<!-- {{< include ssh.qmd >}} -->
+<!-- {{< include _ssh.qmd >}} -->
 
 There's nothing here yet... stay tuned!
 
@@ -397,7 +397,7 @@ everyday use.
 
 ## `rsync` details & examples
 
-<!-- {{< include rsync.qmd >}} -->
+<!-- {{< include _rsync.qmd >}} -->
 
 There's nothing here yet... stay tuned!
 
@@ -429,7 +429,7 @@ that stores a collection of other files.
 
 ## `tar`, `zip`, and `unzip` details & examples
 
-{{< include tar.qmd >}}
+{{< include _tar.qmd >}}
 
 :::
 
@@ -463,7 +463,7 @@ set of commands.
 
 ## `git` details & examples
 
-<!-- {{< include git.qmd >}} -->
+<!-- {{< include _git.qmd >}} -->
 
 There's nothing here yet... stay tuned!
 
