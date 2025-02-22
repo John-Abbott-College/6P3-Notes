@@ -89,6 +89,21 @@ done
 # one two three
 ```
 
+#### Escaping
+
+**Escaping** is a method of quoting single characters. The escape `\` preceding a character
+tells the shell to interpret that character literally.
+
+```bash {filename=bash}
+$ echo "Hello world"
+Hello world
+
+$ echo "Hello \"world\""
+Hello "world"
+```
+
+You can see more examples and information on escaping [here](https://tldp.org/LDP/abs/html/escapingsection.html).
+
 #### Single quotes
 
 Single quotes `'` operate similarly to double quotes, but do not permit referencing
