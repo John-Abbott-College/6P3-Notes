@@ -18,7 +18,59 @@ image: https://tudoubaba.net/assets/img/shebang.72b91b53.png
 
 ## Bash theory
 
+Bash (and other shell languages) isn't really a programming language -- it is a *command
+interpreter* that's best used for organizing the inputs and outputs of programs written in
+other languages. Historically this would be the C programming language. In our class, we will be writing "real" programs in Python. 
+
+But I digress. Despite the fact that Bash isn't a programming language like C or Python,
+you can still program in it. What do you need to know to write Bash programs?
+
+These notes will cover the basic programming concepts you need to know to get the most out of writing scripts in Bash.
+
 ### Variables
+
+_This section was adapted from [@VariableSubstitution]_
+
+In Bash, there is no concept of "types" -- this is not a compiled language where different
+amounts of memory need to be reserved for different types of data.
+
+Rather, all variables in Bash are simply value-placeholders. That is:
+
+- The *name* of a variable is a placeholder for its *value*, which is the data that it holds.
+- Referencing/retrieving the value of a variable is called *variable substitution*.
+
+For example, if `variable1` is the `name` of a variable, then `$variable1` is a reference to its `value`, the data it contains.
+
+An equivalent syntax for variable substitution that is generally more robust is to add curly braces, as in: `${variable1}`
+
+Running a command such as `echo $variable1` or `echo ${variable1}` will cause the *value*
+referenced by `variable1` to be substituted and passed to the `echo` command.
+
+Here's an example of variable assignment and substitution:
+
+```bash {filename=bash}
+# Create a variable with the name "a" and the value "375"
+$ a=375
+
+# Create a variable with the name "hello" and the value of the variable "a" (375)
+$ hello=$a
+
+# Not a variable reference, just the string "hello" ...
+$ echo hello
+hello
+
+# This *is* a variable substitution
+$ echo $hello
+375
+
+# This is another way to do a variable substitution
+echo ${hello}
+375
+```
+
+:::{.callout-note .column-margin}
+No spaces are permitted on either side of `=` sign when initializing variables.
+:::
 
 ### Quoting
 
@@ -112,8 +164,6 @@ variables, since the special meaning of `$` is turned off.
 Within single quotes, *every special character except `'` gets interpreted literally*.
 Consider single quotes ('full quoting') to be a stricter method of quoting than double
 quotes ("partial quoting").
-
-Note
 
 Since even the escape character `\` gets a literal interpretation within single quotes,
 trying to enclose a single quote within single quotes will not yield the expected result.
