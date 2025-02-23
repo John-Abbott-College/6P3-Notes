@@ -195,17 +195,20 @@ div.csl-indent {
   <ul>
   <li><a href="#bash-theory" id="toc-bash-theory" class="nav-link active" data-scroll-target="#bash-theory"><span class="header-section-number">1</span> Bash theory</a>
   <ul>
-  <li><a href="#variables" id="toc-variables" class="nav-link" data-scroll-target="#variables"><span class="header-section-number">1.1</span> Variables</a></li>
+  <li><a href="#variables" id="toc-variables" class="nav-link" data-scroll-target="#variables"><span class="header-section-number">1.1</span> Variables</a>
+  <ul class="collapse">
+  <li><a href="#variable-names" id="toc-variable-names" class="nav-link" data-scroll-target="#variable-names"><span class="header-section-number">1.1.1</span> Variable names</a></li>
+  <li><a href="#environment-variables" id="toc-environment-variables" class="nav-link" data-scroll-target="#environment-variables"><span class="header-section-number">1.1.2</span> Environment variables</a></li>
+  </ul></li>
   <li><a href="#quoting" id="toc-quoting" class="nav-link" data-scroll-target="#quoting"><span class="header-section-number">1.2</span> Quoting</a>
   <ul class="collapse">
   <li><a href="#quoting-variables" id="toc-quoting-variables" class="nav-link" data-scroll-target="#quoting-variables"><span class="header-section-number">1.2.1</span> Quoting variables</a></li>
   <li><a href="#escaping" id="toc-escaping" class="nav-link" data-scroll-target="#escaping"><span class="header-section-number">1.2.2</span> Escaping</a></li>
   <li><a href="#single-quotes" id="toc-single-quotes" class="nav-link" data-scroll-target="#single-quotes"><span class="header-section-number">1.2.3</span> Single quotes</a></li>
   </ul></li>
-  <li><a href="#scope" id="toc-scope" class="nav-link" data-scroll-target="#scope"><span class="header-section-number">1.3</span> Scope</a></li>
-  <li><a href="#conditionals" id="toc-conditionals" class="nav-link" data-scroll-target="#conditionals"><span class="header-section-number">1.4</span> Conditionals</a></li>
-  <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions"><span class="header-section-number">1.5</span> Functions</a></li>
-  <li><a href="#exit-codes" id="toc-exit-codes" class="nav-link" data-scroll-target="#exit-codes"><span class="header-section-number">1.6</span> Exit codes</a></li>
+  <li><a href="#conditionals" id="toc-conditionals" class="nav-link" data-scroll-target="#conditionals"><span class="header-section-number">1.3</span> Conditionals</a></li>
+  <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions"><span class="header-section-number">1.4</span> Functions</a></li>
+  <li><a href="#exit-codes" id="toc-exit-codes" class="nav-link" data-scroll-target="#exit-codes"><span class="header-section-number">1.5</span> Exit codes</a></li>
   </ul></li>
   <li><a href="#os-theory" id="toc-os-theory" class="nav-link" data-scroll-target="#os-theory"><span class="header-section-number">2</span> OS theory</a>
   <ul>
@@ -263,7 +266,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">February 22, 2025</p>
+      <p class="date-modified">February 23, 2025</p>
     </div>
   </div>
     
@@ -335,7 +338,50 @@ Note
 <div class="callout-body-container callout-body">
 <p>No spaces are permitted on either side of <code>=</code> sign when initializing variables.</p>
 </div>
-</div></div></section>
+</div></div><section id="variable-names" class="level4" data-number="1.1.1">
+<h4 data-number="1.1.1" class="anchored" data-anchor-id="variable-names"><span class="header-section-number">1.1.1</span> Variable names</h4>
+<p>What can you name variables? Here are the rules:</p>
+<ul>
+<li>Variable names must start with a letter (not a number or any other character)</li>
+<li>Variable names cannot contain whitespace or punctuation</li>
+</ul>
+</section>
+<section id="environment-variables" class="level4" data-number="1.1.2">
+<h4 data-number="1.1.2" class="anchored" data-anchor-id="environment-variables"><span class="header-section-number">1.1.2</span> Environment variables</h4>
+<p><em>This section was adapted from <span class="citation" data-cites="WritingShellScripts">(<a href="#ref-WritingShellScripts" role="doc-biblioref"><span>“Writing Shell Scripts - <span>Lesson</span> 4: <span>Variables</span>”</span> n.d.</a>)</span> and <span class="citation" data-cites="ExportManPage">(<a href="#ref-ExportManPage" role="doc-biblioref"><span>“Export <span>Man Page</span> - <span>Linux</span> - <span>SS64</span>.com”</span> n.d.</a>)</span></em></p>
+<p>Any time a shell session is initialized, some variables are already set by startup files.</p>
+<p>To see all the variables that are in the environment, use the <code>printenv</code> command:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>bash</strong></pre>
+</div>
+<div class="sourceCode" id="cb2" data-filename="bash"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> printenv</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="va">SHELL</span><span class="op">=</span>/bin/bash</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>You can also view environment variables in a bash session using <code>echo</code>:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>bash</strong></pre>
+</div>
+<div class="sourceCode" id="cb3" data-filename="bash"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo <span class="va">$SHELL</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">/bin/bash</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>You can create your own environment variables using the <code>export</code> command.</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>bash</strong></pre>
+</div>
+<div class="sourceCode" id="cb4" data-filename="bash"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> MYDEPT=Sales</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo <span class="va">$MYDEPT</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Sales</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> export MYDEPT</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># In one line:</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">SOMEOTHERVAR</span><span class="op">=</span>Value</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
 <section id="quoting" class="level3" data-number="1.2">
 <h3 data-number="1.2" class="anchored" data-anchor-id="quoting"><span class="header-section-number">1.2</span> Quoting</h3>
 <p><em>This section was adapted from <span class="citation" data-cites="Quoting">(<a href="#ref-Quoting" role="doc-biblioref"><span>“Quoting”</span> n.d.</a>)</span></em></p>
@@ -347,16 +393,16 @@ Note
 <div class="code-with-filename-file">
 <pre><strong>bash</strong></pre>
 </div>
-<div class="sourceCode" id="cb2" data-filename="bash"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ls <span class="at">-l</span> <span class="pp">[</span><span class="ss">Vv</span><span class="pp">]*</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-rw-r--</span>    1 bozo  bozo       324 Apr  2 15:05 VIEWDATA.BAT</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-rw-r--</span>    1 bozo  bozo       507 May  4 14:25 vartrace.sh</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-rw-r--</span>    1 bozo  bozo       539 Apr 14 17:11 viewdata.sh</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ls <span class="at">-l</span> <span class="st">'[Vv]*'</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="ex">ls:</span> <span class="pp">[</span><span class="ss">Vv</span><span class="pp">]*</span>: No such file or directory</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ls <span class="at">-l</span> <span class="st">'[vv]*'</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="ex">ls:</span> <span class="pp">[</span><span class="ss">vv</span><span class="pp">]*</span>: no such file or directory</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5" data-filename="bash"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ls <span class="at">-l</span> <span class="pp">[</span><span class="ss">Vv</span><span class="pp">]*</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-rw-r--</span>    1 bozo  bozo       324 Apr  2 15:05 VIEWDATA.BAT</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-rw-r--</span>    1 bozo  bozo       507 May  4 14:25 vartrace.sh</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-rw-r--</span>    1 bozo  bozo       539 Apr 14 17:11 viewdata.sh</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ls <span class="at">-l</span> <span class="st">'[Vv]*'</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="ex">ls:</span> <span class="pp">[</span><span class="ss">Vv</span><span class="pp">]*</span>: No such file or directory</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ls <span class="at">-l</span> <span class="st">'[vv]*'</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="ex">ls:</span> <span class="pp">[</span><span class="ss">vv</span><span class="pp">]*</span>: no such file or directory</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="quoting-variables" class="level4" data-number="1.2.1">
 <h4 data-number="1.2.1" class="anchored" data-anchor-id="quoting-variables"><span class="header-section-number">1.2.1</span> Quoting variables</h4>
@@ -365,9 +411,9 @@ Note
 <div class="code-with-filename-file">
 <pre><strong>bash</strong></pre>
 </div>
-<div class="sourceCode" id="cb3" data-filename="bash"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> local var=<span class="st">"string-with-special-characters#*;&gt;,"</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">"</span><span class="va">$var</span><span class="st">"</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">string-with-special-characters#*</span><span class="kw">;</span><span class="op">&gt;</span>,</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6" data-filename="bash"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> local var=<span class="st">"string-with-special-characters#*;&gt;,"</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">"</span><span class="va">$var</span><span class="st">"</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ex">string-with-special-characters#*</span><span class="kw">;</span><span class="op">&gt;</span>,</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>This prevents reinterpretation of all special characters within the quoted string, with the following exceptions:</p>
 <ul>
@@ -380,23 +426,23 @@ Note
 <div class="code-with-filename-file">
 <pre><strong>bash</strong></pre>
 </div>
-<div class="sourceCode" id="cb4" data-filename="bash"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="va">List</span><span class="op">=</span><span class="st">"one two three"</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> a <span class="kw">in</span> <span class="va">$List</span>     <span class="co"># Splits the variable in parts at whitespace.</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="cf">do</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="bu">echo</span> <span class="st">"</span><span class="va">$a</span><span class="st">"</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># one</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co"># two</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co"># three</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"---"</span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> a <span class="kw">in</span> <span class="st">"</span><span class="va">$List</span><span class="st">"</span>   <span class="co"># Preserves whitespace in a single variable.</span></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="cf">do</span> <span class="co">#     ^     ^</span></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>  <span class="bu">echo</span> <span class="st">"</span><span class="va">$a</span><span class="st">"</span></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="co"># one two three</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7" data-filename="bash"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="va">List</span><span class="op">=</span><span class="st">"one two three"</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> a <span class="kw">in</span> <span class="va">$List</span>     <span class="co"># Splits the variable in parts at whitespace.</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="cf">do</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="bu">echo</span> <span class="st">"</span><span class="va">$a</span><span class="st">"</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># one</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co"># two</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co"># three</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"---"</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> a <span class="kw">in</span> <span class="st">"</span><span class="va">$List</span><span class="st">"</span>   <span class="co"># Preserves whitespace in a single variable.</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="cf">do</span> <span class="co">#     ^     ^</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>  <span class="bu">echo</span> <span class="st">"</span><span class="va">$a</span><span class="st">"</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="co"># one two three</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="escaping" class="level4" data-number="1.2.2">
@@ -406,11 +452,11 @@ Note
 <div class="code-with-filename-file">
 <pre><strong>bash</strong></pre>
 </div>
-<div class="sourceCode" id="cb5" data-filename="bash"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">"Hello world"</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Hello</span> world</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">"Hello </span><span class="dt">\"</span><span class="st">world</span><span class="dt">\"</span><span class="st">"</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="ex">Hello</span> <span class="st">"world"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8" data-filename="bash"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">"Hello world"</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Hello</span> world</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">"Hello </span><span class="dt">\"</span><span class="st">world</span><span class="dt">\"</span><span class="st">"</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="ex">Hello</span> <span class="st">"world"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>You can see more examples and information on escaping <a href="https://tldp.org/LDP/abs/html/escapingsection.html">here</a>.</p>
 </section>
@@ -421,17 +467,14 @@ Note
 <p>Since even the escape character <code>\</code> gets a literal interpretation within single quotes, trying to enclose a single quote within single quotes will not yield the expected result.</p>
 </section>
 </section>
-<section id="scope" class="level3" data-number="1.3">
-<h3 data-number="1.3" class="anchored" data-anchor-id="scope"><span class="header-section-number">1.3</span> Scope</h3>
+<section id="conditionals" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="conditionals"><span class="header-section-number">1.3</span> Conditionals</h3>
 </section>
-<section id="conditionals" class="level3" data-number="1.4">
-<h3 data-number="1.4" class="anchored" data-anchor-id="conditionals"><span class="header-section-number">1.4</span> Conditionals</h3>
+<section id="functions" class="level3" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="functions"><span class="header-section-number">1.4</span> Functions</h3>
 </section>
-<section id="functions" class="level3" data-number="1.5">
-<h3 data-number="1.5" class="anchored" data-anchor-id="functions"><span class="header-section-number">1.5</span> Functions</h3>
-</section>
-<section id="exit-codes" class="level3" data-number="1.6">
-<h3 data-number="1.6" class="anchored" data-anchor-id="exit-codes"><span class="header-section-number">1.6</span> Exit codes</h3>
+<section id="exit-codes" class="level3" data-number="1.5">
+<h3 data-number="1.5" class="anchored" data-anchor-id="exit-codes"><span class="header-section-number">1.5</span> Exit codes</h3>
 </section>
 </section>
 <section id="os-theory" class="level2" data-number="2">
@@ -533,23 +576,23 @@ $ sudo find /path/to/Dir -type d -print0 | xargs -0 sudo chmod 755</code></pre>
 <div class="code-with-filename-file">
 <pre><strong>bash</strong></pre>
 </div>
-<div class="sourceCode" id="cb7" data-filename="bash"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">error_msg()</span> <span class="kw">{</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">printf</span> <span class="st">"%s\n"</span> <span class="st">"</span><span class="va">$1</span><span class="st">"</span> <span class="op">&gt;&amp;</span><span class="dv">2</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="kw">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10" data-filename="bash"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">error_msg()</span> <span class="kw">{</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">printf</span> <span class="st">"%s\n"</span> <span class="st">"</span><span class="va">$1</span><span class="st">"</span> <span class="op">&gt;&amp;</span><span class="dv">2</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="kw">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>To share these functions across other scripts, we could build a library of functions and source that library. As an example, we could put all the common code in a file called <code>~/bash-scripts.sh</code> and add the following code to both scripts to source that file:</p>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>bash</strong></pre>
 </div>
-<div class="sourceCode" id="cb8" data-filename="bash"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="va">FUNCLIB</span><span class="op">=</span>~/bash-scripts.sh</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">[[</span> <span class="ot">-r</span> <span class="st">"</span><span class="va">$FUNCLIB</span><span class="st">"</span> <span class="kw">]];</span> <span class="cf">then</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">source</span> <span class="st">"</span><span class="va">$FUNCLIB</span><span class="st">"</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">"Cannot read function library!"</span> <span class="op">&gt;&amp;</span><span class="dv">2</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">exit</span> 1</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11" data-filename="bash"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="va">FUNCLIB</span><span class="op">=</span>~/bash-scripts.sh</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">[[</span> <span class="ot">-r</span> <span class="st">"</span><span class="va">$FUNCLIB</span><span class="st">"</span> <span class="kw">]];</span> <span class="cf">then</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">source</span> <span class="st">"</span><span class="va">$FUNCLIB</span><span class="st">"</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">"Cannot read function library!"</span> <span class="op">&gt;&amp;</span><span class="dv">2</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">exit</span> 1</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>If you put <code>source</code> statements like this in your <code>~/.bashrc</code>, your functions will always be available each time you open a new terminal instance.</p>
 </section>
@@ -567,6 +610,9 @@ $ sudo find /path/to/Dir -type d -print0 | xargs -0 sudo chmod 755</code></pre>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-ExportManPage" class="csl-entry" role="listitem">
+<span>“Export <span>Man Page</span> - <span>Linux</span> - <span>SS64</span>.com.”</span> n.d. Accessed February 23, 2025. <a href="https://ss64.com/bash/export.html">https://ss64.com/bash/export.html</a>.
+</div>
 <div id="ref-HowToSetPermissions" class="csl-entry" role="listitem">
 <span>“How-<span>To</span>: <span>Set</span> Permissions in Bash - <span>Linux</span> - <span>SS64</span>.com.”</span> n.d. Accessed February 21, 2025. <a href="https://ss64.com/bash/syntax-permissions.html">https://ss64.com/bash/syntax-permissions.html</a>.
 </div>
@@ -578,6 +624,9 @@ $ sudo find /path/to/Dir -type d -print0 | xargs -0 sudo chmod 755</code></pre>
 </div>
 <div id="ref-VariableSubstitution" class="csl-entry" role="listitem">
 <span>“Variable <span>Substitution</span>.”</span> n.d. Accessed February 22, 2025. <a href="https://tldp.org/LDP/abs/html/varsubn.html">https://tldp.org/LDP/abs/html/varsubn.html</a>.
+</div>
+<div id="ref-WritingShellScripts" class="csl-entry" role="listitem">
+<span>“Writing Shell Scripts - <span>Lesson</span> 4: <span>Variables</span>.”</span> n.d. Accessed February 22, 2025. <a href="https://linuxcommand.org/lc3_wss0040.php">https://linuxcommand.org/lc3_wss0040.php</a>.
 </div>
 </div></section><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div>CC BY-NC 4.0. ©2022-25 Mauricio Buschinelli &amp; Michael Haaf.
 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">(View License)</a></div></div></section></div></main> <!-- /main -->
