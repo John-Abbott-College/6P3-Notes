@@ -10,6 +10,9 @@ bibliography: references.bib
 nocite: |
   @*
 image: https://tudoubaba.net/assets/img/shebang.72b91b53.png
+format:
+  html:
+    toc-expand: 2
 ---
 
 :::{.column-margin}
@@ -90,7 +93,7 @@ right_now="$(date +"%x %r %Z")"
 ```
 
 The characters `$( )` tell the shell: "substitute the results of the enclosed command". 
-This technique is known as command substitution. 
+This technique is known as **command substitution**.
 
 In the above example script, the variable `right_now` gets assigned the result of calling the `date` command with 
 with the argument `"%x %r %Z"` which outputs the current date and time. 
@@ -257,6 +260,64 @@ system_info
 
 Running the above lines will define the `system_info()` function, then call it, simply result in the `echo` command running.
 
+#### Positional parameters
+
+Functions in `bash` support positional parameters by default. This allows us to do things
+like specify the name of the output file on the command line, as well as set a default
+output file name if no name is specified.
+
+Positional parameters are a series of special variables (`$0` through `$9`) that contain the contents of the command line.
+
+For example, let's change the earlier function definition above slightly:
+
+```bash {filename=bash}
+system_info()
+{
+  echo "$1"
+  echo "$2"
+  echo "$3"
+}
+```
+
+Then, let's see what happens if we were to use this function:
+
+```bash {filename=bash}
+$ system_info Hello world !
+Hello
+world
+!
+
+$ system_info "Hello world!" "How are you?" "I'm good, thanks!"
+Hello world!
+How are you?
+I'm good, thanks!
+```
+
+#### Detecting positional parameters
+
+Often, we will want to check to see if we have command line arguments on which to act.
+There are a couple of ways to do this. First, we could simply check to see if `$1` contains
+anything like so:
+
+```bash {filename=bash}
+if [ "$1" != "" ]; then
+    echo "Positional parameter 1 contains something"
+else
+    echo "Positional parameter 1 is empty"
+fi
+```
+
+Second, the shell maintains a variable called `$#` that contains the number of items on the command line in addition to the name of the command ($0).
+
+```bash {filename=bash}
+# -gt means "greater than" in Bash, and -lt is "less than".
+if [ $# -gt 0 ]; then
+    echo "Your command line contains $# arguments"
+else
+    echo "Your command line contains no arguments"
+fi
+```
+
 ### Conditionals
 
 _This section was adapted from [@WritingShellScriptsb]_
@@ -278,7 +339,7 @@ value of zero indicates success and any other value indicates failure.
 
 [^exitcode]: Most of these numbers aren't used -- 0 (success) and 1 (failure) are most
 common. You can see a useful discussion of where to find more information about exit codes
-[on stackoverflow](https://unix.stackexchange.com/questions/110348/how-do-i-get-the-list-of-exit-codes-and-or-return-codes-and-meaning-for-a-comm)
+[on stackoverflow](https://unix.stackexchange.com/questions/110348/how-do-i-get-the-list-of-exit-codes-and-or-return-codes-and-meaning-for-a-comm).
 
 The shell provides a parameter `$?` that we can use to examine the exit status *of the previously run command*. Here we see it in action:
 
@@ -434,111 +495,21 @@ For example: `$ clear; ls` will clear the screen, then execute the ls command.
 
 We use the semicolon as we did to allow us to put the word then on the same line as the if command, because it's easier to read that way.
 
-## OS theory
-
-### Shell
-
-### Permissions
-
-_This section was adapted from [@HowToSetPermissions]_
-
-#### View permissions with `ls`
-
-The ouptut of `ls -l` will show the current permissions for files and folders:
-
-`-rwxr--rw- 1 user user 0 Jan 19 12:59 file1.txt`
-
-The letters `rwx` stand for Read/Write/Execute permission. These rights are shown three
-times, first for the Owner, then the Group and lastly Others (world)
-
-#### Edit permissions with `chmod`
-
-The command to modify permissions is `chmod`. There are two ways to modify permissions,
-with numbers or with letters.
-
-Check out this this [chmod](https://ss64.com/bash/chmod.html) documentation for a really
-great interactive demo.
-
-##### Numeric
-
-- `chmod 400 file` - Read by owner
-- `chmod 040 file` - Read by group
-- `chmod 004 file` - Read by world
-- `chmod 200 file` - Write by owner
-- `chmod 020 file` - Write by group
-- `chmod 002 file` - Write by world
-- `chmod 100 file` - execute by owner
-- `chmod 010 file` - execute by group
-- `chmod 001 file` - execute by world
-
-To combine these, just add the numbers together:
-
-- `chmod 444 file` - Allow read permission to owner and group and world
-- `chmod 777 file` - Allow everyone to read, write, and execute file
-
-##### Symbolic
-
-`chmod` also accepts symbolic arguments for permission changes, where:
-
-- `rwx`: read/write/execute
-- `ugo`: user/group/world
-
-Some examples:
-
-- Deny execute permission to everyone: `$ chmod a-x file`
-- Allow read permission to everyone: `$ chmod a+r file`
-- Make a file readable and writable by the group and others: `$ chmod go+rw file`
-- Make a shell script executable by the user/owner: `$ chmod u+x myscript.sh`
-- Allow everyone to read, write, and execute the file and turn on the set group-ID:
-    `$ chmod =rwx,g+s file`
-
-Some files are configured to have very restrictive permissions to prevent unauthorized
-access. Changing these permissions can create security problems.
-
-To change or edit files that are owned by root, sudo chmod must be used. Note that
-changing permissions incorrectly can quickly make your system unusable! Please be careful
-when using sudo!
-
-`$ sudo chmod o+x /usr/local/bin/somefile`
-
-#### Recursive Permission Changes
-
-`chmod -R` will change all the permissions of each file and folder under a specified
-directory at once.
-
-For example, `$ chmod 777 -R /path/to/Dir` will grant read/write/execute permissions to
-all users for ALL files in `/path/to/Dir`.
-
-To assign reasonably secure permissions to files and folders/directories, it’s common to
-give files a permission of 644, and directories a 755 permission, using the `find` command
-and a pipe we can target just files or just folders as in the following examples.
-
-```
-$ sudo find /path/to/Dir -type f -print0 | xargs -0 sudo chmod 644`
-$ sudo find /path/to/Dir -type d -print0 | xargs -0 sudo chmod 755
-```
-
-Again if using sudo be careful, in particular watch for extra spaces in your command/path.
-
-#### Changing Ownership and Group membership
-
-A file’s owner can be changed using the `chown` command.
-
-`$ sudo chown kate file1.txt`
-
-A file’s group can also be changed using the `chown` command.
-
-`$ sudo chown :mygroup file1.txt`
-
-chown can also change the owner and group in a single command:
-
-`$ sudo chown tux:mygroup file1.txt`
-
-### Filesystem
 
 ## Code reuse
 
-### `source`
+The primary goal of writing a program in any language is to *cryztalize useful logic in a
+reusable form* -- that is, to write a program. The outcome is that you don't need to
+repeat yourself once you've solved a problem once.
+
+In bash there are two main avenues we will take to achieve this goal:
+
+- create function libraries
+- create executable scripts
+
+The following sections elaborate each technique.
+
+### Function library with `source`
 
 _This section was adapted from [@LinuxCommandLine]_
 
@@ -555,17 +526,15 @@ shell. It works both with the interactive command line and within a script. Usin
 command line for example, we can reload the `.bashrc` file by executing the following
 command:
 
-`me@linuxbox: ~$ source ~/.bashrc`
+`$ source ~/.bashrc`
 
 Note that the `source` command can be abbreviated by a single dot character like so:
 
-`me@linuxbox: ~$ . ~/.bashrc`
+`$ . ~/.bashrc`
 
 When source is used on the command line, the commands in the file are treated as if they
 are being typed directly at the keyboard. In a shell script, the commands are treated as
 though they are part of the script.
-
-#### Function Libraries
 
 `source` is a natural way to share functions and variables across many bash programs. For
 example, it makes sense to have a shared function to display error messages:
@@ -596,6 +565,108 @@ be available each time you open a new terminal instance.
 
 ### Scripts
 
-### Shebangs
+#### Shebangs
 
-______________________________________________________________________
+#### Permissions
+
+_This section was adapted from [@HowToSetPermissions]_
+
+##### View permissions with `ls`
+
+The ouptut of `ls -l` will show the current permissions for files and folders:
+
+`-rwxr--rw- 1 user user 0 Jan 19 12:59 file1.txt`
+
+The letters `rwx` stand for Read/Write/Execute permission. These rights are shown three
+times, first for the Owner, then the Group and lastly Others (world)
+
+##### Edit permissions with `chmod`
+
+The command to modify permissions is `chmod`. There are two ways to modify permissions,
+with numbers or with letters.
+
+Check out this this [chmod](https://ss64.com/bash/chmod.html) documentation for a really
+great interactive demo.
+
+###### Numeric
+
+- `chmod 400 file` - Read by owner
+- `chmod 040 file` - Read by group
+- `chmod 004 file` - Read by world
+- `chmod 200 file` - Write by owner
+- `chmod 020 file` - Write by group
+- `chmod 002 file` - Write by world
+- `chmod 100 file` - execute by owner
+- `chmod 010 file` - execute by group
+- `chmod 001 file` - execute by world
+
+To combine these, just add the numbers together:
+
+- `chmod 444 file` - Allow read permission to owner and group and world
+- `chmod 777 file` - Allow everyone to read, write, and execute file
+
+###### Symbolic
+
+`chmod` also accepts symbolic arguments for permission changes, where:
+
+- `rwx`: read/write/execute
+- `ugo`: user/group/world
+
+Some examples:
+
+- Deny execute permission to everyone: `$ chmod a-x file`
+- Allow read permission to everyone: `$ chmod a+r file`
+- Make a file readable and writable by the group and others: `$ chmod go+rw file`
+- Make a shell script executable by the user/owner: `$ chmod u+x myscript.sh`
+- Allow everyone to read, write, and execute the file and turn on the set group-ID:
+    `$ chmod =rwx,g+s file`
+
+Some files are configured to have very restrictive permissions to prevent unauthorized
+access. Changing these permissions can create security problems.
+
+To change or edit files that are owned by root, sudo chmod must be used. Note that
+changing permissions incorrectly can quickly make your system unusable! Please be careful
+when using sudo!
+
+`$ sudo chmod o+x /usr/local/bin/somefile`
+
+##### Recursive Permission Changes
+
+`chmod -R` will change all the permissions of each file and folder under a specified
+directory at once.
+
+For example, `$ chmod 777 -R /path/to/Dir` will grant read/write/execute permissions to
+all users for ALL files in `/path/to/Dir`.
+
+To assign reasonably secure permissions to files and folders/directories, it’s common to
+give files a permission of 644, and directories a 755 permission, using the `find` command
+and a pipe we can target just files or just folders as in the following examples.
+
+```
+$ sudo find /path/to/Dir -type f -print0 | xargs -0 sudo chmod 644`
+$ sudo find /path/to/Dir -type d -print0 | xargs -0 sudo chmod 755
+```
+
+Again if using sudo be careful, in particular watch for extra spaces in your command/path.
+
+##### Changing Ownership and Group membership
+
+A file’s owner can be changed using the `chown` command.
+
+`$ sudo chown kate file1.txt`
+
+A file’s group can also be changed using the `chown` command.
+
+`$ sudo chown :mygroup file1.txt`
+
+chown can also change the owner and group in a single command:
+
+`$ sudo chown tux:mygroup file1.txt`
+
+#### Style
+
+In general, when I provide starter scripts for you, you should try to follow the "style" of the code. That is:
+
+You can see the following resources for style guides:
+
+- 
