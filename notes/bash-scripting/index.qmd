@@ -19,6 +19,7 @@ format:
 ![Image source: [tudoubaba.net](https://tudoubaba.net/ProgrammingHandbook/python/python_shebang.html)](https://tudoubaba.net/assets/img/shebang.72b91b53.png)
 :::
 
+
 ## Bash theory
 
 Bash (and other shell languages) isn't really a programming language -- it is a *command
@@ -287,10 +288,10 @@ Hello
 world
 !
 
-$ system_info "Hello world!" "How are you?" "I'm good, thanks!"
+$ system_info "Hello world!" "How are you?" "I am good, thanks!"
 Hello world!
 How are you?
-I'm good, thanks!
+I am good, thanks!
 ```
 
 #### Detecting positional parameters
@@ -317,6 +318,24 @@ else
     echo "Your command line contains no arguments"
 fi
 ```
+
+#### Naming positional parameters with `local`
+
+In a function that has many positional parameters, it can be difficult to keep track of what each `$1` `$2`, etc. should mean.
+
+A common practise in bash functions is to create named variables within a function using [`local`](https://ss64.com/bash/local.html):
+
+```bash {filename=bash}
+system_info()
+{
+  local param1="$1"
+  local param2="$2"
+  local param3="$3"
+}
+```
+
+`local` is a bash builtin that can only be used within a function; it makes the variable
+name have a visible scope restricted to that function.
 
 ### Conditionals
 
@@ -565,11 +584,77 @@ be available each time you open a new terminal instance.
 
 ### Scripts
 
+In the simplest terms, a shell script is a file containing a series of commands. The shell
+reads this file and carries out the commands as though they have been entered directly on
+the command line.
+
+Say we have the following file, `example.sh`:
+
+```bash {filename=example.sh}
+#!/bin/bash
+echo "This is an example script"
+```
+
+We can use the `bash` program to run this script:
+
+```bash
+$ bash example.sh
+This is an example script
+```
+
+This is fairly similar to the `source` command we saw earlier. The difference is a bit subtle:
+
+- `source <library-name>` will run within our current shell instance (preserving variables and functions)
+- `bash <script-name>` will launch a *new* shell instance, which will NOT preserve variables and functions
+
+The impetus to use one method or the other varies by purpose:
+
+- write a library and use `source` to create re-useable functions to be used on the command line or in other scripts
+- write a script to *do* a specific task
+
+There is overlap between these two purposes, so don't overthink it too much. You will
+often find yourself writing scripts that should be libraries, and vice versa -- you can
+always make these changes to your programs whenever you like.
+
 #### Shebangs
+
+The first line of any script, in ANY programming language (`bash`, `sh`, or, as we will soon see, `python) should start with a **shebang**:
+
+```bash {filename=bash-script.sh}
+#!/bin/bash
+
+# the first line beginning with #! is a shebang!
+```
+
+Let's break down the components of the shebang to better understand it:
+
+- `#` -- a comment
+- `!` -- in this context, a special character indicating that this line should be *executed* by the program that loads this file
+- `/bin/bash` -- the *path* to the *interpreter* for the code written in this file. Note that `/bin/bash` is an absolute path.
+
+We will soon see that the most [portable](https://en.wikipedia.org/wiki/Shebang_(Unix)#Portability) method for specifying a shebang is by providing the path to using the `env` program, like so:
+
+```
+#!/usr/bin/env bash     # a bash script shebang
+#!/usr/bin/env sh       # a sh script shebang
+#!/usr/bin/env perl     # a perl script shebang
+#!/usr/bin/env python   # a python script shebang
+```
+
+For now, all that matters is that you provide a path to the `bash` program on your system. You can see valid options by running `whereis bash`:
+
+```
+$ whereis bash
+bash: /bin/bash
+```
 
 #### Permissions
 
 _This section was adapted from [@HowToSetPermissions]_
+
+In order to run a script without specifying an interpreter, you need to make the script **executable**, which is a permission that you can set on the file itself.
+
+The sections below show how to view and set file permissions in linux filesystems.
 
 ##### View permissions with `ls`
 
@@ -665,8 +750,24 @@ chown can also change the owner and group in a single command:
 
 #### Style
 
-In general, when I provide starter scripts for you, you should try to follow the "style" of the code. That is:
+You can see the following resources for style guides for bash coding:
 
-You can see the following resources for style guides:
+- ["Unofficial Shell Scripting Stylesheet"](https://tldp.org/LDP/abs/html/unofficialst.html) by the Linux Documentation Project
+- ["Shell Style Guide"](https://google.github.io/styleguide/shellguide.html) by Google developers
 
-- 
+## Resources
+
+_This section was adapted from <https://linuxcommand.org/lc3_resources.php>_
+
+Aside from everything covered in these notes, you can refer to the following resources:
+
+- [Bash Builtins ](https://linuxcommand.org/lc3_man_page_index.php#builtins) - commands
+    built into the shell itself
+- The GNU Coreutils - the essential utilities included with most Linux distributions.
+    These are divided into three groups:
+    - [File Utilities](https://linuxcommand.org/lc3_man_page_index.php#file)
+    - [Text Utilities](https://linuxcommand.org/lc3_man_page_index.php#text)
+    - [Shell Utilities](https://linuxcommand.org/lc3_man_page_index.php#shell)
+- [Other Commands ](https://linuxcommand.org/lc3_man_page_index.php#other) - other
+    commonly-used Linux utilities
+
