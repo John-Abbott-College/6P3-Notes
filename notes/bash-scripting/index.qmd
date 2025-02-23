@@ -79,6 +79,26 @@ What can you name variables? Here are the rules:
 - Variable names must start with a letter (not a number or any other character)
 - Variable names cannot contain whitespace or punctuation
 
+#### Command substitution
+
+We can also assign the results of a command to a variable:
+
+```bash {filename=bash}
+# The "%x %r %Z" string is an example of a date format string.
+# See `man date` for examples of other date format strings
+right_now="$(date +"%x %r %Z")"
+```
+
+The characters `$( )` tell the shell: "substitute the results of the enclosed command". 
+This technique is known as command substitution. 
+
+In the above example script, the variable `right_now` gets assigned the result of calling the `date` command with 
+with the argument `"%x %r %Z"` which outputs the current date and time. 
+
+Like variable substitutions, it is a good idea to wrap command substitutions in double
+quotes to prevent unwanted word splitting in case the result of the expansion contains
+whitespace characters -- see the (#Quoting) section below.
+
 #### Environment variables
 
 _This section was adapted from [@WritingShellScripts] and [@ExportManPage]_
@@ -208,11 +228,211 @@ quotes ("partial quoting").
 Since even the escape character `\` gets a literal interpretation within single quotes,
 trying to enclose a single quote within single quotes will not yield the expected result.
 
-### Conditionals
-
 ### Functions
 
-### Exit codes
+_This section was adapted from [@WritingShellScriptsa]_
+
+As programs get longer and more complex, they become more difficult to design, code, and
+maintain. As with any large endeavor, it is often useful to break a single, large task
+into a series of smaller tasks. We can do this with functions.
+
+A couple of important points about functions in bash:
+
+- They must be defined before they can be used.
+- Second, the function body (the portions of the function between the `{` and `}` characters) must contain at least one valid command.
+
+Here is an example:
+
+```bash {filename=bash}
+# The function definition must come before any function calls
+system_info()
+{
+  # At least one valid command is required in a function body
+  echo "function system_info"
+}
+
+# No brackets are included in the function call
+system_info
+```
+
+Running the above lines will define the `system_info()` function, then call it, simply result in the `echo` command running.
+
+### Conditionals
+
+_This section was adapted from [@WritingShellScriptsb]_
+
+Most programs need to make decisions and perform different actions depending on various
+conditions. In bash, there are two main things to know for achieving conditional logic:
+
+- How the shell evaluates the success or failure of a command (Exit status)
+- How the shell can control the flow of execution in our program.
+
+These two things are elaborated in the following sections.
+
+#### Exit status
+
+Commands (including the scripts and shell functions we write) issue a value to the system
+when they terminate, called an exit status. This value, which is an integer in the range
+of 0 to 255[^exitcode], indicates the success or failure of the command’s execution. By convention, a
+value of zero indicates success and any other value indicates failure. 
+
+[^exitcode]: Most of these numbers aren't used -- 0 (success) and 1 (failure) are most
+common. You can see a useful discussion of where to find more information about exit codes
+[on stackoverflow](https://unix.stackexchange.com/questions/110348/how-do-i-get-the-list-of-exit-codes-and-or-return-codes-and-meaning-for-a-comm)
+
+The shell provides a parameter `$?` that we can use to examine the exit status *of the previously run command*. Here we see it in action:
+
+```bash {filename=bash}
+$ ls -d /usr/bin
+/usr/bin
+
+# The last command terminated sucessfully, so we have a zero exit code when calling $?
+$ echo $?
+0
+
+$ ls -d /bin/usr
+ls: cannot access /bin/usr: No such file or directory
+
+# The last command did not terminate successfully, so we have a non-zero exit code when calling $?
+$ echo $?
+2
+```
+
+Some commands use different exit status values to provide diagnostics for errors, while
+many commands simply exit with a value of one when they fail. `man` pages often include a
+section entitled “Exit Status,” describing what codes are used. However, a zero always
+indicates success.
+
+The shell provides two extremely simple builtin commands that do nothing except terminate
+with either a zero or one exit status. The true command always executes successfully and
+the false command always executes unsuccessfully:
+
+```bash {filename=bash}
+$ true
+$ echo $?
+0
+$ false
+$ echo $?
+1
+```
+
+We can use these commands to see how the if statement works. What the if statement really does is evaluate the success or failure of commands:
+
+```bash {filename=bash}
+$ if true; then echo "It's true."; fi
+It's true.
+
+$ if false; then echo "It's true."; fi
+$
+```
+
+The command echo "It's true." is executed when the command following if executes successfully, and is not executed when the command following if does not execute successfully. 
+
+#### `exit`
+
+We can (and should!) set the exit status of our own scripts when they finish. To do this,
+use the `exit` command. The `exit` command causes the script to terminate immediately and
+set the exit status to whatever value is given as an argument. 
+
+For example: `exit 0` exits our script and sets the exit status to 0 (success), whereas
+`exit 1` exits your script and sets the exit status to 1 (failure).
+
+#### `if`
+
+The `if` command is fairly simple on the surface; it makes a decision based on the exit status of a command. 
+The `if` command's syntax looks like this:
+
+```bash {filename=bash}
+if commands; then
+    commands
+[elif commands; then
+    commands...]
+[else
+    commands]
+fi
+```
+
+Typically, you will see the `if` command combined with the `test` command, seen below.
+
+#### `test`
+
+The `test` command is used most often with the `if` command to perform true/false decisions.
+
+The command is unusual in that it has two different syntactic forms:
+
+```bash {filename=bash}
+# First form
+test expression
+
+# Second form, which is far more common
+# Note: the word "test" does not appear, but this is in fact a "test" command!
+[ expression ]
+```
+
+::: {.column-margin}
+Notice the spaces between the `[` `]` braces and the `expression` -- the whitespace is required.
+:::
+
+The test command works simply. If the given expression is true, test exits with a status of zero; otherwise it exits with a status of 1.
+
+The neat feature of test is the variety of expressions we can create. Here is an example:
+
+```bash {filename=bash}
+if [ -f .bash_profile ]; then
+    echo "You have a .bash_profile. Things are fine."
+else
+    echo "Yikes! You have no .bash_profile!"
+fi
+```
+
+In this example, we use the expression `-f .bash_profile `. This expression asks, "Is
+.bash_profile a file?" If the expression is true, then test exits with a zero (indicating
+true) and the `if` command executes the command(s) following the word then. If the
+expression is false, then test exits with a status of one and the `if` command executes the
+command(s) following the word `else`.
+
+Here is a partial list of the conditions that test can evaluate. Since test is a shell builtin, use `help test` to see a complete list:
+
+| Expression            | Description                                  |
+| --------------------- | -------------------------------------------- |
+| `-d file`             | True if `file` is a directory.               |
+| `-e file `            | True if `file` exists.                       |
+| `-f file `            | True if `file` exists and is a regular file. |
+| `-L file `            | True if `file` is a symbolic link.           |
+| `-r file `            | True if `file` is a file readable by you.    |
+| `-w file `            | True if `file` is a file writable by you.    |
+| `-x file `            | True if `file` is a file executable by you.  |
+| `file1 -nt file2 `    | True if `file1` is newer than `file2.`       |
+| `file1 -ot file2 `    | True if `file1` is older than `file2.`       |
+| `-z string `          | True if `string` is empty.                   |
+| `-n string `          | True if `string` is not empty.               |
+| `string1 = string2 `  | True if `string1` equals `string2.`          |
+| `string1 != string2 ` | True if `string1` does not equal `string2.`  |
+
+#### A quick note on syntax
+
+Note that the above example can be written in a few ways:
+
+```bash {filename=bash}
+# Preferred form
+if [ -f .bash_profile ]; then
+    echo "You have a .bash_profile. Things are fine."
+else
+    echo "Yikes! You have no .bash_profile!"
+fi
+
+# Alternate form
+if [ -f .bash_profile ]
+then echo "You have a .bash_profile. Things are fine."
+else echo "Yikes! You have no .bash_profile!"
+fi
+```
+
+The semicolon `;` is a *command separator*. Using it allows us to put more than one command on a line. 
+
+For example: `$ clear; ls` will clear the screen, then execute the ls command.
+
+We use the semicolon as we did to allow us to put the word then on the same line as the if command, because it's easier to read that way.
 
 ## OS theory
 
