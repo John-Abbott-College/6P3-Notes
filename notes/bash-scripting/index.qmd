@@ -72,6 +72,46 @@ echo ${hello}
 No spaces are permitted on either side of `=` sign when initializing variables.
 :::
 
+#### Variable names
+
+What can you name variables? Here are the rules:
+
+- Variable names must start with a letter (not a number or any other character)
+- Variable names cannot contain whitespace or punctuation
+
+#### Environment variables
+
+_This section was adapted from [@WritingShellScripts] and [@ExportManPage]_
+
+Any time a shell session is initialized, some variables are already set by startup files.
+
+To see all the variables that are in the environment, use the `printenv` command:
+
+```bash {filename=bash}
+$ printenv
+SHELL=/bin/bash
+...
+```
+
+You can also view environment variables in a bash session using `echo`:
+
+```bash {filename=bash}
+$ echo $SHELL
+/bin/bash
+```
+
+You can create your own environment variables using the `export` command.
+
+```bash {filename=bash}
+$ MYDEPT=Sales
+$ echo $MYDEPT
+Sales
+$ export MYDEPT
+
+# In one line:
+export SOMEOTHERVAR=Value
+```
+
 ### Quoting
 
 _This section was adapted from [@Quoting]_
@@ -167,8 +207,6 @@ quotes ("partial quoting").
 
 Since even the escape character `\` gets a literal interpretation within single quotes,
 trying to enclose a single quote within single quotes will not yield the expected result.
-
-### Scope
 
 ### Conditionals
 
