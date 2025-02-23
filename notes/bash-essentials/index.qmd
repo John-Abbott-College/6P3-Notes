@@ -70,8 +70,6 @@ These are commands you probably already know -- if you don't, you'll know by the
 
 ### Getting around: `cd` and `ls`
 
-:::{.column-page-right}
-
 ```sh
 NAME
   cd - change the current directory
@@ -81,8 +79,6 @@ SYNOPSIS
   cd [DIR]
   ls [OPTION]... [FILE]...
 ```
-
-:::
 
 ::: {.callout-note collapse="true"}
 
@@ -94,8 +90,6 @@ SYNOPSIS
 
 ### Viewing files: `cat` and `tac`
 
-:::{.column-page-right}
-
 ```sh
 NAME
   cat - concatenate files and print on the standard output
@@ -106,11 +100,7 @@ SYNOPSIS
   tac [OPTION]... [FILE]...
 ```
 
-:::
-
 ### Creating files: `touch` and `mkdir`
-
-:::{.column-page-right}
 
 ```sh
 NAME
@@ -122,8 +112,6 @@ SYNOPSIS
   touch [FILE]...
   mkdir [-p/--parents] [DIRECTORY]...
 ```
-
-:::
 
 ### Moving files: `mv` and `cp`
 
@@ -143,8 +131,6 @@ SYNOPSIS
 
 ### Managing permissions: `chmod` and `chown`
 
-:::{.column-page-right}
-
 ```sh
 NAME
   chmod - Change the permissions mode of each FILE to MODE.
@@ -155,11 +141,7 @@ SYNOPSIS
   chown [-R/--recursive] [USER:GROUP] [FILE]
 ```
 
-:::
-
 ### Deleting files: `rm`
-
-:::{.column-page-right}
 
 ```sh
 NAME
@@ -169,19 +151,28 @@ SYNOPSIS
   rm [-f/--force] [-i/--interactive] [-r/--recursive] [FILE]...
 ```
 
-:::
-
 ## The five fingers of death
 
 :::{.column-margin}
 
-![[Image source](https://theactionelite.com/five-fingers-of-death-1972-review/)](https://theactionelite.com/wp-content/uploads/2019/04/GetAttachmentThumbnail.jpg)
+![*Five Fingers of Death*, or *King Boxer* as it is known on Wikipedia, is a martial-arts movie I have not seen, but I have heard referenced in many songs. It speaks to me that the mastery of a seemlingly small set tools (five fingers) can lead to drastic increases in capability (the ability to inflict death) and I believe this spirit applies directly to working with unix tools. [Image source](https://theactionelite.com/five-fingers-of-death-1972-review/)](https://theactionelite.com/wp-content/uploads/2019/04/GetAttachmentThumbnail.jpg)
 
 :::
 
-### `find` files and `grep` content
+The following 5 sets of commands are indispensable
+[GNU Coreutils](https://linuxcommand.org/lc3_resources.php) that are included on all linux
+systems.
 
-:::{.column-page-right}
+There are many more coreutils that I have not included -- I have chosen these 5
+sets as I believe that mastering them, above all, will bring you in harmony with your
+linux system, and therefore closer to truth, happiness, and the meaning of life -- or, if
+not, at least they will help you solve the labs that I give you in this course.
+
+Almost all of these notes are adapted from a resource I found that's pretty much exactly
+what I wanted to write myself: [@CLITextProcessing]. It comes with great explanations and
+exercises and solutions. I may base some quizzes and tests on it!
+
+### `find` files and `grep` content
 
 ```sh
 NAME
@@ -192,8 +183,6 @@ SYNOPSIS
   find [STARTING-POINT...] [OPTION...] [EXPRESSION]
   grep [OPTION...] PATTERNS [FILE...]
 ```
-
-:::
 
 ::: {.callout-note collapse="true"}
 
@@ -213,35 +202,39 @@ SYNOPSIS
 
 ### `tr` characters and `cut` fields
 
-:::{.column-page-right}
-
 ```sh
 NAME
-  tr - Translate characters matching STRING1 in stdin/FILE to STRING2 writing to stdout
+  tr - Translate characters matching STRING1 in stdin/FILE to STRING2,
+       writing to stdout
   cut - Prints specified columns from each line of stdin, writes to stdout
 
 SYNOPSIS
   tr [OPTION]... STRING1 STRING2
-  cut [-d/--delimiter] [-f|--fields] [FILE]
+  cut [-d/--delimiter] [-f/--fields] [FILE]
 ```
+
+::: {.callout-note collapse="true"}
+
+## `tr` details & examples
+
+{{< include _tr.qmd >}}
 
 :::
 
 ::: {.callout-note collapse="true"}
 
-## `tr` & `cut` details & examples
+## `cut` details & examples
 
-{{< include _tr-cut.qmd >}}
+{{< include _cut.qmd >}}
 
 :::
 
 ### `sort` data and `uniq` duplicates
 
-:::{.column-page-right}
-
 ```sh
 NAME
-  sort - Display sorted concatenation of all FILE(s). With no FILE, or when FILE is -, read stdin
+  sort - Display sorted concatenation of all FILE(s).
+         With no FILE, or when FILE is -, read stdin
   uniq - Report or omit repeated lines.
 
 SYNOPSIS
@@ -249,31 +242,35 @@ SYNOPSIS
   uniq [-d/--repeated] [FILE]...
 ```
 
+::: {.callout-note collapse="true"}
+
+## `sort` details & examples
+
+{{< include _sort.qmd >}}
+
 :::
 
 ::: {.callout-note collapse="true"}
 
-## `sort` and `uniq` details & examples
+## `uniq` details & examples
 
-{{< include _sort-uniq.qmd >}}
+{{< include _uniq.qmd >}}
 
 :::
 
 ### know `head` from `tail`
 
-:::{.column-page-right}
-
 ```sh
 NAME
-  head - Print the first 10 lines of each `FILE` to standard output. With no `FILE`, or when `FILE` is `-`, read stdin
-  tail - Print the last 10 lines of each `FILE` to standard output. With no `FILE`, or when `FILE` is `-`, read stdin
+  head - Print the first 10 lines of each `FILE` to standard output.
+         With no `FILE`, or when `FILE` is `-`, read stdin
+  tail - Print the last 10 lines of each `FILE` to standard output.
+         With no `FILE`, or when `FILE` is `-`, read stdin
 
 SYNOPSIS
   head [-n/--lines] [FILE]...
   tail [-n/--lines] [-f/--follow] [FILE]...
 ```
-
-:::
 
 ::: {.callout-note collapse="true"}
 
@@ -285,8 +282,6 @@ SYNOPSIS
 
 ### `tree` and `tee`
 
-:::{.column-page-right}
-
 ```sh
 NAME
   tree - list contents of DIRECTORIES in a tree-like format.
@@ -296,8 +291,6 @@ SYNOPSIS
   tree [-L level] [DIRECTORY]...
   tee [FILE]...
 ```
-
-:::
 
 ::: {.callout-note collapse="true"}
 
@@ -318,8 +311,6 @@ You can use the `>` operator to "redirect" the output of commands (which normall
 stdout) to different files or other file descriptors. Some common examples are shown
 below:
 
-:::{.column-page-right}
-
 ```bash
 command  >  filename     Redirect command output (stdout) into a file
 command  >  /dev/null    Discard stdout of command
@@ -334,8 +325,6 @@ commandA | commandB       Pipe stdout of commandA to commandB
 commandA | tee filename   Pipe stdout of commandA into filename AND stdout
 ```
 
-:::
-
 ::: {.callout-note collapse="true"}
 
 ## Redirection explained further
@@ -348,8 +337,6 @@ commandA | tee filename   Pipe stdout of commandA into filename AND stdout
 
 ### `ssh`
 
-:::{.column-page-right}
-
 ```sh
 NAME
   ssh - OpenSSH remote login client
@@ -357,8 +344,6 @@ NAME
 SYNOPSIS
   ssh [-l login_name] [-p port] DESTINATION [command [argument...]
 ```
-
-:::
 
 `ssh` is a program for logging into a remote machine and for executing commands on a
 remote machine. It is intended to provide secure encrypted communications between two
@@ -382,8 +367,6 @@ There's nothing here yet... stay tuned!
 
 ### `rsync`
 
-:::{.column-page-right}
-
 ```sh
 NAME
   rsync - a fast, versatile, remote (and local) file-copying tool
@@ -397,8 +380,6 @@ SYNOPSIS
     Push:
         rsync [OPTION...] SRC... [USER@]HOST:DEST
 ```
-
-:::
 
 Rsync is a fast and extraordinarily versatile file copying tool. It can copy locally,
 to/from another host over any remote shell, or to/from a remote rsync daemon.
@@ -422,8 +403,6 @@ There's nothing here yet... stay tuned!
 
 ### `tar`, `zip`, and `unzip`
 
-:::{.column-page-right}
-
 ```sh
 NAME
   tar - a general archiving utility for creation/extraction/compression and more
@@ -435,8 +414,6 @@ SYNOPSIS
   zip [OPTIONS] [ARCHIVE] [FILE...]
   unzip [ARCHIVE] [-d OUTPUTDIR]
 ```
-
-:::
 
 The `tar`, `zip`, and `unzip` programs provide the ability to create, extract, and
 otherwise manipulate **archives** of files, where an **archive** of files is simply a file
@@ -458,8 +435,6 @@ You can read more:
 
 ### `git`
 
-:::{.column-page-right}
-
 ```sh
 NAME
   git - the stupid content tracker
@@ -467,8 +442,6 @@ NAME
 SYNOPSIS
   git <command> [<args>]
 ```
-
-:::
 
 Git is a fast, scalable, distributed revision control system with an unusually rich
 command set that provides both high-level operations and full access to internals.
