@@ -189,7 +189,7 @@ NAME
   grep - print lines in file(s) that match a given pattern
 
 SYNOPSIS
-  find [STARTING-POINT...] [EXPRESSION]
+  find [STARTING-POINT...] [OPTION...] [EXPRESSION]
   grep [OPTION...] PATTERNS [FILE...]
 ```
 
@@ -197,9 +197,17 @@ SYNOPSIS
 
 ::: {.callout-note collapse="true"}
 
-## `find` & `grep` details & examples
+## `find` details & examples
 
-{{< include _find-grep.qmd >}}
+{{< include _find.qmd >}}
+
+:::
+
+::: {.callout-note collapse="true"}
+
+## `grep` details & examples
+
+{{< include _grep.qmd >}}
 
 :::
 
