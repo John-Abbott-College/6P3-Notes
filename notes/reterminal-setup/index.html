@@ -395,13 +395,13 @@ div.csl-indent {
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/hAfdb603emw" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dissasembly-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: We will <strong>not</strong> fully disassemble the reTerminal <em>(like in the video)</em>. <strong>Only remove the heatsink</strong> in order to access the memory switch.
+Figure&nbsp;1: <strong>Only remove the heatsink</strong> in order to access the memory switch. It is <em>not</em> necessary fully disassemble the reTerminal like they do in the video.
 </figcaption>
 </figure>
 </div>
 <ol type="1">
 <li><p>Watch the video in <a href="#fig-dissasembly" class="quarto-xref">Figure&nbsp;1</a> to understand the disassembly process (2 mins).</p></li>
-<li><p>Follow <strong>Steps 1, 2, &amp; 3</strong> in the reTerminal documentation: <a href="https://wiki.seeedstudio.com/reTerminal/#flash-raspberry-pi-os-64-bit-ubuntu-os-or-other-os-to-emmc">Flash Raspberry Pi OS/ 64-bit Ubuntu OS or Other OS to eMMC</a></p>
+<li><p>Follow <strong>Steps 1, 2, &amp; 3</strong> in the reTerminal documentation to remove the heatsink. <a href="https://wiki.seeedstudio.com/reTerminal/#flash-raspberry-pi-os-64-bit-ubuntu-os-or-other-os-to-emmc">Flash Raspberry Pi OS/ 64-bit Ubuntu OS or Other OS to eMMC</a></p>
 <p>Use the following hardware from your reTerminal kit:</p>
 <ul>
 <li>small screw driver (black handle)</li>
@@ -434,7 +434,12 @@ Figure&nbsp;2: Memory select switch behind the reTerminal’s heatsink in the �
 <ol type="1">
 <li><p>First, launch the rpiboot software:</p>
 <ul>
-<li>Right click the <code>rpi-boot.exe</code> executable file select “run with elevated rights.”</li>
+<li>Right click the <code>rpi-boot.exe</code> executable file
+<ul>
+<li>On a Lab computer: select “run with elevated permissions”</li>
+<li>On a personal Windows: run as administrator</li>
+<li>On a personal macOS/Linux: I think it’s <code>rpi-boot.sh</code> but check the project README to be sure</li>
+</ul></li>
 <li>Paste “6P3-W25 Raspberry Pi Boot” into the text dialog asking your reason for running with elevated privileges.</li>
 <li>Enter your college username/password. You will not need the teacher’s intervention.</li>
 <li>You should see something like the following dialog appear:</li>
@@ -464,46 +469,63 @@ Finished</code></pre>
 <li>if this is the case, and no other messages appear, try the previous steps again, make sure you pay attention to details.</li>
 </ul></li>
 </ul></li>
-<li><p>Once RPIBOOT program has completed successfully, find the RPI-IMAGER program on your desktop. Right click and select “run with elevated permissions”:</p>
+<li><p>Open the Rasperry Pi (RPi) Imager program on your desktop.</p>
 <ul>
+<li>On a Lab computer:
+<ul>
+<li>Right click and select “run with elevated permissions”.</li>
 <li>Paste “6P3-W25 Raspberry Pi Image” into the text dialog asking your reason for running with elevated privileges.</li>
 <li>Enter your own username/password. You will not need the teacher’s intervention.</li>
 </ul></li>
+<li>If using a personal computer, run as admin/sudo as appropriate for your OS.</li>
+</ul></li>
+<li><p>Before making any selections, press <code>Control+Shift+X</code> to open the “OS Customizations” Advanced Options menu.</p></li>
+<li><p>Make the following customizations</p>
+<ul>
+<li>Set a unique hostname (suggestion: your github username)</li>
+<li>Enable SSH with password authentication.</li>
+<li>Set a unique username and password. Do not use the defaults or forget these.</li>
+<li>Configure the wireless LAN for the lab network:
+<ul>
+<li>SSID: P326-hotspot NOTE: there is no whitespace. Take care your SSID matches exactly.</li>
+<li>Password: 6P3-W25-pallet-overcast NOTE: take care your password matches exactly</li>
+<li>Wireless LAN country: CA</li>
+</ul></li>
+<li>Set locale settings: America/Montreal</li>
+<li>Disable telemetry.</li>
+<li>Enable “eject media” and “play sound when finished”.</li>
+<li>Take note of your hostname, username, and password (see Moodle for place to enter this information)
+<ul>
+<li>You will be responsible for maintaining your system.</li>
+<li>If you get locked out, you may have to re-image the system.</li>
+</ul></li>
+<li>Press “SAVE” when finished.</li>
+</ul></li>
+<li><p>Once you’ve finished making the above customizations, there are three main configuration choices to make:</p>
+<ul>
+<li>Raspberry Pi Device: <strong>Raspberry Pi 4</strong></li>
+<li>Operating System: <strong>Raspberry Pi OS 64-bit (Recommended)</strong></li>
+<li>Storage: <strong>RPi-MSD-0001 (31.3GB). DO NOT SELECT ANY OTHER STORAGE DEVICE</strong>.</li>
+</ul></li>
+<li><p>Once Raspberry Pi Images starts, writing the image to the reTerminal’s memory can take <strong>10-15 minutes</strong>.</p>
+<ul>
+<li><strong>Do not disconnect the reTerminal during flashing!</strong></li>
+</ul></li>
 </ol>
-<p>`. Before making any selections, press <strong>Control+Shift+X</strong> to open an “OS Customizations” Advanced Options menu.</p>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Set a unique hostname (suggestion: your github username) so you can easily find it in the local network without the temporary IP (ex. <em>ping maupi.local</em> vs <em>ping 10.101.0.123</em> ). Enable SSH with password authentication. MAKE SURE YOU DO THIS, you will have to re-image the device if you forget! Set a unique username and password. Do not use the defaults ⛔ Configure the wireless LAN for the lab network SSID: P326 Hotspot NOTE: there is a space between P326 and Hotspot. Take care your SSID matches exactly. Password: 6P3-W24-overcast-pallet NOTE: take care your password matches exactly, otherwise you may need to re-image. Wireless LAN country: CA Set locale settings: America/Montreal Disable telemetry. Enable “eject media” and “play sound when finished”. Take note of your hostname, username, and password. You will be responsible for maintaining your system. If you get locked out, you may have to re-image the system. Press “SAVE” when finished. Include your chosen hostname and username in the <em>Lab 1 Form.</em> Link for Section 1: <a href="https://forms.office.com/r/w5YFNkhfe5">Lab 1 (Section 1, 830am)</a> Link for Section 2: <a href="https://forms.office.com/r/dYfd6ECUpN">Lab 1 (Section 2, 130pm)</a></th>
-</tr>
-</thead>
-
-</table>
-<pre><code> 5. Once you’ve finished making the above customizations, there are three main configuration choices to make:
-
-    1. Raspberry Pi Device: **Raspberry Pi 4**
-
-    2. Operating System: **Raspberry Pi OS 64-bit (Recommended)**
-
-    3. Storage: **RPi-MSD-0001 (31.3GB). DO NOT SELECT ANY OTHER STORAGE DEVICE**.
-
- 6. Once Raspberry Pi Images starts, writing the image to the reTerminal’s memory can take **10-15 minutes**.
-
-    **Do not disconnect the reTerminal during flashing\!**</code></pre>
 </section>
 <section id="reassembly" class="level3" data-number="3.3">
 <h3 data-number="3.3" class="anchored" data-anchor-id="reassembly"><span class="header-section-number">3.3</span> Reassembly</h3>
-<ol start="5" type="1">
-<li><p>Once the writing and verification process is completed, disconnect the USB-C cable from the reTerminal.</p></li>
-<li><p><strong>Return the memory select switch to the original position.</strong> (Do you know why? If not, Reread the part about why we toggled it down in the first place!)</p></li>
-<li><p><strong>Don’t re-assemble the heatsink+terminal cover yet</strong> -- we have a few more steps to take first.</p></li>
-<li><p>Plug the raspberry pi into the wall using the Pi Power Supply cable in your reTerminal kit. You may need an extension cord/power bar– you can find one at the front of the class.</p></li>
+<ol type="1">
+<li>Once the writing and verification process is completed, disconnect the USB-C cable from the reTerminal.</li>
+<li><strong>Return the memory select switch to the original position.</strong> (Do you know why? If not, Reread the part about why we toggled it down in the first place!)</li>
+<li><strong>Don’t re-assemble the heatsink+terminal cover yet</strong> – we have a few more steps to take first.</li>
+<li>Plug the raspberry pi into the wall using the Pi Power Supply cable in your reTerminal kit. You may need an extension cord/power bar– you can find one at the front of the class.</li>
 </ol>
 </section>
 </section>
 <section id="first-boot" class="level2" data-number="4">
 <h2 data-number="4" class="anchored" data-anchor-id="first-boot"><span class="header-section-number">4</span> First Boot</h2>
-<p>You will now establish a remote SSH connection to your Raspberry Pi from the lab computer and apply system updates -- <strong>in particular, there are graphics drivers we need to install in order for the reTerminal screen to work.</strong> The following instructions are adapted from <a href="https://wiki.seeedstudio.com/reterminal_black_screen/">“How to troubleshoot black screen issue”</a></p>
+<p>You will now establish a remote SSH connection to your Raspberry Pi from the lab computer and apply system updates – <strong>in particular, there are graphics drivers we need to install in order for the reTerminal screen to work.</strong> The following instructions are adapted from <a href="https://wiki.seeedstudio.com/reterminal_black_screen/">“How to troubleshoot black screen issue”</a></p>
 <ol type="1">
 <li><p>Plug your reTerminal into a power supply. <strong>Take note of the PWR &amp; SYS</strong> lights.</p>
 <ol type="1">
@@ -547,33 +569,19 @@ You probably have a power supply issue. Please alert the teacher.</p></li>
 </ol></li>
 </ol>
 <p><em>![][image5]</em></p>
-<ol start="6" type="1">
+<ol type="1">
 <li><p>Install the seeed-linux-overlay drivers<br>
 If your reTerminal does not have a working screen, you need to use your ssh session to install drivers on the device.</p>
 <ol type="1">
-<li>Read and follow the steps outlined here: <a href="https://wiki.seeedstudio.com/reterminal_black_screen/#install-reterminal-drivers-after-flashing-new-raspberry-pi-os-ubuntu-os-or-other-os">“Install reTerminal drivers after flashing new Raspberry Pi OS/ Ubuntu OS or Other OS”</a>, up to and including “sudo reboot”.<br>
-</li>
-<li>If the above steps have been completed successfully, your device should reboot and its screen should turn on (this takes several seconds, give it a minute before you panic).<br>
-</li>
+<li>Read and follow the steps outlined here: <a href="https://wiki.seeedstudio.com/reterminal_black_screen/#install-reterminal-drivers-after-flashing-new-raspberry-pi-os-ubuntu-os-or-other-os">“Install reTerminal drivers after flashing new Raspberry Pi OS/ Ubuntu OS or Other OS”</a>, up to and including “sudo reboot”.</li>
+<li>If the above steps have been completed successfully, your device should reboot and its screen should turn on (this takes several seconds, give it a minute before you panic).</li>
 <li>Make sure your Pi is connected to the wall power supply, NOT to your computer (the pi screen needs more power than your lab computer can provide).</li>
 </ol></li>
 </ol>
 <section id="update-upgrade" class="level3" data-number="4.1">
 <h3 data-number="4.1" class="anchored" data-anchor-id="update-upgrade"><span class="header-section-number">4.1</span> Update &amp; Upgrade</h3>
 <p>Before you can install software on your linux system you need to make sure all packages are at the latest version.</p>
-<ol type="1">
-<li>Follow the official guide for the reTerminal FAQ Wiki:</li>
-</ol>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th style="text-align: right;">ℹ️</th>
-<th style="text-align: center;">reTerminal Wiki FAQ: <a href="https://wiki.seeedstudio.com/reTerminal-FAQ/#q3-how-to-upgrade-raspberry-pi-os-and-the-installed-packages"><em>Q3: How to upgrade Raspberry Pi OS and the installed packages</em></a></th>
-<th style="text-align: right;">ℹ️</th>
-</tr>
-</thead>
-
-</table>
+<p>Follow the official guide for the reTerminal FAQ Wiki: <a href="https://wiki.seeedstudio.com/reTerminal-FAQ/#q3-how-to-upgrade-raspberry-pi-os-and-the-installed-packages">How to upgrade Raspberry Pi OS and the installed packages</a></p>
 </section>
 </section>
 <section id="vnc-connection" class="level2" data-number="5">
