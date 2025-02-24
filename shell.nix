@@ -10,5 +10,6 @@ in pkgs.mkShell {
 
   shellHook = ''
       eval $(pdm venv activate in-project)
+      source assets/scripts/library.bashrc
   '';
 }
