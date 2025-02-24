@@ -8,7 +8,6 @@ image: https://files.seeedstudio.com/wiki/ReTerminal/wiki_thumb.png
 bibliography: references.bib
 nocite: |
   @*
-draft: true
 ---
 
 :::{.column-margin}
@@ -32,6 +31,16 @@ These instructions are mostly adapted from the instructions available at [@Getti
 
 ## Prerequisites
 
+You can perform this lab on any computer that you are able to run applications with "elevated permissions".
+
+- on the Lab computers, you will need to use the "run with elevated permissions" mode at a
+    few steps. This will be explained in class.
+- on a personal Windows machine, you can follow all of these instructions normally, using
+    "admin" mode when prompted for elevated permissions.
+- if you are using a personal macOS or Linux machine, I have not written the instructions
+    with you in mind -- you can do this lab, but make sure to adjust the instructions to
+    your OS accordingly
+
 ### Hardware required
 
 You need to prepare the following hardware before getting started with
@@ -45,22 +54,30 @@ reTerminal:
 
 ### Software required
 
-1. Raspberry pi drivers:
+There are two tools to install for this lab:
+
+1. Raspberry pi firmware flashing daemon:
     [https://github.com/raspberrypi/usbboot/](https://github.com/raspberrypi/usbboot/).
 
     Instructions for installing:
-    - Download the following repository using `git clone`:
+
+    - Download the repository using `git clone`:
     - Find the folder and cd into it
-    - Locate `rpiboot_setup.exe` within that directory. Right click and select “run with
-        elevated rights.”
-    - Paste “6P3-W25 Raspberry Pi Setup” into the text dialog asking your reason for
-        running with elevated privileges.
-    - Enter your own username/password. You will not need the teacher’s intervention.
-    - Raspberry pi drivers will begin to be installed on your lab computer. This process
-        takes a few minutes.
+    - (On Windows) Locate `rpiboot_setup.exe` within that directory. Right click and select
+        “run with elevated rights.”
+        - Paste “6P3-W25 Raspberry Pi Setup” into the text dialog asking your reason for
+            running with elevated privileges.
+        - Enter your own username/password. You will not need the teacher’s intervention.
+    - (On macOS / Linux): read the README of the software and follow those instructions
+        instead.
+    - Raspberry pi drivers will begin to be installed on your computer. This process takes
+        a few minutes.
 
 1. Raspberry Pi Imager software from the
-    [official Raspberry Pi website.](https://www.raspberrypi.com/software/)
+    [official Raspberry Pi website.](https://www.raspberrypi.com/software/). This
+    software is straightforward to install.
+    - NOTE: this *should* already be installed on the Lab computers. Check to see if
+        Raspberry Pi Imager is an application you can open before installing.
 
 ## Reimage the reTerminal
 
