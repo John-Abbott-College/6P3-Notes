@@ -1,0 +1,338 @@
+---
+title: Reterminal setup
+subtitle: >
+  Guide to setting up reterminal for the first time.
+date: 2025-02-24
+categories: [hardware, lab-3]
+image: https://files.seeedstudio.com/wiki/ReTerminal/wiki_thumb.png
+bibliography: references.bib
+nocite: |
+  @*
+draft: true
+---
+
+:::{.column-margin}
+![The reTerminal device. [Image source](https://wiki.seeedstudio.com/reTerminal/)](https://files.seeedstudio.com/wiki/ReTerminal/wiki_thumb.png)
+:::
+
+## Overview
+
+This page documents the general steps needed to perform an initial set up, or reset, of
+the [reTerminal](https://wiki.seeedstudio.com/reTerminal/#for-linux) device that we will be using throughout the class.
+
+The general steps are:
+
+1. Reimage and configure the reTerminal’s operating system (OS).
+1. Connect to the reTerminal remotely and ensure the remote connection services are
+    working:
+    1. Graphical desktop session using a [VNC](https://en.wikipedia.org/wiki/VNC) client.
+    1. CLI session using [ssh](https://en.wikipedia.org/wiki/Secure_Shell)
+
+These instructions are mostly adapted from the instructions available at [@GettingStartedReTerminal2023].
+
+## Prerequisites
+
+### Hardware required
+
+You need to prepare the following hardware before getting started with
+reTerminal:
+
+- Ethernet cable or Wi-Fi connection
+- USB Type-C cable
+- reTerminal kit case, containing
+    - small screw driver (black handle)
+    - reTerminal power adapter
+
+### Software required
+
+1. Raspberry pi drivers:
+    [https://github.com/raspberrypi/usbboot/](https://github.com/raspberrypi/usbboot/).
+
+    Instructions for installing:
+    - Download the following repository using `git clone`:
+    - Find the folder and cd into it
+    - Locate `rpiboot_setup.exe` within that directory. Right click and select “run with
+        elevated rights.”
+    - Paste “6P3-W25 Raspberry Pi Setup” into the text dialog asking your reason for
+        running with elevated privileges.
+    - Enter your own username/password. You will not need the teacher’s intervention.
+    - Raspberry pi drivers will begin to be installed on your lab computer. This process
+        takes a few minutes.
+
+1. Raspberry Pi Imager software from the
+    [official Raspberry Pi website.](https://www.raspberrypi.com/software/)
+
+## Reimage the reTerminal
+
+Below is a brief overview of the **three step process** for reimaging the reTerminal:
+
+1. Disassemble the back cover and flip a switch to have direct access to the eMMc storage
+1. Reimage and configure the OS using the Raspberry Pi Imager software.
+1. Return the memory selector switch to the original position and reassemble.
+
+
+### reTerminal Disassembly
+
+::: {#fig-dissasembly}
+
+{{< video https://www.youtube.com/watch?v=hAfdb603emw >}}
+
+We will **not** fully disassemble the reTerminal *(like in the video)*. **Only remove the
+heatsink** in order to access the memory switch.
+
+:::
+
+1. Watch the video in @fig-dissasembly to understand the disassembly process (2 mins).
+1. Follow **Steps 1, 2, & 3** in the reTerminal documentation:
+    [Flash Raspberry Pi OS/ 64-bit Ubuntu OS or Other OS to eMMC](https://wiki.seeedstudio.com/reTerminal/#flash-raspberry-pi-os-64-bit-ubuntu-os-or-other-os-to-emmc)
+
+    Use the following hardware from your reTerminal kit:
+      - small screw driver (black handle)
+      - kit case (store the plastic nubs and removed screws in your case. Don’t lose the screws!)
+
+After the following the above steps, you will have:
+
+- removed the heatsink
+  - Don't remove anything else! (there's no need)
+- toggled the eMMc memory switch (see @fig-flash-mode).
+
+Your reTerminal is now ready for a firmware flash.
+
+::: {#fig-flash-mode .column-margin}
+
+![](https://files.seeedstudio.com/wiki/ReTerminal/wiki1/boot-switch-2.jpg)
+
+Memory select switch behind the reTerminal’s heatsink in the “down” position.
+
+:::
+
+### New OS image & Configuration
+
+To re-image the reTerminal:
+
+1. First, launch the rpiboot software:
+    - Right click the `rpi-boot.exe` executable file select “run with elevated rights.”
+    - Paste “6P3-W25 Raspberry Pi Boot” into the text dialog asking your reason for running
+        with elevated privileges.
+    - Enter your college username/password. You will not need the teacher’s intervention.
+    - You should see something like the following dialog appear:
+
+    ```
+    RPIBOOT: build-date Jan 22 2023 version 20221215-105525 864863bc
+    Waiting for BCM2835/6/7/2711...
+    ```
+
+    The rpiboot program creates a **daemon** (a dedicated background process) that will
+    detect when a reTerminal device is connected in *flash mode* (i.e. the eMMc switch
+    toggled “down” as in @fig-flash-mode).
+
+1. Connect the reTerminal to the USB port of your machine.
+
+    - **rpiboot** will detect and attach the reTerminal’s internal memory as a storage
+        device.
+    - At this stage, you should see some dialog appear in the RPIBOOT program:
+
+    ```
+    Sending bootcode4.bin…
+    Received 4 bytes
+    somethingsomethingsomething
+    Etc. etc.
+    Loading startup.elf file
+    Warning: file not interpreted as such-and-such
+    Finished
+    ```
+
+    Your output will obviously not exactly match the example (I wrote these notes from my
+    memory) but should look something like this.
+
+    Note:
+
+    - The program may close on its own, or may not. Either way is fine.
+    - You can ignore the “warnings” that appear at the end of the logs.
+    - The program should NOT repeatedly loop at `Sending bootcode4.bin...`
+        - if this is the case, and no other messages appear, try the previous steps again, make sure you pay attention to details.
+
+1. Once RPIBOOT program has completed successfully, find the RPI-IMAGER program on your
+    desktop. Right click and select “run with elevated permissions”:
+
+    - Paste “6P3-W25 Raspberry Pi Image” into the text dialog asking your reason for
+        running with elevated privileges.
+    - Enter your own username/password. You will not need the teacher’s intervention.
+
+`. Before making any selections, press **Control+Shift+X** to open an “OS Customizations” Advanced Options menu.
+
+| Set a unique hostname (suggestion: your github username) so you can easily find it in the local network without the temporary IP (ex. *ping maupi.local* vs *ping 10.101.0.123* ). Enable SSH with password authentication. MAKE SURE YOU DO THIS, you will have to re-image the device if you forget\! Set a unique username and password. Do not use the defaults ⛔ Configure the wireless LAN for the lab network  SSID: P326 Hotspot NOTE: there is a space between P326 and Hotspot. Take care your SSID matches exactly. Password: 6P3-W24-overcast-pallet NOTE: take care your password matches exactly, otherwise you may need to re-image. Wireless LAN country: CA Set locale settings: America/Montreal Disable telemetry. Enable “eject media” and “play sound when finished”. Take note of your hostname, username, and password. You will be responsible for maintaining your system. If you get locked out, you may have to re-image the system. Press “SAVE” when finished. Include your chosen hostname and username in the *Lab 1 Form.* Link for Section 1: [Lab 1 (Section 1, 830am)](https://forms.office.com/r/w5YFNkhfe5)  Link for Section 2: [Lab 1 (Section 2, 130pm)](https://forms.office.com/r/dYfd6ECUpN)   |
+| :---- |
+
+     5. Once you’ve finished making the above customizations, there are three main configuration choices to make:
+
+        1. Raspberry Pi Device: **Raspberry Pi 4**
+
+        2. Operating System: **Raspberry Pi OS 64-bit (Recommended)**
+
+        3. Storage: **RPi-MSD-0001 (31.3GB). DO NOT SELECT ANY OTHER STORAGE DEVICE**.
+
+     6. Once Raspberry Pi Images starts, writing the image to the reTerminal’s memory can take **10-15 minutes**.
+
+        **Do not disconnect the reTerminal during flashing\!**
+
+### Reassembly
+
+5. Once the writing and verification process is completed, disconnect the USB-C cable from the reTerminal.  
+     
+6. **Return the memory select switch to the original position.** (Do you know why? If not, Reread the part about why we toggled it down in the first place\!) 
+
+7. **Don’t re-assemble the heatsink+terminal cover yet** \-- we have a few more steps to take first.
+
+8. Plug the raspberry pi into the wall using the Pi Power Supply cable in your reTerminal kit. You may need an extension cord/power bar-- you can find one at the front of the class.
+
+## First Boot
+
+You will now establish a remote SSH connection to your Raspberry Pi from the lab computer and apply system updates \-- **in particular, there are graphics drivers we need to install in order for the reTerminal screen to work.** The following instructions are adapted from ["How to troubleshoot black screen issue"](https://wiki.seeedstudio.com/reterminal_black_screen/)
+
+1. Plug your reTerminal into a power supply. **Take note of the PWR & SYS** lights.
+
+   1. If your reTerminal boots and the screen turns on, you can skip Step 3 (the driver installation step)
+
+   2. If PWR light is on, and SYS light flashes (most likely outcome)  
+      This situation occurs due to issues with the driver controlling the LCD screen. You will need to perform Step 3 in order to fix the LCD screen issues (the driver installation step).
+
+   3. If the PWR light is on, but the SYS light never flashes  
+      You may need to flash the original factory system again, or you may have a hardware issue. Try unplugging the PWR light and plugging it back in again before making this conclusion (the SYS light should flash). If the SYS light still doesn’t turn on at all after a few attempts, please alert the teacher.
+
+   4. If the PWR light does not turn on  
+      You probably have a power supply issue. Please alert the teacher.  
+        
+2. Establish a SSH connection to the reTerminal **from your lab workstation**.
+
+   1. Open the command line (PowerShell, Bash, Zsh, CMD, etc).
+
+   2. Follow the official Raspberry Pi instructions:
+
+      1. [**Secure Shell from Linux or Mac OS**](https://www.raspberrypi.com/documentation/computers/remote-access.html#secure-shell-from-linux-or-mac-os) or
+
+      2. [**Secure Shell from Windows 10**](https://www.raspberrypi.com/documentation/computers/remote-access.html#secure-shell-from-windows-10).
+
+      
+
+3. The SSH server inside your Raspberry Pi should already be enabled by default (*from Part 1, step 5*).  
+   1. In case it is not enabled, follow the official instructions on [Setting up the SSH Server on the Raspberry Pi](https://www.raspberrypi.com/documentation/computers/remote-access.html#ssh).
+
+   
+
+4. If your connection is successful you should see the a similar prompt:  
+   1. *user-name@hostname:\~ $*
+
+5. Obtain the reTerminal’s MAC address of the wireless network card (**wlan0**):
+
+   1. Run the command ***ifconfig*** or the command ***ip address***
+
+   2. Look for the wireless network adapter **wlan0:**
+
+      1. Note the hexadecimal number for “*ether”* . This is your MAC address. Include it in the *Lab 1 Form.*
+
+         1. Link for Section 1: [Lab 1 (Section 1, 830am)](https://forms.office.com/r/w5YFNkhfe5) 
+
+         2. Link for Section 2: [Lab 1 (Section 2, 130pm)](https://forms.office.com/r/dYfd6ECUpN) 
+
+      2. Style points: use grep and pipe to grab the MAC address directly from ifconfig.
+
+*![][image5]*
+
+6. Install the seeed-linux-overlay drivers  
+   If your reTerminal does not have a working screen, you need to use your ssh session to install drivers on the device.
+
+   1. Read and follow the steps outlined here:  ["Install reTerminal drivers after flashing new Raspberry Pi OS/ Ubuntu OS or Other OS"](https://wiki.seeedstudio.com/reterminal_black_screen/#install-reterminal-drivers-after-flashing-new-raspberry-pi-os-ubuntu-os-or-other-os), up to and including “sudo reboot”.  
+   2. If the above steps have been completed successfully, your device should reboot and its screen should turn on (this takes several seconds, give it a minute before you panic).  
+   3. Make sure your Pi is connected to the wall power supply, NOT to your computer (the pi screen needs more power than your lab computer can provide).  
+
+### Update & Upgrade
+
+Before you can install software on your linux system you need to make sure all packages are at the latest version.
+
+1. Follow the official guide for the reTerminal FAQ Wiki:
+
+| ℹ️ | reTerminal Wiki FAQ: [*Q3: How to upgrade Raspberry Pi OS and the installed packages*](https://wiki.seeedstudio.com/reTerminal-FAQ/#q3-how-to-upgrade-raspberry-pi-os-and-the-installed-packages) | ℹ️ |
+| ----: | :---: | ----: |
+
+
+## VNC Connection
+
+In this section you will connect to the graphical desktop environment remotely using a VNC session. This will allow you to control the raspberry pi from your lab computer over the graphical shell of the lab computer, in addition to SSH.
+
+1. Once connected to the provided power cable, the reTerminal will boot and automatically login into the graphical desktop environment as the default user.  
+     
+2. The reTerminal has a touch screen which you are welcome to use for the next steps. However, **I recommend plugging in your lab keyboard and/or mouse** for these next few steps. **Let me know if you need a keyboard/mouse.**
+
+3. Enable the VNC client in the **Raspberry Pi Configuration menu**.
+
+   1. Click on the Raspberry Pi **icon** (top right).
+
+   2. Select  ***Preferences** \> **Raspberry Pi Configuration***.
+
+   3. Open the ***Interfaces*** tab.
+
+   4. Enable the **VNC server** (*disabled by default).*
+
+   
+
+![][image6]  
+***Figure 3**: Raspberry Pi Configuration menu to enable the built-in VNC server.*
+
+| ⚠️ | Enabling the VNC Server might cause a screen orientation bug where the touchscreen direction is rotated 90 degrees 🐞 | ⚠️ |
+| :---- | :---: | :---- |
+
+4. ~~Click on the **VNC icon** that will appear on the top-right near the system clock.~~  Open a terminal on your Raspberry Pi. You want to double check your IP address. You can use any of the following commands to do this:
+
+$ ifconfig  
+$ ip a  
+$ hostname \-I
+
+5. Take note of your Raspberry Pi’s local **IP address**.  
+     
+6. At your lab computer, start the VNC Viewer client (RealVNC). You can run this program *without* elevated access.
+
+7. Connect to your Raspberry Pi using VNC Viewer in your lab computer.
+
+   1. Enter the **hostname** you assigned to your Raspberry Pi in *Part 1, step 5* **or** the **IP address** you noted in step 5\.
+
+   2. Use the username and password you configured in *Part 1, step 5*.
+
+8. You should now have remote control of the graphical session.
+
+
+## SSH Connection
+
+You will use VS Code in your lab workstation to create a development environment inside the Raspberry Pi which will be controlled from the lab workstation. All the source code files, Python interpreter and debugging will run inside the Raspberry Pi.
+
+If you would like to know more about how this extension works, visit [Remote Development using SSH](https://code.visualstudio.com/docs/remote/ssh).
+
+Below is a 5min video that illustrates how the *Remote \- SSH extension* works:
+
+[VS Code Remote Development using SSH to a Raspberry Pi](https://youtu.be/z0j4hV9zLNY)
+
+![][image7]  
+***Figure 5**: Connect VS Code in your lab workstation to a VS Code Server on the Raspberry Pi*
+
+1. In your **lab workstation**, install the VS Code extensions:  
+   1. [**Remote \- SSH**](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh), by Microsoft.  
+   2. [**Python extension**](https://marketplace.visualstudio.com/items?itemName=ms-python.python), by Microsoft.  
+        
+2. Connect your lab workstation to your Raspberry Pi by following the *Remote \- SSH* extension’s official instructions: [**Getting started**](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh#getting-started).
+
+Once VS Code is connected to the reTerminal, you are now in a new development environment inside the reTerminal. Complete the following tasks:
+
+3. Install the VS Code [**Python extension**](https://marketplace.visualstudio.com/items?itemName=ms-python.python)  (this time inside the reTerminal, not in your lab workstation like in step 1).  
+   1. If necessary, follow the guide: [**Getting Started with Python in VS Code**](https://code.visualstudio.com/docs/python/python-tutorial#_prerequisites)**.**
+
+   
+
+4. Open the folder ***lab1*** in the home directory of the reTerminal (created in Part 3, step 4).  
+     
+5. Create a new file named ***lab-script.py*** inside the folder ***lab1*** and include the code:  
+   1. *print(‘Hello from inside the pi\!’)*
+
+      
+
+6. Execute your code from within VS Code using the play button.
+
