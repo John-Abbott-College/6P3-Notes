@@ -8,7 +8,7 @@
 
 <meta name="dcterms.date" content="2025-01-20">
 
-<title>Course Hardware – Connected Objects</title>
+<title>Course hardware – Connected Objects</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -55,7 +55,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -64,6 +84,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
+<link href="../../notes/bash-scripting/index.html" rel="next">
+<link href="../../notes/github-basics/index.html" rel="prev">
 <link href="../../assets/favicon_io/favicon.ico" rel="icon">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -74,8 +96,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-4491de7fe1457d9669bb21661a2bc2cb.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-e1df5882f96bfd97e200e8882f838254.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-d3a20e3ecd170231626cf7520ded7eea.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-3cba56e24f2d9c729fa45416357edb78.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-258474d6b235567bcb4c904c742fe6a7.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script src="../../site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
 <script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
@@ -107,13 +129,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<meta property="og:title" content="Course Hardware – Connected Objects">
+<meta property="og:title" content="Course hardware – Connected Objects">
 <meta property="og:description" content="List of hardware available for the course as well as their respective specifications and documentation.">
-<meta property="og:image" content="https://files.seeedstudio.com/wiki/ReTerminal/wiki_thumb.png">
+<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/notes/course-hardware/assets/iot-hardware.png">
 <meta property="og:site_name" content="{{< var course.title >}}">
+<meta property="og:image:height" content="386">
+<meta property="og:image:width" content="600">
 </head>
 
-<body class="floating nav-fixed slimcontent">
+<body class="nav-sidebar docked nav-fixed slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -137,6 +161,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="https://moodle.johnabbott.qc.ca/course/view.php?id=1361"> 
 <span class="menu-text"><iconify-icon inline="" icon="simple-icons:moodle" aria-label="Icon moodle from simple-icons Iconify.design set." title="Icon moodle from simple-icons Iconify.design set."></iconify-icon></span></a>
   </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-course-notes" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Course Notes</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-course-notes">    
+        <li>
+    <a class="dropdown-item" href="../../notes/index.html">
+ <span class="dropdown-text">All course notes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/github-basics/index.html">
+ <span class="dropdown-text">GitHub basics</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/course-hardware/index.html">
+ <span class="dropdown-text">Course hardware</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/bash-scripting/index.html">
+ <span class="dropdown-text">Bash scripting</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/bash-essentials/index.html">
+ <span class="dropdown-text">Bash essentials</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/developer-environment/index.html">
+ <span class="dropdown-text">Developer environment setup</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item">
     <a class="nav-link" href="../../about/syllabus/index.html"> 
 <span class="menu-text">Syllabus</span></a>
@@ -144,10 +199,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li class="nav-item">
     <a class="nav-link" href="../../about/calendar/index.html"> 
 <span class="menu-text">Calendar</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../notes/index.html"> 
-<span class="menu-text">Course Notes</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../about/this-site/index.html"> 
@@ -164,18 +215,77 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/course-hardware/index.html">Course hardware</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">All course notes</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/github-basics/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">GitHub basics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/course-hardware/index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Course hardware</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/bash-scripting/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bash scripting</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/bash-essentials/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bash essentials</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/developer-environment/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Developer environment setup</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
     <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="1">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
   <li><a href="#reterminal" id="toc-reterminal" class="nav-link active" data-scroll-target="#reterminal"><span class="header-section-number">1</span> reTerminal</a>
   <ul>
-  <li><a href="#power-supply" id="toc-power-supply" class="nav-link" data-scroll-target="#power-supply"><span class="header-section-number">1.1</span> Power Supply</a></li>
+  <li><a href="#features" id="toc-features" class="nav-link" data-scroll-target="#features"><span class="header-section-number">1.1</span> Features</a></li>
+  <li><a href="#specifications" id="toc-specifications" class="nav-link" data-scroll-target="#specifications"><span class="header-section-number">1.2</span> Specifications</a></li>
+  <li><a href="#hardware-overview" id="toc-hardware-overview" class="nav-link" data-scroll-target="#hardware-overview"><span class="header-section-number">1.3</span> Hardware Overview</a>
+  <ul class="collapse">
+  <li><a href="#chassis" id="toc-chassis" class="nav-link" data-scroll-target="#chassis"><span class="header-section-number">1.3.1</span> Chassis</a></li>
+  <li><a href="#motherboard" id="toc-motherboard" class="nav-link" data-scroll-target="#motherboard"><span class="header-section-number">1.3.2</span> Motherboard</a></li>
+  <li><a href="#block-diagram" id="toc-block-diagram" class="nav-link" data-scroll-target="#block-diagram"><span class="header-section-number">1.3.3</span> Block Diagram​</a></li>
+  <li><a href="#pinout-diagram" id="toc-pinout-diagram" class="nav-link" data-scroll-target="#pinout-diagram"><span class="header-section-number">1.3.4</span> Pinout Diagram​</a></li>
+  </ul></li>
+  <li><a href="#power-supply" id="toc-power-supply" class="nav-link" data-scroll-target="#power-supply"><span class="header-section-number">1.4</span> Power Supply</a></li>
   </ul></li>
   <li><a href="#compute-module-4" id="toc-compute-module-4" class="nav-link" data-scroll-target="#compute-module-4"><span class="header-section-number">2</span> Compute Module 4</a>
   <ul>
@@ -205,7 +315,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Course Hardware</h1>
+<h1 class="title">Course hardware</h1>
 <p class="subtitle lead"></p><p>List of hardware available for the course as well as their respective specifications and documentation.</p><p></p>
   <div class="quarto-categories">
     <div class="quarto-category">lab-3</div>
@@ -242,31 +352,81 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="no-row-height column-margin column-container"><div class="">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://files.seeedstudio.com/wiki/ReTerminal/wiki_thumb.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="The reTerminal device. Image source"><img src="https://files.seeedstudio.com/wiki/ReTerminal/wiki_thumb.png" class="img-fluid figure-img" alt="The reTerminal device. Image source"></a></p>
-<figcaption>The reTerminal device. <a href="https://wiki.seeedstudio.com/reTerminal/">Image source</a></figcaption>
+<p><a href="./assets/iot-hardware.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Image source"><img src="./assets/iot-hardware.png" class="img-fluid figure-img" alt="Image source"></a></p>
+<figcaption><a href="https://www.intigia.com/technologies/industrial-iot/">Image source</a></figcaption>
 </figure>
 </div>
 </div></div><section id="reterminal" class="level2 page-columns page-full" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="reterminal"><span class="header-section-number">1</span> reTerminal</h2>
 <p>The <a href="https://www.seeedstudio.com/ReTerminal-with-CM4-p-4904.html">reTerminal</a> is a development board based on the Raspberry Pi Compute Module 4 (CM4) manufactured by Seeed Studio.</p>
-<p>Notable features:</p>
+<blockquote class="blockquote">
+<p>See <a href="https://wiki.seeedstudio.com/reTerminal/">reTerminal Wiki page</a> for the complete specs and documentation</p>
+</blockquote>
+<p><em>Most of the information from the following sections was scraped from <span class="citation" data-cites="GettingStartedReTerminal2023">(<a href="#ref-GettingStartedReTerminal2023" role="doc-biblioref"><span>“Getting <span>Started</span> with <span class="nocase">reTerminal</span> | <span>Seeed Studio Wiki</span>”</span> 2023</a>)</span></em></p>
+<section id="features" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="features"><span class="header-section-number">1.1</span> Features</h3>
 <ul>
-<li>Compute Module 4 with 4GB RAM &amp; 32GB eMMC</li>
+<li>Integrated modular design with high stability and expandability</li>
+<li>Powered by Raspberry Pi Computer Module 4 with 4GB RAM &amp; 32GB eMMC</li>
 <li>5-Inch IPS capacitive multi-touch screen at 1280 x 720 and 293 PPI</li>
 <li>Wireless connectivity with dual-band 2.4GHz/5GHz Wi-Fi and Bluetooth 5.0 BLE</li>
+<li>High-speed expansion interface and rich I/O for more expandability</li>
 <li>Cryptographic co-processor with secure hardware-based key storage</li>
-<li>Built-in modules such as accelerometer, light sensor, and RTC</li>
+<li>Built-in modules such as accelerometer, light sensor and RTC</li>
+<li>Gigabit Ethernet Port and Dual USB 2.0 Type-A ports</li>
+<li>40-Pin header for IoT applications</li>
 </ul>
-<blockquote class="blockquote">
-<p>See <a href="https://wiki.seeedstudio.com/reTerminal/">reTerminal Wiki page</a> for detailed specs and documentation</p>
-</blockquote>
-<section id="power-supply" class="level3 page-columns page-full" data-number="1.1">
-<h3 data-number="1.1" class="anchored" data-anchor-id="power-supply"><span class="header-section-number">1.1</span> Power Supply</h3>
+</section>
+<section id="specifications" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="specifications"><span class="header-section-number">1.2</span> Specifications</h3>
+<p>See <a href="https://wiki.seeedstudio.com/reTerminal/#specifications">Specifications</a> on the reTerminal wiki webpage.</p>
+</section>
+<section id="hardware-overview" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="hardware-overview"><span class="header-section-number">1.3</span> Hardware Overview</h3>
+<section id="chassis" class="level4" data-number="1.3.1">
+<h4 data-number="1.3.1" class="anchored" data-anchor-id="chassis"><span class="header-section-number">1.3.1</span> Chassis</h4>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://files.seeedstudio.com/wiki/ReTerminal/HW_overview.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="pir"><img src="https://files.seeedstudio.com/wiki/ReTerminal/HW_overview.png" class="img-fluid figure-img" alt="pir"></a></p>
+<figcaption>pir</figcaption>
+</figure>
+</div>
+</section>
+<section id="motherboard" class="level4" data-number="1.3.2">
+<h4 data-number="1.3.2" class="anchored" data-anchor-id="motherboard"><span class="header-section-number">1.3.2</span> Motherboard</h4>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://files.seeedstudio.com/wiki/ReTerminal/hw-overview-internal-v1.3.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="pir"><img src="https://files.seeedstudio.com/wiki/ReTerminal/hw-overview-internal-v1.3.jpg" class="img-fluid figure-img" alt="pir"></a></p>
+<figcaption>pir</figcaption>
+</figure>
+</div>
+</section>
+<section id="block-diagram" class="level4" data-number="1.3.3">
+<h4 data-number="1.3.3" class="anchored" data-anchor-id="block-diagram"><span class="header-section-number">1.3.3</span> Block Diagram<a href="index.html#block-diagram" title="Direct link to Block Diagram">​</a></h4>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://files.seeedstudio.com/wiki/ReTerminal/reTerminal_block_diagram-v1.3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="pir"><img src="https://files.seeedstudio.com/wiki/ReTerminal/reTerminal_block_diagram-v1.3.png" class="img-fluid figure-img" alt="pir"></a></p>
+<figcaption>pir</figcaption>
+</figure>
+</div>
+</section>
+<section id="pinout-diagram" class="level4" data-number="1.3.4">
+<h4 data-number="1.3.4" class="anchored" data-anchor-id="pinout-diagram"><span class="header-section-number">1.3.4</span> Pinout Diagram<a href="index.html#pinout-diagram" title="Direct link to Pinout Diagram">​</a></h4>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://files.seeedstudio.com/wiki/ReTerminal/pinout-v2.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Please carefully pay attention to the orientation of the reTerminal in the above diagram. The LCD and the onboard buttons are on the right side whereas the back of reTerminal is on the left side. Also the whole device is flipped upside down."><img src="https://files.seeedstudio.com/wiki/ReTerminal/pinout-v2.jpg" class="img-fluid figure-img" alt="Please carefully pay attention to the orientation of the reTerminal in the above diagram. The LCD and the onboard buttons are on the right side whereas the back of reTerminal is on the left side. Also the whole device is flipped upside down."></a></p>
+<figcaption>Please carefully pay attention to the orientation of the reTerminal in the above diagram. The LCD and the onboard buttons are on the right side whereas the back of reTerminal is on the left side. Also the whole device is flipped upside down.</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="power-supply" class="level3 page-columns page-full" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="power-supply"><span class="header-section-number">1.4</span> Power Supply</h3>
 
 <div class="no-row-height column-margin column-container"><div class="">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://media.digikey.com/Photos/Raspberry%20Pi/MFG_RPI%20USB-C%20POWER%20SUPPLY%20BLACK%20US.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="RPI USB-C POWER SUPPLY BLACK US"><img src="https://media.digikey.com/Photos/Raspberry%20Pi/MFG_RPI%20USB-C%20POWER%20SUPPLY%20BLACK%20US.jpg" class="img-fluid figure-img" alt="RPI USB-C POWER SUPPLY BLACK US"></a></p>
+<p><a href="https://media.digikey.com/Photos/Raspberry%20Pi/MFG_RPI%20USB-C%20POWER%20SUPPLY%20BLACK%20US.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="RPI USB-C POWER SUPPLY BLACK US"><img src="https://media.digikey.com/Photos/Raspberry%20Pi/MFG_RPI%20USB-C%20POWER%20SUPPLY%20BLACK%20US.jpg" class="img-fluid figure-img" alt="RPI USB-C POWER SUPPLY BLACK US"></a></p>
 <figcaption>RPI USB-C POWER SUPPLY BLACK US</figcaption>
 </figure>
 </div>
@@ -279,7 +439,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="no-row-height column-margin column-container"><div class="">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://images.prismic.io/rpf-products/bfe15853-d10f-4ed9-b9f0-32540bd76e55_CM4%20Featured%20Image.jpg?ixlib=gatsbyFP&amp;auto=compress%2Cformat&amp;fit=max&amp;q=50&amp;w=600&amp;h=400" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Raspberry PI CM 4"><img src="https://images.prismic.io/rpf-products/bfe15853-d10f-4ed9-b9f0-32540bd76e55_CM4%20Featured%20Image.jpg?ixlib=gatsbyFP&amp;auto=compress%2Cformat&amp;fit=max&amp;q=50&amp;w=600&amp;h=400" title=":size=300" class="img-fluid figure-img" alt="Raspberry PI CM 4"></a></p>
+<p><a href="https://images.prismic.io/rpf-products/bfe15853-d10f-4ed9-b9f0-32540bd76e55_CM4%20Featured%20Image.jpg?ixlib=gatsbyFP&amp;auto=compress%2Cformat&amp;fit=max&amp;q=50&amp;w=600&amp;h=400" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Raspberry PI CM 4"><img src="https://images.prismic.io/rpf-products/bfe15853-d10f-4ed9-b9f0-32540bd76e55_CM4%20Featured%20Image.jpg?ixlib=gatsbyFP&amp;auto=compress%2Cformat&amp;fit=max&amp;q=50&amp;w=600&amp;h=400" title=":size=300" class="img-fluid figure-img" alt="Raspberry PI CM 4"></a></p>
 <figcaption>Raspberry PI CM 4</figcaption>
 </figure>
 </div>
@@ -298,7 +458,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="no-row-height column-margin column-container"><div class="">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://files.seeedstudio.com/wiki/Grove_Base_Hat_for_Raspberry_Pi/img/main.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Grove Base Hat for GPIO connections"><img src="https://files.seeedstudio.com/wiki/Grove_Base_Hat_for_Raspberry_Pi/img/main.jpg" title=":size=300" class="img-fluid figure-img" alt="Grove Base Hat for GPIO connections"></a></p>
+<p><a href="https://files.seeedstudio.com/wiki/Grove_Base_Hat_for_Raspberry_Pi/img/main.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Grove Base Hat for GPIO connections"><img src="https://files.seeedstudio.com/wiki/Grove_Base_Hat_for_Raspberry_Pi/img/main.jpg" title=":size=300" class="img-fluid figure-img" alt="Grove Base Hat for GPIO connections"></a></p>
 <figcaption>Grove Base Hat for GPIO connections</figcaption>
 </figure>
 </div>
@@ -324,7 +484,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="no-row-height column-margin column-container"><div class="">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://files.seeedstudio.com/wiki/Grove-AHT20_I2C_Industrial_Grade_Temperature_and_Humidity_Sensor/101990644_4_.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="AHT20 I2C temperature/humidity sensor"><img src="https://files.seeedstudio.com/wiki/Grove-AHT20_I2C_Industrial_Grade_Temperature_and_Humidity_Sensor/101990644_4_.png" title=":size=300" class="img-fluid figure-img" alt="AHT20 I2C temperature/humidity sensor"></a></p>
+<p><a href="https://files.seeedstudio.com/wiki/Grove-AHT20_I2C_Industrial_Grade_Temperature_and_Humidity_Sensor/101990644_4_.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="AHT20 I2C temperature/humidity sensor"><img src="https://files.seeedstudio.com/wiki/Grove-AHT20_I2C_Industrial_Grade_Temperature_and_Humidity_Sensor/101990644_4_.png" title=":size=300" class="img-fluid figure-img" alt="AHT20 I2C temperature/humidity sensor"></a></p>
 <figcaption>AHT20 I2C temperature/humidity sensor</figcaption>
 </figure>
 </div>
@@ -352,7 +512,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="no-row-height column-margin column-container"><div class="">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://files.seeedstudio.com/wiki/Raspi_wiki/img/red_led.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="LED"><img src="https://files.seeedstudio.com/wiki/Raspi_wiki/img/red_led.jpg" class="img-fluid figure-img" alt="LED"></a></p>
+<p><a href="https://files.seeedstudio.com/wiki/Raspi_wiki/img/red_led.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="LED"><img src="https://files.seeedstudio.com/wiki/Raspi_wiki/img/red_led.jpg" class="img-fluid figure-img" alt="LED"></a></p>
 <figcaption>LED</figcaption>
 </figure>
 </div>
@@ -365,7 +525,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="no-row-height column-margin column-container"><div class="">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://abra-electronics.com/images/thumbnails/280/280/detailed/182/fan-3d-5v.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Cooling Fan"><img src="https://abra-electronics.com/images/thumbnails/280/280/detailed/182/fan-3d-5v.png" class="img-fluid figure-img" alt="Cooling Fan"></a></p>
+<p><a href="https://abra-electronics.com/images/thumbnails/280/280/detailed/182/fan-3d-5v.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="Cooling Fan"><img src="https://abra-electronics.com/images/thumbnails/280/280/detailed/182/fan-3d-5v.png" class="img-fluid figure-img" alt="Cooling Fan"></a></p>
 <figcaption>Cooling Fan</figcaption>
 </figure>
 </div>
@@ -380,7 +540,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="no-row-height column-margin column-container"><div class="">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://files.seeedstudio.com/wiki/Grove-Relay/img/Twig-Relay.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Relay switch"><img src="https://files.seeedstudio.com/wiki/Grove-Relay/img/Twig-Relay.jpg" class="img-fluid figure-img" alt="Relay switch"></a></p>
+<p><a href="https://files.seeedstudio.com/wiki/Grove-Relay/img/Twig-Relay.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-12" title="Relay switch"><img src="https://files.seeedstudio.com/wiki/Grove-Relay/img/Twig-Relay.jpg" class="img-fluid figure-img" alt="Relay switch"></a></p>
 <figcaption>Relay switch</figcaption>
 </figure>
 </div>
@@ -406,9 +566,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 
 
+
 </section>
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div>CC BY-NC 4.0. ©2022-25 Mauricio Buschinelli &amp; Michael Haaf.
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-GettingStartedReTerminal2023" class="csl-entry" role="listitem">
+<span>“Getting <span>Started</span> with <span class="nocase">reTerminal</span> | <span>Seeed Studio Wiki</span>.”</span> 2023. January 31, 2023. <a href="https://wiki.seeedstudio.com/reTerminal/">https://wiki.seeedstudio.com/reTerminal/</a>.
+</div>
+</div></section><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div>CC BY-NC 4.0. ©2022-25 Mauricio Buschinelli &amp; Michael Haaf.
 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">(View License)</a></div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -971,6 +1136,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../notes/github-basics/index.html" class="pagination-link" aria-label="GitHub basics">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">GitHub basics</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../notes/bash-scripting/index.html" class="pagination-link" aria-label="Bash scripting">
+        <span class="nav-page-text">Bash scripting</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
 (function() {

@@ -8,7 +8,7 @@
 
 <meta name="dcterms.date" content="2025-01-30">
 
-<title>Course Notes – Connected Objects</title>
+<title>All course notes – Connected Objects</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,6 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../notes/github-basics/index.html" rel="next">
 <link href="../assets/favicon_io/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-listing/list.min.js"></script>
 <script src="../site_libs/quarto-listing/quarto-listing.js"></script>
@@ -42,8 +43,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-4491de7fe1457d9669bb21661a2bc2cb.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-e1df5882f96bfd97e200e8882f838254.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-d3a20e3ecd170231626cf7520ded7eea.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-3cba56e24f2d9c729fa45416357edb78.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-258474d6b235567bcb4c904c742fe6a7.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script src="../site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
@@ -186,13 +187,15 @@ window.Quarto = {
 };
 </script>
 
-<meta property="og:title" content="Course Notes – Connected Objects">
+<meta property="og:title" content="All course notes – Connected Objects">
 <meta property="og:description" content="All content covered in class will be posted here.">
-<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/notes/assets/art_title_path_only.svg">
+<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/notes/course-hardware/assets/iot-hardware.png">
 <meta property="og:site_name" content="{{< var course.title >}}">
+<meta property="og:image:height" content="386">
+<meta property="og:image:width" content="600">
 </head>
 
-<body class="floating nav-fixed">
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -216,6 +219,37 @@ window.Quarto = {
     <a class="nav-link" href="https://moodle.johnabbott.qc.ca/course/view.php?id=1361"> 
 <span class="menu-text"><iconify-icon inline="" icon="simple-icons:moodle" aria-label="Icon moodle from simple-icons Iconify.design set." title="Icon moodle from simple-icons Iconify.design set."></iconify-icon></span></a>
   </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-course-notes" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Course Notes</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-course-notes">    
+        <li>
+    <a class="dropdown-item" href="../notes/index.html">
+ <span class="dropdown-text">All course notes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../notes/github-basics/index.html">
+ <span class="dropdown-text">GitHub basics</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../notes/course-hardware/index.html">
+ <span class="dropdown-text">Course hardware</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../notes/bash-scripting/index.html">
+ <span class="dropdown-text">Bash scripting</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../notes/bash-essentials/index.html">
+ <span class="dropdown-text">Bash essentials</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../notes/developer-environment/index.html">
+ <span class="dropdown-text">Developer environment setup</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item">
     <a class="nav-link" href="../about/syllabus/index.html"> 
 <span class="menu-text">Syllabus</span></a>
@@ -223,10 +257,6 @@ window.Quarto = {
   <li class="nav-item">
     <a class="nav-link" href="../about/calendar/index.html"> 
 <span class="menu-text">Calendar</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="../notes/index.html" aria-current="page"> 
-<span class="menu-text">Course Notes</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../about/this-site/index.html"> 
@@ -243,27 +273,79 @@ window.Quarto = {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/index.html">All course notes</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
-  
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">All course notes</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/github-basics/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">GitHub basics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/course-hardware/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Course hardware</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/bash-scripting/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bash scripting</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/bash-essentials/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bash essentials</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/developer-environment/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Developer environment setup</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+    
+</nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
     <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-unnumbered"><div class="category" data-category="YmFzaA==">bash</div><div class="category" data-category="Z2l0">git</div><div class="category" data-category="bGFiLTA=">lab-0</div><div class="category" data-category="bGFiLTE=">lab-1</div><div class="category" data-category="bGFiLTI=">lab-2</div><div class="category" data-category="bGFiLTM=">lab-3</div></div></div>
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
+<main class="content column-body" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Course Notes</h1>
+<h1 class="title">All course notes</h1>
 <p class="subtitle lead">All content covered in class will be posted here.</p>
 </div>
 
 
 
-<div class="quarto-title-meta column-page-left">
+<div class="quarto-title-meta column-body">
 
     
     <div>
@@ -348,15 +430,15 @@ div.listing-file-modified:before {
     </div>
 </div>
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="bGFiLTM=" data-listing-date-sort="1737331200000" data-listing-file-modified-sort="1740376648707" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="481">
+<div class="quarto-post image-right" data-index="0" data-categories="bGFiLTM=" data-listing-date-sort="1737331200000" data-listing-file-modified-sort="1740380683057" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="590">
 <div class="thumbnail">
 <p><a href="../notes/course-hardware/index.html" class="no-external"></a></p><a href="../notes/course-hardware/index.html" class="no-external">
-<p><img loading="lazy" src="https://files.seeedstudio.com/wiki/ReTerminal/wiki_thumb.png" class="thumbnail-image" style="height: 150px;"></p>
+<p><img loading="lazy" src="../notes/course-hardware/assets/iot-hardware.png" class="thumbnail-image" style="height: 150px;"></p>
 </a><p><a href="../notes/course-hardware/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="../notes/course-hardware/index.html" class="no-external">Course Hardware</a>
+<a href="../notes/course-hardware/index.html" class="no-external">Course hardware</a>
 </h3>
 <div class="listing-subtitle">
 <a href="../notes/course-hardware/index.html" class="no-external">List of hardware available for the course as well as their respective specifications and documentation. </a>
@@ -381,7 +463,7 @@ Feb 24, 2025
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="bGFiLTAlMkNsYWItMQ==" data-listing-date-sort="1737331200000" data-listing-file-modified-sort="1740376648708" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1185">
+<div class="quarto-post image-right" data-index="1" data-categories="bGFiLTAlMkNsYWItMQ==" data-listing-date-sort="1737331200000" data-listing-file-modified-sort="1740380683057" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1185">
 <div class="thumbnail">
 <p><a href="../notes/developer-environment/index.html" class="no-external"></a></p><a href="../notes/developer-environment/index.html" class="no-external">
 <p class="card-img-top"><img src="developer-environment/assets/vintage-drill-press.jpg" alt="Photo by Tima Miroshnichenko" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -417,7 +499,7 @@ Feb 24, 2025
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="YmFzaCUyQ2xhYi0wJTJDbGFiLTE=" data-listing-date-sort="1738281600000" data-listing-file-modified-sort="1740376648707" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1494">
+<div class="quarto-post image-right" data-index="2" data-categories="YmFzaCUyQ2xhYi0wJTJDbGFiLTE=" data-listing-date-sort="1738281600000" data-listing-file-modified-sort="1740380683056" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1494">
 <div class="thumbnail">
 <p><a href="../notes/bash-essentials/index.html" class="no-external"></a></p><a href="../notes/bash-essentials/index.html" class="no-external">
 <p><img loading="lazy" src="https://tiswww.case.edu/php/chet/img/bash-logo-web.png" class="thumbnail-image" style="height: 150px;"></p>
@@ -456,7 +538,7 @@ Feb 24, 2025
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="Z2l0JTJDbGFiLTE=" data-listing-date-sort="1739145600000" data-listing-file-modified-sort="1740376648709" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="994">
+<div class="quarto-post image-right" data-index="3" data-categories="Z2l0JTJDbGFiLTE=" data-listing-date-sort="1739145600000" data-listing-file-modified-sort="1740380683059" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="994">
 <div class="thumbnail">
 <p><a href="../notes/github-basics/index.html" class="no-external"></a></p><a href="../notes/github-basics/index.html" class="no-external">
 <p class="card-img-top"><img src="github-basics/assets/github-mark.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -492,7 +574,7 @@ Feb 24, 2025
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-categories="YmFzaCUyQ2xhYi0y" data-listing-date-sort="1739750400000" data-listing-file-modified-sort="1740376648707" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="21" data-listing-word-count-sort="4001">
+<div class="quarto-post image-right" data-index="4" data-categories="YmFzaCUyQ2xhYi0y" data-listing-date-sort="1739750400000" data-listing-file-modified-sort="1740380683057" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="21" data-listing-word-count-sort="4001">
 <div class="thumbnail">
 <p><a href="../notes/bash-scripting/index.html" class="no-external"></a></p><a href="../notes/bash-scripting/index.html" class="no-external">
 <p><img loading="lazy" src="https://tudoubaba.net/assets/img/shebang.72b91b53.png" class="thumbnail-image" style="height: 150px;"></p>
@@ -582,13 +664,13 @@ Subtitle
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-categories="bGFiLTM=" data-listing-date-sort="1737331200000" data-listing-file-modified-sort="1740376648707" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="481" data-listing-title-sort="Course Hardware" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="0" data-categories="bGFiLTM=" data-listing-date-sort="1737331200000" data-listing-file-modified-sort="1740380683057" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="590" data-listing-title-sort="Course hardware" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
 <span class="listing-date">Jan 20</span>
 </td>
 <td>
-<a href="../notes/course-hardware/index.html" class="title listing-title">Course Hardware</a>
+<a href="../notes/course-hardware/index.html" class="title listing-title">Course hardware</a>
 </td>
 <td>
 <span class="listing-subtitle">List of hardware available for the course as well as their respective specifications and documentation. </span>
@@ -597,7 +679,7 @@ Subtitle
 <span class="listing-file-modified">Feb 24</span>
 </td>
 </tr>
-<tr data-index="1" data-categories="bGFiLTAlMkNsYWItMQ==" data-listing-date-sort="1737331200000" data-listing-file-modified-sort="1740376648708" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1185" data-listing-title-sort="Developer environment setup" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="1" data-categories="bGFiLTAlMkNsYWItMQ==" data-listing-date-sort="1737331200000" data-listing-file-modified-sort="1740380683057" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1185" data-listing-title-sort="Developer environment setup" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
 <span class="listing-date">Jan 20</span>
@@ -612,7 +694,7 @@ Subtitle
 <span class="listing-file-modified">Feb 24</span>
 </td>
 </tr>
-<tr data-index="2" data-categories="YmFzaCUyQ2xhYi0wJTJDbGFiLTE=" data-listing-date-sort="1738281600000" data-listing-file-modified-sort="1740376648707" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1494" data-listing-title-sort="Bash essentials" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="2" data-categories="YmFzaCUyQ2xhYi0wJTJDbGFiLTE=" data-listing-date-sort="1738281600000" data-listing-file-modified-sort="1740380683056" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1494" data-listing-title-sort="Bash essentials" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
 <span class="listing-date">Jan 31</span>
@@ -627,7 +709,7 @@ Subtitle
 <span class="listing-file-modified">Feb 24</span>
 </td>
 </tr>
-<tr data-index="3" data-categories="Z2l0JTJDbGFiLTE=" data-listing-date-sort="1739145600000" data-listing-file-modified-sort="1740376648709" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="994" data-listing-title-sort="GitHub basics" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="3" data-categories="Z2l0JTJDbGFiLTE=" data-listing-date-sort="1739145600000" data-listing-file-modified-sort="1740380683059" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="994" data-listing-title-sort="GitHub basics" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
 <span class="listing-date">Feb 10</span>
@@ -642,7 +724,7 @@ Subtitle
 <span class="listing-file-modified">Feb 24</span>
 </td>
 </tr>
-<tr data-index="4" data-categories="YmFzaCUyQ2xhYi0y" data-listing-date-sort="1739750400000" data-listing-file-modified-sort="1740376648707" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="21" data-listing-word-count-sort="4001" data-listing-title-sort="Bash scripting" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="4" data-categories="YmFzaCUyQ2xhYi0y" data-listing-date-sort="1739750400000" data-listing-file-modified-sort="1740380683057" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="21" data-listing-word-count-sort="4001" data-listing-title-sort="Bash scripting" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
 <span class="listing-date">Feb 17</span>
@@ -695,15 +777,15 @@ No matching items
     </div>
 </div>
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="bGFiLTM=" data-listing-date-sort="1737331200000" data-listing-file-modified-sort="1740376648707" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="481">
+<div class="g-col-1" data-index="0" data-categories="bGFiLTM=" data-listing-date-sort="1737331200000" data-listing-file-modified-sort="1740380683057" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="590">
 <a href="../notes/course-hardware/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img loading="lazy" src="https://files.seeedstudio.com/wiki/ReTerminal/wiki_thumb.png" class="thumbnail-image card-img" style="height: 150px;">
+<img loading="lazy" src="../notes/course-hardware/assets/iot-hardware.png" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
-Course Hardware
+Course hardware
 </h5>
 <div class="card-subtitle listing-subtitle">
 <p>List of hardware available for the course as well as their respective specifications and documentation.</p>
@@ -730,7 +812,7 @@ Jan 20, 2025
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="bGFiLTAlMkNsYWItMQ==" data-listing-date-sort="1737331200000" data-listing-file-modified-sort="1740376648708" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1185">
+<div class="g-col-1" data-index="1" data-categories="bGFiLTAlMkNsYWItMQ==" data-listing-date-sort="1737331200000" data-listing-file-modified-sort="1740380683057" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1185">
 <a href="../notes/developer-environment/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top"><img src="developer-environment/assets/vintage-drill-press.jpg" alt="Photo by Tima Miroshnichenko" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -766,7 +848,7 @@ Jan 20, 2025
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="YmFzaCUyQ2xhYi0wJTJDbGFiLTE=" data-listing-date-sort="1738281600000" data-listing-file-modified-sort="1740376648707" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1494">
+<div class="g-col-1" data-index="2" data-categories="YmFzaCUyQ2xhYi0wJTJDbGFiLTE=" data-listing-date-sort="1738281600000" data-listing-file-modified-sort="1740380683056" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1494">
 <a href="../notes/bash-essentials/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -807,7 +889,7 @@ Jan 31, 2025
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="3" data-categories="Z2l0JTJDbGFiLTE=" data-listing-date-sort="1739145600000" data-listing-file-modified-sort="1740376648709" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="994">
+<div class="g-col-1" data-index="3" data-categories="Z2l0JTJDbGFiLTE=" data-listing-date-sort="1739145600000" data-listing-file-modified-sort="1740380683059" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="994">
 <a href="../notes/github-basics/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top"><img src="github-basics/assets/github-mark.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -843,7 +925,7 @@ Feb 10, 2025
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="4" data-categories="YmFzaCUyQ2xhYi0y" data-listing-date-sort="1739750400000" data-listing-file-modified-sort="1740376648707" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="21" data-listing-word-count-sort="4001">
+<div class="g-col-1" data-index="4" data-categories="YmFzaCUyQ2xhYi0y" data-listing-date-sort="1739750400000" data-listing-file-modified-sort="1740380683057" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="21" data-listing-word-count-sort="4001">
 <a href="../notes/bash-scripting/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -1456,6 +1538,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation column-body">
+  <div class="nav-page nav-page-previous">
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../notes/github-basics/index.html" class="pagination-link" aria-label="GitHub basics">
+        <span class="nav-page-text">GitHub basics</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 
 
