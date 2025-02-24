@@ -6,7 +6,7 @@ subtitle: >
   Configuring python linters and formatters.
 categories: [python]
 draft: true
-date: 2025-02-24
+date: 2025-02-28
 ---
 
 ## Virtual Environments

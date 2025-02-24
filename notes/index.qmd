@@ -1,5 +1,5 @@
 ---
-title: "Course Notes"
+title: "All course notes"
 subtitle: "All content covered in class will be posted here."
 date: 2025-01-30
 format:

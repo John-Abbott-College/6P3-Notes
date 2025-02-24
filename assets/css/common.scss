@@ -113,4 +113,12 @@ figure figcaption {
   }
 }
 
+.sidebar-menu-container {
+  display: none;
+}
 
+.dropdown .dropdown-menu li:first-child
+{
+  font-style: italic;
+  border-bottom: 1px solid $gray-300;
+}
