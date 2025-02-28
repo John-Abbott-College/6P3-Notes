@@ -326,16 +326,34 @@ To fix this problem, we are going to use a remote networking tool called [Tailsc
 
 ### Set up Tailscale
 
-1. First, create an account on [Tailscale])(https://login.tailscale.com/start). You have the following choices for authentication:
+First, create an account on [Tailscale](https://login.tailscale.com/start). You have the following choices for authentication:
   - (Recommended) Your GitHub account
   - Your school email address
-1. 
+
+If you're curious to know more about Tailscale before you sign up, please ask me! You can also read about it here:
+- https://tailscale.com/why-tailscale
+- https://tailscale.com/blog/how-tailscale-works
+
+In the big picture: Tailscale will allow us to establish direct remote connections between our raspberry Pi and our developer environments. 
+
+To be clear, Tailscale is *free*, you will not need any of the paid features.
+
+After you have made an account, you will need to set it up on your pi and your developer environments, see instructions below.
 
 #### On the raspberry pi
 
+[Follow these instructions](https://tailscale.com/download/linux/rpi-bullseye)
+
 #### On your lab computer
 
+[Follow these instructions](https://tailscale.com/kb/1295/install-windows-wsl2)
+
 #### On your personal computer
+
+Depending on your operating system:
+- Windows: use WSL and [Follow these instructions](https://tailscale.com/kb/1295/install-windows-wsl2)
+- macOS: [Follow these instructions](https://tailscale.com/kb/1016/install-mac)
+- Linux: [Follow these instructions](https://tailscale.com/kb/1031/install-linux)
 
 ### Set up VNC
 
