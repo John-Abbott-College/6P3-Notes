@@ -283,6 +283,7 @@ At this point, we are now going to start running commands directly on the reTerm
     - In general, the reTerminal is powered using the provided power supply in your lab kit.
 - Plug your reTerminal into the lab monitor using the provided microHDMI to HDMI converter
 - Plug your reTerminal into the ethernet using the lab computer ethernet.
+- Plug the lab keyboard and mouse into your reterminal USB.
 
 On first boot, your reTerminal screen will not turn on -- this is why we need the microHDMI connection to the external monitor. 
 
@@ -311,11 +312,27 @@ Follow the official guide for the reTerminal FAQ Wiki:
 
 ## Set up Remote connections
 
+Going forward, we want to be able to use the reTerminal without having to plug it into an external monitor.
+
+Fixing the device screen was one step -- however, we would also like to be able to use the reTerminal without relying on the small touchscreen either.
+
+We are going to rely on **remote connections** to the reTerminal in general in this class -- that is, connecting to the reTerminal using an IP Address.
+
+Because the lab network has firewalls, however, we cannot do so directly using the lab ethernet or the campus WIFI.
+
+To fix this problem, we are going to use a remote networking tool called [Tailscale](https://tailscale.com/). Follow the steps below:
+
 ### Set up Tailscale
 
-1. Create an account. You have the following choices for authentication:
+1. First, create an account on [Tailscale])(). You have the following choices for authentication:
   - (Recommended) Your GitHub account
   - Your school email address
+
+#### On the raspberry pi
+
+#### On your lab computer
+
+#### On your personal computer
 
 ### Set up VNC
 
