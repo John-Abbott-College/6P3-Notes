@@ -303,6 +303,12 @@ Once your are logged into the reTerminal and you can see the display on the lab 
     - Make sure your Pi is connected to the wall power supply, NOT to your computer (the
         pi screen needs more power than your lab computer can provide).
 
+::: {.callout-note .column-margin}
+If your keyboard is in French mode on the raspberry pi, you can
+[follow the instructions here](https://thelinuxcode.com/change-keyboard-layout-raspberry-pi/)
+to set it back into English (US) mode.
+:::
+
 ### Update & Upgrade
 
 A good first step for any OS installation is to ensure all system packages
@@ -326,15 +332,23 @@ To fix this problem, we are going to use a remote networking tool called [Tailsc
 
 ### Set up Tailscale
 
-First, create an account on [Tailscale](https://login.tailscale.com/start). You have the following choices for authentication:
-  - (Recommended) Your GitHub account
-  - Your school email address
+First, create an account on [Tailscale](https://login.tailscale.com/start). You have the
+following choices for authentication:
 
-If you're curious to know more about Tailscale before you sign up, please ask me! You can also read about it here:
-- https://tailscale.com/why-tailscale
-- https://tailscale.com/blog/how-tailscale-works
+- (Recommended) Your GitHub account
+- Your school email address
 
-In the big picture: Tailscale will allow us to establish direct remote connections between our raspberry Pi and our developer environments. 
+If you're curious to know more about Tailscale before you sign up, please ask me! You can
+also read about it here:
+
+- <https://tailscale.com/why-tailscale>
+- <https://tailscale.com/blog/how-tailscale-works>
+
+In the big picture: Tailscale will allow us to establish direct remote connections between
+our raspberry Pi and our developer environments by creating a
+[Wireguard](https://en.wikipedia.org/wiki/WireGuard)
+[VPN](https://en.wikipedia.org/wiki/Virtual_private_network)
+[mesh network](https://en.wikipedia.org/wiki/Mesh_networking) for us.
 
 To be clear, Tailscale is *free*, you will not need any of the paid features.
 
@@ -346,26 +360,33 @@ After you have made an account, you will need to set it up on your pi and your d
 
 You can do the "Install with one command" step, OR follow the manual steps if you prefer.
 
+NOTE: you will probably need to also run the following command on your raspberry pi:
+
+`sudo apt install curl`
+
 #### On your lab computer
 
 - Install on your WSL by [Following these instructions](https://tailscale.com/kb/1295/install-windows-wsl2)
     - You can do the "Install with one command" step, OR follow the manual steps if you prefer.
-    - NOTE: you will probably need to also run the following command on your WSL:
-        - `sudo apt install curl`
 - ALSO install on the main Windows machine by [following these instructions](https://tailscale.com/kb/1022/install-windows)
     - You may need to use elevated permissions for this, see [@nte-elevated]
 
+NOTE: you will probably need to also run the following command on your WSL:
 
-
+`sudo apt install curl`
 
 #### On your personal computer
 
 Depending on your operating system:
+
 - Windows:
     - Install on your WSL by [Following these instructions](https://tailscale.com/kb/1295/install-windows-wsl2)
-        - You can do the "Install with one command" step, OR follow the manual steps if you prefer.
-        - NOTE: you will probably need to also run the following command on your WSL:
-            - `sudo apt install curl`
+    - You can do the "Install with one command" step, OR follow the manual steps if you prefer.
+
+NOTE: you will probably need to also run the following command on your WSL:
+
+`sudo apt install curl`
+
 - macOS: [Follow these instructions](https://tailscale.com/kb/1016/install-mac)
 - Linux: [Follow these instructions](https://tailscale.com/kb/1031/install-linux)
 
@@ -395,17 +416,12 @@ graphical shell of the lab computer, in addition to SSH.
 
 1. Enable the VNC client in the **Raspberry Pi Configuration menu**.
 
-    1. Click on the Raspberry Pi **icon** (top right).
+    - Click on the Raspberry Pi **icon** (top right).
+    - Select ***Preferences** > **Raspberry Pi Configuration***.
+    - Open the ***Interfaces*** tab.
+    - Enable the **VNC server** (*disabled by default).*
 
-    1. Select ***Preferences** > **Raspberry Pi Configuration***.
-
-    1. Open the ***Interfaces*** tab.
-
-    1. Enable the **VNC server** (*disabled by default).*
-
-1. Open a terminal on your Raspberry Pi. You want to double check your IP address.
-
-1. Take note of your Raspberry Pi’s local **IP address**.
+1. Open a terminal on your Raspberry Pi. Double check your IP address using `tailscale status`
 
 1. At your lab computer, start the VNC Viewer client (RealVNC). You can run this program
     *without* elevated access.
