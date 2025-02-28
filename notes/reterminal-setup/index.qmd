@@ -359,7 +359,10 @@ NOTE: you will probably need to also run the following command on your WSL:
 #### On your personal computer
 
 Depending on your operating system:
-- Windows: use WSL and [Follow these instructions](https://tailscale.com/kb/1295/install-windows-wsl2)
+- Windows: 
+    - Install on your WSL by [Following these instructions](https://tailscale.com/kb/1295/install-windows-wsl2)
+    - ALSO install on your main Windows machine by [following these instructions](https://tailscale.com/kb/1022/install-windows)
+        - You may need to use elevated permissions for this, see [@nte-elevated]
 - macOS: [Follow these instructions](https://tailscale.com/kb/1016/install-mac)
 - Linux: [Follow these instructions](https://tailscale.com/kb/1031/install-linux)
 
