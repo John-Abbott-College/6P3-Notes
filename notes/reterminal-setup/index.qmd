@@ -277,20 +277,20 @@ Your reTerminal has been re-imaged! **Make sure you have completed the
 [reassembly](#reassembly)** steps, particularly that you have toggled the memory select
 switch back up to normal boot mode.
 
-Plug your reTerminal into the wall using the power supply. There are power bars in the lab that you can use.
+At this point, we are now going to start running commands directly on the reTerminal itself. Follow the steps below:
 
-In general, the reTerminal is powered using the provided power supply in your lab kit.
+- Plug your reTerminal into the wall using the power supply. There are power bars in the lab that you can use if you need more outlets.
+    - In general, the reTerminal is powered using the provided power supply in your lab kit.
+- Plug your reTerminal into the lab monitor using the provided microHDMI to HDMI converter
+- Plug your reTerminal into the ethernet using the lab computer ethernet.
 
-On first boot, your reTerminal screen will not turn on. The first task we need to take care of is fixing the reTerminal screen display drivers.
+On first boot, your reTerminal screen will not turn on -- this is why we need the microHDMI connection to the external monitor. 
+
+The first task we need to take care of is fixing the reTerminal screen display drivers.
 
 ### Display driver fix
 
-In the lab, we have micro-HDMI to HDMI converters. You will use this to plug your
-reTerminal into the lab monitor.
-
-Plug your reTerminal into the lab monitor, and into the wall -- you should see the
-reTerminal log in. Follow the steps below to install the necessary drivers to fix the
-reTerminal screen issues.
+Once your are logged into the reTerminal and you can see the display on the lab monitor, follow the steps below:
 
 1. Read and follow the steps outlined here:
     ["Install reTerminal drivers after flashing new Raspberry Pi OS/ Ubuntu OS or Other OS"](https://wiki.seeedstudio.com/reterminal_black_screen/#install-reterminal-drivers-after-flashing-new-raspberry-pi-os-ubuntu-os-or-other-os),
