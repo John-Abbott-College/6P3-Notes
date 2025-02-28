@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.41">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 /* CSS for citations */
 div.csl-bib-body { }
@@ -50,20 +84,20 @@ div.csl-indent {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../notes/course-hardware/index.html" rel="next">
-<link href="../../notes/github-basics/index.html" rel="prev">
+<link href="../../notes/bash-scripting/index.html" rel="next">
+<link href="../../notes/bash-essentials/index.html" rel="prev">
 <link href="../../assets/favicon_io/favicon.ico" rel="icon">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-c69d122a26fc8b6408a5f9be2130a097.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-4491de7fe1457d9669bb21661a2bc2cb.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-fd1ebc2be5d5e40ebb2e000ad5234134.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-f53edd92e5d9bc67b961c45b13ebda2d.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-3cba56e24f2d9c729fa45416357edb78.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-258474d6b235567bcb4c904c742fe6a7.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-ae88efe0b7c31e6578cce92c213ac82a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-73fae4600b5030606feb7fcd3e669409.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script src="../../site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
 <script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
@@ -135,28 +169,28 @@ div.csl-indent {
  <span class="dropdown-text">All course notes</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../notes/github-basics/index.html">
- <span class="dropdown-text">GitHub basics</span></a>
+    <a class="dropdown-item" href="../../notes/bash-essentials/index.html">
+ <span class="dropdown-text">Bash essentials</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../notes/reterminal-setup/index.html">
  <span class="dropdown-text">Reterminal setup</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../notes/course-hardware/index.html">
- <span class="dropdown-text">Course hardware</span></a>
-  </li>  
-        <li>
     <a class="dropdown-item" href="../../notes/bash-scripting/index.html">
  <span class="dropdown-text">Bash scripting</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../notes/bash-essentials/index.html">
- <span class="dropdown-text">Bash essentials</span></a>
+    <a class="dropdown-item" href="../../notes/course-hardware/index.html">
+ <span class="dropdown-text">Course hardware</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../notes/developer-environment/index.html">
  <span class="dropdown-text">Developer environment setup</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/github-basics/index.html">
+ <span class="dropdown-text">GitHub basics</span></a>
   </li>  
     </ul>
   </li>
@@ -208,8 +242,8 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notes/github-basics/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">GitHub basics</span></a>
+  <a href="../../notes/bash-essentials/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bash essentials</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -220,26 +254,26 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notes/course-hardware/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Course hardware</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../../notes/bash-scripting/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bash scripting</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notes/bash-essentials/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bash essentials</span></a>
+  <a href="../../notes/course-hardware/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Course hardware</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../notes/developer-environment/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Developer environment setup</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/github-basics/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">GitHub basics</span></a>
   </div>
 </li>
     </ul>
@@ -252,20 +286,38 @@ div.csl-indent {
   <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link" data-scroll-target="#prerequisites"><span class="header-section-number">2</span> Prerequisites</a>
   <ul>
   <li><a href="#hardware-required" id="toc-hardware-required" class="nav-link" data-scroll-target="#hardware-required"><span class="header-section-number">2.1</span> Hardware required</a></li>
-  <li><a href="#software-required" id="toc-software-required" class="nav-link" data-scroll-target="#software-required"><span class="header-section-number">2.2</span> Software required</a></li>
+  <li><a href="#software-required" id="toc-software-required" class="nav-link" data-scroll-target="#software-required"><span class="header-section-number">2.2</span> Software required</a>
+  <ul class="collapse">
+  <li><a href="#rpi-usb-device-boot-installation" id="toc-rpi-usb-device-boot-installation" class="nav-link" data-scroll-target="#rpi-usb-device-boot-installation"><span class="header-section-number">2.2.1</span> RPi USB Device Boot installation</a></li>
+  <li><a href="#raspberry-pi-imager-installation" id="toc-raspberry-pi-imager-installation" class="nav-link" data-scroll-target="#raspberry-pi-imager-installation"><span class="header-section-number">2.2.2</span> Raspberry Pi Imager installation</a></li>
+  </ul></li>
   </ul></li>
   <li><a href="#reimage-the-reterminal" id="toc-reimage-the-reterminal" class="nav-link" data-scroll-target="#reimage-the-reterminal"><span class="header-section-number">3</span> Reimage the reTerminal</a>
   <ul>
   <li><a href="#reterminal-disassembly" id="toc-reterminal-disassembly" class="nav-link" data-scroll-target="#reterminal-disassembly"><span class="header-section-number">3.1</span> reTerminal Disassembly</a></li>
-  <li><a href="#new-os-image-configuration" id="toc-new-os-image-configuration" class="nav-link" data-scroll-target="#new-os-image-configuration"><span class="header-section-number">3.2</span> New OS image &amp; Configuration</a></li>
+  <li><a href="#new-os-image-configuration" id="toc-new-os-image-configuration" class="nav-link" data-scroll-target="#new-os-image-configuration"><span class="header-section-number">3.2</span> New OS image &amp; Configuration</a>
+  <ul class="collapse">
+  <li><a href="#launch-rpi-boot" id="toc-launch-rpi-boot" class="nav-link" data-scroll-target="#launch-rpi-boot"><span class="header-section-number">3.2.1</span> Launch <code>rpi-boot</code></a></li>
+  <li><a href="#connect-the-reterminal-to-the-usb-port-of-your-machine." id="toc-connect-the-reterminal-to-the-usb-port-of-your-machine." class="nav-link" data-scroll-target="#connect-the-reterminal-to-the-usb-port-of-your-machine."><span class="header-section-number">3.2.2</span> Connect the reTerminal to the USB port of your machine.</a></li>
+  <li><a href="#run-rasperry-pi-rpi-imager" id="toc-run-rasperry-pi-rpi-imager" class="nav-link" data-scroll-target="#run-rasperry-pi-rpi-imager"><span class="header-section-number">3.2.3</span> Run Rasperry Pi (RPi) Imager</a></li>
+  </ul></li>
   <li><a href="#reassembly" id="toc-reassembly" class="nav-link" data-scroll-target="#reassembly"><span class="header-section-number">3.3</span> Reassembly</a></li>
   </ul></li>
   <li><a href="#first-boot" id="toc-first-boot" class="nav-link" data-scroll-target="#first-boot"><span class="header-section-number">4</span> First Boot</a>
   <ul>
-  <li><a href="#update-upgrade" id="toc-update-upgrade" class="nav-link" data-scroll-target="#update-upgrade"><span class="header-section-number">4.1</span> Update &amp; Upgrade</a></li>
+  <li><a href="#display-driver-fix" id="toc-display-driver-fix" class="nav-link" data-scroll-target="#display-driver-fix"><span class="header-section-number">4.1</span> Display driver fix</a></li>
+  <li><a href="#update-upgrade" id="toc-update-upgrade" class="nav-link" data-scroll-target="#update-upgrade"><span class="header-section-number">4.2</span> Update &amp; Upgrade</a></li>
   </ul></li>
-  <li><a href="#vnc-connection" id="toc-vnc-connection" class="nav-link" data-scroll-target="#vnc-connection"><span class="header-section-number">5</span> VNC Connection</a></li>
-  <li><a href="#ssh-connection" id="toc-ssh-connection" class="nav-link" data-scroll-target="#ssh-connection"><span class="header-section-number">6</span> SSH Connection</a></li>
+  <li><a href="#set-up-remote-connections" id="toc-set-up-remote-connections" class="nav-link" data-scroll-target="#set-up-remote-connections"><span class="header-section-number">5</span> Set up Remote connections</a>
+  <ul>
+  <li><a href="#set-up-tailscale" id="toc-set-up-tailscale" class="nav-link" data-scroll-target="#set-up-tailscale"><span class="header-section-number">5.1</span> Set up Tailscale</a></li>
+  <li><a href="#set-up-vnc" id="toc-set-up-vnc" class="nav-link" data-scroll-target="#set-up-vnc"><span class="header-section-number">5.2</span> Set up VNC</a></li>
+  <li><a href="#set-up-ssh" id="toc-set-up-ssh" class="nav-link" data-scroll-target="#set-up-ssh"><span class="header-section-number">5.3</span> Set up SSH</a>
+  <ul class="collapse">
+  <li><a href="#connecting-over-cli" id="toc-connecting-over-cli" class="nav-link" data-scroll-target="#connecting-over-cli"><span class="header-section-number">5.3.1</span> Connecting over CLI</a></li>
+  <li><a href="#connecting-over-vscode" id="toc-connecting-over-vscode" class="nav-link" data-scroll-target="#connecting-over-vscode"><span class="header-section-number">5.3.2</span> Connecting over VSCode</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
 </nav>
@@ -301,7 +353,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">February 24, 2025</p>
+      <p class="date-modified">February 28, 2025</p>
     </div>
   </div>
     
@@ -325,7 +377,8 @@ div.csl-indent {
 <p>This page documents the general steps needed to perform an initial set up, or reset, of the <a href="https://wiki.seeedstudio.com/reTerminal/#for-linux">reTerminal</a> device that we will be using throughout the class.</p>
 <p>The general steps are:</p>
 <ol type="1">
-<li>Reimage and configure the reTerminal’s operating system (OS).</li>
+<li>Install necessary dependencies for reimaging a Pi on a host computer</li>
+<li>Reimage and configure the reTerminal’s operating system.</li>
 <li>Connect to the reTerminal remotely and ensure the remote connection services are working:
 <ol type="1">
 <li>Graphical desktop session using a <a href="https://en.wikipedia.org/wiki/VNC">VNC</a> client.</li>
@@ -359,31 +412,87 @@ div.csl-indent {
 <h3 data-number="2.2" class="anchored" data-anchor-id="software-required"><span class="header-section-number">2.2</span> Software required</h3>
 <p>There are two tools to install for this lab:</p>
 <ol type="1">
-<li><p>Raspberry pi firmware flashing daemon: <a href="https://github.com/raspberrypi/usbboot/">https://github.com/raspberrypi/usbboot/</a>.</p>
-<p>Instructions for installing:</p>
-<ul>
-<li>Download the repository using <code>git clone</code>:</li>
-<li>Find the folder and cd into it</li>
-<li>(On Windows) Locate <code>rpiboot_setup.exe</code> within that directory. Right click and select “run with elevated rights.”
-<ul>
-<li>Paste “6P3-W25 Raspberry Pi Setup” into the text dialog asking your reason for running with elevated privileges.</li>
-<li>Enter your own username/password. You will not need the teacher’s intervention.</li>
-</ul></li>
-<li>(On macOS / Linux): read the README of the software and follow those instructions instead.</li>
-<li>Raspberry pi drivers will begin to be installed on your computer. This process takes a few minutes.</li>
-</ul></li>
-<li><p>Raspberry Pi Imager software from the <a href="https://www.raspberrypi.com/software/">official Raspberry Pi website.</a>. This software is straightforward to install.</p>
-<ul>
-<li>NOTE: this <em>should</em> already be installed on the Lab computers. Check to see if Raspberry Pi Imager is an application you can open before installing.</li>
-</ul></li>
+<li>Raspberry Pi (RPi) USB Device Boot daemon</li>
+<li>Raspberry Pi Imager</li>
 </ol>
+<p>Instructions for installing each follow below.</p>
+<div id="nte-elevated" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;1: Elevated Permissions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We will sometimes need <strong>elevated permissions</strong> in order to install or operate software.</p>
+<ul>
+<li>On the Lab Computers, you can achieve elevated permissions by right-clicking on the executable and selecting the option: <strong>“Run with elevated access”</strong>.
+<ul>
+<li>You will be asked for your college username and password.</li>
+<li>You will then be asked for a reason for elevating permissions. Copy-paste: “6P3-W25 Raspberry Pi Setup”</li>
+</ul></li>
+<li>On your personal computers, the options will depend on your OS:
+<ul>
+<li>Windows: The same as the Lab Computers, but use “Run as administrator” instead.</li>
+<li>macOS/Linux: use your terminal environment to run the executable and <code>sudo</code> to elevate your permissions</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<section id="rpi-usb-device-boot-installation" class="level4" data-number="2.2.1">
+<h4 data-number="2.2.1" class="anchored" data-anchor-id="rpi-usb-device-boot-installation"><span class="header-section-number">2.2.1</span> RPi USB Device Boot installation</h4>
+<p>The instructions for installing and using this software vary greatly depending on your host operating system.</p>
+<p>You can find all instructions in the README of the repository for the software: <a href="https://github.com/raspberrypi/usbboot/">https://github.com/raspberrypi/usbboot/</a>.</p>
+<p>I’ve adapted those instructions for each possible operating system in the section below.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Windows (recommended)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">macOS/Linux</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">WSL</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<ul>
+<li>Download the repository using <code>git clone</code>.</li>
+<li>Find the folder in <strong>Windows Explorer</strong>
+<ul>
+<li>Note: if you used <code>git</code> in your WSL terminal to clone the repo, the path will be something like: <code>\\wsl$\WSLImageName\home\username\path\to\usbboot</code></li>
+</ul></li>
+<li>Locate <code>rpiboot_setup.exe</code> within the <code>usbboot/win32/</code> directory. Run the executable with elevated permissions (see <a href="#nte-elevated" class="quarto-xref">Note&nbsp;1</a>)
+<ul>
+<li>If the software has already been installed, <strong>press Yes to overwrite the existing installation</strong></li>
+<li>By doing so, we will ensure that the software is the latest version (which will be important).</li>
+</ul></li>
+<li>Raspberry pi drivers will begin to be installed on your computer. This process takes a few minutes. Move on to the next steps in the lab.</li>
+<li>When this process is finished, you should now have the folder <code>C:\Program Files (x86)\Raspberry Pi\</code> on your computer.</li>
+</ul>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<ul>
+<li>(On macOS / Linux): read the README of the repository and follow those instructions instead.</li>
+</ul>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<p>Not recommended at this time.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="raspberry-pi-imager-installation" class="level4" data-number="2.2.2">
+<h4 data-number="2.2.2" class="anchored" data-anchor-id="raspberry-pi-imager-installation"><span class="header-section-number">2.2.2</span> Raspberry Pi Imager installation</h4>
+<ul>
+<li>Follow software from the <a href="https://www.raspberrypi.com/software/">official Raspberry Pi website.</a>. This software is straightforward to install.</li>
+<li>NOTE: this <em>should</em> already be installed on the Lab computers. Check to see if Raspberry Pi Imager is an application you can open before installing.</li>
+</ul>
+</section>
 </section>
 </section>
 <section id="reimage-the-reterminal" class="level2 page-columns page-full" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="reimage-the-reterminal"><span class="header-section-number">3</span> Reimage the reTerminal</h2>
 <p>Below is a brief overview of the <strong>three step process</strong> for reimaging the reTerminal:</p>
 <ol type="1">
-<li>Disassemble the back cover and flip a switch to have direct access to the eMMc storage</li>
+<li>Disassemble the back cover and flip a switch to have direct access to the eMMc storage
+<ul>
+<li><strong>Do not</strong> disassemble the entire device! It is only necessary to remove the heatsink.</li>
+</ul></li>
 <li>Reimage and configure the OS using the Raspberry Pi Imager software.</li>
 <li>Return the memory selector switch to the original position and reassemble.</li>
 </ol>
@@ -401,8 +510,7 @@ Figure&nbsp;1: <strong>Only remove the heatsink</strong> in order to access the 
 </div>
 <ol type="1">
 <li><p>Watch the video in <a href="#fig-dissasembly" class="quarto-xref">Figure&nbsp;1</a> to understand the disassembly process (2 mins).</p></li>
-<li><p>Follow <strong>Steps 1, 2, &amp; 3</strong> in the reTerminal documentation to remove the heatsink. <a href="https://wiki.seeedstudio.com/reTerminal/#flash-raspberry-pi-os-64-bit-ubuntu-os-or-other-os-to-emmc">Flash Raspberry Pi OS/ 64-bit Ubuntu OS or Other OS to eMMC</a></p>
-<p>Use the following hardware from your reTerminal kit:</p>
+<li><p>Follow <strong>Steps 1, 2, &amp; 3</strong> in the reTerminal documentation to remove the heatsink. <a href="https://wiki.seeedstudio.com/reTerminal/#flash-raspberry-pi-os-64-bit-ubuntu-os-or-other-os-to-emmc">Flash Raspberry Pi OS/ 64-bit Ubuntu OS or Other OS to eMMC</a>. Use the following hardware from your reTerminal kit:</p>
 <ul>
 <li>small screw driver (black handle)</li>
 <li>kit case (store the plastic nubs and removed screws in your case. Don’t lose the screws!)</li>
@@ -410,10 +518,7 @@ Figure&nbsp;1: <strong>Only remove the heatsink</strong> in order to access the 
 </ol>
 <p>After the following the above steps, you will have:</p>
 <ul>
-<li>removed the heatsink
-<ul>
-<li>Don’t remove anything else! (there’s no need)</li>
-</ul></li>
+<li>removed the heatsink</li>
 <li>toggled the eMMc memory switch (see <a href="#fig-flash-mode" class="quarto-xref">Figure&nbsp;2</a>).</li>
 </ul>
 <p>Your reTerminal is now ready for a firmware flash.</p>
@@ -430,37 +535,45 @@ Figure&nbsp;2: Memory select switch behind the reTerminal’s heatsink in the �
 </div></div></section>
 <section id="new-os-image-configuration" class="level3" data-number="3.2">
 <h3 data-number="3.2" class="anchored" data-anchor-id="new-os-image-configuration"><span class="header-section-number">3.2</span> New OS image &amp; Configuration</h3>
-<p>To re-image the reTerminal:</p>
-<ol type="1">
-<li><p>First, launch the rpiboot software:</p>
+<p>To re-image the reTerminal, follow the steps below.</p>
+<section id="launch-rpi-boot" class="level4" data-number="3.2.1">
+<h4 data-number="3.2.1" class="anchored" data-anchor-id="launch-rpi-boot"><span class="header-section-number">3.2.1</span> Launch <code>rpi-boot</code></h4>
 <ul>
-<li>Right click the <code>rpi-boot.exe</code> executable file
+<li><a href="#rpi-usb-device-boot-installation">Double check you have finished the installation</a></li>
+<li>Launch the <code>rpi-boot</code> executable file with elevated permissions (see <a href="#nte-elevated" class="quarto-xref">Note&nbsp;1</a>)
 <ul>
-<li>On a Lab computer: select “run with elevated permissions”</li>
-<li>On a personal Windows: run as administrator</li>
-<li>On a personal macOS/Linux: I think it’s <code>rpi-boot.sh</code> but check the project README to be sure</li>
+<li>On Windows, this should be <code>C:\Program Files (x86)\Raspberry Pi\rpi-boot.exe</code></li>
+<li>On a personal macOS/Linux: I think it’s <code>rpi-boot.sh</code> in the installation directory, but check the project README to be sure</li>
 </ul></li>
-<li>Paste “6P3-W25 Raspberry Pi Boot” into the text dialog asking your reason for running with elevated privileges.</li>
-<li>Enter your college username/password. You will not need the teacher’s intervention.</li>
-<li>You should see something like the following dialog appear:</li>
+<li>Keep the <code>rpi-boot</code> window open throughout the next steps of this lab.</li>
 </ul>
-<pre><code>RPIBOOT: build-date Jan 22 2023 version 20221215-105525 864863bc
-Waiting for BCM2835/6/7/2711...</code></pre>
-<p>The rpiboot program creates a <strong>daemon</strong> (a dedicated background process) that will detect when a reTerminal device is connected in <em>flash mode</em> (i.e.&nbsp;the eMMc switch toggled “down” as in <a href="#fig-flash-mode" class="quarto-xref">Figure&nbsp;2</a>).</p></li>
-<li><p>Connect the reTerminal to the USB port of your machine.</p>
+<p>After launching, you should see a terminal window with something like the following dialog appear:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">RPIBOOT:</span> build-date Jan 22 2023 version 20221215-105525 864863bc</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Waiting</span> for BCM2835/6/7/2711...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The rpiboot program creates a <strong>daemon</strong> (a dedicated background process) that will detect when a reTerminal device is connected in <em>flash mode</em> (i.e.&nbsp;the eMMc switch toggled “down” as in <a href="#fig-flash-mode" class="quarto-xref">Figure&nbsp;2</a>).</p>
+</section>
+<section id="connect-the-reterminal-to-the-usb-port-of-your-machine." class="level4" data-number="3.2.2">
+<h4 data-number="3.2.2" class="anchored" data-anchor-id="connect-the-reterminal-to-the-usb-port-of-your-machine."><span class="header-section-number">3.2.2</span> Connect the reTerminal to the USB port of your machine.</h4>
 <ul>
-<li><strong>rpiboot</strong> will detect and attach the reTerminal’s internal memory as a storage device.</li>
+<li>Find a USB-C to USB 3.0 Cable and plug it into a 3.0 port on your computer.
+<ul>
+<li>USB-C to USB-C is also fine.</li>
+</ul></li>
+<li>Plug the other end of the cable into your reTerminal
+<ul>
+<li>NOTE: if the screen of the reTerminal turns on when you plug in the USB cable, <a href="#reimage-the-reterminal">you have missed a step in the disassembly process</a>. In this case, stop, unplug the device, and read the previous instructions more carefully.</li>
+</ul></li>
+<li><code>rpi-boot</code> will detect and attach the reTerminal’s internal memory as a storage device.</li>
 <li>At this stage, you should see some dialog appear in the RPIBOOT program:</li>
 </ul>
-<pre><code>Sending bootcode4.bin…
-Received 4 bytes
-somethingsomethingsomething
-Etc. etc.
-Loading startup.elf file
-Warning: file not interpreted as such-and-such
-Finished</code></pre>
-<p>Your output will obviously not exactly match the example (I wrote these notes from my memory) but should look something like this.</p>
-<p>Note:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Sending</span> bootcode4.bin…</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Received</span> 4 bytes</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">somethingsomethingsomething</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ex">Etc.</span> etc.</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ex">Loading</span> startup.elf file</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="ex">Warning:</span> file not interpreted as such-and-such</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="ex">Finished</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Your output will not exactly match the example I have provided. Here are some guidelines:</p>
 <ul>
 <li>The program may close on its own, or may not. Either way is fine.</li>
 <li>You can ignore the “warnings” that appear at the end of the logs.</li>
@@ -468,27 +581,31 @@ Finished</code></pre>
 <ul>
 <li>if this is the case, and no other messages appear, try the previous steps again, make sure you pay attention to details.</li>
 </ul></li>
-</ul></li>
-<li><p>Open the Rasperry Pi (RPi) Imager program on your desktop.</p>
+</ul>
+</section>
+<section id="run-rasperry-pi-rpi-imager" class="level4" data-number="3.2.3">
+<h4 data-number="3.2.3" class="anchored" data-anchor-id="run-rasperry-pi-rpi-imager"><span class="header-section-number">3.2.3</span> Run Rasperry Pi (RPi) Imager</h4>
 <ul>
-<li>On a Lab computer:
-<ul>
-<li>Right click and select “run with elevated permissions”.</li>
-<li>Paste “6P3-W25 Raspberry Pi Image” into the text dialog asking your reason for running with elevated privileges.</li>
-<li>Enter your own username/password. You will not need the teacher’s intervention.</li>
-</ul></li>
-<li>If using a personal computer, run as admin/sudo as appropriate for your OS.</li>
-</ul></li>
-<li><p>Before making any selections, press <code>Control+Shift+X</code> to open the “OS Customizations” Advanced Options menu.</p></li>
-<li><p>Make the following customizations</p>
+<li>Run the program on your desktop with elevated permissions (see <a href="#nte-elevated" class="quarto-xref">Note&nbsp;1</a>)</li>
+<li>Before making any selections, press <code>Control+Shift+X</code> to open the “OS Customizations” Advanced Options menu.</li>
+<li>Make the following customizations (you will need to click through all 3 tabs at the top).
 <ul>
 <li>Set a unique hostname (suggestion: your github username)</li>
 <li>Enable SSH with password authentication.</li>
-<li>Set a unique username and password. Do not use the defaults or forget these.</li>
+<li>Set a unique username and password.
+<ul>
+<li>Do not use the defaults or forget these. You will need to reimage your reTerminal if you do.</li>
+</ul></li>
 <li>Configure the wireless LAN for the lab network:
 <ul>
-<li>SSID: P326-hotspot NOTE: there is no whitespace. Take care your SSID matches exactly.</li>
-<li>Password: 6P3-W25-pallet-overcast NOTE: take care your password matches exactly</li>
+<li>SSID: P326-hotspot
+<ul>
+<li>NOTE: there is no whitespace. Take care your SSID matches exactly.</li>
+</ul></li>
+<li>Password: 6P3-W25-pallet-overcast
+<ul>
+<li>NOTE: take care your password matches exactly</li>
+</ul></li>
 <li>Wireless LAN country: CA</li>
 </ul></li>
 <li>Set locale settings: America/Montreal</li>
@@ -499,19 +616,23 @@ Finished</code></pre>
 <li>You will be responsible for maintaining your system.</li>
 <li>If you get locked out, you may have to re-image the system.</li>
 </ul></li>
-<li>Press “SAVE” when finished.</li>
+<li><strong>Press “SAVE” when finished.</strong></li>
 </ul></li>
-<li><p>Once you’ve finished making the above customizations, there are three main configuration choices to make:</p>
+<li>Once you’ve finished making the above customizations, there are three main configuration choices to make:
 <ul>
 <li>Raspberry Pi Device: <strong>Raspberry Pi 4</strong></li>
 <li>Operating System: <strong>Raspberry Pi OS 64-bit (Recommended)</strong></li>
-<li>Storage: <strong>RPi-MSD-0001 (31.3GB). DO NOT SELECT ANY OTHER STORAGE DEVICE</strong>.</li>
+<li>Storage: <strong>RPi-MSD-0001 (31.3GB). DO NOT SELECT ANY OTHER STORAGE DEVICE</strong>.
+<ul>
+<li>If this storage device does not appear, you need to re-do the <a href="#launch-rpi-boot"><code>rpi-boot</code> steps</a></li>
 </ul></li>
-<li><p>Once Raspberry Pi Images starts, writing the image to the reTerminal’s memory can take <strong>10-15 minutes</strong>.</p>
+</ul></li>
+<li>Once Raspberry Pi Images starts, writing the image to the reTerminal’s memory can take <strong>10-15 minutes</strong>.
 <ul>
 <li><strong>Do not disconnect the reTerminal during flashing!</strong></li>
 </ul></li>
-</ol>
+</ul>
+</section>
 </section>
 <section id="reassembly" class="level3" data-number="3.3">
 <h3 data-number="3.3" class="anchored" data-anchor-id="reassembly"><span class="header-section-number">3.3</span> Reassembly</h3>
@@ -525,67 +646,38 @@ Finished</code></pre>
 </section>
 <section id="first-boot" class="level2" data-number="4">
 <h2 data-number="4" class="anchored" data-anchor-id="first-boot"><span class="header-section-number">4</span> First Boot</h2>
-<p>You will now establish a remote SSH connection to your Raspberry Pi from the lab computer and apply system updates – <strong>in particular, there are graphics drivers we need to install in order for the reTerminal screen to work.</strong> The following instructions are adapted from <a href="https://wiki.seeedstudio.com/reterminal_black_screen/">“How to troubleshoot black screen issue”</a></p>
-<ol type="1">
-<li><p>Plug your reTerminal into a power supply. <strong>Take note of the PWR &amp; SYS</strong> lights.</p>
-<ol type="1">
-<li><p>If your reTerminal boots and the screen turns on, you can skip Step 3 (the driver installation step)</p></li>
-<li><p>If PWR light is on, and SYS light flashes (most likely outcome)<br>
-This situation occurs due to issues with the driver controlling the LCD screen. You will need to perform Step 3 in order to fix the LCD screen issues (the driver installation step).</p></li>
-<li><p>If the PWR light is on, but the SYS light never flashes<br>
-You may need to flash the original factory system again, or you may have a hardware issue. Try unplugging the PWR light and plugging it back in again before making this conclusion (the SYS light should flash). If the SYS light still doesn’t turn on at all after a few attempts, please alert the teacher.</p></li>
-<li><p>If the PWR light does not turn on<br>
-You probably have a power supply issue. Please alert the teacher.</p></li>
-</ol></li>
-<li><p>Establish a SSH connection to the reTerminal <strong>from your lab workstation</strong>.</p>
-<ol type="1">
-<li><p>Open the command line (PowerShell, Bash, Zsh, CMD, etc).</p></li>
-<li><p>Follow the official Raspberry Pi instructions:</p>
-<ol type="1">
-<li><p><a href="https://www.raspberrypi.com/documentation/computers/remote-access.html#secure-shell-from-linux-or-mac-os"><strong>Secure Shell from Linux or Mac OS</strong></a> or</p></li>
-<li><p><a href="https://www.raspberrypi.com/documentation/computers/remote-access.html#secure-shell-from-windows-10"><strong>Secure Shell from Windows 10</strong></a>.</p></li>
-</ol></li>
-</ol></li>
-<li><p>The SSH server inside your Raspberry Pi should already be enabled by default (<em>from Part 1, step 5</em>).</p>
-<ol type="1">
-<li>In case it is not enabled, follow the official instructions on <a href="https://www.raspberrypi.com/documentation/computers/remote-access.html#ssh">Setting up the SSH Server on the Raspberry Pi</a>.</li>
-</ol></li>
-<li><p>If your connection is successful you should see the a similar prompt:</p>
-<ol type="1">
-<li><em>user-name@hostname:~ $</em></li>
-</ol></li>
-<li><p>Obtain the reTerminal’s MAC address of the wireless network card (<strong>wlan0</strong>):</p>
-<ol type="1">
-<li><p>Run the command <strong><em>ifconfig</em></strong> or the command <strong><em>ip address</em></strong></p></li>
-<li><p>Look for the wireless network adapter <strong>wlan0:</strong></p>
-<ol type="1">
-<li><p>Note the hexadecimal number for “<em>ether”</em> . This is your MAC address. Include it in the <em>Lab 1 Form.</em></p>
-<ol type="1">
-<li><p>Link for Section 1: <a href="https://forms.office.com/r/w5YFNkhfe5">Lab 1 (Section 1, 830am)</a></p></li>
-<li><p>Link for Section 2: <a href="https://forms.office.com/r/dYfd6ECUpN">Lab 1 (Section 2, 130pm)</a></p></li>
-</ol></li>
-<li><p>Style points: use grep and pipe to grab the MAC address directly from ifconfig.</p></li>
-</ol></li>
-</ol></li>
-</ol>
-<p><em>![][image5]</em></p>
-<ol type="1">
-<li><p>Install the seeed-linux-overlay drivers<br>
-If your reTerminal does not have a working screen, you need to use your ssh session to install drivers on the device.</p>
+<p>Your reTerminal has been re-imaged! The following steps will get your reTerminal ready for regular use.</p>
+<p>In general, the reTerminal is powered using the provided power supply in your lab kit.</p>
+<p>Plug your reTerminal into the wall using the power supply. There are power bars in the lab that you can use.</p>
+<p>On first boot, your reTerminal screen will not turn on. The first task we need to take care of is fixing the reTerminal screen display drivers.</p>
+<section id="display-driver-fix" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="display-driver-fix"><span class="header-section-number">4.1</span> Display driver fix</h3>
 <ol type="1">
 <li>Read and follow the steps outlined here: <a href="https://wiki.seeedstudio.com/reterminal_black_screen/#install-reterminal-drivers-after-flashing-new-raspberry-pi-os-ubuntu-os-or-other-os">“Install reTerminal drivers after flashing new Raspberry Pi OS/ Ubuntu OS or Other OS”</a>, up to and including “sudo reboot”.</li>
 <li>If the above steps have been completed successfully, your device should reboot and its screen should turn on (this takes several seconds, give it a minute before you panic).</li>
 <li>Make sure your Pi is connected to the wall power supply, NOT to your computer (the pi screen needs more power than your lab computer can provide).</li>
-</ol></li>
 </ol>
-<section id="update-upgrade" class="level3" data-number="4.1">
-<h3 data-number="4.1" class="anchored" data-anchor-id="update-upgrade"><span class="header-section-number">4.1</span> Update &amp; Upgrade</h3>
+</section>
+<section id="update-upgrade" class="level3" data-number="4.2">
+<h3 data-number="4.2" class="anchored" data-anchor-id="update-upgrade"><span class="header-section-number">4.2</span> Update &amp; Upgrade</h3>
 <p>Before you can install software on your linux system you need to make sure all packages are at the latest version.</p>
 <p>Follow the official guide for the reTerminal FAQ Wiki: <a href="https://wiki.seeedstudio.com/reTerminal-FAQ/#q3-how-to-upgrade-raspberry-pi-os-and-the-installed-packages">How to upgrade Raspberry Pi OS and the installed packages</a></p>
 </section>
 </section>
-<section id="vnc-connection" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="vnc-connection"><span class="header-section-number">5</span> VNC Connection</h2>
+<section id="set-up-remote-connections" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="set-up-remote-connections"><span class="header-section-number">5</span> Set up Remote connections</h2>
+<section id="set-up-tailscale" class="level3" data-number="5.1">
+<h3 data-number="5.1" class="anchored" data-anchor-id="set-up-tailscale"><span class="header-section-number">5.1</span> Set up Tailscale</h3>
+<ol type="1">
+<li>Create an account. You have the following choices for authentication:</li>
+</ol>
+<ul>
+<li>(Recommended) Your GitHub account</li>
+<li>Your school email address</li>
+</ul>
+</section>
+<section id="set-up-vnc" class="level3" data-number="5.2">
+<h3 data-number="5.2" class="anchored" data-anchor-id="set-up-vnc"><span class="header-section-number">5.2</span> Set up VNC</h3>
 <p>In this section you will connect to the graphical desktop environment remotely using a VNC session. This will allow you to control the raspberry pi from your lab computer over the graphical shell of the lab computer, in addition to SSH.</p>
 <ol type="1">
 <li><p>Once connected to the provided power cable, the reTerminal will boot and automatically login into the graphical desktop environment as the default user.</p></li>
@@ -597,75 +689,70 @@ If your reTerminal does not have a working screen, you need to use your ssh sess
 <li><p>Open the <strong><em>Interfaces</em></strong> tab.</p></li>
 <li><p>Enable the <strong>VNC server</strong> (<em>disabled by default).</em></p></li>
 </ol></li>
-</ol>
-<p>![][image6]<br>
-<em><strong>Figure 3</strong>: Raspberry Pi Configuration menu to enable the built-in VNC server.</em></p>
-<table class="caption-top">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">⚠️</th>
-<th style="text-align: center;">Enabling the VNC Server might cause a screen orientation bug where the touchscreen direction is rotated 90 degrees 🐞</th>
-<th style="text-align: left;">⚠️</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
-<ol start="4" type="1">
-<li><del>Click on the <strong>VNC icon</strong> that will appear on the top-right near the system clock.</del> Open a terminal on your Raspberry Pi. You want to double check your IP address. You can use any of the following commands to do this:</li>
-</ol>
-<p>$ ifconfig<br>
-$ ip a<br>
-$ hostname -I</p>
-<ol start="5" type="1">
+<li><p>Open a terminal on your Raspberry Pi. You want to double check your IP address.</p></li>
 <li><p>Take note of your Raspberry Pi’s local <strong>IP address</strong>.</p></li>
 <li><p>At your lab computer, start the VNC Viewer client (RealVNC). You can run this program <em>without</em> elevated access.</p></li>
-<li><p>Connect to your Raspberry Pi using VNC Viewer in your lab computer.</p>
+<li><p>Connect to your Raspberry Pi using VNC Viewer in your lab computer.</p></li>
+<li><p>Enter the <strong>hostname</strong> you assigned to your Raspberry Pi in <em>Part 1, step 5</em> <strong>or</strong> the <strong>IP address</strong> you noted in step 5.</p>
 <ol type="1">
-<li><p>Enter the <strong>hostname</strong> you assigned to your Raspberry Pi in <em>Part 1, step 5</em> <strong>or</strong> the <strong>IP address</strong> you noted in step 5.</p></li>
-<li><p>Use the username and password you configured in <em>Part 1, step 5</em>.</p></li>
+<li>Use the username and password you configured in <em>Part 1, step 5</em>.</li>
 </ol></li>
-<li><p>You should now have remote control of the graphical session.</p></li>
 </ol>
 </section>
-<section id="ssh-connection" class="level2" data-number="6">
-<h2 data-number="6" class="anchored" data-anchor-id="ssh-connection"><span class="header-section-number">6</span> SSH Connection</h2>
-<p>You will use VS Code in your lab workstation to create a development environment inside the Raspberry Pi which will be controlled from the lab workstation. All the source code files, Python interpreter and debugging will run inside the Raspberry Pi.</p>
+<section id="set-up-ssh" class="level3" data-number="5.3">
+<h3 data-number="5.3" class="anchored" data-anchor-id="set-up-ssh"><span class="header-section-number">5.3</span> Set up SSH</h3>
+<p>The SSH server inside your Raspberry Pi should already be enabled by default (<em>from Part 1, step 5</em>).</p>
+<blockquote class="blockquote">
+<p>To double check that the ssh server is enabled on your Pi: follow the official instructions on <a href="https://www.raspberrypi.com/documentation/computers/remote-access.html#ssh">Setting up the SSH Server on the Raspberry Pi</a>.</p>
+</blockquote>
+<section id="connecting-over-cli" class="level4" data-number="5.3.1">
+<h4 data-number="5.3.1" class="anchored" data-anchor-id="connecting-over-cli"><span class="header-section-number">5.3.1</span> Connecting over CLI</h4>
+<p>You can establish an SSH connection to the reTerminal from your developer environment. If your connection is successful you should see the a similar prompt:</p>
+<p><code>user-name@hostname:~ $</code></p>
+<p>where <code>hostname</code> and <code>user-name</code> correspond to the choices you made during your imaging of the pi.</p>
+<blockquote class="blockquote">
+<p>Follow the official Raspberry Pi instructions (NOTE: Linux instructions apply to WSL!) <a href="https://www.raspberrypi.com/documentation/computers/remote-access.html#secure-shell-from-linux-or-mac-os"><strong>Secure Shell from Linux or Mac OS</strong></a></p>
+</blockquote>
+<p>For <a href="https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=50829">Lab 3</a>, I ask you to obtain the reTerminal’s MAC address.</p>
+<p>You can do so running <code>ifconfig</code> command in an ssh session, and checking the properties of the wireless network card (<code>wlan0</code>):</p>
+<ul>
+<li>Run the command <code>ifconfig</code> or the command <code>ip address</code></li>
+<li>Look for the wireless network adapter <code>wlan0:</code></li>
+<li>The MAC address will be listed there.I
+<ul>
+<li>Style points: use grep and pipe to grab the MAC address directly to your clipboard</li>
+</ul></li>
+</ul>
+</section>
+<section id="connecting-over-vscode" class="level4" data-number="5.3.2">
+<h4 data-number="5.3.2" class="anchored" data-anchor-id="connecting-over-vscode"><span class="header-section-number">5.3.2</span> Connecting over VSCode</h4>
+<p>You can use VS Code in your lab workstation to create a development environment inside the Raspberry Pi which will be controlled from the lab workstation.</p>
 <p>If you would like to know more about how this extension works, visit <a href="https://code.visualstudio.com/docs/remote/ssh">Remote Development using SSH</a>.</p>
 <p>Below is a 5min video that illustrates how the <em>Remote - SSH extension</em> works:</p>
 <p><a href="https://youtu.be/z0j4hV9zLNY">VS Code Remote Development using SSH to a Raspberry Pi</a></p>
-<p>![][image7]<br>
-<em><strong>Figure 5</strong>: Connect VS Code in your lab workstation to a VS Code Server on the Raspberry Pi</em></p>
 <ol type="1">
-<li>In your <strong>lab workstation</strong>, install the VS Code extensions:
+<li><p>In your <strong>lab workstation</strong>, ensure you have installed the following VS Code extensions:</p>
 <ol type="1">
-<li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh"><strong>Remote - SSH</strong></a>, by Microsoft.<br>
-</li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh"><strong>Remote - SSH</strong></a>, by Microsoft.</li>
 <li><a href="https://marketplace.visualstudio.com/items?itemName=ms-python.python"><strong>Python extension</strong></a>, by Microsoft.</li>
 </ol></li>
-<li>Connect your lab workstation to your Raspberry Pi by following the <em>Remote - SSH</em> extension’s official instructions: <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh#getting-started"><strong>Getting started</strong></a>.</li>
-</ol>
-<p>Once VS Code is connected to the reTerminal, you are now in a new development environment inside the reTerminal. Complete the following tasks:</p>
-<ol start="3" type="1">
+<li><p>Connect your lab workstation to your Raspberry Pi by following the <em>Remote - SSH</em> extension’s official instructions: <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh#getting-started"><strong>Getting started</strong></a>. Once VS Code is connected to the reTerminal, you are now in a new development environment inside the reTerminal. Complete the following tasks:</p></li>
 <li><p>Install the VS Code <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.python"><strong>Python extension</strong></a> (this time inside the reTerminal, not in your lab workstation like in step 1).</p>
 <ol type="1">
-<li>If necessary, follow the guide: <a href="https://code.visualstudio.com/docs/python/python-tutorial#_prerequisites"><strong>Getting Started with Python in VS Code</strong></a><strong>.</strong></li>
+<li>If necessary, follow the guide: <a href="https://code.visualstudio.com/docs/python/python-tutorial#_prerequisites"><strong>Getting Started with Python in VS Code</strong></a></li>
 </ol></li>
-<li><p>Open the folder <strong><em>lab1</em></strong> in the home directory of the reTerminal (created in Part 3, step 4).</p></li>
+<li><p>On the Raspberry Pi, open the folder <strong><em>lab1</em></strong> in the home directory of the reTerminal (created in Part 3, step 4).</p></li>
 <li><p>Create a new file named <strong><em>lab-script.py</em></strong> inside the folder <strong><em>lab1</em></strong> and include the code:</p>
 <ol type="1">
-<li><em>print(‘Hello from inside the pi!’)</em></li>
+<li><code>print(‘Hello from inside the pi!’)</code></li>
 </ol></li>
 <li><p>Execute your code from within VS Code using the play button.</p></li>
 </ol>
 
 
 
+</section>
+</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
@@ -1237,13 +1324,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../notes/github-basics/index.html" class="pagination-link" aria-label="GitHub basics">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">GitHub basics</span>
+      <a href="../../notes/bash-essentials/index.html" class="pagination-link" aria-label="Bash essentials">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Bash essentials</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../notes/course-hardware/index.html" class="pagination-link" aria-label="Course hardware">
-        <span class="nav-page-text">Course hardware</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../notes/bash-scripting/index.html" class="pagination-link" aria-label="Bash scripting">
+        <span class="nav-page-text">Bash scripting</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

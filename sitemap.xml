@@ -1,47 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/about/this-site/index.html</loc>
-    <lastmod>2025-02-24T15:39:03.199Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/index.html</loc>
-    <lastmod>2025-02-24T15:39:03.554Z</lastmod>
-  </url>
-  <url>
     <loc>https://john-abbott-college.github.io/6P3-Notes/notes/developer-environment/index.html</loc>
-    <lastmod>2025-02-24T15:39:03.707Z</lastmod>
+    <lastmod>2025-02-28T01:57:38.608Z</lastmod>
   </url>
   <url>
     <loc>https://john-abbott-college.github.io/6P3-Notes/notes/bash-scripting/index.html</loc>
-    <lastmod>2025-02-24T15:39:03.706Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/notes/reterminal-setup/index.html</loc>
-    <lastmod>2025-02-24T15:39:03.709Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/notes/github-basics/index.html</loc>
-    <lastmod>2025-02-24T15:39:03.708Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/notes/course-hardware/index.html</loc>
-    <lastmod>2025-02-24T15:39:03.706Z</lastmod>
+    <lastmod>2025-02-28T01:57:38.607Z</lastmod>
   </url>
   <url>
     <loc>https://john-abbott-college.github.io/6P3-Notes/notes/bash-essentials/index.html</loc>
-    <lastmod>2025-02-24T15:39:03.706Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/notes/index.html</loc>
-    <lastmod>2025-02-24T15:39:03.708Z</lastmod>
+    <lastmod>2025-02-28T01:57:38.607Z</lastmod>
   </url>
   <url>
     <loc>https://john-abbott-college.github.io/6P3-Notes/about/syllabus/index.html</loc>
-    <lastmod>2025-02-24T15:39:03.198Z</lastmod>
+    <lastmod>2025-02-28T01:57:38.100Z</lastmod>
+  </url>
+  <url>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/about/this-site/index.html</loc>
+    <lastmod>2025-02-28T01:57:38.101Z</lastmod>
+  </url>
+  <url>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/index.html</loc>
+    <lastmod>2025-02-28T01:57:38.455Z</lastmod>
   </url>
   <url>
     <loc>https://john-abbott-college.github.io/6P3-Notes/about/calendar/index.html</loc>
-    <lastmod>2025-02-24T15:39:03.196Z</lastmod>
+    <lastmod>2025-02-28T01:57:38.098Z</lastmod>
+  </url>
+  <url>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/notes/index.html</loc>
+    <lastmod>2025-02-28T01:57:38.609Z</lastmod>
+  </url>
+  <url>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/notes/reterminal-setup/index.html</loc>
+    <lastmod>2025-02-28T01:57:38.609Z</lastmod>
+  </url>
+  <url>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/notes/course-hardware/index.html</loc>
+    <lastmod>2025-02-28T01:57:38.607Z</lastmod>
+  </url>
+  <url>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/notes/github-basics/index.html</loc>
+    <lastmod>2025-02-28T01:57:38.609Z</lastmod>
   </url>
 </urlset>
