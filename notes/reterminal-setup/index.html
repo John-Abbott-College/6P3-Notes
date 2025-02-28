@@ -680,15 +680,20 @@ Figure&nbsp;2: Memory select switch behind the reTerminal’s heatsink in the �
 <h3 data-number="4.1" class="anchored" data-anchor-id="display-driver-fix"><span class="header-section-number">4.1</span> Display driver fix</h3>
 <p>Once your are logged into the reTerminal and you can see the display on the lab monitor, follow the steps below:</p>
 <ol type="1">
-<li>Read and follow the steps outlined here: <a href="https://wiki.seeedstudio.com/reterminal_black_screen/#install-reterminal-drivers-after-flashing-new-raspberry-pi-os-ubuntu-os-or-other-os">“Install reTerminal drivers after flashing new Raspberry Pi OS/ Ubuntu OS or Other OS”</a>, up to and including “sudo reboot”.</li>
-<li>If the above steps have been completed successfully, your device should reboot and its screen should turn on (this takes several seconds, give it a minute before you panic).</li>
+<li>Read and follow the steps outlined here: <a href="https://wiki.seeedstudio.com/reterminal_black_screen/#install-reterminal-drivers-after-flashing-new-raspberry-pi-os-ubuntu-os-or-other-os">“Install reTerminal drivers after flashing new Raspberry Pi OS/ Ubuntu OS or Other OS”</a>, up to and including <code>sudo reboot</code>.
+<ul>
+<li>NOTE: recall that you have installed a <strong>64-bit</strong> OS on your reTerminal. <strong>Do not</strong> follow any 32-bit OS steps in the above instructions.</li>
+</ul></li>
+<li>If the above steps have been completed successfully, your device should reboot and BOTH the raspberry pi screen AND the HDMI connection should work (this takes several seconds, give it a minute before you panic).
+<ul>
 <li>Make sure your Pi is connected to the wall power supply, NOT to your computer (the pi screen needs more power than your lab computer can provide).</li>
+</ul></li>
 </ol>
 </section>
 <section id="update-upgrade" class="level3" data-number="4.2">
 <h3 data-number="4.2" class="anchored" data-anchor-id="update-upgrade"><span class="header-section-number">4.2</span> Update &amp; Upgrade</h3>
-<p>Before you can install software on your linux system you need to make sure all packages are at the latest version.</p>
-<p>Follow the official guide for the reTerminal FAQ Wiki: <a href="https://wiki.seeedstudio.com/reTerminal-FAQ/#q3-how-to-upgrade-raspberry-pi-os-and-the-installed-packages">How to upgrade Raspberry Pi OS and the installed packages</a></p>
+<p>A good first step for any OS installation is to ensure all system packages are at the latest version.</p>
+<p>Follow the three steos in the official guide for the reTerminal FAQ Wiki: <a href="https://wiki.seeedstudio.com/reTerminal-FAQ/#q3-how-to-upgrade-raspberry-pi-os-and-the-installed-packages">How to upgrade Raspberry Pi OS and the installed packages</a> - For any steps that ask you to make a choice, just pick the defaults.</p>
 </section>
 </section>
 <section id="set-up-remote-connections" class="level2" data-number="5">
@@ -701,12 +706,15 @@ Figure&nbsp;2: Memory select switch behind the reTerminal’s heatsink in the �
 <section id="set-up-tailscale" class="level3" data-number="5.1">
 <h3 data-number="5.1" class="anchored" data-anchor-id="set-up-tailscale"><span class="header-section-number">5.1</span> Set up Tailscale</h3>
 <ol type="1">
-<li>First, create an account on [Tailscale])(). You have the following choices for authentication:</li>
+<li>First, create an account on [Tailscale])(https://login.tailscale.com/start). You have the following choices for authentication:</li>
 </ol>
 <ul>
 <li>(Recommended) Your GitHub account</li>
 <li>Your school email address</li>
 </ul>
+<ol type="1">
+<li></li>
+</ol>
 <section id="on-the-raspberry-pi" class="level4" data-number="5.1.1">
 <h4 data-number="5.1.1" class="anchored" data-anchor-id="on-the-raspberry-pi"><span class="header-section-number">5.1.1</span> On the raspberry pi</h4>
 </section>
