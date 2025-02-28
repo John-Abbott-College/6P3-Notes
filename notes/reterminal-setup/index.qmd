@@ -71,6 +71,8 @@ We will sometimes need **elevated permissions** in order to install or operate s
 - On the Lab Computers, you can achieve elevated permissions by right-clicking on the
     executable and selecting the option: **"Run with elevated access"**.
     - You will be asked for your college username and password.
+        - **Click on the password field to get focus**
+            (the program doesn't focus on the password by default, which is very annoying)
     - You will then be asked for a reason for elevating permissions. Copy-paste: "6P3-W25 Raspberry Pi Setup"
 - On your personal computers, the options will depend on your OS:
     - Windows: The same as the Lab Computers, but use "Run as administrator" instead.
@@ -92,14 +94,16 @@ I've adapted those instructions for each possible operating system in the sectio
 
 ## Windows (recommended)
 
-- Download the repository using `git clone`.
-- Find the folder in **Windows Explorer**
-    - Note: if you used `git` in your WSL terminal to clone the repo, the path will be something like:
-        `\\wsl$\WSLImageName\home\username\path\to\usbboot`
-- Locate `rpiboot_setup.exe` within the `usbboot/win32/` directory. Run the executable with elevated permissions (see [@nte-elevated])
+- Download the [repository source code](https://github.com/raspberrypi/usbboot/) using `git clone`.
+    - Use your developer environment, i.e. your WSL instance, to do this (not git bash)
+- (important) Move the cloned `usbboot` folder to your home directory in the `C:\` drive
+    - Pro tip: do this in the terminal using the `mv` command, e.g. `mv /path/to/usbboot /mnt/c/Users/Michael.Haaf/Downloads`
+- in **Windows Explorer**, locate `rpiboot_setup.exe` within the `usbboot/win32/` directory.
+- Run the executable with elevated permissions (see [@nte-elevated])
     - If the software has already been installed, **press Yes to overwrite the existing installation**
     - By doing so, we will ensure that the software is the latest version (which will be important).
-- Raspberry pi drivers will begin to be installed on your computer. This process takes a few minutes. Move on to the next steps in the lab.
+- Raspberry pi drivers will begin to be installed on your computer.
+    - This process takes a few minutes. Keep the window open and move on to the next steps in the lab.
 - When this process is finished, you should now have the folder `C:\Program Files (x86)\Raspberry Pi\` on your computer.
 
 ## macOS/Linux
@@ -169,14 +173,14 @@ Memory select switch behind the reTerminal’s heatsink in the “down” positi
 
 To re-image the reTerminal, follow the steps below.
 
-#### Launch `rpi-boot`
+#### Launch `rpiboot`
 
 - [Double check you have finished the installation](#rpi-usb-device-boot-installation)
-- Launch the `rpi-boot` executable file with elevated permissions (see [@nte-elevated])
-    - On Windows, this should be `C:\Program Files (x86)\Raspberry Pi\rpi-boot.exe`
-    - On a personal macOS/Linux: I think it's `rpi-boot.sh` in the installation directory,
+- Launch the `rpiboot` executable file with elevated permissions (see [@nte-elevated])
+    - On Windows, this should be `C:\Program Files (x86)\Raspberry Pi\rpiboot.exe`
+    - On a personal macOS/Linux: I think it's `rpiboot.sh` in the installation directory,
         but check the project README to be sure
-- Keep the `rpi-boot` window open throughout the next steps of this lab.
+- Keep the `rpiboot` window open throughout the next steps of this lab.
 
 After launching, you should see a terminal window with something like the following dialog appear:
 
@@ -199,7 +203,7 @@ toggled "down" as in @fig-flash-mode).
         [you have missed a step in the disassembly process](#reimage-the-reterminal). In
         this case, stop, unplug the device, and read the previous instructions more
         carefully.
-- `rpi-boot` will detect and attach the reTerminal’s internal memory as a storage device.
+- `rpiboot` will detect and attach the reTerminal’s internal memory as a storage device.
 - At this stage, you should see some dialog appear in the RPIBOOT program:
 
 ```bash
@@ -216,10 +220,12 @@ Your output will not exactly match the example I have provided. Here are some gu
 
 - The program may close on its own, or may not. Either way is fine.
 - You can ignore the “warnings” that appear at the end of the logs.
+- You can ignore the "There is a problem with this drive" Windows notification.
 - The program should NOT repeatedly loop at `Sending bootcode4.bin...`
     - if this is the case, and no other messages appear, try the previous steps again,
         make sure you pay attention to details.
 
+Basically, unless the program is stuck in a loop, you should continue to the next step.
 
 #### Run Rasperry Pi (RPi) Imager
 
@@ -249,7 +255,7 @@ Your output will not exactly match the example I have provided. Here are some gu
     - Raspberry Pi Device: **Raspberry Pi 4**
     - Operating System: **Raspberry Pi OS 64-bit (Recommended)**
     - Storage: **RPi-MSD-0001 (31.3GB). DO NOT SELECT ANY OTHER STORAGE DEVICE**.
-        - If this storage device does not appear, you need to re-do the [`rpi-boot` steps](#launch-rpi-boot)
+        - If this storage device does not appear, you need to re-do the [`rpiboot` steps](#launch-rpiboot)
 - Once Raspberry Pi Images starts, writing the image to the reTerminal’s memory can take **10-15 minutes**.
     - **Do not disconnect the reTerminal during flashing!**
 
