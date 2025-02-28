@@ -348,21 +348,24 @@ You can do the "Install with one command" step, OR follow the manual steps if yo
 
 #### On your lab computer
 
-[Follow these instructions](https://tailscale.com/kb/1295/install-windows-wsl2)
+- Install on your WSL by [Following these instructions](https://tailscale.com/kb/1295/install-windows-wsl2)
+    - You can do the "Install with one command" step, OR follow the manual steps if you prefer.
+    - NOTE: you will probably need to also run the following command on your WSL:
+        - `sudo apt install curl`
+- ALSO install on the main Windows machine by [following these instructions](https://tailscale.com/kb/1022/install-windows)
+    - You may need to use elevated permissions for this, see [@nte-elevated]
 
-You can do the "Install with one command" step, OR follow the manual steps if you prefer.
 
-NOTE: you will probably need to also run the following command on your WSL:
 
-`sudo apt install curl`
 
 #### On your personal computer
 
 Depending on your operating system:
-- Windows: 
+- Windows:
     - Install on your WSL by [Following these instructions](https://tailscale.com/kb/1295/install-windows-wsl2)
-    - ALSO install on your main Windows machine by [following these instructions](https://tailscale.com/kb/1022/install-windows)
-        - You may need to use elevated permissions for this, see [@nte-elevated]
+        - You can do the "Install with one command" step, OR follow the manual steps if you prefer.
+        - NOTE: you will probably need to also run the following command on your WSL:
+            - `sudo apt install curl`
 - macOS: [Follow these instructions](https://tailscale.com/kb/1016/install-mac)
 - Linux: [Follow these instructions](https://tailscale.com/kb/1031/install-linux)
 
