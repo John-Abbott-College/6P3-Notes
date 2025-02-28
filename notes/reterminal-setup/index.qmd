@@ -295,20 +295,22 @@ Once your are logged into the reTerminal and you can see the display on the lab 
 
 1. Read and follow the steps outlined here:
     ["Install reTerminal drivers after flashing new Raspberry Pi OS/ Ubuntu OS or Other OS"](https://wiki.seeedstudio.com/reterminal_black_screen/#install-reterminal-drivers-after-flashing-new-raspberry-pi-os-ubuntu-os-or-other-os),
-    up to and including "sudo reboot".
+    up to and including `sudo reboot`.
+    - NOTE: recall that you have installed a **64-bit** OS on your reTerminal. **Do not** follow any 32-bit OS steps in the above instructions.
 1. If the above steps have been completed successfully, your device should reboot and
-    its screen should turn on (this takes several seconds, give it a minute before you
+    BOTH the raspberry pi screen AND the HDMI connection should work (this takes several seconds, give it a minute before you
     panic).
-1. Make sure your Pi is connected to the wall power supply, NOT to your computer (the
-    pi screen needs more power than your lab computer can provide).
+    - Make sure your Pi is connected to the wall power supply, NOT to your computer (the
+        pi screen needs more power than your lab computer can provide).
 
 ### Update & Upgrade
 
-Before you can install software on your linux system you need to make sure all packages
+A good first step for any OS installation is to ensure all system packages
 are at the latest version.
 
-Follow the official guide for the reTerminal FAQ Wiki:
+Follow the three steos in the official guide for the reTerminal FAQ Wiki:
 [How to upgrade Raspberry Pi OS and the installed packages](https://wiki.seeedstudio.com/reTerminal-FAQ/#q3-how-to-upgrade-raspberry-pi-os-and-the-installed-packages)
+    - For any steps that ask you to make a choice, just pick the defaults.
 
 ## Set up Remote connections
 
@@ -324,9 +326,10 @@ To fix this problem, we are going to use a remote networking tool called [Tailsc
 
 ### Set up Tailscale
 
-1. First, create an account on [Tailscale])(). You have the following choices for authentication:
+1. First, create an account on [Tailscale])(https://login.tailscale.com/start). You have the following choices for authentication:
   - (Recommended) Your GitHub account
   - Your school email address
+1. 
 
 #### On the raspberry pi
 
