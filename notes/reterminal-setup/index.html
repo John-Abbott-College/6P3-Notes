@@ -315,6 +315,7 @@ div.csl-indent {
   <li><a href="#on-the-raspberry-pi" id="toc-on-the-raspberry-pi" class="nav-link" data-scroll-target="#on-the-raspberry-pi"><span class="header-section-number">5.1.1</span> On the raspberry pi</a></li>
   <li><a href="#on-your-lab-computer" id="toc-on-your-lab-computer" class="nav-link" data-scroll-target="#on-your-lab-computer"><span class="header-section-number">5.1.2</span> On your lab computer</a></li>
   <li><a href="#on-your-personal-computer" id="toc-on-your-personal-computer" class="nav-link" data-scroll-target="#on-your-personal-computer"><span class="header-section-number">5.1.3</span> On your personal computer</a></li>
+  <li><a href="#verify-your-tailscale-setup" id="toc-verify-your-tailscale-setup" class="nav-link" data-scroll-target="#verify-your-tailscale-setup"><span class="header-section-number">5.1.4</span> Verify your tailscale setup</a></li>
   </ul></li>
   <li><a href="#set-up-vnc" id="toc-set-up-vnc" class="nav-link" data-scroll-target="#set-up-vnc"><span class="header-section-number">5.2</span> Set up VNC</a></li>
   <li><a href="#set-up-ssh" id="toc-set-up-ssh" class="nav-link" data-scroll-target="#set-up-ssh"><span class="header-section-number">5.3</span> Set up SSH</a>
@@ -713,14 +714,25 @@ Figure&nbsp;2: Memory select switch behind the reTerminal’s heatsink in the �
 <section id="on-the-raspberry-pi" class="level4" data-number="5.1.1">
 <h4 data-number="5.1.1" class="anchored" data-anchor-id="on-the-raspberry-pi"><span class="header-section-number">5.1.1</span> On the raspberry pi</h4>
 <p><a href="https://tailscale.com/download/linux/rpi-bullseye">Follow these instructions</a></p>
+<p>You can do the “Install with one command” step, OR follow the manual steps if you prefer.</p>
 </section>
 <section id="on-your-lab-computer" class="level4" data-number="5.1.2">
 <h4 data-number="5.1.2" class="anchored" data-anchor-id="on-your-lab-computer"><span class="header-section-number">5.1.2</span> On your lab computer</h4>
 <p><a href="https://tailscale.com/kb/1295/install-windows-wsl2">Follow these instructions</a></p>
+<p>You can do the “Install with one command” step, OR follow the manual steps if you prefer.</p>
+<p>NOTE: you will probably need to also run the following command on your WSL:</p>
+<p><code>sudo apt install curl</code></p>
 </section>
 <section id="on-your-personal-computer" class="level4" data-number="5.1.3">
 <h4 data-number="5.1.3" class="anchored" data-anchor-id="on-your-personal-computer"><span class="header-section-number">5.1.3</span> On your personal computer</h4>
 <p>Depending on your operating system: - Windows: use WSL and <a href="https://tailscale.com/kb/1295/install-windows-wsl2">Follow these instructions</a> - macOS: <a href="https://tailscale.com/kb/1016/install-mac">Follow these instructions</a> - Linux: <a href="https://tailscale.com/kb/1031/install-linux">Follow these instructions</a></p>
+<p>You can do the “Install with one command” step, OR follow the manual steps if you prefer.</p>
+</section>
+<section id="verify-your-tailscale-setup" class="level4" data-number="5.1.4">
+<h4 data-number="5.1.4" class="anchored" data-anchor-id="verify-your-tailscale-setup"><span class="header-section-number">5.1.4</span> Verify your tailscale setup</h4>
+<p>On either your lab/personal developer environment, OR your raspberry pi, run the command:</p>
+<p><code>tailscale status</code></p>
+<p>You should see the IP address for both your reTerminal AND your lab/personal developer environment. Take note of these IP addresses before moving on to the next steps.</p>
 </section>
 </section>
 <section id="set-up-vnc" class="level3" data-number="5.2">
