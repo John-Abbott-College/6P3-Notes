@@ -310,7 +310,12 @@ div.csl-indent {
   </ul></li>
   <li><a href="#set-up-remote-connections" id="toc-set-up-remote-connections" class="nav-link" data-scroll-target="#set-up-remote-connections"><span class="header-section-number">5</span> Set up Remote connections</a>
   <ul>
-  <li><a href="#set-up-tailscale" id="toc-set-up-tailscale" class="nav-link" data-scroll-target="#set-up-tailscale"><span class="header-section-number">5.1</span> Set up Tailscale</a></li>
+  <li><a href="#set-up-tailscale" id="toc-set-up-tailscale" class="nav-link" data-scroll-target="#set-up-tailscale"><span class="header-section-number">5.1</span> Set up Tailscale</a>
+  <ul class="collapse">
+  <li><a href="#on-the-raspberry-pi" id="toc-on-the-raspberry-pi" class="nav-link" data-scroll-target="#on-the-raspberry-pi"><span class="header-section-number">5.1.1</span> On the raspberry pi</a></li>
+  <li><a href="#on-your-lab-computer" id="toc-on-your-lab-computer" class="nav-link" data-scroll-target="#on-your-lab-computer"><span class="header-section-number">5.1.2</span> On your lab computer</a></li>
+  <li><a href="#on-your-personal-computer" id="toc-on-your-personal-computer" class="nav-link" data-scroll-target="#on-your-personal-computer"><span class="header-section-number">5.1.3</span> On your personal computer</a></li>
+  </ul></li>
   <li><a href="#set-up-vnc" id="toc-set-up-vnc" class="nav-link" data-scroll-target="#set-up-vnc"><span class="header-section-number">5.2</span> Set up VNC</a></li>
   <li><a href="#set-up-ssh" id="toc-set-up-ssh" class="nav-link" data-scroll-target="#set-up-ssh"><span class="header-section-number">5.3</span> Set up SSH</a>
   <ul class="collapse">
@@ -667,6 +672,7 @@ Figure&nbsp;2: Memory select switch behind the reTerminal’s heatsink in the �
 </ul></li>
 <li>Plug your reTerminal into the lab monitor using the provided microHDMI to HDMI converter</li>
 <li>Plug your reTerminal into the ethernet using the lab computer ethernet.</li>
+<li>Plug the lab keyboard and mouse into your reterminal USB.</li>
 </ul>
 <p>On first boot, your reTerminal screen will not turn on – this is why we need the microHDMI connection to the external monitor.</p>
 <p>The first task we need to take care of is fixing the reTerminal screen display drivers.</p>
@@ -687,15 +693,29 @@ Figure&nbsp;2: Memory select switch behind the reTerminal’s heatsink in the �
 </section>
 <section id="set-up-remote-connections" class="level2" data-number="5">
 <h2 data-number="5" class="anchored" data-anchor-id="set-up-remote-connections"><span class="header-section-number">5</span> Set up Remote connections</h2>
+<p>Going forward, we want to be able to use the reTerminal without having to plug it into an external monitor.</p>
+<p>Fixing the device screen was one step – however, we would also like to be able to use the reTerminal without relying on the small touchscreen either.</p>
+<p>We are going to rely on <strong>remote connections</strong> to the reTerminal in general in this class – that is, connecting to the reTerminal using an IP Address.</p>
+<p>Because the lab network has firewalls, however, we cannot do so directly using the lab ethernet or the campus WIFI.</p>
+<p>To fix this problem, we are going to use a remote networking tool called <a href="https://tailscale.com/">Tailscale</a>. Follow the steps below:</p>
 <section id="set-up-tailscale" class="level3" data-number="5.1">
 <h3 data-number="5.1" class="anchored" data-anchor-id="set-up-tailscale"><span class="header-section-number">5.1</span> Set up Tailscale</h3>
 <ol type="1">
-<li>Create an account. You have the following choices for authentication:</li>
+<li>First, create an account on [Tailscale])(). You have the following choices for authentication:</li>
 </ol>
 <ul>
 <li>(Recommended) Your GitHub account</li>
 <li>Your school email address</li>
 </ul>
+<section id="on-the-raspberry-pi" class="level4" data-number="5.1.1">
+<h4 data-number="5.1.1" class="anchored" data-anchor-id="on-the-raspberry-pi"><span class="header-section-number">5.1.1</span> On the raspberry pi</h4>
+</section>
+<section id="on-your-lab-computer" class="level4" data-number="5.1.2">
+<h4 data-number="5.1.2" class="anchored" data-anchor-id="on-your-lab-computer"><span class="header-section-number">5.1.2</span> On your lab computer</h4>
+</section>
+<section id="on-your-personal-computer" class="level4" data-number="5.1.3">
+<h4 data-number="5.1.3" class="anchored" data-anchor-id="on-your-personal-computer"><span class="header-section-number">5.1.3</span> On your personal computer</h4>
+</section>
 </section>
 <section id="set-up-vnc" class="level3" data-number="5.2">
 <h3 data-number="5.2" class="anchored" data-anchor-id="set-up-vnc"><span class="header-section-number">5.2</span> Set up VNC</h3>
