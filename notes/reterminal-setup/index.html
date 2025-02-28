@@ -662,7 +662,7 @@ Figure&nbsp;2: Memory select switch behind the reTerminal’s heatsink in the �
 </ol>
 </section>
 </section>
-<section id="first-boot" class="level2" data-number="4">
+<section id="first-boot" class="level2 page-columns page-full" data-number="4">
 <h2 data-number="4" class="anchored" data-anchor-id="first-boot"><span class="header-section-number">4</span> First Boot</h2>
 <p>Your reTerminal has been re-imaged! <strong>Make sure you have completed the <a href="#reassembly">reassembly</a></strong> steps, particularly that you have toggled the memory select switch back up to normal boot mode.</p>
 <p>At this point, we are now going to start running commands directly on the reTerminal itself. Follow the steps below:</p>
@@ -677,7 +677,7 @@ Figure&nbsp;2: Memory select switch behind the reTerminal’s heatsink in the �
 </ul>
 <p>On first boot, your reTerminal screen will not turn on – this is why we need the microHDMI connection to the external monitor.</p>
 <p>The first task we need to take care of is fixing the reTerminal screen display drivers.</p>
-<section id="display-driver-fix" class="level3" data-number="4.1">
+<section id="display-driver-fix" class="level3 page-columns page-full" data-number="4.1">
 <h3 data-number="4.1" class="anchored" data-anchor-id="display-driver-fix"><span class="header-section-number">4.1</span> Display driver fix</h3>
 <p>Once your are logged into the reTerminal and you can see the display on the lab monitor, follow the steps below:</p>
 <ol type="1">
@@ -690,7 +690,20 @@ Figure&nbsp;2: Memory select switch behind the reTerminal’s heatsink in the �
 <li>Make sure your Pi is connected to the wall power supply, NOT to your computer (the pi screen needs more power than your lab computer can provide).</li>
 </ul></li>
 </ol>
-</section>
+
+<div class="no-row-height column-margin column-container"><div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If your keyboard is in French mode on the raspberry pi, you can <a href="https://thelinuxcode.com/change-keyboard-layout-raspberry-pi/">follow the instructions here</a> to set it back into English (US) mode.</p>
+</div>
+</div></div></section>
 <section id="update-upgrade" class="level3" data-number="4.2">
 <h3 data-number="4.2" class="anchored" data-anchor-id="update-upgrade"><span class="header-section-number">4.2</span> Update &amp; Upgrade</h3>
 <p>A good first step for any OS installation is to ensure all system packages are at the latest version.</p>
@@ -706,15 +719,25 @@ Figure&nbsp;2: Memory select switch behind the reTerminal’s heatsink in the �
 <p>To fix this problem, we are going to use a remote networking tool called <a href="https://tailscale.com/">Tailscale</a>. Follow the steps below:</p>
 <section id="set-up-tailscale" class="level3" data-number="5.1">
 <h3 data-number="5.1" class="anchored" data-anchor-id="set-up-tailscale"><span class="header-section-number">5.1</span> Set up Tailscale</h3>
-<p>First, create an account on <a href="https://login.tailscale.com/start">Tailscale</a>. You have the following choices for authentication: - (Recommended) Your GitHub account - Your school email address</p>
-<p>If you’re curious to know more about Tailscale before you sign up, please ask me! You can also read about it here: - https://tailscale.com/why-tailscale - https://tailscale.com/blog/how-tailscale-works</p>
-<p>In the big picture: Tailscale will allow us to establish direct remote connections between our raspberry Pi and our developer environments.</p>
+<p>First, create an account on <a href="https://login.tailscale.com/start">Tailscale</a>. You have the following choices for authentication:</p>
+<ul>
+<li>(Recommended) Your GitHub account</li>
+<li>Your school email address</li>
+</ul>
+<p>If you’re curious to know more about Tailscale before you sign up, please ask me! You can also read about it here:</p>
+<ul>
+<li><a href="https://tailscale.com/why-tailscale" class="uri">https://tailscale.com/why-tailscale</a></li>
+<li><a href="https://tailscale.com/blog/how-tailscale-works" class="uri">https://tailscale.com/blog/how-tailscale-works</a></li>
+</ul>
+<p>In the big picture: Tailscale will allow us to establish direct remote connections between our raspberry Pi and our developer environments by creating a <a href="https://en.wikipedia.org/wiki/WireGuard">Wireguard</a> <a href="https://en.wikipedia.org/wiki/Virtual_private_network">VPN</a> <a href="https://en.wikipedia.org/wiki/Mesh_networking">mesh network</a> for us.</p>
 <p>To be clear, Tailscale is <em>free</em>, you will not need any of the paid features.</p>
 <p>After you have made an account, you will need to set it up on your pi and your developer environments, see instructions below.</p>
 <section id="on-the-raspberry-pi" class="level4" data-number="5.1.1">
 <h4 data-number="5.1.1" class="anchored" data-anchor-id="on-the-raspberry-pi"><span class="header-section-number">5.1.1</span> On the raspberry pi</h4>
 <p><a href="https://tailscale.com/download/linux/rpi-bullseye">Follow these instructions</a></p>
 <p>You can do the “Install with one command” step, OR follow the manual steps if you prefer.</p>
+<p>NOTE: you will probably need to also run the following command on your raspberry pi:</p>
+<p><code>sudo apt install curl</code></p>
 </section>
 <section id="on-your-lab-computer" class="level4" data-number="5.1.2">
 <h4 data-number="5.1.2" class="anchored" data-anchor-id="on-your-lab-computer"><span class="header-section-number">5.1.2</span> On your lab computer</h4>
@@ -722,20 +745,31 @@ Figure&nbsp;2: Memory select switch behind the reTerminal’s heatsink in the �
 <li>Install on your WSL by <a href="https://tailscale.com/kb/1295/install-windows-wsl2">Following these instructions</a>
 <ul>
 <li>You can do the “Install with one command” step, OR follow the manual steps if you prefer.</li>
-<li>NOTE: you will probably need to also run the following command on your WSL:
-<ul>
-<li><code>sudo apt install curl</code></li>
-</ul></li>
 </ul></li>
 <li>ALSO install on the main Windows machine by <a href="https://tailscale.com/kb/1022/install-windows">following these instructions</a>
 <ul>
 <li>You may need to use elevated permissions for this, see <a href="#nte-elevated" class="quarto-xref">Note&nbsp;1</a></li>
 </ul></li>
 </ul>
+<p>NOTE: you will probably need to also run the following command on your WSL:</p>
+<p><code>sudo apt install curl</code></p>
 </section>
 <section id="on-your-personal-computer" class="level4" data-number="5.1.3">
 <h4 data-number="5.1.3" class="anchored" data-anchor-id="on-your-personal-computer"><span class="header-section-number">5.1.3</span> On your personal computer</h4>
-<p>Depending on your operating system: - Windows: - Install on your WSL by <a href="https://tailscale.com/kb/1295/install-windows-wsl2">Following these instructions</a> - You can do the “Install with one command” step, OR follow the manual steps if you prefer. - NOTE: you will probably need to also run the following command on your WSL: - <code>sudo apt install curl</code> - macOS: <a href="https://tailscale.com/kb/1016/install-mac">Follow these instructions</a> - Linux: <a href="https://tailscale.com/kb/1031/install-linux">Follow these instructions</a></p>
+<p>Depending on your operating system:</p>
+<ul>
+<li>Windows:
+<ul>
+<li>Install on your WSL by <a href="https://tailscale.com/kb/1295/install-windows-wsl2">Following these instructions</a></li>
+<li>You can do the “Install with one command” step, OR follow the manual steps if you prefer.</li>
+</ul></li>
+</ul>
+<p>NOTE: you will probably need to also run the following command on your WSL:</p>
+<p><code>sudo apt install curl</code></p>
+<ul>
+<li>macOS: <a href="https://tailscale.com/kb/1016/install-mac">Follow these instructions</a></li>
+<li>Linux: <a href="https://tailscale.com/kb/1031/install-linux">Follow these instructions</a></li>
+</ul>
 <p>You can do the “Install with one command” step, OR follow the manual steps if you prefer.</p>
 </section>
 <section id="verify-your-tailscale-setup" class="level4" data-number="5.1.4">
@@ -752,14 +786,13 @@ Figure&nbsp;2: Memory select switch behind the reTerminal’s heatsink in the �
 <li><p>Once connected to the provided power cable, the reTerminal will boot and automatically login into the graphical desktop environment as the default user.</p></li>
 <li><p>The reTerminal has a touch screen which you are welcome to use for the next steps. However, <strong>I recommend plugging in your lab keyboard and/or mouse</strong> for these next few steps. <strong>Let me know if you need a keyboard/mouse.</strong></p></li>
 <li><p>Enable the VNC client in the <strong>Raspberry Pi Configuration menu</strong>.</p>
-<ol type="1">
-<li><p>Click on the Raspberry Pi <strong>icon</strong> (top right).</p></li>
-<li><p>Select <em><strong>Preferences</strong> &gt; <strong>Raspberry Pi Configuration</strong></em>.</p></li>
-<li><p>Open the <strong><em>Interfaces</em></strong> tab.</p></li>
-<li><p>Enable the <strong>VNC server</strong> (<em>disabled by default).</em></p></li>
-</ol></li>
-<li><p>Open a terminal on your Raspberry Pi. You want to double check your IP address.</p></li>
-<li><p>Take note of your Raspberry Pi’s local <strong>IP address</strong>.</p></li>
+<ul>
+<li>Click on the Raspberry Pi <strong>icon</strong> (top right).</li>
+<li>Select <em><strong>Preferences</strong> &gt; <strong>Raspberry Pi Configuration</strong></em>.</li>
+<li>Open the <strong><em>Interfaces</em></strong> tab.</li>
+<li>Enable the <strong>VNC server</strong> (<em>disabled by default).</em></li>
+</ul></li>
+<li><p>Open a terminal on your Raspberry Pi. Double check your IP address using <code>tailscale status</code></p></li>
 <li><p>At your lab computer, start the VNC Viewer client (RealVNC). You can run this program <em>without</em> elevated access.</p></li>
 <li><p>Connect to your Raspberry Pi using VNC Viewer in your lab computer.</p></li>
 <li><p>Enter the <strong>hostname</strong> you assigned to your Raspberry Pi in <em>Part 1, step 5</em> <strong>or</strong> the <strong>IP address</strong> you noted in step 5.</p>
