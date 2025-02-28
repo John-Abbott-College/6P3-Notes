@@ -344,9 +344,17 @@ After you have made an account, you will need to set it up on your pi and your d
 
 [Follow these instructions](https://tailscale.com/download/linux/rpi-bullseye)
 
+You can do the "Install with one command" step, OR follow the manual steps if you prefer.
+
 #### On your lab computer
 
 [Follow these instructions](https://tailscale.com/kb/1295/install-windows-wsl2)
+
+You can do the "Install with one command" step, OR follow the manual steps if you prefer.
+
+NOTE: you will probably need to also run the following command on your WSL:
+
+`sudo apt install curl`
 
 #### On your personal computer
 
@@ -354,6 +362,17 @@ Depending on your operating system:
 - Windows: use WSL and [Follow these instructions](https://tailscale.com/kb/1295/install-windows-wsl2)
 - macOS: [Follow these instructions](https://tailscale.com/kb/1016/install-mac)
 - Linux: [Follow these instructions](https://tailscale.com/kb/1031/install-linux)
+
+You can do the "Install with one command" step, OR follow the manual steps if you prefer.
+
+#### Verify your tailscale setup
+
+On either your lab/personal developer environment, OR your raspberry pi, run the command:
+
+`tailscale status`
+
+You should see the IP address for both your reTerminal AND your lab/personal developer environment.
+Take note of these IP addresses before moving on to the next steps.
 
 ### Set up VNC
 
