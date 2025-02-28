@@ -297,7 +297,7 @@ div.csl-indent {
   <li><a href="#reterminal-disassembly" id="toc-reterminal-disassembly" class="nav-link" data-scroll-target="#reterminal-disassembly"><span class="header-section-number">3.1</span> reTerminal Disassembly</a></li>
   <li><a href="#new-os-image-configuration" id="toc-new-os-image-configuration" class="nav-link" data-scroll-target="#new-os-image-configuration"><span class="header-section-number">3.2</span> New OS image &amp; Configuration</a>
   <ul class="collapse">
-  <li><a href="#launch-rpi-boot" id="toc-launch-rpi-boot" class="nav-link" data-scroll-target="#launch-rpi-boot"><span class="header-section-number">3.2.1</span> Launch <code>rpi-boot</code></a></li>
+  <li><a href="#launch-rpiboot" id="toc-launch-rpiboot" class="nav-link" data-scroll-target="#launch-rpiboot"><span class="header-section-number">3.2.1</span> Launch <code>rpiboot</code></a></li>
   <li><a href="#connect-the-reterminal-to-the-usb-port-of-your-machine." id="toc-connect-the-reterminal-to-the-usb-port-of-your-machine." class="nav-link" data-scroll-target="#connect-the-reterminal-to-the-usb-port-of-your-machine."><span class="header-section-number">3.2.2</span> Connect the reTerminal to the USB port of your machine.</a></li>
   <li><a href="#run-rasperry-pi-rpi-imager" id="toc-run-rasperry-pi-rpi-imager" class="nav-link" data-scroll-target="#run-rasperry-pi-rpi-imager"><span class="header-section-number">3.2.3</span> Run Rasperry Pi (RPi) Imager</a></li>
   </ul></li>
@@ -430,7 +430,10 @@ Note&nbsp;1: Elevated Permissions
 <ul>
 <li>On the Lab Computers, you can achieve elevated permissions by right-clicking on the executable and selecting the option: <strong>“Run with elevated access”</strong>.
 <ul>
-<li>You will be asked for your college username and password.</li>
+<li>You will be asked for your college username and password.
+<ul>
+<li><strong>Click on the password field to get focus</strong> (the program doesn’t focus on the password by default, which is very annoying)</li>
+</ul></li>
 <li>You will then be asked for a reason for elevating permissions. Copy-paste: “6P3-W25 Raspberry Pi Setup”</li>
 </ul></li>
 <li>On your personal computers, the options will depend on your OS:
@@ -451,17 +454,24 @@ Note&nbsp;1: Elevated Permissions
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <ul>
-<li>Download the repository using <code>git clone</code>.</li>
-<li>Find the folder in <strong>Windows Explorer</strong>
+<li>Download the <a href="https://github.com/raspberrypi/usbboot/">repository source code</a> using <code>git clone</code>.
 <ul>
-<li>Note: if you used <code>git</code> in your WSL terminal to clone the repo, the path will be something like: <code>\\wsl$\WSLImageName\home\username\path\to\usbboot</code></li>
+<li>Use your developer environment, i.e.&nbsp;your WSL instance, to do this (not git bash)</li>
 </ul></li>
-<li>Locate <code>rpiboot_setup.exe</code> within the <code>usbboot/win32/</code> directory. Run the executable with elevated permissions (see <a href="#nte-elevated" class="quarto-xref">Note&nbsp;1</a>)
+<li>(important) Move the cloned <code>usbboot</code> folder to your home directory in the <code>C:\</code> drive
+<ul>
+<li>Pro tip: do this in the terminal using the <code>mv</code> command, e.g.&nbsp;<code>mv /path/to/usbboot /mnt/c/Users/Michael.Haaf/Downloads</code></li>
+</ul></li>
+<li>in <strong>Windows Explorer</strong>, locate <code>rpiboot_setup.exe</code> within the <code>usbboot/win32/</code> directory.</li>
+<li>Run the executable with elevated permissions (see <a href="#nte-elevated" class="quarto-xref">Note&nbsp;1</a>)
 <ul>
 <li>If the software has already been installed, <strong>press Yes to overwrite the existing installation</strong></li>
 <li>By doing so, we will ensure that the software is the latest version (which will be important).</li>
 </ul></li>
-<li>Raspberry pi drivers will begin to be installed on your computer. This process takes a few minutes. Move on to the next steps in the lab.</li>
+<li>Raspberry pi drivers will begin to be installed on your computer.
+<ul>
+<li>This process takes a few minutes. Keep the window open and move on to the next steps in the lab.</li>
+</ul></li>
 <li>When this process is finished, you should now have the folder <code>C:\Program Files (x86)\Raspberry Pi\</code> on your computer.</li>
 </ul>
 </div>
@@ -536,16 +546,16 @@ Figure&nbsp;2: Memory select switch behind the reTerminal’s heatsink in the �
 <section id="new-os-image-configuration" class="level3" data-number="3.2">
 <h3 data-number="3.2" class="anchored" data-anchor-id="new-os-image-configuration"><span class="header-section-number">3.2</span> New OS image &amp; Configuration</h3>
 <p>To re-image the reTerminal, follow the steps below.</p>
-<section id="launch-rpi-boot" class="level4" data-number="3.2.1">
-<h4 data-number="3.2.1" class="anchored" data-anchor-id="launch-rpi-boot"><span class="header-section-number">3.2.1</span> Launch <code>rpi-boot</code></h4>
+<section id="launch-rpiboot" class="level4" data-number="3.2.1">
+<h4 data-number="3.2.1" class="anchored" data-anchor-id="launch-rpiboot"><span class="header-section-number">3.2.1</span> Launch <code>rpiboot</code></h4>
 <ul>
 <li><a href="#rpi-usb-device-boot-installation">Double check you have finished the installation</a></li>
-<li>Launch the <code>rpi-boot</code> executable file with elevated permissions (see <a href="#nte-elevated" class="quarto-xref">Note&nbsp;1</a>)
+<li>Launch the <code>rpiboot</code> executable file with elevated permissions (see <a href="#nte-elevated" class="quarto-xref">Note&nbsp;1</a>)
 <ul>
-<li>On Windows, this should be <code>C:\Program Files (x86)\Raspberry Pi\rpi-boot.exe</code></li>
-<li>On a personal macOS/Linux: I think it’s <code>rpi-boot.sh</code> in the installation directory, but check the project README to be sure</li>
+<li>On Windows, this should be <code>C:\Program Files (x86)\Raspberry Pi\rpiboot.exe</code></li>
+<li>On a personal macOS/Linux: I think it’s <code>rpiboot.sh</code> in the installation directory, but check the project README to be sure</li>
 </ul></li>
-<li>Keep the <code>rpi-boot</code> window open throughout the next steps of this lab.</li>
+<li>Keep the <code>rpiboot</code> window open throughout the next steps of this lab.</li>
 </ul>
 <p>After launching, you should see a terminal window with something like the following dialog appear:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">RPIBOOT:</span> build-date Jan 22 2023 version 20221215-105525 864863bc</span>
@@ -563,7 +573,7 @@ Figure&nbsp;2: Memory select switch behind the reTerminal’s heatsink in the �
 <ul>
 <li>NOTE: if the screen of the reTerminal turns on when you plug in the USB cable, <a href="#reimage-the-reterminal">you have missed a step in the disassembly process</a>. In this case, stop, unplug the device, and read the previous instructions more carefully.</li>
 </ul></li>
-<li><code>rpi-boot</code> will detect and attach the reTerminal’s internal memory as a storage device.</li>
+<li><code>rpiboot</code> will detect and attach the reTerminal’s internal memory as a storage device.</li>
 <li>At this stage, you should see some dialog appear in the RPIBOOT program:</li>
 </ul>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Sending</span> bootcode4.bin…</span>
@@ -577,11 +587,13 @@ Figure&nbsp;2: Memory select switch behind the reTerminal’s heatsink in the �
 <ul>
 <li>The program may close on its own, or may not. Either way is fine.</li>
 <li>You can ignore the “warnings” that appear at the end of the logs.</li>
+<li>You can ignore the “There is a problem with this drive” Windows notification.</li>
 <li>The program should NOT repeatedly loop at <code>Sending bootcode4.bin...</code>
 <ul>
 <li>if this is the case, and no other messages appear, try the previous steps again, make sure you pay attention to details.</li>
 </ul></li>
 </ul>
+<p>Basically, unless the program is stuck in a loop, you should continue to the next step.</p>
 </section>
 <section id="run-rasperry-pi-rpi-imager" class="level4" data-number="3.2.3">
 <h4 data-number="3.2.3" class="anchored" data-anchor-id="run-rasperry-pi-rpi-imager"><span class="header-section-number">3.2.3</span> Run Rasperry Pi (RPi) Imager</h4>
@@ -624,7 +636,7 @@ Figure&nbsp;2: Memory select switch behind the reTerminal’s heatsink in the �
 <li>Operating System: <strong>Raspberry Pi OS 64-bit (Recommended)</strong></li>
 <li>Storage: <strong>RPi-MSD-0001 (31.3GB). DO NOT SELECT ANY OTHER STORAGE DEVICE</strong>.
 <ul>
-<li>If this storage device does not appear, you need to re-do the <a href="#launch-rpi-boot"><code>rpi-boot</code> steps</a></li>
+<li>If this storage device does not appear, you need to re-do the <a href="#launch-rpiboot"><code>rpiboot</code> steps</a></li>
 </ul></li>
 </ul></li>
 <li>Once Raspberry Pi Images starts, writing the image to the reTerminal’s memory can take <strong>10-15 minutes</strong>.
