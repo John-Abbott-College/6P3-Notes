@@ -1,11 +1,11 @@
 ---
 title: "GPIOs: Inputs and Outputs"
 subtitle:
-  Understanding the General Purpose Input and Output (GPIO) pins our reSeed
-  terminal chassis makes available to us. Voltage, digital vs. analog, python
+  Understanding the General Purpose Input and Output (GPIO) pins our reTerminal
+  makes available to us. Voltage, digital vs. analog, python
   libraries for GPIO.
-date: 2024-02-26
-categories: ["Quiz 1", "Hardware"]
+date: 2024-03-10
+categories: ["Hardware"]
 draft: true
 ---
 

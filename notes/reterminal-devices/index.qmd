@@ -1,101 +1,24 @@
 ---
-title: "reTerminal Sensors"
+title: "reTerminal built-in devices"
 subtitle:
   Installing initial reTerminal packages. Reading and controlling the reTerminal
-  hardware interfaces, e.g. LEDs, light sensor, screen backlight, etc.
-categories: ["Hardware", "Quiz 1"]
-date: 2024-02-19
-draft: true
+  hardware interfaces, e.g. touchscreen, LEDs, light sensor, screen backlight, etc.
+categories: ["Hardware"]
+date: 2024-03-10
 ---
 
-## Lab 1 Review
+::: {.column-margin}
 
-After Lab 1, you have taken the following steps:
+![A diagram showing how the electrostatic field changes caused by touch is processed by devices like the reTerminal. [Image source](wiringfixsecessions.z21.web.core.windows.net)](assets/capacitive-touch.jpg)
 
-1. Install the Raspberry Pi OS image.
+:::
 
-- disassemble, flip the memory switch and use `usbboot/rpiboot` script to
-  prepare internal memory for firmware flash.
-- use Raspberry Pi Imager to flash new image 64bit "Bookworm" Raspberry OS with
-  chosen username/password and SSH enabled
-- fix the "black screen" issue by installing the latest seeed overlay drivers
-
-2. Update system packages
-
-- update system repositories with `sudo apt update` and `sudo apt upgrade`
-- install kernel headers with `sudo apt install raspberrypi-kernel-headers`
-- install `git` and `docker`, deploy simple Python webserver docker container
-
-3. Set up remote connection interfaces
-
-- determine your assigned IP address on the class LAN
-- determine your device MAC address
-- enable VNC interface
-
-It's time to take a deeper look at the hardware and software our reTerminal
-offers.
-
-## Hardware
-
-_This section is adapted directly from the reTerminal wiki:
-["Getting Started with reTerminal"](https://wiki.seeedstudio.com/reTerminal/#features)_
-
-The reTerminal is powered by a Raspberry Pi Compute Module 4 (CM4) which is a
-Quad-Core Cortex-A72 CPU running at 1.5GHz and a 5-inch IPS capacitive
-multi-touch screen with a resolution of 1280 x 720. It has sufficient amount of
-RAM (4GB) to perform multitasking and also has sufficient amount of eMMC storage
-(32GB) to install an operating system, enabling fast boot up times and smooth
-overall experience. It has wireless connectivity with dual-band 2.4GHz/5GHz
-Wi-Fi and Bluetooth 5.0 BLE.
-
-reTerminal consists of a high-speed expansion interface and rich I/O for more
-expandability. This device has security features such as a cryptographic
-co-processor with secure hardware-based key storage. It also has built-in
-modules such as an accelerometer, light sensor and an RTC (Real-Time Clock).
-reTerminal has a Gigabit Ethernet Port for faster network connections and also
-has dual USB 2.0 Type-A ports. The 40-pin header on the reTerminal opens it for
-a wide range of IoT applications.
-
-### Firmware & Version
-
----
-
-Released Date Pre-Installed OS Pre-Installed Board Version  
- STM32 Firmware
-
----
-
-06/15/2021 2021-06-02-Raspbian(modified)-32-bit V1.0 v1.3
-
-08/03/2021 2021-06-02-Raspbian(modified)-32-bit V1.1 v1.4
-
-09/03/2021 2021-06-02-Raspbian(modified)-32-bit V1.6 v1.6
-
-11/02/2021 2021-09-14-Raspbian(modified)-32-bit V1.8 v1.6
-
-## **Winter 2024** **What OS did we install in Lab 1?** V1.8 v1.6
-
-**You can find a complete list of the reTerminal specifications here:
-[reTerminal Specifications](https://wiki.seeedstudio.com/reTerminal/#specifications)**
-
-## Raspberry Pi OS
-
-In Lab 1, we re-imaged the reTerminal Operating System to run the latest,
-recommended version of 64-bit Raspberry Pi OS.
-
-Raspberry Pi OS (previously called _Raspbian OS_) is a variation of the
-[**Debian OS**](https://en.wikipedia.org/wiki/Debian), with optimizations for
-the Raspberry Pi hardware.
-
-You can see more about Raspberry Pi OS and Debian in the
-[Linux](/topics/linux/docs/package-management-debian.qmd) set of lessons.
-
-## Programmable Sensors
+## Programmable interfaces
 
 _This section is based on the official documentation for the reTerminal:
 [Hardware and Interfaces Usage](https://wiki.seeedstudio.com/reTerminal-hardware-interfaces-usage/#3-user-programmable-leds)_
 
-> In Linux, everything is a file stream that can be read and/or written to.
+All programmable data can be passed in file streams that can be read and/or written to.
 
 For example, keyboard inputs and communication over web-sockets are all read as
 a file streams.
@@ -103,19 +26,23 @@ a file streams.
 The reTerminal has 3 programmable LED's and a light sensor that can be
 **controlled like a regular file**.
 
-![](../assets/5-reterminal-buttons-light-sensor.png)
+::: {.column-margin}
+![reTerminal interface overview. [Image source](https://wiki.seeedstudio.com/reTerminal-hardware-interfaces-usage/)](assets/reterminal-buttons-light-sensor.png)
+:::
 
 You can see, there are 3 programmable LEDs in the reTerminal:
 
 - **STA** light can be turned on as **red or green**.
 - **USR** light can only be turned on as **green**.
 
-![](../assets/5-reterminal_leds.png ":size=400")
+::: {.column-margin}
+![The reTerminal LEDs and their corresponding filenames. [Image source](https://wiki.seeedstudio.com/reTerminal-hardware-interfaces-usage/)](assets/reterminal-leds.png)
+:::
 
 The lights can be controlled at the OS level by editing files in the
 `/sys/class/leds/` directory. Use `ls -al` to list the files in this directory:
 
-```bash
+```bash {filename=bash}
 username@hostname:/sys/class/leds/usr_led0 $ ls -al
 total 0
 drwxr-xr-x 3 root root    0 Jan 25 20:33 .
@@ -123,7 +50,9 @@ drwxr-xr-x 8 root root    0 Jan 25 20:33 ..
 -rw-r--r-- 1 root root 4096 Jan 26 22:02 brightness
 ```
 
-![Unix Permissions cheatsheet by Julia Evans](../assets/5-unix-permissions-cheatsheet.png)
+::: {.column-margin}
+![Unix Permissions cheatsheet by Julia Evans. See more about permissions in the [bash course notes](/notes/bash-scripting/index.html#permissions)](assets/unix-permissions-cheatsheet.png).
+:::
 
 The `brightness` file inide the `usr_led0` controls the brightness of LED0. But,
 because only `root` has write permissions to this file, we will likely run into
@@ -151,7 +80,7 @@ You can open a text-editor with `root` permissions using `sudo`:
 sudo nano /sys/class/leds/usr_led0/brightness
 
 # or, you can use vi/vim text editor
-sudo vi /sys/class/leds/usr_led0/brightness
+sudo vim /sys/class/leds/usr_led0/brightness
 ```
 
 Edit the `brightness` file to a value between 0-255 using the editor. When you
@@ -251,9 +180,6 @@ DESCRIPTION
 We have here a command that will read from standard input, and _write that same
 content from standard input into BOTH standard output AND files_ -- the files we
 can specify as arguments.
-
-**Challenge for Lab 2:** where would you put `tee` and `sudo` in the command
-below, to fix our permissions problems?
 
 ```bash
 $ echo 255 | /sys/class/leds/usr-led0/brightness
