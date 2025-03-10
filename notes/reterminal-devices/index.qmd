@@ -226,12 +226,11 @@ Install the library `seeed-python-reterminal` (see official
 `pip`:
 
 **NOTE:** See
-[Package Management in Python](/topics/python/docs/package-management-python.qmd)
-for a clear explanation of how to use `venv` and `pip`, particularly for
-[apps requiring root permissions](/topics/python/docs/package-management-python.qmd#root-permissions)
-consumer
+[Package Management in Python](/notes/python-environments/)
+for a clear explanation of how to use `venv` and `pip`.
 
 ```bash
+# NOTE: run this with a venv activated! 
 pip install seeed-python-reterminal
 ```
 
