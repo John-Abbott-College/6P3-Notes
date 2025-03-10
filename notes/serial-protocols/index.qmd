@@ -3,8 +3,7 @@ title: "Serial protocols"
 subtitle:
   "A deeper dive into the protocols used to communicate between GPIO and the
   kernel"
-date: 2024-03-11
-draft: true
+date: 2024-03-14
 ---
 
 ## Serial Protocols

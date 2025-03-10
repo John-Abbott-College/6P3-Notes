@@ -3,9 +3,8 @@ title: "Signals: Analog and digital"
 subtitle:
   Comparing the two paradigms for measuring electronic information and
   understanding how each are used for distributed applications.
-date: 2024-02-26
+date: 2024-03-14
 categories: ["Hardware"]
-draft: true
 ---
 
 We will use analog and digital signals to communicate with sensors.
