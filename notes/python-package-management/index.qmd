@@ -1,11 +1,10 @@
 ---
-title: "Package management"
+title: "Python package management"
 subtitle:
   How to use OS package managers, virtual environments, and `pip` to manage
   python applications effectively.
-date: 2024-02-19
-categories: ["Quiz 1", "Python"]
-draft: true
+date: 2024-03-10
+categories: ["Python"]
 ---
 
 ## Overview
@@ -44,8 +43,12 @@ Raspberry Pi OS.
 
 ## Installing Python packages using apt
 
-::: {.callout-important} Installing packages using `apt` is the preferred method
-for installing Python libraries under Raspberry Pi OS. :::
+::: {.callout-important}
+
+Installing packages using `apt` is the preferred method
+for installing Python libraries under Raspberry Pi OS.
+
+:::
 
 Packages installed via `apt` are tested, are usually pre-compiled so they
 install faster, and are designed for Raspberry Pi OS. They won't break your
@@ -61,13 +64,11 @@ by professionals and hobbyists alike.
 To see an example: you may find yourself wanting to install the Python 3 library
 to support the Raspberry Pi
 [BuildHAT](https://www.raspberrypi.com/documentation/accessories/build-hat.html)
-component. To install this using `apt1, you would:
+component. To install this using `apt`, you would:
 
 ```bash
 $ sudo apt install python3-build-hat
 ```
-
-...​to install the pre-built library.
 
 If you want to install a Python library called \"foobar\" you can
 use`apt search foobar` to find the exact package name -- partial search matches
@@ -78,10 +79,12 @@ native dependencies including a Fortran compiler), _much simpler and more
 predictable_ than installing individual packages using Python's own
 package-management system.
 
-::: {.callout} In `apt`, Python packages have a consistent naming scheme: you'll
+::: {.callout-note}
+In `apt`, Python packages have a consistent naming scheme: you'll
 find that the a given package "foobar" is going to be called `python-foobar` or
 `python3-foobar` in the `apt` repositories -- this helps distinguish python
-packages from other packages on a debian system. :::
+packages from other packages on a debian system.
+:::
 
 ## Installing python packages using Pip
 
@@ -153,8 +156,10 @@ interfere with, or break, your system Python.
 
 ### Using pip with virtual environments
 
-::: {.callout} Any packages that cannot be installed using `apt` should instead
-installed onto a Python Virtual Environment using `venv` and `pip`. :::
+::: {.callout-note}
+Any packages that cannot be installed using `apt` should instead
+installed onto a Python Virtual Environment using `venv` and `pip`.
+:::
 
 To use a virtual environment you will need to create a container to store the
 environment. There are several ways you can do this depending on how you want to
@@ -184,14 +189,16 @@ drwxr-xr-x  5 pi pi 4096 Oct  3 14:34 env
 $
 ```
 
-::: {.callout-important} **Very important for Lab2:**
+::: {.callout-important}
 
 If you want to inherit the currently installed packages from the system Python,
 you should create your virtual environment using
 `python -m venv --system-site-packages env`.
 
 This will include the important Raspberry PI python modules that come with
-RaspberryPi OS in your venv. :::
+RaspberryPi OS in your venv.
+
+:::
 
 Inside this directory is a full Python distribution. How do we use it?
 
@@ -300,9 +307,11 @@ You can access all modules you’ve installed to your base Python’s site-packa
 directory by adding the `--system-site-packages` flag when creating your virtual
 environment.
 
-::: {.callout} Note: If you install any additional external packages, then
+::: {.callout-note}
+If you install any additional external packages, then
 Python will put them into the site-packages directory of your virtual
-environment. You only get read access to the system site-packages directory. :::
+environment. You only get read access to the system site-packages directory.
+:::
 
 Create a new virtual environment while passing this argument. You’ll see that in
 addition to your local site-packages directory, the path to your base Python’s
@@ -330,11 +339,13 @@ version = 3.11
 
 By default, the `include-system-site-packages` is set to false.
 
-::: {.callout} It is common to forget to include the `--system-site-packages`
+::: {.callout-note}
+It is common to forget to include the `--system-site-packages`
 flag when creating a venv. **If you create a virtual environment and forget to
 include system site packages, you can include them again by changing
 `include-system-site-packages` in your environment `env/pyvenv.cfg` to `true` in
-your venv**. :::
+your venv**.
+:::
 
 This change means that you’ll see an additional entry to sys.path, which allows
 the Python interpreter in your virtual environment to also access the system
