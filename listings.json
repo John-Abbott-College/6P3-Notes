@@ -2,6 +2,7 @@
   {
     "listing": "/notes/index.html",
     "items": [
+      "/notes/reterminal-devices/index.html",
       "/notes/course-hardware/index.html",
       "/notes/developer-environment/index.html",
       "/notes/bash-essentials/index.html",
