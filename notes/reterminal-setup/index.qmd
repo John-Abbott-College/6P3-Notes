@@ -425,6 +425,8 @@ graphical shell of the lab computer, in addition to SSH.
 
 1. At your lab computer, start the VNC Viewer client (RealVNC). You can run this program
     *without* elevated access.
+      - RealVNC is already installed on the lab computers. If working on a personal device, you can install it [here](https://www.realvnc.com/en/connect/download/viewer/)
+      - NOTE: you DO NOT need to make an account or sign up for RealVNC. There is an option to  
 
 1. Connect to your Raspberry Pi using VNC Viewer in your lab computer.
 

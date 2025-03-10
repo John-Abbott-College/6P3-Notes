@@ -1,5 +1,5 @@
 ---
-title: Python environment management
+title: Python project management
 subtitle: >
   Managing python development and runtime dependencies.
   Using virtual environments.
@@ -10,7 +10,7 @@ date: 2025-03-10
 
 ## Virtual Environments
 
-This section shows the use the python virtual environments with the `venv`
+This section shows the use the python virtual environments (virt. envs.) with the `venv`
 built-in tool.
 
 `venv` is the officially recommended way to manage virt. envs. but it's not the only one.
