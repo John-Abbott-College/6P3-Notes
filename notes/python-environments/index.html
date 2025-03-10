@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-01-20">
+<meta name="dcterms.date" content="2025-03-10">
 
-<title>Home – Connected Objects</title>
+<title>Python project management – Connected Objects</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,25 +24,27 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./assets/favicon_io/favicon.ico" rel="icon">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-fd1ebc2be5d5e40ebb2e000ad5234134.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-f53edd92e5d9bc67b961c45b13ebda2d.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-ae88efe0b7c31e6578cce92c213ac82a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-73fae4600b5030606feb7fcd3e669409.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<script src="site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../notes/analog-vs-digital/index.html" rel="next">
+<link href="../../notes/gpios/index.html" rel="prev">
+<link href="../../assets/favicon_io/favicon.ico" rel="icon">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-fd1ebc2be5d5e40ebb2e000ad5234134.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-f53edd92e5d9bc67b961c45b13ebda2d.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-ae88efe0b7c31e6578cce92c213ac82a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-73fae4600b5030606feb7fcd3e669409.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": true,
@@ -70,23 +72,23 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="Home – Connected Objects">
-<meta property="og:description" content="">
-<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/assets/art_title_path_only.svg">
+<meta property="og:title" content="Python project management – Connected Objects">
+<meta property="og:description" content="Managing python development and runtime dependencies. Using virtual environments. Configuring python linters and formatters.">
+<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/notes/python-environments/assets/art_title_path_only.svg">
 <meta property="og:site_name" content="{{< var course.title >}}">
 </head>
 
-<body class="docked nav-fixed">
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./assets/favicon_io/favicon-32x32.png" alt="" class="navbar-logo">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../assets/favicon_io/favicon-32x32.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Connected Objects</span>
     </a>
   </div>
@@ -106,65 +108,65 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-course-notes">    
         <li>
-    <a class="dropdown-item" href="./notes/index.html">
+    <a class="dropdown-item" href="../../notes/index.html">
  <span class="dropdown-text">All course notes</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./notes/bash-essentials/index.html">
+    <a class="dropdown-item" href="../../notes/bash-essentials/index.html">
  <span class="dropdown-text">Bash essentials</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./notes/reterminal-setup/index.html">
+    <a class="dropdown-item" href="../../notes/reterminal-setup/index.html">
  <span class="dropdown-text">Reterminal setup</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./notes/gpios/index.html">
+    <a class="dropdown-item" href="../../notes/gpios/index.html">
  <span class="dropdown-text">GPIOs: Inputs and Outputs</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./notes/python-environments/index.html">
+    <a class="dropdown-item" href="../../notes/python-environments/index.html">
  <span class="dropdown-text">Python project management</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./notes/analog-vs-digital/index.html">
+    <a class="dropdown-item" href="../../notes/analog-vs-digital/index.html">
  <span class="dropdown-text">Signals: Analog and digital</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./notes/reterminal-devices/index.html">
+    <a class="dropdown-item" href="../../notes/reterminal-devices/index.html">
  <span class="dropdown-text">reTerminal built-in devices</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./notes/bash-scripting/index.html">
+    <a class="dropdown-item" href="../../notes/bash-scripting/index.html">
  <span class="dropdown-text">Bash scripting</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./notes/serial-protocols/index.html">
+    <a class="dropdown-item" href="../../notes/serial-protocols/index.html">
  <span class="dropdown-text">Serial protocols</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./notes/course-hardware/index.html">
+    <a class="dropdown-item" href="../../notes/course-hardware/index.html">
  <span class="dropdown-text">Course hardware</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./notes/developer-environment/index.html">
+    <a class="dropdown-item" href="../../notes/developer-environment/index.html">
  <span class="dropdown-text">Developer environment setup</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./notes/github-basics/index.html">
+    <a class="dropdown-item" href="../../notes/github-basics/index.html">
  <span class="dropdown-text">GitHub basics</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./about/syllabus/index.html"> 
+    <a class="nav-link" href="../../about/syllabus/index.html"> 
 <span class="menu-text">Syllabus</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about/calendar/index.html"> 
+    <a class="nav-link" href="../../about/calendar/index.html"> 
 <span class="menu-text">Calendar</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about/this-site/index.html"> 
+    <a class="nav-link" href="../../about/this-site/index.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
@@ -178,23 +180,93 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/python-environments/index.html">Python project management</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">All course notes</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/bash-essentials/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bash essentials</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/reterminal-setup/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Reterminal setup</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/python-environments/index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Python project management</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/reterminal-devices/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">reTerminal built-in devices</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/bash-scripting/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bash scripting</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/course-hardware/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Course hardware</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/developer-environment/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Developer environment setup</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/github-basics/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">GitHub basics</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
     <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="1">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome"><span class="header-section-number">1</span> Welcome 📡</a>
+  <li><a href="#virtual-environments" id="toc-virtual-environments" class="nav-link active" data-scroll-target="#virtual-environments"><span class="header-section-number">1</span> Virtual Environments</a>
   <ul>
-  <li><a href="#description" id="toc-description" class="nav-link" data-scroll-target="#description"><span class="header-section-number">1.1</span> Description</a></li>
-  <li><a href="#requirements" id="toc-requirements" class="nav-link" data-scroll-target="#requirements"><span class="header-section-number">1.2</span> Requirements</a></li>
-  <li><a href="#source-code" id="toc-source-code" class="nav-link" data-scroll-target="#source-code"><span class="header-section-number">1.3</span> Source Code</a>
-  <ul class="collapse">
-  <li><a href="#download-and-run-locally" id="toc-download-and-run-locally" class="nav-link" data-scroll-target="#download-and-run-locally"><span class="header-section-number">1.3.1</span> Download and run locally</a></li>
-  </ul></li>
+  <li><a href="#why-virtual-environments" id="toc-why-virtual-environments" class="nav-link" data-scroll-target="#why-virtual-environments"><span class="header-section-number">1.1</span> Why Virtual Environments?</a></li>
+  <li><a href="#virtual-dependency-steps" id="toc-virtual-dependency-steps" class="nav-link" data-scroll-target="#virtual-dependency-steps"><span class="header-section-number">1.2</span> Virtual Dependency Steps</a></li>
+  <li><a href="#creating" id="toc-creating" class="nav-link" data-scroll-target="#creating"><span class="header-section-number">1.3</span> Creating</a></li>
+  <li><a href="#activate-deactivate" id="toc-activate-deactivate" class="nav-link" data-scroll-target="#activate-deactivate"><span class="header-section-number">1.4</span> Activate &amp; Deactivate</a></li>
+  <li><a href="#installing-packages-with-pip" id="toc-installing-packages-with-pip" class="nav-link" data-scroll-target="#installing-packages-with-pip"><span class="header-section-number">1.5</span> Installing Packages with <code>pip</code></a></li>
+  <li><a href="#using-requirements.txt" id="toc-using-requirements.txt" class="nav-link" data-scroll-target="#using-requirements.txt"><span class="header-section-number">1.6</span> Using <code>requirements.txt</code></a></li>
+  <li><a href="#moving-virtual-environments" id="toc-moving-virtual-environments" class="nav-link" data-scroll-target="#moving-virtual-environments"><span class="header-section-number">1.7</span> Moving Virtual Environments</a></li>
+  <li><a href="#virtual-env-exercises" id="toc-virtual-env-exercises" class="nav-link" data-scroll-target="#virtual-env-exercises"><span class="header-section-number">1.8</span> Virtual Env Exercises</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -208,8 +280,12 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Home</h1>
-</div>
+<h1 class="title">Python project management</h1>
+<p class="subtitle lead"></p><p>Managing python development and runtime dependencies. Using virtual environments. Configuring python linters and formatters.</p><p></p>
+  <div class="quarto-categories">
+    <div class="quarto-category">python</div>
+  </div>
+  </div>
 
 
 
@@ -219,7 +295,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 20, 2025</p>
+      <p class="date">March 10, 2025</p>
     </div>
   </div>
   
@@ -237,52 +313,147 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="welcome" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Welcome 📡</h1>
-<p>This companion site for the 420-6P3 course includes:</p>
+<section id="virtual-environments" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="virtual-environments"><span class="header-section-number">1</span> Virtual Environments</h2>
+<p>This section shows the use the python virtual environments (virt. envs.) with the <code>venv</code> built-in tool.</p>
+<p><code>venv</code> is the officially recommended way to manage virt. envs. but it’s not the only one. Other tools such as <a href="https://docs.conda.io/en/latest/index.html">Conda</a>, <a href="https://pipenv.pypa.io/en/latest/">Pipenv</a>, <a href="https://python-poetry.org/">Poetry</a> and <a href="https://pdm.fming.dev/latest/">PDM</a> are other options.</p>
 <blockquote class="blockquote">
+<p><strong>Short guide by <em>python.org</em></strong></p>
 <ul>
-<li>Lecture slides / documents</li>
-<li>Exercises</li>
-<li>References &amp; Resources</li>
+<li><a href="https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/#installing-packages-using-pip-and-virtual-environments">Installing packages using pip and virtual environments</a></li>
+</ul>
+<p><strong>Detailed guide by <em>RealPython.com</em></strong></p>
+<ul>
+<li>*<a href="https://realpython.com/python-virtual-environments-a-primer/">Python Virtual Environments: A Primer</a> *</li>
 </ul>
 </blockquote>
-<p>Website accessible at <strong><a href="https://john-abbott-college.github.io/6P3-Notes">john-abbott-college.github.io/6P3-Notes</a></strong></p>
-<section id="description" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="description"><span class="header-section-number">1.1</span> Description</h2>
-<p>This course will introduce students to the principles of the Internet of Things (IoT). Students will use Linux and Python to program a Raspberry Pi in order to read data from sensors and control actuators.</p>
-<p>By the end of the course, students build and deploy an IoT product that is securely connected to the Azure ecosystem in order to collect and analyse telemetry data as well as respond to remote commands.</p>
-</section>
-<section id="requirements" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="requirements"><span class="header-section-number">1.2</span> Requirements</h2>
-<ul>
-<li>Experience using Object Oriented Programming to create applications in any language.</li>
-<li>Familiarity using the Bash shell and basic Linux CLI.</li>
-<li>Familiarity with Python.</li>
-<li>A Raspberry Pi with various sensors and actuators (see page <a href="topics/getting-started/docs/hardware-list.qmd">Hardware List</a>).</li>
-<li>A Microsoft Azure account: create a free <a href="https://azure.microsoft.com/en-us/free/students/">Azure for Students account</a> if necessary.</li>
-<li>VS Code configured for Python programming and remote development (see page <a href="topics/getting-started/docs/vscode-python-setup.qmd">Dev Setup</a>).</li>
-</ul>
-</section>
-<section id="source-code" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="source-code"><span class="header-section-number">1.3</span> Source Code</h2>
-<p>This webpage is written in <a href="https://www.markdownguide.org">Markdown</a> using the <a href="https://quarto.org/">Quarto</a> framework. The website is hosted via <a href="https://pages.github.com/">GitHub Pages</a></p>
-<p>Source code is <strong>open source</strong> and <a href="https://github.com/John-Abbott-College/6P3-Notes">available on GitHub</a>.</p>
-<section id="download-and-run-locally" class="level3" data-number="1.3.1">
-<h3 data-number="1.3.1" class="anchored" data-anchor-id="download-and-run-locally"><span class="header-section-number">1.3.1</span> Download and run locally</h3>
-<p>Create a local copy of these notes:</p>
+<section id="why-virtual-environments" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="why-virtual-environments"><span class="header-section-number">1.1</span> Why Virtual Environments?</h3>
+<p>Python is not good at dependency management. We want to avoid:</p>
 <ol type="1">
-<li><p>Install <a href="https://quarto.org/docs/get-started/">Quarto</a> for your system</p></li>
-<li><p>Clone the <a href="https://github.com/John-Abbott-College/6P3-Notes">course GitHub repository</a>.</p></li>
-<li><p>Preview the website:</p>
-<p><code>quarto preview .</code></p></li>
+<li><p><strong>Avoid system pollution</strong></p>
+<ul>
+<li>Installing packages to the OS’s global Python will mix them with OS relevant packages. This could have unexpected side effects on OS tasks.</li>
+<li>Because of the reason above, updating OS packages might overwrite or delete global Python packages.</li>
+</ul></li>
+<li><p><strong>Avoid project dependency conflicts</strong></p>
+<ul>
+<li>Python projects might require different versions the same external library.</li>
+</ul></li>
+<li><p><strong>Making projects reproducible in other environments.</strong></p>
+<ul>
+<li>Since all dependencies are isolated to a specific project, it is easier to identify and document them.</li>
+<li>Once the dependencies are “locked”, the project dependency can be easily reproduced in other environments.</li>
+</ul></li>
 </ol>
-<hr>
-<p>This work is licensed under a <a href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>. See the <a href="https://john-abbott-college.github.io/6P3-Notes/about/this-site.html#copyright">Copyright statement</a> on the course webpage.</p>
-<p><a href="http://creativecommons.org/licenses/by-nc/4.0/"><img src="https://licensebuttons.net/l/by-nc/4.0/88x31.png" class="img-fluid" alt="CC BY-NC 4.0"></a> <a href="https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg"><img src="https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg" class="img-fluid" alt="CC BY-NC 4.0"></a></p>
-
-
 </section>
+<section id="virtual-dependency-steps" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="virtual-dependency-steps"><span class="header-section-number">1.2</span> Virtual Dependency Steps</h3>
+<p>Creating and using virtual environments involved the following steps:</p>
+<ol type="1">
+<li>Creation</li>
+<li>Activation</li>
+<li>Installing dependencies</li>
+<li>Deactivation</li>
+<li>Locking dependencies</li>
+</ol>
+</section>
+<section id="creating" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="creating"><span class="header-section-number">1.3</span> Creating</h3>
+<ol type="1">
+<li><p>Create a new folder for the project (if one doesn’t already exist).</p></li>
+<li><p><code>cd</code> into the folder and create a new virt. env.:</p></li>
+</ol>
+<pre class="shell"><code>$ python3 -m venv my-env</code></pre>
+<p>Note that <code>my-env</code> is the name of your virtual environment. <code>venv</code> is a popular choice.</p>
+</section>
+<section id="activate-deactivate" class="level3" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="activate-deactivate"><span class="header-section-number">1.4</span> Activate &amp; Deactivate</h3>
+<p>Once created, the virt. env. needs to be activated.</p>
+<pre class="shell"><code># Linux
+$ source my-env/bin/activate
+
+# Windows
+$ my-env/Scripts/activate.bat</code></pre>
+<blockquote class="blockquote">
+<p><strong>Note:</strong> You can work with virtual environments without activating it. To do this, <a href="https://realpython.com/python-virtual-environments-a-primer/#it-runs-from-anywhere-with-absolute-paths">provide the full path</a> to its Python interpreter when executing a command.</p>
+<p>Typically, you’ll want to activate the virtual environment to avoid repeatedly having to type long paths.</p>
+</blockquote>
+<p>To deactivate:</p>
+<pre class="shell"><code># Notice the shell prompt indicates a virt. env. is active
+$ (my-env) deactivate</code></pre>
+</section>
+<section id="installing-packages-with-pip" class="level3" data-number="1.5">
+<h3 data-number="1.5" class="anchored" data-anchor-id="installing-packages-with-pip"><span class="header-section-number">1.5</span> Installing Packages with <code>pip</code></h3>
+<p>Once a virtual environment is active, <strong>packages installed with <code>pip</code> will be local to that virtual environment.</strong></p>
+<p>By default, project packages are installed in:</p>
+<pre><code>project-folder
+    |- &lt;project-venv&gt;
+    |       |- lib
+    |           |- python3.X
+    |                   |- site-packages </code></pre>
+<p>For example, installing <code>aiohttp</code>:</p>
+<pre class="shell"><code># Notice the shell prompt indicates a virt. env. is active
+$ (my-env) pip install aiohttp</code></pre>
+</section>
+<section id="using-requirements.txt" class="level3" data-number="1.6">
+<h3 data-number="1.6" class="anchored" data-anchor-id="using-requirements.txt"><span class="header-section-number">1.6</span> Using <code>requirements.txt</code></h3>
+<p>Project dependencies can be listed in a file for portability. By convention, the file <code>requirements.txt</code> contains all the dependencies of a project created with a virtual environment.</p>
+<blockquote class="blockquote">
+<p>This is analogous to <code>package.json</code> for Node.Js projects</p>
+</blockquote>
+<p><strong>To generate</strong> a <code>requirements.txt</code> for an existing project:</p>
+<pre class="shell"><code>$ pip freeze &gt; requirements.txt</code></pre>
+<p><strong>To install</strong> packages from a <code>requirements.txt</code>:</p>
+<pre><code>$ pip install -r requirements.txt</code></pre>
+</section>
+<section id="moving-virtual-environments" class="level3" data-number="1.7">
+<h3 data-number="1.7" class="anchored" data-anchor-id="moving-virtual-environments"><span class="header-section-number">1.7</span> Moving Virtual Environments</h3>
+<p>If you move a project that uses virtual environments to a different folder, <strong>you must re-initialize the virtual environment.</strong></p>
+<p>From the <a href="https://docs.python.org/3/library/venv.html#how-venvs-work">official docs</a>:</p>
+<blockquote class="blockquote">
+<p>Scripts installed in environments contain the absolute paths to their environment’s interpreters.</p>
+<ul>
+<li>Because of this, environments are inherently non-portable. You should always have a simple means of recreating an environment (for example, have a requirements file <code>requirements.txt</code>, and invoke <code>pip install -r requirements.txt</code>.</li>
+</ul>
+</blockquote>
+</section>
+<section id="virtual-env-exercises" class="level3" data-number="1.8">
+<h3 data-number="1.8" class="anchored" data-anchor-id="virtual-env-exercises"><span class="header-section-number">1.8</span> Virtual Env Exercises</h3>
+<p>The following exercises are meant for familiarization with <code>venv</code>.</p>
+<ol type="1">
+<li><p>Compare packages installed with <code>pip</code> inside and outside of a new virtual environment (virt. env.):</p>
+<ol type="1">
+<li>List all globally installed <code>pip</code> packages: <code>pip list</code></li>
+<li>Create a new folder and use <code>venv</code> to create a virtual environment inside.</li>
+<li>Activate the new virt. env..</li>
+<li>List the <code>pip</code> packages as seen from inside the active virtual environment.</li>
+<li>Deactivate the new virtual environment.</li>
+</ol></li>
+<li><p>Complete the following steps inside the virtual environment (virt. env.) you created in the previous question.</p>
+<ol type="1">
+<li>Activate the virt. env.</li>
+<li>install the following libraries:
+<ul>
+<li><a href="https://pypi.org/project/howdoi/">howdoi</a></li>
+<li><a href="https://pyjok.es/">pyjokes</a></li>
+</ul></li>
+<li>List all pip packages to see the extra dependencies that got installed.</li>
+<li>Have some fun using both installed packages (see their docs).</li>
+<li>Export the dependency list to <code>requirements.txt</code> by using <code>pip freeze</code>.</li>
+<li>Deactivate the virt. env.</li>
+<li>Move <code>requirements.txt</code> to one folder level above the project folder (so it’s not deleted in the next step).</li>
+<li>Delete the project folder.</li>
+</ol></li>
+<li><p>Create a new project and virtual environment using the <code>requirements.txt</code> from the previous exercise.</p>
+<ol type="1">
+<li>Create a new project folder with a virtual environment inside.</li>
+<li>Move <code>requirements.txt</code> inside the new project folder.</li>
+<li>Install project packages using <code>requirements.txt</code></li>
+</ol></li>
+</ol>
+
+
 </section>
 </section>
 
@@ -849,6 +1020,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../notes/gpios/index.html" class="pagination-link" aria-label="GPIOs: Inputs and Outputs">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">GPIOs: Inputs and Outputs</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../notes/analog-vs-digital/index.html" class="pagination-link" aria-label="Signals: Analog and digital">
+        <span class="nav-page-text">Signals: Analog and digital</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 
 
