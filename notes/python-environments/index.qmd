@@ -1,5 +1,5 @@
 ---
-title: Python project management
+title: Python environment management
 subtitle: >
   Managing python development and runtime dependencies.
   Using virtual environments.
