@@ -232,9 +232,12 @@ for a clear explanation of how to use `venv` and `pip`.
 ```bash
 # NOTE: run this with a venv activated! 
 pip install seeed-python-reterminal
+
+# NOTE: you will also need this dependency
+pip install RPi-GPIO
 ```
 
-Now you can import it to a test script (eg. _buzz.py_)
+Now you can import it to a test script (eg. `buzz.py`)
 
 ```python
 import seeed_python_reterminal.core as rt

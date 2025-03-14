@@ -18,18 +18,13 @@ Other tools such as [Conda](https://docs.conda.io/en/latest/index.html),
 [Pipenv](https://pipenv.pypa.io/en/latest/), [Poetry](https://python-poetry.org/) and
 [PDM](https://pdm.fming.dev/latest/) are other options.
 
-> **Short guide by *python.org***
+> Short guide by python.org**: [Installing packages using pip and virtual environments](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/#installing-packages-using-pip-and-virtual-environments)
 >
-> - [Installing packages using pip and virtual environments](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/#installing-packages-using-pip-and-virtual-environments)
->
-> **Detailed guide by *RealPython.com***
->
-> - \*[Python Virtual Environments: A Primer](https://realpython.com/python-virtual-environments-a-primer/)
->     \*
+> Detailed guide by RealPython.com: [Python Virtual Environments: A Primer](https://realpython.com/python-virtual-environments-a-primer/)
 
 ### Why Virtual Environments?
 
-Python is not good at dependency management. We want to avoid:
+Python is not good at dependency management. We want to:
 
 1. **Avoid system pollution**
 
@@ -66,10 +61,10 @@ Creating and using virtual environments involved the following steps:
 1. `cd` into the folder and create a new virt. env.:
 
 ```shell
-$ python3 -m venv my-env
+$ python3 -m venv .venv
 ```
 
-Note that `my-env` is the name of your virtual environment. `venv` is a popular choice.
+Note that `.venv` is the name of your virtual environment. `venv` is a popular choice.
 
 ### Activate & Deactivate
 
@@ -77,10 +72,10 @@ Once created, the virt. env. needs to be activated.
 
 ```shell
 # Linux
-$ source my-env/bin/activate
+$ source .venv/bin/activate
 
 # Windows
-$ my-env/Scripts/activate.bat
+$ .venv/Scripts/activate.bat
 ```
 
 > **Note:** You can work with virtual environments without activating it. To do this,
@@ -94,7 +89,7 @@ To deactivate:
 
 ```shell
 # Notice the shell prompt indicates a virt. env. is active
-$ (my-env) deactivate
+$ (.venv) deactivate
 ```
 
 ### Installing Packages with `pip`
@@ -116,7 +111,7 @@ For example, installing `aiohttp`:
 
 ```shell
 # Notice the shell prompt indicates a virt. env. is active
-$ (my-env) pip install aiohttp
+$ (.venv) pip install aiohttp
 ```
 
 ### Using `requirements.txt`
