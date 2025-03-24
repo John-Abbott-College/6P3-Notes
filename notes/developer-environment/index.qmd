@@ -152,11 +152,18 @@ sudo apt update && sudo apt upgrade -y
 #### Install python
 
 ```bash {filename=bash}
-# Verify python version is >= 3.9:
+# Install python3 as the default python
+sudo apt install python3 python-is-python3
+
+# Verify default python version is >= 3.9:
 python3 --version
+
 # Ensure pip is installed:
 sudo apt install python3-pip
-pip3 --version
+pip --version
+
+# Ensure the python module venv is installed
+sudo apt install python3-venv
 ```
 
 #### Set up git
