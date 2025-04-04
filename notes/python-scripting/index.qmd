@@ -3,8 +3,7 @@ title: Python scripting
 subtitle: >
   Tips and tricks for effective scripting in Python
 categories: [python]
-draft: true
-date: 2025-02-28
+date: 2025-04-4
 ---
 
 ## Overview
