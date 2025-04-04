@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-03-10">
+<meta name="dcterms.date" content="2025-04-04">
 
-<title>reTerminal built-in devices – Connected Objects</title>
+<title>Python project management – Connected Objects</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../notes/bash-scripting/index.html" rel="next">
-<link href="../../notes/python-collections/index.html" rel="prev">
+<link href="../../notes/python-scripting/index.html" rel="next">
+<link href="../../notes/analog-vs-digital/index.html" rel="prev">
 <link href="../../assets/favicon_io/favicon.ico" rel="icon">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -79,9 +79,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/bootstrap/bootstrap-ae88efe0b7c31e6578cce92c213ac82a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../../site_libs/bootstrap/bootstrap-dark-73fae4600b5030606feb7fcd3e669409.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script src="../../site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
-<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": true,
@@ -109,14 +106,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<meta property="og:title" content="reTerminal built-in devices – Connected Objects">
-<meta property="og:description" content="Installing initial reTerminal packages. Reading and controlling the reTerminal hardware interfaces, e.g.&nbsp;touchscreen, LEDs, light sensor, screen backlight, etc.">
-<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/notes/reterminal-devices/assets/capacitive-touch.jpg">
+<meta property="og:title" content="Python project management – Connected Objects">
+<meta property="og:description" content="Previously, we have focused on installing dependencies from other projects – we expand on that knowledge to learn how to create our own projects">
+<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/notes/python-project-management/assets/art_title_path_only.svg">
 <meta property="og:site_name" content="{{< var course.title >}}">
-<meta property="og:image:alt" content="A diagram showing how the electrostatic field changes caused by touch is processed by devices like the reTerminal. Image source">
 </head>
 
-<body class="nav-sidebar docked nav-fixed slimcontent">
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -247,7 +243,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/reterminal-devices/index.html">reTerminal built-in devices</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/python-project-management/index.html">Python project management</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -297,7 +293,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notes/python-project-management/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/python-project-management/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Python project management</span></a>
   </div>
 </li>
@@ -315,7 +311,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notes/reterminal-devices/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../notes/reterminal-devices/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">reTerminal built-in devices</span></a>
   </div>
 </li>
@@ -373,14 +369,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#programmable-interfaces" id="toc-programmable-interfaces" class="nav-link active" data-scroll-target="#programmable-interfaces"><span class="header-section-number">1</span> Programmable interfaces</a>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><span class="header-section-number">1</span> Overview</a></li>
+  <li><a href="#python-projects-import-statements" id="toc-python-projects-import-statements" class="nav-link" data-scroll-target="#python-projects-import-statements"><span class="header-section-number">2</span> Python Projects &amp; Import Statements</a></li>
+  <li><a href="#modules-vs-packages" id="toc-modules-vs-packages" class="nav-link" data-scroll-target="#modules-vs-packages"><span class="header-section-number">3</span> Modules vs Packages</a>
   <ul>
-  <li><a href="#use-sudo-text-editor" id="toc-use-sudo-text-editor" class="nav-link" data-scroll-target="#use-sudo-text-editor"><span class="header-section-number">1.1</span> Use sudo + text-editor</a></li>
-  <li><a href="#use-sudo-su" id="toc-use-sudo-su" class="nav-link" data-scroll-target="#use-sudo-su"><span class="header-section-number">1.2</span> Use sudo + su</a></li>
-  <li><a href="#use-sudo-tee" id="toc-use-sudo-tee" class="nav-link" data-scroll-target="#use-sudo-tee"><span class="header-section-number">1.3</span> Use sudo + <code>tee</code></a></li>
-  <li><a href="#luminosity-sensor" id="toc-luminosity-sensor" class="nav-link" data-scroll-target="#luminosity-sensor"><span class="header-section-number">1.4</span> Luminosity Sensor</a></li>
+  <li><a href="#modules" id="toc-modules" class="nav-link" data-scroll-target="#modules"><span class="header-section-number">3.1</span> Modules</a></li>
+  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages"><span class="header-section-number">3.2</span> Packages</a></li>
   </ul></li>
-  <li><a href="#python-library-for-reterminal" id="toc-python-library-for-reterminal" class="nav-link" data-scroll-target="#python-library-for-reterminal"><span class="header-section-number">2</span> Python Library for reTerminal</a></li>
+  <li><a href="#project-structure" id="toc-project-structure" class="nav-link" data-scroll-target="#project-structure"><span class="header-section-number">4</span> Project Structure</a></li>
+  <li><a href="#relative-import-statements" id="toc-relative-import-statements" class="nav-link" data-scroll-target="#relative-import-statements"><span class="header-section-number">5</span> Relative Import Statements</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">6</span> References</a></li>
   </ul>
 </nav>
 </nav>
@@ -389,14 +387,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">reTerminal built-in devices</h1>
-<p class="subtitle lead">Installing initial reTerminal packages. Reading and controlling the reTerminal hardware interfaces, e.g.&nbsp;touchscreen, LEDs, light sensor, screen backlight, etc.</p>
+<h1 class="title">Python project management</h1>
+<p class="subtitle lead">Previously, we have focused on installing dependencies from other projects – we expand on that knowledge to learn how to create our own projects</p>
   <div class="quarto-categories">
-    <div class="quarto-category">Hardware</div>
+    <div class="quarto-category">Python</div>
   </div>
   </div>
 
@@ -408,7 +406,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 10, 2024</p>
+      <p class="date">April 4, 2025</p>
     </div>
   </div>
   
@@ -426,176 +424,166 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-
-<div class="no-row-height column-margin column-container"><div class="">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="assets/capacitive-touch.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="A diagram showing how the electrostatic field changes caused by touch is processed by devices like the reTerminal. Image source"><img src="assets/capacitive-touch.jpg" class="img-fluid figure-img" alt="A diagram showing how the electrostatic field changes caused by touch is processed by devices like the reTerminal. Image source"></a></p>
-<figcaption>A diagram showing how the electrostatic field changes caused by touch is processed by devices like the reTerminal. <a href="wiringfixsecessions.z21.web.core.windows.net">Image source</a></figcaption>
-</figure>
-</div>
-</div></div><section id="programmable-interfaces" class="level2 page-columns page-full" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="programmable-interfaces"><span class="header-section-number">1</span> Programmable interfaces</h2>
-<p><em>This section is based on the official documentation for the reTerminal: <a href="https://wiki.seeedstudio.com/reTerminal-hardware-interfaces-usage/#3-user-programmable-leds">Hardware and Interfaces Usage</a></em></p>
-<p>All programmable data can be passed in file streams that can be read and/or written to.</p>
-<p>For example, keyboard inputs and communication over web-sockets are all read as a file streams.</p>
-<p>The reTerminal has 3 programmable LED’s and a light sensor that can be <strong>controlled like a regular file</strong>.</p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="assets/reterminal-buttons-light-sensor.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="reTerminal interface overview. Image source"><img src="assets/reterminal-buttons-light-sensor.png" class="img-fluid figure-img" alt="reTerminal interface overview. Image source"></a></p>
-<figcaption>reTerminal interface overview. <a href="https://wiki.seeedstudio.com/reTerminal-hardware-interfaces-usage/">Image source</a></figcaption>
-</figure>
-</div>
-</div></div><p>You can see, there are 3 programmable LEDs in the reTerminal:</p>
+<section id="overview" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="overview"><span class="header-section-number">1</span> Overview</h2>
+<p>Now that we’re making larger applications with multiple dependecies from different sources, as well as multiple modules, code organization starts to be a noticable problem. Managing a “project” (for now, a directory containing your source code for a given task) becomes much easier with tools and configuration.</p>
+<p>We’ll look at:</p>
 <ul>
-<li><strong>STA</strong> light can be turned on as <strong>red or green</strong>.</li>
-<li><strong>USR</strong> light can only be turned on as <strong>green</strong>.</li>
+<li>Import statements</li>
+<li>Relative imports</li>
+<li>Configuration with dot files and project files</li>
 </ul>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="assets/reterminal-leds.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="The reTerminal LEDs and their corresponding filenames. Image source"><img src="assets/reterminal-leds.png" class="img-fluid figure-img" alt="The reTerminal LEDs and their corresponding filenames. Image source"></a></p>
-<figcaption>The reTerminal LEDs and their corresponding filenames. <a href="https://wiki.seeedstudio.com/reTerminal-hardware-interfaces-usage/">Image source</a></figcaption>
-</figure>
-</div>
-</div></div><p>The lights can be controlled at the OS level by editing files in the <code>/sys/class/leds/</code> directory. Use <code>ls -al</code> to list the files in this directory:</p>
+</section>
+<section id="python-projects-import-statements" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="python-projects-import-statements"><span class="header-section-number">2</span> Python Projects &amp; Import Statements</h2>
+<p>For programmers coming from other languages, how to organize your project files and how to import modules and classes can be confusing.</p>
+</section>
+<section id="modules-vs-packages" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="modules-vs-packages"><span class="header-section-number">3</span> Modules vs Packages</h2>
+<p>Let’s clarify the terminology and distinction between a module vs a package.</p>
+<p><em>(Notes taken from <a href="https://python-packaging-tutorial.readthedocs.io/en/2018/setup_py.html">The Joy of Packaging, Making a Python Package</a>)</em></p>
+<section id="modules" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="modules"><span class="header-section-number">3.1</span> Modules</h3>
+<p>A module usually corresponds to a single file: <code>something.py</code> A python “module” is a single namespace, with a collection of values:</p>
+<ul>
+<li>functions</li>
+<li>constants</li>
+<li>class definitions</li>
+</ul>
+</section>
+<section id="packages" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="packages"><span class="header-section-number">3.2</span> Packages</h3>
+<p>A “package” is essentially a module, except it can have other modules (and indeed other packages) inside it.</p>
+<p>A package usually corresponds to a directory with a file in it called <code>__init__.py</code> and any number of python files or <strong>other package directories</strong>:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">a_package</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">__init__.py</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">module_a.py</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">a_sub_package</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        <span class="ex">__init__.py</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="ex">module_b.py</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>__init__.py</code> can be empty or it can have arbitrary code.</p>
+<p>The code will be run when the package is imported (just like a module).</p>
+<p>Modules inside packages are not automatically imported. So, with the above structure:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">import</span> a_package</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>will run the code in <code>a_package/__init__.py</code></p>
+<p>Any names defined in the <code>__init__.py</code> will be available in: <code>a_package.a_name</code></p>
+</section>
+</section>
+<section id="project-structure" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="project-structure"><span class="header-section-number">4</span> Project Structure</h2>
+<p>There’s no single way to do it. Below is a recommendation from RealPython.com on Python Application Layouts for <a href="https://realpython.com/python-application-layouts/#application-with-internal-packages">Application with Internal Packages</a>:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">helloworld/</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> helloworld/</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   ├── __init__.py</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   ├── main_entry.py</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   ├── hello/</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   │   ├── __init__.py</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   │   ├── hello.py</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   │   └── helpers.py</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   │</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   └── world/</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>       ├── __init__.py</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>       ├── helpers.py</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>       └── world.py</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> data/</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   ├── input.csv</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   └── output.xlsx</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> tests/</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   ├── hello</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   │   ├── helpers_tests.py</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   │   └── hello_tests.py</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   │</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   └── world/</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>       ├── helpers_tests.py</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>       └── world_tests.py</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> docs/</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   ├── hello.md</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   └── world.md</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> .gitignore</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> LICENSE</span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a><span class="ex">└──</span> README.md</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="relative-import-statements" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="relative-import-statements"><span class="header-section-number">5</span> Relative Import Statements</h2>
+<p><em>(Taken from StackOverflow discussion <a href="https://stackoverflow.com/questions/16981921/relative-imports-in-python-3">Relative imports in Python 3</a>, by <a href="https://stackoverflow.com/users/172176/aya">Aya</a>)</em></p>
+<p>Consider the project layout below:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>main.py</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>mypackage<span class="op">/</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">__init__</span>.py</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    mymodule.py</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    myothermodule.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>In <code>mymodule.py</code> :</p>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
-<pre><strong>bash</strong></pre>
+<pre><strong>mymodule.py</strong></pre>
 </div>
-<div class="sourceCode" id="cb1" data-filename="bash"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">username@hostname:/sys/class/leds/usr_led0</span> $ ls <span class="at">-al</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">total</span> 0</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span> 3 root root    0 Jan 25 20:33 .</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span> 8 root root    0 Jan 25 20:33 ..</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 root root 4096 Jan 26 22:02 brightness</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5" data-filename="mymodule.py"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exported function</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_temperature():</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fl">23.45</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">'__main__'</span>:</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(get_temperature())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<p><img src="assets/unix-permissions-cheatsheet.png" class="img-fluid" alt="Unix Permissions cheatsheet by Julia Evans. See more about permissions in the bash course notes">.</p>
-</div></div><p>The <code>brightness</code> file inide the <code>usr_led0</code> controls the brightness of LED0. But, because only <code>root</code> has write permissions to this file, we will likely run into permissions errors if we try to edit the value directly:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> nano /sys/class/leds/usr_led0/brightness</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Permission</span> denied</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo 255 <span class="op">&gt;</span> /sys/class/leds/usr_led0/brightness</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ex">Permission</span> denied</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sudo echo 255 <span class="op">&gt;</span> /sys/class/leds/usr_led0/brightness</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="ex">Permission</span> denied</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>There are a few possible approaches to this problem:</p>
-<section id="use-sudo-text-editor" class="level3" data-number="1.1">
-<h3 data-number="1.1" class="anchored" data-anchor-id="use-sudo-text-editor"><span class="header-section-number">1.1</span> Use sudo + text-editor</h3>
-<p>You can open a text-editor with <code>root</code> permissions using <code>sudo</code>:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># nano text editor</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> nano /sys/class/leds/usr_led0/brightness</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># or, you can use vi/vim text editor</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> vim /sys/class/leds/usr_led0/brightness</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Edit the <code>brightness</code> file to a value between 0-255 using the editor. When you save, you should see the change immediately.</p>
+<p>In <code>myothermodule.py</code> :</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>myothermodule.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb6" data-filename="myothermodule.py"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Relative import using `.` for current directory, `..` for parent directory.</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> .mymodule <span class="im">import</span> get_temperature</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Exported function</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> announce_weather():</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="ss">f"Outside temperature is </span><span class="sc">{</span>get_temperature()<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">'__main__'</span>:</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    announce_weather()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>In <code>main.py</code> :</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>main.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb7" data-filename="main.py"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mypackage.myothermodule <span class="im">import</span> announce_weather</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(announce_weather())</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">'__main__'</span>:</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This works when running <code>main.py</code> or <code>mypackage/mymodule.py</code>, but fails with <code>mypackage/myothermodule.py</code>, due to the relative import:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> .mymodule <span class="im">import</span> as_int</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>Exception has occurred: ImportError
+attempted relative import with no known parent package</code></pre>
+<p><strong>Solution</strong></p>
+<p>When running <code>myothermodule.py</code> as a stand-alone script, run Python using the <code>-m</code> option to run the file as a module. This will execute all the <code>__init__.py</code> files and load the module dependency.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>python <span class="op">-</span>m mypackage.myothermodule</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Note the ".", NOT a "/", as in, the following won't work:</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>python <span class="op">-</span>m mypackage<span class="op">/</span>myothermodule</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This will allow you to write modules that contain <code>main()</code> functions you can test separately – we took advantage of this pattern in Assignment 1.</p>
 </section>
-<section id="use-sudo-su" class="level3" data-number="1.2">
-<h3 data-number="1.2" class="anchored" data-anchor-id="use-sudo-su"><span class="header-section-number">1.2</span> Use sudo + su</h3>
-<p>Using an editor is perfectly reasonable for a one-off change, but annoying if you want to make the change more often.</p>
-<p>We can use the <code>echo value &gt; /path/to/file</code> pattern, but only if we have permissions to write to <code>/path/to/file</code> – we can obtain these permissions if we run the entire command as the <code>root</code> user.</p>
-<blockquote class="blockquote">
-<p><strong>NOTE:</strong> Running commands as the root user can have unintended consequences, ranging from annoying/tedious to fix, to completely devastating/permanently ruinous for your machine. You should avoid being <code>root</code> wherever possible (see <strong>Use sudo + tee</strong> section below for how to avoid it for this problem).</p>
-</blockquote>
-<p>You can enter a <code>root</code> shell instance using the command <code>su</code> (switch user), or by using <code>sudo -i</code> or <code>sudo -s</code>:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">user@hostname</span> $ sudo su</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">root@hostname</span> <span class="co">#</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ex">user@hostname</span> $ sudo <span class="at">-i</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="ex">root@hostname</span> <span class="co">#</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="ex">user@hostname</span> $ sudo <span class="at">-s</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="ex">root@hostname</span> <span class="co">#</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Your shell should now display <code>root@hostname:~#</code>.</p>
-<p>Turn on the LED with maximum brightness</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># echo 255 &gt; brightness</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Turn off the LED</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># echo 0 &gt; brightness</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Similarly, you can control <code>usr_led1</code> and <code>usr_led2</code> and even the buzzer on <code>/sys/class/leds/usr_buzzer</code></p>
-<p>When done working as root, you can exit the root shell and return to your user shell using the <code>exit</code> command (or Ctrl-D as a hotkey):</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">root@hostname</span> <span class="co"># exit</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">user@hostname</span> $</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="use-sudo-tee" class="level3" data-number="1.3">
-<h3 data-number="1.3" class="anchored" data-anchor-id="use-sudo-tee"><span class="header-section-number">1.3</span> Use sudo + <code>tee</code></h3>
-<p>If we want to avoid using a text editor, AND avoid logging into a <code>root</code> shell instance, it would be great if something like this worked:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sudo echo 255 <span class="op">&gt;</span> /sys/class/leds/usr_led0/brightness</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>But it doesn’t! Can you understand why? Consider which part of the instruction <code>sudo</code> applies to. Unfortunately, there is no way to <code>sudo &gt;</code> or <code>sudo filename</code> since <code>sudo</code> executes <strong>commands</strong> as the root user, NOT filenames/redirects.</p>
-<p>What if there were a command that we could put after the redirect, and <code>sudo</code> that command? What would that command need to do? It’s time to introduce a “new” command: <code>tee</code>.</p>
-<p>To be clear, <a href="https://en.wikipedia.org/wiki/Tee_(command)"><code>tee</code></a> is a 50 year old program and an absolute classic – it is as ubiquitous/essential as the other OG unix programs like <code>ls</code>, <code>cat</code>, <code>echo</code>. We will see why in the following example.</p>
-<p>Try running <code>man tee</code> in your reTerminal. You should see something like the following:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">TEE</span><span class="er">(</span><span class="ex">1</span><span class="kw">)</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="ex">NAME</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>       <span class="fu">tee</span> <span class="at">-</span> read from standard input and write to standard output and files</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="ex">SYNOPSIS</span></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>       <span class="fu">tee</span> <span class="pp">[</span><span class="ss">OPTION</span><span class="pp">]</span>... <span class="pp">[</span><span class="ss">FILE</span><span class="pp">]</span>...</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="ex">DESCRIPTION</span></span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>       <span class="ex">Copy</span> standard input to each FILE, and also to standard output.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>We have here a command that will read from standard input, and <em>write that same content from standard input into BOTH standard output AND files</em> – the files we can specify as arguments.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo 255 <span class="kw">|</span> <span class="ex">/sys/class/leds/usr-led0/brightness</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># this command is missing `tee` and `sudo`.... find where to put them, and you've learned a very important unix pattern!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="luminosity-sensor" class="level3" data-number="1.4">
-<h3 data-number="1.4" class="anchored" data-anchor-id="luminosity-sensor"><span class="header-section-number">1.4</span> Luminosity Sensor</h3>
-<p>The digital light sensor can read the surrounding light levels.</p>
-<ol type="1">
-<li>Enter the following directory</li>
-</ol>
-<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /sys/bus/iio/devices/iio:device0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="2" type="1">
-<li>Read the following file to obtain the light intensity value in <strong>Lux</strong></li>
-</ol>
-<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> in_illuminance_input</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Output:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pi@raspberrypi:/sys/bus/iio/devices/iio:device0</span> $ cat in_illuminance_input</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="ex">2719</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>Note:</strong> We don’t need to be root to read this file. Its permissions are set to let all users read it, even-though it belongs to the root user:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rw-r--r--</span> 1 root root 4096 Jan 30 22:16 in_illuminance_input</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-</section>
-<section id="python-library-for-reterminal" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="python-library-for-reterminal"><span class="header-section-number">2</span> Python Library for reTerminal</h2>
-<p>Seeed Studio provided a python library to access most of the sensors and actuators of the reTerminal.</p>
-<p>Install the library <code>seeed-python-reterminal</code> (see official <a href="https://github.com/Seeed-Studio/Seeed_Python_ReTerminal">Github repo</a>) using <code>pip</code>:</p>
-<p><strong>NOTE:</strong> See <a href="../../notes/python-environments/">Package Management in Python</a> for a clear explanation of how to use <code>venv</code> and <code>pip</code>.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">NOTE</span><span class="co">: run this with a venv activated! </span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install seeed-python-reterminal</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">NOTE</span><span class="co">: you will also need this dependency</span></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install RPi-GPIO</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Now you can import it to a test script (eg. <code>buzz.py</code>)</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seeed_python_reterminal.core <span class="im">as</span> rt</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"BUZZER ON"</span>)</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>rt.buzzer <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>time.sleep(<span class="dv">1</span>)</span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"BUZZER OFF"</span>)</span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>rt.buzzer <span class="op">=</span> <span class="va">False</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>This will sound the buzzer of the reTerminal for 1 second.</p>
-<p>To run the script:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> <span class="va">$(</span><span class="fu">which</span> python<span class="va">)</span> buzz.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Alternatively, first elevate your shell, then execute the script normally:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">user@hostname:~</span> $ sudo <span class="at">-i</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="ex">root@hostname:~#</span> python buzz.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<blockquote class="blockquote">
-<p><strong>Note:</strong> this library is simply a wrapper to the OS operations we did in the previous section.</p>
-</blockquote>
-<p>See the official <code>seeed-python-reterminal</code> <a href="https://github.com/Seeed-Studio/Seeed_Python_ReTerminal">Github repo</a> for API reference on how to control:</p>
+<section id="references" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="references"><span class="header-section-number">6</span> References</h2>
+<p><strong>More on Modules and Packages:</strong></p>
 <ul>
-<li>LED’s</li>
-<li>Accelerometer</li>
-<li>Programmable Buttons</li>
-<li>Light Sensor</li>
+<li><a href="https://realpython.com/python-modules-packages/">Python Modules and Packages – An Introduction</a> by RealPython.com</li>
+</ul>
+<p><strong>Project Structures</strong></p>
+<ul>
+<li><a href="https://blog.ionelmc.ro/2014/05/25/python-packaging/">Packaging a python library</a> by ionel’s codelog.</li>
+</ul>
+<p><strong>Relative Imports</strong></p>
+<ul>
+<li><a href="https://stackoverflow.com/questions/14132789/relative-imports-for-the-billionth-time/14132912#14132912">Relative imports for the billionth time</a> in StackOverlow</li>
+<li><a href="https://stackoverflow.com/questions/16981921/relative-imports-in-python-3">Relative imports in Python 3</a> in StackOverlow</li>
+<li><a href="https://docs.python.org/3/reference/import.html#package-relative-imports">The import system</a> in Python.org docs.</li>
+<li><a href="https://docs.python.org/3/tutorial/modules.html#packages">Modules: Packages</a> in Python.org docs.</li>
 </ul>
 
 
@@ -1166,49 +1154,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../notes/python-collections/index.html" class="pagination-link" aria-label="Python collection types and operations">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Python collection types and operations</span>
+      <a href="../../notes/analog-vs-digital/index.html" class="pagination-link" aria-label="Signals: Analog and digital">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Signals: Analog and digital</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../notes/bash-scripting/index.html" class="pagination-link" aria-label="Bash scripting">
-        <span class="nav-page-text">Bash scripting</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../notes/python-scripting/index.html" class="pagination-link" aria-label="Python scripting">
+        <span class="nav-page-text">Python scripting</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
-(function() {
-  let previousOnload = window.onload;
-  window.onload = () => {
-    if (previousOnload) {
-      previousOnload();
-    }
-    lightboxQuarto.on('slide_before_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      const href = trigger.getAttribute('href');
-      if (href !== null) {
-        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-        if (imgEl !== null) {
-          const srcAttr = imgEl.getAttribute("src");
-          if (srcAttr && srcAttr.startsWith("data:")) {
-            slideConfig.href = srcAttr;
-          }
-        }
-      } 
-    });
-  
-    lightboxQuarto.on('slide_after_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(slideNode);
-      }
-    });
-  
-  };
-  
-})();
-          </script>
 
 
 
