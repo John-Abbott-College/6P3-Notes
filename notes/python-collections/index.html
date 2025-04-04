@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-03-14">
+<meta name="dcterms.date" content="2025-04-04">
 
-<title>Signals: Analog and digital – Connected Objects</title>
+<title>Python collection types and operations – Connected Objects</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +64,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../notes/python-scripting/index.html" rel="next">
-<link href="../../notes/python-environments/index.html" rel="prev">
+<link href="../../notes/reterminal-devices/index.html" rel="next">
+<link href="../../notes/python-scripting/index.html" rel="prev">
 <link href="../../assets/favicon_io/favicon.ico" rel="icon">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -75,9 +109,9 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="Signals: Analog and digital – Connected Objects">
-<meta property="og:description" content="Comparing the two paradigms for measuring electronic information and understanding how each are used for distributed applications.">
-<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/notes/assets/6-analog-digital-analog-temperature.png">
+<meta property="og:title" content="Python collection types and operations – Connected Objects">
+<meta property="og:description" content="Useful python collection types and operations">
+<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/notes/python-collections/assets/art_title_path_only.svg">
 <meta property="og:site_name" content="{{< var course.title >}}">
 </head>
 
@@ -208,7 +242,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/analog-vs-digital/index.html">Signals: Analog and digital</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/python-collections/index.html">Python collection types and operations</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -252,7 +286,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notes/analog-vs-digital/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../notes/analog-vs-digital/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Signals: Analog and digital</span></a>
   </div>
 </li>
@@ -264,7 +298,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notes/python-collections/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/python-collections/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Python collection types and operations</span></a>
   </div>
 </li>
@@ -328,31 +362,19 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#analog-the-natural-world" id="toc-analog-the-natural-world" class="nav-link active" data-scroll-target="#analog-the-natural-world"><span class="header-section-number">1</span> Analog: the natural world</a>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><span class="header-section-number">1</span> Overview</a></li>
+  <li><a href="#loops" id="toc-loops" class="nav-link" data-scroll-target="#loops"><span class="header-section-number">2</span> Loops</a>
   <ul>
-  <li><a href="#temperature" id="toc-temperature" class="nav-link" data-scroll-target="#temperature"><span class="header-section-number">1.1</span> Temperature</a></li>
-  <li><a href="#sound" id="toc-sound" class="nav-link" data-scroll-target="#sound"><span class="header-section-number">1.2</span> Sound</a></li>
-  <li><a href="#analog-signals-graphs" id="toc-analog-signals-graphs" class="nav-link" data-scroll-target="#analog-signals-graphs"><span class="header-section-number">1.3</span> Analog Signals Graphs</a></li>
+  <li><a href="#the-for-loop" id="toc-the-for-loop" class="nav-link" data-scroll-target="#the-for-loop"><span class="header-section-number">2.1</span> The <code>for</code> loop</a></li>
+  <li><a href="#break-and-continue-statements" id="toc-break-and-continue-statements" class="nav-link" data-scroll-target="#break-and-continue-statements"><span class="header-section-number">2.2</span> <code>break</code> and <code>continue</code> statements</a></li>
   </ul></li>
-  <li><a href="#digital-discrete-values" id="toc-digital-discrete-values" class="nav-link" data-scroll-target="#digital-discrete-values"><span class="header-section-number">2</span> Digital: discrete values</a>
+  <li><a href="#list-comprehensions" id="toc-list-comprehensions" class="nav-link" data-scroll-target="#list-comprehensions"><span class="header-section-number">3</span> List Comprehensions</a></li>
+  <li><a href="#generators" id="toc-generators" class="nav-link" data-scroll-target="#generators"><span class="header-section-number">4</span> Generators</a></li>
+  <li><a href="#lambda-functions" id="toc-lambda-functions" class="nav-link" data-scroll-target="#lambda-functions"><span class="header-section-number">5</span> Lambda functions</a></li>
+  <li><a href="#dictionaries" id="toc-dictionaries" class="nav-link" data-scroll-target="#dictionaries"><span class="header-section-number">6</span> Dictionaries</a>
   <ul>
-  <li><a href="#digital-simulating-analogue" id="toc-digital-simulating-analogue" class="nav-link" data-scroll-target="#digital-simulating-analogue"><span class="header-section-number">2.1</span> Digital Simulating Analogue</a></li>
-  </ul></li>
-  <li><a href="#analog-to-digital-conversion-adc" id="toc-analog-to-digital-conversion-adc" class="nav-link" data-scroll-target="#analog-to-digital-conversion-adc"><span class="header-section-number">3</span> Analog to Digital Conversion (ADC)</a></li>
-  <li><a href="#sampling" id="toc-sampling" class="nav-link" data-scroll-target="#sampling"><span class="header-section-number">4</span> Sampling</a>
-  <ul>
-  <li><a href="#sampling-rate" id="toc-sampling-rate" class="nav-link" data-scroll-target="#sampling-rate"><span class="header-section-number">4.1</span> Sampling rate</a></li>
-  <li><a href="#encoding-bit-resolution" id="toc-encoding-bit-resolution" class="nav-link" data-scroll-target="#encoding-bit-resolution"><span class="header-section-number">4.2</span> Encoding &amp; Bit resolution</a></li>
-  <li><a href="#encoding-procedure" id="toc-encoding-procedure" class="nav-link" data-scroll-target="#encoding-procedure"><span class="header-section-number">4.3</span> Encoding Procedure</a></li>
-  <li><a href="#sensor-voltages-bit-resolution" id="toc-sensor-voltages-bit-resolution" class="nav-link" data-scroll-target="#sensor-voltages-bit-resolution"><span class="header-section-number">4.4</span> Sensor voltages &amp; bit resolution</a></li>
-  </ul></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">5</span> Exercises</a>
-  <ul>
-  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1"><span class="header-section-number">5.1</span> Exercise 1</a></li>
-  </ul></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">6</span> References</a>
-  <ul>
-  <li><a href="#video-reference" id="toc-video-reference" class="nav-link" data-scroll-target="#video-reference"><span class="header-section-number">6.1</span> Video Reference</a></li>
+  <li><a href="#iterating-over-dictionaries" id="toc-iterating-over-dictionaries" class="nav-link" data-scroll-target="#iterating-over-dictionaries"><span class="header-section-number">6.1</span> Iterating over dictionaries</a></li>
+  <li><a href="#removing-a-value" id="toc-removing-a-value" class="nav-link" data-scroll-target="#removing-a-value"><span class="header-section-number">6.2</span> Removing a value</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -366,10 +388,11 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Signals: Analog and digital</h1>
-<p class="subtitle lead">Comparing the two paradigms for measuring electronic information and understanding how each are used for distributed applications.</p>
+<h1 class="title">Python collection types and operations</h1>
+<p class="subtitle lead">Useful python collection types and operations</p>
   <div class="quarto-categories">
-    <div class="quarto-category">Hardware</div>
+    <div class="quarto-category">Python</div>
+    <div class="quarto-category">Collections</div>
   </div>
   </div>
 
@@ -381,7 +404,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 14, 2024</p>
+      <p class="date">April 4, 2025</p>
     </div>
   </div>
   
@@ -399,281 +422,240 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>We will use analog and digital signals to communicate with sensors.</p>
-<p>This section briefly compares these two types of signals and illustrates how we might encounter while using IoT hardware.</p>
-<p>To compare analog and digital signals, let’s look at how we can track 3 different sources of information:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://realpython.com/cdn-cgi/image/width=960,format=auto/https://files.realpython.com/media/How-to-Use-Python-Lambda-Functions_Watermarked.2afa4f5ea5d4.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Image: https://realpython.com/python-lambda/"><img src="https://realpython.com/cdn-cgi/image/width=960,format=auto/https://files.realpython.com/media/How-to-Use-Python-Lambda-Functions_Watermarked.2afa4f5ea5d4.jpg" class="img-fluid figure-img" alt="Image: https://realpython.com/python-lambda/"></a></p>
+<figcaption>Image: <a href="https://realpython.com/python-lambda/" class="uri">https://realpython.com/python-lambda/</a></figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>These notes have been adapted from <a href="https://www.learnpython.org/" class="uri">https://www.learnpython.org/</a> with very few modifications.</p>
+</div>
+</div>
+<section id="overview" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="overview"><span class="header-section-number">1</span> Overview</h2>
 <ul>
-<li>Temperature</li>
-<li>Sound</li>
-<li>Electricity (voltages)</li>
+<li>Loops</li>
+<li>List comprehensions</li>
+<li>Generators</li>
+<li>Lambdas</li>
+<li>Dictionaries</li>
 </ul>
-<section id="analog-the-natural-world" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="analog-the-natural-world"><span class="header-section-number">1</span> Analog: the natural world</h2>
-<p>We live in an analog world. Most of the naturally occurring events that we experience happen in an analog form.</p>
-<blockquote class="blockquote">
-<p>Analog signals varies continuously in time and amplitude.</p>
-<p>This means that changes happen over a range of values with infinite “in between” steps.</p>
-</blockquote>
-<p>For example, the following events have an infinite number of transitions. It only depends on how accurately you can track them:</p>
-<ul>
-<li>The colors in a rainbow.</li>
-<li>The position of a swinging pendulum.</li>
-<li>The exact time of the day.</li>
-</ul>
-<section id="temperature" class="level3" data-number="1.1">
-<h3 data-number="1.1" class="anchored" data-anchor-id="temperature"><span class="header-section-number">1.1</span> Temperature</h3>
-<p>The A/C and heating systems in a house are typically activated once the temperature reaches some minimum and maximum values.</p>
-<p>The chart below is tracking the temperature in a room as the A/C and heating systems are activated over a few days.</p>
-<p><a href="../assets/6-analog-digital-analog-temperature.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="../assets/6-analog-digital-analog-temperature.png" class="img-fluid"></a></p>
-<p class="img-info">
-<a href="https://info.sparkfun.com/hubfs/Poster%20Downloads/Analog%20vs%20Digital/Concept%20Poster%20Analog%20vs%20Digital%20WEB.pdf"> Temperature changes over time </a>&nbsp; Adapted from poster: Analog and Digital Signals by Digikey.
-</p>
-<p>Let’s say the maximum temperature reached in the room is 30C and the minimum temperature is 15C. A person in the room would have observed every possible temperature in between that range (15.01, 15.0101, 15.0102, 15.01021, etc).</p>
-<p>The change in temperature produces analog information since it is changing over an infinite range of values.</p>
 </section>
-<section id="sound" class="level3" data-number="1.2">
-<h3 data-number="1.2" class="anchored" data-anchor-id="sound"><span class="header-section-number">1.2</span> Sound</h3>
-<p>Sound is also an example of an analog signal.</p>
-<p>When a volume of air is displaced quickly, air molecules are compressed against each other creating a high-pressure region. The high pressure region expands and compresses the air in the neighbouring area. Sound can travel thanks to this “chain effect”.</p>
-<blockquote class="blockquote">
-<p>By observing how the air pressure changes over time, we can draw a sound wave.</p>
-<p>This is how speakers and microphones interact with air to generate sound.</p>
-</blockquote>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="http://resource.isvr.soton.ac.uk/spcg/tutorial/tutorial/Tutorial_files/longipatm.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Animation of acoustic wave travelling in air"><img src="http://resource.isvr.soton.ac.uk/spcg/tutorial/tutorial/Tutorial_files/longipatm.gif" class="img-fluid figure-img" alt="Animation of acoustic wave travelling in air"></a></p>
-<figcaption>Animation of acoustic wave travelling in air</figcaption>
-</figure>
+<section id="loops" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="loops"><span class="header-section-number">2</span> Loops</h2>
+<p>There are two types of loops in Python, for and while.</p>
+<section id="the-for-loop" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="the-for-loop"><span class="header-section-number">2.1</span> The <code>for</code> loop</h3>
+<p>For loops iterate over a given sequence, or <strong>iterator</strong>. Here is an example:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
 </div>
-<p class="img-info">
-<a href="http://resource.isvr.soton.ac.uk/spcg/tutorial/tutorial/Tutorial_files/Web-basics-sound.htm"> Sound waves travelling through air </a>&nbsp; - Waves and Acoustics Animations by isvr.
-</p>
-<p>Sound waves are also an example of an analog signal because the amplitude of the wave transitions through the entire range of possible values between the Min and Max.</p>
-</section>
-<section id="analog-signals-graphs" class="level3" data-number="1.3">
-<h3 data-number="1.3" class="anchored" data-anchor-id="analog-signals-graphs"><span class="header-section-number">1.3</span> Analog Signals Graphs</h3>
-<p>A signal varies over time. It’s helpful to plot it on a graph where time is plotted on the horizontal, <em>x</em>-axis, and the value being tracked on the vertical, <em>y</em>-axis.</p>
-<p>Looking at a graph of a signal is usually the easiest way to identify if it’s analog or digital.</p>
-<blockquote class="blockquote">
-<p>When dealing with electricity we track voltage levels (amplitude).</p>
-<p>A time-versus-voltage graph of an analog signal should be <strong>smooth</strong> and <strong>continuous</strong>.</p>
-</blockquote>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://cdn.sparkfun.com/assets/3/7/6/6/0/51c48875ce395f745a000000.png" class="img-fluid figure-img"></p>
-<figcaption>Analog Sine Wave</figcaption>
-</figure>
+<div class="sourceCode" id="cb1" data-filename="Python"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>primes <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>]</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> prime <span class="kw">in</span> primes:</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(prime)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>While these signals may be limited to a <strong>range</strong> of maximum and minimum values, there are still an infinite number of possible values within that range.</p>
-<p>For example, the analog voltage coming out of your wall socket oscillates between -120V and +120V. As you increase the resolution more and more, you discover an infinite number of values that the signal can actually be (64.4V, 64.42V, 64.424V, and other increasingly precise values).</p>
-</section>
-</section>
-<section id="digital-discrete-values" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="digital-discrete-values"><span class="header-section-number">2</span> Digital: discrete values</h2>
-<p>Digital signals are discrete, which means that at any given moment, the signal strength must be represented by a integer number. There are no half numbers.</p>
-<p>Typically, digital signals will be one of <strong>two values</strong>, a high voltage and a low voltage.</p>
-<blockquote class="blockquote">
-<p>The specific values of the <strong>high</strong> and <strong>low</strong> voltages depend on the hardware being used.</p>
-</blockquote>
-<p>Below is a the timing graph of a signal whose <strong>low voltage is 0 volts</strong> and <strong>high voltage is 5 volts</strong>.</p>
-<p>This type of signal is also known as a <strong>square waves</strong>.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://cdn.sparkfun.com/assets/c/8/5/b/e/51c495ebce395f1b5a000000.png" class="img-fluid figure-img"></p>
-<figcaption>Square wave signal. Two values, either 0V or 5V.</figcaption>
-</figure>
+<p>For loops can iterate over a sequence of numbers using the <code>range</code> function. <code>range</code> returns an <strong>iterator</strong> object which can be looped using the following syntax:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
 </div>
-<p class="img-info">
-<a href="https://learn.sparkfun.com/tutorials/analog-vs-digital/all"> 0 to 5 volt “pulses” forming a square ware </a>&nbsp; - Analog vs.&nbsp;Digital by Digikey.
-</p>
-<section id="digital-simulating-analogue" class="level3" data-number="2.1">
-<h3 data-number="2.1" class="anchored" data-anchor-id="digital-simulating-analogue"><span class="header-section-number">2.1</span> Digital Simulating Analogue</h3>
-<p>A digital signal might be a discrete representation of an analog waveform.</p>
-<p>Viewed from afar, the wave function below may seem smooth and analog, but when you look closely there are tiny discrete <strong>steps</strong> as the signal tries to approximate analog values.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://cdn.sparkfun.com/assets/0/2/8/4/6/51c85fbece395fbc03000000.png" class="img-fluid figure-img"></p>
-<figcaption>Digital Sine Wave</figcaption>
-</figure>
+<div class="sourceCode" id="cb2" data-filename="Python"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Prints out the numbers 0,1,2,3,4</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(x)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Prints out 3,4,5</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>, <span class="dv">6</span>):</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(x)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Prints out 3,5,7</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>, <span class="dv">8</span>, <span class="dv">2</span>):</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p class="img-info">
-<a href="https://learn.sparkfun.com/tutorials/analog-vs-digital/all"> Oscillating voltage from -120V to 120V represented as a digital signal </a>&nbsp; - Analog vs.&nbsp;Digital by Digikey.
-</p>
-<p>The number of <strong>discrete steps</strong> that a digital signal can use depends on how many bits are available for each recorded value. This is also called <strong>bit resolution</strong> (see <em>Sampling</em> below).</p>
-<p>For example, if a data point can only use one bit of definition, then it can only track on/off states, resulting in the red square wave seen above.</p>
-<p>However, if a data point can use 8 bits to store a value, then it can represent a value ranging from 0 to 255 (see the green sinusoidal voltage wave above).</p>
 </section>
-</section>
-<section id="analog-to-digital-conversion-adc" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="analog-to-digital-conversion-adc"><span class="header-section-number">3</span> Analog to Digital Conversion (ADC)</h2>
-<p>If most natural events are analog, how do we represent them in digital format? For example, if audio is analog, how can we get a computer to play music?</p>
-<blockquote class="blockquote">
-<p>An <strong>analog to digital converter (ADC)</strong> is a device that can read a analog signal and generate a digital representation of this signal.</p>
-</blockquote>
-<p>ADC’s are specific to the type of analog signal they are trying to read (sound, voltage, temperature, light, etc).</p>
-<p>Referring to the room temperature example used earlier, if we used a digital thermometer to record the temperature, our graph might look like the following:</p>
-<p><a href="../assets/6-analog-digital-temp-sampling.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="../assets/6-analog-digital-temp-sampling.png" class="img-fluid"></a></p>
-<p class="img-info">
-<a href="https://info.sparkfun.com/hubfs/Poster%20Downloads/Analog%20vs%20Digital/Concept%20Poster%20Analog%20vs%20Digital%20WEB.pdf"> Temperature represented as a digital reading </a>&nbsp; Poster: Analog and Digital Signals by Digikey.
-</p>
-<p>In the example above, a digital temperature reading was taken <strong>every 3hr</strong>.</p>
-<blockquote class="blockquote">
-<p>The digital signal representation of the temperature <strong>is not smooth or accurate</strong>.</p>
-<p>However, depending on the application <strong>it might be sufficient</strong>.</p>
-</blockquote>
-<p>To make the signal smoother or more representative of the real analog signal we need to take samples more regularly (eg. every 1min).</p>
-<p>The process of reading an analog signal over time to generate its digital representation is called <strong>sampling.</strong></p>
-</section>
-<section id="sampling" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="sampling"><span class="header-section-number">4</span> Sampling</h2>
-<p>Sampling is the process of inspecting the value of an analog signal at regular time intervals.</p>
-<p>When an ADC is sampling an analog signal, there are two variables that will characterize the digital output:</p>
-<ul>
-<li>Sampling rate.</li>
-<li>Bit resolution.</li>
-</ul>
-<blockquote class="blockquote">
-<p><strong>Music sampling</strong> Some music genres like rap and hip-hop commonly sample song segments from other artists to play in the background.</p>
-<ul>
-<li>The term <strong>sampling</strong> is used because traditionally song segments were extracted from vinyl records which produce analog sound and saved in digital formats.</li>
-</ul>
-</blockquote>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/hT_2kUx0AcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="">
-</iframe>
-<section id="sampling-rate" class="level3" data-number="4.1">
-<h3 data-number="4.1" class="anchored" data-anchor-id="sampling-rate"><span class="header-section-number">4.1</span> Sampling rate</h3>
-<p>The time between samples is the <strong>sample period</strong> (T, in seconds), and the number of samples taken per second is the <strong>sample frequency or sample rate</strong> (fs, in samples/second or Hz).</p>
-<p>Basically, <strong>sampling is taking snap-shot values of the analog signal at regular time intervals.</strong></p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="../assets/6-analog-digital-sample-period.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Analog signal showing sample period and sample frequency"><img src="../assets/6-analog-digital-sample-period.png" class="img-fluid figure-img" alt="Analog signal showing sample period and sample frequency"></a></p>
-<figcaption>Analog signal showing sample period and sample frequency</figcaption>
-</figure>
+<section id="break-and-continue-statements" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="break-and-continue-statements"><span class="header-section-number">2.2</span> <code>break</code> and <code>continue</code> statements</h3>
+<p><code>break</code> is used to exit a for loop or a while loop, whereas <code>continue</code> is used to skip the current block, and return to the “for” or “while” statement. A few examples:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
 </div>
-<p class="img-info">
-<a href="https://www.usna.edu/ECE/ec312/Lessons/wireless/EC312_Lesson_20_Analog_to_Digital_Course_Notes.pdf"> Sample period and fequency for an electric signal </a>&nbsp; - US Naval Academy.
-</p>
-<p><strong>Sampling period examples:</strong></p>
-<ul>
-<li>If a signal is sampled every half second (0.5s sampling period, <strong><em>T</em></strong>), the sample frequency (<strong>*f**</strong>) is 1/0.5s = 2 Hz (times per second).</li>
-<li>If the sample frequency (<strong><em>f</em></strong>) is 2000 Hz, the sampling period (<strong><em>T</em></strong>) is = 1/2000Hz = 0.0005 secs (0.5 milliseconds).</li>
-</ul>
-<p>The higher the sample rate, the more accurate the digital signal is.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="../assets/6-analog-digital-increasing-sample-rate.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Signals of increasing sample rate"><img src="../assets/6-analog-digital-increasing-sample-rate.png" class="img-fluid figure-img" alt="Signals of increasing sample rate"></a></p>
-<figcaption>Signals of increasing sample rate</figcaption>
-</figure>
+<div class="sourceCode" id="cb3" data-filename="Python"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Prints out only odd numbers - 1,3,5,7,9</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Check if x is even</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> x <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">continue</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(x)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Prints out 0,1,2,3,4</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>count <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:  <span class="co"># we have while loops in Python too.</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(count)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    count <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> count <span class="op">&gt;=</span> <span class="dv">5</span>:</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p class="img-info">
-<a href="https://www.usna.edu/ECE/ec312/Lessons/wireless/EC312_Lesson_20_Analog_to_Digital_Course_Notes.pdf"> Same signal sampled with different sample rates </a>&nbsp; - US Naval Academy.
-</p>
 </section>
-<section id="encoding-bit-resolution" class="level3" data-number="4.2">
-<h3 data-number="4.2" class="anchored" data-anchor-id="encoding-bit-resolution"><span class="header-section-number">4.2</span> Encoding &amp; Bit resolution</h3>
-<p>Encoding is the process of mapping the sampled analog signal value to discrete binary numbers (digital information).</p>
-<blockquote class="blockquote">
-<p>ADC devices are characterized by the <strong>number of bits available</strong> to represent a signal.</p>
-</blockquote>
-<p>For example, consider an electrical signal that ranges <strong>from -1 volts to to +1 volts</strong> and must be converted to a <strong>3 bit number</strong>.</p>
 </section>
-<section id="encoding-procedure" class="level3" data-number="4.3">
-<h3 data-number="4.3" class="anchored" data-anchor-id="encoding-procedure"><span class="header-section-number">4.3</span> Encoding Procedure</h3>
-<p>To approximate the numeric conversion from a voltage signal to a digital output, follow the steps below:</p>
-<ol type="1">
-<li><p>Identify the minimum and maximum voltage values that can be observed in the input.</p>
-<ul>
-<li>Example: -1 to +1 volts (2 volt range)</li>
-</ul></li>
-<li><p>Identify the minimum and maximum binary values that can generated as the output. Note the amount of unique numbers represented by this range</p>
-<ul>
-<li>Example: For a 3-bit number: 000 (decimal 0) is the minimum and 111 (decimal 7) is the maximum, making a total of 8 unique numbers.</li>
-</ul></li>
-<li><p>Divide the voltage range that will be observed (max voltage - min voltage) by the amount of unique binary numbers available. This will determine the voltage increment that each binary number represents.</p>
-<ul>
-<li>Example: (+1V - (-1V)) / 8 = 2V/8 = 0.25V</li>
-</ul></li>
-<li><p>Layout each binary number and their increments and read where the voltage values lie.</p></li>
-</ol>
-<p>Assuming the ADC has a resolution of 3 bits, all voltage values (-1V to 1V) must be represented with at most 3 bits, or 2^3 = 8 unique values (0 is a unique value).</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="../assets/6-analog-digital-bit-resolution.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="voltage signal converted to a bit resolution of 3 bits"><img src="../assets/6-analog-digital-bit-resolution.png" class="img-fluid figure-img" alt="voltage signal converted to a bit resolution of 3 bits"></a></p>
-<figcaption>voltage signal converted to a bit resolution of 3 bits</figcaption>
-</figure>
+<section id="list-comprehensions" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="list-comprehensions"><span class="header-section-number">3</span> List Comprehensions</h2>
+<p>List Comprehensions is a very powerful tool, which creates a new list based on another list, in a single, readable line.</p>
+<p>For example, let’s say we need to create a list of integers which specify the length of each word in a certain sentence, but only if the word is not the word “the”.</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
 </div>
-<p class="img-info">
-<a href="https://www.usna.edu/ECE/ec312/Lessons/wireless/EC312_Lesson_20_Analog_to_Digital_Course_Notes.pdf"> Voltage signal between -1V and 1V converted to digital with a 3 bit resolution </a>&nbsp; - US Naval Academy.
-</p>
-<p>In this case:</p>
-<ul>
-<li>000 is assigned to the voltages from -0.75 V to -1.0 V,</li>
-<li>001 is assigned to the voltages from -0.5 V to -0.749 V,</li>
-<li>010 is assigned to the voltages from -0.25 V to -0.49 V,</li>
-<li>and so on.</li>
-</ul>
-<p>The binary representation of the above signal is:</p>
-<p>110 101 100 011 011 100 110 110 100 010 000 000 001</p>
-<p>If the sampling is happening 2000 times per second (Hz) and for every sample we generate 3 bits, we are generating 2000 x 3 bits = 6000 bits/sec of information. This is also know as the bitrate.</p>
-<p>If a song of 3 minutes is sampled with the same specs, how big will this file be in kB?</p>
-<p>What is the <a href="https://www.tunefab.com/tutorials/spotify-bitrate.html">bitrate of music on Spotify</a>?</p>
-</section>
-<section id="sensor-voltages-bit-resolution" class="level3" data-number="4.4">
-<h3 data-number="4.4" class="anchored" data-anchor-id="sensor-voltages-bit-resolution"><span class="header-section-number">4.4</span> Sensor voltages &amp; bit resolution</h3>
-<p>IoT systems typically work with electrical signals encoded in voltage levels.</p>
-<p>Every hardware that converts from analog to digital (and vice-versa) needs to have an appropriate ACD device.</p>
-<p>Microcontrollers are often used to process these signals because they often have an integrated ACD and they are very inexpensive.</p>
-</section>
-</section>
-<section id="exercises" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="exercises"><span class="header-section-number">5</span> Exercises</h2>
-<section id="exercise-1" class="level3" data-number="5.1">
-<h3 data-number="5.1" class="anchored" data-anchor-id="exercise-1"><span class="header-section-number">5.1</span> Exercise 1</h3>
-<p>Considering the analog signal below. The signal is being sampled in a program at 2Hz (2 times/sec) with the help of an ADC that has 6-bit resolution. The ADC can handle up to 8V signals.</p>
-<ol type="A">
-<li><p>What are the voltages being sampled by the ADC?</p></li>
-<li><p>If the signal reached max voltage, what would be the integer number passed to the program by the ADC?</p></li>
-</ol>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="../assets/6-analog-digital-exercise1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="Graph for exercise 1"><img src="../assets/6-analog-digital-exercise1.png" class="img-fluid figure-img" alt="Graph for exercise 1"></a></p>
-<figcaption>Graph for exercise 1</figcaption>
-</figure>
+<div class="sourceCode" id="cb4" data-filename="Python"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>sentence <span class="op">=</span> <span class="st">"the quick brown fox jumps over the lazy dog"</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> sentence.split()</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>word_lengths <span class="op">=</span> []</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> word <span class="kw">in</span> words:</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> word <span class="op">!=</span> <span class="st">"the"</span>:</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>        word_lengths.append(<span class="bu">len</span>(word))</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(words)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(word_lengths)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<details>
-<summary>
-Solution
-</summary>
-<p>
-</p><ol type="a">
-<li>Sampled voltages: 4, 6, 6, 0, 2, 2, 2, 5, 6, 4
-<p></p>
-<p>
-</p><ol start="2" type="a">
-<li>Since the ADC has a 6-bit resolution, it can represent values up to 63 (all 6 bits ON at the same time). Max voltage would result in the integer 63.
-<p></p>
-</li></ol></li></ol></details>
-
-
+<p>Using a list comprehension, we could simplify this process to this notation:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode" id="cb5" data-filename="Python"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>sentence <span class="op">=</span> <span class="st">"the quick brown fox jumps over the lazy dog"</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> sentence.split()</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>word_lengths <span class="op">=</span> [<span class="bu">len</span>(word) <span class="cf">for</span> word <span class="kw">in</span> words <span class="cf">if</span> word <span class="op">!=</span> <span class="st">"the"</span>]</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(words)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(word_lengths)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
+<section id="generators" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="generators"><span class="header-section-number">4</span> Generators</h2>
+<p>Generators are very easy to implement, but a bit difficult to understand.</p>
+<p>Generators are used to create iterators, but with a different approach. Generators are simple functions which return an iterable set of items, one at a time, in a special way.</p>
+<p>When an iteration over a set of item starts using the for statement, the generator is run. Once the generator’s function code reaches a “yield” statement, the generator yields its execution back to the for loop, returning a new value from the set. The generator function can generate as many values (possibly infinite) as it wants, yielding each one in its turn.</p>
+<p>Here is a simple example of a generator function which returns 7 random integers:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode" id="cb6" data-filename="Python"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> lottery():</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># returns 6 numbers between 1 and 40</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">6</span>):</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">yield</span> random.randint(<span class="dv">1</span>, <span class="dv">40</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># returns a 7th number between 1 and 15</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">yield</span> random.randint(<span class="dv">1</span>, <span class="dv">15</span>)</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> random_number <span class="kw">in</span> lottery():</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"And the next number is... </span><span class="sc">%d</span><span class="st">!"</span> <span class="op">%</span> (random_number))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This function decides how to generate the random numbers on its own, and executes the yield statements one at a time, pausing in between to yield execution back to the main for loop.</p>
 </section>
-<section id="references" class="level2" data-number="6">
-<h2 data-number="6" class="anchored" data-anchor-id="references"><span class="header-section-number">6</span> References</h2>
-<ul>
-<li><a href="https://learn.sparkfun.com/tutorials/analog-vs-digital/all">Analog vs.&nbsp;Digital</a> by Sparkfun.</li>
-<li><a href="https://www.usna.edu/ECE/ec312/">Lesson 20: Analog to Digital Conversion</a>, Course EC312, US Naval Academy.</li>
-<li>Lessons 4 and 5, Telecom course, Sandy Bultena.</li>
-</ul>
-<section id="video-reference" class="level3" data-number="6.1">
-<h3 data-number="6.1" class="anchored" data-anchor-id="video-reference"><span class="header-section-number">6.1</span> Video Reference</h3>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/64FSgQdWHrE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
-</iframe>
-<!--
-## Diving Deeper
-
-### Is digital better?
-
-#### Noise: digital can handle it -->
+<section id="lambda-functions" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="lambda-functions"><span class="header-section-number">5</span> Lambda functions</h2>
+<p>Normally we define a function using the def keyword somewhere in the code and call it whenever we need to use it.</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode" id="cb7" data-filename="Python"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> <span class="bu">sum</span>(a, b):</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">+</span> b</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="bu">sum</span>(a, b)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(c)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now instead of defining the function somewhere and calling it, we can use python’s lambda functions, which are inline functions defined at the same place we use it. So we don’t need to declare a function somewhere and revisit the code just for a single time use.</p>
+<p>They don’t need to have a name, so they also called anonymous functions. We define a lambda function using the keyword lambda.</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode" id="cb8" data-filename="Python"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>your_function_name <span class="op">=</span> <span class="kw">lambda</span> inputs: output</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>So the above sum example using lambda function would be,</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode" id="cb9" data-filename="Python"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="bu">sum</span> <span class="op">=</span> <span class="kw">lambda</span> x, y: x <span class="op">+</span> y</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="bu">sum</span>(a, b)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(c)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Here we are assigning the lambda function to the variable <strong>sum</strong>, and upon giving the arguments i.e.&nbsp;a and b, it works like a normal function.</p>
+</section>
+<section id="dictionaries" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="dictionaries"><span class="header-section-number">6</span> Dictionaries</h2>
+<hr>
+<p>A dictionary is a data type similar to arrays, but works with keys and values instead of indexes. Each value stored in a dictionary can be accessed using a key, which is any type of object (a string, a number, a list, etc.) instead of using its index to address it.</p>
+<p>For example, a database of phone numbers could be stored using a dictionary like this:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode" id="cb10" data-filename="Python"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>phonebook <span class="op">=</span> {}</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>phonebook[<span class="st">"John"</span>] <span class="op">=</span> <span class="dv">938477566</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>phonebook[<span class="st">"Jack"</span>] <span class="op">=</span> <span class="dv">938377264</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>phonebook[<span class="st">"Jill"</span>] <span class="op">=</span> <span class="dv">947662781</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(phonebook)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Alternatively, a dictionary can be initialized with the same values in the following notation:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode" id="cb11" data-filename="Python"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>phonebook <span class="op">=</span> {<span class="st">"John"</span>: <span class="dv">938477566</span>, <span class="st">"Jack"</span>: <span class="dv">938377264</span>, <span class="st">"Jill"</span>: <span class="dv">947662781</span>}</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(phonebook)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="iterating-over-dictionaries" class="level3" data-number="6.1">
+<h3 data-number="6.1" class="anchored" data-anchor-id="iterating-over-dictionaries"><span class="header-section-number">6.1</span> Iterating over dictionaries</h3>
+<p>Dictionaries can be iterated over, just like a list. However, a dictionary, unlike a list, does not keep the order of the values stored in it. To iterate over key value pairs, use the following syntax:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode" id="cb12" data-filename="Python"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>phonebook <span class="op">=</span> {<span class="st">"John"</span>: <span class="dv">938477566</span>, <span class="st">"Jack"</span>: <span class="dv">938377264</span>, <span class="st">"Jill"</span>: <span class="dv">947662781</span>}</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> name, number <span class="kw">in</span> phonebook.items():</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Phone number of </span><span class="sc">%s</span><span class="st"> is </span><span class="sc">%d</span><span class="st">"</span> <span class="op">%</span> (name, number))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="removing-a-value" class="level3" data-number="6.2">
+<h3 data-number="6.2" class="anchored" data-anchor-id="removing-a-value"><span class="header-section-number">6.2</span> Removing a value</h3>
+<p>To remove a specified index, use either one of the following notations:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode" id="cb13" data-filename="Python"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>phonebook <span class="op">=</span> {<span class="st">"John"</span>: <span class="dv">938477566</span>, <span class="st">"Jack"</span>: <span class="dv">938377264</span>, <span class="st">"Jill"</span>: <span class="dv">947662781</span>}</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> phonebook[<span class="st">"John"</span>]</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(phonebook)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>or:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode" id="cb14" data-filename="Python"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>phonebook <span class="op">=</span> {<span class="st">"John"</span>: <span class="dv">938477566</span>, <span class="st">"Jack"</span>: <span class="dv">938377264</span>, <span class="st">"Jill"</span>: <span class="dv">947662781</span>}</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>phonebook.pop(<span class="st">"John"</span>)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(phonebook)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
 </section>
@@ -1244,13 +1226,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../notes/python-environments/index.html" class="pagination-link" aria-label="Python environment management">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Python environment management</span>
+      <a href="../../notes/python-scripting/index.html" class="pagination-link" aria-label="Python scripting">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Python scripting</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../notes/python-scripting/index.html" class="pagination-link" aria-label="Python scripting">
-        <span class="nav-page-text">Python scripting</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../notes/reterminal-devices/index.html" class="pagination-link" aria-label="reTerminal built-in devices">
+        <span class="nav-page-text">reTerminal built-in devices</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

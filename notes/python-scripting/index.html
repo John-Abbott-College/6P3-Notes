@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-03-14">
+<meta name="dcterms.date" content="2025-04-04">
 
-<title>Signals: Analog and digital – Connected Objects</title>
+<title>Python scripting – Connected Objects</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +64,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../notes/python-scripting/index.html" rel="next">
-<link href="../../notes/python-environments/index.html" rel="prev">
+<link href="../../notes/python-collections/index.html" rel="next">
+<link href="../../notes/analog-vs-digital/index.html" rel="prev">
 <link href="../../assets/favicon_io/favicon.ico" rel="icon">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -45,9 +79,6 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/bootstrap/bootstrap-ae88efe0b7c31e6578cce92c213ac82a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../../site_libs/bootstrap/bootstrap-dark-73fae4600b5030606feb7fcd3e669409.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script src="../../site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
-<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": true,
@@ -75,9 +106,9 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="Signals: Analog and digital – Connected Objects">
-<meta property="og:description" content="Comparing the two paradigms for measuring electronic information and understanding how each are used for distributed applications.">
-<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/notes/assets/6-analog-digital-analog-temperature.png">
+<meta property="og:title" content="Python scripting – Connected Objects">
+<meta property="og:description" content="Tips and tricks for effective scripting in Python">
+<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/notes/python-scripting/assets/art_title_path_only.svg">
 <meta property="og:site_name" content="{{< var course.title >}}">
 </head>
 
@@ -208,7 +239,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/analog-vs-digital/index.html">Signals: Analog and digital</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/python-scripting/index.html">Python scripting</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -252,13 +283,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notes/analog-vs-digital/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../notes/analog-vs-digital/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Signals: Analog and digital</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notes/python-scripting/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/python-scripting/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Python scripting</span></a>
   </div>
 </li>
@@ -328,31 +359,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#analog-the-natural-world" id="toc-analog-the-natural-world" class="nav-link active" data-scroll-target="#analog-the-natural-world"><span class="header-section-number">1</span> Analog: the natural world</a>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><span class="header-section-number">1</span> Overview</a></li>
+  <li><a href="#passing-script-arguments" id="toc-passing-script-arguments" class="nav-link" data-scroll-target="#passing-script-arguments"><span class="header-section-number">2</span> Passing Script Arguments</a>
   <ul>
-  <li><a href="#temperature" id="toc-temperature" class="nav-link" data-scroll-target="#temperature"><span class="header-section-number">1.1</span> Temperature</a></li>
-  <li><a href="#sound" id="toc-sound" class="nav-link" data-scroll-target="#sound"><span class="header-section-number">1.2</span> Sound</a></li>
-  <li><a href="#analog-signals-graphs" id="toc-analog-signals-graphs" class="nav-link" data-scroll-target="#analog-signals-graphs"><span class="header-section-number">1.3</span> Analog Signals Graphs</a></li>
+  <li><a href="#sys.argv" id="toc-sys.argv" class="nav-link" data-scroll-target="#sys.argv"><span class="header-section-number">2.1</span> <code>sys.argv</code></a></li>
+  <li><a href="#argparse" id="toc-argparse" class="nav-link" data-scroll-target="#argparse"><span class="header-section-number">2.2</span> <code>argparse</code></a></li>
+  <li><a href="#argparse-references" id="toc-argparse-references" class="nav-link" data-scroll-target="#argparse-references"><span class="header-section-number">2.3</span> <code>argparse</code> References</a></li>
   </ul></li>
-  <li><a href="#digital-discrete-values" id="toc-digital-discrete-values" class="nav-link" data-scroll-target="#digital-discrete-values"><span class="header-section-number">2</span> Digital: discrete values</a>
+  <li><a href="#main__-top-level-environment" id="toc-main__-top-level-environment" class="nav-link" data-scroll-target="#main__-top-level-environment"><span class="header-section-number">3</span> <code>__main__</code> &amp; top-level environment</a>
   <ul>
-  <li><a href="#digital-simulating-analogue" id="toc-digital-simulating-analogue" class="nav-link" data-scroll-target="#digital-simulating-analogue"><span class="header-section-number">2.1</span> Digital Simulating Analogue</a></li>
-  </ul></li>
-  <li><a href="#analog-to-digital-conversion-adc" id="toc-analog-to-digital-conversion-adc" class="nav-link" data-scroll-target="#analog-to-digital-conversion-adc"><span class="header-section-number">3</span> Analog to Digital Conversion (ADC)</a></li>
-  <li><a href="#sampling" id="toc-sampling" class="nav-link" data-scroll-target="#sampling"><span class="header-section-number">4</span> Sampling</a>
-  <ul>
-  <li><a href="#sampling-rate" id="toc-sampling-rate" class="nav-link" data-scroll-target="#sampling-rate"><span class="header-section-number">4.1</span> Sampling rate</a></li>
-  <li><a href="#encoding-bit-resolution" id="toc-encoding-bit-resolution" class="nav-link" data-scroll-target="#encoding-bit-resolution"><span class="header-section-number">4.2</span> Encoding &amp; Bit resolution</a></li>
-  <li><a href="#encoding-procedure" id="toc-encoding-procedure" class="nav-link" data-scroll-target="#encoding-procedure"><span class="header-section-number">4.3</span> Encoding Procedure</a></li>
-  <li><a href="#sensor-voltages-bit-resolution" id="toc-sensor-voltages-bit-resolution" class="nav-link" data-scroll-target="#sensor-voltages-bit-resolution"><span class="header-section-number">4.4</span> Sensor voltages &amp; bit resolution</a></li>
-  </ul></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">5</span> Exercises</a>
-  <ul>
-  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1"><span class="header-section-number">5.1</span> Exercise 1</a></li>
-  </ul></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">6</span> References</a>
-  <ul>
-  <li><a href="#video-reference" id="toc-video-reference" class="nav-link" data-scroll-target="#video-reference"><span class="header-section-number">6.1</span> Video Reference</a></li>
+  <li><a href="#executing-as-a-script" id="toc-executing-as-a-script" class="nav-link" data-scroll-target="#executing-as-a-script"><span class="header-section-number">3.1</span> Executing as a Script</a></li>
+  <li><a href="#executing-as-a-module" id="toc-executing-as-a-module" class="nav-link" data-scroll-target="#executing-as-a-module"><span class="header-section-number">3.2</span> Executing as a Module</a></li>
+  <li><a href="#top-level-code" id="toc-top-level-code" class="nav-link" data-scroll-target="#top-level-code"><span class="header-section-number">3.3</span> Top-level Code</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -366,10 +384,10 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Signals: Analog and digital</h1>
-<p class="subtitle lead">Comparing the two paradigms for measuring electronic information and understanding how each are used for distributed applications.</p>
+<h1 class="title">Python scripting</h1>
+<p class="subtitle lead"></p><p>Tips and tricks for effective scripting in Python</p><p></p>
   <div class="quarto-categories">
-    <div class="quarto-category">Hardware</div>
+    <div class="quarto-category">python</div>
   </div>
   </div>
 
@@ -381,7 +399,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 14, 2024</p>
+      <p class="date">April 4, 2025</p>
     </div>
   </div>
   
@@ -399,281 +417,193 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>We will use analog and digital signals to communicate with sensors.</p>
-<p>This section briefly compares these two types of signals and illustrates how we might encounter while using IoT hardware.</p>
-<p>To compare analog and digital signals, let’s look at how we can track 3 different sources of information:</p>
+<section id="overview" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="overview"><span class="header-section-number">1</span> Overview</h2>
+<p>This section explores intermediate Python topics to improve our technique at specific linux/IoT scripting tasks.</p>
+<p>We’ll explore:</p>
 <ul>
-<li>Temperature</li>
-<li>Sound</li>
-<li>Electricity (voltages)</li>
+<li>Passing terminal arguments to a script</li>
+<li><code>__main__</code> and <em>top-level</em> environment</li>
+<li>Running modules as scripts using <code>__main__</code></li>
+<li>Tip for managing <code>gpio</code> dependencies</li>
 </ul>
-<section id="analog-the-natural-world" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="analog-the-natural-world"><span class="header-section-number">1</span> Analog: the natural world</h2>
-<p>We live in an analog world. Most of the naturally occurring events that we experience happen in an analog form.</p>
-<blockquote class="blockquote">
-<p>Analog signals varies continuously in time and amplitude.</p>
-<p>This means that changes happen over a range of values with infinite “in between” steps.</p>
-</blockquote>
-<p>For example, the following events have an infinite number of transitions. It only depends on how accurately you can track them:</p>
+</section>
+<section id="passing-script-arguments" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="passing-script-arguments"><span class="header-section-number">2</span> Passing Script Arguments</h2>
+<p>It’s possible to pass command line arguments to a Python script directly from your shell:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> python myscript.py first 2 True</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The arguments passed are <code>first</code>, <code>2</code> and <code>True</code> .</p>
+<section id="sys.argv" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="sys.argv"><span class="header-section-number">2.1</span> <code>sys.argv</code></h3>
+<p>The Python <code>sys</code> module provides access to these arguments via <code>sys.argv</code>:</p>
 <ul>
-<li>The colors in a rainbow.</li>
-<li>The position of a swinging pendulum.</li>
-<li>The exact time of the day.</li>
+<li><code>sys.argv</code> is a <strong>Python list</strong> of arguments.</li>
 </ul>
-<section id="temperature" class="level3" data-number="1.1">
-<h3 data-number="1.1" class="anchored" data-anchor-id="temperature"><span class="header-section-number">1.1</span> Temperature</h3>
-<p>The A/C and heating systems in a house are typically activated once the temperature reaches some minimum and maximum values.</p>
-<p>The chart below is tracking the temperature in a room as the A/C and heating systems are activated over a few days.</p>
-<p><a href="../assets/6-analog-digital-analog-temperature.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="../assets/6-analog-digital-analog-temperature.png" class="img-fluid"></a></p>
-<p class="img-info">
-<a href="https://info.sparkfun.com/hubfs/Poster%20Downloads/Analog%20vs%20Digital/Concept%20Poster%20Analog%20vs%20Digital%20WEB.pdf"> Temperature changes over time </a>&nbsp; Adapted from poster: Analog and Digital Signals by Digikey.
-</p>
-<p>Let’s say the maximum temperature reached in the room is 30C and the minimum temperature is 15C. A person in the room would have observed every possible temperature in between that range (15.01, 15.0101, 15.0102, 15.01021, etc).</p>
-<p>The change in temperature produces analog information since it is changing over an infinite range of values.</p>
-</section>
-<section id="sound" class="level3" data-number="1.2">
-<h3 data-number="1.2" class="anchored" data-anchor-id="sound"><span class="header-section-number">1.2</span> Sound</h3>
-<p>Sound is also an example of an analog signal.</p>
-<p>When a volume of air is displaced quickly, air molecules are compressed against each other creating a high-pressure region. The high pressure region expands and compresses the air in the neighbouring area. Sound can travel thanks to this “chain effect”.</p>
-<blockquote class="blockquote">
-<p>By observing how the air pressure changes over time, we can draw a sound wave.</p>
-<p>This is how speakers and microphones interact with air to generate sound.</p>
-</blockquote>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="http://resource.isvr.soton.ac.uk/spcg/tutorial/tutorial/Tutorial_files/longipatm.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Animation of acoustic wave travelling in air"><img src="http://resource.isvr.soton.ac.uk/spcg/tutorial/tutorial/Tutorial_files/longipatm.gif" class="img-fluid figure-img" alt="Animation of acoustic wave travelling in air"></a></p>
-<figcaption>Animation of acoustic wave travelling in air</figcaption>
-</figure>
-</div>
-<p class="img-info">
-<a href="http://resource.isvr.soton.ac.uk/spcg/tutorial/tutorial/Tutorial_files/Web-basics-sound.htm"> Sound waves travelling through air </a>&nbsp; - Waves and Acoustics Animations by isvr.
-</p>
-<p>Sound waves are also an example of an analog signal because the amplitude of the wave transitions through the entire range of possible values between the Min and Max.</p>
-</section>
-<section id="analog-signals-graphs" class="level3" data-number="1.3">
-<h3 data-number="1.3" class="anchored" data-anchor-id="analog-signals-graphs"><span class="header-section-number">1.3</span> Analog Signals Graphs</h3>
-<p>A signal varies over time. It’s helpful to plot it on a graph where time is plotted on the horizontal, <em>x</em>-axis, and the value being tracked on the vertical, <em>y</em>-axis.</p>
-<p>Looking at a graph of a signal is usually the easiest way to identify if it’s analog or digital.</p>
-<blockquote class="blockquote">
-<p>When dealing with electricity we track voltage levels (amplitude).</p>
-<p>A time-versus-voltage graph of an analog signal should be <strong>smooth</strong> and <strong>continuous</strong>.</p>
-</blockquote>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://cdn.sparkfun.com/assets/3/7/6/6/0/51c48875ce395f745a000000.png" class="img-fluid figure-img"></p>
-<figcaption>Analog Sine Wave</figcaption>
-</figure>
-</div>
-<p>While these signals may be limited to a <strong>range</strong> of maximum and minimum values, there are still an infinite number of possible values within that range.</p>
-<p>For example, the analog voltage coming out of your wall socket oscillates between -120V and +120V. As you increase the resolution more and more, you discover an infinite number of values that the signal can actually be (64.4V, 64.42V, 64.424V, and other increasingly precise values).</p>
-</section>
-</section>
-<section id="digital-discrete-values" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="digital-discrete-values"><span class="header-section-number">2</span> Digital: discrete values</h2>
-<p>Digital signals are discrete, which means that at any given moment, the signal strength must be represented by a integer number. There are no half numbers.</p>
-<p>Typically, digital signals will be one of <strong>two values</strong>, a high voltage and a low voltage.</p>
-<blockquote class="blockquote">
-<p>The specific values of the <strong>high</strong> and <strong>low</strong> voltages depend on the hardware being used.</p>
-</blockquote>
-<p>Below is a the timing graph of a signal whose <strong>low voltage is 0 volts</strong> and <strong>high voltage is 5 volts</strong>.</p>
-<p>This type of signal is also known as a <strong>square waves</strong>.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://cdn.sparkfun.com/assets/c/8/5/b/e/51c495ebce395f1b5a000000.png" class="img-fluid figure-img"></p>
-<figcaption>Square wave signal. Two values, either 0V or 5V.</figcaption>
-</figure>
-</div>
-<p class="img-info">
-<a href="https://learn.sparkfun.com/tutorials/analog-vs-digital/all"> 0 to 5 volt “pulses” forming a square ware </a>&nbsp; - Analog vs.&nbsp;Digital by Digikey.
-</p>
-<section id="digital-simulating-analogue" class="level3" data-number="2.1">
-<h3 data-number="2.1" class="anchored" data-anchor-id="digital-simulating-analogue"><span class="header-section-number">2.1</span> Digital Simulating Analogue</h3>
-<p>A digital signal might be a discrete representation of an analog waveform.</p>
-<p>Viewed from afar, the wave function below may seem smooth and analog, but when you look closely there are tiny discrete <strong>steps</strong> as the signal tries to approximate analog values.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://cdn.sparkfun.com/assets/0/2/8/4/6/51c85fbece395fbc03000000.png" class="img-fluid figure-img"></p>
-<figcaption>Digital Sine Wave</figcaption>
-</figure>
-</div>
-<p class="img-info">
-<a href="https://learn.sparkfun.com/tutorials/analog-vs-digital/all"> Oscillating voltage from -120V to 120V represented as a digital signal </a>&nbsp; - Analog vs.&nbsp;Digital by Digikey.
-</p>
-<p>The number of <strong>discrete steps</strong> that a digital signal can use depends on how many bits are available for each recorded value. This is also called <strong>bit resolution</strong> (see <em>Sampling</em> below).</p>
-<p>For example, if a data point can only use one bit of definition, then it can only track on/off states, resulting in the red square wave seen above.</p>
-<p>However, if a data point can use 8 bits to store a value, then it can represent a value ranging from 0 to 255 (see the green sinusoidal voltage wave above).</p>
-</section>
-</section>
-<section id="analog-to-digital-conversion-adc" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="analog-to-digital-conversion-adc"><span class="header-section-number">3</span> Analog to Digital Conversion (ADC)</h2>
-<p>If most natural events are analog, how do we represent them in digital format? For example, if audio is analog, how can we get a computer to play music?</p>
-<blockquote class="blockquote">
-<p>An <strong>analog to digital converter (ADC)</strong> is a device that can read a analog signal and generate a digital representation of this signal.</p>
-</blockquote>
-<p>ADC’s are specific to the type of analog signal they are trying to read (sound, voltage, temperature, light, etc).</p>
-<p>Referring to the room temperature example used earlier, if we used a digital thermometer to record the temperature, our graph might look like the following:</p>
-<p><a href="../assets/6-analog-digital-temp-sampling.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="../assets/6-analog-digital-temp-sampling.png" class="img-fluid"></a></p>
-<p class="img-info">
-<a href="https://info.sparkfun.com/hubfs/Poster%20Downloads/Analog%20vs%20Digital/Concept%20Poster%20Analog%20vs%20Digital%20WEB.pdf"> Temperature represented as a digital reading </a>&nbsp; Poster: Analog and Digital Signals by Digikey.
-</p>
-<p>In the example above, a digital temperature reading was taken <strong>every 3hr</strong>.</p>
-<blockquote class="blockquote">
-<p>The digital signal representation of the temperature <strong>is not smooth or accurate</strong>.</p>
-<p>However, depending on the application <strong>it might be sufficient</strong>.</p>
-</blockquote>
-<p>To make the signal smoother or more representative of the real analog signal we need to take samples more regularly (eg. every 1min).</p>
-<p>The process of reading an analog signal over time to generate its digital representation is called <strong>sampling.</strong></p>
-</section>
-<section id="sampling" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="sampling"><span class="header-section-number">4</span> Sampling</h2>
-<p>Sampling is the process of inspecting the value of an analog signal at regular time intervals.</p>
-<p>When an ADC is sampling an analog signal, there are two variables that will characterize the digital output:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># myscript.py</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Argument List: </span><span class="sc">{</span>sys<span class="sc">.</span>argv<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Output:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> python myscript.py first 2 True</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Argument</span> List: [<span class="st">'myscript.py'</span>, <span class="st">'first'</span>, <span class="st">'2'</span>, <span class="st">'True'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Notice the following:</p>
 <ul>
-<li>Sampling rate.</li>
-<li>Bit resolution.</li>
+<li>The first element in the list is the name of the script.</li>
+<li>Arguments are available as strings.</li>
 </ul>
-<blockquote class="blockquote">
-<p><strong>Music sampling</strong> Some music genres like rap and hip-hop commonly sample song segments from other artists to play in the background.</p>
-<ul>
-<li>The term <strong>sampling</strong> is used because traditionally song segments were extracted from vinyl records which produce analog sound and saved in digital formats.</li>
-</ul>
-</blockquote>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/hT_2kUx0AcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="">
-</iframe>
-<section id="sampling-rate" class="level3" data-number="4.1">
-<h3 data-number="4.1" class="anchored" data-anchor-id="sampling-rate"><span class="header-section-number">4.1</span> Sampling rate</h3>
-<p>The time between samples is the <strong>sample period</strong> (T, in seconds), and the number of samples taken per second is the <strong>sample frequency or sample rate</strong> (fs, in samples/second or Hz).</p>
-<p>Basically, <strong>sampling is taking snap-shot values of the analog signal at regular time intervals.</strong></p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="../assets/6-analog-digital-sample-period.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Analog signal showing sample period and sample frequency"><img src="../assets/6-analog-digital-sample-period.png" class="img-fluid figure-img" alt="Analog signal showing sample period and sample frequency"></a></p>
-<figcaption>Analog signal showing sample period and sample frequency</figcaption>
-</figure>
-</div>
-<p class="img-info">
-<a href="https://www.usna.edu/ECE/ec312/Lessons/wireless/EC312_Lesson_20_Analog_to_Digital_Course_Notes.pdf"> Sample period and fequency for an electric signal </a>&nbsp; - US Naval Academy.
-</p>
-<p><strong>Sampling period examples:</strong></p>
-<ul>
-<li>If a signal is sampled every half second (0.5s sampling period, <strong><em>T</em></strong>), the sample frequency (<strong>*f**</strong>) is 1/0.5s = 2 Hz (times per second).</li>
-<li>If the sample frequency (<strong><em>f</em></strong>) is 2000 Hz, the sampling period (<strong><em>T</em></strong>) is = 1/2000Hz = 0.0005 secs (0.5 milliseconds).</li>
-</ul>
-<p>The higher the sample rate, the more accurate the digital signal is.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="../assets/6-analog-digital-increasing-sample-rate.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Signals of increasing sample rate"><img src="../assets/6-analog-digital-increasing-sample-rate.png" class="img-fluid figure-img" alt="Signals of increasing sample rate"></a></p>
-<figcaption>Signals of increasing sample rate</figcaption>
-</figure>
-</div>
-<p class="img-info">
-<a href="https://www.usna.edu/ECE/ec312/Lessons/wireless/EC312_Lesson_20_Analog_to_Digital_Course_Notes.pdf"> Same signal sampled with different sample rates </a>&nbsp; - US Naval Academy.
-</p>
+<p>Unfortunately, we can’t trust that the user will always pass arguments in the correct order and using appropriate data types. We would still need to parse the arguments and make sure they are valid.</p>
+<p>Fortunately, there is a built-in module that can help us do that.</p>
 </section>
-<section id="encoding-bit-resolution" class="level3" data-number="4.2">
-<h3 data-number="4.2" class="anchored" data-anchor-id="encoding-bit-resolution"><span class="header-section-number">4.2</span> Encoding &amp; Bit resolution</h3>
-<p>Encoding is the process of mapping the sampled analog signal value to discrete binary numbers (digital information).</p>
+<section id="argparse" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="argparse"><span class="header-section-number">2.2</span> <code>argparse</code></h3>
+<p><a href="https://docs.python.org/3.10/library/argparse.html#module-argparse" title="argparse: Command-line option and argument parsing library."><code>argparse</code></a> is a built-in module that makes it easy to write user-friendly command-line interfaces.</p>
+<p>Once the script defines what arguments are required, <code>argparse</code> will figure out how to parse those out of <a href="https://docs.python.org/3.10/library/sys.html#sys.argv" title="sys.argv"><code>sys.argv</code></a>. The <a href="https://docs.python.org/3.10/library/argparse.html#module-argparse" title="argparse: Command-line option and argument parsing library."><code>argparse</code></a> module also automatically generates help and usage messages, and issues errors when users give the program invalid arguments.</p>
 <blockquote class="blockquote">
-<p>ADC devices are characterized by the <strong>number of bits available</strong> to represent a signal.</p>
+<p>For a basic tutorial of <code>argparse</code>, see <a href="https://docs.python.org/3.10/howto/argparse.html#id1">this page</a>.</p>
 </blockquote>
-<p>For example, consider an electrical signal that ranges <strong>from -1 volts to to +1 volts</strong> and must be converted to a <strong>3 bit number</strong>.</p>
+<p>In its simplest form, <code>argparse</code> must be imported and a parser must be instantiated:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># myscript.py</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> argparse</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>parser <span class="op">=</span> argparse.ArgumentParser()</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>args <span class="op">=</span> parser.parse_args()</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(args)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>However, this will generate an error because we must tell argparse what argument flags and what data types to parse.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> python myscript.py first 2 True</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ex">usage:</span> myscript.py <span class="pp">[-</span><span class="ss">h</span><span class="pp">]</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="ex">myscript.py:</span> error: unrecognized arguments: first 2 True</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>To “teach” <code>argparse</code> how to parse an argument we use the command <code>parser.add_argument()</code></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># myscript.py</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> argparse</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>parser <span class="op">=</span> argparse.ArgumentParser()</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>parser.add_argument(<span class="st">"word"</span>, <span class="bu">type</span><span class="op">=</span><span class="bu">str</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>parser.add_argument(<span class="st">"number"</span>, <span class="bu">type</span><span class="op">=</span><span class="bu">int</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>parser.add_argument(<span class="st">"toggle"</span>, <span class="bu">type</span><span class="op">=</span><span class="bu">bool</span>)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>args <span class="op">=</span> parser.parse_args()</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(args)</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(args.word)</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(args.number)</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(args.toggle)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> python myscript.py first 2 True</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Namespace</span><span class="er">(</span><span class="va">word</span><span class="op">=</span><span class="st">'first'</span>, <span class="va">number</span><span class="op">=</span>2, <span class="va">toggle</span><span class="op">=</span>True<span class="kw">)</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="ex">first</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="ex">2</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="ex">True</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Notice how in the example above, <strong>all arguments were positional</strong>, which makes them <strong>mandatory</strong>. In other words, the order in which they are passed determines which variable they were being assigned to.</p>
+<p>It’s also possible to make arguments optional. In this case, they must be specified with the correct “Flag”.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># myscript.py</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> argparse</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>parser <span class="op">=</span> argparse.ArgumentParser()</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>parser.add_argument(<span class="st">"--word"</span>, <span class="bu">type</span><span class="op">=</span><span class="bu">str</span>)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>parser.add_argument(<span class="st">"--number"</span>, <span class="bu">type</span><span class="op">=</span><span class="bu">int</span>)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>parser.add_argument(<span class="st">"--toggle"</span>, <span class="bu">type</span><span class="op">=</span><span class="bu">bool</span>)</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>args <span class="op">=</span> parser.parse_args()</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(args)</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(args.word)</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(args.number)</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(args.toggle)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> python myscript.py <span class="at">--word</span> first <span class="at">--number</span> 2</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Namespace</span><span class="er">(</span><span class="va">word</span><span class="op">=</span><span class="st">'first'</span>, <span class="va">number</span><span class="op">=</span>2, <span class="va">toggle</span><span class="op">=</span>None<span class="kw">)</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="ex">first</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="ex">2</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="ex">None</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="encoding-procedure" class="level3" data-number="4.3">
-<h3 data-number="4.3" class="anchored" data-anchor-id="encoding-procedure"><span class="header-section-number">4.3</span> Encoding Procedure</h3>
-<p>To approximate the numeric conversion from a voltage signal to a digital output, follow the steps below:</p>
+<section id="argparse-references" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="argparse-references"><span class="header-section-number">2.3</span> <code>argparse</code> References</h3>
+<ul>
+<li>Article <a href="https://www.codeforests.com/2020/10/18/passing-arguments-to-python-script/">10 tips for passing arguments to Python script</a></li>
+</ul>
+</section>
+</section>
+<section id="main__-top-level-environment" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="main__-top-level-environment"><span class="header-section-number">3</span> <code>__main__</code> &amp; top-level environment</h2>
+<p>Why include a <code>if __name__ == "__main__":</code> in your script?</p>
+<p>There are two ways of executing Python code. Depending on how the code is executed, the global <em>string</em> variable <code>__name__</code> will take one of two values:</p>
 <ol type="1">
-<li><p>Identify the minimum and maximum voltage values that can be observed in the input.</p>
+<li><p>If the script is run by the Python interpreter :</p>
 <ul>
-<li>Example: -1 to +1 volts (2 volt range)</li>
+<li><code>__name__</code> has the value of <code>__main__</code></li>
 </ul></li>
-<li><p>Identify the minimum and maximum binary values that can generated as the output. Note the amount of unique numbers represented by this range</p>
+<li><p>Importing script as a separate Python module:</p>
 <ul>
-<li>Example: For a 3-bit number: 000 (decimal 0) is the minimum and 111 (decimal 7) is the maximum, making a total of 8 unique numbers.</li>
+<li><code>__name__</code> has the value of the <em>module name</em>.</li>
 </ul></li>
-<li><p>Divide the voltage range that will be observed (max voltage - min voltage) by the amount of unique binary numbers available. This will determine the voltage increment that each binary number represents.</p>
-<ul>
-<li>Example: (+1V - (-1V)) / 8 = 2V/8 = 0.25V</li>
-</ul></li>
-<li><p>Layout each binary number and their increments and read where the voltage values lie.</p></li>
 </ol>
-<p>Assuming the ADC has a resolution of 3 bits, all voltage values (-1V to 1V) must be represented with at most 3 bits, or 2^3 = 8 unique values (0 is a unique value).</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="../assets/6-analog-digital-bit-resolution.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="voltage signal converted to a bit resolution of 3 bits"><img src="../assets/6-analog-digital-bit-resolution.png" class="img-fluid figure-img" alt="voltage signal converted to a bit resolution of 3 bits"></a></p>
-<figcaption>voltage signal converted to a bit resolution of 3 bits</figcaption>
-</figure>
-</div>
-<p class="img-info">
-<a href="https://www.usna.edu/ECE/ec312/Lessons/wireless/EC312_Lesson_20_Analog_to_Digital_Course_Notes.pdf"> Voltage signal between -1V and 1V converted to digital with a 3 bit resolution </a>&nbsp; - US Naval Academy.
-</p>
-<p>In this case:</p>
+<p>Let’s illustrate these two cases below.</p>
+<blockquote class="blockquote">
+<p><strong>TL:DR</strong></p>
 <ul>
-<li>000 is assigned to the voltages from -0.75 V to -1.0 V,</li>
-<li>001 is assigned to the voltages from -0.5 V to -0.749 V,</li>
-<li>010 is assigned to the voltages from -0.25 V to -0.49 V,</li>
-<li>and so on.</li>
-</ul>
-<p>The binary representation of the above signal is:</p>
-<p>110 101 100 011 011 100 110 110 100 010 000 000 001</p>
-<p>If the sampling is happening 2000 times per second (Hz) and for every sample we generate 3 bits, we are generating 2000 x 3 bits = 6000 bits/sec of information. This is also know as the bitrate.</p>
-<p>If a song of 3 minutes is sampled with the same specs, how big will this file be in kB?</p>
-<p>What is the <a href="https://www.tunefab.com/tutorials/spotify-bitrate.html">bitrate of music on Spotify</a>?</p>
-</section>
-<section id="sensor-voltages-bit-resolution" class="level3" data-number="4.4">
-<h3 data-number="4.4" class="anchored" data-anchor-id="sensor-voltages-bit-resolution"><span class="header-section-number">4.4</span> Sensor voltages &amp; bit resolution</h3>
-<p>IoT systems typically work with electrical signals encoded in voltage levels.</p>
-<p>Every hardware that converts from analog to digital (and vice-versa) needs to have an appropriate ACD device.</p>
-<p>Microcontrollers are often used to process these signals because they often have an integrated ACD and they are very inexpensive.</p>
-</section>
-</section>
-<section id="exercises" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="exercises"><span class="header-section-number">5</span> Exercises</h2>
-<section id="exercise-1" class="level3" data-number="5.1">
-<h3 data-number="5.1" class="anchored" data-anchor-id="exercise-1"><span class="header-section-number">5.1</span> Exercise 1</h3>
-<p>Considering the analog signal below. The signal is being sampled in a program at 2Hz (2 times/sec) with the help of an ADC that has 6-bit resolution. The ADC can handle up to 8V signals.</p>
-<ol type="A">
-<li><p>What are the voltages being sampled by the ADC?</p></li>
-<li><p>If the signal reached max voltage, what would be the integer number passed to the program by the ADC?</p></li>
-</ol>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="../assets/6-analog-digital-exercise1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="Graph for exercise 1"><img src="../assets/6-analog-digital-exercise1.png" class="img-fluid figure-img" alt="Graph for exercise 1"></a></p>
-<figcaption>Graph for exercise 1</figcaption>
-</figure>
-</div>
-<details>
-<summary>
-Solution
-</summary>
-<p>
-</p><ol type="a">
-<li>Sampled voltages: 4, 6, 6, 0, 2, 2, 2, 5, 6, 4
-<p></p>
-<p>
-</p><ol start="2" type="a">
-<li>Since the ADC has a 6-bit resolution, it can represent values up to 63 (all 6 bits ON at the same time). Max voltage would result in the integer 63.
-<p></p>
-</li></ol></li></ol></details>
-
-
-</section>
-</section>
-<section id="references" class="level2" data-number="6">
-<h2 data-number="6" class="anchored" data-anchor-id="references"><span class="header-section-number">6</span> References</h2>
+<li>Official docs:
 <ul>
-<li><a href="https://learn.sparkfun.com/tutorials/analog-vs-digital/all">Analog vs.&nbsp;Digital</a> by Sparkfun.</li>
-<li><a href="https://www.usna.edu/ECE/ec312/">Lesson 20: Analog to Digital Conversion</a>, Course EC312, US Naval Academy.</li>
-<li>Lessons 4 and 5, Telecom course, Sandy Bultena.</li>
+<li><a href="https://docs.python.org/3/library/__main__.html#module-__main__" title="__main__: The environment where top-level code is run. Covers command-line interfaces, import-time behavior, and ``__name__ == '__main__'``."><code>__main__</code>— Top-level code environment</a></li>
+</ul></li>
+<li>Summary discussion at Stackoverflow:
+<ul>
+<li><a href="https://stackoverflow.com/questions/419163/what-does-if-name-main-do">What does if <strong>name</strong> == “<strong>main</strong>”: do?</a></li>
+</ul></li>
 </ul>
-<section id="video-reference" class="level3" data-number="6.1">
-<h3 data-number="6.1" class="anchored" data-anchor-id="video-reference"><span class="header-section-number">6.1</span> Video Reference</h3>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/64FSgQdWHrE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
-</iframe>
-<!--
-## Diving Deeper
-
-### Is digital better?
-
-#### Noise: digital can handle it -->
+</blockquote>
+<section id="executing-as-a-script" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="executing-as-a-script"><span class="header-section-number">3.1</span> Executing as a Script</h3>
+<p>Consider the following script:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># file my_script.py</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Inside my_script.py, variable `__name__` is: "</span>, <span class="va">__name__</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Executing this file with the Python interpreter:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> python my_script.py</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Output</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Inside my_script, variable `__name__` is: __main__</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="executing-as-a-module" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="executing-as-a-module"><span class="header-section-number">3.2</span> Executing as a Module</h3>
+<p>Consider a new file:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># file your_script.py</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Inside your_script.py, variable `__name__` is: "</span>, <span class="va">__name__</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Now modify <code>my_script.py</code> to import <code>your_script.py</code>:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># file my_script.py</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> your_script</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Inside my_script.py, variable `__name__` is: "</span>, <span class="va">__name__</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<blockquote class="blockquote">
+<p>When a file is imported as a module, <strong>it’s top-level code gets executed immediately</strong>.</p>
+</blockquote>
+<p>When we execute <code>my_script.py</code> again using the Python interpreter:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> python my_script.py</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Output</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Inside your_script, variable `__name__` is: your_script</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Inside my_script, variable `__name__` is: __main__</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The first print statement came from <code>your_script.py</code> when it was imported by <code>my_script.py</code>.</p>
+<p>Notice how inside <code>your_script.py</code>, the <strong>variable <code>__name__</code> was the file name because it was being run as a module</strong> - from a different script (<code>my_script.py</code>).</p>
+</section>
+<section id="top-level-code" class="level3" data-number="3.3">
+<h3 data-number="3.3" class="anchored" data-anchor-id="top-level-code"><span class="header-section-number">3.3</span> Top-level Code</h3>
+<p>All of the code that is at indentation level 0 gets executed is called the <strong>top-level</strong>.</p>
+<p><code>__main__</code> is the name of the environment where top-level code is run.</p>
+<p>If a module is being run as a script (as in <code>mys_cript.py</code> above), then <code>__name__</code> is instead set to the string <code>"__main__"</code>.</p>
+<p>You can test whether your script is being run directly or being imported by something else by testing what <code>__name__</code> evaluates to:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># another_script.py</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Include whatever code here.</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    main()  <span class="co"># Will only run if executing file as a script. </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>
@@ -1244,49 +1174,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../notes/python-environments/index.html" class="pagination-link" aria-label="Python environment management">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Python environment management</span>
+      <a href="../../notes/analog-vs-digital/index.html" class="pagination-link" aria-label="Signals: Analog and digital">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Signals: Analog and digital</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../notes/python-scripting/index.html" class="pagination-link" aria-label="Python scripting">
-        <span class="nav-page-text">Python scripting</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../notes/python-collections/index.html" class="pagination-link" aria-label="Python collection types and operations">
+        <span class="nav-page-text">Python collection types and operations</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
-(function() {
-  let previousOnload = window.onload;
-  window.onload = () => {
-    if (previousOnload) {
-      previousOnload();
-    }
-    lightboxQuarto.on('slide_before_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      const href = trigger.getAttribute('href');
-      if (href !== null) {
-        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-        if (imgEl !== null) {
-          const srcAttr = imgEl.getAttribute("src");
-          if (srcAttr && srcAttr.startsWith("data:")) {
-            slideConfig.href = srcAttr;
-          }
-        }
-      } 
-    });
-  
-    lightboxQuarto.on('slide_after_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(slideNode);
-      }
-    });
-  
-  };
-  
-})();
-          </script>
 
 
 
