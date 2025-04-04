@@ -3,7 +3,7 @@ title: Object Oriented Python
 subtitle: >
   Introduction to object oriented programming techniques in Python.
   Learn how to create custom classes and objects, and how to use inheritance.
-date: 2025-02-03
+date: 2025-04-04
 categories: [Python, OOP]
 bibliography: references.bib
 nocite: |
