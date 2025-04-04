@@ -1,11 +1,10 @@
 ---
-title: "Project management"
+title: "Python project management"
 subtitle:
   Previously, we have focused on installing dependencies from other projects --
   we expand on that knowledge to learn how to create our own projects
-date: 2024-04-8
-categories: ["Quiz 2", "Python"]
-draft: true
+date: 2025-04-04
+categories: ["Python"]
 ---
 
 ## Overview
