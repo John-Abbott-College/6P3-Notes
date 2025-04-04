@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-03-14">
+<meta name="dcterms.date" content="2025-04-04">
 
-<title>Signals: Analog and digital – Connected Objects</title>
+<title>Asynchronous progamming in Python – Connected Objects</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +64,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../notes/reterminal-devices/index.html" rel="next">
-<link href="../../notes/python-environments/index.html" rel="prev">
+<link href="../../notes/course-hardware/index.html" rel="next">
+<link href="../../notes/serial-protocols/index.html" rel="prev">
 <link href="../../assets/favicon_io/favicon.ico" rel="icon">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -75,9 +109,9 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="Signals: Analog and digital – Connected Objects">
-<meta property="og:description" content="Comparing the two paradigms for measuring electronic information and understanding how each are used for distributed applications.">
-<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/notes/assets/6-analog-digital-analog-temperature.png">
+<meta property="og:title" content="Asynchronous progamming in Python – Connected Objects">
+<meta property="og:description" content="Using the asyncio library to control concurrentprocesses in Python.">
+<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/notes/async-python/assets/art_title_path_only.svg">
 <meta property="og:site_name" content="{{< var course.title >}}">
 </head>
 
@@ -196,7 +230,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/analog-vs-digital/index.html">Signals: Analog and digital</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/async-python/index.html">Asynchronous progamming in Python</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -240,7 +274,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notes/analog-vs-digital/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../notes/analog-vs-digital/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Signals: Analog and digital</span></a>
   </div>
 </li>
@@ -270,7 +304,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notes/async-python/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/async-python/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Asynchronous progamming in Python</span></a>
   </div>
 </li>
@@ -298,31 +332,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#analog-the-natural-world" id="toc-analog-the-natural-world" class="nav-link active" data-scroll-target="#analog-the-natural-world"><span class="header-section-number">1</span> Analog: the natural world</a>
+  <li><a href="#asynch-with-asyncio" id="toc-asynch-with-asyncio" class="nav-link active" data-scroll-target="#asynch-with-asyncio"><span class="header-section-number">1</span> Asynch with <code>asyncio</code></a>
   <ul>
-  <li><a href="#temperature" id="toc-temperature" class="nav-link" data-scroll-target="#temperature"><span class="header-section-number">1.1</span> Temperature</a></li>
-  <li><a href="#sound" id="toc-sound" class="nav-link" data-scroll-target="#sound"><span class="header-section-number">1.2</span> Sound</a></li>
-  <li><a href="#analog-signals-graphs" id="toc-analog-signals-graphs" class="nav-link" data-scroll-target="#analog-signals-graphs"><span class="header-section-number">1.3</span> Analog Signals Graphs</a></li>
+  <li><a href="#concurrent-vs-parallel" id="toc-concurrent-vs-parallel" class="nav-link" data-scroll-target="#concurrent-vs-parallel"><span class="header-section-number">1.1</span> Concurrent vs Parallel</a></li>
+  <li><a href="#synchronous-vs-async-execution" id="toc-synchronous-vs-async-execution" class="nav-link" data-scroll-target="#synchronous-vs-async-execution"><span class="header-section-number">1.2</span> Synchronous vs Async Execution</a></li>
+  <li><a href="#asyncio-tasks" id="toc-asyncio-tasks" class="nav-link" data-scroll-target="#asyncio-tasks"><span class="header-section-number">1.3</span> Asyncio Tasks</a></li>
+  <li><a href="#coroutines-tasks-event-loop" id="toc-coroutines-tasks-event-loop" class="nav-link" data-scroll-target="#coroutines-tasks-event-loop"><span class="header-section-number">1.4</span> Coroutines, Tasks &amp; Event Loop</a>
+  <ul class="collapse">
+  <li><a href="#coroutines" id="toc-coroutines" class="nav-link" data-scroll-target="#coroutines"><span class="header-section-number">1.4.1</span> Coroutines</a></li>
+  <li><a href="#tasks" id="toc-tasks" class="nav-link" data-scroll-target="#tasks"><span class="header-section-number">1.4.2</span> Tasks</a></li>
+  <li><a href="#futures" id="toc-futures" class="nav-link" data-scroll-target="#futures"><span class="header-section-number">1.4.3</span> Futures</a></li>
   </ul></li>
-  <li><a href="#digital-discrete-values" id="toc-digital-discrete-values" class="nav-link" data-scroll-target="#digital-discrete-values"><span class="header-section-number">2</span> Digital: discrete values</a>
-  <ul>
-  <li><a href="#digital-simulating-analogue" id="toc-digital-simulating-analogue" class="nav-link" data-scroll-target="#digital-simulating-analogue"><span class="header-section-number">2.1</span> Digital Simulating Analogue</a></li>
-  </ul></li>
-  <li><a href="#analog-to-digital-conversion-adc" id="toc-analog-to-digital-conversion-adc" class="nav-link" data-scroll-target="#analog-to-digital-conversion-adc"><span class="header-section-number">3</span> Analog to Digital Conversion (ADC)</a></li>
-  <li><a href="#sampling" id="toc-sampling" class="nav-link" data-scroll-target="#sampling"><span class="header-section-number">4</span> Sampling</a>
-  <ul>
-  <li><a href="#sampling-rate" id="toc-sampling-rate" class="nav-link" data-scroll-target="#sampling-rate"><span class="header-section-number">4.1</span> Sampling rate</a></li>
-  <li><a href="#encoding-bit-resolution" id="toc-encoding-bit-resolution" class="nav-link" data-scroll-target="#encoding-bit-resolution"><span class="header-section-number">4.2</span> Encoding &amp; Bit resolution</a></li>
-  <li><a href="#encoding-procedure" id="toc-encoding-procedure" class="nav-link" data-scroll-target="#encoding-procedure"><span class="header-section-number">4.3</span> Encoding Procedure</a></li>
-  <li><a href="#sensor-voltages-bit-resolution" id="toc-sensor-voltages-bit-resolution" class="nav-link" data-scroll-target="#sensor-voltages-bit-resolution"><span class="header-section-number">4.4</span> Sensor voltages &amp; bit resolution</a></li>
-  </ul></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">5</span> Exercises</a>
-  <ul>
-  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1"><span class="header-section-number">5.1</span> Exercise 1</a></li>
-  </ul></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">6</span> References</a>
-  <ul>
-  <li><a href="#video-reference" id="toc-video-reference" class="nav-link" data-scroll-target="#video-reference"><span class="header-section-number">6.1</span> Video Reference</a></li>
+  <li><a href="#diving-further-references" id="toc-diving-further-references" class="nav-link" data-scroll-target="#diving-further-references"><span class="header-section-number">1.5</span> Diving Further &amp; References</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -336,12 +357,9 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Signals: Analog and digital</h1>
-<p class="subtitle lead">Comparing the two paradigms for measuring electronic information and understanding how each are used for distributed applications.</p>
-  <div class="quarto-categories">
-    <div class="quarto-category">Hardware</div>
-  </div>
-  </div>
+<h1 class="title">Asynchronous progamming in Python</h1>
+<p class="subtitle lead">Using the asyncio library to control concurrentprocesses in Python.</p>
+</div>
 
 
 
@@ -351,7 +369,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 14, 2024</p>
+      <p class="date">April 4, 2025</p>
     </div>
   </div>
   
@@ -369,281 +387,177 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>We will use analog and digital signals to communicate with sensors.</p>
-<p>This section briefly compares these two types of signals and illustrates how we might encounter while using IoT hardware.</p>
-<p>To compare analog and digital signals, let’s look at how we can track 3 different sources of information:</p>
+<section id="asynch-with-asyncio" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="asynch-with-asyncio"><span class="header-section-number">1</span> Asynch with <code>asyncio</code></h2>
+<p>The library <code>asyncio</code> enables code to be <strong>run concurrently</strong>: Tasks share the execution thread while appearing to be executing in parallel.</p>
+<blockquote class="blockquote">
+<p>Asyncio API:</p>
 <ul>
-<li>Temperature</li>
-<li>Sound</li>
-<li>Electricity (voltages)</li>
+<li><a href="https://docs.python.org/3/library/asyncio-task.html#asyncio-example-gather">Coroutines and Tasks</a> (good intro to <em>asyncio</em>).</li>
 </ul>
-<section id="analog-the-natural-world" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="analog-the-natural-world"><span class="header-section-number">1</span> Analog: the natural world</h2>
-<p>We live in an analog world. Most of the naturally occurring events that we experience happen in an analog form.</p>
-<blockquote class="blockquote">
-<p>Analog signals varies continuously in time and amplitude.</p>
-<p>This means that changes happen over a range of values with infinite “in between” steps.</p>
-</blockquote>
-<p>For example, the following events have an infinite number of transitions. It only depends on how accurately you can track them:</p>
+<p>In-depth guide:</p>
 <ul>
-<li>The colors in a rainbow.</li>
-<li>The position of a swinging pendulum.</li>
-<li>The exact time of the day.</li>
+<li><a href="https://realpython.com/async-io-python/">Async IO in Python: A Complete Walkthrough</a> by realpython.com.</li>
 </ul>
-<section id="temperature" class="level3" data-number="1.1">
-<h3 data-number="1.1" class="anchored" data-anchor-id="temperature"><span class="header-section-number">1.1</span> Temperature</h3>
-<p>The A/C and heating systems in a house are typically activated once the temperature reaches some minimum and maximum values.</p>
-<p>The chart below is tracking the temperature in a room as the A/C and heating systems are activated over a few days.</p>
-<p><a href="../assets/6-analog-digital-analog-temperature.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="../assets/6-analog-digital-analog-temperature.png" class="img-fluid"></a></p>
-<p class="img-info">
-<a href="https://info.sparkfun.com/hubfs/Poster%20Downloads/Analog%20vs%20Digital/Concept%20Poster%20Analog%20vs%20Digital%20WEB.pdf"> Temperature changes over time </a>&nbsp; Adapted from poster: Analog and Digital Signals by Digikey.
-</p>
-<p>Let’s say the maximum temperature reached in the room is 30C and the minimum temperature is 15C. A person in the room would have observed every possible temperature in between that range (15.01, 15.0101, 15.0102, 15.01021, etc).</p>
-<p>The change in temperature produces analog information since it is changing over an infinite range of values.</p>
-</section>
-<section id="sound" class="level3" data-number="1.2">
-<h3 data-number="1.2" class="anchored" data-anchor-id="sound"><span class="header-section-number">1.2</span> Sound</h3>
-<p>Sound is also an example of an analog signal.</p>
-<p>When a volume of air is displaced quickly, air molecules are compressed against each other creating a high-pressure region. The high pressure region expands and compresses the air in the neighbouring area. Sound can travel thanks to this “chain effect”.</p>
-<blockquote class="blockquote">
-<p>By observing how the air pressure changes over time, we can draw a sound wave.</p>
-<p>This is how speakers and microphones interact with air to generate sound.</p>
-</blockquote>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="http://resource.isvr.soton.ac.uk/spcg/tutorial/tutorial/Tutorial_files/longipatm.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Animation of acoustic wave travelling in air"><img src="http://resource.isvr.soton.ac.uk/spcg/tutorial/tutorial/Tutorial_files/longipatm.gif" class="img-fluid figure-img" alt="Animation of acoustic wave travelling in air"></a></p>
-<figcaption>Animation of acoustic wave travelling in air</figcaption>
-</figure>
-</div>
-<p class="img-info">
-<a href="http://resource.isvr.soton.ac.uk/spcg/tutorial/tutorial/Tutorial_files/Web-basics-sound.htm"> Sound waves travelling through air </a>&nbsp; - Waves and Acoustics Animations by isvr.
-</p>
-<p>Sound waves are also an example of an analog signal because the amplitude of the wave transitions through the entire range of possible values between the Min and Max.</p>
-</section>
-<section id="analog-signals-graphs" class="level3" data-number="1.3">
-<h3 data-number="1.3" class="anchored" data-anchor-id="analog-signals-graphs"><span class="header-section-number">1.3</span> Analog Signals Graphs</h3>
-<p>A signal varies over time. It’s helpful to plot it on a graph where time is plotted on the horizontal, <em>x</em>-axis, and the value being tracked on the vertical, <em>y</em>-axis.</p>
-<p>Looking at a graph of a signal is usually the easiest way to identify if it’s analog or digital.</p>
-<blockquote class="blockquote">
-<p>When dealing with electricity we track voltage levels (amplitude).</p>
-<p>A time-versus-voltage graph of an analog signal should be <strong>smooth</strong> and <strong>continuous</strong>.</p>
-</blockquote>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://cdn.sparkfun.com/assets/3/7/6/6/0/51c48875ce395f745a000000.png" class="img-fluid figure-img"></p>
-<figcaption>Analog Sine Wave</figcaption>
-</figure>
-</div>
-<p>While these signals may be limited to a <strong>range</strong> of maximum and minimum values, there are still an infinite number of possible values within that range.</p>
-<p>For example, the analog voltage coming out of your wall socket oscillates between -120V and +120V. As you increase the resolution more and more, you discover an infinite number of values that the signal can actually be (64.4V, 64.42V, 64.424V, and other increasingly precise values).</p>
-</section>
-</section>
-<section id="digital-discrete-values" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="digital-discrete-values"><span class="header-section-number">2</span> Digital: discrete values</h2>
-<p>Digital signals are discrete, which means that at any given moment, the signal strength must be represented by a integer number. There are no half numbers.</p>
-<p>Typically, digital signals will be one of <strong>two values</strong>, a high voltage and a low voltage.</p>
-<blockquote class="blockquote">
-<p>The specific values of the <strong>high</strong> and <strong>low</strong> voltages depend on the hardware being used.</p>
-</blockquote>
-<p>Below is a the timing graph of a signal whose <strong>low voltage is 0 volts</strong> and <strong>high voltage is 5 volts</strong>.</p>
-<p>This type of signal is also known as a <strong>square waves</strong>.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://cdn.sparkfun.com/assets/c/8/5/b/e/51c495ebce395f1b5a000000.png" class="img-fluid figure-img"></p>
-<figcaption>Square wave signal. Two values, either 0V or 5V.</figcaption>
-</figure>
-</div>
-<p class="img-info">
-<a href="https://learn.sparkfun.com/tutorials/analog-vs-digital/all"> 0 to 5 volt “pulses” forming a square ware </a>&nbsp; - Analog vs.&nbsp;Digital by Digikey.
-</p>
-<section id="digital-simulating-analogue" class="level3" data-number="2.1">
-<h3 data-number="2.1" class="anchored" data-anchor-id="digital-simulating-analogue"><span class="header-section-number">2.1</span> Digital Simulating Analogue</h3>
-<p>A digital signal might be a discrete representation of an analog waveform.</p>
-<p>Viewed from afar, the wave function below may seem smooth and analog, but when you look closely there are tiny discrete <strong>steps</strong> as the signal tries to approximate analog values.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://cdn.sparkfun.com/assets/0/2/8/4/6/51c85fbece395fbc03000000.png" class="img-fluid figure-img"></p>
-<figcaption>Digital Sine Wave</figcaption>
-</figure>
-</div>
-<p class="img-info">
-<a href="https://learn.sparkfun.com/tutorials/analog-vs-digital/all"> Oscillating voltage from -120V to 120V represented as a digital signal </a>&nbsp; - Analog vs.&nbsp;Digital by Digikey.
-</p>
-<p>The number of <strong>discrete steps</strong> that a digital signal can use depends on how many bits are available for each recorded value. This is also called <strong>bit resolution</strong> (see <em>Sampling</em> below).</p>
-<p>For example, if a data point can only use one bit of definition, then it can only track on/off states, resulting in the red square wave seen above.</p>
-<p>However, if a data point can use 8 bits to store a value, then it can represent a value ranging from 0 to 255 (see the green sinusoidal voltage wave above).</p>
-</section>
-</section>
-<section id="analog-to-digital-conversion-adc" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="analog-to-digital-conversion-adc"><span class="header-section-number">3</span> Analog to Digital Conversion (ADC)</h2>
-<p>If most natural events are analog, how do we represent them in digital format? For example, if audio is analog, how can we get a computer to play music?</p>
-<blockquote class="blockquote">
-<p>An <strong>analog to digital converter (ADC)</strong> is a device that can read a analog signal and generate a digital representation of this signal.</p>
-</blockquote>
-<p>ADC’s are specific to the type of analog signal they are trying to read (sound, voltage, temperature, light, etc).</p>
-<p>Referring to the room temperature example used earlier, if we used a digital thermometer to record the temperature, our graph might look like the following:</p>
-<p><a href="../assets/6-analog-digital-temp-sampling.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="../assets/6-analog-digital-temp-sampling.png" class="img-fluid"></a></p>
-<p class="img-info">
-<a href="https://info.sparkfun.com/hubfs/Poster%20Downloads/Analog%20vs%20Digital/Concept%20Poster%20Analog%20vs%20Digital%20WEB.pdf"> Temperature represented as a digital reading </a>&nbsp; Poster: Analog and Digital Signals by Digikey.
-</p>
-<p>In the example above, a digital temperature reading was taken <strong>every 3hr</strong>.</p>
-<blockquote class="blockquote">
-<p>The digital signal representation of the temperature <strong>is not smooth or accurate</strong>.</p>
-<p>However, depending on the application <strong>it might be sufficient</strong>.</p>
-</blockquote>
-<p>To make the signal smoother or more representative of the real analog signal we need to take samples more regularly (eg. every 1min).</p>
-<p>The process of reading an analog signal over time to generate its digital representation is called <strong>sampling.</strong></p>
-</section>
-<section id="sampling" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="sampling"><span class="header-section-number">4</span> Sampling</h2>
-<p>Sampling is the process of inspecting the value of an analog signal at regular time intervals.</p>
-<p>When an ADC is sampling an analog signal, there are two variables that will characterize the digital output:</p>
+<p>Video Summary:</p>
 <ul>
-<li>Sampling rate.</li>
-<li>Bit resolution.</li>
-</ul>
-<blockquote class="blockquote">
-<p><strong>Music sampling</strong> Some music genres like rap and hip-hop commonly sample song segments from other artists to play in the background.</p>
-<ul>
-<li>The term <strong>sampling</strong> is used because traditionally song segments were extracted from vinyl records which produce analog sound and saved in digital formats.</li>
+<li><a href="https://www.youtube.com/watch?v=2IW-ZEui4h4">How To Easily Do Asynchronous Programming With Asyncio</a> by ArjanCodes</li>
 </ul>
 </blockquote>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/hT_2kUx0AcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="">
-</iframe>
-<section id="sampling-rate" class="level3" data-number="4.1">
-<h3 data-number="4.1" class="anchored" data-anchor-id="sampling-rate"><span class="header-section-number">4.1</span> Sampling rate</h3>
-<p>The time between samples is the <strong>sample period</strong> (T, in seconds), and the number of samples taken per second is the <strong>sample frequency or sample rate</strong> (fs, in samples/second or Hz).</p>
-<p>Basically, <strong>sampling is taking snap-shot values of the analog signal at regular time intervals.</strong></p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="../assets/6-analog-digital-sample-period.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Analog signal showing sample period and sample frequency"><img src="../assets/6-analog-digital-sample-period.png" class="img-fluid figure-img" alt="Analog signal showing sample period and sample frequency"></a></p>
-<figcaption>Analog signal showing sample period and sample frequency</figcaption>
-</figure>
-</div>
-<p class="img-info">
-<a href="https://www.usna.edu/ECE/ec312/Lessons/wireless/EC312_Lesson_20_Analog_to_Digital_Course_Notes.pdf"> Sample period and fequency for an electric signal </a>&nbsp; - US Naval Academy.
-</p>
-<p><strong>Sampling period examples:</strong></p>
-<ul>
-<li>If a signal is sampled every half second (0.5s sampling period, <strong><em>T</em></strong>), the sample frequency (<strong>*f**</strong>) is 1/0.5s = 2 Hz (times per second).</li>
-<li>If the sample frequency (<strong><em>f</em></strong>) is 2000 Hz, the sampling period (<strong><em>T</em></strong>) is = 1/2000Hz = 0.0005 secs (0.5 milliseconds).</li>
-</ul>
-<p>The higher the sample rate, the more accurate the digital signal is.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="../assets/6-analog-digital-increasing-sample-rate.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Signals of increasing sample rate"><img src="../assets/6-analog-digital-increasing-sample-rate.png" class="img-fluid figure-img" alt="Signals of increasing sample rate"></a></p>
-<figcaption>Signals of increasing sample rate</figcaption>
-</figure>
-</div>
-<p class="img-info">
-<a href="https://www.usna.edu/ECE/ec312/Lessons/wireless/EC312_Lesson_20_Analog_to_Digital_Course_Notes.pdf"> Same signal sampled with different sample rates </a>&nbsp; - US Naval Academy.
-</p>
-</section>
-<section id="encoding-bit-resolution" class="level3" data-number="4.2">
-<h3 data-number="4.2" class="anchored" data-anchor-id="encoding-bit-resolution"><span class="header-section-number">4.2</span> Encoding &amp; Bit resolution</h3>
-<p>Encoding is the process of mapping the sampled analog signal value to discrete binary numbers (digital information).</p>
+<section id="concurrent-vs-parallel" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="concurrent-vs-parallel"><span class="header-section-number">1.1</span> Concurrent vs Parallel</h3>
+<p>It’s important to note that <strong>concurrent code does not necessarily mean parallel</strong>.</p>
+<p><a href="https://tenthousandmeters.com/blog/python_bts_12/concurrency.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="https://tenthousandmeters.com/blog/python_bts_12/concurrency.png" class="img-fluid"></a></p>
+<p><em>Concurrent does necessarily mean parallel execution. By <a href="https://tenthousandmeters.com/blog/python-behind-the-scenes-12-how-asyncawait-works-in-python/">Ten thousand meters</a></em></p>
 <blockquote class="blockquote">
-<p>ADC devices are characterized by the <strong>number of bits available</strong> to represent a signal.</p>
+<p>In Python, the only way to run parallel code is to use multiple CPU cores by running multiple Python interpreters that interact. See <a href="https://docs.python.org/3/library/multiprocessing.html">multiprocessing module</a>.</p>
 </blockquote>
-<p>For example, consider an electrical signal that ranges <strong>from -1 volts to to +1 volts</strong> and must be converted to a <strong>3 bit number</strong>.</p>
+<p>Asyncio is used to run <strong>multiple tasks or multiple threads</strong> concurrently but never at the same time (in parallel).</p>
 </section>
-<section id="encoding-procedure" class="level3" data-number="4.3">
-<h3 data-number="4.3" class="anchored" data-anchor-id="encoding-procedure"><span class="header-section-number">4.3</span> Encoding Procedure</h3>
-<p>To approximate the numeric conversion from a voltage signal to a digital output, follow the steps below:</p>
-<ol type="1">
-<li><p>Identify the minimum and maximum voltage values that can be observed in the input.</p>
+<section id="synchronous-vs-async-execution" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="synchronous-vs-async-execution"><span class="header-section-number">1.2</span> Synchronous vs Async Execution</h3>
+<p>In typical programming, most tasks and processes are synchronous, meaning, they run <strong>one at the time, always waiting for the previous taks to finish</strong></p>
+<p>Synchronous is disadvantageous when there are many tasks that need to wait for external input or output before it can proceed. For example:</p>
 <ul>
-<li>Example: -1 to +1 volts (2 volt range)</li>
-</ul></li>
-<li><p>Identify the minimum and maximum binary values that can generated as the output. Note the amount of unique numbers represented by this range</p>
-<ul>
-<li>Example: For a 3-bit number: 000 (decimal 0) is the minimum and 111 (decimal 7) is the maximum, making a total of 8 unique numbers.</li>
-</ul></li>
-<li><p>Divide the voltage range that will be observed (max voltage - min voltage) by the amount of unique binary numbers available. This will determine the voltage increment that each binary number represents.</p>
-<ul>
-<li>Example: (+1V - (-1V)) / 8 = 2V/8 = 0.25V</li>
-</ul></li>
-<li><p>Layout each binary number and their increments and read where the voltage values lie.</p></li>
-</ol>
-<p>Assuming the ADC has a resolution of 3 bits, all voltage values (-1V to 1V) must be represented with at most 3 bits, or 2^3 = 8 unique values (0 is a unique value).</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="../assets/6-analog-digital-bit-resolution.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="voltage signal converted to a bit resolution of 3 bits"><img src="../assets/6-analog-digital-bit-resolution.png" class="img-fluid figure-img" alt="voltage signal converted to a bit resolution of 3 bits"></a></p>
-<figcaption>voltage signal converted to a bit resolution of 3 bits</figcaption>
-</figure>
-</div>
-<p class="img-info">
-<a href="https://www.usna.edu/ECE/ec312/Lessons/wireless/EC312_Lesson_20_Analog_to_Digital_Course_Notes.pdf"> Voltage signal between -1V and 1V converted to digital with a 3 bit resolution </a>&nbsp; - US Naval Academy.
-</p>
-<p>In this case:</p>
-<ul>
-<li>000 is assigned to the voltages from -0.75 V to -1.0 V,</li>
-<li>001 is assigned to the voltages from -0.5 V to -0.749 V,</li>
-<li>010 is assigned to the voltages from -0.25 V to -0.49 V,</li>
-<li>and so on.</li>
+<li>The code was asked to sleep.</li>
+<li>Waiting for a HTTP response.</li>
+<li>Waiting for a Database call.</li>
+<li>Waiting to write to a file.</li>
 </ul>
-<p>The binary representation of the above signal is:</p>
-<p>110 101 100 011 011 100 110 110 100 010 000 000 001</p>
-<p>If the sampling is happening 2000 times per second (Hz) and for every sample we generate 3 bits, we are generating 2000 x 3 bits = 6000 bits/sec of information. This is also know as the bitrate.</p>
-<p>If a song of 3 minutes is sampled with the same specs, how big will this file be in kB?</p>
-<p>What is the <a href="https://www.tunefab.com/tutorials/spotify-bitrate.html">bitrate of music on Spotify</a>?</p>
+<p><a href="https://files.realpython.com/media/IOBound.4810a888b457.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="https://files.realpython.com/media/IOBound.4810a888b457.png" class="img-fluid"></a></p>
+<p><em>Synchronous code execution by <a href="https://realpython.com/python-concurrency/">RealPython.com</a></em></p>
+<p><strong>Asynchronous</strong> execution enables the execution of the next task while waiting for the external input/output.</p>
+<p><a href="https://files.realpython.com/media/Asyncio.31182d3731cf.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="https://files.realpython.com/media/Asyncio.31182d3731cf.png" class="img-fluid"></a></p>
+<p><em>Asynchronous code execution by <a href="https://realpython.com/python-concurrency/">RealPython.com</a></em></p>
+<blockquote class="blockquote">
+<p>Note that the amount <strong>CPU processing (blue area in the diagrams above) is the same</strong> in both sync and async executions.</p>
+<p>However, the async execution spends <strong>less time waiting idle</strong>.</p>
+</blockquote>
 </section>
-<section id="sensor-voltages-bit-resolution" class="level3" data-number="4.4">
-<h3 data-number="4.4" class="anchored" data-anchor-id="sensor-voltages-bit-resolution"><span class="header-section-number">4.4</span> Sensor voltages &amp; bit resolution</h3>
-<p>IoT systems typically work with electrical signals encoded in voltage levels.</p>
-<p>Every hardware that converts from analog to digital (and vice-versa) needs to have an appropriate ACD device.</p>
-<p>Microcontrollers are often used to process these signals because they often have an integrated ACD and they are very inexpensive.</p>
+<section id="asyncio-tasks" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="asyncio-tasks"><span class="header-section-number">1.3</span> Asyncio Tasks</h3>
+<p><code>asyncio</code> uses the concept of <strong>tasks</strong> to manage and share the CPU processing time.</p>
+<blockquote class="blockquote">
+<p>Each <code>task</code> must explicitly yield (or pass) execution time back to the main loop so that the next task can start/continue.</p>
+</blockquote>
+<p><a href="https://cdn-learn.adafruit.com/assets/assets/000/106/571/medium800/circuitpython_2tasks.png?1637163446" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="https://cdn-learn.adafruit.com/assets/assets/000/106/571/medium800/circuitpython_2tasks.png?1637163446" class="img-fluid"></a></p>
+<p><em>Tasks yielding execution time with the <code>await</code> keyword. By <a href="https://learn.adafruit.com/cooperative-multitasking-in-circuitpython-with-asyncio">Adafruit.com</a></em></p>
+<p>In the image above, Task 1 (running function <code>f()</code>) yields execution time to Task 2 (running function <code>g()</code>) by using the <code>await</code> keyboard and vice-versa.</p>
 </section>
-</section>
-<section id="exercises" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="exercises"><span class="header-section-number">5</span> Exercises</h2>
-<section id="exercise-1" class="level3" data-number="5.1">
-<h3 data-number="5.1" class="anchored" data-anchor-id="exercise-1"><span class="header-section-number">5.1</span> Exercise 1</h3>
-<p>Considering the analog signal below. The signal is being sampled in a program at 2Hz (2 times/sec) with the help of an ADC that has 6-bit resolution. The ADC can handle up to 8V signals.</p>
-<ol type="A">
-<li><p>What are the voltages being sampled by the ADC?</p></li>
-<li><p>If the signal reached max voltage, what would be the integer number passed to the program by the ADC?</p></li>
-</ol>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="../assets/6-analog-digital-exercise1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="Graph for exercise 1"><img src="../assets/6-analog-digital-exercise1.png" class="img-fluid figure-img" alt="Graph for exercise 1"></a></p>
-<figcaption>Graph for exercise 1</figcaption>
-</figure>
-</div>
-<details>
-<summary>
-Solution
-</summary>
-<p>
-</p><ol type="a">
-<li>Sampled voltages: 4, 6, 6, 0, 2, 2, 2, 5, 6, 4
-<p></p>
-<p>
-</p><ol start="2" type="a">
-<li>Since the ADC has a 6-bit resolution, it can represent values up to 63 (all 6 bits ON at the same time). Max voltage would result in the integer 63.
-<p></p>
-</li></ol></li></ol></details>
-
-
-</section>
-</section>
-<section id="references" class="level2" data-number="6">
-<h2 data-number="6" class="anchored" data-anchor-id="references"><span class="header-section-number">6</span> References</h2>
+<section id="coroutines-tasks-event-loop" class="level3" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="coroutines-tasks-event-loop"><span class="header-section-number">1.4</span> Coroutines, Tasks &amp; Event Loop</h3>
+<p>In Asyncio, there are 3 types of awaitable objects:</p>
 <ul>
-<li><a href="https://learn.sparkfun.com/tutorials/analog-vs-digital/all">Analog vs.&nbsp;Digital</a> by Sparkfun.</li>
-<li><a href="https://www.usna.edu/ECE/ec312/">Lesson 20: Analog to Digital Conversion</a>, Course EC312, US Naval Academy.</li>
-<li>Lessons 4 and 5, Telecom course, Sandy Bultena.</li>
+<li>Coroutines</li>
+<li>Tasks</li>
+<li>Futures</li>
 </ul>
-<section id="video-reference" class="level3" data-number="6.1">
-<h3 data-number="6.1" class="anchored" data-anchor-id="video-reference"><span class="header-section-number">6.1</span> Video Reference</h3>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/64FSgQdWHrE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
-</iframe>
-<!--
-## Diving Deeper
-
-### Is digital better?
-
-#### Noise: digital can handle it -->
+<section id="coroutines" class="level4" data-number="1.4.1">
+<h4 data-number="1.4.1" class="anchored" data-anchor-id="coroutines"><span class="header-section-number">1.4.1</span> Coroutines</h4>
+<p>Coroutines are functions that are awaitable.</p>
+<p>They must be declared with the <code>async</code> keyword</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">async</span> <span class="kw">def</span> countdown(task_name, seconds):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(seconds, <span class="dv">0</span>, <span class="op">-</span><span class="dv">1</span>):</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(task_name, i)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">await</span> asyncio.sleep(<span class="dv">1</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"done!"</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="cf">async</span> <span class="kw">def</span> main():</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">await</span> countdown(<span class="st">"simple count"</span>, <span class="dv">4</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>asyncio.run(main())</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">""" Output</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co">simple count 4</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co">simple count 3</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co">simple count 2</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co">simple count 1</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co">done!</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>In the example above, <code>countdown()</code>, <code>asyncio.sleep()</code> and <code>main()</code> are coroutines.</p>
+<p><code>countdown()</code> and <code>asyncio.sleep()</code> were called with <code>await</code> , however, <code>main()</code> was called with <code>asyncio.run()</code></p>
+<blockquote class="blockquote">
+<p>In asyncio, all awaitable objects must run <strong>inside an event loop</strong>.</p>
+<ul>
+<li>The method <code>asyncio.run()</code> creates a “top-level” event loop</li>
+</ul>
+</blockquote>
+</section>
+<section id="tasks" class="level4" data-number="1.4.2">
+<h4 data-number="1.4.2" class="anchored" data-anchor-id="tasks"><span class="header-section-number">1.4.2</span> Tasks</h4>
+<p><strong>Tasks</strong> are used to schedule coroutines <em>concurrently</em>.</p>
+<p>Once a task is scheduled, it will run as soon as the event loop is available.</p>
+<ul>
+<li>Tasks are scheduled (wrapped) with <code>asyncio.create_task()</code></li>
+<li>In order <strong>to run a task to completion, it must be awaited</strong>.</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="cf">async</span> <span class="kw">def</span> main():</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Scheduling and starting tasks</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    taskA <span class="op">=</span> asyncio.create_task(countdown(<span class="st">"task A"</span>, <span class="dv">3</span>))</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    taskB <span class="op">=</span> asyncio.create_task(countdown(<span class="st">"task B"</span>, <span class="dv">2</span>))</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Doing something else while they run</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">await</span> asyncio.sleep(<span class="dv">1</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Everything, everywhere, all at once"</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Awaiting for tasks to complete before ending main()</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Try running this code without awaiting</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">await</span> taskA</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">await</span> taskB</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>asyncio.run(main())</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="co">""" Output</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="co">task A 3</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="co">task B 2</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="co">Everything, everywhere, all at once</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="co">task A 2</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="co">task B 1</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="co">task A 1</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="co">done!</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="co">done!</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Instead of creating Tasks and awaiting them individually, it’s possible to run multiple coroutines concurrently and wait for all of them:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">async</span> <span class="kw">def</span> main():</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Running and awaiting multiple coroutines</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">await</span> asyncio.gather(countdown(<span class="st">"task A"</span>, <span class="dv">4</span>), countdown(<span class="st">"task B"</span>, <span class="dv">3</span>))</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">await</span> asyncio.sleep(<span class="dv">1</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Everything, everywhere, all at once"</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>asyncio.run(main())</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co">task A 4</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co">task B 3</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co">task A 3</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co">task B 2</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co">task A 2</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="co">task B 1</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="co">task A 1</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="co">done!</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="co">done!</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="co">Everything, everywhere, all at once</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="futures" class="level4" data-number="1.4.3">
+<h4 data-number="1.4.3" class="anchored" data-anchor-id="futures"><span class="header-section-number">1.4.3</span> Futures</h4>
+<p>A Future in Asyncio is the equivalent of a Promise in JavaScript.</p>
+<blockquote class="blockquote">
+<p>It is rare that developers need to use a Future directly.</p>
+</blockquote>
+</section>
+</section>
+<section id="diving-further-references" class="level3" data-number="1.5">
+<h3 data-number="1.5" class="anchored" data-anchor-id="diving-further-references"><span class="header-section-number">1.5</span> Diving Further &amp; References</h3>
+<p>The following are excellent resources for learning more about Asyncio:</p>
+<ul>
+<li><a href="https://realpython.com/async-io-python/">Async IO in Python: A Complete Walkthrough</a> by RealPython.com</li>
+</ul>
 
 
 </section>
@@ -1214,13 +1128,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../notes/python-environments/index.html" class="pagination-link" aria-label="Python environment management">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Python environment management</span>
+      <a href="../../notes/serial-protocols/index.html" class="pagination-link" aria-label="Serial protocols">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Serial protocols</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../notes/reterminal-devices/index.html" class="pagination-link" aria-label="reTerminal built-in devices">
-        <span class="nav-page-text">reTerminal built-in devices</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../notes/course-hardware/index.html" class="pagination-link" aria-label="Course hardware">
+        <span class="nav-page-text">Course hardware</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
