@@ -421,13 +421,13 @@ ul.task-list li input[type="checkbox"] {
 <li>Plug the HDMI end into a workstation monitor, and the micro-usb end into your reTerminal (in the port labelled HDMI)</li>
 <li>Plug your reTerminal into a power supply to boot the reTerminal</li>
 <li>The monitor will show logs of your reTerminal booting. Observe these logs closely. <strong>You are looking for specific error messages</strong>.</li>
-<li>Write down the specific error messages. Search the course notes/[Raspberry Pi Documentation][raspi-boot-docs] for any concepts you don’t understand. Think back: have you made any changes to the <code>/boot</code> files that seem related to these errors?</li>
+<li>Write down the specific error messages. Search the course notes for any concepts you don’t understand. Think back: have you made any changes to the <code>/boot</code> files that seem related to these errors?</li>
 <li>If you have a good idea of what happened and what needs to be fixed, proceed to the next section. Feel free to double check your understanding with the teacher at this point – for educational purposes, I may not give you the answer directly, but I can guide you in a direction that will help save you some time.</li>
 </ol>
 </section>
 <section id="solving-boot-firmare-file-problems" class="level3" data-number="2.2">
 <h3 data-number="2.2" class="anchored" data-anchor-id="solving-boot-firmare-file-problems"><span class="header-section-number">2.2</span> Solving <code>/boot/</code> firmare file problems</h3>
-<p>If indeed the error comes from an incorrect <code>/boot</code> configuration file setting, we can fix the error <em>without reimaging the pi</em>. Instead, we will <em>mount the reTerminal storage</em> on to a workstation and then <em>fix the firmware files directly on that workstation</em>.</p>
+<p>If indeed the error comes from an incorrect <code>/boot</code> configuration file setting, we can fix the error <strong><em>without reimaging the pi</em></strong>. Instead, we will <em>mount the reTerminal storage</em> on to a workstation and then <em>fix the firmware files directly on that workstation</em>.</p>
 <p>The steps will look similar to Lab 1, except we won’t be reimaging the device at the end. You should open <a href="../../notes/reterminal-setup">Reterminal Setup instructons</a> for reference while you are working. The following steps will be necessary:</p>
 <ol start="0" type="1">
 <li>Make sure your reTerminal is entirely unplugged and powered off.</li>
@@ -439,7 +439,6 @@ ul.task-list li input[type="checkbox"] {
 <li>The firmware files can now be edited directly to fix any mistakes made.</li>
 <li>Just in case, you can also recover any files you need that are stored on the reterminal in the <code>/home/your-username</code> directory.</li>
 </ol>
-<p>Step (5) above will vary depending on your exact error – this is why the “Finding the problem” step is important,to inform what fixes you should attempt first.</p>
 
 
 </section>
