@@ -1,34 +1,36 @@
 ---
-title: "Debugging Black Screen Issue"
+title: "Debugging Reterminal Issues"
 subtitle: >
   Sometimes, the reTerminal display drivers fail. Here is an (incomplete) set of
   debugging steps you can take to try fixing the issue.
-date: 2024-04-26
-draft: true
+date: 2025-04-13
 ---
-
-[raspi-boot-docs]:
-  https://www.raspberrypi.com/documentation/computers/configuration.html#the-boot-folder
 
 So far, there have been two primary causes for the reTerminal screen to stop
 working:
 
 1. System update using `apt`: during the semester, some changes that break
-   raspberry pi and reTerminal compatibility were introduced in the update from
-   Linux `6.1` to `6.6`.
+   raspberry pi and reTerminal compatibility are introduced, necessitating another update
+   and another run of the
+   [Display driver fix scripts.](/notes/reterminal-setup/#display-driver-fix)
 2. Errors introduced from mistakes when editing firmware files like
    `/boot/firmware/*.txt` and/or `/boot/cmdline.txt` and/or `/boot/config.txt`
+3. Errors introduced from an incomplete upgrade (interrupted before finishing).
 
 In the first case, the reTerminal boots just fine, but the screen doesn't work.
-In the second case, the reTerminal fails to boot at all.
+In the second and third cases, the reTerminal fails to boot at all.
 
 For each of these cases, I have a set of troubleshooting steps you can take to
 resolve these issues.
 
 ## If you can `ssh` into your reTerminal
 
-1. Follow the steps from the announcment
-   [On Updating Your Pi](/topics/announcements/2024-03-14-pi-update.qmd)
+Most likely it is the case that your reterminal is still connecting to the internet and accessible over `ssh`, even when the screen is not working.
+
+1. Double check that you can see your reterminal in tailscale by running `tailscale status` on your developer machine. `ssh` into the device using this IP address.
+    1. If for some reason your device is offline on tailscale, try to determine its local ip address using your router webpage (at home). `ssh` into reterminal using this ip address
+1. Once you have an `ssh` connection, follow the steps from the course notes:
+   [Display driver fix scripts](/notes/reterminal-setup/#display-driver-fix)
 
 ## If you cannot `ssh` into your reTerminal
 
@@ -42,7 +44,7 @@ resolve these issues.
    closely. **You are looking for specific error messages**.
 5. Write down the specific error messages. Search the course notes/[Raspberry Pi
    Documentation][raspi-boot-docs] for any concepts you don't understand. Think
-   backl: have you made any changes to the `/boot` files that seem related to
+   back: have you made any changes to the `/boot` files that seem related to
    these errors?
 6. If you have a good idea of what happened and what needs to be fixed, proceed
    to the next section. Feel free to double check your understanding with the
@@ -58,7 +60,7 @@ reTerminal storage_ on to a workstation and then _fix the firmware files
 directly on that workstation_.
 
 The steps will look similar to Lab 1, except we won't be reimaging the device at
-the end. You should open [Lab 1 instructions]({{< var course.assessments.lab1 >}}) 
+the end. You should open [Reterminal Setup instructons](/notes/reterminal-setup)
 for reference while you are working. The following steps will be necessary:
 
 0. Make sure your reTerminal is entirely unplugged and powered off.
@@ -73,7 +75,9 @@ for reference while you are working. The following steps will be necessary:
    A dozen or so logs will be printed to the `rpibootloader` program window.
    Once this is done: navigate to Windows Explorer (the file manager) and you
    should see the reTerminal (~28-32GB) as a connected drive on the workstation
-5. The firmware files can now be edited directly to fix any mistakes made.
+5. You can now access all files on the reterminal filesystem.
+6. The firmware files can now be edited directly to fix any mistakes made.
+7. Just in case, you can also recover any files you need that are stored on the reterminal in the `/home/your-username` directory.
 
 Step (5) above will vary depending on your exact error -- this is why the
 "Finding the problem" step is important,to inform what fixes you should attempt
