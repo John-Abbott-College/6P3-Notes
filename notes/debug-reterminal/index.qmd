@@ -42,8 +42,7 @@ Most likely it is the case that your reterminal is still connecting to the inter
 3. Plug your reTerminal into a power supply to boot the reTerminal
 4. The monitor will show logs of your reTerminal booting. Observe these logs
    closely. **You are looking for specific error messages**.
-5. Write down the specific error messages. Search the course notes/[Raspberry Pi
-   Documentation][raspi-boot-docs] for any concepts you don't understand. Think
+5. Write down the specific error messages. Search the course notes for any concepts you don't understand. Think
    back: have you made any changes to the `/boot` files that seem related to
    these errors?
 6. If you have a good idea of what happened and what needs to be fixed, proceed
@@ -55,7 +54,7 @@ Most likely it is the case that your reterminal is still connecting to the inter
 ### Solving `/boot/` firmare file problems
 
 If indeed the error comes from an incorrect `/boot` configuration file setting,
-we can fix the error _without reimaging the pi_. Instead, we will _mount the
+we can fix the error **_without reimaging the pi_**. Instead, we will _mount the
 reTerminal storage_ on to a workstation and then _fix the firmware files
 directly on that workstation_.
 
@@ -78,7 +77,3 @@ for reference while you are working. The following steps will be necessary:
 5. You can now access all files on the reterminal filesystem.
 6. The firmware files can now be edited directly to fix any mistakes made.
 7. Just in case, you can also recover any files you need that are stored on the reterminal in the `/home/your-username` directory.
-
-Step (5) above will vary depending on your exact error -- this is why the
-"Finding the problem" step is important,to inform what fixes you should attempt
-first.
