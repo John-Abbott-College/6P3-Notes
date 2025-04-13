@@ -2,90 +2,94 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://john-abbott-college.github.io/6P3-Notes/notes/developer-environment/index.html</loc>
-    <lastmod>2025-04-04T19:36:16.795Z</lastmod>
+    <lastmod>2025-04-13T17:06:25.000Z</lastmod>
   </url>
   <url>
     <loc>https://john-abbott-college.github.io/6P3-Notes/notes/course-hardware/index.html</loc>
-    <lastmod>2025-04-04T19:36:16.795Z</lastmod>
+    <lastmod>2025-04-13T17:06:24.999Z</lastmod>
   </url>
   <url>
     <loc>https://john-abbott-college.github.io/6P3-Notes/notes/serial-protocols/index.html</loc>
-    <lastmod>2025-04-04T19:36:16.802Z</lastmod>
+    <lastmod>2025-04-13T17:06:25.006Z</lastmod>
   </url>
   <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/notes/bash-scripting/index.html</loc>
-    <lastmod>2025-04-04T19:36:16.794Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/notes/python-collections/index.html</loc>
-    <lastmod>2025-04-04T19:36:16.797Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/notes/python-project-management/index.html</loc>
-    <lastmod>2025-04-04T19:36:16.797Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/notes/python-environments/index.html</loc>
-    <lastmod>2025-04-04T19:36:16.797Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/notes/reterminal-setup/index.html</loc>
-    <lastmod>2025-04-04T19:36:16.801Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/notes/index.html</loc>
-    <lastmod>2025-04-04T19:36:16.797Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/about/calendar/index.html</loc>
-    <lastmod>2025-04-04T19:36:16.286Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/index.html</loc>
-    <lastmod>2025-04-04T19:36:16.645Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/about/this-site/index.html</loc>
-    <lastmod>2025-04-04T19:36:16.288Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/about/syllabus/index.html</loc>
-    <lastmod>2025-04-04T19:36:16.287Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/notes/bash-essentials/index.html</loc>
-    <lastmod>2025-04-04T19:36:16.794Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/notes/gpios/index.html</loc>
-    <lastmod>2025-04-04T19:36:16.797Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/notes/analog-vs-digital/index.html</loc>
-    <lastmod>2025-04-04T19:36:16.793Z</lastmod>
-  </url>
-  <url>
-    <loc>https://john-abbott-college.github.io/6P3-Notes/notes/python-scripting/index.html</loc>
-    <lastmod>2025-04-04T19:36:16.797Z</lastmod>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/notes/debug-reterminal/index.html</loc>
+    <lastmod>2025-04-13T17:06:24.999Z</lastmod>
   </url>
   <url>
     <loc>https://john-abbott-college.github.io/6P3-Notes/notes/reterminal-devices/index.html</loc>
-    <lastmod>2025-04-04T19:36:16.801Z</lastmod>
+    <lastmod>2025-04-13T17:06:25.006Z</lastmod>
+  </url>
+  <url>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/notes/python-scripting/index.html</loc>
+    <lastmod>2025-04-13T17:06:25.002Z</lastmod>
+  </url>
+  <url>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/notes/analog-vs-digital/index.html</loc>
+    <lastmod>2025-04-13T17:06:24.998Z</lastmod>
+  </url>
+  <url>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/notes/gpios/index.html</loc>
+    <lastmod>2025-04-13T17:06:25.001Z</lastmod>
+  </url>
+  <url>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/notes/bash-essentials/index.html</loc>
+    <lastmod>2025-04-13T17:06:24.999Z</lastmod>
+  </url>
+  <url>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/about/syllabus/index.html</loc>
+    <lastmod>2025-04-13T17:06:24.496Z</lastmod>
+  </url>
+  <url>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/about/this-site/index.html</loc>
+    <lastmod>2025-04-13T17:06:24.497Z</lastmod>
+  </url>
+  <url>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/index.html</loc>
+    <lastmod>2025-04-13T17:06:24.851Z</lastmod>
+  </url>
+  <url>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/about/calendar/index.html</loc>
+    <lastmod>2025-04-13T17:06:24.494Z</lastmod>
+  </url>
+  <url>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/notes/index.html</loc>
+    <lastmod>2025-04-13T17:06:25.001Z</lastmod>
+  </url>
+  <url>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/notes/reterminal-setup/index.html</loc>
+    <lastmod>2025-04-13T17:06:25.006Z</lastmod>
+  </url>
+  <url>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/notes/python-environments/index.html</loc>
+    <lastmod>2025-04-13T17:06:25.001Z</lastmod>
+  </url>
+  <url>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/notes/python-project-management/index.html</loc>
+    <lastmod>2025-04-13T17:06:25.002Z</lastmod>
+  </url>
+  <url>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/notes/python-collections/index.html</loc>
+    <lastmod>2025-04-13T17:06:25.001Z</lastmod>
+  </url>
+  <url>
+    <loc>https://john-abbott-college.github.io/6P3-Notes/notes/bash-scripting/index.html</loc>
+    <lastmod>2025-04-13T17:06:24.999Z</lastmod>
   </url>
   <url>
     <loc>https://john-abbott-college.github.io/6P3-Notes/notes/python-package-management/index.html</loc>
-    <lastmod>2025-04-04T19:36:16.797Z</lastmod>
+    <lastmod>2025-04-13T17:06:25.002Z</lastmod>
   </url>
   <url>
     <loc>https://john-abbott-college.github.io/6P3-Notes/notes/async-python/index.html</loc>
-    <lastmod>2025-04-04T19:36:16.793Z</lastmod>
+    <lastmod>2025-04-13T17:06:24.998Z</lastmod>
   </url>
   <url>
     <loc>https://john-abbott-college.github.io/6P3-Notes/notes/python-oop/index.html</loc>
-    <lastmod>2025-04-04T19:36:16.797Z</lastmod>
+    <lastmod>2025-04-13T17:06:25.001Z</lastmod>
   </url>
   <url>
     <loc>https://john-abbott-college.github.io/6P3-Notes/notes/github-basics/index.html</loc>
-    <lastmod>2025-04-04T19:36:16.797Z</lastmod>
+    <lastmod>2025-04-13T17:06:25.001Z</lastmod>
   </url>
 </urlset>

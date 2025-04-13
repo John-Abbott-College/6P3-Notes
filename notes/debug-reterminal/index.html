@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-01-20">
+<meta name="dcterms.date" content="2025-04-13">
 
-<title>Course hardware – Connected Objects</title>
+<title>Debugging Reterminal Issues – Connected Objects</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,61 +21,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -84,8 +30,8 @@ div.csl-indent {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../notes/python-oop/index.html" rel="next">
-<link href="../../notes/async-python/index.html" rel="prev">
+<link href="../../notes/python-package-management/index.html" rel="next">
+<link href="../../notes/bash-scripting/index.html" rel="prev">
 <link href="../../assets/favicon_io/favicon.ico" rel="icon">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -99,9 +45,6 @@ div.csl-indent {
 <link href="../../site_libs/bootstrap/bootstrap-ae88efe0b7c31e6578cce92c213ac82a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../../site_libs/bootstrap/bootstrap-dark-73fae4600b5030606feb7fcd3e669409.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script src="../../site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
-<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": true,
@@ -129,15 +72,13 @@ div.csl-indent {
 }</script>
 
 
-<meta property="og:title" content="Course hardware – Connected Objects">
-<meta property="og:description" content="List of hardware available for the course as well as their respective specifications and documentation.">
-<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/notes/course-hardware/assets/iot-hardware.png">
+<meta property="og:title" content="Debugging Reterminal Issues – Connected Objects">
+<meta property="og:description" content="Sometimes, the reTerminal display drivers fail. Here is an (incomplete) set of debugging steps you can take to try fixing the issue.">
+<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/notes/debug-reterminal/assets/art_title_path_only.svg">
 <meta property="og:site_name" content="{{< var course.title >}}">
-<meta property="og:image:height" content="386">
-<meta property="og:image:width" content="600">
 </head>
 
-<body class="nav-sidebar docked nav-fixed slimcontent">
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -272,7 +213,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/course-hardware/index.html">Course hardware</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/debug-reterminal/index.html">Debugging Reterminal Issues</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -352,7 +293,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notes/debug-reterminal/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/debug-reterminal/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Debugging Reterminal Issues</span></a>
   </div>
 </li>
@@ -376,7 +317,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notes/course-hardware/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../notes/course-hardware/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Course hardware</span></a>
   </div>
 </li>
@@ -404,35 +345,12 @@ div.csl-indent {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#reterminal" id="toc-reterminal" class="nav-link active" data-scroll-target="#reterminal"><span class="header-section-number">1</span> reTerminal</a>
+  <li><a href="#if-you-can-ssh-into-your-reterminal" id="toc-if-you-can-ssh-into-your-reterminal" class="nav-link active" data-scroll-target="#if-you-can-ssh-into-your-reterminal"><span class="header-section-number">1</span> If you can <code>ssh</code> into your reTerminal</a></li>
+  <li><a href="#if-you-cannot-ssh-into-your-reterminal" id="toc-if-you-cannot-ssh-into-your-reterminal" class="nav-link" data-scroll-target="#if-you-cannot-ssh-into-your-reterminal"><span class="header-section-number">2</span> If you cannot <code>ssh</code> into your reTerminal</a>
   <ul>
-  <li><a href="#features" id="toc-features" class="nav-link" data-scroll-target="#features"><span class="header-section-number">1.1</span> Features</a></li>
-  <li><a href="#specifications" id="toc-specifications" class="nav-link" data-scroll-target="#specifications"><span class="header-section-number">1.2</span> Specifications</a></li>
-  <li><a href="#hardware-overview" id="toc-hardware-overview" class="nav-link" data-scroll-target="#hardware-overview"><span class="header-section-number">1.3</span> Hardware Overview</a>
-  <ul class="collapse">
-  <li><a href="#chassis" id="toc-chassis" class="nav-link" data-scroll-target="#chassis"><span class="header-section-number">1.3.1</span> Chassis</a></li>
-  <li><a href="#motherboard" id="toc-motherboard" class="nav-link" data-scroll-target="#motherboard"><span class="header-section-number">1.3.2</span> Motherboard</a></li>
-  <li><a href="#block-diagram" id="toc-block-diagram" class="nav-link" data-scroll-target="#block-diagram"><span class="header-section-number">1.3.3</span> Block Diagram​</a></li>
-  <li><a href="#pinout-diagram" id="toc-pinout-diagram" class="nav-link" data-scroll-target="#pinout-diagram"><span class="header-section-number">1.3.4</span> Pinout Diagram​</a></li>
+  <li><a href="#finding-the-problem" id="toc-finding-the-problem" class="nav-link" data-scroll-target="#finding-the-problem"><span class="header-section-number">2.1</span> Finding the problem</a></li>
+  <li><a href="#solving-boot-firmare-file-problems" id="toc-solving-boot-firmare-file-problems" class="nav-link" data-scroll-target="#solving-boot-firmare-file-problems"><span class="header-section-number">2.2</span> Solving <code>/boot/</code> firmare file problems</a></li>
   </ul></li>
-  <li><a href="#power-supply" id="toc-power-supply" class="nav-link" data-scroll-target="#power-supply"><span class="header-section-number">1.4</span> Power Supply</a></li>
-  </ul></li>
-  <li><a href="#compute-module-4" id="toc-compute-module-4" class="nav-link" data-scroll-target="#compute-module-4"><span class="header-section-number">2</span> Compute Module 4</a>
-  <ul>
-  <li><a href="#grove-base-hat-for-raspberry-pi" id="toc-grove-base-hat-for-raspberry-pi" class="nav-link" data-scroll-target="#grove-base-hat-for-raspberry-pi"><span class="header-section-number">2.1</span> Grove Base Hat for Raspberry Pi</a></li>
-  </ul></li>
-  <li><a href="#sensors" id="toc-sensors" class="nav-link" data-scroll-target="#sensors"><span class="header-section-number">3</span> Sensors</a>
-  <ul>
-  <li><a href="#aht20-i2c-temperature-humidity" id="toc-aht20-i2c-temperature-humidity" class="nav-link" data-scroll-target="#aht20-i2c-temperature-humidity"><span class="header-section-number">3.1</span> AHT20 I2C Temperature &amp; Humidity</a></li>
-  <li><a href="#aht20-libraries" id="toc-aht20-libraries" class="nav-link" data-scroll-target="#aht20-libraries"><span class="header-section-number">3.2</span> AHT20 Libraries</a></li>
-  </ul></li>
-  <li><a href="#actuators-motors" id="toc-actuators-motors" class="nav-link" data-scroll-target="#actuators-motors"><span class="header-section-number">4</span> Actuators &amp; Motors</a>
-  <ul>
-  <li><a href="#led-socket" id="toc-led-socket" class="nav-link" data-scroll-target="#led-socket"><span class="header-section-number">4.1</span> LED Socket</a></li>
-  <li><a href="#cooling-fan" id="toc-cooling-fan" class="nav-link" data-scroll-target="#cooling-fan"><span class="header-section-number">4.2</span> Cooling Fan</a></li>
-  <li><a href="#relay" id="toc-relay" class="nav-link" data-scroll-target="#relay"><span class="header-section-number">4.3</span> Relay</a></li>
-  </ul></li>
-  <li><a href="#cabling" id="toc-cabling" class="nav-link" data-scroll-target="#cabling"><span class="header-section-number">5</span> Cabling</a></li>
   </ul>
 </nav>
 </nav>
@@ -441,16 +359,13 @@ div.csl-indent {
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Course hardware</h1>
-<p class="subtitle lead"></p><p>List of hardware available for the course as well as their respective specifications and documentation.</p><p></p>
-  <div class="quarto-categories">
-    <div class="quarto-category">lab-3</div>
-  </div>
-  </div>
+<h1 class="title">Debugging Reterminal Issues</h1>
+<p class="subtitle lead"></p><p>Sometimes, the reTerminal display drivers fail. Here is an (incomplete) set of debugging steps you can take to try fixing the issue.</p><p></p>
+</div>
 
 
 
@@ -460,7 +375,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 20, 2025</p>
+      <p class="date">April 13, 2025</p>
     </div>
   </div>
   
@@ -478,232 +393,59 @@ div.csl-indent {
 </header>
 
 
-
-<div class="no-row-height column-margin column-container"><div class="">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="./assets/iot-hardware.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Image source"><img src="./assets/iot-hardware.png" class="img-fluid figure-img" alt="Image source"></a></p>
-<figcaption><a href="https://www.intigia.com/technologies/industrial-iot/">Image source</a></figcaption>
-</figure>
-</div>
-</div></div><section id="reterminal" class="level2 page-columns page-full" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="reterminal"><span class="header-section-number">1</span> reTerminal</h2>
-<p>The <a href="https://www.seeedstudio.com/ReTerminal-with-CM4-p-4904.html">reTerminal</a> is a development board based on the Raspberry Pi Compute Module 4 (CM4) manufactured by Seeed Studio.</p>
-<blockquote class="blockquote">
-<p>See <a href="https://wiki.seeedstudio.com/reTerminal/">reTerminal Wiki page</a> for the complete specs and documentation</p>
-</blockquote>
-<p><em>Most of the information from the following sections was scraped from <span class="citation" data-cites="GettingStartedReTerminal2023">(<a href="#ref-GettingStartedReTerminal2023" role="doc-biblioref"><span>“Getting <span>Started</span> with <span class="nocase">reTerminal</span> | <span>Seeed Studio Wiki</span>”</span> 2023</a>)</span></em></p>
-<section id="features" class="level3" data-number="1.1">
-<h3 data-number="1.1" class="anchored" data-anchor-id="features"><span class="header-section-number">1.1</span> Features</h3>
-<ul>
-<li>Integrated modular design with high stability and expandability</li>
-<li>Powered by Raspberry Pi Computer Module 4 with 4GB RAM &amp; 32GB eMMC</li>
-<li>5-Inch IPS capacitive multi-touch screen at 1280 x 720 and 293 PPI</li>
-<li>Wireless connectivity with dual-band 2.4GHz/5GHz Wi-Fi and Bluetooth 5.0 BLE</li>
-<li>High-speed expansion interface and rich I/O for more expandability</li>
-<li>Cryptographic co-processor with secure hardware-based key storage</li>
-<li>Built-in modules such as accelerometer, light sensor and RTC</li>
-<li>Gigabit Ethernet Port and Dual USB 2.0 Type-A ports</li>
-<li>40-Pin header for IoT applications</li>
-</ul>
+<p>So far, there have been two primary causes for the reTerminal screen to stop working:</p>
+<ol type="1">
+<li>System update using <code>apt</code>: during the semester, some changes that break raspberry pi and reTerminal compatibility are introduced, necessitating another update and another run of the <a href="../../notes/reterminal-setup/#display-driver-fix">Display driver fix scripts.</a></li>
+<li>Errors introduced from mistakes when editing firmware files like <code>/boot/firmware/*.txt</code> and/or <code>/boot/cmdline.txt</code> and/or <code>/boot/config.txt</code></li>
+<li>Errors introduced from an incomplete upgrade (interrupted before finishing).</li>
+</ol>
+<p>In the first case, the reTerminal boots just fine, but the screen doesn’t work. In the second and third cases, the reTerminal fails to boot at all.</p>
+<p>For each of these cases, I have a set of troubleshooting steps you can take to resolve these issues.</p>
+<section id="if-you-can-ssh-into-your-reterminal" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="if-you-can-ssh-into-your-reterminal"><span class="header-section-number">1</span> If you can <code>ssh</code> into your reTerminal</h2>
+<p>Most likely it is the case that your reterminal is still connecting to the internet and accessible over <code>ssh</code>, even when the screen is not working.</p>
+<ol type="1">
+<li>Double check that you can see your reterminal in tailscale by running <code>tailscale status</code> on your developer machine. <code>ssh</code> into the device using this IP address.
+<ol type="1">
+<li>If for some reason your device is offline on tailscale, try to determine its local ip address using your router webpage (at home). <code>ssh</code> into reterminal using this ip address</li>
+</ol></li>
+<li>Once you have an <code>ssh</code> connection, follow the steps from the course notes: <a href="../../notes/reterminal-setup/#display-driver-fix">Display driver fix scripts</a></li>
+</ol>
 </section>
-<section id="specifications" class="level3" data-number="1.2">
-<h3 data-number="1.2" class="anchored" data-anchor-id="specifications"><span class="header-section-number">1.2</span> Specifications</h3>
-<p>See <a href="https://wiki.seeedstudio.com/reTerminal/#specifications">Specifications</a> on the reTerminal wiki webpage.</p>
+<section id="if-you-cannot-ssh-into-your-reterminal" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="if-you-cannot-ssh-into-your-reterminal"><span class="header-section-number">2</span> If you cannot <code>ssh</code> into your reTerminal</h2>
+<section id="finding-the-problem" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="finding-the-problem"><span class="header-section-number">2.1</span> Finding the problem</h3>
+<ol type="1">
+<li>Ask the teacher for a micro-usb to HDMI connector</li>
+<li>Plug the HDMI end into a workstation monitor, and the micro-usb end into your reTerminal (in the port labelled HDMI)</li>
+<li>Plug your reTerminal into a power supply to boot the reTerminal</li>
+<li>The monitor will show logs of your reTerminal booting. Observe these logs closely. <strong>You are looking for specific error messages</strong>.</li>
+<li>Write down the specific error messages. Search the course notes/[Raspberry Pi Documentation][raspi-boot-docs] for any concepts you don’t understand. Think back: have you made any changes to the <code>/boot</code> files that seem related to these errors?</li>
+<li>If you have a good idea of what happened and what needs to be fixed, proceed to the next section. Feel free to double check your understanding with the teacher at this point – for educational purposes, I may not give you the answer directly, but I can guide you in a direction that will help save you some time.</li>
+</ol>
 </section>
-<section id="hardware-overview" class="level3" data-number="1.3">
-<h3 data-number="1.3" class="anchored" data-anchor-id="hardware-overview"><span class="header-section-number">1.3</span> Hardware Overview</h3>
-<section id="chassis" class="level4" data-number="1.3.1">
-<h4 data-number="1.3.1" class="anchored" data-anchor-id="chassis"><span class="header-section-number">1.3.1</span> Chassis</h4>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://files.seeedstudio.com/wiki/ReTerminal/HW_overview.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="pir"><img src="https://files.seeedstudio.com/wiki/ReTerminal/HW_overview.png" class="img-fluid figure-img" alt="pir"></a></p>
-<figcaption>pir</figcaption>
-</figure>
-</div>
-</section>
-<section id="motherboard" class="level4" data-number="1.3.2">
-<h4 data-number="1.3.2" class="anchored" data-anchor-id="motherboard"><span class="header-section-number">1.3.2</span> Motherboard</h4>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://files.seeedstudio.com/wiki/ReTerminal/hw-overview-internal-v1.3.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="pir"><img src="https://files.seeedstudio.com/wiki/ReTerminal/hw-overview-internal-v1.3.jpg" class="img-fluid figure-img" alt="pir"></a></p>
-<figcaption>pir</figcaption>
-</figure>
-</div>
-</section>
-<section id="block-diagram" class="level4" data-number="1.3.3">
-<h4 data-number="1.3.3" class="anchored" data-anchor-id="block-diagram"><span class="header-section-number">1.3.3</span> Block Diagram<a href="index.html#block-diagram" title="Direct link to Block Diagram">​</a></h4>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://files.seeedstudio.com/wiki/ReTerminal/reTerminal_block_diagram-v1.3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="pir"><img src="https://files.seeedstudio.com/wiki/ReTerminal/reTerminal_block_diagram-v1.3.png" class="img-fluid figure-img" alt="pir"></a></p>
-<figcaption>pir</figcaption>
-</figure>
-</div>
-</section>
-<section id="pinout-diagram" class="level4" data-number="1.3.4">
-<h4 data-number="1.3.4" class="anchored" data-anchor-id="pinout-diagram"><span class="header-section-number">1.3.4</span> Pinout Diagram<a href="index.html#pinout-diagram" title="Direct link to Pinout Diagram">​</a></h4>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://files.seeedstudio.com/wiki/ReTerminal/pinout-v2.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Please carefully pay attention to the orientation of the reTerminal in the above diagram. The LCD and the onboard buttons are on the right side whereas the back of reTerminal is on the left side. Also the whole device is flipped upside down."><img src="https://files.seeedstudio.com/wiki/ReTerminal/pinout-v2.jpg" class="img-fluid figure-img" alt="Please carefully pay attention to the orientation of the reTerminal in the above diagram. The LCD and the onboard buttons are on the right side whereas the back of reTerminal is on the left side. Also the whole device is flipped upside down."></a></p>
-<figcaption>Please carefully pay attention to the orientation of the reTerminal in the above diagram. The LCD and the onboard buttons are on the right side whereas the back of reTerminal is on the left side. Also the whole device is flipped upside down.</figcaption>
-</figure>
-</div>
-</section>
-</section>
-<section id="power-supply" class="level3 page-columns page-full" data-number="1.4">
-<h3 data-number="1.4" class="anchored" data-anchor-id="power-supply"><span class="header-section-number">1.4</span> Power Supply</h3>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://media.digikey.com/Photos/Raspberry%20Pi/MFG_RPI%20USB-C%20POWER%20SUPPLY%20BLACK%20US.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="RPI USB-C POWER SUPPLY BLACK US"><img src="https://media.digikey.com/Photos/Raspberry%20Pi/MFG_RPI%20USB-C%20POWER%20SUPPLY%20BLACK%20US.jpg" class="img-fluid figure-img" alt="RPI USB-C POWER SUPPLY BLACK US"></a></p>
-<figcaption>RPI USB-C POWER SUPPLY BLACK US</figcaption>
-</figure>
-</div>
-</div></div><p>The reTerminal requires a power supply that can provide a minimum of 3 Amps. The official <a href="https://www.raspberrypi.com/products/type-c-power-supply/">Raspberry Pi USB-C Power Supply</a> in included in the kit.</p>
-</section>
-</section>
-<section id="compute-module-4" class="level2 page-columns page-full" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="compute-module-4"><span class="header-section-number">2</span> Compute Module 4</h2>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://images.prismic.io/rpf-products/bfe15853-d10f-4ed9-b9f0-32540bd76e55_CM4%20Featured%20Image.jpg?ixlib=gatsbyFP&amp;auto=compress%2Cformat&amp;fit=max&amp;q=50&amp;w=600&amp;h=400" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Raspberry PI CM 4"><img src="https://images.prismic.io/rpf-products/bfe15853-d10f-4ed9-b9f0-32540bd76e55_CM4%20Featured%20Image.jpg?ixlib=gatsbyFP&amp;auto=compress%2Cformat&amp;fit=max&amp;q=50&amp;w=600&amp;h=400" title=":size=300" class="img-fluid figure-img" alt="Raspberry PI CM 4"></a></p>
-<figcaption>Raspberry PI CM 4</figcaption>
-</figure>
-</div>
-</div></div><p>The <a href="https://www.raspberrypi.com/products/compute-module-4/?variant=raspberry-pi-cm4001000">Compute Module 4</a> (CM4) made by the Raspberry Pi Foundation is powering the reTerminal.</p>
-<p>Notable features:</p>
-<ul>
-<li>Processor: Broadcom BCM2711 quad-core Cortex-A72 (ARM v8) 64-bit SoC @ 1.5GHz</li>
-</ul>
-<blockquote class="blockquote">
-<p>See <a href="https://datasheets.raspberrypi.com/cm4/cm4-datasheet.pdf">CM4 datasheet</a> for details.</p>
-</blockquote>
-<p>See <a href="https://linuxhint.com/about-arm64-armel-armhf/">Difference Between ARM64, ARMel, and ARMhf</a> for more info on the different ARM architectures.</p>
-<section id="grove-base-hat-for-raspberry-pi" class="level3 page-columns page-full" data-number="2.1">
-<h3 data-number="2.1" class="anchored" data-anchor-id="grove-base-hat-for-raspberry-pi"><span class="header-section-number">2.1</span> Grove Base Hat for Raspberry Pi</h3>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://files.seeedstudio.com/wiki/Grove_Base_Hat_for_Raspberry_Pi/img/main.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Grove Base Hat for GPIO connections"><img src="https://files.seeedstudio.com/wiki/Grove_Base_Hat_for_Raspberry_Pi/img/main.jpg" title=":size=300" class="img-fluid figure-img" alt="Grove Base Hat for GPIO connections"></a></p>
-<figcaption>Grove Base Hat for GPIO connections</figcaption>
-</figure>
-</div>
-</div></div><p>In a typical Raspberry Pi, sensors would be connected via the 40-pin GPIO.</p>
-<p>To facilitate connections of the Grove sensors, this “Hat” (term for an add-on board of the Raspberry Pi) includes the following types of connection:</p>
-<ul>
-<li>6 Digital</li>
-<li>4 Analog</li>
-<li>3 I2C</li>
-<li>1 PWM</li>
-<li>1 UART</li>
-</ul>
-<blockquote class="blockquote">
-<p>See <a href="https://wiki.seeedstudio.com/Grove_Base_Hat_for_Raspberry_Pi/">Grove base hat Wiki</a> for details.</p>
-</blockquote>
-</section>
-</section>
-<section id="sensors" class="level2 page-columns page-full" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="sensors"><span class="header-section-number">3</span> Sensors</h2>
-<section id="aht20-i2c-temperature-humidity" class="level3 page-columns page-full" data-number="3.1">
-<h3 data-number="3.1" class="anchored" data-anchor-id="aht20-i2c-temperature-humidity"><span class="header-section-number">3.1</span> AHT20 I2C Temperature &amp; Humidity</h3>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://files.seeedstudio.com/wiki/Grove-AHT20_I2C_Industrial_Grade_Temperature_and_Humidity_Sensor/101990644_4_.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="AHT20 I2C temperature/humidity sensor"><img src="https://files.seeedstudio.com/wiki/Grove-AHT20_I2C_Industrial_Grade_Temperature_and_Humidity_Sensor/101990644_4_.png" title=":size=300" class="img-fluid figure-img" alt="AHT20 I2C temperature/humidity sensor"></a></p>
-<figcaption>AHT20 I2C temperature/humidity sensor</figcaption>
-</figure>
-</div>
-</div></div><p>See <a href="https://wiki.seeedstudio.com/Grove-AHT20-I2C-Industrial-Grade-Temperature&amp;Humidity-Sensor/">AHT20 I2C Industrial Grade Temperature &amp; Humidity Sensor wiki</a> for details.</p>
-<ul>
-<li>Temperature measurement range -40 ~ 85°C, Humidity measurement range 0 ~ 100% RH.</li>
-<li>Digital output, Grove I2C interface.</li>
-</ul>
-</section>
-<section id="aht20-libraries" class="level3" data-number="3.2">
-<h3 data-number="3.2" class="anchored" data-anchor-id="aht20-libraries"><span class="header-section-number">3.2</span> AHT20 Libraries</h3>
-<p>The main module for this sensor is provided by Seeed in <a href="https://github.com/Seeed-Studio/grove.py/blob/master/grove/grove_temperature_humidity_aht20.py">this Github repository</a> and can be installed with the <code>grove.py</code> library.</p>
-<p>Follow official <a href="https://wiki.seeedstudio.com/Grove_Base_Hat_for_Raspberry_Pi/#installation">Step by step installation</a> for python 3 (see below). Don’t use the one-click installation or it will install to the wrong location</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone <span class="pp">[</span><span class="ss">https://github.com/Seeed</span><span class="pp">-</span><span class="ss">Studio/grove.py</span><span class="pp">]</span><span class="er">(</span><span class="ex">https://github.com/Seeed-Studio/grove.py</span><span class="kw">)</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> grove.py</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> pip3 install .</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Alternatively, it’s also possible to use Adafruit’s <code>adafruit-circuitpython-ahtx0</code> library to communicate with the sensor (see <a href="https://pypi.org/project/adafruit-circuitpython-ahtx0/">library’s Pypi page</a>). However, to instantiate the provided sensor class, you will need to pass it an I2C bus instance. To instantiate an I2C bus instance, install and use the <code>adafruit-extended-bus</code> library (see <a href="https://pypi.org/project/adafruit-extended-bus/">Pypi page</a>).</p>
-</section>
-</section>
-<section id="actuators-motors" class="level2 page-columns page-full" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="actuators-motors"><span class="header-section-number">4</span> Actuators &amp; Motors</h2>
-<section id="led-socket" class="level3 page-columns page-full" data-number="4.1">
-<h3 data-number="4.1" class="anchored" data-anchor-id="led-socket"><span class="header-section-number">4.1</span> LED Socket</h3>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://files.seeedstudio.com/wiki/Raspi_wiki/img/red_led.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="LED"><img src="https://files.seeedstudio.com/wiki/Raspi_wiki/img/red_led.jpg" class="img-fluid figure-img" alt="LED"></a></p>
-<figcaption>LED</figcaption>
-</figure>
-</div>
-</div></div><p>LED in a removable socket and potentiometer for power adjustment. LED can be swapped with different colors.</p>
-<p>See <a href="https://wiki.seeedstudio.com/Grove-Red_LED/">LED wiki page</a> for details.</p>
-</section>
-<section id="cooling-fan" class="level3 page-columns page-full" data-number="4.2">
-<h3 data-number="4.2" class="anchored" data-anchor-id="cooling-fan"><span class="header-section-number">4.2</span> Cooling Fan</h3>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://abra-electronics.com/images/thumbnails/280/280/detailed/182/fan-3d-5v.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="Cooling Fan"><img src="https://abra-electronics.com/images/thumbnails/280/280/detailed/182/fan-3d-5v.png" class="img-fluid figure-img" alt="Cooling Fan"></a></p>
-<figcaption>Cooling Fan</figcaption>
-</figure>
-</div>
-</div></div><p>5V Cooling Fan 40mm x 10mm with 2-pin JST connector.</p>
-<ul>
-<li>See <a href="https://abra-electronics.com/thermal-management/fans/dc-fans-5v/5v-cooling-fan-40mm-x-10mm.html">product page here</a>.</li>
-</ul>
-</section>
-<section id="relay" class="level3 page-columns page-full" data-number="4.3">
-<h3 data-number="4.3" class="anchored" data-anchor-id="relay"><span class="header-section-number">4.3</span> Relay</h3>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://files.seeedstudio.com/wiki/Grove-Relay/img/Twig-Relay.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-12" title="Relay switch"><img src="https://files.seeedstudio.com/wiki/Grove-Relay/img/Twig-Relay.jpg" class="img-fluid figure-img" alt="Relay switch"></a></p>
-<figcaption>Relay switch</figcaption>
-</figure>
-</div>
-</div></div><p>A digital switch. Controls the on/off flow of electricity with a small digital signal.</p>
-<ul>
-<li>Operate voltage: 3.3V-5V</li>
-<li>Input current: 100mA</li>
-<li>Rated load: 5A@250VAC 5A@30VDC</li>
-</ul>
-<p>See <a href="https://wiki.seeedstudio.com/Grove-Relay/">relay wiki page</a> for details.</p>
-</section>
-</section>
-<section id="cabling" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="cabling"><span class="header-section-number">5</span> Cabling</h2>
-<p>The following cables are included in the base kit:</p>
-<ul>
-<li><a href="https://www.seeedstudio.com/Grove-Universal-4-Pin-Buckled-5cm-Cable-5-PCs-Pack.html">Grove Universal 4 Pin Buckled 5cm Cable</a>.</li>
-<li><a href="https://www.seeedstudio.com/Grove-Universal-4-Pin-20cm-Unbuckled-Cable-5-PCs-Pack-p-749.html">Grove Universal 4 Pin Buckled 20cm Cable</a>.</li>
-<li><a href="https://www.seeedstudio.com/Grove-4-pin-Female-Jumper-to-Grove-4-pin-Conversion-Cable-5-PCs-per-PAck.html?queryID=7204536b9cc818771ed75f0d099829e7&amp;objectID=2221&amp;indexName=bazaar_retailer_products">Grove 4 pin Female Jumper to Grove 4 pin Cable</a></li>
-<li><a href="https://www.seeedstudio.com/Grove-4-pin-Male-Jumper-to-Grove-4-pin-Conversion-Cable-5-PCs-per-Pack.html?queryID=9549a08ce2a46dc2ad12c0730ae087dd&amp;objectID=1321&amp;indexName=bazaar_retailer_products">Grove 4 pin Male Jumper to Grove 4 pin Cable</a></li>
-<li>40-pin flat ribbon cable 20cm (female-female).</li>
-<li><a href="https://abra-electronics.com/interconnects/connectors/jst-connectors/sm/con-jst-sm-2a-2-pin-jst-sm-plug-receptacle-cable-set.html">2-pin JST SM Plug</a>, one end open.</li>
-</ul>
-
+<section id="solving-boot-firmare-file-problems" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="solving-boot-firmare-file-problems"><span class="header-section-number">2.2</span> Solving <code>/boot/</code> firmare file problems</h3>
+<p>If indeed the error comes from an incorrect <code>/boot</code> configuration file setting, we can fix the error <em>without reimaging the pi</em>. Instead, we will <em>mount the reTerminal storage</em> on to a workstation and then <em>fix the firmware files directly on that workstation</em>.</p>
+<p>The steps will look similar to Lab 1, except we won’t be reimaging the device at the end. You should open <a href="../../notes/reterminal-setup">Reterminal Setup instructons</a> for reference while you are working. The following steps will be necessary:</p>
+<ol start="0" type="1">
+<li>Make sure your reTerminal is entirely unplugged and powered off.</li>
+<li>Disassemble your reTerminal, <em>up to the step where you can toggle the Firmware Flash switch</em>. Toggle the switch. This step will let you mount the storage device onto your workstation.</li>
+<li>On your lab workstation, find the program <code>rpibootloader</code> and run it. You should not need elevated access.</li>
+<li>While the <code>rpibootloader</code> program is running, plug your reTerminal into the workstation using a USB-C to USB-3 connector.</li>
+<li>You should see the <code>rpibootloader</code> acknowledge connection to your reterminal. A dozen or so logs will be printed to the <code>rpibootloader</code> program window. Once this is done: navigate to Windows Explorer (the file manager) and you should see the reTerminal (~28-32GB) as a connected drive on the workstation</li>
+<li>You can now access all files on the reterminal filesystem.</li>
+<li>The firmware files can now be edited directly to fix any mistakes made.</li>
+<li>Just in case, you can also recover any files you need that are stored on the reterminal in the <code>/home/your-username</code> directory.</li>
+</ol>
+<p>Step (5) above will vary depending on your exact error – this is why the “Finding the problem” step is important,to inform what fixes you should attempt first.</p>
 
 
 </section>
+</section>
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-GettingStartedReTerminal2023" class="csl-entry" role="listitem">
-<span>“Getting <span>Started</span> with <span class="nocase">reTerminal</span> | <span>Seeed Studio Wiki</span>.”</span> 2023. January 31, 2023. <a href="https://wiki.seeedstudio.com/reTerminal/">https://wiki.seeedstudio.com/reTerminal/</a>.
-</div>
-</div></section><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div>CC BY-NC 4.0. ©2022-25 Mauricio Buschinelli &amp; Michael Haaf.
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div>CC BY-NC 4.0. ©2022-25 Mauricio Buschinelli &amp; Michael Haaf.
 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">(View License)</a></div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -1268,49 +1010,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../notes/async-python/index.html" class="pagination-link" aria-label="Asynchronous progamming in Python">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Asynchronous progamming in Python</span>
+      <a href="../../notes/bash-scripting/index.html" class="pagination-link" aria-label="Bash scripting">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Bash scripting</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../notes/python-oop/index.html" class="pagination-link" aria-label="Python OOP">
-        <span class="nav-page-text">Python OOP</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../notes/python-package-management/index.html" class="pagination-link" aria-label="Python package management">
+        <span class="nav-page-text">Python package management</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
-(function() {
-  let previousOnload = window.onload;
-  window.onload = () => {
-    if (previousOnload) {
-      previousOnload();
-    }
-    lightboxQuarto.on('slide_before_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      const href = trigger.getAttribute('href');
-      if (href !== null) {
-        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-        if (imgEl !== null) {
-          const srcAttr = imgEl.getAttribute("src");
-          if (srcAttr && srcAttr.startsWith("data:")) {
-            slideConfig.href = srcAttr;
-          }
-        }
-      } 
-    });
-  
-    lightboxQuarto.on('slide_after_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(slideNode);
-      }
-    });
-  
-  };
-  
-})();
-          </script>
 
 
 
