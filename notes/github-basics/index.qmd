@@ -218,3 +218,29 @@ PS > wsl --shutdown <distro-name>
 ```
 
 After the shutdown attempt, retry using `pass` in the WSL again.
+
+## Repository management
+
+### Troubleshooting
+
+```bash
+# Adapted from: https://stackoverflow.com/a/18238322
+
+# Delete the corrupted .git folder
+$ rm -fr .git
+
+# Create a new .git folder
+$ git init
+
+# Add your GitHub repository as the "origin" remote
+$ git remote add origin [your-git-remote-url]
+
+# Update the .git folder to have the latest changes from remote
+$ git fetch
+
+# Keep your current changes, but set your git reference to your working branch
+$ git reset --mixed origin/<branch-name>
+
+# Ensure you're on the correct branch
+$ git switch <branch-name>
+```
