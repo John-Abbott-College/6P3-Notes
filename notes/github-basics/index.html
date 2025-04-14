@@ -402,6 +402,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#no-secret-key" id="toc-no-secret-key" class="nav-link" data-scroll-target="#no-secret-key"><span class="header-section-number">3.3.1</span> <code>No secret key</code></a></li>
   </ul></li>
   </ul></li>
+  <li><a href="#repository-management" id="toc-repository-management" class="nav-link" data-scroll-target="#repository-management"><span class="header-section-number">4</span> Repository management</a>
+  <ul>
+  <li><a href="#troubleshooting-1" id="toc-troubleshooting-1" class="nav-link" data-scroll-target="#troubleshooting-1"><span class="header-section-number">4.1</span> Troubleshooting</a></li>
+  </ul></li>
   </ul>
 </nav>
 </nav>
@@ -437,7 +441,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">April 13, 2025</p>
+      <p class="date-modified">April 14, 2025</p>
     </div>
   </div>
     
@@ -637,10 +641,35 @@ Note
 <div class="sourceCode" id="cb9" data-filename="Powershell"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">PS</span> <span class="op">&gt;</span> wsl <span class="op">--</span>shutdown <span class="op">&lt;</span>distro-name<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>After the shutdown attempt, retry using <code>pass</code> in the WSL again.</p>
-
-
 </section>
 </section>
+</section>
+</section>
+<section id="repository-management" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="repository-management"><span class="header-section-number">4</span> Repository management</h2>
+<section id="troubleshooting-1" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="troubleshooting-1"><span class="header-section-number">4.1</span> Troubleshooting</h3>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Adapted from: https://stackoverflow.com/a/18238322</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Delete the corrupted .git folder</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> rm <span class="at">-fr</span> .git</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new .git folder</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git init</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Add your GitHub repository as the "origin" remote</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git remote add origin <span class="pp">[</span><span class="ss">your</span><span class="pp">-</span><span class="ss">git</span><span class="pp">-</span><span class="ss">remote</span><span class="pp">-</span><span class="ss">url</span><span class="pp">]</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Update the .git folder to have the latest changes from remote</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git fetch</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Keep your current changes, but set your git reference to your working branch</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git reset <span class="at">--mixed</span> origin/<span class="op">&lt;</span>branch-name<span class="op">&gt;</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Ensure you're on the correct branch</span></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git switch <span class="op">&lt;</span>branch-name<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+
 </section>
 </section>
 
