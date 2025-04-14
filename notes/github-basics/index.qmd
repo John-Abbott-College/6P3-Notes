@@ -223,6 +223,23 @@ After the shutdown attempt, retry using `pass` in the WSL again.
 
 ### Troubleshooting
 
+#### Method 1
+
+```bash
+# Adapted from: https://stackoverflow.com/a/40098509
+
+# Delete the corrupted .git/objects
+find .git/objects/ -size 0 -exec rm -rf {} \;
+
+# Might need to do this?
+# git symbolic-ref HEAD refs/heads/master
+
+# Update the git repository
+git fetch
+```
+
+#### Method 2
+
 ```bash
 # Adapted from: https://stackoverflow.com/a/18238322
 
