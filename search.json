@@ -1005,7 +1005,7 @@
     "href": "notes/github-basics/index.html#repository-management",
     "title": "GitHub basics",
     "section": "4 Repository management",
-    "text": "4 Repository management\n\n4.1 Troubleshooting\n# Adapted from: https://stackoverflow.com/a/18238322\n\n# Delete the corrupted .git folder\n$ rm -fr .git\n\n# Create a new .git folder\n$ git init\n\n# Add your GitHub repository as the \"origin\" remote\n$ git remote add origin [your-git-remote-url]\n\n# Update the .git folder to have the latest changes from remote\n$ git fetch\n\n# Keep your current changes, but set your git reference to your working branch\n$ git reset --mixed origin/&lt;branch-name&gt;\n\n# Ensure you're on the correct branch\n$ git switch &lt;branch-name&gt;",
+    "text": "4 Repository management\n\n4.1 Troubleshooting\n\n4.1.1 Method 1\n# Adapted from: https://stackoverflow.com/a/40098509\n\n# Delete the corrupted .git/objects\nfind .git/objects/ -size 0 -exec rm -rf {} \\;\n\n# Might need to do this?\n# git symbolic-ref HEAD refs/heads/master\n\n# Update the git repository\ngit fetch\n\n\n4.1.2 Method 2\n# Adapted from: https://stackoverflow.com/a/18238322\n\n# Delete the corrupted .git folder\n$ rm -fr .git\n\n# Create a new .git folder\n$ git init\n\n# Add your GitHub repository as the \"origin\" remote\n$ git remote add origin [your-git-remote-url]\n\n# Update the .git folder to have the latest changes from remote\n$ git fetch\n\n# Keep your current changes, but set your git reference to your working branch\n$ git reset --mixed origin/&lt;branch-name&gt;\n\n# Ensure you're on the correct branch\n$ git switch &lt;branch-name&gt;",
     "crumbs": [
       "GitHub basics"
     ]
