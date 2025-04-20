@@ -1,0 +1,267 @@
+---
+title: Azure Features
+subtitle: |
+  An overview of the main feautres of Azure we will use for implementing an IoT system.
+  Background information on "Platform as a Service" (PaaS),
+  Azure IoT Hub vs IoT Central,
+  Azure IoT Hub documentation,
+  Azure Resource Groups,
+  Intro to Azure Dev Tools (Azure Portal, Azure CLI).
+date: 2025-04-19
+---
+
+## Platform as a Service (PaaS)
+
+So far in this course, we have developed applications that are almost entirely
+local to our reTerminal (production) and workstation (development) environments.
+
+We did not worry ourselves about data storage, application logic,
+authentication, etc. We could implement these things locally in Python,
+but we can also automate many of them using a PaaS framework.
+
+**Platform as a service (PaaS)** is a complete development and deployment
+environment in the cloud:
+
+- Infrastructure: servers, storage, and networking,
+- Platforms: development tools, business intelligence services (BI), database
+  management systems, and more.
+
+It's really a reduced version of **Software as a service** (which you may be more familiar
+with), allowing the flexibility to write customized application/device software while
+benefitting from infrastructure and analysis services.
+
+See the graphic below:
+
+::: {#fig-saas-paas-iaas}
+
+![](assets/intro-azure-paas.png)
+
+Compasion of SaaS, PaaS and IaaS platforms. Figure from:
+[SaaS vs PaaS vs IaaS](https://docs.microsoft.com/en-us/learn/modules/introduction-iot-solution),
+Microsoft.
+
+:::
+
+PaaS is designed to support the complete application life-cycle: building, testing,
+deploying, managing, and updating -- while giving the developer flexibility to implement
+the actual services themselves.
+
+See more in
+[What is PaaS (azure.microsoft.com)](https://azure.microsoft.com/en-us/overview/what-is-paas/)
+
+## IoT Subsystems
+
+We can breakdown an IoT solution into **subsystems** and explore how information
+flows between them:
+
+- **IoT Devices**: The physical devices and sensors where data originates.
+- **Cloud Gateway**: The Cloud Gateway provides a cloud hub for secure
+  connectivity, telemetry, event ingestion and device management (including
+  command and control) capabilities.
+- **Stream Processing**: Processes large streams of data records, evaluates
+  rules for those streams, and further routes the data.
+- **Storage**: Storage can be divided into warm path (data that is required to
+  be available for reporting and visualization immediately from devices), and
+  cold path (data that is stored longer term and used for batch processing).
+- **User Interface and Reporting**: The user interface for an IoT application
+  can be delivered on a wide array of device types, in native applications, and
+  browsers.
+- **Business Process Integration**: Facilitates executing actions based on
+  insights garnered from device telemetry data during stream processing.
+  Integration could include storage of informational messages, alarms, sending
+  email or SMS, integration with CRM, and more.
+
+
+::: {#fig-iot-subsystems}
+
+![](https://docs.microsoft.com/en-us/learn/wwl-azure/introduction-iot-solution-architecture/media/m01-l02-core-subsystems-iot-architecture-8158ad9e.png)
+
+Diagram that shows the core subsystems of the Azure IoT reference architecture. Figure from:
+[Subsystems of IoT architecture](https://docs.microsoft.com/en-us/learn/modules/introduction-iot-solution-architecture/2-subsystems-iot-architecture),
+Microsoft.
+
+:::
+
+We will use Microsoft Azure to manage each sub-system individually.
+
+## Azure IoT Services
+
+Azure offers many IoT-related services (see image below). In this course we'll only
+explore a few.
+
+::: {#fig-azure-architecture}
+
+![](https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/iot/images/iot-refarch.svg)
+
+Azure IoT-related architecture. Data will flow from to/from your reTerminal (Devices),
+to/from the Azure IoT Hub (Ingestion & provisioning), to/from Azure Data Management (Warm
+path), to from your .NET mobile app (M&B integration). Figure from
+[Microsoft Learn](https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/iot).
+
+:::
+
+## IoT Hub & IoT Central
+
+Microsoft Azure has two service offers for deploying and managing IoT systems:
+**IoT Hub** and **IoT Central**.
+
+> The page
+> [Overview: Connection options for Azure IoT device developers](https://docs.microsoft.com/en-us/azure/iot-develop/concepts-overview-connection-options#application-platforms-iot-central-and-iot-hub)
+> offers a great summary and comparison between IoT Hub and IoT Central.
+
+### IoT Central
+
+Azure IoT Central is a **software-as-a-service (SaaS)** application that provides a
+complete platform for hosting IoT applications. Its main feature is a web UI
+that streamlines the lifecycle of creating and managing IoT applications.
+
+The web UI simplifies the tasks of creating applications, and connecting and
+managing from a few up to millions of devices.
+
+This service has a limited free plan (2 devices with 5000 messages per month).
+Pricing available
+[here](https://azure.microsoft.com/en-us/pricing/details/iot-central/).
+
+See
+[official site for details](https://azure.microsoft.com/en-us/services/iot-central/#overview)
+or watch the
+[walk-through for an example](https://www.youtube.com/watch?v=G32stXSwtyA).
+
+> We will not use IoT Central in this course because we'll connect the
+> underlying Azure services ourselves.
+
+### IoT Hub
+
+Azure IoT Hub is a **platform-as-a-service (PaaS)** application that also provides a
+platform for hosting IoT applications. IoT Hub acts as a central message hub for
+bi-directional communication between IoT applications and connected devices.
+
+IoT Hub offers **greater control and customization** over your application
+design, and **more developer tool options** for working with the service.
+However, it requires more development time and slightly more management
+complexity.
+
+This service also offers a more generous free plan (500 devices with 8000
+messages per day).
+
+See
+[official site for details](https://azure.microsoft.com/en-us/pricing/details/iot-hub/#overview)
+and
+[pricing](https://azure.microsoft.com/en-us/pricing/details/iot-hub/#pricing).
+
+> We will use IoT Hub in this course.
+
+#### IoT Hub Documentation
+
+[**Azure IoT Hub Documentation**](https://docs.microsoft.com/en-us/azure/iot-hub/)
+hosts most of the documentation we will be using.
+
+![](assets/intro-azure-docs-page.png)
+
+Please get familiar with the left-hand menu, including the "Quickstarts" and "How-to guides"
+
+## Azure Resource Groups & Zones
+
+To use Azure IoT Hub, we need to creaet Azure **resource groups**.
+
+An Azure **resource group** is a "container" that holds related resources for an Azure
+solution (such as an IoT Hub).
+
+The resource group can include all or a subset of the resources for the
+solution. You decide how to allocate resources to resource groups based on what
+makes sense for your organization. Generally, group resources share the same
+lifecycle (deploy, update, and delete).
+
+### Azure Regions
+
+Azure resources and their groups must be deployed to a particular **region**.
+
+Azure operates in multiple datacenters around the world. These datacenters are
+grouped in to **geographic regions**.
+
+::: {#fig-azure-regions}
+
+![](https://www.poppelgaard.com/wp-content/uploads/2017/03/azure_datacenters.png)
+
+Azure infrastructure map. You can find a current list of all Azure regions at the
+[Zzure geographies web tool](https://azure.microsoft.com/en-us/global-infrastructure/geographies/#overview).
+Figure from
+[Map of Azure Regions](https://www.poppelgaard.com/citrix-xenapp-essentials-microsoft-azure/azure_datacenters),
+Thomas Poppelgaard, 2017.
+
+:::
+
+Canada has two Azure regions:
+
+- **Canada Central:** located in Toronto (with 3 zones).
+- **Canada East**: located in Quebec City (no zones).
+
+The US has a few nearby regions as well, in particular:
+
+- **Central US**: allows the use of advanced IoT features still in testing.
+
+## Azure IoT Dev Tools
+
+Azure offers several developer tools to create, manage and connect to the IoT
+Hub service. We'll be using two: the Azure Portal, and the Azure CLI.
+
+There's also a few extensions worth noting.
+
+### Azure Portal
+
+The Azure Portal is a browser-based portal for IoT Hub and devices.
+
+Documentation
+: [Azure portal documentation](https://learn.microsoft.com/en-us/azure/azure-portal/)
+
+Quick Start
+: [What is the Azure portal?](https://learn.microsoft.com/en-us/azure/azure-portal/azure-portal-overview)
+
+IoT Example
+: [Create an IoT hub with Azure portal](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal)
+
+::: {#fig-azure-portal .column-margin}
+
+![](assets/azure-portal-example.png)
+
+The Azure Portal at <https://portal.azure.com> is a web app that can access and modify all of your
+IoT Hub data/configurations/actions/etc.
+
+:::
+
+### Azure CLI, Cloud Shell & IoT Extension
+
+**Azure CLI** is a terminal tool to manage Azure services offered as Bash and
+PowerShell shells.
+
+Documentation
+: [Azure CLI documentation](https://learn.microsoft.com/en-us/cli/azure/)
+
+Installation
+: [Install Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)
+
+Quick Start
+: [Get started with Azure CLI](https://learn.microsoft.com/en-us/cli/azure/get-started-with-azure-cli)
+
+IoT Example
+: [Create an IoT hub with CLI](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-using-cli)
+
+#### Azure IoT extension
+
+Azure CLI uses “extensions” in order to manage different Azure services.
+
+The **Azure IoT extension** gives us access to the `az iot` subcommand -- a very
+convenient CLI for controlling IoT-related sevices.
+
+GitHub Repo
+: [azure-iot-cli-extension](https://github.com/Azure/azure-iot-cli-extension)
+
+Documentation
+: [List of `az iot hub` commands](https://learn.microsoft.com/en-us/cli/azure/iot/hub?view=azure-cli-latest)
+
+## Some tutorials for reference
+
+We cover these tutorials in Lab 6, but here they are again for reference:
+
+- [Quickstart: Send telemetry from a device to an IoT hub and monitor it with the Azure CLI](https://docs.microsoft.com/en-us/azure/iot-hub/quickstart-send-telemetry-cli)
+- [Quickstart: Send telemetry from an IoT Plug and Play device to Azure IoT Hub](https://docs.microsoft.com/en-us/azure/iot-develop/quickstart-send-telemetry-iot-hub?toc=%2Fazure%2Fiot-hub%2Ftoc.json&bc=%2Fazure%2Fiot-hub%2Fbreadcrumb%2Ftoc.json&pivots=programming-language-python)
