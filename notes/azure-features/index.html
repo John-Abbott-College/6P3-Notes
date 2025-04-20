@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -76,7 +110,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <meta property="og:title" content="Azure Features – Connected Objects">
-<meta property="og:description" content="An overview of the main feautres of Azure we will use for implementing an IoT system. Background information on “Platform as a Service” (PaaS), Azure IoT Hub vs IoT Central, Azure IoT Hub documentation, Azure Resource Groups, Intro to Azure Dev Tools (Azure Portal, Azure CLI).">
+<meta property="og:description" content="An overview of the main feautres of Azure we will use for implementing an IoT system. Background information on “Platform as a Service” (PaaS), Azure IoT Hub vs IoT Central, Azure Resource Groups, Intro to Azure Dev Tools (Azure Portal, Azure CLI).">
 <meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/notes/azure-features/assets/intro-azure-paas.png">
 <meta property="og:site_name" content="{{< var course.title >}}">
 <meta property="og:image:height" content="504">
@@ -416,10 +450,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#iot-hub-iot-central" id="toc-iot-hub-iot-central" class="nav-link" data-scroll-target="#iot-hub-iot-central"><span class="header-section-number">4</span> IoT Hub &amp; IoT Central</a>
   <ul>
   <li><a href="#iot-central" id="toc-iot-central" class="nav-link" data-scroll-target="#iot-central"><span class="header-section-number">4.1</span> IoT Central</a></li>
-  <li><a href="#iot-hub" id="toc-iot-hub" class="nav-link" data-scroll-target="#iot-hub"><span class="header-section-number">4.2</span> IoT Hub</a>
-  <ul class="collapse">
-  <li><a href="#iot-hub-documentation" id="toc-iot-hub-documentation" class="nav-link" data-scroll-target="#iot-hub-documentation"><span class="header-section-number">4.2.1</span> IoT Hub Documentation</a></li>
-  </ul></li>
+  <li><a href="#iot-hub" id="toc-iot-hub" class="nav-link" data-scroll-target="#iot-hub"><span class="header-section-number">4.2</span> IoT Hub</a></li>
   </ul></li>
   <li><a href="#azure-resource-groups-zones" id="toc-azure-resource-groups-zones" class="nav-link" data-scroll-target="#azure-resource-groups-zones"><span class="header-section-number">5</span> Azure Resource Groups &amp; Zones</a>
   <ul>
@@ -447,7 +478,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Azure Features</h1>
-<p class="subtitle lead"></p><p>An overview of the main feautres of Azure we will use for implementing an IoT system. Background information on “Platform as a Service” (PaaS), Azure IoT Hub vs IoT Central, Azure IoT Hub documentation, Azure Resource Groups, Intro to Azure Dev Tools (Azure Portal, Azure CLI).</p><p></p>
+<p class="subtitle lead"></p><p>An overview of the main feautres of Azure we will use for implementing an IoT system. Background information on “Platform as a Service” (PaaS), Azure IoT Hub vs IoT Central, Azure Resource Groups, Intro to Azure Dev Tools (Azure Portal, Azure CLI).</p><p></p>
 </div>
 
 
@@ -562,12 +593,6 @@ Figure&nbsp;3: Azure IoT-related architecture. Data will flow from to/from your 
 <blockquote class="blockquote">
 <p>We will use IoT Hub in this course.</p>
 </blockquote>
-<section id="iot-hub-documentation" class="level4" data-number="4.2.1">
-<h4 data-number="4.2.1" class="anchored" data-anchor-id="iot-hub-documentation"><span class="header-section-number">4.2.1</span> IoT Hub Documentation</h4>
-<p><a href="https://docs.microsoft.com/en-us/azure/iot-hub/"><strong>Azure IoT Hub Documentation</strong></a> hosts most of the documentation we will be using.</p>
-<p><a href="assets/intro-azure-docs-page.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="assets/intro-azure-docs-page.png" class="img-fluid"></a></p>
-<p>Please get familiar with the left-hand menu, including the “Quickstarts” and “How-to guides”</p>
-</section>
 </section>
 </section>
 <section id="azure-resource-groups-zones" class="level2" data-number="5">
@@ -582,7 +607,7 @@ Figure&nbsp;3: Azure IoT-related architecture. Data will flow from to/from your 
 <div id="fig-azure-regions" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-azure-regions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="https://www.poppelgaard.com/wp-content/uploads/2017/03/azure_datacenters.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;4: Azure infrastructure map. You can find a current list of all Azure regions at the Zzure geographies web tool. Figure from Map of Azure Regions, Thomas Poppelgaard, 2017."><img src="https://www.poppelgaard.com/wp-content/uploads/2017/03/azure_datacenters.png" class="img-fluid figure-img"></a>
+<a href="https://www.poppelgaard.com/wp-content/uploads/2017/03/azure_datacenters.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;4: Azure infrastructure map. You can find a current list of all Azure regions at the Zzure geographies web tool. Figure from Map of Azure Regions, Thomas Poppelgaard, 2017."><img src="https://www.poppelgaard.com/wp-content/uploads/2017/03/azure_datacenters.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-azure-regions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4: Azure infrastructure map. You can find a current list of all Azure regions at the <a href="https://azure.microsoft.com/en-us/global-infrastructure/geographies/#overview">Zzure geographies web tool</a>. Figure from <a href="https://www.poppelgaard.com/citrix-xenapp-essentials-microsoft-azure/azure_datacenters">Map of Azure Regions</a>, Thomas Poppelgaard, 2017.
@@ -625,7 +650,7 @@ Figure&nbsp;4: Azure infrastructure map. You can find a current list of all Azur
 <div class="no-row-height column-margin column-container"><div id="fig-azure-portal" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-azure-portal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="assets/azure-portal-example.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figure&nbsp;5: The Azure Portal at https://portal.azure.com is a web app that can access and modify all of your IoT Hub data/configurations/actions/etc."><img src="assets/azure-portal-example.png" class="img-fluid figure-img"></a>
+<a href="assets/azure-portal-example.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;5: The Azure Portal at https://portal.azure.com is a web app that can access and modify all of your IoT Hub data/configurations/actions/etc."><img src="assets/azure-portal-example.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-azure-portal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;5: The Azure Portal at <a href="https://portal.azure.com" class="uri">https://portal.azure.com</a> is a web app that can access and modify all of your IoT Hub data/configurations/actions/etc.
@@ -635,6 +660,19 @@ Figure&nbsp;5: The Azure Portal at <a href="https://portal.azure.com" class="uri
 <section id="azure-cli" class="level3" data-number="6.2">
 <h3 data-number="6.2" class="anchored" data-anchor-id="azure-cli"><span class="header-section-number">6.2</span> Azure CLI</h3>
 <p><strong>Azure CLI</strong> is a terminal tool to manage Azure services offered as Bash and PowerShell shells.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>An old version of this document recommended using the <a href="https://docs.microsoft.com/en-us/cli/azure/install-azure-cli">official installation instructions</a> . Unfortunately, these methods (using <code>apt</code>) depend on unmaintained packages that cause issues.</p>
+</div>
+</div>
 <dl>
 <dt>Documentation</dt>
 <dd>
@@ -642,8 +680,30 @@ Figure&nbsp;5: The Azure Portal at <a href="https://portal.azure.com" class="uri
 </dd>
 <dt>Installation</dt>
 <dd>
-<a href="https://docs.microsoft.com/en-us/cli/azure/install-azure-cli">Install Azure CLI</a>
+<code>azure-cli</code> is a python package we can install in a virtual environment:
 </dd>
+</dl>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a venv if you do not have one already</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> python <span class="at">-m</span> venv .venv</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">.venv</span><span class="kw">)</span> <span class="ex">$</span> source .venv/bin/activate</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Install dependencies and azure-cli</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">.venv</span><span class="kw">)</span> <span class="ex">$</span> pip install wheel <span class="co"># needed to build azure-cli</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">.venv</span><span class="kw">)</span> <span class="ex">$</span> pip install azure-cli</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You can later add these packages to a <code>requirements.txt</code> or <code>pyproject.toml</code> file for projects you need these tools regularly.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you’re having issues installing this package via the above method, make sure your system <code>python</code> is up to date. Revist the <a href="../../notes/developer-environment/#install-dependencies">course notes for installing developer environment dependencies</a>, and make sure your system packages and python libraries are up to date. Then, need to delete your existing virtual environment and recreate it.</p>
+</div>
+</div>
+<dl>
 <dt>Quick Start</dt>
 <dd>
 <a href="https://learn.microsoft.com/en-us/cli/azure/get-started-with-azure-cli">Get started with Azure CLI</a>
