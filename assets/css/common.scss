@@ -81,7 +81,7 @@ a:not([class]) {
 }
 /* The stuff above doesn't seem to totally take care of the problem */
 section {
-  scroll-margin-top: 3rem;
+  scroll-margin-top: 5rem;
 }
 
 // TODO: put these and other non-$var using styles in style.css

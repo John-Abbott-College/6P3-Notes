@@ -9,9 +9,7 @@ return {
 				["*"] = { "codespell" },
 			},
 			formatters = {
-        mdformat = {
-          prepend_args = { "--ignore-missing-references" },
-        },
+        mdformat = {},
 				injected = {
 					options = {
 						ignore_errors = false,
