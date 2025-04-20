@@ -229,7 +229,7 @@ IoT Hub data/configurations/actions/etc.
 
 :::
 
-### Azure CLI, Cloud Shell & IoT Extension
+### Azure CLI
 
 **Azure CLI** is a terminal tool to manage Azure services offered as Bash and
 PowerShell shells.
@@ -246,9 +246,9 @@ Quick Start
 IoT Example
 : [Create an IoT hub with CLI](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-using-cli)
 
-#### Azure IoT extension
+#### Azure CLI IoT extension
 
-Azure CLI uses “extensions” in order to manage different Azure services.
+Azure CLI has a variety of installable extensions to manage different Azure services.
 
 The **Azure IoT extension** gives us access to the `az iot` subcommand -- a very
 convenient CLI for controlling IoT-related sevices.

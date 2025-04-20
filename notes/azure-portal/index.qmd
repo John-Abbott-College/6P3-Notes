@@ -104,17 +104,45 @@ This avoids unexpected spending of Azure credits.
 
 Below are some how-tos for services we will be using in this class.
 
-### Creating the IoT Hub Resource
+### Documentation
+
+The Azure resource we will be using the most, **IoT Hub**, has complete
+documentation/how-to-guides/tutorials at <https://learn.microsoft.com/en-us/azure/iot-hub/>.
+
+![](assets/azure-docs-page.png)
+
+Familiarize yourself with the left-hand menu, including the "Quickstarts" and "How-to guides".
+
+### Creating an IoT Hub Resource
 
 There are two ways to create resources in Azure:
 
 - using the Azure portal website: <https://portal.azure.com>
-- using [Azure CLI](/notes)
+- using [Azure CLI](/notes/azure-features/#azure-cli)
 
-The Azure documentation has instructions for both in the document
-[Create and manage Azure IoT Hubs](https://learn.microsoft.com/en-us/azure/iot-hub/create-hub?tabs=portal).
+The Azure documentation typically has instructions for *both* methods in all their
+tutorials -- you can select which method you want to choose by clicking the tabset button
+for it:
 
-Make sure you make the following selections:
+::: {.panel-tabset}
+
+## Azure Portal
+
+[Create and manage Azure IoT Hubs using Azure Portal](https://learn.microsoft.com/en-us/azure/iot-hub/create-hub?tabs=portal).
+
+Note that each section has the "Azure Portal" option selected.
+
+## Azure CLI
+
+[Create and manage Azure IoT Hubs using Azure CLI](https://learn.microsoft.com/en-us/azure/iot-hub/create-hub?tabs=cli).
+
+Note that each section has an "Azure CLI" option selected.
+
+:::
+
+No matter which method you choose, you should make sure the resource you're making is **free** and in a nearby region.
+
+Suggested choices for the following options:
 
 - **Subscription**: Your active subscription (probably "Azure for Students")
 - **Resource group**: Create ONE resource group for this class (any name is fine)
@@ -123,7 +151,7 @@ Make sure you make the following selections:
 - **Tier**: Free
 - **Daily message limit**: 8,000 ($0/month)
 
-Keep defaults for all subsequent menus (Networking, Management, Add-ons, Tags).
+You can keep the defaults for all subsequent menus (Networking, Management, Add-ons, Tags).
 
 Once you're done creating your IoT Hub, it should appear in your Azure portal. See the figure below:
 
