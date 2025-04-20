@@ -156,6 +156,8 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install python3 python-is-python3
 
 # Verify default python version is >= 3.9:
+# NOTE: python-is-python3 makes "python" the same as "python3"
+python --version
 python3 --version
 
 # Ensure pip is installed:
@@ -164,6 +166,9 @@ pip --version
 
 # Ensure the python module venv is installed
 sudo apt install python3-venv
+
+# Ensure developer dependencies for python are installed
+sudo apt install python3-dev
 ```
 
 #### Set up git

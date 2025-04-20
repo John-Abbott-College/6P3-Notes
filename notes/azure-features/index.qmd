@@ -4,7 +4,6 @@ subtitle: |
   An overview of the main feautres of Azure we will use for implementing an IoT system.
   Background information on "Platform as a Service" (PaaS),
   Azure IoT Hub vs IoT Central,
-  Azure IoT Hub documentation,
   Azure Resource Groups,
   Intro to Azure Dev Tools (Azure Portal, Azure CLI).
 date: 2025-04-19
@@ -151,15 +150,6 @@ and
 
 > We will use IoT Hub in this course.
 
-#### IoT Hub Documentation
-
-[**Azure IoT Hub Documentation**](https://docs.microsoft.com/en-us/azure/iot-hub/)
-hosts most of the documentation we will be using.
-
-![](assets/intro-azure-docs-page.png)
-
-Please get familiar with the left-hand menu, including the "Quickstarts" and "How-to guides"
-
 ## Azure Resource Groups & Zones
 
 To use Azure IoT Hub, we need to creaet Azure **resource groups**.
@@ -234,11 +224,35 @@ IoT Hub data/configurations/actions/etc.
 **Azure CLI** is a terminal tool to manage Azure services offered as Bash and
 PowerShell shells.
 
+::: {.callout-warning}
+An old version of this document recommended using the [official installation instructions](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)
+. Unfortunately, these methods (using `apt`) depend on unmaintained packages that cause issues.
+:::
+
 Documentation
 : [Azure CLI documentation](https://learn.microsoft.com/en-us/cli/azure/)
 
 Installation
-: [Install Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)
+: `azure-cli` is a python package we can install in a virtual environment:
+
+```bash
+# Create a venv if you do not have one already
+$ python -m venv .venv
+(.venv) $ source .venv/bin/activate
+# Install dependencies and azure-cli
+(.venv) $ pip install wheel # needed to build azure-cli
+(.venv) $ pip install azure-cli
+```
+
+You can later add these packages to a `requirements.txt` or `pyproject.toml` file for projects you need these tools regularly.
+
+::: {.callout-note}
+If you're having issues installing this package via the above method, make sure your system `python` is up to date.
+Revist the [course notes for installing developer environment dependencies](/notes/developer-environment/#install-dependencies),
+and make sure your system packages and python libraries are up to date.
+Then, need to delete your existing virtual environment and recreate it.
+:::
+
 
 Quick Start
 : [Get started with Azure CLI](https://learn.microsoft.com/en-us/cli/azure/get-started-with-azure-cli)

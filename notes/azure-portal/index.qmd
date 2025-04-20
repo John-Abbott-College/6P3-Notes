@@ -3,6 +3,7 @@ title: Azure Portal Setup
 subtitle: |
   Creating an Azure account,
   managing your Azure account budget,
+  Azure IoT Hub documentation,
   creating an Azure IoT Hub resource, and more.
 date: 2025-04-19
 ---
