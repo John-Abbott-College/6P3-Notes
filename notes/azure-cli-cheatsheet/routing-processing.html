@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-03-10">
 
-<title>Python environment management – Connected Objects</title>
+<title>routing-processing – {{&lt; var course.title &gt;}}</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +29,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../notes/analog-vs-digital/index.html" rel="next">
-<link href="../../notes/gpios/index.html" rel="prev">
 <link href="../../assets/favicon_io/favicon.ico" rel="icon">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -45,6 +42,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/bootstrap/bootstrap-6d3781b972cca3a63b60544cf871d846.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../../site_libs/bootstrap/bootstrap-dark-3f927687ee77f8fb3289181daa1de94c.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script src="../../site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": true,
@@ -72,13 +72,13 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="Python environment management – Connected Objects">
-<meta property="og:description" content="Managing python development and runtime dependencies. Using virtual environments. Configuring python linters and formatters.">
-<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/notes/python-environments/assets/art_title_path_only.svg">
+<meta property="og:title" content="Connected Objects">
+<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/notes/azure-cli-cheatsheet/assets/routing-event-hub.png">
 <meta property="og:site_name" content="{{< var course.title >}}">
+<meta property="og:image:alt" content="Data flow through Event Hub being forwarded to a consumer and stored">
 </head>
 
-<body class="nav-sidebar docked nav-fixed">
+<body class="docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -256,165 +256,30 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/python-environments/index.html">Python environment management</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">All course notes</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/azure-portal/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Azure Portal Setup</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/azure-features/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Azure Features</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/bash-essentials/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bash essentials</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/reterminal-setup/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Reterminal setup</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/gpios/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">GPIOs: Inputs and Outputs</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/python-environments/index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Python environment management</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/analog-vs-digital/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Signals: Analog and digital</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/python-project-management/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Python project management</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/python-scripting/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Python scripting</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/python-collections/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Python collection types and operations</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/reterminal-devices/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">reTerminal built-in devices</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/bash-scripting/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bash scripting</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/debug-reterminal/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Debugging Reterminal Issues</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/python-package-management/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Python package management</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/serial-protocols/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Serial protocols</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/async-python/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Asynchronous progamming in Python</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/course-hardware/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Course hardware</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/python-oop/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Python OOP</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/developer-environment/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Developer environment setup</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/github-basics/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">GitHub basics</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
     <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="1">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#virtual-environments" id="toc-virtual-environments" class="nav-link active" data-scroll-target="#virtual-environments"><span class="header-section-number">1</span> Virtual Environments</a>
+  <li><a href="#data-routing-processing" id="toc-data-routing-processing" class="nav-link active" data-scroll-target="#data-routing-processing"><span class="header-section-number">1</span> Data Routing &amp; Processing</a>
   <ul>
-  <li><a href="#why-virtual-environments" id="toc-why-virtual-environments" class="nav-link" data-scroll-target="#why-virtual-environments"><span class="header-section-number">1.1</span> Why Virtual Environments?</a></li>
-  <li><a href="#virtual-dependency-steps" id="toc-virtual-dependency-steps" class="nav-link" data-scroll-target="#virtual-dependency-steps"><span class="header-section-number">1.2</span> Virtual Dependency Steps</a></li>
-  <li><a href="#creating" id="toc-creating" class="nav-link" data-scroll-target="#creating"><span class="header-section-number">1.3</span> Creating</a></li>
-  <li><a href="#activate-deactivate" id="toc-activate-deactivate" class="nav-link" data-scroll-target="#activate-deactivate"><span class="header-section-number">1.4</span> Activate &amp; Deactivate</a></li>
-  <li><a href="#installing-packages-with-pip" id="toc-installing-packages-with-pip" class="nav-link" data-scroll-target="#installing-packages-with-pip"><span class="header-section-number">1.5</span> Installing Packages with <code>pip</code></a></li>
-  <li><a href="#using-requirements.txt" id="toc-using-requirements.txt" class="nav-link" data-scroll-target="#using-requirements.txt"><span class="header-section-number">1.6</span> Using <code>requirements.txt</code></a></li>
-  <li><a href="#moving-virtual-environments" id="toc-moving-virtual-environments" class="nav-link" data-scroll-target="#moving-virtual-environments"><span class="header-section-number">1.7</span> Moving Virtual Environments</a></li>
-  <li><a href="#virtual-env-exercises" id="toc-virtual-env-exercises" class="nav-link" data-scroll-target="#virtual-env-exercises"><span class="header-section-number">1.8</span> Virtual Env Exercises</a></li>
+  <li><a href="#data-analysis" id="toc-data-analysis" class="nav-link" data-scroll-target="#data-analysis"><span class="header-section-number">1.1</span> Data Analysis</a>
+  <ul class="collapse">
+  <li><a href="#azure-time-series-insight" id="toc-azure-time-series-insight" class="nav-link" data-scroll-target="#azure-time-series-insight"><span class="header-section-number">1.1.1</span> Azure Time Series Insight</a></li>
+  <li><a href="#azure-stream-analytics" id="toc-azure-stream-analytics" class="nav-link" data-scroll-target="#azure-stream-analytics"><span class="header-section-number">1.1.2</span> Azure Stream Analytics</a></li>
+  <li><a href="#data-factory" id="toc-data-factory" class="nav-link" data-scroll-target="#data-factory"><span class="header-section-number">1.1.3</span> Data Factory</a></li>
+  <li><a href="#azure-synapse" id="toc-azure-synapse" class="nav-link" data-scroll-target="#azure-synapse"><span class="header-section-number">1.1.4</span> Azure Synapse</a></li>
+  </ul></li>
+  <li><a href="#azure-event-hub" id="toc-azure-event-hub" class="nav-link" data-scroll-target="#azure-event-hub"><span class="header-section-number">1.2</span> Azure Event Hub</a></li>
+  <li><a href="#visualizing-data" id="toc-visualizing-data" class="nav-link" data-scroll-target="#visualizing-data"><span class="header-section-number">1.3</span> Visualizing Data</a>
+  <ul class="collapse">
+  <li><a href="#data-explorer" id="toc-data-explorer" class="nav-link" data-scroll-target="#data-explorer"><span class="header-section-number">1.3.1</span> Data Explorer</a></li>
+  </ul></li>
+  <li><a href="#power-bi" id="toc-power-bi" class="nav-link" data-scroll-target="#power-bi"><span class="header-section-number">1.4</span> Power BI</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -428,24 +293,13 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Python environment management</h1>
-<p class="subtitle lead"></p><p>Managing python development and runtime dependencies. Using virtual environments. Configuring python linters and formatters.</p><p></p>
-  <div class="quarto-categories">
-    <div class="quarto-category">python</div>
-  </div>
-  </div>
+</div>
 
 
 
 <div class="quarto-title-meta">
 
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">March 10, 2025</p>
-    </div>
-  </div>
   
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
@@ -461,139 +315,67 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="virtual-environments" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="virtual-environments"><span class="header-section-number">1</span> Virtual Environments</h2>
-<p>This section shows the use the python virtual environments (virt. envs.) with the <code>venv</code> built-in tool.</p>
-<p><code>venv</code> is the officially recommended way to manage virt. envs. but it’s not the only one. Other tools such as <a href="https://docs.conda.io/en/latest/index.html">Conda</a>, <a href="https://pipenv.pypa.io/en/latest/">Pipenv</a>, <a href="https://python-poetry.org/">Poetry</a> and <a href="https://pdm.fming.dev/latest/">PDM</a> are other options.</p>
+<section id="data-routing-processing" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Data Routing &amp; Processing</h1>
+<section id="data-analysis" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="data-analysis"><span class="header-section-number">1.1</span> Data Analysis</h2>
+<section id="azure-time-series-insight" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="azure-time-series-insight"><span class="header-section-number">1.1.1</span> Azure Time Series Insight</h3>
+<p><a href="https://docs.microsoft.com/en-us/azure/time-series-insights/overview-what-is-tsi">Azure Time Series Insights Gen2</a> is an open and scalable end-to-end IoT analytics service.</p>
+<p>You can use it to collect, process, store, query and visualize data at Internet of Things (IoT) scale–data that’s highly contextualized and optimized for time series.</p>
+</section>
+<section id="azure-stream-analytics" class="level3" data-number="1.1.2">
+<h3 data-number="1.1.2" class="anchored" data-anchor-id="azure-stream-analytics"><span class="header-section-number">1.1.2</span> Azure Stream Analytics</h3>
+<p>Stream Analytics is intended for <strong>real-time data analysis</strong>.</p>
+<p>This service is intended for immediate data processing, before it is batched or stored.</p>
+<p>If real-time data is not required, consider something else.</p>
+</section>
+<section id="data-factory" class="level3" data-number="1.1.3">
+<h3 data-number="1.1.3" class="anchored" data-anchor-id="data-factory"><span class="header-section-number">1.1.3</span> Data Factory</h3>
+</section>
+<section id="azure-synapse" class="level3" data-number="1.1.4">
+<h3 data-number="1.1.4" class="anchored" data-anchor-id="azure-synapse"><span class="header-section-number">1.1.4</span> Azure Synapse</h3>
+</section>
+</section>
+<section id="azure-event-hub" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="azure-event-hub"><span class="header-section-number">1.2</span> Azure Event Hub</h2>
+<p><a href="https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-about#main">Azure Event</a> Hubs is a big data streaming platform and event ingestion service. It can receive and process millions of events per second.</p>
+<p>[TO VERIFY] The Event Hub routes live data from a data producer (publisher) to one or many data consumers (subscribers).</p>
+<p>The focus of Event Hub is to route <strong>streaming data</strong>, and not storing it on the Event Hub itself. This means that if a consumer is not online when Event Hub forwards the message, the <strong>data will be dropped</strong>.</p>
 <blockquote class="blockquote">
-<p>Short guide by python.org**: <a href="https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/#installing-packages-using-pip-and-virtual-environments">Installing packages using pip and virtual environments</a></p>
-<p>Detailed guide by RealPython.com: <a href="https://realpython.com/python-virtual-environments-a-primer/">Python Virtual Environments: A Primer</a></p>
+<p>Think of Event Hub as a broker where QoS is always 0.</p>
+<p>Note: message retention is technically possible for up to 7 days for testing and development purposes.</p>
 </blockquote>
-<section id="why-virtual-environments" class="level3" data-number="1.1">
-<h3 data-number="1.1" class="anchored" data-anchor-id="why-virtual-environments"><span class="header-section-number">1.1</span> Why Virtual Environments?</h3>
-<p>Python is not good at dependency management. We want to:</p>
-<ol type="1">
-<li><p><strong>Avoid system pollution</strong></p>
-<ul>
-<li>Installing packages to the OS’s global Python will mix them with OS relevant packages. This could have unexpected side effects on OS tasks.</li>
-<li>Because of the reason above, updating OS packages might overwrite or delete global Python packages.</li>
-</ul></li>
-<li><p><strong>Avoid project dependency conflicts</strong></p>
-<ul>
-<li>Python projects might require different versions the same external library.</li>
-</ul></li>
-<li><p><strong>Making projects reproducible in other environments.</strong></p>
-<ul>
-<li>Since all dependencies are isolated to a specific project, it is easier to identify and document them.</li>
-<li>Once the dependencies are “locked”, the project dependency can be easily reproduced in other environments.</li>
-</ul></li>
-</ol>
+<p>Event Hub can route messages to some sort of permanent storage (such as blob storage or data lake) withing Azure, which is guaranteed to be online and thus can be consumed at a later time.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="assets/routing-event-hub.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Data flow through Event Hub being forwarded to a consumer and stored"><img src="assets/routing-event-hub.png" class="img-fluid figure-img" alt="Data flow through Event Hub being forwarded to a consumer and stored"></a></p>
+<figcaption>Data flow through Event Hub being forwarded to a consumer and stored</figcaption>
+</figure>
+</div>
+<p class="img-info">
+<a href="https://www.youtube.com/watch?v=zm1XUTAa9sc"> Data flow through Event Hub being forwarded to a consumer and stored </a>&nbsp; Azure Event Hubs, Blaize Stewart.
+</p>
 </section>
-<section id="virtual-dependency-steps" class="level3" data-number="1.2">
-<h3 data-number="1.2" class="anchored" data-anchor-id="virtual-dependency-steps"><span class="header-section-number">1.2</span> Virtual Dependency Steps</h3>
-<p>Creating and using virtual environments involved the following steps:</p>
-<ol type="1">
-<li>Creation</li>
-<li>Activation</li>
-<li>Installing dependencies</li>
-<li>Deactivation</li>
-<li>Locking dependencies</li>
-</ol>
+<section id="visualizing-data" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="visualizing-data"><span class="header-section-number">1.3</span> Visualizing Data</h2>
+<section id="data-explorer" class="level3" data-number="1.3.1">
+<h3 data-number="1.3.1" class="anchored" data-anchor-id="data-explorer"><span class="header-section-number">1.3.1</span> Data Explorer</h3>
+<p><a href="https://docs.microsoft.com/en-us/azure/data-explorer/data-explorer-overview">Azure Data Explorer</a> is a big data analytics platform that makes it easy to analyze high volumes of data in near real time.</p>
+<p>The Azure Data Explorer toolbox gives you an end-to-end solution for data ingestion, query, visualization, and management.</p>
+<p>Data Explorer has its own Web UI Dashboard but can also connect to Grafana, Power BI, Excel, and others. See <a href="https://docs.microsoft.com/en-us/azure/data-explorer/viz-overview">here for details</a>.</p>
+<p>Below is a <a href="https://docs.microsoft.com/en-us/azure/architecture/solution-ideas/articles/iot-azure-data-explorer">solution example for IoT analytics with Data Explorer</a>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://docs.microsoft.com/en-us/azure/architecture/solution-ideas/media/iot-azure-data-explorer.png#lightbox" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="IoT Analytics example with Azure Data Explorer"><img src="https://docs.microsoft.com/en-us/azure/architecture/solution-ideas/media/iot-azure-data-explorer.png#lightbox" class="img-fluid figure-img" alt="IoT Analytics example with Azure Data Explorer"></a></p>
+<figcaption>IoT Analytics example with Azure Data Explorer</figcaption>
+</figure>
+</div>
 </section>
-<section id="creating" class="level3" data-number="1.3">
-<h3 data-number="1.3" class="anchored" data-anchor-id="creating"><span class="header-section-number">1.3</span> Creating</h3>
-<ol type="1">
-<li><p>Create a new folder for the project (if one doesn’t already exist).</p></li>
-<li><p><code>cd</code> into the folder and create a new virt. env.:</p></li>
-</ol>
-<pre class="shell"><code>$ python3 -m venv .venv</code></pre>
-<p>Note that <code>.venv</code> is the name of your virtual environment. <code>venv</code> is a popular choice.</p>
 </section>
-<section id="activate-deactivate" class="level3" data-number="1.4">
-<h3 data-number="1.4" class="anchored" data-anchor-id="activate-deactivate"><span class="header-section-number">1.4</span> Activate &amp; Deactivate</h3>
-<p>Once created, the virt. env. needs to be activated.</p>
-<pre class="shell"><code># Linux
-$ source .venv/bin/activate
-
-# Windows
-$ .venv/Scripts/activate.bat</code></pre>
-<blockquote class="blockquote">
-<p><strong>Note:</strong> You can work with virtual environments without activating it. To do this, <a href="https://realpython.com/python-virtual-environments-a-primer/#it-runs-from-anywhere-with-absolute-paths">provide the full path</a> to its Python interpreter when executing a command.</p>
-<p>Typically, you’ll want to activate the virtual environment to avoid repeatedly having to type long paths.</p>
-</blockquote>
-<p>To deactivate:</p>
-<pre class="shell"><code># Notice the shell prompt indicates a virt. env. is active
-$ (.venv) deactivate</code></pre>
-</section>
-<section id="installing-packages-with-pip" class="level3" data-number="1.5">
-<h3 data-number="1.5" class="anchored" data-anchor-id="installing-packages-with-pip"><span class="header-section-number">1.5</span> Installing Packages with <code>pip</code></h3>
-<p>Once a virtual environment is active, <strong>packages installed with <code>pip</code> will be local to that virtual environment.</strong></p>
-<p>By default, project packages are installed in:</p>
-<pre><code>project-folder
-    |- &lt;project-venv&gt;
-    |       |- lib
-    |           |- python3.X
-    |                   |- site-packages </code></pre>
-<p>For example, installing <code>aiohttp</code>:</p>
-<pre class="shell"><code># Notice the shell prompt indicates a virt. env. is active
-$ (.venv) pip install aiohttp</code></pre>
-</section>
-<section id="using-requirements.txt" class="level3" data-number="1.6">
-<h3 data-number="1.6" class="anchored" data-anchor-id="using-requirements.txt"><span class="header-section-number">1.6</span> Using <code>requirements.txt</code></h3>
-<p>Project dependencies can be listed in a file for portability. By convention, the file <code>requirements.txt</code> contains all the dependencies of a project created with a virtual environment.</p>
-<blockquote class="blockquote">
-<p>This is analogous to <code>package.json</code> for Node.Js projects</p>
-</blockquote>
-<p><strong>To generate</strong> a <code>requirements.txt</code> for an existing project:</p>
-<pre class="shell"><code>$ pip freeze &gt; requirements.txt</code></pre>
-<p><strong>To install</strong> packages from a <code>requirements.txt</code>:</p>
-<pre><code>$ pip install -r requirements.txt</code></pre>
-</section>
-<section id="moving-virtual-environments" class="level3" data-number="1.7">
-<h3 data-number="1.7" class="anchored" data-anchor-id="moving-virtual-environments"><span class="header-section-number">1.7</span> Moving Virtual Environments</h3>
-<p>If you move a project that uses virtual environments to a different folder, <strong>you must re-initialize the virtual environment.</strong></p>
-<p>From the <a href="https://docs.python.org/3/library/venv.html#how-venvs-work">official docs</a>:</p>
-<blockquote class="blockquote">
-<p>Scripts installed in environments contain the absolute paths to their environment’s interpreters.</p>
-<ul>
-<li>Because of this, environments are inherently non-portable. You should always have a simple means of recreating an environment (for example, have a requirements file <code>requirements.txt</code>, and invoke <code>pip install -r requirements.txt</code>.</li>
-</ul>
-</blockquote>
-</section>
-<section id="virtual-env-exercises" class="level3" data-number="1.8">
-<h3 data-number="1.8" class="anchored" data-anchor-id="virtual-env-exercises"><span class="header-section-number">1.8</span> Virtual Env Exercises</h3>
-<p>The following exercises are meant for familiarization with <code>venv</code>.</p>
-<ol type="1">
-<li><p>Compare packages installed with <code>pip</code> inside and outside of a new virtual environment (virt. env.):</p>
-<ol type="1">
-<li>List all globally installed <code>pip</code> packages: <code>pip list</code></li>
-<li>Create a new folder and use <code>venv</code> to create a virtual environment inside.</li>
-<li>Activate the new virt. env..</li>
-<li>List the <code>pip</code> packages as seen from inside the active virtual environment.</li>
-<li>Deactivate the new virtual environment.</li>
-</ol></li>
-<li><p>Complete the following steps inside the virtual environment (virt. env.) you created in the previous question.</p>
-<ol type="1">
-<li>Activate the virt. env.</li>
-<li>install the following libraries:
-<ul>
-<li><a href="https://pypi.org/project/howdoi/">howdoi</a></li>
-<li><a href="https://pyjok.es/">pyjokes</a></li>
-</ul></li>
-<li>List all pip packages to see the extra dependencies that got installed.</li>
-<li>Have some fun using both installed packages (see their docs).</li>
-<li>Export the dependency list to <code>requirements.txt</code> by using <code>pip freeze</code>.</li>
-<li>Deactivate the virt. env.</li>
-<li>Move <code>requirements.txt</code> to one folder level above the project folder (so it’s not deleted in the next step).</li>
-<li>Delete the project folder.</li>
-</ol></li>
-<li><p>Create a new project and virtual environment using the <code>requirements.txt</code> from the previous exercise.</p>
-<ol type="1">
-<li>Create a new project folder with a virtual environment inside.</li>
-<li>Move <code>requirements.txt</code> inside the new project folder.</li>
-<li>Install project packages using <code>requirements.txt</code></li>
-</ol></li>
-</ol>
+<section id="power-bi" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="power-bi"><span class="header-section-number">1.4</span> Power BI</h2>
+<p>Power BI is a collection of software services, apps, and connectors that turn unrelated sources of data into coherent, visually immersive, and interactive insights.</p>
 
 
 </section>
@@ -1162,19 +944,39 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../../notes/gpios/index.html" class="pagination-link" aria-label="GPIOs: Inputs and Outputs">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">GPIOs: Inputs and Outputs</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../../notes/analog-vs-digital/index.html" class="pagination-link" aria-label="Signals: Analog and digital">
-        <span class="nav-page-text">Signals: Analog and digital</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

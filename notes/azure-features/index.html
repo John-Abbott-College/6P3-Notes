@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-03-10">
+<meta name="dcterms.date" content="2025-04-19">
 
-<title>Python environment management – Connected Objects</title>
+<title>Azure Features – Connected Objects</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../notes/analog-vs-digital/index.html" rel="next">
-<link href="../../notes/gpios/index.html" rel="prev">
+<link href="../../notes/bash-essentials/index.html" rel="next">
+<link href="../../notes/circuitry/index.html" rel="prev">
 <link href="../../assets/favicon_io/favicon.ico" rel="icon">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -45,6 +45,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/bootstrap/bootstrap-6d3781b972cca3a63b60544cf871d846.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../../site_libs/bootstrap/bootstrap-dark-3f927687ee77f8fb3289181daa1de94c.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script src="../../site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": true,
@@ -72,13 +75,15 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="Python environment management – Connected Objects">
-<meta property="og:description" content="Managing python development and runtime dependencies. Using virtual environments. Configuring python linters and formatters.">
-<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/notes/python-environments/assets/art_title_path_only.svg">
+<meta property="og:title" content="Azure Features – Connected Objects">
+<meta property="og:description" content="An overview of the main feautres of Azure we will use for implementing an IoT system. Background information on “Platform as a Service” (PaaS), Azure IoT Hub vs IoT Central, Azure IoT Hub documentation, Azure Resource Groups, Intro to Azure Dev Tools (Azure Portal, Azure CLI).">
+<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/notes/azure-features/assets/intro-azure-paas.png">
 <meta property="og:site_name" content="{{< var course.title >}}">
+<meta property="og:image:height" content="504">
+<meta property="og:image:width" content="1294">
 </head>
 
-<body class="nav-sidebar docked nav-fixed">
+<body class="nav-sidebar docked nav-fixed slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -261,7 +266,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/python-environments/index.html">Python environment management</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/azure-features/index.html">Azure Features</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -287,7 +292,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notes/azure-features/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/azure-features/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Azure Features</span></a>
   </div>
 </li>
@@ -311,7 +316,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notes/python-environments/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../notes/python-environments/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Python environment management</span></a>
   </div>
 </li>
@@ -405,17 +410,30 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#virtual-environments" id="toc-virtual-environments" class="nav-link active" data-scroll-target="#virtual-environments"><span class="header-section-number">1</span> Virtual Environments</a>
+  <li><a href="#platform-as-a-service-paas" id="toc-platform-as-a-service-paas" class="nav-link active" data-scroll-target="#platform-as-a-service-paas"><span class="header-section-number">1</span> Platform as a Service (PaaS)</a></li>
+  <li><a href="#iot-subsystems" id="toc-iot-subsystems" class="nav-link" data-scroll-target="#iot-subsystems"><span class="header-section-number">2</span> IoT Subsystems</a></li>
+  <li><a href="#azure-iot-services" id="toc-azure-iot-services" class="nav-link" data-scroll-target="#azure-iot-services"><span class="header-section-number">3</span> Azure IoT Services</a></li>
+  <li><a href="#iot-hub-iot-central" id="toc-iot-hub-iot-central" class="nav-link" data-scroll-target="#iot-hub-iot-central"><span class="header-section-number">4</span> IoT Hub &amp; IoT Central</a>
   <ul>
-  <li><a href="#why-virtual-environments" id="toc-why-virtual-environments" class="nav-link" data-scroll-target="#why-virtual-environments"><span class="header-section-number">1.1</span> Why Virtual Environments?</a></li>
-  <li><a href="#virtual-dependency-steps" id="toc-virtual-dependency-steps" class="nav-link" data-scroll-target="#virtual-dependency-steps"><span class="header-section-number">1.2</span> Virtual Dependency Steps</a></li>
-  <li><a href="#creating" id="toc-creating" class="nav-link" data-scroll-target="#creating"><span class="header-section-number">1.3</span> Creating</a></li>
-  <li><a href="#activate-deactivate" id="toc-activate-deactivate" class="nav-link" data-scroll-target="#activate-deactivate"><span class="header-section-number">1.4</span> Activate &amp; Deactivate</a></li>
-  <li><a href="#installing-packages-with-pip" id="toc-installing-packages-with-pip" class="nav-link" data-scroll-target="#installing-packages-with-pip"><span class="header-section-number">1.5</span> Installing Packages with <code>pip</code></a></li>
-  <li><a href="#using-requirements.txt" id="toc-using-requirements.txt" class="nav-link" data-scroll-target="#using-requirements.txt"><span class="header-section-number">1.6</span> Using <code>requirements.txt</code></a></li>
-  <li><a href="#moving-virtual-environments" id="toc-moving-virtual-environments" class="nav-link" data-scroll-target="#moving-virtual-environments"><span class="header-section-number">1.7</span> Moving Virtual Environments</a></li>
-  <li><a href="#virtual-env-exercises" id="toc-virtual-env-exercises" class="nav-link" data-scroll-target="#virtual-env-exercises"><span class="header-section-number">1.8</span> Virtual Env Exercises</a></li>
+  <li><a href="#iot-central" id="toc-iot-central" class="nav-link" data-scroll-target="#iot-central"><span class="header-section-number">4.1</span> IoT Central</a></li>
+  <li><a href="#iot-hub" id="toc-iot-hub" class="nav-link" data-scroll-target="#iot-hub"><span class="header-section-number">4.2</span> IoT Hub</a>
+  <ul class="collapse">
+  <li><a href="#iot-hub-documentation" id="toc-iot-hub-documentation" class="nav-link" data-scroll-target="#iot-hub-documentation"><span class="header-section-number">4.2.1</span> IoT Hub Documentation</a></li>
   </ul></li>
+  </ul></li>
+  <li><a href="#azure-resource-groups-zones" id="toc-azure-resource-groups-zones" class="nav-link" data-scroll-target="#azure-resource-groups-zones"><span class="header-section-number">5</span> Azure Resource Groups &amp; Zones</a>
+  <ul>
+  <li><a href="#azure-regions" id="toc-azure-regions" class="nav-link" data-scroll-target="#azure-regions"><span class="header-section-number">5.1</span> Azure Regions</a></li>
+  </ul></li>
+  <li><a href="#azure-iot-dev-tools" id="toc-azure-iot-dev-tools" class="nav-link" data-scroll-target="#azure-iot-dev-tools"><span class="header-section-number">6</span> Azure IoT Dev Tools</a>
+  <ul>
+  <li><a href="#azure-portal" id="toc-azure-portal" class="nav-link" data-scroll-target="#azure-portal"><span class="header-section-number">6.1</span> Azure Portal</a></li>
+  <li><a href="#azure-cli-cloud-shell-iot-extension" id="toc-azure-cli-cloud-shell-iot-extension" class="nav-link" data-scroll-target="#azure-cli-cloud-shell-iot-extension"><span class="header-section-number">6.2</span> Azure CLI, Cloud Shell &amp; IoT Extension</a>
+  <ul class="collapse">
+  <li><a href="#azure-iot-extension" id="toc-azure-iot-extension" class="nav-link" data-scroll-target="#azure-iot-extension"><span class="header-section-number">6.2.1</span> Azure IoT extension</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#some-tutorials-for-reference" id="toc-some-tutorials-for-reference" class="nav-link" data-scroll-target="#some-tutorials-for-reference"><span class="header-section-number">7</span> Some tutorials for reference</a></li>
   </ul>
 </nav>
 </nav>
@@ -424,16 +442,13 @@ ul.task-list li input[type="checkbox"] {
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Python environment management</h1>
-<p class="subtitle lead"></p><p>Managing python development and runtime dependencies. Using virtual environments. Configuring python linters and formatters.</p><p></p>
-  <div class="quarto-categories">
-    <div class="quarto-category">python</div>
-  </div>
-  </div>
+<h1 class="title">Azure Features</h1>
+<p class="subtitle lead"></p><p>An overview of the main feautres of Azure we will use for implementing an IoT system. Background information on “Platform as a Service” (PaaS), Azure IoT Hub vs IoT Central, Azure IoT Hub documentation, Azure Resource Groups, Intro to Azure Dev Tools (Azure Portal, Azure CLI).</p><p></p>
+</div>
 
 
 
@@ -443,7 +458,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 10, 2025</p>
+      <p class="date">April 19, 2025</p>
     </div>
   </div>
   
@@ -461,142 +476,209 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="virtual-environments" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="virtual-environments"><span class="header-section-number">1</span> Virtual Environments</h2>
-<p>This section shows the use the python virtual environments (virt. envs.) with the <code>venv</code> built-in tool.</p>
-<p><code>venv</code> is the officially recommended way to manage virt. envs. but it’s not the only one. Other tools such as <a href="https://docs.conda.io/en/latest/index.html">Conda</a>, <a href="https://pipenv.pypa.io/en/latest/">Pipenv</a>, <a href="https://python-poetry.org/">Poetry</a> and <a href="https://pdm.fming.dev/latest/">PDM</a> are other options.</p>
-<blockquote class="blockquote">
-<p>Short guide by python.org**: <a href="https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/#installing-packages-using-pip-and-virtual-environments">Installing packages using pip and virtual environments</a></p>
-<p>Detailed guide by RealPython.com: <a href="https://realpython.com/python-virtual-environments-a-primer/">Python Virtual Environments: A Primer</a></p>
-</blockquote>
-<section id="why-virtual-environments" class="level3" data-number="1.1">
-<h3 data-number="1.1" class="anchored" data-anchor-id="why-virtual-environments"><span class="header-section-number">1.1</span> Why Virtual Environments?</h3>
-<p>Python is not good at dependency management. We want to:</p>
-<ol type="1">
-<li><p><strong>Avoid system pollution</strong></p>
+<section id="platform-as-a-service-paas" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="platform-as-a-service-paas"><span class="header-section-number">1</span> Platform as a Service (PaaS)</h2>
+<p>So far in this course, we have developed applications that are almost entirely local to our reTerminal (production) and workstation (development) environments.</p>
+<p>We did not worry ourselves about data storage, application logic, authentication, etc. We could implement these things locally in Python, but we can also automate many of them using a PaaS framework.</p>
+<p><strong>Platform as a service (PaaS)</strong> is a complete development and deployment environment in the cloud:</p>
 <ul>
-<li>Installing packages to the OS’s global Python will mix them with OS relevant packages. This could have unexpected side effects on OS tasks.</li>
-<li>Because of the reason above, updating OS packages might overwrite or delete global Python packages.</li>
-</ul></li>
-<li><p><strong>Avoid project dependency conflicts</strong></p>
-<ul>
-<li>Python projects might require different versions the same external library.</li>
-</ul></li>
-<li><p><strong>Making projects reproducible in other environments.</strong></p>
-<ul>
-<li>Since all dependencies are isolated to a specific project, it is easier to identify and document them.</li>
-<li>Once the dependencies are “locked”, the project dependency can be easily reproduced in other environments.</li>
-</ul></li>
-</ol>
-</section>
-<section id="virtual-dependency-steps" class="level3" data-number="1.2">
-<h3 data-number="1.2" class="anchored" data-anchor-id="virtual-dependency-steps"><span class="header-section-number">1.2</span> Virtual Dependency Steps</h3>
-<p>Creating and using virtual environments involved the following steps:</p>
-<ol type="1">
-<li>Creation</li>
-<li>Activation</li>
-<li>Installing dependencies</li>
-<li>Deactivation</li>
-<li>Locking dependencies</li>
-</ol>
-</section>
-<section id="creating" class="level3" data-number="1.3">
-<h3 data-number="1.3" class="anchored" data-anchor-id="creating"><span class="header-section-number">1.3</span> Creating</h3>
-<ol type="1">
-<li><p>Create a new folder for the project (if one doesn’t already exist).</p></li>
-<li><p><code>cd</code> into the folder and create a new virt. env.:</p></li>
-</ol>
-<pre class="shell"><code>$ python3 -m venv .venv</code></pre>
-<p>Note that <code>.venv</code> is the name of your virtual environment. <code>venv</code> is a popular choice.</p>
-</section>
-<section id="activate-deactivate" class="level3" data-number="1.4">
-<h3 data-number="1.4" class="anchored" data-anchor-id="activate-deactivate"><span class="header-section-number">1.4</span> Activate &amp; Deactivate</h3>
-<p>Once created, the virt. env. needs to be activated.</p>
-<pre class="shell"><code># Linux
-$ source .venv/bin/activate
-
-# Windows
-$ .venv/Scripts/activate.bat</code></pre>
-<blockquote class="blockquote">
-<p><strong>Note:</strong> You can work with virtual environments without activating it. To do this, <a href="https://realpython.com/python-virtual-environments-a-primer/#it-runs-from-anywhere-with-absolute-paths">provide the full path</a> to its Python interpreter when executing a command.</p>
-<p>Typically, you’ll want to activate the virtual environment to avoid repeatedly having to type long paths.</p>
-</blockquote>
-<p>To deactivate:</p>
-<pre class="shell"><code># Notice the shell prompt indicates a virt. env. is active
-$ (.venv) deactivate</code></pre>
-</section>
-<section id="installing-packages-with-pip" class="level3" data-number="1.5">
-<h3 data-number="1.5" class="anchored" data-anchor-id="installing-packages-with-pip"><span class="header-section-number">1.5</span> Installing Packages with <code>pip</code></h3>
-<p>Once a virtual environment is active, <strong>packages installed with <code>pip</code> will be local to that virtual environment.</strong></p>
-<p>By default, project packages are installed in:</p>
-<pre><code>project-folder
-    |- &lt;project-venv&gt;
-    |       |- lib
-    |           |- python3.X
-    |                   |- site-packages </code></pre>
-<p>For example, installing <code>aiohttp</code>:</p>
-<pre class="shell"><code># Notice the shell prompt indicates a virt. env. is active
-$ (.venv) pip install aiohttp</code></pre>
-</section>
-<section id="using-requirements.txt" class="level3" data-number="1.6">
-<h3 data-number="1.6" class="anchored" data-anchor-id="using-requirements.txt"><span class="header-section-number">1.6</span> Using <code>requirements.txt</code></h3>
-<p>Project dependencies can be listed in a file for portability. By convention, the file <code>requirements.txt</code> contains all the dependencies of a project created with a virtual environment.</p>
-<blockquote class="blockquote">
-<p>This is analogous to <code>package.json</code> for Node.Js projects</p>
-</blockquote>
-<p><strong>To generate</strong> a <code>requirements.txt</code> for an existing project:</p>
-<pre class="shell"><code>$ pip freeze &gt; requirements.txt</code></pre>
-<p><strong>To install</strong> packages from a <code>requirements.txt</code>:</p>
-<pre><code>$ pip install -r requirements.txt</code></pre>
-</section>
-<section id="moving-virtual-environments" class="level3" data-number="1.7">
-<h3 data-number="1.7" class="anchored" data-anchor-id="moving-virtual-environments"><span class="header-section-number">1.7</span> Moving Virtual Environments</h3>
-<p>If you move a project that uses virtual environments to a different folder, <strong>you must re-initialize the virtual environment.</strong></p>
-<p>From the <a href="https://docs.python.org/3/library/venv.html#how-venvs-work">official docs</a>:</p>
-<blockquote class="blockquote">
-<p>Scripts installed in environments contain the absolute paths to their environment’s interpreters.</p>
-<ul>
-<li>Because of this, environments are inherently non-portable. You should always have a simple means of recreating an environment (for example, have a requirements file <code>requirements.txt</code>, and invoke <code>pip install -r requirements.txt</code>.</li>
+<li>Infrastructure: servers, storage, and networking,</li>
+<li>Platforms: development tools, business intelligence services (BI), database management systems, and more.</li>
 </ul>
+<p>It’s really a reduced version of <strong>Software as a service</strong> (which you may be more familiar with), allowing the flexibility to write customized application/device software while benefitting from infrastructure and analysis services.</p>
+<p>See the graphic below:</p>
+<div id="fig-saas-paas-iaas" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-saas-paas-iaas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="assets/intro-azure-paas.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: Compasion of SaaS, PaaS and IaaS platforms. Figure from: SaaS vs PaaS vs IaaS, Microsoft."><img src="assets/intro-azure-paas.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-saas-paas-iaas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Compasion of SaaS, PaaS and IaaS platforms. Figure from: <a href="https://docs.microsoft.com/en-us/learn/modules/introduction-iot-solution">SaaS vs PaaS vs IaaS</a>, Microsoft.
+</figcaption>
+</figure>
+</div>
+<p>PaaS is designed to support the complete application life-cycle: building, testing, deploying, managing, and updating – while giving the developer flexibility to implement the actual services themselves.</p>
+<p>See more in <a href="https://azure.microsoft.com/en-us/overview/what-is-paas/">What is PaaS (azure.microsoft.com)</a></p>
+</section>
+<section id="iot-subsystems" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="iot-subsystems"><span class="header-section-number">2</span> IoT Subsystems</h2>
+<p>We can breakdown an IoT solution into <strong>subsystems</strong> and explore how information flows between them:</p>
+<ul>
+<li><strong>IoT Devices</strong>: The physical devices and sensors where data originates.</li>
+<li><strong>Cloud Gateway</strong>: The Cloud Gateway provides a cloud hub for secure connectivity, telemetry, event ingestion and device management (including command and control) capabilities.</li>
+<li><strong>Stream Processing</strong>: Processes large streams of data records, evaluates rules for those streams, and further routes the data.</li>
+<li><strong>Storage</strong>: Storage can be divided into warm path (data that is required to be available for reporting and visualization immediately from devices), and cold path (data that is stored longer term and used for batch processing).</li>
+<li><strong>User Interface and Reporting</strong>: The user interface for an IoT application can be delivered on a wide array of device types, in native applications, and browsers.</li>
+<li><strong>Business Process Integration</strong>: Facilitates executing actions based on insights garnered from device telemetry data during stream processing. Integration could include storage of informational messages, alarms, sending email or SMS, integration with CRM, and more.</li>
+</ul>
+<div id="fig-iot-subsystems" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-iot-subsystems-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="https://docs.microsoft.com/en-us/learn/wwl-azure/introduction-iot-solution-architecture/media/m01-l02-core-subsystems-iot-architecture-8158ad9e.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;2: Diagram that shows the core subsystems of the Azure IoT reference architecture. Figure from: Subsystems of IoT architecture, Microsoft."><img src="https://docs.microsoft.com/en-us/learn/wwl-azure/introduction-iot-solution-architecture/media/m01-l02-core-subsystems-iot-architecture-8158ad9e.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-iot-subsystems-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Diagram that shows the core subsystems of the Azure IoT reference architecture. Figure from: <a href="https://docs.microsoft.com/en-us/learn/modules/introduction-iot-solution-architecture/2-subsystems-iot-architecture">Subsystems of IoT architecture</a>, Microsoft.
+</figcaption>
+</figure>
+</div>
+<p>We will use Microsoft Azure to manage each sub-system individually.</p>
+</section>
+<section id="azure-iot-services" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="azure-iot-services"><span class="header-section-number">3</span> Azure IoT Services</h2>
+<p>Azure offers many IoT-related services (see image below). In this course we’ll only explore a few.</p>
+<div id="fig-azure-architecture" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-azure-architecture-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/iot/images/iot-refarch.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;3: Azure IoT-related architecture. Data will flow from to/from your reTerminal (Devices), to/from the Azure IoT Hub (Ingestion &amp; provisioning), to/from Azure Data Management (Warm path), to from your .NET mobile app (M&amp;B integration). Figure from Microsoft Learn."><img src="https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/iot/images/iot-refarch.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-azure-architecture-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Azure IoT-related architecture. Data will flow from to/from your reTerminal (Devices), to/from the Azure IoT Hub (Ingestion &amp; provisioning), to/from Azure Data Management (Warm path), to from your .NET mobile app (M&amp;B integration). Figure from <a href="https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/iot">Microsoft Learn</a>.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="iot-hub-iot-central" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="iot-hub-iot-central"><span class="header-section-number">4</span> IoT Hub &amp; IoT Central</h2>
+<p>Microsoft Azure has two service offers for deploying and managing IoT systems: <strong>IoT Hub</strong> and <strong>IoT Central</strong>.</p>
+<blockquote class="blockquote">
+<p>The page <a href="https://docs.microsoft.com/en-us/azure/iot-develop/concepts-overview-connection-options#application-platforms-iot-central-and-iot-hub">Overview: Connection options for Azure IoT device developers</a> offers a great summary and comparison between IoT Hub and IoT Central.</p>
+</blockquote>
+<section id="iot-central" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="iot-central"><span class="header-section-number">4.1</span> IoT Central</h3>
+<p>Azure IoT Central is a <strong>software-as-a-service (SaaS)</strong> application that provides a complete platform for hosting IoT applications. Its main feature is a web UI that streamlines the lifecycle of creating and managing IoT applications.</p>
+<p>The web UI simplifies the tasks of creating applications, and connecting and managing from a few up to millions of devices.</p>
+<p>This service has a limited free plan (2 devices with 5000 messages per month). Pricing available <a href="https://azure.microsoft.com/en-us/pricing/details/iot-central/">here</a>.</p>
+<p>See <a href="https://azure.microsoft.com/en-us/services/iot-central/#overview">official site for details</a> or watch the <a href="https://www.youtube.com/watch?v=G32stXSwtyA">walk-through for an example</a>.</p>
+<blockquote class="blockquote">
+<p>We will not use IoT Central in this course because we’ll connect the underlying Azure services ourselves.</p>
 </blockquote>
 </section>
-<section id="virtual-env-exercises" class="level3" data-number="1.8">
-<h3 data-number="1.8" class="anchored" data-anchor-id="virtual-env-exercises"><span class="header-section-number">1.8</span> Virtual Env Exercises</h3>
-<p>The following exercises are meant for familiarization with <code>venv</code>.</p>
-<ol type="1">
-<li><p>Compare packages installed with <code>pip</code> inside and outside of a new virtual environment (virt. env.):</p>
-<ol type="1">
-<li>List all globally installed <code>pip</code> packages: <code>pip list</code></li>
-<li>Create a new folder and use <code>venv</code> to create a virtual environment inside.</li>
-<li>Activate the new virt. env..</li>
-<li>List the <code>pip</code> packages as seen from inside the active virtual environment.</li>
-<li>Deactivate the new virtual environment.</li>
-</ol></li>
-<li><p>Complete the following steps inside the virtual environment (virt. env.) you created in the previous question.</p>
-<ol type="1">
-<li>Activate the virt. env.</li>
-<li>install the following libraries:
-<ul>
-<li><a href="https://pypi.org/project/howdoi/">howdoi</a></li>
-<li><a href="https://pyjok.es/">pyjokes</a></li>
-</ul></li>
-<li>List all pip packages to see the extra dependencies that got installed.</li>
-<li>Have some fun using both installed packages (see their docs).</li>
-<li>Export the dependency list to <code>requirements.txt</code> by using <code>pip freeze</code>.</li>
-<li>Deactivate the virt. env.</li>
-<li>Move <code>requirements.txt</code> to one folder level above the project folder (so it’s not deleted in the next step).</li>
-<li>Delete the project folder.</li>
-</ol></li>
-<li><p>Create a new project and virtual environment using the <code>requirements.txt</code> from the previous exercise.</p>
-<ol type="1">
-<li>Create a new project folder with a virtual environment inside.</li>
-<li>Move <code>requirements.txt</code> inside the new project folder.</li>
-<li>Install project packages using <code>requirements.txt</code></li>
-</ol></li>
-</ol>
-
-
+<section id="iot-hub" class="level3" data-number="4.2">
+<h3 data-number="4.2" class="anchored" data-anchor-id="iot-hub"><span class="header-section-number">4.2</span> IoT Hub</h3>
+<p>Azure IoT Hub is a <strong>platform-as-a-service (PaaS)</strong> application that also provides a platform for hosting IoT applications. IoT Hub acts as a central message hub for bi-directional communication between IoT applications and connected devices.</p>
+<p>IoT Hub offers <strong>greater control and customization</strong> over your application design, and <strong>more developer tool options</strong> for working with the service. However, it requires more development time and slightly more management complexity.</p>
+<p>This service also offers a more generous free plan (500 devices with 8000 messages per day).</p>
+<p>See <a href="https://azure.microsoft.com/en-us/pricing/details/iot-hub/#overview">official site for details</a> and <a href="https://azure.microsoft.com/en-us/pricing/details/iot-hub/#pricing">pricing</a>.</p>
+<blockquote class="blockquote">
+<p>We will use IoT Hub in this course.</p>
+</blockquote>
+<section id="iot-hub-documentation" class="level4" data-number="4.2.1">
+<h4 data-number="4.2.1" class="anchored" data-anchor-id="iot-hub-documentation"><span class="header-section-number">4.2.1</span> IoT Hub Documentation</h4>
+<p><a href="https://docs.microsoft.com/en-us/azure/iot-hub/"><strong>Azure IoT Hub Documentation</strong></a> hosts most of the documentation we will be using.</p>
+<p><a href="assets/intro-azure-docs-page.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="assets/intro-azure-docs-page.png" class="img-fluid"></a></p>
+<p>Please get familiar with the left-hand menu, including the “Quickstarts” and “How-to guides”</p>
 </section>
+</section>
+</section>
+<section id="azure-resource-groups-zones" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="azure-resource-groups-zones"><span class="header-section-number">5</span> Azure Resource Groups &amp; Zones</h2>
+<p>To use Azure IoT Hub, we need to creaet Azure <strong>resource groups</strong>.</p>
+<p>An Azure <strong>resource group</strong> is a “container” that holds related resources for an Azure solution (such as an IoT Hub).</p>
+<p>The resource group can include all or a subset of the resources for the solution. You decide how to allocate resources to resource groups based on what makes sense for your organization. Generally, group resources share the same lifecycle (deploy, update, and delete).</p>
+<section id="azure-regions" class="level3" data-number="5.1">
+<h3 data-number="5.1" class="anchored" data-anchor-id="azure-regions"><span class="header-section-number">5.1</span> Azure Regions</h3>
+<p>Azure resources and their groups must be deployed to a particular <strong>region</strong>.</p>
+<p>Azure operates in multiple datacenters around the world. These datacenters are grouped in to <strong>geographic regions</strong>.</p>
+<div id="fig-azure-regions" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-azure-regions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="https://www.poppelgaard.com/wp-content/uploads/2017/03/azure_datacenters.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;4: Azure infrastructure map. You can find a current list of all Azure regions at the Zzure geographies web tool. Figure from Map of Azure Regions, Thomas Poppelgaard, 2017."><img src="https://www.poppelgaard.com/wp-content/uploads/2017/03/azure_datacenters.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-azure-regions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Azure infrastructure map. You can find a current list of all Azure regions at the <a href="https://azure.microsoft.com/en-us/global-infrastructure/geographies/#overview">Zzure geographies web tool</a>. Figure from <a href="https://www.poppelgaard.com/citrix-xenapp-essentials-microsoft-azure/azure_datacenters">Map of Azure Regions</a>, Thomas Poppelgaard, 2017.
+</figcaption>
+</figure>
+</div>
+<p>Canada has two Azure regions:</p>
+<ul>
+<li><strong>Canada Central:</strong> located in Toronto (with 3 zones).</li>
+<li><strong>Canada East</strong>: located in Quebec City (no zones).</li>
+</ul>
+<p>The US has a few nearby regions as well, in particular:</p>
+<ul>
+<li><strong>Central US</strong>: allows the use of advanced IoT features still in testing.</li>
+</ul>
+</section>
+</section>
+<section id="azure-iot-dev-tools" class="level2 page-columns page-full" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="azure-iot-dev-tools"><span class="header-section-number">6</span> Azure IoT Dev Tools</h2>
+<p>Azure offers several developer tools to create, manage and connect to the IoT Hub service. We’ll be using two: the Azure Portal, and the Azure CLI.</p>
+<p>There’s also a few extensions worth noting.</p>
+<section id="azure-portal" class="level3 page-columns page-full" data-number="6.1">
+<h3 data-number="6.1" class="anchored" data-anchor-id="azure-portal"><span class="header-section-number">6.1</span> Azure Portal</h3>
+<p>The Azure Portal is a browser-based portal for IoT Hub and devices.</p>
+<dl>
+<dt>Documentation</dt>
+<dd>
+<a href="https://learn.microsoft.com/en-us/azure/azure-portal/">Azure portal documentation</a>
+</dd>
+<dt>Quick Start</dt>
+<dd>
+<a href="https://learn.microsoft.com/en-us/azure/azure-portal/azure-portal-overview">What is the Azure portal?</a>
+</dd>
+<dt>IoT Example</dt>
+<dd>
+<a href="https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal">Create an IoT hub with Azure portal</a>
+</dd>
+</dl>
+
+<div class="no-row-height column-margin column-container"><div id="fig-azure-portal" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-azure-portal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="assets/azure-portal-example.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figure&nbsp;5: The Azure Portal at https://portal.azure.com is a web app that can access and modify all of your IoT Hub data/configurations/actions/etc."><img src="assets/azure-portal-example.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-azure-portal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: The Azure Portal at <a href="https://portal.azure.com" class="uri">https://portal.azure.com</a> is a web app that can access and modify all of your IoT Hub data/configurations/actions/etc.
+</figcaption>
+</figure>
+</div></div></section>
+<section id="azure-cli-cloud-shell-iot-extension" class="level3" data-number="6.2">
+<h3 data-number="6.2" class="anchored" data-anchor-id="azure-cli-cloud-shell-iot-extension"><span class="header-section-number">6.2</span> Azure CLI, Cloud Shell &amp; IoT Extension</h3>
+<p><strong>Azure CLI</strong> is a terminal tool to manage Azure services offered as Bash and PowerShell shells.</p>
+<dl>
+<dt>Documentation</dt>
+<dd>
+<a href="https://learn.microsoft.com/en-us/cli/azure/">Azure CLI documentation</a>
+</dd>
+<dt>Installation</dt>
+<dd>
+<a href="https://docs.microsoft.com/en-us/cli/azure/install-azure-cli">Install Azure CLI</a>
+</dd>
+<dt>Quick Start</dt>
+<dd>
+<a href="https://learn.microsoft.com/en-us/cli/azure/get-started-with-azure-cli">Get started with Azure CLI</a>
+</dd>
+<dt>IoT Example</dt>
+<dd>
+<a href="https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-using-cli">Create an IoT hub with CLI</a>
+</dd>
+</dl>
+<section id="azure-iot-extension" class="level4" data-number="6.2.1">
+<h4 data-number="6.2.1" class="anchored" data-anchor-id="azure-iot-extension"><span class="header-section-number">6.2.1</span> Azure IoT extension</h4>
+<p>Azure CLI uses “extensions” in order to manage different Azure services.</p>
+<p>The <strong>Azure IoT extension</strong> gives us access to the <code>az iot</code> subcommand – a very convenient CLI for controlling IoT-related sevices.</p>
+<dl>
+<dt>GitHub Repo</dt>
+<dd>
+<a href="https://github.com/Azure/azure-iot-cli-extension">azure-iot-cli-extension</a>
+</dd>
+<dt>Documentation</dt>
+<dd>
+<a href="https://learn.microsoft.com/en-us/cli/azure/iot/hub?view=azure-cli-latest">List of <code>az iot hub</code> commands</a>
+</dd>
+</dl>
+</section>
+</section>
+</section>
+<section id="some-tutorials-for-reference" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="some-tutorials-for-reference"><span class="header-section-number">7</span> Some tutorials for reference</h2>
+<p>We cover these tutorials in Lab 6, but here they are again for reference:</p>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/azure/iot-hub/quickstart-send-telemetry-cli">Quickstart: Send telemetry from a device to an IoT hub and monitor it with the Azure CLI</a></li>
+<li><a href="https://docs.microsoft.com/en-us/azure/iot-develop/quickstart-send-telemetry-iot-hub?toc=%2Fazure%2Fiot-hub%2Ftoc.json&amp;bc=%2Fazure%2Fiot-hub%2Fbreadcrumb%2Ftoc.json&amp;pivots=programming-language-python">Quickstart: Send telemetry from an IoT Plug and Play device to Azure IoT Hub</a></li>
+</ul>
+
+
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div>CC BY-NC 4.0. ©2022-25 Mauricio Buschinelli &amp; Michael Haaf.
@@ -1164,17 +1246,49 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../notes/gpios/index.html" class="pagination-link" aria-label="GPIOs: Inputs and Outputs">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">GPIOs: Inputs and Outputs</span>
+      <a href="../../notes/circuitry/index.html" class="pagination-link" aria-label="Electronics Basics">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Electronics Basics</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../notes/analog-vs-digital/index.html" class="pagination-link" aria-label="Signals: Analog and digital">
-        <span class="nav-page-text">Signals: Analog and digital</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../notes/bash-essentials/index.html" class="pagination-link" aria-label="Bash essentials">
+        <span class="nav-page-text">Bash essentials</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
