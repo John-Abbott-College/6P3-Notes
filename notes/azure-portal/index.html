@@ -423,7 +423,8 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#using-the-tool" id="toc-using-the-tool" class="nav-link" data-scroll-target="#using-the-tool"><span class="header-section-number">3</span> Using the tool</a>
   <ul>
-  <li><a href="#creating-the-iot-hub-resource" id="toc-creating-the-iot-hub-resource" class="nav-link" data-scroll-target="#creating-the-iot-hub-resource"><span class="header-section-number">3.1</span> Creating the IoT Hub Resource</a></li>
+  <li><a href="#documentation" id="toc-documentation" class="nav-link" data-scroll-target="#documentation"><span class="header-section-number">3.1</span> Documentation</a></li>
+  <li><a href="#creating-an-iot-hub-resource" id="toc-creating-an-iot-hub-resource" class="nav-link" data-scroll-target="#creating-an-iot-hub-resource"><span class="header-section-number">3.2</span> Creating an IoT Hub Resource</a></li>
   </ul></li>
   <li><a href="#faq" id="toc-faq" class="nav-link" data-scroll-target="#faq"><span class="header-section-number">4</span> FAQ</a></li>
   </ul>
@@ -552,15 +553,35 @@ ul.task-list li input[type="checkbox"] {
 <section id="using-the-tool" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="using-the-tool"><span class="header-section-number">3</span> Using the tool</h2>
 <p>Below are some how-tos for services we will be using in this class.</p>
-<section id="creating-the-iot-hub-resource" class="level3" data-number="3.1">
-<h3 data-number="3.1" class="anchored" data-anchor-id="creating-the-iot-hub-resource"><span class="header-section-number">3.1</span> Creating the IoT Hub Resource</h3>
+<section id="documentation" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="documentation"><span class="header-section-number">3.1</span> Documentation</h3>
+<p>The Azure resource we will be using the most, <strong>IoT Hub</strong>, has complete documentation/how-to-guides/tutorials at <a href="https://learn.microsoft.com/en-us/azure/iot-hub/" class="uri">https://learn.microsoft.com/en-us/azure/iot-hub/</a>.</p>
+<p><a href="assets/azure-docs-page.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="assets/azure-docs-page.png" class="img-fluid"></a></p>
+<p>Familiarize yourself with the left-hand menu, including the “Quickstarts” and “How-to guides”.</p>
+</section>
+<section id="creating-an-iot-hub-resource" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="creating-an-iot-hub-resource"><span class="header-section-number">3.2</span> Creating an IoT Hub Resource</h3>
 <p>There are two ways to create resources in Azure:</p>
 <ul>
 <li>using the Azure portal website: <a href="https://portal.azure.com" class="uri">https://portal.azure.com</a></li>
-<li>using <a href="../../notes">Azure CLI</a></li>
+<li>using <a href="../../notes/azure-features/#azure-cli">Azure CLI</a></li>
 </ul>
-<p>The Azure documentation has instructions for both in the document <a href="https://learn.microsoft.com/en-us/azure/iot-hub/create-hub?tabs=portal">Create and manage Azure IoT Hubs</a>.</p>
-<p>Make sure you make the following selections:</p>
+<p>The Azure documentation typically has instructions for <em>both</em> methods in all their tutorials – you can select which method you want to choose by clicking the tabset button for it:</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Azure Portal</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Azure CLI</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p><a href="https://learn.microsoft.com/en-us/azure/iot-hub/create-hub?tabs=portal">Create and manage Azure IoT Hubs using Azure Portal</a>.</p>
+<p>Note that each section has the “Azure Portal” option selected.</p>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p><a href="https://learn.microsoft.com/en-us/azure/iot-hub/create-hub?tabs=cli">Create and manage Azure IoT Hubs using Azure CLI</a>.</p>
+<p>Note that each section has an “Azure CLI” option selected.</p>
+</div>
+</div>
+</div>
+<p>No matter which method you choose, you should make sure the resource you’re making is <strong>free</strong> and in a nearby region.</p>
+<p>Suggested choices for the following options:</p>
 <ul>
 <li><strong>Subscription</strong>: Your active subscription (probably “Azure for Students”)</li>
 <li><strong>Resource group</strong>: Create ONE resource group for this class (any name is fine)</li>
@@ -569,12 +590,12 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Tier</strong>: Free</li>
 <li><strong>Daily message limit</strong>: 8,000 ($0/month)</li>
 </ul>
-<p>Keep defaults for all subsequent menus (Networking, Management, Add-ons, Tags).</p>
+<p>You can keep the defaults for all subsequent menus (Networking, Management, Add-ons, Tags).</p>
 <p>Once you’re done creating your IoT Hub, it should appear in your Azure portal. See the figure below:</p>
 <div id="fig-sample-iot-hub" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-sample-iot-hub-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="assets/sample-resource-group-iot-hub.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;1: In this figure, the Resource Group is named 6P3, and a IoT Hub Resource named 6P3-IoT-Hub can be seen in the list of its resources. You can view your resource groups on Azure Portal by clicking on the “Resource groups” menu item on the left."><img src="assets/sample-resource-group-iot-hub.png" class="img-fluid figure-img"></a>
+<a href="assets/sample-resource-group-iot-hub.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;1: In this figure, the Resource Group is named 6P3, and a IoT Hub Resource named 6P3-IoT-Hub can be seen in the list of its resources. You can view your resource groups on Azure Portal by clicking on the “Resource groups” menu item on the left."><img src="assets/sample-resource-group-iot-hub.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sample-iot-hub-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: In this figure, the <strong>Resource Group</strong> is named <strong>6P3</strong>, and a <strong>IoT Hub Resource</strong> named <strong>6P3-IoT-Hub</strong> can be seen in the list of its resources. You can view your resource groups on Azure Portal by clicking on the “Resource groups” menu item on the left.
