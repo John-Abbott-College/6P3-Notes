@@ -40,7 +40,7 @@ The SDKs are organized as:
 > service and **user applications** using data routed via the IoT Hub's
 > end-points.
 
-![](../assets/iot-hub-architecture.svg) _Azure IoT SDKs provide tooling and
+![](assets/iot-hub-architecture.svg) _Azure IoT SDKs provide tooling and
 examples to develop devices, service applications and to manage the IoT Hub
 itself._
 

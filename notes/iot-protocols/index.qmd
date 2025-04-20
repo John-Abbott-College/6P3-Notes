@@ -3,8 +3,7 @@ title: IoT Communication Protocols
 subtitle:
   "How communication protocols can be optimized for device-cloud communication,
   i.e. why not everything should use HTTP"
-date: 2024-04-15
-categories: ["IOT", "Quiz 2"]
+date: 2024-04-18
 draft: true
 ---
 
@@ -13,16 +12,10 @@ IoT devices typically exchange data with a cloud service using a specific
 
 > Data gathered from sensors and sent to the cloud is called **telemetry**.
 
-This section looks at common communication protocols used in IoT with a focus on
+This lecture looks at common communication protocols used in IoT with a focus on
 **MQTT**.
 
 ## HTTP
-
-So far in this course we've been exchanging data between our devices and Python
-Flask/Dash servers using HTTP.
-
-> The default web server instantiated by the Dash python library is a thin HTTP
-> wrapper around the Flask web server.
 
 HTTP is a common protocol for the web, however, some of its characteristics make
 it not ideal for IoT applications, as the next section explains.
@@ -70,20 +63,10 @@ data/power intensive (check constantly).
 	<a href="https://learn.adafruit.com/alltheiot-protocols?view=all#internet-of-toast-2977937-4"> HTTP Client constantly pulling the server for updates </a>&nbsp; HTTP Protocol, Adafruit.
 </p>
 
-### Dash app example
-
-In our dash apps, this problem showed up in the form of a strict dependency
-between the Dash app and the Device Controller -- at each interval, the Dash app
-had to directly call the Device Controller "read_sensors" and
-"control_actuators" methods. This is fine in a simple example where it doesn't
-matter that we poll the device each second, but on faster intervals, or when
-information is not aligned with regular intervals, this results in large
-inefficiencies.
-
 ## Pub/Sub Communication
 
-> The most popular communication pattern for IoT systems is a publish/subscribe
-> (pub/sub) messaging system done via some kind of broker.
+The most popular communication pattern for IoT systems is a publish/subscribe
+(pub/sub) messaging system done via some kind of broker.
 
 This IoT system has two types of actors:
 

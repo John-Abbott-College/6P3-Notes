@@ -1,12 +1,11 @@
 ---
-title: "Raspberry Pi Package Management: apt"
+title: "Linux package management"
 subtitle:
-  Installing and configuring Linux packages on Raspberry Pi Debian using the
-  `apt` package manager.
+  Installing and configuring Linux packages on WSL / Raspberry Pi Debian using the
+  `apt` package manager
 reference-location: margin
 citation-location: margin
-date: 2024-02-19
-categories: ["Quiz 1", "Linux"]
+date: 2024-04-18
 draft: true
 ---
 
@@ -84,10 +83,10 @@ working) :::
 
 There are a few other `apt` commands worth knowing.
 
-| Command                   | Description                                                    | Example use case                                                     |
-| ------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| `apt list`                | list packages installed on your system based on package names. | `apt list                                                            | grep "package name"`Need to remember or check if you successfully installed an app? Combine`apt list`with`grep` and a pipe. |
-| `apt search <query>`      | Returns all repository packages search in package descriptions | `apt search "package name"` Do you know part of the? Run after `apt` |
+| Command                   | Description                                                    |
+| ------------------------- | -------------------------------------------------------------- |
+| `apt list`                | list packages installed on your system based on package names. |
+| `apt search <query>`      | Returns all repository packages search in package descriptions |
 | `apt show <package>`      | show package details                                           |
 | `apt install <package>`   | install packages                                               |
 | `apt reinstall <package>` | reinstall packages                                             |
@@ -128,17 +127,17 @@ are available - Who packages the software
 
 #### Commonly used package sources
 
-- DebianStable: official Debian repository for the current release
-- StableProposedUpdates: official Debian repository for upcoming point releases
+- `DebianStable`: official Debian repository for the current release
+- `StableProposedUpdates`: official Debian repository for upcoming point releases
   (security and important bug fixes every ~2 months)
-- StableUpdates: official Debian repository for changes that cannot wait for the
+- `StableUpdates`: official Debian repository for changes that cannot wait for the
   next point release, packages are also added to StableProposedUpdates for
   inclusion in the next point release
-- DebianSecurity: official Debian repository for frequent security updates
-- DebianBackports: more recent versions of some packages, compatible with
-  DebianStable.
-- DebianUnstable: rolling development version containing the latest packages
-- DebianExperimental: development version containing the
+- `DebianSecurity`: official Debian repository for frequent security updates
+- `DebianBackports`: more recent versions of some packages, compatible with
+  `DebianStable.`
+- `DebianUnstable`: rolling development version containing the latest packages
+- `DebianExperimental`: development version containing the
   experimental/alpha/beta/untested packages
 
 #### Editing Software Sources

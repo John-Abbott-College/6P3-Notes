@@ -3,7 +3,7 @@ title: Intro to the Internet of Things
 subtitle:
   "Fundamental concepts and applications behind the 'Internet of Things'
   paradigm."
-date: 2024-01-29
+date: 2025-04-19
 draft: true
 ---
 
@@ -174,105 +174,6 @@ There are many other Cloud providers such as
 > In this course we will focus on **Microsoft Azure**. However, all three
 > platforms offer similar functionality.
 
-## Azure Account Check
-
-Students get $100 of credit for 12 months and free
-[developer tools](https://portal.azure.com/#blade/Microsoft_Azure_Billing/FreeServicesBlade)
-without a credit card.
-
-> **Create an account** and see details
-> [here](https://azure.microsoft.com/en-us/free/students/).
-
-The student account can be renewed annually (including $100 credits) for as long
-as you are a student.
-
-Most things we'll do with Azure will use **free services**. We will occasionally
-use some of your free credits (~$20).
-
-### Checking your balance 💸
-
-As you experiment with Azure you might want to know your current balance.
-
-**TL:DR**
-
-1. Sign in to the Azure portn in to the Azure portalal
-2. Search for **Cost Management**
-3. Select **Payment methods**
-4. Check your **Azure credits** panel.
-
-::: {.column-margin}
-![Credit check panel in Azure](../assets/intro-azure-credit-check.png)
-:::
-
-For details check
-[Track Microsoft Customer Agreement Azure credit balance](https://docs.microsoft.com/en-us/azure/cost-management-billing/manage/mca-check-azure-credits-balance?tabs=portal#main)
-
-### Budget Alerts
-
-It's possible to setup email alerts when your Azure spending exceeds a dollar
-threshold. This avoids unexpected spending of Azure credits.
-
-There are two approaches to setting up a Budget in the Azure Portal:
-
-1. Open the panel (aka "blade") for the Resource Group in question, and then
-   create a new Budget for that group.
-
-2. Create a Budget for your account under **_Cost Management + Billing_** and
-   then **apply a filter** according to _ResourceGroupName_ in order to target a
-   specific Resource Group.
-
-The first approach involves a few less steps so it is described below.
-
-> - For information on creating a budget from the Cost Management blade, see
->   [How to set up Azure budget alerts](https://www.techtarget.com/searchcloudcomputing/tutorial/How-to-set-up-Azure-budget-alerts)
->   by TechTarget.com.
-> - For details on using and managing budgets, see official tutorial:
->   [Create and manage Azure budgets](https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/tutorial-acm-create-budgets).
-
-#### Create a Budget for a Resource Group
-
-1. In the Azure Portal Home, select the **_Resource groups_** service.
-2. Select the resource group you want to monitor with a budget.
-3. In the left panel, select **_Budgets_** under the _Cost Management_ group and
-   select **_Add_**.
-
-::: {.column-margin}
-![Menu for creating a budget for a resource group](../assets/12-budget-resource-group.png)
-:::
-
-4. Give your budget a name and an amount.
-
-::: {.column-margin}
-![](../assets/12-budget-name-ammount.png)
-:::
-
-5. Select the **percent spending** for the alert and the **email** to receive
-   the notification.
-6. Click **_Create_**.
-
-::: {.column-margin}
-![](../assets/12-budget-alert-percent-email.png)
-:::
-
-## Exercises
-
-**NOTE:** The exercise below is out of date. We will see IOT learning material
-later in the course.
-
-1. ~~Read the Microsoft training module
-   [**Examine the architecture of an IoT solution**](https://learn.microsoft.com/en-us/training/modules/introduction-iot-solution-architecture/)
-   and complete the Moodle quiz on the module.~~
-
-## Diving Deeper
-
-Video (15:19): **The 7 Principles of the IoT by Tom Bradicich**
-
-- In depth explanation of the integration between IoT sub-systems and
-  opportunities from a technical and business perspective.
-
-::: {.column-margin}
-<iframe src="https://www.youtube.com/embed/u3IaXvjDiOE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-:::
 
 ## References
 
