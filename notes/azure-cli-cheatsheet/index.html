@@ -464,16 +464,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#update-device-twin-properties" id="toc-update-device-twin-properties" class="nav-link" data-scroll-target="#update-device-twin-properties"><span class="header-section-number">4.3</span> Update Device Twin Properties</a></li>
   <li><a href="#get-device-twin-properties" id="toc-get-device-twin-properties" class="nav-link" data-scroll-target="#get-device-twin-properties"><span class="header-section-number">4.4</span> Get Device Twin Properties</a></li>
   </ul></li>
-  <li><a href="#connection-strings" id="toc-connection-strings" class="nav-link" data-scroll-target="#connection-strings"><span class="header-section-number">5</span> Connection Strings</a>
-  <ul>
-  <li><a href="#iot-hub" id="toc-iot-hub" class="nav-link" data-scroll-target="#iot-hub"><span class="header-section-number">5.1</span> IoT Hub</a>
-  <ul class="collapse">
-  <li><a href="#iot-hub-owner-string" id="toc-iot-hub-owner-string" class="nav-link" data-scroll-target="#iot-hub-owner-string"><span class="header-section-number">5.1.1</span> IoT Hub Owner String</a></li>
-  <li><a href="#iot-hub-service-string" id="toc-iot-hub-service-string" class="nav-link" data-scroll-target="#iot-hub-service-string"><span class="header-section-number">5.1.2</span> IoT Hub Service String</a></li>
-  <li><a href="#eventhub-compatible-string" id="toc-eventhub-compatible-string" class="nav-link" data-scroll-target="#eventhub-compatible-string"><span class="header-section-number">5.1.3</span> EventHub Compatible String</a></li>
-  </ul></li>
-  <li><a href="#device-strings" id="toc-device-strings" class="nav-link" data-scroll-target="#device-strings"><span class="header-section-number">5.2</span> Device Strings</a></li>
-  </ul></li>
+  <li><a href="#connection-strings" id="toc-connection-strings" class="nav-link" data-scroll-target="#connection-strings"><span class="header-section-number">5</span> Connection Strings</a></li>
   </ul>
 </nav>
 </nav>
@@ -637,34 +628,46 @@ Note
 <div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">az</span> iot hub device-twin show <span class="at">-d</span> <span class="va">${IOT_DEVICE_NAME}</span> <span class="at">--query</span> properties.reported <span class="at">-n</span> <span class="va">${IOTHUB_NAME}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
-<section id="connection-strings" class="level2" data-number="5">
+<section id="connection-strings" class="level2 page-columns page-full" data-number="5">
 <h2 data-number="5" class="anchored" data-anchor-id="connection-strings"><span class="header-section-number">5</span> Connection Strings</h2>
-<section id="iot-hub" class="level3" data-number="5.1">
-<h3 data-number="5.1" class="anchored" data-anchor-id="iot-hub"><span class="header-section-number">5.1</span> IoT Hub</h3>
-<p>See detailed documentation at <a href="https://learn.microsoft.com/en-us/cli/azure/iot/hub/connection-string?view=azure-cli-latest">az iot hub connection-string</a></p>
-<section id="iot-hub-owner-string" class="level4" data-number="5.1.1">
-<h4 data-number="5.1.1" class="anchored" data-anchor-id="iot-hub-owner-string"><span class="header-section-number">5.1.1</span> IoT Hub Owner String</h4>
-<p>Be advised: this connection string provides the highest level of access.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">az</span> iot hub connection-string  show <span class="at">--hub-name</span> <span class="va">${IOTHUB_NAME}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="iot-hub-service-string" class="level4" data-number="5.1.2">
-<h4 data-number="5.1.2" class="anchored" data-anchor-id="iot-hub-service-string"><span class="header-section-number">5.1.2</span> IoT Hub Service String</h4>
-<p>Recommended level of access for external applications:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">az</span> iot hub connection-string show <span class="at">--policy-name</span> service <span class="at">--hub-name</span> <span class="va">${IOTHUB_NAME}</span> <span class="at">--output</span> table</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="eventhub-compatible-string" class="level4" data-number="5.1.3">
-<h4 data-number="5.1.3" class="anchored" data-anchor-id="eventhub-compatible-string"><span class="header-section-number">5.1.3</span> EventHub Compatible String</h4>
-<p>Show the eventhub compatible connection string of the given IoT Hub’s default eventhub:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">az</span> iot hub connection-string show <span class="at">-n</span> <span class="va">${IOTHUB_NAME}</span> <span class="at">--default-eventhub</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-</section>
-<section id="device-strings" class="level3" data-number="5.2">
-<h3 data-number="5.2" class="anchored" data-anchor-id="device-strings"><span class="header-section-number">5.2</span> Device Strings</h3>
-<p>Manage IoT device’s connection string with <a href="https://learn.microsoft.com/en-us/cli/azure/iot/hub/device-identity/connection-string?view=azure-cli-latest#az-iot-hub-device-identity-connection-string-show">az iot hub device-identity connection-string show</a></p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">az</span> iot hub device-identity connection-string show <span class="at">--device-id</span> <span class="va">${IOT_DEVICE_NAME}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Connection Strings provide authentication for most <a href="../../notes/azure-sdks">Azure SDK</a> commands, both in Python and C#.</p>
+<p>Here are the main Azure CLI methods for getting Connection Strings:</p>
+
+<div class="no-row-height column-margin column-container"><div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="../../notes/bash-essentials/#redirection-and-pipes">Bash redirection and pipes</a> are useful tools for saving the output of these connection string commands as <a href="../../notes/bash-scripting/#environment-variables">environment variables</a>. You can save environment variables in a project <code>.env</code> file that you can <a href="../../notes/bash-scripting#code-reuse"><code>source</code></a> later.</p>
+</div>
+</div></div><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Device string: Recommended string for a single device</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="ex">az</span> iot hub device-identity connection-string show <span class="dt">\</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">--device-id</span> <span class="va">${IOT_DEVICE_NAME}</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Service string: Recommended string for external applications</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="ex">az</span> iot hub connection-string show <span class="dt">\</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">--policy-name</span> service <span class="dt">\</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">--hub-name</span> <span class="va">${IOTHUB_NAME}</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="co"># EventHub compatible string: needed for certain applications</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="ex">az</span> iot hub connection-string show <span class="dt">\</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">-n</span> <span class="va">${IOTHUB_NAME}</span> <span class="dt">\</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">--default-eventhub</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Owner string: NOT recommended, provides access to entire resource group.</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="ex">az</span> iot hub connection-string  show <span class="at">--hub-name</span> <span class="va">${IOTHUB_NAME}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>See detailed documentation at learn.microsoft.com:</p>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/cli/azure/iot/hub/connection-string?view=azure-cli-latest"><code>az iot hub connection-string</code></a></li>
+<li><a href="https://learn.microsoft.com/en-us/cli/azure/iot/hub/device-identity/connection-string?view=azure-cli-latest#az-iot-hub-device-identity-connection-string-show"><code>az iot hub device-identity connection-string show</code></a></li>
+</ul>
 
 
-</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div>CC BY-NC 4.0. ©2022-25 Mauricio Buschinelli &amp; Michael Haaf.
