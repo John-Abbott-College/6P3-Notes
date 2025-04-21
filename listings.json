@@ -8,7 +8,6 @@
       "/notes/analog-vs-digital/index.html",
       "/notes/serial-protocols/index.html",
       "/notes/azure-sdks/index.html",
-      "/notes/azure-cli-cheatsheet/index.html",
       "/notes/course-hardware/index.html",
       "/notes/developer-environment/index.html",
       "/notes/bash-essentials/index.html",
@@ -23,7 +22,8 @@
       "/notes/python-oop/index.html",
       "/notes/debug-reterminal/index.html",
       "/notes/azure-portal/index.html",
-      "/notes/azure-features/index.html"
+      "/notes/azure-features/index.html",
+      "/notes/azure-cli-cheatsheet/index.html"
     ]
   }
 ]
