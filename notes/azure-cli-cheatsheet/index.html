@@ -453,7 +453,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#monitor-messages" id="toc-monitor-messages" class="nav-link" data-scroll-target="#monitor-messages"><span class="header-section-number">3</span> Monitor Messages</a></li>
   <li><a href="#device-commands" id="toc-device-commands" class="nav-link" data-scroll-target="#device-commands"><span class="header-section-number">4</span> Device Commands</a>
   <ul>
-  <li><a href="#send-c2d-message-from-simulated-device" id="toc-send-c2d-message-from-simulated-device" class="nav-link" data-scroll-target="#send-c2d-message-from-simulated-device"><span class="header-section-number">4.1</span> Send C2D Message from Simulated Device</a></li>
+  <li><a href="#send-c2d-message-to-simulated-device" id="toc-send-c2d-message-to-simulated-device" class="nav-link" data-scroll-target="#send-c2d-message-to-simulated-device"><span class="header-section-number">4.1</span> Send C2D Message to Simulated Device</a></li>
   <li><a href="#invoke-direct-method-on-device" id="toc-invoke-direct-method-on-device" class="nav-link" data-scroll-target="#invoke-direct-method-on-device"><span class="header-section-number">4.2</span> Invoke Direct Method on Device</a></li>
   <li><a href="#update-device-twin-properties" id="toc-update-device-twin-properties" class="nav-link" data-scroll-target="#update-device-twin-properties"><span class="header-section-number">4.3</span> Update Device Twin Properties</a></li>
   <li><a href="#get-device-twin-properties" id="toc-get-device-twin-properties" class="nav-link" data-scroll-target="#get-device-twin-properties"><span class="header-section-number">4.4</span> Get Device Twin Properties</a></li>
@@ -575,9 +575,9 @@ Note
 </section>
 <section id="device-commands" class="level2" data-number="4">
 <h2 data-number="4" class="anchored" data-anchor-id="device-commands"><span class="header-section-number">4</span> Device Commands</h2>
-<section id="send-c2d-message-from-simulated-device" class="level3" data-number="4.1">
-<h3 data-number="4.1" class="anchored" data-anchor-id="send-c2d-message-from-simulated-device"><span class="header-section-number">4.1</span> Send C2D Message from Simulated Device</h3>
-<p>The <code>az iot device c2d-message send</code> command sends a cloud-to-device message from your IoT hub to an IoT device. The message can include a <strong>data</strong> string, representing a <strong>payload</strong> for the command, and a set of key-value pairs, representing command <strong>properties</strong>.</p>
+<section id="send-c2d-message-to-simulated-device" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="send-c2d-message-to-simulated-device"><span class="header-section-number">4.1</span> Send C2D Message to Simulated Device</h3>
+<p>The <code>az iot device c2d-message send</code> command sends a <strong>cloud-to-device</strong> message from your IoT hub to an IoT device. The message can include a <strong>data</strong> string, representing a <strong>payload</strong> for the command, and a set of key-value pairs, representing command <strong>properties</strong>.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">az</span> iot device c2d-message send <span class="at">-d</span> simDevice <span class="at">--data</span> <span class="st">"Hello World"</span> <span class="at">--props</span> <span class="st">"key0=value0;key1=value1"</span> <span class="at">-n</span> {YourIoTHubName}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>If <code>simDevice</code> is the default simulated device as seen in the <a href="#create-a-simulated-device">Create a Simulated Device</a> section, then you should see the following log printed when a <code>c2d-message</code> is sent to it:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">C2D</span> Message Handler [Received C2D message]:</span>
