@@ -1,7 +1,7 @@
 ---
 title: Azure CLI Cheatsheet
 subtitle: "Reference for common Azure commands"
-date: 2024-04-21
+date: 2025-04-21
 ---
 
 ## Azure CLI Cheatsheet
@@ -21,11 +21,15 @@ You can "simulate" an IoT Device (that is, create a temporary stream that sends 
 using the commands below:
 
 ```bash
+# It's convenient to store these names in environment variables to re-use them
+$ export IOT_DEVICE_NAME=simDevice
+$ export IOTHUB_NAME=YourIoTHubName
+
 # Create a device with the name "simDevice"
-$ az iot hub device-identity create -d simDevice -n {YourIoTHubName}
+$ az iot hub device-identity create -d ${IOT_DEVICE_NAME} -n ${IOTHUB_NAME}
 
 # Begin device simulation
-$ az iot device simulate -d simDevice -n {YourIoTHubName}
+$ az iot device simulate -d ${IOT_DEVICE_NAME} -n ${IOTHUB_NAME}
 ```
 
 ::: {.callout-note .column-margin}
@@ -54,10 +58,10 @@ pausing/continuing/scrolling/parsing the `az iot hub monitor-events` command.
 
 ```bash
 # List all message details for all devices.
-$ az iot hub monitor-events --output table -p all -n {YourIoTHubName}
+$ az iot hub monitor-events --output table -p all -n ${IOTHUB_NAME}
 
 # List message details for a specific device:
-$ az iot hub monitor-events --output table --device-id {YourDevice} --hub-name {YourIoTHubName}
+$ az iot hub monitor-events --output table --device-id ${IOT_DEVICE_NAME} --hub-name ${IOTHUB_NAME}
 ```
 
 See `az iot hub monitor-events`
@@ -71,7 +75,7 @@ The `az iot device c2d-message send` command sends a **cloud-to-device** message
 The message can include a **data** string, representing a **payload** for the command, and a set of key-value pairs, representing command **properties**.
 
 ```bash
-az iot device c2d-message send -d simDevice --data "Hello World" --props "key0=value0;key1=value1" -n {YourIoTHubName}
+az iot device c2d-message send -d ${IOT_DEVICE_NAME} --data "Hello World" --props "key0=value0;key1=value1" -n ${IOTHUB_NAME}
 ```
 
 If `simDevice` is the default simulated device as seen in the [Create a Simulated Device](#create-a-simulated-device) section,
@@ -94,20 +98,52 @@ for more details.
 
 ### Invoke Direct Method on Device
 
+The `az iot hub invoke-device-method` command calls a method (specified by name) on a chosen device, and returns a payload.
+
 ```bash
-az iot hub invoke-device-method --mn MySampleMethod -d simDevice -n {YourIoTHubName}
+az iot hub invoke-device-method --mn ${METHOD_NAME} -d ${IOT_DEVICE_NAME} -n ${IOTHUB_NAME}
 ```
+
+If `simDevice` is the default simulated device as seen in the [Create a Simulated Device](#create-a-simulated-device) section,
+then you should see the following log printed when the `SetTelemetryInterval` direct method is invoked:
+
+::: {.panel-tabset}
+
+## Device console
+
+```bash
+Method Request Handler [Received direct method invocation request]:
+{ 'Device Id': 'simDevice',
+  'Method Request Id': '1',
+  'Method Request Name': 'SetTelemetryInterval',
+  'Method Request Payload': {}}
+```
+
+## Service console
+
+```json
+{
+  "payload": {
+    "methodName": "SetTelemetryInterval",
+    "methodRequestId": "1",
+    "methodRequestPayload": {}
+  },
+  "status": 200
+}
+```
+
+:::
 
 ### Update Device Twin Properties
 
 ```bash
-az iot hub device-twin update -d simDevice --desired '{"conditions":{"temperature":{"warning":98, "critical":107}}}' -n {YourIoTHubName}
+az iot hub device-twin update -d ${IOT_DEVICE_NAME} --desired '{"conditions":{"temperature":{"warning":98, "critical":107}}}' -n ${IOTHUB_NAME}
 ```
 
 ### Get Device Twin Properties
 
 ```bash
-az iot hub device-twin show -d simDevice --query properties.reported -n {YourIoTHubName}
+az iot hub device-twin show -d ${IOT_DEVICE_NAME} --query properties.reported -n ${IOTHUB_NAME}
 ```
 
 ## Connection Strings
@@ -122,7 +158,7 @@ See detailed documentation at
 Be advised: this connection string provides the highest level of access.
 
 ```bash
-az iot hub connection-string  show --hub-name {YourIoTHubName}
+az iot hub connection-string  show --hub-name ${IOTHUB_NAME}
 ```
 
 #### IoT Hub Service String
@@ -130,7 +166,7 @@ az iot hub connection-string  show --hub-name {YourIoTHubName}
 Recommended level of access for external applications:
 
 ```bash
-az iot hub connection-string show --policy-name service --hub-name {YourIoTHubName} --output table
+az iot hub connection-string show --policy-name service --hub-name ${IOTHUB_NAME} --output table
 ```
 
 #### EventHub Compatible String
@@ -139,7 +175,7 @@ Show the eventhub compatible connection string of the given IoT Hub's default
 eventhub:
 
 ```bash
-az iot hub connection-string show -n MyIotHub --default-eventhub
+az iot hub connection-string show -n ${IOTHUB_NAME} --default-eventhub
 ```
 
 ### Device Strings
@@ -148,6 +184,6 @@ Manage IoT device's connection string with
 [az iot hub device-identity connection-string show](https://learn.microsoft.com/en-us/cli/azure/iot/hub/device-identity/connection-string?view=azure-cli-latest#az-iot-hub-device-identity-connection-string-show)
 
 ```bash
-az iot hub device-identity connection-string show --device-id {YourDevice}
+az iot hub device-identity connection-string show --device-id ${IOT_DEVICE_NAME}
 ```
 
