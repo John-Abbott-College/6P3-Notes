@@ -15,25 +15,37 @@ Here is a list of commands we'll commonly use with Azure CLI.
 
 You can check that both requirements are met with the command `az --version`.
 
-## Create a Simulated Device
+## Create a Device
 
-You can "simulate" an IoT Device (that is, create a temporary stream that sends IoT messages similar to real IoT Devices)
-using the commands below:
+To register a [device](https://learn.microsoft.com/en-us/azure/iot/iot-glossary?toc=%2Fazure%2Fiot-hub%2Ftoc.json&bc=%2Fazure%2Fiot-hub%2Fbreadcrumb%2Ftoc.json#device)
+on IoTHub in Azure CLI, use the `az iot hub device-identity create` command:
+
+::: {.callout-note .column-margin}
+Recall that [Bash environment variables](/notes/bash-scripting/#environment-variables) allow you to store strings in a shell session.
+You can save environment variables in a project `.env` file that you can [`source`](/notes/bash-scripting#code-reuse) later.
+:::
 
 ```bash
-# It's convenient to store these names in environment variables to re-use them
+# It's convenient to store these names in environment variables for later re-use
 $ export IOT_DEVICE_NAME=simDevice
 $ export IOTHUB_NAME=YourIoTHubName
 
 # Create a device with the name "simDevice"
 $ az iot hub device-identity create -d ${IOT_DEVICE_NAME} -n ${IOTHUB_NAME}
+```
 
-# Begin device simulation
+## Simulate a Device
+
+You can "simulate" an IoT Device (that is, create a temporary stream that sends IoT messages similar to real IoT Devices)
+using the commands below:
+
+```bash
+# Begin device simulation for an existing device
 $ az iot device simulate -d ${IOT_DEVICE_NAME} -n ${IOTHUB_NAME}
 ```
 
 ::: {.callout-note .column-margin}
-The `az iot device simulate` command takes a minute to run.
+The `az iot device simulate` command runs for a few minutes unless interrupted by the user.
 Use [Bash Process Control keyboard shortcuts](/notes/bash-essentials/#process-control)
 to suspend, resume, scroll through the output, etc.!
 :::
@@ -78,7 +90,7 @@ The message can include a **data** string, representing a **payload** for the co
 az iot device c2d-message send -d ${IOT_DEVICE_NAME} --data "Hello World" --props "key0=value0;key1=value1" -n ${IOTHUB_NAME}
 ```
 
-If `simDevice` is the default simulated device as seen in the [Create a Simulated Device](#create-a-simulated-device) section,
+If `simDevice` is the default simulated device as seen in the [Simulate a Device](#simulate-a-device) section,
 then you should see the following log printed when a `c2d-message` is sent to it:
 
 ```bash
@@ -104,7 +116,7 @@ The `az iot hub invoke-device-method` command calls a method (specified by name)
 az iot hub invoke-device-method --mn ${METHOD_NAME} -d ${IOT_DEVICE_NAME} -n ${IOTHUB_NAME}
 ```
 
-If `simDevice` is the default simulated device as seen in the [Create a Simulated Device](#create-a-simulated-device) section,
+If `simDevice` is the default simulated device as seen in the [Simulate a Device](#simulate-a-device) section,
 then you should see the following log printed when the `SetTelemetryInterval` direct method is invoked:
 
 ::: {.panel-tabset}
