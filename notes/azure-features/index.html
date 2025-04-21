@@ -392,6 +392,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../notes/azure-cli-cheatsheet/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Azure CLI Cheatsheet</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../notes/debug-reterminal/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Debugging Reterminal Issues</span></a>
   </div>
@@ -670,7 +676,7 @@ Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>An old version of this document recommended using the <a href="https://docs.microsoft.com/en-us/cli/azure/install-azure-cli">official installation instructions</a> . Unfortunately, these methods (using <code>apt</code>) depend on unmaintained packages that cause issues.</p>
+<p>An old version of this document recommended using the <a href="https://docs.microsoft.com/en-us/cli/azure/install-azure-cli">official installation instructions</a>. Unfortunately, these methods (using <code>apt</code>) depend on unmaintained packages. Instead, install <code>azure-cli</code> in a python virtual environment as described below.</p>
 </div>
 </div>
 <dl>
@@ -689,7 +695,7 @@ Warning
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Install dependencies and azure-cli</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">.venv</span><span class="kw">)</span> <span class="ex">$</span> pip install wheel <span class="co"># needed to build azure-cli</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">.venv</span><span class="kw">)</span> <span class="ex">$</span> pip install azure-cli</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>You can later add these packages to a <code>requirements.txt</code> or <code>pyproject.toml</code> file for projects you need these tools regularly.</p>
+<p>You can later add these packages to a <code>requirements.txt</code> or <code>pyproject.toml</code> file for projects where you use these tools regularly.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -700,7 +706,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>If you’re having issues installing this package via the above method, make sure your system <code>python</code> is up to date. Revist the <a href="../../notes/developer-environment/#install-dependencies">course notes for installing developer environment dependencies</a>, and make sure your system packages and python libraries are up to date. Then, need to delete your existing virtual environment and recreate it.</p>
+<p>If you’re having issues installing this package via the above method, make sure your system <code>python</code> is up to date. Revist the <a href="../../notes/developer-environment/#install-dependencies">course notes for installing developer environment dependencies</a>, and make sure your system packages and python libraries are up to date. Then, delete your existing virtual environment and recreate it with the updated <code>python</code>.</p>
 </div>
 </div>
 <dl>
