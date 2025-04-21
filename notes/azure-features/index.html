@@ -464,7 +464,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#azure-iot-dev-tools" id="toc-azure-iot-dev-tools" class="nav-link" data-scroll-target="#azure-iot-dev-tools"><span class="header-section-number">6</span> Azure IoT Dev Tools</a>
   <ul>
-  <li><a href="#azure-portal" id="toc-azure-portal" class="nav-link" data-scroll-target="#azure-portal"><span class="header-section-number">6.1</span> Azure Portal</a></li>
+  <li><a href="#azure-portal" id="toc-azure-portal" class="nav-link" data-scroll-target="#azure-portal"><span class="header-section-number">6.1</span> Azure Portal</a>
+  <ul class="collapse">
+  <li><a href="#metrics" id="toc-metrics" class="nav-link" data-scroll-target="#metrics"><span class="header-section-number">6.1.1</span> Metrics</a></li>
+  </ul></li>
   <li><a href="#azure-cli" id="toc-azure-cli" class="nav-link" data-scroll-target="#azure-cli"><span class="header-section-number">6.2</span> Azure CLI</a>
   <ul class="collapse">
   <li><a href="#azure-cli-iot-extension" id="toc-azure-cli-iot-extension" class="nav-link" data-scroll-target="#azure-cli-iot-extension"><span class="header-section-number">6.2.1</span> Azure CLI IoT extension</a></li>
@@ -662,7 +665,32 @@ Figure&nbsp;4: Azure infrastructure map. You can find a current list of all Azur
 Figure&nbsp;5: The Azure Portal at <a href="https://portal.azure.com" class="uri">https://portal.azure.com</a> is a web app that can access and modify all of your IoT Hub data/configurations/actions/etc.
 </figcaption>
 </figure>
-</div></div></section>
+</div></div><section id="metrics" class="level4 page-columns page-full" data-number="6.1.1">
+<h4 data-number="6.1.1" class="anchored" data-anchor-id="metrics"><span class="header-section-number">6.1.1</span> Metrics</h4>
+<p>One very useful feature of Azure Portal is the data analysis and presentation software that comes built-in.</p>
+<p>Without any extra configuration, all IoT commands and actions are logged and stored on the Azure Portal, and visualizations of data usage can be easily displayed for verification/debugging/analysis.</p>
+
+<div class="no-row-height column-margin column-container"><div id="fig-azure-metrics" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-azure-metrics-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="assets/azure-metrics.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figure&nbsp;6: An example of the Azure Metrics portal page. You can easily verify that the daily number of messages you’re sending is below the Free Tier limit of 8000 by checking this page when using your IoT Hub devices."><img src="assets/azure-metrics.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-azure-metrics-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: An example of the Azure Metrics portal page. You can easily verify that the daily number of messages you’re sending is below the Free Tier limit of 8000 by checking this page when using your IoT Hub devices.
+</figcaption>
+</figure>
+</div></div><p>To find the metrics page for a given <strong>Azure resource</strong>, do the following:</p>
+<ol type="1">
+<li>In the left navigation menu on the Azure portal, select <strong>All Resources</strong>.</li>
+<li>Select the link on your IoT hub.</li>
+<li>Select <strong>Monitoring</strong> in the left pane of your IoT Hub, and find the <strong>Metrics</strong> submenu.</li>
+<li>In the <strong>Scope</strong> field, enter your IoT hub name.</li>
+<li>In the <strong>Metric Namespace field</strong>, select IoT Hub Standard Metrics.</li>
+<li>In the <strong>Metric</strong> field, select the desired metric.</li>
+<li>Hover your mouse pointer over the chart to see detailed information at a given time.</li>
+</ol>
+</section>
+</section>
 <section id="azure-cli" class="level3" data-number="6.2">
 <h3 data-number="6.2" class="anchored" data-anchor-id="azure-cli"><span class="header-section-number">6.2</span> Azure CLI</h3>
 <p><strong>Azure CLI</strong> is a terminal tool to manage Azure services offered as Bash and PowerShell shells.</p>
