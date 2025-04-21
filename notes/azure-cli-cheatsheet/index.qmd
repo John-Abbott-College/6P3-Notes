@@ -48,7 +48,7 @@ You can monitor all actions in an Azure IOT Hub using the `az iot hub monitor-ev
 
 ::: {.callout-note .column-margin}
 [Bash Process Control keyboard shortcuts](/notes/bash-essentials/#process-control)
-and [Bash redirect](/notes/bash-essentials/#redirection-and-pipes) commands are useful for 
+and [Bash redirection and pipes](/notes/bash-essentials/#redirection-and-pipes) are useful for
 pausing/continuing/scrolling/parsing the `az iot hub monitor-events` command.
 :::
 
@@ -63,6 +63,52 @@ $ az iot hub monitor-events --output table --device-id {YourDevice} --hub-name {
 See `az iot hub monitor-events`
 [documentation for details](https://learn.microsoft.com/en-us/cli/azure/iot/device?view=azure-cli-latest#az-iot-hub-monitor-events).
 
+## Device Commands
+
+### Send C2D Message from Simulated Device
+
+The `az iot device c2d-message send` command sends a cloud-to-device message from your IoT hub to an IoT device.
+The message can include a **data** string, representing a **payload** for the command, and a set of key-value pairs, representing command **properties**.
+
+```bash
+az iot device c2d-message send -d simDevice --data "Hello World" --props "key0=value0;key1=value1" -n {YourIoTHubName}
+```
+
+If `simDevice` is the default simulated device as seen in the [Create a Simulated Device](#create-a-simulated-device) section,
+then you should see the following log printed when a `c2d-message` is sent to it:
+
+```bash
+C2D Message Handler [Received C2D message]:
+{ 'Message Properties': { 'content_encoding': 'utf-8',
+                          'key0': 'value0',
+                          'key1': 'value1',
+                          'message_id': '1bbb2dd3-7b24-4e62-ab3a-79a8b13cb1fe'},
+  'Payload': 'Hello World',
+  'Topic': '/devices/simDevice/messages/devicebound'}
+```
+
+Note that the keys, values, and payload are set by the `--props` and `--data` arguments of the `c2d-message` command.
+
+See [az iot device c2d-message send documentation](https://learn.microsoft.com/en-us/cli/azure/iot/device/c2d-message?view=azure-cli-latest#az-iot-device-c2d-message-send)
+for more details.
+
+### Invoke Direct Method on Device
+
+```bash
+az iot hub invoke-device-method --mn MySampleMethod -d simDevice -n {YourIoTHubName}
+```
+
+### Update Device Twin Properties
+
+```bash
+az iot hub device-twin update -d simDevice --desired '{"conditions":{"temperature":{"warning":98, "critical":107}}}' -n {YourIoTHubName}
+```
+
+### Get Device Twin Properties
+
+```bash
+az iot hub device-twin show -d simDevice --query properties.reported -n {YourIoTHubName}
+```
 
 ## Connection Strings
 
@@ -105,31 +151,3 @@ Manage IoT device's connection string with
 az iot hub device-identity connection-string show --device-id {YourDevice}
 ```
 
-## Device Commands
-
-### Send C2D Message from Simulated Device
-
-Includes custom key, value properties.
-[See documentation](https://learn.microsoft.com/en-us/cli/azure/iot/device/c2d-message?view=azure-cli-latest#az-iot-device-c2d-message-send).
-
-```bash
-az iot device c2d-message send -d simDevice --data "Hello World" --props "key0=value0;key1=value1" -n {YourIoTHubName}
-```
-
-### Invoke Direct Method on Device
-
-```bash
-az iot hub invoke-device-method --mn MySampleMethod -d simDevice -n {YourIoTHubName}
-```
-
-### Update Device Twin Properties
-
-```bash
-az iot hub device-twin update -d simDevice --desired '{"conditions":{"temperature":{"warning":98, "critical":107}}}' -n {YourIoTHubName}
-```
-
-### Get Device Twin Properties
-
-```bash
-az iot hub device-twin show -d simDevice --query properties.reported -n {YourIoTHubName}
-```
