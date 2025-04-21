@@ -219,6 +219,33 @@ IoT Hub data/configurations/actions/etc.
 
 :::
 
+#### Metrics
+
+One very useful feature of Azure Portal is the data analysis and presentation software that comes built-in.
+
+Without any extra configuration, all IoT commands and actions are logged and stored on the Azure Portal, and
+visualizations of data usage can be easily displayed for verification/debugging/analysis.
+
+::: {#fig-azure-metrics .column-margin}
+
+![](assets/azure-metrics.png)
+
+An example of the Azure Metrics portal page. You can easily verify that the daily number of messages you're sending
+is below the Free Tier limit of 8000 by checking this page when using your IoT Hub devices.
+
+:::
+
+To find the metrics page for a given **Azure resource**, do the following:
+
+1. In the left navigation menu on the Azure portal, select **All Resources**.
+1. Select the link on your IoT hub.
+1. Select **Monitoring** in the left pane of your IoT Hub, and find the **Metrics** submenu.
+1. In the **Scope** field, enter your IoT hub name.
+1. In the **Metric Namespace field**, select IoT Hub Standard Metrics.
+1. In the **Metric** field, select the desired metric.
+1. Hover your mouse pointer over the chart to see detailed information at a given time.
+
+
 ### Azure CLI
 
 **Azure CLI** is a terminal tool to manage Azure services offered as Bash and
