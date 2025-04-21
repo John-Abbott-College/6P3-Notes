@@ -148,42 +148,36 @@ az iot hub device-twin show -d ${IOT_DEVICE_NAME} --query properties.reported -n
 
 ## Connection Strings
 
-### IoT Hub
+Connection Strings provide authentication for most [Azure SDK](/notes/azure-sdks) commands, both in Python and C#.
 
-See detailed documentation at
-[az iot hub connection-string](https://learn.microsoft.com/en-us/cli/azure/iot/hub/connection-string?view=azure-cli-latest)
+Here are the main Azure CLI methods for getting Connection Strings:
 
-#### IoT Hub Owner String
-
-Be advised: this connection string provides the highest level of access.
+::: {.callout-note .column-margin}
+[Bash redirection and pipes](/notes/bash-essentials/#redirection-and-pipes) are useful
+tools for saving the output of these connection string commands as [environment variables](/notes/bash-scripting/#environment-variables).
+You can save environment variables in a project `.env` file that you can [`source`](/notes/bash-scripting#code-reuse) later.
+:::
 
 ```bash
+# Device string: Recommended string for a single device
+az iot hub device-identity connection-string show \
+  --device-id ${IOT_DEVICE_NAME}
+
+# Service string: Recommended string for external applications
+az iot hub connection-string show \
+  --policy-name service \
+  --hub-name ${IOTHUB_NAME}
+
+# EventHub compatible string: needed for certain applications
+az iot hub connection-string show \
+  -n ${IOTHUB_NAME} \
+  --default-eventhub
+
+# Owner string: NOT recommended, provides access to entire resource group.
 az iot hub connection-string  show --hub-name ${IOTHUB_NAME}
 ```
 
-#### IoT Hub Service String
+See detailed documentation at learn.microsoft.com:
 
-Recommended level of access for external applications:
-
-```bash
-az iot hub connection-string show --policy-name service --hub-name ${IOTHUB_NAME} --output table
-```
-
-#### EventHub Compatible String
-
-Show the eventhub compatible connection string of the given IoT Hub's default
-eventhub:
-
-```bash
-az iot hub connection-string show -n ${IOTHUB_NAME} --default-eventhub
-```
-
-### Device Strings
-
-Manage IoT device's connection string with
-[az iot hub device-identity connection-string show](https://learn.microsoft.com/en-us/cli/azure/iot/hub/device-identity/connection-string?view=azure-cli-latest#az-iot-hub-device-identity-connection-string-show)
-
-```bash
-az iot hub device-identity connection-string show --device-id ${IOT_DEVICE_NAME}
-```
-
+- [`az iot hub connection-string`](https://learn.microsoft.com/en-us/cli/azure/iot/hub/connection-string?view=azure-cli-latest)
+- [`az iot hub device-identity connection-string show`](https://learn.microsoft.com/en-us/cli/azure/iot/hub/device-identity/connection-string?view=azure-cli-latest#az-iot-hub-device-identity-connection-string-show)
