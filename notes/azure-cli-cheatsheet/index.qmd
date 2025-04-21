@@ -65,9 +65,9 @@ See `az iot hub monitor-events`
 
 ## Device Commands
 
-### Send C2D Message from Simulated Device
+### Send C2D Message to Simulated Device
 
-The `az iot device c2d-message send` command sends a cloud-to-device message from your IoT hub to an IoT device.
+The `az iot device c2d-message send` command sends a **cloud-to-device** message from your IoT hub to an IoT device.
 The message can include a **data** string, representing a **payload** for the command, and a set of key-value pairs, representing command **properties**.
 
 ```bash
