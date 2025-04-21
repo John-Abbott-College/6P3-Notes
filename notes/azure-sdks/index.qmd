@@ -1,9 +1,10 @@
 ---
-title: Azure SDKs
-subtitle:
-  "Azure Libraries in Python and C# that you'll find useful for your projects."
-date: 2024-04-15
-draft: true
+title: Azure SDKs in Python and C#
+subtitle: |
+  Azure Libraries in Python and C#
+  Installation instructions for WSL,
+  how to use the libraries in your code.
+date: 2024-04-21
 ---
 
 Azure offers Software Development Kits (SDKs) for most of its services. Below
@@ -21,101 +22,85 @@ you will find references to the SDKs used in the course.
 Azure IoT provides SDKs for several languages such as Python, Java, .NET, C and
 Node.js.
 
-The SDKs are organized as:
+::: {#fig-iot-hub-architecture .column-margin}
 
-- **Device SDKs**
-  - Functionality to build **device clients** that communicate with and are
-    controlled by an **IoT Hub**.
-- **Service SDKs**
-  - Functionality for **applications and services** that communicate with an
-    **IoT Hub and registered devices**.
-  - Examples are a back-end service running on a VM or a mobile application.
-- **IoT Hub Management SDKs**
-  - Help build back-end applications that manage an IoT Hub.
+![](assets/iot-hub-architecture.svg)
 
-> Remember that the IoT Hub is only managing the device registration,
-> authentication and routing of messages and data.
->
-> The application logic and device control is typically done by a **back-end**
-> service and **user applications** using data routed via the IoT Hub's
-> end-points.
-
-![](assets/iot-hub-architecture.svg) _Azure IoT SDKs provide tooling and
+Azure IoT SDKs provide tooling and
 examples to develop devices, service applications and to manage the IoT Hub
-itself._
+itself.
 
-## Device SDKs
+:::
 
-| Language | Package                                                                | Source                                                  | Quickstarts                                                                                                                                    | Samples                                                                                  | Reference Docs                                                                                             |
-| -------- | ---------------------------------------------------------------------- | ------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| .NET     | [NuGet](https://www.nuget.org/packages/Microsoft.Azure.Devices.Client) | [GitHub](https://github.com/Azure/azure-iot-sdk-csharp) | [Connect to IoT Hub](https://learn.microsoft.com/en-us/azure/iot-develop/quickstart-send-telemetry-iot-hub?pivots=programming-language-csharp) | [Samples](https://github.com/Azure/azure-iot-sdk-csharp/tree/main/iothub/device/samples) | [Reference](https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.devices.client?view=azure-dotnet) |
-| Python   | [pip](https://pypi.org/project/azure-iot-device/)                      | [GitHub](https://github.com/Azure/azure-iot-sdk-python) | [Connect to IoT Hub](https://learn.microsoft.com/en-us/azure/iot-develop/quickstart-send-telemetry-iot-hub?pivots=programming-language-python) | [Samples](https://github.com/Azure/azure-iot-sdk-python/tree/main/samples)               | [Reference](https://learn.microsoft.com/en-us/python/api/azure-iot-device/?view=azure-python)              |
+There are a few categories of SDKs to know, which are managed and packaged separately:
 
-Device SDKs are further divided into:
+Device SDKs
+: Functionality to build **device clients** that communicate with and are controlled by an **IoT Hub**.
 
-1. **Provisioning**
+Service SDKs
+: Functionality for **applications and services** that communicate with an **IoT Hub and registered devices**. Examples are a back-end service running on a VM or a mobile application.
 
-   - How to provision (eg. create) a device identity on the Azure IoT Hub.
+IoT Hub Management SDKs
+: Help build back-end applications that manage an IoT Hub.
 
-2. **Device Client**
+::: {.callout-note}
+Remember that the IoT Hub is only managing the device registration,
+authentication and routing of messages and data.
 
-   - Devices that send telemetry messages to Azure IoT Hub
-   - Devices that receive Cloud-to-Device (C2D) messages from the Azure IoT Hub.
-   - Devices that receive and respond to direct method invocations from the
-     Azure IoT Hub.
+The application logic and device control is typically done by a **back-end**
+service and **user applications** using data routed via the IoT Hub's
+end-points.
+:::
 
-3. **Module Client**
 
-   - Mostly intended for communicating with Edge devices (**not covered in this
-     course**). See
-     [here](https://azure.microsoft.com/en-us/services/iot-edge/#iotedge-overview)
-     for more.
+## SDKs by language
 
-#### Python Notes
+::: {.panel-tabset}
 
-By default, the Python device SDKs connect to an IoT Hub over MQTT with:
+## Python
 
-- **CleanSession** flag set to **0**
-- **QoS 1** for message exchange with the IoT hub.
+Packages (pip)
+: Device: [azure-iot-device](https://pypi.org/project/azure-iot-device/)
+: Service: [azure-iot-hub](https://pypi.org/project/azure-iot-hub/)
+: IoTHub Management: [azure-mgmt-iothub](https://pypi.org/project/azure-mgmt-iothub/)
 
-It's possible to connect a generic MQTT client (ex.: the `paho-mqtt` client) to
-the IoT Hub. For a manual MQTT connection, see
-[Communicate with your IoT hub using the MQTT protocol](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-mqtt-support#main).
+Source (GitHub)
+: Device: [azure/azure-iot-sdk-python](https://github.com/Azure/azure-iot-sdk-python)
+: Service: [azure/azure-iot-hub-python](https://github.com/Azure/azure-iot-hub-python/)
+: IoTHub Management: [azure/azure-sdk-for-python](https://github.com/Azure/azure-sdk-for-python)
 
-## Service SDKs
+Tutorials
+: All: [Connect to IoT Hub (Python)](https://learn.microsoft.com/en-us/azure/iot-develop/quickstart-send-telemetry-iot-hub?pivots=programming-language-python)
 
-| Language | Package                                                                | Source                                                  | Samples                                                                                   | Reference Docs                                                                                      |
-| -------- | ---------------------------------------------------------------------- | ------------------------------------------------------- | ----------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| .NET     | [NuGet](https://www.nuget.org/packages/Microsoft.Azure.Devices.Client) | [GitHub](https://github.com/Azure/azure-iot-sdk-csharp) | [Samples](https://github.com/Azure/azure-iot-sdk-csharp/tree/main/iothub/service/samples) | [Reference](https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.devices?view=azure-dotnet) |
-| Python   | [pip](https://pypi.org/project/azure-iot-hub/)                         | [GitHub](https://github.com/Azure/azure-iot-hub-python) | [Samples](https://github.com/Azure/azure-iot-hub-python/tree/main/samples)                | [Reference](https://learn.microsoft.com/en-us/python/api/azure-iot-hub/?view=azure-python)          |
+Examples
+: Device: [azure-iot-sdk-python/samples](https://github.com/Azure/azure-iot-sdk-python/tree/main/samples)
+: Service: [azure-iot-hub-python/samples](https://github.com/Azure/azure-iot-hub-python/tree/main/samples)
 
-### Registry Manager
+Reference
+: Device: [learn.microsoft.com](https://learn.microsoft.com/en-us/python/api/azure-iot-device/?view=azure-python)
+: Service: [learn.microsoft.com](https://learn.microsoft.com/en-us/python/api/azure-iot-hub/?view=azure-python)
+: IoTHub Management: [learn.microsoft.com](https://learn.microsoft.com/en-us/python/api/azure-mgmt-iothub/?view=azure-python)
 
-Some SDKs include an **IoT Hub Registry Manager** service client in order to:
+## C\#
 
-- Provides CRUD operations for device on IoTHub
-- Get statistics about the IoTHub service and devices
+Package (NuGet)
+: Device: [Microsoft.Azure.Devices.Client](https://www.nuget.org/packages/Microsoft.Azure.Devices.Client)
+: Service: [Microsoft.Azure.Devices](https://www.nuget.org/packages/Microsoft.Azure.Devices.Client)
+: IoTHub Management: [Azure.ResourceManager.IotHub](https://www.nuget.org/packages/Azure.ResourceManager.IotHub/)
 
-Since this is a SDK to manage a cloud service (IoT Hub), it assumes bandwidth is
-not constrained and most calls are made over HTTPS.
+Source (GitHub)
+: Device/Service: [azure/azure-iot-sdk-csharp](https://github.com/Azure/azure-iot-sdk-csharp) 
+: IoTHub Management: [azure/azure-iot-for-net](https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/iothub)
 
-### Event Hubs Service SDK
+Tutorials
+: All: [Connect to IoT Hub (C#)](https://learn.microsoft.com/en-us/azure/iot-develop/quickstart-send-telemetry-iot-hub?pivots=programming-language-csharp) 
 
-> Behind the scenes, IoT Hubs is an instance of another Azure service called
-> [Event Hubs.](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-about)
-> Please see the chapter on
-> [Reading D2C Messages with the EventHub SDK](https://john-abbott-college.github.io/6P3-Notes/#/lessons/15-eventhub-dotnet).
+Examples
+: Device: [azure-iot-sdk-csharp/iothub/device/samples](https://github.com/Azure/azure-iot-sdk-csharp/tree/main/iothub/device/samples) 
+: Service: [azure-iot-sdk-csharp/iothub/service/samples](https://github.com/Azure/azure-iot-sdk-csharp/tree/main/iothub/service/samples)
 
-## IoT Hub Management
+Reference
+: Device/Service: [learn.microsoft.com](https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.devices.client?view=azure-dotnet) 
+: IoTHub management: [learn.microsoft.com](https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.management.iothub?view=azure-dotnet) 
 
-| Platform | Package                                                               | Code repository                                                                                | Reference                                                                                                     |
-| -------- | --------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| .NET     | [NuGet](https://www.nuget.org/packages/Azure.ResourceManager.IotHub/) | [GitHub](https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/iothub)                      | [Reference](https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.management.iothub?view=azure-dotnet) |
-| Python   | [pip](https://pypi.org/project/azure-mgmt-iothub/)                    | [GitHub](https://github.com/Azure/azure-sdk-for-python/tree/main/sdk/iothub/azure-mgmt-iothub) | [Reference](https://learn.microsoft.com/en-us/python/api/azure-mgmt-iothub/?view=azure-python)                |
-
-## Browse Code Samples
-
-In addition to the sample code provided in each of the SDK's repositories, Azure
-also offers a catalogue of code samples for different types of Azure services:
-
-- [Browse Azure Code Samples](https://learn.microsoft.com/en-us/samples/browse/?products=dotnet%2Cazure%2Cvs-code&terms=iot)
+:::
