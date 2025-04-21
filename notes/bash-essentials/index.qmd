@@ -26,7 +26,7 @@ Each section below is some set of tips for using the interactive bash CLI effect
 
 ### Keyboard shortcuts
 
-::: {.callout-note collapse="true"}
+::: {.callout-note collapse="false"}
 
 ## Keyboard Shortcuts: details & examples
 

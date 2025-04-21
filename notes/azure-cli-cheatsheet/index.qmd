@@ -1,61 +1,38 @@
 ---
 title: Azure CLI Cheatsheet
 subtitle: "Reference for common Azure commands"
-date: 2024-04-18
-draft: true
+date: 2024-04-21
 ---
 
 ## Azure CLI Cheatsheet
 
-Most of these commands where obtained from
-_[Quickstart: Send telemetry from a device to an IoT hub and monitor it with the Azure CLI](https://learn.microsoft.com/en-us/azure/iot-hub/quickstart-send-telemetry-cli)_.
+Here is a list of commands we'll commonly use with Azure CLI.
 
-## Connection Strings
+### Requirements
 
-### IoT Hub
+- Azure CLI is installed: see [Azure CLI Installation Instructions](/notes/azure-features/#azure-cli)
+- Azure IoT extension enabled: `az extension add --name azure-iot`
 
-See detailes documentation at
-[az iot hub connection-string](https://learn.microsoft.com/en-us/cli/azure/iot/hub/connection-string?view=azure-cli-latest)
+You can check that both requirements are met with the command `az --version`.
 
-#### IoT Hub Owner String
+## Create a Simulated Device
 
-Be advised: this connection string provides the highest level of access.
+You can "simulate" an IoT Device (that is, create a temporary stream that sends IoT messages similar to real IoT Devices)
+using the commands below:
 
-```{.bash}
-az iot hub connection-string  show --hub-name {YourIoTHubName}
+```bash
+# Create a device with the name "simDevice"
+$ az iot hub device-identity create -d simDevice -n {YourIoTHubName}
+
+# Begin device simulation
+$ az iot device simulate -d simDevice -n {YourIoTHubName}
 ```
 
-#### IoT Hub Service String
-
-Recommended level of access for external applications:
-
-```{.bash}
-az iot hub connection-string show --policy-name service --hub-name {YourIoTHubName} --output table
-```
-
-#### EventHub Compatible String
-
-Show the eventhub compatible connection string of the given IoT Hub's default
-eventhub:
-
-```{.bash}
-az iot hub connection-string show -n MyIotHub --default-eventhub
-```
-
-### Device Strings
-
-Manage IoT device's connection string with
-[az iot hub device-identity connection-string show](https://learn.microsoft.com/en-us/cli/azure/iot/hub/device-identity/connection-string?view=azure-cli-latest#az-iot-hub-device-identity-connection-string-show)
-
-```{.bash}
-az iot hub device-identity connection-string show --device-id {YourDevice}
-```
-
-## Simulating a Device
-
-```{.bash}
-az iot device simulate -d simDevice -n {YourIoTHubName}
-```
+::: {.callout-note .column-margin}
+The `az iot device simulate` command takes a minute to run.
+Use [Bash Process Control keyboard shortcuts](/notes/bash-essentials/#process-control)
+to suspend, resume, scroll through the output, etc.!
+:::
 
 By default, this command will:
 
@@ -65,49 +42,94 @@ By default, this command will:
 See `az iot device simulate`
 [documentation for details](https://learn.microsoft.com/en-us/cli/azure/iot/device?view=azure-cli-latest#az-iot-device-simulate).
 
-## Messages
+## Monitor Messages
 
-### Monitor C2D Messages
+You can monitor all actions in an Azure IOT Hub using the `az iot hub monitor-events` command:
 
-List all message details for all devices.
+::: {.callout-note .column-margin}
+[Bash Process Control keyboard shortcuts](/notes/bash-essentials/#process-control)
+and [Bash redirect](/notes/bash-essentials/#redirection-and-pipes) commands are useful for 
+pausing/continuing/scrolling/parsing the `az iot hub monitor-events` command.
+:::
 
-```{.bash}
-az iot hub monitor-events --output table -p all -n {YourIoTHubName}
+```bash
+# List all message details for all devices.
+$ az iot hub monitor-events --output table -p all -n {YourIoTHubName}
+
+# List message details for a specific device:
+$ az iot hub monitor-events --output table --device-id {YourDevice} --hub-name {YourIoTHubName}
 ```
 
-List message details for a specific device:
+See `az iot hub monitor-events`
+[documentation for details](https://learn.microsoft.com/en-us/cli/azure/iot/device?view=azure-cli-latest#az-iot-hub-monitor-events).
 
-```{.bash}
-az iot hub monitor-events --output table --device-id {YourDevice} --hub-name {YourIoTHubName}
+
+## Connection Strings
+
+### IoT Hub
+
+See detailed documentation at
+[az iot hub connection-string](https://learn.microsoft.com/en-us/cli/azure/iot/hub/connection-string?view=azure-cli-latest)
+
+#### IoT Hub Owner String
+
+Be advised: this connection string provides the highest level of access.
+
+```bash
+az iot hub connection-string  show --hub-name {YourIoTHubName}
 ```
 
-### Send C2D Message
+#### IoT Hub Service String
+
+Recommended level of access for external applications:
+
+```bash
+az iot hub connection-string show --policy-name service --hub-name {YourIoTHubName} --output table
+```
+
+#### EventHub Compatible String
+
+Show the eventhub compatible connection string of the given IoT Hub's default
+eventhub:
+
+```bash
+az iot hub connection-string show -n MyIotHub --default-eventhub
+```
+
+### Device Strings
+
+Manage IoT device's connection string with
+[az iot hub device-identity connection-string show](https://learn.microsoft.com/en-us/cli/azure/iot/hub/device-identity/connection-string?view=azure-cli-latest#az-iot-hub-device-identity-connection-string-show)
+
+```bash
+az iot hub device-identity connection-string show --device-id {YourDevice}
+```
+
+## Device Commands
+
+### Send C2D Message from Simulated Device
 
 Includes custom key, value properties.
 [See documentation](https://learn.microsoft.com/en-us/cli/azure/iot/device/c2d-message?view=azure-cli-latest#az-iot-device-c2d-message-send).
 
-```{.bash}
+```bash
 az iot device c2d-message send -d simDevice --data "Hello World" --props "key0=value0;key1=value1" -n {YourIoTHubName}
 ```
 
-## Direct Methods
-
 ### Invoke Direct Method on Device
 
-```{.bash}
+```bash
 az iot hub invoke-device-method --mn MySampleMethod -d simDevice -n {YourIoTHubName}
 ```
 
-## Device Twins
-
 ### Update Device Twin Properties
 
-```{.bash}
+```bash
 az iot hub device-twin update -d simDevice --desired '{"conditions":{"temperature":{"warning":98, "critical":107}}}' -n {YourIoTHubName}
 ```
 
 ### Get Device Twin Properties
 
-```{.bash}
+```bash
 az iot hub device-twin show -d simDevice --query properties.reported -n {YourIoTHubName}
 ```
