@@ -25,13 +25,10 @@ telemetry data as well as respond to remote commands.
   language.
 - Familiarity using the Bash shell and basic Linux CLI.
 - Familiarity with Python.
-- A Raspberry Pi with various sensors and actuators (see page
-  [Hardware List](topics/getting-started/docs/hardware-list.qmd)).
+- A Raspberry Pi with various sensors and actuators (see
+  [Course Hardware](/notes/course-hardware))
 - A Microsoft Azure account: create a free
-  [Azure for Students account](https://azure.microsoft.com/en-us/free/students/)
-  if necessary.
-- VS Code configured for Python programming and remote development (see page
-  [Dev Setup](topics/getting-started/docs/vscode-python-setup.qmd)).
+  [Azure for Students account](https://azure.microsoft.com/en-us/free/students/).
 
 ## Source Code
 
