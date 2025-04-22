@@ -76,6 +76,16 @@ $ az iot hub monitor-events --output table -p all -n ${IOTHUB_NAME}
 $ az iot hub monitor-events --output table --device-id ${IOT_DEVICE_NAME} --hub-name ${IOTHUB_NAME}
 ```
 
+::: {.callout-warning}
+If you are having `uamqp` errors when using this command, try installing it in `pip` first.
+```bash
+(.venv) $ pip install uamqp
+```
+
+If the above is giving you issues, see the [course notes on installing azure cli](/notes/azure-features#azure-cli)
+for more troubleshooting info.
+:::
+
 See `az iot hub monitor-events`
 [documentation for details](https://learn.microsoft.com/en-us/cli/azure/iot/device?view=azure-cli-latest#az-iot-hub-monitor-events).
 
@@ -173,7 +183,8 @@ You can save environment variables in a project `.env` file that you can [`sourc
 ```bash
 # Device string: Recommended string for a single device
 az iot hub device-identity connection-string show \
-  --device-id ${IOT_DEVICE_NAME}
+  --device-id ${IOT_DEVICE_NAME} \
+  --hub-name ${IOTHUB_NAME}
 
 # Service string: Recommended string for external applications
 az iot hub connection-string show \

@@ -262,23 +262,33 @@ Documentation
 Installation
 : `azure-cli` is a python package we can install in a virtual environment:
 
+::: {.callout-note .column-margin}
+If you're having issues installing `azure-cli`, make sure your system `python` is up to date.
+Revist the [course notes for installing developer environment dependencies](/notes/developer-environment/#install-dependencies),
+and make sure your system packages and python libraries are up to date.
+Then, delete your existing virtual environment and recreate it with the updated `python`.
+:::
+
 ```bash
 # Create a venv if you do not have one already
 $ python -m venv .venv
 (.venv) $ source .venv/bin/activate
 # Install dependencies and azure-cli
-(.venv) $ pip install wheel # needed to build azure-cli
+(.venv) $ pip install uamqp
 (.venv) $ pip install azure-cli
 ```
 
-You can later add these packages to a `requirements.txt` or `pyproject.toml` file for projects where you use these tools regularly.
+::: {.callout-warning}
+If you are having errors installing `uamqp`, try the following:
 
-::: {.callout-note}
-If you're having issues installing this package via the above method, make sure your system `python` is up to date.
-Revist the [course notes for installing developer environment dependencies](/notes/developer-environment/#install-dependencies),
-and make sure your system packages and python libraries are up to date.
-Then, delete your existing virtual environment and recreate it with the updated `python`.
+```bash
+(.venv) $ export CFLAGS="-Wno-error=incompatible-function-pointer-types"
+(.venv) $ export CMAKE_POLICY_VERSION_MINIMUM=3.5
+(.venv) $ pip install uamqp
+```
 :::
+
+You can later add these packages to a `requirements.txt` or `pyproject.toml` file for projects where you use these tools regularly.
 
 
 Quick Start
