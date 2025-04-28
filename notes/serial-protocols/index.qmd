@@ -3,7 +3,7 @@ title: "Serial protocols"
 subtitle:
   "A deeper dive into the protocols used to communicate between GPIO and the
   kernel"
-date: 2024-03-14
+date: 2025-03-14
 ---
 
 ## Serial Protocols
@@ -20,7 +20,7 @@ digital communication protocols**:
 
 Below is the **pin out diagram illustrating the specialized pins**:
 
-![Breakout of 40-pin header for reTerminal](../assets/9-serial-digital-reterminal-40-pin-header.png)
+![Breakout of 40-pin header for reTerminal](assets/9-serial-digital-reterminal-40-pin-header.png)
 
 <p class=img-info>
 	<a href="https://wiki.seeedstudio.com/reTerminal/#pinout-diagram"> GPIO and pin diagram of the reTerminal </a>&nbsp; - reTerminal Official Wiki, Seeed.
@@ -42,7 +42,7 @@ Serial communication can be either: **synchronous** and **asynchronous**.
 A synchronous serial interface always pairs its data line(s) with a clock
 signal. Therefore, all devices on the same data bus share a common clock.
 
-![Synonymous unidirectional serial communication with a clock line](../assets/9-serial-sync-unidirectional.png)
+![Synonymous unidirectional serial communication with a clock line](assets/9-serial-sync-unidirectional.png)
 
 <p class=img-info>
 	<a href="https://learn.sparkfun.com/tutorials/serial-communication"> Serial interface unidirectionally transmitting one bit at every clock pulse </a>&nbsp; Serial Communication, Sparkfun.
@@ -71,7 +71,7 @@ put into reliably transferring and receiving data.
 Asynchronous serial communication is typically intended for **only two devices**
 to communicate
 
-![Wiring diagram of two serial communication devices](../assets/9-serial-wiring.png)
+![Wiring diagram of two serial communication devices](assets/9-serial-wiring.png)
 
 <p class=img-info>
 	<a href="https://learn.sparkfun.com/tutorials/serial-communication"> Wiring diagram for two devices communicating with the Serial protocol </a>&nbsp; Serial Communication, Sparkfun.
@@ -88,7 +88,7 @@ For example, when using the serial monitor of the Arduino IDE, it's necessary to
 properly select the Baud Rate so that both the client device (the Arduino) and
 the host (your PC) know the exactly clock frequency of the serial communication.
 
-![Selecting the Baud rate in the Arduino serial monitor](../assets/9-serial-arduino-baud-rate.png)
+![Selecting the Baud rate in the Arduino serial monitor](assets/9-serial-arduino-baud-rate.png)
 
 <p class=img-info>
 	<a href=#></a>&nbsp; Selecting the baud rate of the Arduino IDE's serial monitor.
@@ -160,7 +160,7 @@ with serial.Serial('/dev/serial0', 9600) as ser:
 Once both scripts are run simultaneously, the signal observed would look the
 following:
 
-![](../assets/9-serial-demo.png)
+![](assets/9-serial-demo.png)
 
 ## Serial Peripheral Interface (SPI)
 
@@ -184,7 +184,7 @@ The following nomenclature is typically used:
   controller. The controller uses this line to enable (wake-up) the peripheral
   when it wants to communicate by setting it low.
 
-![Wiring and bit exchange between SPI devices](../assets/9-serial-spi-wiring.png)
+![Wiring and bit exchange between SPI devices](assets/9-serial-spi-wiring.png)
 
 <p class=img-info>
 	<a href="https://learn.sparkfun.com/tutorials/serial-peripheral-interface-spi"> Wiring diagram for two devices communicating over SPI</a>&nbsp; Serial Peripheral Interface (SPI), Sparkfun.
@@ -194,7 +194,7 @@ Each peripheral device connected to the controller will need a separate CS line.
 To talk to a particular peripheral, the controller makes that peripheral's CS
 line low and keep the rest of them high.
 
-![](../assets/9-serial-spi-multi-peripherals.png)
+![](assets/9-serial-spi-multi-peripherals.png)
 
 <p class=img-info>
 	<a href="https://learn.sparkfun.com/tutorials/serial-peripheral-interface-spi"> Multiple peripheral devices with unique CS lines talking to the same controller </a>&nbsp; Serial Peripheral Interface (SPI), Sparkfun.
@@ -275,7 +275,7 @@ When communicating, messages are broken up into two types of frame:
 - One or more data frames, which are 8-bit data messages passed from controller
   to peripheral or vice versa.
 
-![](../assets/9-serial-i2c-frames.png)
+![](assets/9-serial-i2c-frames.png)
 
 <p class=img-info>
 	<a href="https://learn.sparkfun.com/tutorials/i2c/all"> Clock and data lines for I2C, showing address and data frames </a>&nbsp; I2C, Sparkfun.

@@ -5,8 +5,7 @@ subtitle:
   `apt` package manager
 reference-location: margin
 citation-location: margin
-date: 2024-04-18
-draft: true
+date: 2025-04-28
 ---
 
 ## Raspberry Pi OS and Debian
@@ -75,11 +74,6 @@ system packages** on your system:
 ```bash
 $ sudo apt update && sudo apt upgrade -y
 ```
-
-::: {.callout-important} Important: see
-[the March 14 announcement about upgrading your Pi](/announcements/2024-03-14-pi-update.qmd)
-if at any point a system update causes hardware issues (e.g. your screen stops
-working) :::
 
 There are a few other `apt` commands worth knowing.
 

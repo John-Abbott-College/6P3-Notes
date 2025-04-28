@@ -4,7 +4,7 @@ subtitle:
   Understanding the General Purpose Input and Output (GPIO) pins our reTerminal
   makes available to us. Voltage, digital vs. analog, python
   libraries for GPIO.
-date: 2024-03-14
+date: 2025-03-14
 categories: ["Hardware"]
 ---
 
@@ -29,7 +29,7 @@ Input and Output (GPIO)** pins.
 Any of the GPIO pins can be designated (in software) as an input or output pin
 and used for a wide range of purposes.
 
-![Diagram of Pi's 40 GPIO pins](../assets/7-gpio-pi-40-pin-reference.png)
+![Diagram of Pi's 40 GPIO pins](assets/7-gpio-pi-40-pin-reference.png)
 
 <p class=img-info>
 	<a href="https://www.raspberrypi.com/documentation/computers/os.html#gpio-and-the-40-pin-header"> GPIO and the 40-pin headers of the Raspberry Pi </a>&nbsp; - Official docs, Raspberry Pi Foundation.
@@ -37,7 +37,7 @@ and used for a wide range of purposes.
 
 The reTerminal exposes the same 40-pin header as the Pi on it's side:
 
-![Breakout of 40-pin header for reTerminal](../assets/7-gpio-reterminal-40-pin-header.png)
+![Breakout of 40-pin header for reTerminal](assets/7-gpio-reterminal-40-pin-header.png)
 
 <p class=img-info>
 	<a href="https://wiki.seeedstudio.com/reTerminal/#pinout-diagram"> GPIO and pin diagram of the reTerminal </a>&nbsp; - reTerminal Official Wiki, Seeed.
@@ -121,7 +121,8 @@ by default in Raspberry Pi OS.
 $ pinout
 ```
 
-::: {.callout-important} While connecting up simple components to the GPIO pins
+::: {.callout-important}
+While connecting up simple components to the GPIO pins
 is perfectly safe, it's important to be careful how you wire things up. LEDs
 should have resistors to limit the current passing through them. Do not use 5V
 for 3.3V components. Do not connect motors directly to the GPIO pins, instead

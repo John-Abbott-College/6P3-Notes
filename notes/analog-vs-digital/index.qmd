@@ -3,7 +3,7 @@ title: "Signals: Analog and digital"
 subtitle:
   Comparing the two paradigms for measuring electronic information and
   understanding how each are used for distributed applications.
-date: 2024-03-14
+date: 2025-03-14
 categories: ["Hardware"]
 ---
 
@@ -44,7 +44,7 @@ temperature reaches some minimum and maximum values.
 The chart below is tracking the temperature in a room as the A/C and heating
 systems are activated over a few days.
 
-![](../assets/6-analog-digital-analog-temperature.png)
+![](assets/6-analog-digital-analog-temperature.png)
 
 <p class=img-info>
 	<a href="https://info.sparkfun.com/hubfs/Poster%20Downloads/Analog%20vs%20Digital/Concept%20Poster%20Analog%20vs%20Digital%20WEB.pdf"> Temperature changes over time </a>&nbsp; Adapted from poster: Analog and Digital Signals by Digikey.
@@ -94,7 +94,7 @@ analog or digital.
 > A time-versus-voltage graph of an analog signal should be **smooth** and
 > **continuous**.
 
-[![Analog Sine Wave](https://cdn.sparkfun.com/assets/3/7/6/6/0/51c48875ce395f745a000000.png)](https://cdn.sparkfun.com/assets/3/7/6/6/0/51c48875ce395f745a000000.png)
+[![Analog Sine Wave](https://cdn.sparkfun.cassets/3/7/6/6/0/51c48875ce395f745a000000.png)](https://cdn.sparkfun.com/assets/3/7/6/6/0/51c48875ce395f745a000000.png)
 
 While these signals may be limited to a **range** of maximum and minimum values,
 there are still an infinite number of possible values within that range.
@@ -120,7 +120,7 @@ Below is a the timing graph of a signal whose **low voltage is 0 volts** and
 
 This type of signal is also known as a **square waves**.
 
-[![Square wave signal. Two values, either 0V or 5V.](https://cdn.sparkfun.com/assets/c/8/5/b/e/51c495ebce395f1b5a000000.png)](https://cdn.sparkfun.com/assets/c/8/5/b/e/51c495ebce395f1b5a000000.png)
+[![Square wave signal. Two values, either 0V or 5V.](https://cdn.sparkfun.cassets/c/8/5/b/e/51c495ebce395f1b5a000000.png)](https://cdn.sparkfun.com/assets/c/8/5/b/e/51c495ebce395f1b5a000000.png)
 
 <p class=img-info>
 	<a href="https://learn.sparkfun.com/tutorials/analog-vs-digital/all"> 0 to 5 volt "pulses" forming a square ware </a>&nbsp; - Analog vs. Digital by Digikey.
@@ -134,7 +134,7 @@ Viewed from afar, the wave function below may seem smooth and analog, but when
 you look closely there are tiny discrete **steps** as the signal tries to
 approximate analog values.
 
-[![Digital Sine Wave](https://cdn.sparkfun.com/assets/0/2/8/4/6/51c85fbece395fbc03000000.png)](https://cdn.sparkfun.com/assets/0/2/8/4/6/51c85fbece395fbc03000000.png)
+[![Digital Sine Wave](https://cdn.sparkfun.cassets/0/2/8/4/6/51c85fbece395fbc03000000.png)](https://cdn.sparkfun.com/assets/0/2/8/4/6/51c85fbece395fbc03000000.png)
 
 <p class=img-info>
 	<a href="https://learn.sparkfun.com/tutorials/analog-vs-digital/all"> Oscillating voltage from -120V to 120V represented as a digital signal </a>&nbsp; - Analog vs. Digital by Digikey.
@@ -164,7 +164,7 @@ voltage, temperature, light, etc).
 Referring to the room temperature example used earlier, if we used a digital
 thermometer to record the temperature, our graph might look like the following:
 
-![](../assets/6-analog-digital-temp-sampling.png)
+![](assets/6-analog-digital-temp-sampling.png)
 
 <p class=img-info>
 	<a href="https://info.sparkfun.com/hubfs/Poster%20Downloads/Analog%20vs%20Digital/Concept%20Poster%20Analog%20vs%20Digital%20WEB.pdf"> Temperature represented as a digital reading </a>&nbsp; Poster: Analog and Digital Signals by Digikey.
@@ -212,7 +212,7 @@ number of samples taken per second is the **sample frequency or sample rate**
 Basically, **sampling is taking snap-shot values of the analog signal at regular
 time intervals.**
 
-![Analog signal showing sample period and sample frequency](../assets/6-analog-digital-sample-period.png)
+![Analog signal showing sample period and sample frequency](assets/6-analog-digital-sample-period.png)
 
 <p class=img-info>
 	<a href="https://www.usna.edu/ECE/ec312/Lessons/wireless/EC312_Lesson_20_Analog_to_Digital_Course_Notes.pdf"> Sample period and fequency for an electric signal </a>&nbsp; - US Naval Academy.
@@ -227,7 +227,7 @@ time intervals.**
 
 The higher the sample rate, the more accurate the digital signal is.
 
-![Signals of increasing sample rate](../assets/6-analog-digital-increasing-sample-rate.png)
+![Signals of increasing sample rate](assets/6-analog-digital-increasing-sample-rate.png)
 
 <p class=img-info>
 	<a href="https://www.usna.edu/ECE/ec312/Lessons/wireless/EC312_Lesson_20_Analog_to_Digital_Course_Notes.pdf"> Same signal sampled with different sample rates </a>&nbsp; - US Naval Academy.
@@ -273,7 +273,7 @@ Assuming the ADC has a resolution of 3 bits, all voltage values (-1V to 1V) must
 be represented with at most 3 bits, or 2^3 = 8 unique values (0 is a unique
 value).
 
-![voltage signal converted to a bit resolution of 3 bits](../assets/6-analog-digital-bit-resolution.png)
+![voltage signal converted to a bit resolution of 3 bits](assets/6-analog-digital-bit-resolution.png)
 
 <p class=img-info>
 	<a href="https://www.usna.edu/ECE/ec312/Lessons/wireless/EC312_Lesson_20_Analog_to_Digital_Course_Notes.pdf"> Voltage signal between -1V and 1V converted to digital with a 3 bit resolution </a>&nbsp; - US Naval Academy.
@@ -323,7 +323,7 @@ A) What are the voltages being sampled by the ADC?
 B) If the signal reached max voltage, what would be the integer number passed to
 the program by the ADC?
 
-![Graph for exercise 1](../assets/6-analog-digital-exercise1.png)
+![Graph for exercise 1](assets/6-analog-digital-exercise1.png)
 
 <details>  
 <summary>Solution</summary>

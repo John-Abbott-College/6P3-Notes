@@ -1,8 +1,7 @@
 ---
 title: EventHubs & .NET SDK
 subtitle: "More notes on how to send and receive events in C#"
-date: 2024-05-13
-draft: true
+date: 2025-04-28
 ---
 
 _The notes below were taken from the official Microsoft documentation page
@@ -26,7 +25,7 @@ storage or data lake (more on this later).
 >
 > - [**Features and terminology in Azure Event Hubs**](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-features)
 
-![Data flow through Event Hub being forwarded to a consumer and stored](../assets/15-routing-event-hub.png)
+![Data flow through Event Hub being forwarded to a consumer and stored](assets/15-routing-event-hub.png)
 
 <p class=img-info>
 <a href="https://www.youtube.com/watch?v=zm1XUTAa9sc"> Data flow through Event Hub being forwarded to a consumer and stored </a>&nbsp; Azure Event Hubs, Blaize Stewart.

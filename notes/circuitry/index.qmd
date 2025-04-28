@@ -3,8 +3,7 @@ title: "Electronics Basics"
 subtitle:
   "Review of Ohm's Law, fundamental concepts for understanding electronic
   circuits and interfaces."
-date: 2024-03-11
-draft: true
+date: 2025-04-28
 ---
 
 ## Why study electronics?

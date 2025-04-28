@@ -4,7 +4,7 @@ subtitle: |
   Azure Libraries in Python and C#
   Installation instructions for WSL,
   how to use the libraries in your code.
-date: 2024-04-21
+date: 2025-04-21
 ---
 
 Azure offers Software Development Kits (SDKs) for most of its services. Below

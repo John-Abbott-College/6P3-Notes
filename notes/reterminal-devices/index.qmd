@@ -4,7 +4,7 @@ subtitle:
   Installing initial reTerminal packages. Reading and controlling the reTerminal
   hardware interfaces, e.g. touchscreen, LEDs, light sensor, screen backlight, etc.
 categories: ["Hardware"]
-date: 2024-03-10
+date: 2025-03-10
 ---
 
 ::: {.column-margin}

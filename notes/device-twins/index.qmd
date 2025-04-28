@@ -1,8 +1,7 @@
 ---
 title: Device Twins
 subtitle: "How to retrieve and configure IoT Devices using Device Twin metadata"
-date: 2024-05-09
-draft: true
+date: 2025-04-28
 ---
 
 For each device that you connecte to IoT Hub, Azure IoT Hub maintains a _device
@@ -23,7 +22,7 @@ twin_:
 Note that **Device Twins are not appropriate for high-frequency communication**
 such as sending telemetry data from device to cloud. For this, use **D2C
 messages** (see
-[the course notes about device-cloud communication](/topics/iot/docs/device-cloud-communication.qmd)).
+[the course notes about device-cloud communication](/notes/device-cloud-communication)).
 
 ## Device Twin Anatomy
 
@@ -126,7 +125,7 @@ In this case we have the following information flow:
 > Notice that a tag can be set by a back-end application and is never sent to
 > the device. Tags are used to organize and query devices.
 
-![Information flow for a desired property change](../assets/17-device-twins-desired-flow.png)
+![Information flow for a desired property change](assets/17-device-twins-desired-flow.png)
 
 <p class=img-info>
     <a href="https://docs.microsoft.com/en-us/azure/iot-hub/tutorial-device-twins"> Information flow for a desired property change from a back-end app </a>&nbsp; Tutorial: Configure your devices from a back-end service.
@@ -274,7 +273,7 @@ The connection string for the Device Twins back-end operations requires a
 
 See image below for setting up a new shared access polity:
 
-![](../assets/17-device-twins-access-permission.png)
+![](assets/17-device-twins-access-permission.png)
 
 ### .NET Service Client for Device Twin Updates
 
