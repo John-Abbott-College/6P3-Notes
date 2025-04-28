@@ -14,7 +14,7 @@ and devices that are connected to the cloud and **periodically collect, send
 and/or receive data.**
 
 ::: {.column-margin}
-![The Interconnection of communicating devices defines the "Internet of Things"](../assets/iot-banner.webp)
+![The Interconnection of communicating devices defines the "Internet of Things"](assets/iot-banner.webp)
 :::
 
 > **IoT** refers to the **entire network** of:
@@ -50,7 +50,7 @@ The use of IoT can be organised in two fields of application:
 - **Consumer IoT**
 
 ::: {.column-margin}
-![Examples of industrial and consumer IoT applications. Image source: ["The Internet of Things and its Benefit to U.S. Water Customers"][source-location]](../assets/1-iot-intro-industrial-vs-consumer.png)
+![Examples of industrial and consumer IoT applications. Image source: ["The Internet of Things and its Benefit to U.S. Water Customers"][source-location]](assets/1-iot-intro-industrial-vs-consumer.png)
 :::
 
 [source-location]:
@@ -145,7 +145,7 @@ IoT systems are compromised of five high-level components:
     - Facilitate device management.
 
 ::: {.column-margin}
-![Icons of IoT High level components](../assets/iot-high-components.png)
+![Icons of IoT High level components](assets/iot-high-components.png)
 :::
 
 ## IoT Cloud Service Providers
