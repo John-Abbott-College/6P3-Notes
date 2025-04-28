@@ -6,6 +6,7 @@ subtitle: |
   Azure IoT Hub documentation,
   creating an Azure IoT Hub resource, and more.
 date: 2025-04-19
+categories: [iot]
 ---
 
 ::: {.column-margin}

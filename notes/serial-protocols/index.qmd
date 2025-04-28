@@ -4,6 +4,7 @@ subtitle:
   "A deeper dive into the protocols used to communicate between GPIO and the
   kernel"
 date: 2025-03-14
+categories: [hardware, signals]
 ---
 
 ## Serial Protocols

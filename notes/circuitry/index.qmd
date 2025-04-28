@@ -4,6 +4,7 @@ subtitle:
   "Review of Ohm's Law, fundamental concepts for understanding electronic
   circuits and interfaces."
 date: 2025-04-28
+categories: [hardware, signals]
 ---
 
 ## Why study electronics?
@@ -66,7 +67,7 @@ supply unit attached to a wall.
 Below are the two symbols typically used to identify a voltage source in a
 circuit:
 
-![](../assets/ohms-source-symbol.png)
+![](assets/ohms-source-symbol.png)
 
 ### Resistance
 
@@ -96,11 +97,11 @@ Ohm's law describes the relationship between voltage, current and resistance.
 
 Consider the following circuit:
 
-![](../assets/ohms-circuit-resistor.png)
+![](assets/ohms-circuit-resistor.png)
 
 The proper circuit diagram will be:
 
-![](../assets/ohms-circuit-simple-diagram.png)
+![](assets/ohms-circuit-simple-diagram.png)
 
 If V1=9V and R1 = 200Ω, what is the current running through the circuit?
 
@@ -117,15 +118,15 @@ We can measure the current by using a multimeter in "ammeter" mode.
 The multimeter must be added in series with the circuit. This means that the
 wiring must "go thorough" the multimeter.
 
-![](../assets/ohms-circuit-example1.png)
+![](assets/ohms-circuit-example1.png)
 
 ## Voltage Drop Across Components
 
 Consider the circuit below:
 
-![](../assets/ohm-circuit-led.png)
+![](assets/ohm-circuit-led.png)
 
-![](../assets/ohms-circuit-led-diagram.png)
+![](assets/ohms-circuit-led-diagram.png)
 
 We must select the resistor value in order to maximize the life of the LED.
 
@@ -165,9 +166,9 @@ multimeter that measures the voltage difference before and after the resistor.
 > Notice how the multimeter is not interrupting the circuit. It is rather
 > "sampling" the circuit at two points.
 
-![](../assets/ohms-led-circuit-voltmeter.png)
+![](assets/ohms-led-circuit-voltmeter.png)
 
-![](../assets/ohms-led-schematics-voltmeter.png)
+![](assets/ohms-led-schematics-voltmeter.png)
 
 Now that we know the voltage drop across the resistor, we are only missing the
 current flowing through it (Ir)

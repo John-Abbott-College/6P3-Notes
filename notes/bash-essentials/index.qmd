@@ -5,7 +5,7 @@ subtitle: >
   The core bash commands everyone should know.
   How to combine commands using pipes and redirects.
 date: 2025-01-31
-categories: [bash, lab-0, lab-1]
+categories: [bash]
 bibliography: references.bib
 nocite: |
   @*

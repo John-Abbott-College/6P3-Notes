@@ -2,6 +2,7 @@
 title: EventHubs & .NET SDK
 subtitle: "More notes on how to send and receive events in C#"
 date: 2025-04-28
+categories: [".NET"]
 ---
 
 _The notes below were taken from the official Microsoft documentation page

@@ -4,6 +4,7 @@ subtitle: >
   Sometimes, the reTerminal display drivers fail. Here is an (incomplete) set of
   debugging steps you can take to try fixing the issue.
 date: 2025-04-13
+categories: [linux, bash]
 ---
 
 So far, there have been two primary causes for the reTerminal screen to stop

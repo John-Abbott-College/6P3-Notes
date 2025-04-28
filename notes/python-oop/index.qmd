@@ -2,7 +2,7 @@
 title: Python OOP
 subtitle: Basics of Object Oriented Programming in Python.
 date: 2025-04-04
-categories: [Python, A1]
+categories: [python]
 bibliography: references.bib
 nocite: |-
   @*

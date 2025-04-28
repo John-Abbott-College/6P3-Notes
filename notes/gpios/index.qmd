@@ -5,7 +5,7 @@ subtitle:
   makes available to us. Voltage, digital vs. analog, python
   libraries for GPIO.
 date: 2025-03-14
-categories: ["Hardware"]
+categories: ["hardware", "signals"]
 ---
 
 ## Intro to Pi's GPIOs 🥧

@@ -4,7 +4,7 @@ subtitle:
   How to use OS package managers, virtual environments, and `pip` to manage
   python applications effectively.
 date: 2025-03-10
-categories: ["Python"]
+categories: ["python"]
 ---
 
 ## Overview

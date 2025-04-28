@@ -2,6 +2,7 @@
 title: Device to Cloud Communication
 subtitle: "How to use Azure for bidrectional device-cloud communication"
 date: 2025-04-28
+categories: [iot]
 ---
 
 Communication for IoT systems should be bi-directional:

@@ -6,6 +6,7 @@ subtitle:
 reference-location: margin
 citation-location: margin
 date: 2025-04-28
+categories: [linux]
 ---
 
 ## Raspberry Pi OS and Debian

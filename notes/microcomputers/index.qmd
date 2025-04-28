@@ -4,6 +4,7 @@ subtitle:
   Comparing the architectural paradigms for microcomputers to better understand
   our Pis.
 date: 2025-04-28
+categories: [hardware]
 ---
 
 This section explores the differences between single board computers (SBC) such

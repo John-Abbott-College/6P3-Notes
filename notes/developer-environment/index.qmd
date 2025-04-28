@@ -10,7 +10,7 @@ date: 2025-01-20
 format:
   html:
     toc-expand: 2
-categories: ["lab-0", "lab-1"]
+categories: ["bash", "linux"]
 ---
 
 ::: {.column-margin}

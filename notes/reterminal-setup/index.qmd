@@ -3,7 +3,7 @@ title: Reterminal setup
 subtitle: >
   Guide to setting up reterminal for the first time.
 date: 2025-02-24
-categories: [hardware, lab-3]
+categories: [hardware, linux]
 image: https://files.seeedstudio.com/wiki/ReTerminal/wiki_thumb.png
 bibliography: references.bib
 nocite: |

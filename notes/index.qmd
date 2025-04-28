@@ -6,18 +6,6 @@ format:
   html:
     page-layout: full
 listing:
-  - id: default-view
-    filter-ui: true
-    sort-ui: [date, file-modified, title]
-    sort: date
-    date-format: medium
-    categories: unnumbered
-    fields: [date, image, file-modified, title, categories, subtitle, reading-time]
-    page-size: 99
-    image-height: 150px
-    include:
-      filename: "**/index.qmd"
-
   - id: table-view
     type: table
     filter-ui: true
@@ -28,6 +16,18 @@ listing:
     table-hover: true
     fields: [date, title, subtitle, file-modified]
     page-size: 99
+    include:
+      filename: "**/index.qmd"
+
+  - id: card-view
+    filter-ui: true
+    sort-ui: [date, file-modified, title]
+    sort: date
+    date-format: medium
+    categories: unnumbered
+    fields: [date, image, file-modified, title, categories, subtitle, reading-time]
+    page-size: 99
+    image-height: 150px
     include:
       filename: "**/index.qmd"
 
@@ -75,14 +75,14 @@ div.listing-file-modified:before {
 
 ::: {.panel-tabset}
 
-## Default view
-
-:::{#default-view}
-:::
-
 ## Table view
 
 :::{#table-view}
+:::
+
+## Card view
+
+:::{#card-view}
 :::
 
 ## Grid view

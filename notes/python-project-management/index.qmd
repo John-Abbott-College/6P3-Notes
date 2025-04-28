@@ -4,7 +4,7 @@ subtitle:
   Previously, we have focused on installing dependencies from other projects --
   we expand on that knowledge to learn how to create our own projects
 date: 2025-04-04
-categories: ["Python"]
+categories: ["python"]
 ---
 
 ## Overview

@@ -5,7 +5,7 @@ subtitle: >
   Using a personal access token for authentication on GitHub outside of VSCode.
   Using the `pass` password manager to store access tokens safely.
 date: 2025-02-10
-categories: [git, lab-1]
+categories: [git, bash]
 ---
 
 ::: {.column-margin}

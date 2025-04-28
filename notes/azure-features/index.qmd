@@ -7,6 +7,7 @@ subtitle: |
   Azure Resource Groups,
   Intro to Azure Dev Tools (Azure Portal, Azure CLI).
 date: 2025-04-19
+categories: [iot]
 ---
 
 ## Platform as a Service (PaaS)
