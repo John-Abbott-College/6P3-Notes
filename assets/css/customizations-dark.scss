@@ -41,5 +41,8 @@ $table-dark-border-color: darken($dark, 5%) !default;
 // Panels
 $nav-tabs-link-active-color: $body-color;
 
+$dropdown-link-hover-color: $code-color;
+$dropdown-link-hover-bg: $code-bg;
+
 // Common customizations
 @import "common";

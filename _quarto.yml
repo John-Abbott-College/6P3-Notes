@@ -2,6 +2,9 @@ project:
   type: website
   resources:
     - "files/"
+  preview:
+    port: 3163
+    browser: false
 
 website:
   title: "{{< var course.title >}}"

@@ -38,6 +38,10 @@ $code-color: $dark !default;
 $table-dark-bg: $dark !default;
 $table-dark-border-color: darken($dark, 5%) !default;
 
+$dropdown-link-hover-color: $code-color;
+$dropdown-link-hover-bg: $code-bg;
+
+
 // Indicators
 .badge {
   &.bg-light {

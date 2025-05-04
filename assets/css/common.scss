@@ -80,9 +80,21 @@ a:not([class]) {
 :focus {
   scroll-padding-block-end: 8vh;
 }
-/* The stuff above doesn't seem to totally take care of the problem */
-section {
+section:target {
   scroll-margin-top: 5rem;
+}
+div:target {
+  scroll-margin-top: 6rem;
+}
+div:target {
+  transition:
+    background-color 0.5s ease-out,
+    color 0.5s ease-out;
+  padding-left: 0.5em !important;
+  margin-left: 0 !important;
+  text-indent: 0 !important;
+  color: $dropdown-link-hover-color;
+  background-color: $dropdown-link-hover-bg;
 }
 
 // TODO: put these and other non-$var using styles in style.css
