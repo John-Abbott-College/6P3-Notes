@@ -63,8 +63,9 @@ pre
   font-size: 1rem !important;
 }
 
-.quarto-dark .code-with-filename-file {
-  background-color: $gray-300 !important;
+div.code-with-filename-file
+{
+  color: $dropdown-link-hover-color !important;
 }
 
 /* Baseline for default links: https://moderncss.dev/modern-css-for-dynamic-component-based-architecture/ */
