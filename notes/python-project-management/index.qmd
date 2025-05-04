@@ -5,6 +5,9 @@ subtitle:
   we expand on that knowledge to learn how to create our own projects
 date: 2025-04-04
 categories: ["python"]
+bibliography: references.bib
+nocite: |-
+  @*
 ---
 
 ## Overview
@@ -20,21 +23,18 @@ We'll look at:
 - Relative imports
 - Configuration with dot files and project files
 
-## Python Projects & Import Statements
+## Modules vs Packages
+
+*Notes adapted from [@MakingPythonPackage]*
 
 For programmers coming from other languages, how to organize your project files
 and how to import modules and classes can be confusing.
 
-## Modules vs Packages
-
 Let's clarify the terminology and distinction between a module vs a package.
-
-_(Notes taken from
-[The Joy of Packaging, Making a Python Package](https://python-packaging-tutorial.readthedocs.io/en/2018/setup_py.html))_
 
 ### Modules
 
-A module usually corresponds to a single file: `something.py` A python “module”
+A module usually corresponds to a single file: `something.py` A python "module"
 is a single namespace, with a collection of values:
 
 - functions
@@ -49,11 +49,11 @@ indeed other packages) inside it.
 A package usually corresponds to a directory with a file in it called
 `__init__.py` and any number of python files or **other package directories**:
 
-```sh
+```shell
 a_package
 	__init__.py
 	module_a.py
-	a_sub_package
+	a_sub_package/
 		__init__.py
 	module_b.py
 ```
@@ -75,57 +75,65 @@ Any names defined in the `__init__.py` will be available in: `a_package.a_name`
 
 ## Project Structure
 
-There's no single way to do it. Below is a recommendation from RealPython.com on
-Python Application Layouts for
-[Application with Internal Packages](https://realpython.com/python-application-layouts/#application-with-internal-packages):
+There are two conventions for structuring a python project: **flat** layout and **src** layout.
 
-```sh
-helloworld/
-│
-├── helloworld/
-│   ├── __init__.py
-│   ├── main_entry.py
-│   ├── hello/
-│   │   ├── __init__.py
-│   │   ├── hello.py
-│   │   └── helpers.py
-│   │
-│   └── world/
-│       ├── __init__.py
-│       ├── helpers.py
-│       └── world.py
-│
-├── data/
-│   ├── input.csv
-│   └── output.xlsx
-│
-├── tests/
-│   ├── hello
-│   │   ├── helpers_tests.py
-│   │   └── hello_tests.py
-│   │
-│   └── world/
-│       ├── helpers_tests.py
-│       └── world_tests.py
-│
-├── docs/
-│   ├── hello.md
-│   └── world.md
-│
+Flat layout is a bit more intuitive, and most small projects use it.
+Src layout has a lot of benefits for larger projects.
+The two are compared below.
+
+::: {.panel-tabset}
+
+## flat layout
+
+*example adapted from [@SrcLayoutVsa]*
+
+```sh {filename="example flat layout"}
+.
 ├── .gitignore
-├── LICENSE
-└── README.md
+├── README.md
+├── pyproject.toml
+├── some_package/
+│   ├── __init__.py
+│   └── module.py
+└── tools/
+    └── some_python_script.py
+# More directories can be added; tests, data, utilities, etc.
 ```
+
+The "flat layout" refers to organising a project’s files in a folder or repository,
+such that the various configuration files and import packages are all in the top-level directory.
+
+## src layout
+
+*example adapted from [@SrcLayoutVsa]*
+
+```sh {filename="example src layout"}
+.
+├── .gitignore
+├── README.md
+├── pyproject.toml
+├── src/
+│    └── some_package/
+│       ├── __init__.py
+│       └── module.py
+└── tools/
+    └── some_python_script.py
+# More directories can be added; tests, data, utilities, etc.
+```
+
+The "src layout" deviates from the flat layout by moving the code that is intended to be importable
+(i.e. `import some_package`, also known as import packages) into a subdirectory.
+This subdirectory is typically named `src/`, hence "src layout".
+
+:::
 
 ## Relative Import Statements
 
-_(Taken from StackOverflow discussion
-[Relative imports in Python 3](https://stackoverflow.com/questions/16981921/relative-imports-in-python-3),
-by [Aya](https://stackoverflow.com/users/172176/aya))_
+*Adapted from StackOverflow discussion [@ayaAnswerRelativeImports2013]*
 
 Consider the project layout below:
 
-```python
+```shell
 main.py
 mypackage/
     __init__.py
@@ -190,32 +198,11 @@ files and load the module dependency.
 
 ```python
 python -m mypackage.myothermodule
-# Note the ".", NOT a "/", as in, the following won't work:
+
+# Note the ".", NOT a "/"
+# the following WILL NOT work:
 python -m mypackage/myothermodule
 ```
 
 This will allow you to write modules that contain `main()` functions you can
 test separately -- we took advantage of this pattern in Assignment 1.
-
-## References
-
-**More on Modules and Packages:**
-
-- [Python Modules and Packages – An Introduction](https://realpython.com/python-modules-packages/)
-  by RealPython.com
-
-**Project Structures**
-
-- [Packaging a python library](https://blog.ionelmc.ro/2014/05/25/python-packaging/)
-  by ionel's codelog.
-
-**Relative Imports**
-
-- [Relative imports for the billionth time](https://stackoverflow.com/questions/14132789/relative-imports-for-the-billionth-time/14132912#14132912)
-  in StackOverlow
-- [Relative imports in Python 3](https://stackoverflow.com/questions/16981921/relative-imports-in-python-3)
-  in StackOverlow
-- [The import system](https://docs.python.org/3/reference/import.html#package-relative-imports)
-  in Python.org docs.
-- [Modules: Packages](https://docs.python.org/3/tutorial/modules.html#packages)
-  in Python.org docs.
