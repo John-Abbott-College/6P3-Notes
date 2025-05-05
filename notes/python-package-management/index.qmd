@@ -153,6 +153,8 @@ installed into a Python virtual environment using `venv`. A virtual environment
 is a container where you can safely install third-party modules so they won't
 interfere with, or break, your system Python.
 
+## Virtual environments
+
 ### How virtual environments solve the `pip` problem
 
 Python [virtual environments](https://docs.python.org/3/library/venv.html) are
