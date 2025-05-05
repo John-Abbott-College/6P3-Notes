@@ -311,21 +311,6 @@ Microcontrollers are often used to process these signals because they often have
 an integrated ACD and they are very inexpensive.
 
 
-## References
-
-- [Analog vs. Digital](https://learn.sparkfun.com/tutorials/analog-vs-digital/all)
-  by Sparkfun.
-- [Lesson 20: Analog to Digital Conversion](https://www.usna.edu/ECE/ec312/),
-  Course EC312, US Naval Academy.
-- Lessons 4 and 5, Telecom course, Sandy Bultena.
-
 ### Video Reference
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/64FSgQdWHrE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-<!--
-## Diving Deeper
-
-### Is digital better?
-
-#### Noise: digital can handle it -->
