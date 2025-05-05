@@ -182,6 +182,9 @@ git+https://github.com/Seeed-Studio/Seeed_Python_RPi
 -r other-requirements.txt
 ```
 
+See [Requirements File Format from the pip documentation](https://pip.pypa.io/en/stable/reference/requirements-file-format/)
+for more details.
+
 ### Formatting/linting with [ruff](https://docs.astral.sh/ruff/)
 
 There are many [formatters](https://realpython.com/python-code-quality/#code-formatters) and [linters](https://realpython.com/python-code-quality/#code-linters)
@@ -260,16 +263,11 @@ dependencies = [
 [project.optional-dependencies]
 test = [
     "pytest",
-    "pytest-asyncio",
-    "pytest-mock",
-    "logot[pytest]",
-    "asyncmock",
 ]
 lint = [
     "ruff"
 ]
 dev = [
-    "sshkeyboard",
     # Note that the name of the project (sample-python-project) must match exactly for this syntax to work.
     "sample-python-project[test,lint]",
 ]
@@ -338,6 +336,7 @@ Here are a few features you can easily add to your projects, if you have the tim
 - [Specifying entrypoints for the project](https://devsjc.github.io/blog/20240627-the-complete-guide-to-pyproject-toml/#entrypoints)
 - [Creating executable scripts](https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#creating-executable-scripts)
 - [Packaging your project for distribution](https://devsjc.github.io/blog/20240627-the-complete-guide-to-pyproject-toml/#packaging-for-distribution)
+  - I recommend using [setuptools](https://setuptools.pypa.io/en/latest/userguide/quickstart.html)
 
 ## Tips and Tricks
 
