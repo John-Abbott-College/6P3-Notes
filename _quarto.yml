@@ -49,6 +49,8 @@ website:
         - notes/index.qmd
         - auto: "notes/**/index.qmd"
 
+execute:
+  enabled: false
 format:
   html:
     theme:
