@@ -7,6 +7,8 @@ subtitle: |
 date: 2025-05-05
 categories: [python]
 toc-expand: 2
+filters:
+  - line-highlight
 bibliography: references.bib
 nocite: |-
   @*
@@ -20,7 +22,14 @@ These notes cover useful `python` skills, particularly for finalizing your team'
 
 *These notes were adapted from [@pythonLoggingPythonReal]*
 
-Content here.
+See [this article from Real Python for a complete explanation](https://realpython.com/python-logging/).
+
+Important notes:
+
+- [Instantiating the logger in each file](https://realpython.com/python-logging/#instantiating-your-logger)
+- [Formatting log output](https://realpython.com/python-logging/#formatting-the-output)
+- [Logging to a file](https://realpython.com/python-logging/#logging-to-a-file)
+- [Using handlers to customize format and output](https://realpython.com/python-logging/#using-handlers)
 
 ## Unit testing
 
@@ -118,7 +127,7 @@ See [pytest: Getting Started](https://docs.pytest.org/en/stable/getting-started.
 
 See [my example_system unit tests](https://github.com/420-6A6-6P3-W25/final-project-upstream/tree/main/iot_subsystems/tests/example_system) for examles relevant to our project.
 
-### `pytest` best practises
+### Dependency injection with `pytest` fixutres
 
 `pytest` is designed to follow a variant of the "functional" testing paradigm called Arrange-Act-Assert:
 
@@ -126,12 +135,57 @@ See [my example_system unit tests](https://github.com/420-6A6-6P3-W25/final-proj
 - **Act** by calling some function or method
 - **Assert** that some end condition is true
 
+`pytest` enables the creation of [fixtures](), that is, test objects, that can be used across tests
+to simplify the **Arrange** step:
+
+```python {filename=fixture_demo.py}
+import pytest
+
+# This annotation marks the function as a fixture generator
+@pytest.fixture
+def example_fixture():
+    return 1
+
+# Make tests use that fixture by providing the name as a parameter of the test function:
+def test_with_fixture(example_fixture):
+    assert example_fixture == 1
+```
+
+You can see how I use fixtures in the [example_system conftest.py](https://github.com/420-6A6-6P3-W25/final-project-upstream/blob/main/iot_subsystems/tests/example_system/conftest.py)
+files of the sample test code in the final-project-upstream.
+
+#### `conftest.py`
+
+You'll notice in the [example_system tests](https://github.com/420-6A6-6P3-W25/final-project-upstream/blob/main/iot_subsystems/tests/example_system/conftest.py)
+that I define fixtures in files named `conftest.py`:
+
+```{r}
+#| source-line-numbers: "2,4"
+final-project-upstream/iot_subsystems/tests/example_system/
+├── conftest.py
+├── integration
+│   ├── conftest.py
+│   ├── __init__.py
+│   └── test_system.py
+└── unit
+    ├── __init__.py
+    ├── test_aht20.py
+    └── test_fan.py
+```
+
+This is a pytest convention for sharing fixtures across multiple test files, allowing you to keep your
+test files concise and to avoid needing to recreate dependencies. This is very useful for our project,
+where we have many custom classes we are creating and mocking.
+
+You can see more about `conftest.py` in the
+[pytest documentation](https://docs.pytest.org/en/stable/reference/fixtures.html#conftest-py-sharing-fixtures-across-multiple-files)
+
 ### using `pytest` on asynchronous code
 
 In our final project, there are quite a few [asynchronous](/notes/async-python) functions to test.
 
 See the [example_system.py unit tests](https://github.com/420-6A6-6P3-W25/final-project-upstream/blob/main/iot_subsystems/tests/example_system/integration/test_system.py#L61)
-from the [final-project-upstream](https://github.com/420-6A6-6P3-W25/final-project-upstream/) code for an example:
+from the [final-project-upstream](https://github.com/420-6A6-6P3-W25/final-project-upstream/) code for an example.
 
 ### using `logot` to test logs
 
@@ -149,7 +203,7 @@ from the [final-project-upstream](https://github.com/420-6A6-6P3-W25/final-proje
 - [Using `logot` on asynchronous tests](https://logot.readthedocs.io/stable/index.html#testing-asynchronous-code)
 - [Using "message matching" to match log messages with placeholders](https://logot.readthedocs.io/stable/log-message-matching.html)
 
-### `pytest` reference
+### Further `pytest` reference
 
 I found the following documentation really useful when I was making the `example_system/` starter code tests:
 
@@ -160,5 +214,3 @@ I found the following documentation really useful when I was making the `example
     - [More explanation of what fixtures are](https://docs.pytest.org/en/stable/explanation/fixtures.html)
     - [More detailed reference for fixtures](https://docs.pytest.org/en/stable/reference/fixtures.html#fixtures)
 - [How to adjust the behavior of mock test classes using "monkeypatch"](https://docs.pytest.org/en/stable/how-to/monkeypatch.html)
-
-
