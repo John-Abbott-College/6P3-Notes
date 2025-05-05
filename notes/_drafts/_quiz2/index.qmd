@@ -6,6 +6,19 @@ categories: [bash, linux, python, iot]
 date: 2025-05-05
 ---
 
+## Analog to Digital Conversion
+
+Considering the analog signal below. The signal is being sampled in a program at
+2Hz (2 times/sec) with the help of an ADC that has 6-bit resolution. The ADC can
+handle up to 8V signals.
+
+A) What are the voltages being sampled by the ADC?
+
+B) If the signal reached max voltage, what would be the integer number passed to
+the program by the ADC?
+
+![Graph for exercise 1](assets/6-analog-digital-exercise1.png)
+
 ## Virtual Env Exercises
 
 The following exercises are meant for familiarization with `venv`.
@@ -14,8 +27,7 @@ The following exercises are meant for familiarization with `venv`.
 1. Complete the following steps inside a virtual environment
 
     1. Create a virtual environment
-    1. Activate the virt. env.
-    1. install the following libraries:
+    1. Install the following libraries:
         - [howdoi](https://pypi.org/project/howdoi/)
         - [pyjokes](https://pyjok.es/)
     1. List all pip packages to see the extra dependencies that got installed.
