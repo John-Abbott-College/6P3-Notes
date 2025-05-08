@@ -173,7 +173,7 @@ az iot hub device-twin show -d ${IOT_DEVICE_NAME} --query properties.reported -n
 
 Connection Strings provide authentication for most [Azure SDK](/notes/azure-sdks) commands, both in Python and C#.
 
-Here are the main Azure CLI methods for getting Connection Strings:
+The sections below give example commands for Azure CLI connection strings retrieval.
 
 ::: {.callout-note .column-margin}
 [Bash redirection and pipes](/notes/bash-essentials/#redirection-and-pipes) are useful
@@ -181,23 +181,41 @@ tools for saving the output of these connection string commands as [environment 
 You can save environment variables in a project `.env` file that you can [`source`](/notes/bash-scripting#code-reuse) later.
 :::
 
-```bash
-# Device string: Recommended string for a single device
+### Device connection string
+
+Recommended string for a single device
+
+```shell
 az iot hub device-identity connection-string show \
   --device-id ${IOT_DEVICE_NAME} \
   --hub-name ${IOTHUB_NAME}
+```
 
-# Service string: Recommended string for external applications
+### Service connection string
+
+Recommended string for external applications.
+
+```shell
 az iot hub connection-string show \
   --policy-name service \
   --hub-name ${IOTHUB_NAME}
+```
 
-# EventHub compatible string: needed for certain applications
+### EventHub connection string
+
+Needed for certain applications.
+
+```shell
 az iot hub connection-string show \
   -n ${IOTHUB_NAME} \
   --default-eventhub
+```
 
-# Owner string: NOT recommended, provides access to entire resource group.
+### Owner connection string
+
+NOT recommended, provides access to entire resource group.
+
+```shell
 az iot hub connection-string  show --hub-name ${IOTHUB_NAME}
 ```
 
@@ -205,3 +223,4 @@ See detailed documentation at learn.microsoft.com:
 
 - [`az iot hub connection-string`](https://learn.microsoft.com/en-us/cli/azure/iot/hub/connection-string?view=azure-cli-latest)
 - [`az iot hub device-identity connection-string show`](https://learn.microsoft.com/en-us/cli/azure/iot/hub/device-identity/connection-string?view=azure-cli-latest#az-iot-hub-device-identity-connection-string-show)
+- [EventHub connection string](https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-get-connection-string#azure-cli)
