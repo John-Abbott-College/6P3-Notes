@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.29">
+<meta name="generator" content="quarto-1.7.30">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -65,8 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../notes/iot-concepts/index.html" rel="next">
-<link href="../../notes/course-hardware/index.html" rel="prev">
+<link href="../../notes/linux-package-management/index.html" rel="next">
+<link href="../../notes/analog-vs-digital/index.html" rel="prev">
 <link href="../../assets/favicon_io/favicon.ico" rel="icon">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -74,14 +74,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-499c96a24f2a291ef9bc75fd2f94d294.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-76023911c31467dce141f6e35d0a63e7.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-499c96a24f2a291ef9bc75fd2f94d294.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-994e4b8856f7f45380dc4610c9e8c6ff.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-1accdb772a835ed2a2aefeb3c6e399c0.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-994e4b8856f7f45380dc4610c9e8c6ff.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-4ef7393c7e44f340fd1359cdd701ebd4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-d0698a0cc84e0a494962846fd79f0c91.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-4ef7393c7e44f340fd1359cdd701ebd4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-13f8f73bb956a6e62072eb9d3f883997.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-1fdb536d0f1451bfcff7e167a4f99223.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-13f8f73bb956a6e62072eb9d3f883997.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="../../site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
@@ -111,12 +111,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <meta property="og:title" content="Python package management – Connected Objects">
-<meta property="og:description" content="How to use OS package managers, virtual environments, and pip to manage python applications effectively.">
+<meta property="og:description" content="How to use install system python packages using apt. How to install project python libraries using pip. Using virtual environments to manage python dependencies.">
 <meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/notes/python-package-management/assets/art_title_path_only.svg">
 <meta property="og:site_name" content="{{< var course.title >}}">
 </head>
 
-<body class="nav-sidebar docked nav-fixed slimcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -270,6 +270,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       toggleColorMode(toAlternate);
       setStyleSentinel(toAlternate);
       toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
     };
     // Switch to dark mode if need be
     if (hasAlternateSentinel()) {
@@ -311,116 +312,76 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">All course notes</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../../notes/device-calibrating/index.html">
+ <span class="dropdown-text">Device calibration</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../../notes/python-oop/index.html">
  <span class="dropdown-text">Python OOP</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/gpios/index.html">
- <span class="dropdown-text">GPIOs: Inputs and Outputs</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/iot-protocols/index.html">
- <span class="dropdown-text">IoT Communication Protocols</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/microcomputers/index.html">
- <span class="dropdown-text">Microcomputers</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/async-python/index.html">
- <span class="dropdown-text">Asynchronous progamming in Python</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/device-twins/index.html">
- <span class="dropdown-text">Device Twins</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/python-collections/index.html">
- <span class="dropdown-text">Python collection types and operations</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/azure-sdks/index.html">
- <span class="dropdown-text">Azure SDKs in Python and C#</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/python-environments/index.html">
- <span class="dropdown-text">Python environment management</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/linux-package-management/index.html">
- <span class="dropdown-text">Linux package management</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/azure-features/index.html">
- <span class="dropdown-text">Azure Features</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/serial-protocols/index.html">
- <span class="dropdown-text">Serial protocols</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/bash-scripting/index.html">
- <span class="dropdown-text">Bash scripting</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/debug-reterminal/index.html">
- <span class="dropdown-text">Debugging Reterminal Issues</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/course-hardware/index.html">
- <span class="dropdown-text">Course hardware</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/python-package-management/index.html">
- <span class="dropdown-text">Python package management</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/iot-concepts/index.html">
- <span class="dropdown-text">Intro to the Internet of Things</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../notes/azure-cli-cheatsheet/index.html">
  <span class="dropdown-text">Azure CLI Cheatsheet</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../notes/python-project-management/index.html">
- <span class="dropdown-text">Python project management</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/python-scripting/index.html">
- <span class="dropdown-text">Python scripting</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/eventhub-dotnet/index.html">
- <span class="dropdown-text">EventHubs &amp; .NET SDK</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/analog-vs-digital/index.html">
- <span class="dropdown-text">Signals: Analog and digital</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/github-basics/index.html">
- <span class="dropdown-text">GitHub basics</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/bash-essentials/index.html">
- <span class="dropdown-text">Bash essentials</span></a>
-  </li>  
-        <li>
     <a class="dropdown-item" href="../../notes/reterminal-devices/index.html">
  <span class="dropdown-text">reTerminal built-in devices</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../notes/reterminal-setup/index.html">
- <span class="dropdown-text">Reterminal setup</span></a>
+    <a class="dropdown-item" href="../../notes/bash-scripting/index.html">
+ <span class="dropdown-text">Bash scripting</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/iot-protocols/index.html">
+ <span class="dropdown-text">IoT Communication Protocols</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/gpios/index.html">
+ <span class="dropdown-text">GPIOs: Inputs and Outputs</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/azure-sdks/index.html">
+ <span class="dropdown-text">Azure SDKs in Python and C#</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../notes/azure-portal/index.html">
  <span class="dropdown-text">Azure Portal Setup</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../notes/developer-environment/index.html">
- <span class="dropdown-text">Developer environment setup</span></a>
+    <a class="dropdown-item" href="../../notes/analog-vs-digital/index.html">
+ <span class="dropdown-text">Signals: Analog and digital</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/python-package-management/index.html">
+ <span class="dropdown-text">Python package management</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/linux-package-management/index.html">
+ <span class="dropdown-text">Linux package management</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/github-basics/index.html">
+ <span class="dropdown-text">GitHub basics</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/iot-concepts/index.html">
+ <span class="dropdown-text">Intro to the Internet of Things</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/reterminal-setup/index.html">
+ <span class="dropdown-text">Reterminal setup</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/debug-reterminal/index.html">
+ <span class="dropdown-text">Debugging Reterminal Issues</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/python-extras/index.html">
+ <span class="dropdown-text">Python extras</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/device-twins/index.html">
+ <span class="dropdown-text">Device Twins</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../notes/circuitry/index.html">
@@ -429,6 +390,54 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li>
     <a class="dropdown-item" href="../../notes/device-cloud-communication/index.html">
  <span class="dropdown-text">Device to Cloud Communication</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/async-python/index.html">
+ <span class="dropdown-text">Asynchronous progamming in Python</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/bash-essentials/index.html">
+ <span class="dropdown-text">Bash essentials</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/serial-protocols/index.html">
+ <span class="dropdown-text">Serial protocols</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/python-project-management/index.html">
+ <span class="dropdown-text">Python project management</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/course-hardware/index.html">
+ <span class="dropdown-text">Course hardware</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/developer-environment/index.html">
+ <span class="dropdown-text">Developer environment setup</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/python-scripting/index.html">
+ <span class="dropdown-text">Python scripting</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/python-collections/index.html">
+ <span class="dropdown-text">Python collection types and operations</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/microcomputers/index.html">
+ <span class="dropdown-text">Microcomputers</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/azure-storage/index.html">
+ <span class="dropdown-text">Azure Blob Storage</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/azure-features/index.html">
+ <span class="dropdown-text">Azure Features</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/eventhub-dotnet/index.html">
+ <span class="dropdown-text">EventHubs &amp; .NET SDK</span></a>
   </li>  
     </ul>
   </li>
@@ -480,104 +489,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../notes/device-calibrating/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Device calibration</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../notes/python-oop/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Python OOP</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/gpios/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">GPIOs: Inputs and Outputs</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/iot-protocols/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">IoT Communication Protocols</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/microcomputers/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Microcomputers</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/async-python/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Asynchronous progamming in Python</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/device-twins/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Device Twins</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/python-collections/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Python collection types and operations</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/azure-sdks/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Azure SDKs in Python and C#</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/python-environments/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Python environment management</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/linux-package-management/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Linux package management</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/azure-features/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Azure Features</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/serial-protocols/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Serial protocols</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/bash-scripting/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bash scripting</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/debug-reterminal/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Debugging Reterminal Issues</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/course-hardware/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Course hardware</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/python-package-management/index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Python package management</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/iot-concepts/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Intro to the Internet of Things</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -588,50 +507,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notes/python-project-management/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Python project management</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/python-scripting/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Python scripting</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/eventhub-dotnet/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">EventHubs &amp; .NET SDK</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/analog-vs-digital/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Signals: Analog and digital</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/github-basics/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">GitHub basics</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/bash-essentials/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bash essentials</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../../notes/reterminal-devices/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">reTerminal built-in devices</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notes/reterminal-setup/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Reterminal setup</span></a>
+  <a href="../../notes/bash-scripting/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bash scripting</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/iot-protocols/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">IoT Communication Protocols</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/gpios/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">GPIOs: Inputs and Outputs</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/azure-sdks/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Azure SDKs in Python and C#</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -642,8 +543,56 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notes/developer-environment/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Developer environment setup</span></a>
+  <a href="../../notes/analog-vs-digital/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Signals: Analog and digital</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/python-package-management/index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Python package management</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/linux-package-management/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linux package management</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/github-basics/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">GitHub basics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/iot-concepts/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Intro to the Internet of Things</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/reterminal-setup/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Reterminal setup</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/debug-reterminal/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Debugging Reterminal Issues</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/python-extras/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python extras</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/device-twins/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Device Twins</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -658,29 +607,107 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Device to Cloud Communication</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/async-python/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Asynchronous progamming in Python</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/bash-essentials/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bash essentials</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/serial-protocols/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Serial protocols</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/python-project-management/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python project management</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/course-hardware/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Course hardware</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/developer-environment/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Developer environment setup</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/python-scripting/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python scripting</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/python-collections/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python collection types and operations</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/microcomputers/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Microcomputers</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/azure-storage/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Azure Blob Storage</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/azure-features/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Azure Features</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/eventhub-dotnet/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">EventHubs &amp; .NET SDK</span></a>
+  </div>
+</li>
     </ul>
     </div>
-    <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="1">
+    <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><span class="header-section-number">1</span> Overview</a></li>
   <li><a href="#python-on-raspberry-pi" id="toc-python-on-raspberry-pi" class="nav-link" data-scroll-target="#python-on-raspberry-pi"><span class="header-section-number">2</span> Python on Raspberry Pi</a></li>
-  <li><a href="#installing-python-packages-using-apt" id="toc-installing-python-packages-using-apt" class="nav-link" data-scroll-target="#installing-python-packages-using-apt"><span class="header-section-number">3</span> Installing Python packages using apt</a></li>
-  <li><a href="#installing-python-packages-using-pip" id="toc-installing-python-packages-using-pip" class="nav-link" data-scroll-target="#installing-python-packages-using-pip"><span class="header-section-number">4</span> Installing python packages using Pip</a>
+  <li><a href="#installing-python-packages-using-apt" id="toc-installing-python-packages-using-apt" class="nav-link" data-scroll-target="#installing-python-packages-using-apt"><span class="header-section-number">3</span> Installing Python packages using <code>apt</code></a></li>
+  <li><a href="#installing-python-packages-using-pip" id="toc-installing-python-packages-using-pip" class="nav-link" data-scroll-target="#installing-python-packages-using-pip"><span class="header-section-number">4</span> Installing python packages using <code>pip</code></a>
   <ul>
-  <li><a href="#about-python-virtual-environments" id="toc-about-python-virtual-environments" class="nav-link" data-scroll-target="#about-python-virtual-environments"><span class="header-section-number">4.1</span> About Python virtual environments</a></li>
-  <li><a href="#using-pip-with-virtual-environments" id="toc-using-pip-with-virtual-environments" class="nav-link" data-scroll-target="#using-pip-with-virtual-environments"><span class="header-section-number">4.2</span> Using pip with virtual environments</a></li>
-  <li><a href="#using-a-separate-environment-for-each-project" id="toc-using-a-separate-environment-for-each-project" class="nav-link" data-scroll-target="#using-a-separate-environment-for-each-project"><span class="header-section-number">4.3</span> Using a separate environment for each project</a></li>
-  <li><a href="#including-system-packages-in-your-venv" id="toc-including-system-packages-in-your-venv" class="nav-link" data-scroll-target="#including-system-packages-in-your-venv"><span class="header-section-number">4.4</span> Including system packages in your venv</a></li>
-  <li><a href="#using-packages-that-require-root-permissions" id="toc-using-packages-that-require-root-permissions" class="nav-link" data-scroll-target="#using-packages-that-require-root-permissions"><span class="header-section-number">4.5</span> Using packages that require root permissions</a></li>
-  <li><a href="#using-a-separate-environment-for-each-user" id="toc-using-a-separate-environment-for-each-user" class="nav-link" data-scroll-target="#using-a-separate-environment-for-each-user"><span class="header-section-number">4.6</span> Using a separate environment for each user</a></li>
-  <li><a href="#check-library-location" id="toc-check-library-location" class="nav-link" data-scroll-target="#check-library-location"><span class="header-section-number">4.7</span> Check library location</a></li>
+  <li><a href="#pip-cannot-be-used-to-install-system-wide-python-packages" id="toc-pip-cannot-be-used-to-install-system-wide-python-packages" class="nav-link" data-scroll-target="#pip-cannot-be-used-to-install-system-wide-python-packages"><span class="header-section-number">4.1</span> <code>pip</code> cannot be used to install system-wide python packages</a></li>
   </ul></li>
-  <li><a href="#troubleshooting" id="toc-troubleshooting" class="nav-link" data-scroll-target="#troubleshooting"><span class="header-section-number">5</span> Troubleshooting</a>
+  <li><a href="#virtual-environments" id="toc-virtual-environments" class="nav-link" data-scroll-target="#virtual-environments"><span class="header-section-number">5</span> Virtual environments</a>
   <ul>
-  <li><a href="#check-pythons-library-paths" id="toc-check-pythons-library-paths" class="nav-link" data-scroll-target="#check-pythons-library-paths"><span class="header-section-number">5.1</span> Check python’s library paths</a></li>
+  <li><a href="#how-virtual-environments-solve-the-pip-problem" id="toc-how-virtual-environments-solve-the-pip-problem" class="nav-link" data-scroll-target="#how-virtual-environments-solve-the-pip-problem"><span class="header-section-number">5.1</span> How virtual environments solve the <code>pip</code> problem</a></li>
+  <li><a href="#creating-a-virtual-environment" id="toc-creating-a-virtual-environment" class="nav-link" data-scroll-target="#creating-a-virtual-environment"><span class="header-section-number">5.2</span> Creating a virtual environment</a></li>
+  <li><a href="#activating-and-deactivating-a-virtual-environment" id="toc-activating-and-deactivating-a-virtual-environment" class="nav-link" data-scroll-target="#activating-and-deactivating-a-virtual-environment"><span class="header-section-number">5.3</span> Activating and deactivating a virtual environment</a></li>
+  <li><a href="#installing-venv-packages-with-pip" id="toc-installing-venv-packages-with-pip" class="nav-link" data-scroll-target="#installing-venv-packages-with-pip"><span class="header-section-number">5.4</span> Installing venv packages with <code>pip</code></a></li>
+  <li><a href="#checking-what-packages-are-installed-in-a-.venv" id="toc-checking-what-packages-are-installed-in-a-.venv" class="nav-link" data-scroll-target="#checking-what-packages-are-installed-in-a-.venv"><span class="header-section-number">5.5</span> Checking what packages are installed in a .venv</a></li>
+  <li><a href="#re-using-virtual-environments" id="toc-re-using-virtual-environments" class="nav-link" data-scroll-target="#re-using-virtual-environments"><span class="header-section-number">5.6</span> “Re-using” Virtual Environments</a></li>
   </ul></li>
+  <li><a href="#troubleshooting" id="toc-troubleshooting" class="nav-link" data-scroll-target="#troubleshooting"><span class="header-section-number">6</span> Troubleshooting</a>
+  <ul>
+  <li><a href="#check-library-location" id="toc-check-library-location" class="nav-link" data-scroll-target="#check-library-location"><span class="header-section-number">6.1</span> Check library location</a></li>
+  <li><a href="#check-pythons-library-paths" id="toc-check-pythons-library-paths" class="nav-link" data-scroll-target="#check-pythons-library-paths"><span class="header-section-number">6.2</span> Check python’s library paths</a></li>
+  <li><a href="#using-packages-that-require-root-permissions" id="toc-using-packages-that-require-root-permissions" class="nav-link" data-scroll-target="#using-packages-that-require-root-permissions"><span class="header-section-number">6.3</span> Using packages that require root permissions</a></li>
+  </ul></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading"><span class="header-section-number">7</span> Further reading</a></li>
   </ul>
 </nav>
 </nav>
@@ -689,13 +716,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Python package management</h1>
-<p class="subtitle lead">How to use OS package managers, virtual environments, and <code>pip</code> to manage python applications effectively.</p>
+<p class="subtitle lead"></p><p>How to use install system python packages using apt. How to install project python libraries using pip. Using virtual environments to manage python dependencies.</p><p></p>
   <div class="quarto-categories">
     <div class="quarto-category">python</div>
   </div>
@@ -716,7 +743,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">May 4, 2025</p>
+      <p class="date-modified">May 8, 2025</p>
     </div>
   </div>
     
@@ -736,32 +763,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Installing packages locally with <code>pip</code></li>
 </ul>
 </section>
-<section id="python-on-raspberry-pi" class="level2 page-columns page-full" data-number="2">
+<section id="python-on-raspberry-pi" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="python-on-raspberry-pi"><span class="header-section-number">2</span> Python on Raspberry Pi</h2>
-<p><em>Note: most of these notes were adapted directly from the Raspberry Pi docs: <a href="https://www.raspberrypi.com/documentation/computers/os.html#python-on-raspberry-pi">Python on Raspberry Pi</a></em> <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;Raspberry Pi documentation is copyright © 2012-2024 Raspberry Pi Ltd and is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International</a> (CC BY-SA) licence. Some content originates from the <a href="http://elinux.org/">eLinux wiki</a>, and is licensed under a <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported</a> licence.</p></div></div><p>Python 3 is installed by default on Raspberry Pi OS, and is used for many important functions. Interfering with the system Python installation can cause problems for your operating system, so it’s important that if you install third-party Python libraries, you use the correct package-management tools.</p>
-<p>There are two routes to installing libraries into the default <code>python</code> distribution. You can use <code>apt</code> and install pre-configured system packages, or you can use <code>pip</code> to install packages which are not distributed as part of Raspberry Pi OS.</p>
-</section>
-<section id="installing-python-packages-using-apt" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="installing-python-packages-using-apt"><span class="header-section-number">3</span> Installing Python packages using apt</h2>
-<div class="callout callout-style-default callout-important callout-titled">
+<p><em>Note: most of these notes were adapted directly from the Raspberry Pi docs: <a href="https://www.raspberrypi.com/documentation/computers/os.html#python-on-raspberry-pi">Python on Raspberry Pi</a></em></p>
+<p>Python 3 is installed by default on Raspberry Pi OS, and is used for many important functions. Interfering with the system Python installation can cause problems for your operating system, so it’s important that if you install third-party Python libraries, you use the correct package-management tools.</p>
+<p>There are two routes to installing libraries into the default <code>python</code> distribution:</p>
+<ul>
+<li><code>apt</code> to install pre-configured system python packages distributed by Debian</li>
+<li><code>pip</code> to install cross-platform packages from <a href="https://pypi.org/" class="uri">https://pypi.org/</a></li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Important
+Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Installing packages using <code>apt</code> is the preferred method for installing Python libraries under Raspberry Pi OS.</p>
+<p>Installing packages using <code>apt</code> is the preferred method for using python applications in Raspberry Pi OS / Debian.</p>
+<p>Installing packages using <code>pip</code> in a <strong>virtual environment</strong> is the preferred method for installing Python libraries for developing a python project.</p>
 </div>
 </div>
+</section>
+<section id="installing-python-packages-using-apt" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="installing-python-packages-using-apt"><span class="header-section-number">3</span> Installing Python packages using <code>apt</code></h2>
 <p>Packages installed via <code>apt</code> are tested, are usually pre-compiled so they install faster, and are designed for Raspberry Pi OS. They won’t break your system. Installing via this route also means that all required dependencies are also installed, and a log of installation is maintained by the OS so installation can be easily rolled back (libraries can be uninstalled) if needed.</p>
 <p>You can see a complete list of Python apps maintained by Debian developers on the stable repositories <a href="https://packages.debian.org/stable/python/">here</a>. Many, but not all, popular open-source Python packages are maintained for Debian by professionals and hobbyists alike.</p>
 <p>To see an example: you may find yourself wanting to install the Python 3 library to support the Raspberry Pi <a href="https://www.raspberrypi.com/documentation/accessories/build-hat.html">BuildHAT</a> component. To install this using <code>apt</code>, you would:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sudo apt install python3-build-hat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>If you want to install a Python library called "foobar" you can use<code>apt search foobar</code> to find the exact package name – partial search matches are supported, so you don’t need to know the whole name in advance. Very useful!</p>
+<p>If you want to install a Python library called “foobar” you can use <code>apt search foobar</code> to find the exact package name – partial search matches are supported, so you don’t need to know the whole name in advance. Very useful!</p>
 <p>Using <code>apt</code> makes installing larger packages, like <code>numpy</code> (which has many native dependencies including a Fortran compiler), <em>much simpler and more predictable</em> than installing individual packages using Python’s own package-management system.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -778,7 +810,7 @@ Note
 </div>
 </section>
 <section id="installing-python-packages-using-pip" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="installing-python-packages-using-pip"><span class="header-section-number">4</span> Installing python packages using Pip</h2>
+<h2 data-number="4" class="anchored" data-anchor-id="installing-python-packages-using-pip"><span class="header-section-number">4</span> Installing python packages using <code>pip</code></h2>
 <p>The goal of operating systems like Debian is to be <em>stable</em>, that is, unlikely to crash due to a poorly tested/implemented program. That does come at a cost of not always offering the latest versions of packages, nor having a complelely comprehensive set of the bleeding edge packages that are available.</p>
 <p>Many developer depend on packages that are under active development. And, there are many packages that there are no Debian maintainers for. For cases like these (and many other cases, as we’ll see) it is useful for programming languages like Python to have an independent packaging manager.</p>
 <p>For python, the most commonly used package manager is <a href="https://pip.pypa.io/en/stable/"><code>pip</code></a>.</p>
@@ -786,281 +818,215 @@ Note
 <p>Pip installs packages from the <a href="https://pypi.org/">Python Package Index repository (pypi.org)</a> rather than the Debian or any other package repositories.</p>
 </blockquote>
 <p>Even though Raspberry Pi OS comes with <code>pip</code> installed, we can’t just use it right away, as we we’ll see in the next section.</p>
-<section id="about-python-virtual-environments" class="level3" data-number="4.1">
-<h3 data-number="4.1" class="anchored" data-anchor-id="about-python-virtual-environments"><span class="header-section-number">4.1</span> About Python virtual environments</h3>
-<p>In previous versions of the operating system, it was possible to install libraries directly, system-wide, using the package installer for Python, <code>pip</code>. You’ll find the following sort of command in many tutorials online – including in our Labs.</p>
+<section id="pip-cannot-be-used-to-install-system-wide-python-packages" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="pip-cannot-be-used-to-install-system-wide-python-packages"><span class="header-section-number">4.1</span> <code>pip</code> cannot be used to install system-wide python packages</h3>
+<p>In previous versions of Debian/RaspberryPi OS operating system, it was possible to install libraries directly, system-wide, using the package installer for Python, <code>pip</code>.</p>
+<p>You’ll find the following sort of command in many tutorials online:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> pip install buildhat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>In newer versions of Raspberry Pi OS, and most other operating systems, this is disallowed. If you try and install a Python package system-wide you’ll receive an error similar to this:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>$ pip install buildhat</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>error: externally<span class="op">-</span>managed<span class="op">-</span>environment</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>× This environment <span class="kw">is</span> externally managed</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>╰─<span class="op">&gt;</span> To install Python packages system<span class="op">-</span>wide, <span class="cf">try</span> apt install</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  python3<span class="op">-</span>xyz, where xyz <span class="kw">is</span> the package you are trying to</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  install.</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  If you wish to install a non<span class="op">-</span>Debian<span class="op">-</span>packaged Python package,</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  create a virtual environment using python3 <span class="op">-</span>m venv path<span class="op">/</span>to<span class="op">/</span>venv.</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  Then use path<span class="op">/</span>to<span class="op">/</span>venv<span class="op">/</span><span class="bu">bin</span><span class="op">/</span>python <span class="kw">and</span> path<span class="op">/</span>to<span class="op">/</span>venv<span class="op">/</span><span class="bu">bin</span><span class="op">/</span>pip. Make</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  sure you have python3<span class="op">-</span>full installed.</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  For more information visit http:<span class="op">//</span>rptl.io<span class="op">/</span>venv</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>note: If you believe this <span class="kw">is</span> a mistake, please contact your Python installation <span class="kw">or</span> OS distribution provider. You can override this, at the risk of breaking your Python installation <span class="kw">or</span> OS, by passing <span class="op">--</span><span class="cf">break</span><span class="op">-</span>system<span class="op">-</span>packages.</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>hint: See PEP <span class="dv">668</span> <span class="cf">for</span> the detailed specification.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre class="shell"><code>$ pip install buildhat
+error: externally-managed-environment
+
+× This environment is externally managed
+╰─&gt; To install Python packages system-wide, try apt install
+  python3-xyz, where xyz is the package you are trying to
+  install.
+
+  If you wish to install a non-Debian-packaged Python package,
+  create a virtual environment using python3 -m venv path/to/venv.
+  Then use path/to/venv/bin/python and path/to/venv/bin/pip. Make
+  sure you have python3-full installed.
+
+  For more information visit http://rptl.io/venv
+
+note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing --break-system-packages.
+hint: See PEP 668 for the detailed specification.</code></pre>
 <p>This error is generated because you’re trying to install a third-party package into the system Python. A long-standing practical problem for Python users has been conflicts between OS package managers like <code>apt</code> and Python-specific package management tools like <code>pip</code>. These conflicts include both Python-level API incompatibilities and conflicts over file ownership.</p>
 <p>Therefore from <em>Debian Bookworm</em> onwards, packages installed via <code>pip</code> must be installed into a Python virtual environment using <code>venv</code>. A virtual environment is a container where you can safely install third-party modules so they won’t interfere with, or break, your system Python.</p>
 </section>
-<section id="using-pip-with-virtual-environments" class="level3" data-number="4.2">
-<h3 data-number="4.2" class="anchored" data-anchor-id="using-pip-with-virtual-environments"><span class="header-section-number">4.2</span> Using pip with virtual environments</h3>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Any packages that cannot be installed using <code>apt</code> should instead installed onto a Python Virtual Environment using <code>venv</code> and <code>pip</code>.</p>
-</div>
-</div>
-<p>To use a virtual environment you will need to create a container to store the environment. There are several ways you can do this depending on how you want to work with Python.</p>
 </section>
-<section id="using-a-separate-environment-for-each-project" class="level3" data-number="4.3">
-<h3 data-number="4.3" class="anchored" data-anchor-id="using-a-separate-environment-for-each-project"><span class="header-section-number">4.3</span> Using a separate environment for each project</h3>
-<p>One way you can proceed is to create a new virtual environment for each Python project you make. Here, you’ll create a directory to hold your own code along with a virtual environment directory:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> mkdir my_project</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd my_project</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> python <span class="at">-m</span> venv env</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>If you now look inside the <code>my_project</code> directory you’ll see a directory called <code>env</code>.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ls <span class="at">-la</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">total</span> 12</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  3 pi pi 4096 Oct  3 14:34 .</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="ex">drwx------</span> 20 pi pi 4096 Oct  3 14:34 ..</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  5 pi pi 4096 Oct  3 14:34 env</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If you want to inherit the currently installed packages from the system Python, you should create your virtual environment using <code>python -m venv --system-site-packages env</code>.</p>
-<p>This will include the important Raspberry PI python modules that come with RaspberryPi OS in your venv.</p>
-</div>
-</div>
-<p>Inside this directory is a full Python distribution. How do we use it?</p>
-<p>A nice feature of venvs is that they <strong>must be activated to be used</strong>. This allows you to maintained several different venvs all over your machines to maintain many different projects with different versions of python.</p>
-<p>To activate your virtual environment and make that version of Python the one you’re currently using, you should type:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> source env/bin/activate</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="fu">env</span><span class="kw">)</span> <span class="ex">$</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>You’ll see that your prompt is now prepended with <code>(env)</code> to indicate that you’re no longer using the system Python. Instead, you’re using the version of Python contained inside your virtual environment. Any changes you make here won’t cause problems for your system Python; nor will any new modules you install into your environment.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="fu">env</span><span class="kw">)</span> <span class="ex">$</span> which python</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">/home/username/my_project/env/bin/python</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>If you install a third-party package, it’ll install into the Python distribution in your virtual environment:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="fu">env</span><span class="kw">)</span> <span class="ex">$</span> pip install buildhat</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Looking</span> in indexes: https://pypi.org/simple, https://www.piwheels.org/simple</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Collecting</span> buildhat</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="ex">Downloading</span> https://www.piwheels.org/simple/buildhat/buildhat-0.5.12-py3-none-any.whl <span class="er">(</span><span class="ex">57</span> kB<span class="kw">)</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>     <span class="ex">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> 57.8/57.8 kB 2.8 MB/s eta 0:00:00</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="ex">Collecting</span> gpiozero</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="ex">Downloading</span> https://www.piwheels.org/simple/gpiozero/gpiozero-2.0-py3-none-any.whl <span class="er">(</span><span class="ex">150</span> kB<span class="kw">)</span></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>     <span class="ex">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> 150.5/150.5 kB 6.9 MB/s eta 0:00:00</span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="ex">Collecting</span> pyserial</span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>  <span class="ex">Downloading</span> https://www.piwheels.org/simple/pyserial/pyserial-3.5-py2.py3-none-any.whl <span class="er">(</span><span class="ex">90</span> kB<span class="kw">)</span></span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>     <span class="ex">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> 90.6/90.6 kB 7.5 MB/s eta 0:00:00</span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="ex">Collecting</span> colorzero</span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>  <span class="ex">Downloading</span> https://www.piwheels.org/simple/colorzero/colorzero-2.0-py2.py3-none-any.whl <span class="er">(</span><span class="ex">26</span> kB<span class="kw">)</span></span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="ex">Requirement</span> already satisfied: setuptools in ./env/lib/python3.11/site-packages <span class="er">(</span><span class="ex">from</span> colorzero-<span class="op">&gt;</span>gpiozero-<span class="op">&gt;</span>buildhat<span class="kw">)</span> <span class="kw">(</span><span class="ex">66.1.1</span><span class="kw">)</span></span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="ex">Installing</span> collected packages: pyserial, colorzero, gpiozero, buildhat</span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="ex">Successfully</span> installed buildhat-0.5.12 colorzero-2.0 gpiozero-2.0 pyserial-3.5</span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="fu">env</span><span class="kw">)</span> <span class="ex">$</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Now, if you <code>pip list</code>, you’ll see that your current version of Python includes your new modules.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="fu">env</span><span class="kw">)</span> <span class="ex">$</span> pip list</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Package</span>    Version</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="ex">----------</span> <span class="at">-------</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="ex">buildhat</span>   0.5.12</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="ex">colorzero</span>  2.0</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="ex">gpiozero</span>   2.0</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span>        23.0.1</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="ex">pyserial</span>   3.5</span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="ex">setuptools</span> 66.1.1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>After writing your code, you can run it from the command line inside the virtual environment as you’d expect, by invoking Python as usual.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="fu">env</span><span class="kw">)</span> <span class="ex">$</span> ls <span class="at">-la</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="ex">total</span> 12</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  3 pi pi 4096 Oct  3 14:34 .</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="ex">drwx------</span> 20 pi pi 4096 Oct  3 14:34 ..</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  5 pi pi 4096 Oct  3 14:34 env</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 pi pi    0 Oct  3 14:45 my_code.py</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="fu">env</span><span class="kw">)</span> <span class="ex">$</span> python my_code.py</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="ex">Hello</span> World!</span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="fu">env</span><span class="kw">)</span> <span class="ex">$</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="virtual-environments" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="virtual-environments"><span class="header-section-number">5</span> Virtual environments</h2>
+<section id="how-virtual-environments-solve-the-pip-problem" class="level3" data-number="5.1">
+<h3 data-number="5.1" class="anchored" data-anchor-id="how-virtual-environments-solve-the-pip-problem"><span class="header-section-number">5.1</span> How virtual environments solve the <code>pip</code> problem</h3>
+<p>Python <a href="https://docs.python.org/3/library/venv.html">virtual environments</a> are folders that we can create in a python project using the <a href="https://docs.python.org/3/library/venv.html">venv</a> module.</p>
+<p>They act as a container that allows you to install python libraries and applications in a folder separated from your system python packages.</p>
+<p>This has the following benefits:</p>
+<ol type="1">
+<li><p><strong>Avoid system pollution</strong></p>
+<ul>
+<li>Installing packages to the OS’s global Python will mix them with OS relevant packages. This could have unexpected side effects on OS tasks.</li>
+<li>Because of the reason above, updating OS packages might overwrite or delete global Python packages.</li>
+</ul></li>
+<li><p><strong>Avoid project dependency conflicts</strong></p>
+<ul>
+<li>Python projects might require different versions the same external library.</li>
+</ul></li>
+<li><p><strong>Make projects reproducible in other environments.</strong></p>
+<ul>
+<li>Since all dependencies are isolated to a specific project, it is easier to identify and document them.</li>
+<li>Once the dependencies are “locked”, the project dependency can be easily reproduced in other environments.</li>
+</ul></li>
+</ol>
+</section>
+<section id="creating-a-virtual-environment" class="level3" data-number="5.2">
+<h3 data-number="5.2" class="anchored" data-anchor-id="creating-a-virtual-environment"><span class="header-section-number">5.2</span> Creating a virtual environment</h3>
+<p>Inside of the project directory where you want to create virtual environment:</p>
+<pre class="shell"><code>$ python -m venv .venv</code></pre>
+<p>Note that the <code>.venv</code> argument is the name of your virtual environment. <code>.venv</code> is a popular choice that will be automatically recognized by VSCode.</p>
+<p>The <code>python -m venv .venv</code> command creates a directory called <code>.venv</code>:</p>
+<pre class="shell"><code>$ ls -la
+total 12
+drwxr-xr-x  3 user user 4096 Oct  3 14:34 .
+drwx------ 20 user user 4096 Oct  3 14:34 ..
+drwxr-xr-x  5 user user 4096 Oct  3 14:34 .venv
+$</code></pre>
+</section>
+<section id="activating-and-deactivating-a-virtual-environment" class="level3" data-number="5.3">
+<h3 data-number="5.3" class="anchored" data-anchor-id="activating-and-deactivating-a-virtual-environment"><span class="header-section-number">5.3</span> Activating and deactivating a virtual environment</h3>
+<p>Inside the virtual environment directory is a full Python distribution (use <code>ls -l</code> to see the files). How do we use it?</p>
+<p>A nice feature of venvs is that they <strong>must be activated to be used</strong>. This allows you to maintain many different venvs all over your machine, allowing you to control the python dependencies for each project independently.</p>
+<p>To <strong>activate</strong> your virtual environment and make that version of Python the one you’re currently using, <code>python -m venv</code> creates a bash environment script called <code>activate</code> that you can run with the bash command <a href="../../notes/bash-scripting/#function-library-with-source"><code>source</code></a>:</p>
+<pre class="shell"><code>$ source .venv/bin/activate
+(.venv) $</code></pre>
+<p>You’ll see that your prompt is now prepended with <code>(.venv)</code> to indicate that you’re no longer using the system Python. Instead, you’re using the version of Python contained inside your virtual environment. Any changes you make here won’t cause problems for your system Python; nor will any new modules you install into your environment.</p>
+<pre class="shell"><code>(.venv) $ which python
+/home/username/my_project/.venv/bin/python</code></pre>
 <p>You can leave your virtual environment and return to using the system Python by typing:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="fu">env</span><span class="kw">)</span> <span class="ex">$</span> deactivate</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>…​and demonstrate to yourself you’ve done so by checking the installed packages using <code>pip list</code>.</p>
+<pre class="shell"><code>(.venv) $ deactivate</code></pre>
+<p>…and check for yourself that the shell’s <code>python</code> has updated by using <code>which python</code>.</p>
 </section>
-<section id="including-system-packages-in-your-venv" class="level3" data-number="4.4">
-<h3 data-number="4.4" class="anchored" data-anchor-id="including-system-packages-in-your-venv"><span class="header-section-number">4.4</span> Including system packages in your venv</h3>
-<p><em>This section has been adapted directly from realPython.com: <a href="https://realpython.com/python-virtual-environments-a-primer/#include-the-system-site-packages">Virtual Environments: Include the System Site-Packages</a>. The whole article is worth skimming for reference.</em></p>
-<p>In this class, we will often use the RaspberryPi python packages that we install system-wide (<code>gpio</code>, <code>RPi</code>, etc), and we may want to access them in the same environment where we create local virtual environments.</p>
-<p>That is, while you still want to keep your projects in separate environments, you can save the effort of re-installing <code>gpio</code> or <code>RPi</code> into each of these projects.</p>
-<p>You can access all modules you’ve installed to your base Python’s site-packages directory by adding the <code>--system-site-packages</code> flag when creating your virtual environment.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If you install any additional external packages, then Python will put them into the site-packages directory of your virtual environment. You only get read access to the system site-packages directory.</p>
-</div>
-</div>
-<p>Create a new virtual environment while passing this argument. You’ll see that in addition to your local site-packages directory, the path to your base Python’s site-packages directory will stick around in sys.path.</p>
-<p>To test this, you can create and activate a new virtual environment using the <code>--system-site-packages</code> argument:</p>
-<pre><code>$ python3 -m venv env --system-site-packages
-$ source venv/bin/activate
-(venv) $</code></pre>
-<p>Once again, you’ve created a new virtual environment named venv, but this time you passed the <code>--system-site-packages</code> argument. Adding this optional argument resulted in a different setting in your <code>venv/pyvenv.cfg</code> file:</p>
-<pre><code>$ cat env/pyvenv.cfg
-home = /usr/bin
-include-system-site-packages = true
-version = 3.11</code></pre>
-<p>By default, the <code>include-system-site-packages</code> is set to false.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>It is common to forget to include the <code>--system-site-packages</code> flag when creating a venv. <strong>If you create a virtual environment and forget to include system site packages, you can include them again by changing <code>include-system-site-packages</code> in your environment <code>env/pyvenv.cfg</code> to <code>true</code> in your venv</strong>.</p>
-</div>
-</div>
-<p>This change means that you’ll see an additional entry to sys.path, which allows the Python interpreter in your virtual environment to also access the system site-packages directory. Make sure your virtual environment is active, then start the Python interpreter to check the path variables:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="fu">env</span><span class="kw">)</span> <span class="ex">$</span> python</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> import <span class="ex">sys</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> from <span class="ex">pprint</span> import pp</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> pp<span class="kw">(</span><span class="ex">sys.path</span><span class="kw">)</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="ex">[</span><span class="st">''</span><span class="ex">,</span></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a> <span class="st">'/usr/local/lib/python311.zip'</span><span class="ex">,</span></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">'etc.'</span></span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="ex">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="installing-venv-packages-with-pip" class="level3" data-number="5.4">
+<h3 data-number="5.4" class="anchored" data-anchor-id="installing-venv-packages-with-pip"><span class="header-section-number">5.4</span> Installing venv packages with <code>pip</code></h3>
+<p>Once a virtual environment is active, <strong>packages installed with <code>pip</code> will be local to that virtual environment.</strong></p>
+<p>For a virtual environment named <code>.venv</code>, for example:</p>
+<pre class="shell"><code>.venv/
+│  └── lib/
+│    └── python3.X/
+│      └── site-packages/</code></pre>
+<p>For example, installing <code>gpiozero</code>:</p>
+<pre class="shell"><code># Notice the shell prompt indicates a virtual env is active
+$ (.venv) pip install gpiozero
+...
+$ (.venv) ls -l .venv/lib/python3.11/site-packages/ | grep gpiozero
+drwxr-xr-x@    - username 23 Jan 20:48 gpiozero                   # source code
+drwxr-xr-x@    - username 23 Jan 20:48 gpiozero-2.0.1.dist-info   # distribution archive
+drwxr-xr-x@    - username 23 Jan 20:48 gpiozerocli                # gpiozero comes with an extra python package for cli use</code></pre>
 </section>
-<section id="using-packages-that-require-root-permissions" class="level3" data-number="4.5">
-<h3 data-number="4.5" class="anchored" data-anchor-id="using-packages-that-require-root-permissions"><span class="header-section-number">4.5</span> Using packages that require root permissions</h3>
-<p>The <code>venv</code> pattern is very useful for maintaining packages that do not require root permissions. This is a feature, not a bug – that way, you can have many developers independently install packages on one machine without needing to give them root permissions.</p>
-<p>Sometimes (and particularly, in this couse) the packages we install <em>require</em> root permissions to work. Consider the packages that edit LED <code>/sys/</code> files, like <code>seeed-python-reterminal</code> we install in Lab 2. We will run into an issue if we try to use these packages as normal users:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="fu">env</span><span class="kw">)</span> <span class="ex">user@hostname:~/lab2/python</span> $ python ./leds.py</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ... output redacted</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>Permissions <span class="ex">error</span><span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>It is unfortunately not fixable by simply using <code>sudo</code>:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="fu">env</span><span class="kw">)</span> <span class="ex">user@hostname:~/lab2/python</span> $ sudo python ./leds.py</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ... output redacted</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>Module <span class="ex">seeed-python-terminal</span> not included/available<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Why isn’t the package available? Well, <code>sudo</code> runs <code>python</code> <em>as the root user</em>. The root user does not have your <code>venv</code> of python in its path. Try the commands below on your system to see if you understand what I mean.</p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">normal user</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">sudo user</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="fu">env</span><span class="kw">)</span><span class="ex">jyourusername@yourhostname:~</span> $ which python</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co"># &lt;double check that the python executable comes from your venv&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="fu">env</span><span class="kw">)</span><span class="ex">jyourusername@yourhostname:~</span> $ sudo su</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="fu">env</span><span class="kw">)</span><span class="ex">root@yourhostname:~</span> <span class="co"># which python</span></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="co"># &lt;you should see that the python executable is in a different place!, even though we still have "env"&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-<p>How to resolve this problem? It is similar to the <code>sudo echo &gt; file</code> problem we saw with Bash. We need to make sure <code>sudo</code> is applying to the <em>correct python executable</em>. There are a few ways we can do this, all of which will look something like this:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="fu">env</span><span class="kw">)</span><span class="ex">jyourusername@yourhostname:~</span> $ sudo /absolute/path/to/venv/python ./leds.py</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="fu">env</span><span class="kw">)</span><span class="ex">jyourusername@yourhostname:~</span> $ sudo ./env/relative/path/to/venv/python ./leds.py</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="fu">env</span><span class="kw">)</span><span class="ex">jyourusername@yourhostname:~</span> $ sudo <span class="va">$(</span><span class="ex">shell</span> command for finding where python is installed<span class="va">)</span> ./leds.py <span class="co"># use command substitution</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Try a few of these options out (will not work if you copy paste! Make sure you understand the commands)</p>
+<section id="checking-what-packages-are-installed-in-a-.venv" class="level3" data-number="5.5">
+<h3 data-number="5.5" class="anchored" data-anchor-id="checking-what-packages-are-installed-in-a-.venv"><span class="header-section-number">5.5</span> Checking what packages are installed in a .venv</h3>
+<p>You can use <code>pip freeze</code> to get the packages installed in the python environment:</p>
+<pre class="shell"><code>$ pip freeze</code></pre>
+<p>This command is useful for a few reasons:</p>
+<ul>
+<li>verifying that the package you attempted to install is the version you expect it to be</li>
+<li>creating a <a href="../../notes/python-project-management#dependencies-with-requirements.txt">requirements.txt</a> file from the output of the <code>pip freeze</code> command.</li>
+</ul>
 </section>
-<section id="using-a-separate-environment-for-each-user" class="level3" data-number="4.6">
-<h3 data-number="4.6" class="anchored" data-anchor-id="using-a-separate-environment-for-each-user"><span class="header-section-number">4.6</span> Using a separate environment for each user</h3>
-<p>An alternative method to creating a virtual environment for each of your Python projects is to create a single virtual environment for your user account, and then activate that environment before running any of your Python code. This approach may be preferred if you commonly install the same set of modules for each project, and don’t want to have to bother creating individual Python environments for each project, essentially just duplicating your environment.</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> python <span class="at">-m</span> venv ~/.env</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> source ~/.env/bin/activate</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">.env</span><span class="kw">)</span> <span class="ex">$</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>You can check again that you’re in a separate environment by using <code>pip list</code>:</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">.env</span><span class="kw">)</span> <span class="ex">$</span> pip list</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Package</span>    Version</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="ex">----------</span> <span class="at">-------</span></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span>        23.0.1</span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="ex">setuptools</span> 66.1.1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>…​and leave it using <code>deactivate</code>.</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">.env</span><span class="kw">)</span> <span class="ex">$</span> deactivate</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="re-using-virtual-environments" class="level3" data-number="5.6">
+<h3 data-number="5.6" class="anchored" data-anchor-id="re-using-virtual-environments"><span class="header-section-number">5.6</span> “Re-using” Virtual Environments</h3>
+<p>If you move or copy a project that uses virtual environments to a different folder, <strong>you must re-initialize the virtual environment.</strong></p>
+<p>From the <a href="https://docs.python.org/3/library/venv.html#how-venvs-work">official docs</a>:</p>
+<blockquote class="blockquote">
+<p>Scripts installed in environments contain the absolute paths to their environment’s interpreters.</p>
+</blockquote>
+<p>Because of this, <strong>virtual environments are non-portable</strong> – instead of moving them around, the better thing is to <strong>make sure you have a method to recreate a virtual environment</strong>.</p>
+<p>For example, create a requirements file <code>requirements.txt</code>, and invoke <code>pip install -r requirements.txt</code>, to recreate your virtual environment dependencies.</p>
+<p>You can see more about managing your projects dependencies in the <a href="../../notes/python-project-management#project-configuration">course notes on project configuration</a></p>
 </section>
-<section id="check-library-location" class="level3" data-number="4.7">
-<h3 data-number="4.7" class="anchored" data-anchor-id="check-library-location"><span class="header-section-number">4.7</span> Check library location</h3>
+</section>
+<section id="troubleshooting" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="troubleshooting"><span class="header-section-number">6</span> Troubleshooting</h2>
+<p>Here are a few things to know in case you’re having issues using packages you’ve installed in a virtual environment.</p>
+<section id="check-library-location" class="level3" data-number="6.1">
+<h3 data-number="6.1" class="anchored" data-anchor-id="check-library-location"><span class="header-section-number">6.1</span> Check library location</h3>
 <p>Check the location of where the module was installed with <code>pip show &lt;module-name&gt;</code>:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="fu">env</span><span class="kw">)</span> <span class="ex">pi@raspberrypi:~</span> $ pip show seeed-python-reterminal</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Name:</span> seeed-python-reterminal</span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="ex">Version:</span> 0.2</span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="ex">Summary:</span> seeed-python-reterminal</span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="ex">Home-page:</span> https://github.com/Seeed-Studio/Seeed_Python_ReTerminal</span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="ex">Author:</span> Takashi Matsuoka <span class="er">(</span><span class="ex">matsujirushi</span><span class="kw">)</span></span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a><span class="ex">Author-email:</span> matsujirushi@live.jp</span>
-<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a><span class="ex">License:</span> MIT License</span>
-<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a><span class="ex">Location:</span> /usr/local/lib/python3.7/dist-packages      <span class="co"># Library location</span></span>
-<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a><span class="ex">Requires:</span> evdev</span>
-<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a><span class="ex">Required-by:</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The library is installed at: <code>Location: /usr/local/lib/python3.7/dist-packages</code></p>
+<pre class="shell"><code>(.venv) user@host:~ $ pip show gpiozero
+
+Name: gpiozero
+Version: 2.0.1
+Summary: A simple interface to GPIO devices with Raspberry Pi
+Home-page: https://gpiozero.readthedocs.io/
+Author: Ben Nuttall
+Author-email: ben@bennuttall.com
+License: BSD-3-Clause
+Location: /absolute/path/to/.venv/lib/python3.12/site-packages
+Requires: colorzero
+Required-by:</code></pre>
+<p>The library location is specified by the <code>Location</code> field.</p>
 </section>
-</section>
-<section id="troubleshooting" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="troubleshooting"><span class="header-section-number">5</span> Troubleshooting</h2>
-<section id="check-pythons-library-paths" class="level3" data-number="5.1">
-<h3 data-number="5.1" class="anchored" data-anchor-id="check-pythons-library-paths"><span class="header-section-number">5.1</span> Check python’s library paths</h3>
+<section id="check-pythons-library-paths" class="level3" data-number="6.2">
+<h3 data-number="6.2" class="anchored" data-anchor-id="check-pythons-library-paths"><span class="header-section-number">6.2</span> Check python’s library paths</h3>
 <p>Similarly to Linux, there are environmental variables that determine where python will look for installed modules/libraries.</p>
 <p>See the paths where python is looking for libraries with <code>sys.path</code>. They should look something like:</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">system</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">venv</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">venv</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">system</a></li></ul>
 <div class="tab-content">
-<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
-<div class="sourceCode" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>pi<span class="op">@</span>raspberrypi:<span class="op">~</span> $ python</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> sys      <span class="co"># Exposes configuration used by the python interpreter.</span></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> sys.path        <span class="co"># Lists all paths where interpreter looks for modules.</span></span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>[<span class="st">''</span>, <span class="st">'/usr/lib/python311.zip'</span>, <span class="st">'/usr/lib/python3.11'</span>, <span class="st">'/usr/lib/python3.11/lib-dynload'</span>, <span class="st">'/usr/local/lib/python3.11/dist-packages'</span>, <span class="st">'/usr/lib/python3/dist-packages'</span>, <span class="st">'/usr/lib/python3.11/dist-packages'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<pre class="shell"><code>(.venv) pi@raspberrypi:~ $ python
+
+&gt;&gt;&gt; import sys      # Exposes configuration used by the python interpreter.
+&gt;&gt;&gt; sys.path        # Lists all paths where interpreter looks for modules.
+['', '/usr/lib/python311/site-packages']</code></pre>
 </div>
-<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
-<div class="sourceCode" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>(env) pi<span class="op">@</span>raspberrypi:<span class="op">~</span> $ python</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> sys      <span class="co"># Exposes configuration used by the python interpreter.</span></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> sys.path        <span class="co"># Lists all paths where interpreter looks for modules.</span></span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>[<span class="st">''</span>, <span class="st">'/usr/lib/python311.zip'</span>, <span class="st">'/usr/lib/python3.11'</span>, <span class="st">'/usr/lib/python3.11/lib-dynload'</span>, <span class="st">'/home/pi/lab2/python/env/lib/python3.11/site-packages'</span>, <span class="st">'/usr/local/lib/python3.11/dist-packages'</span>, <span class="st">'/usr/lib/python3/dist-packages'</span>, <span class="st">'/usr/lib/python3.11/dist-packages'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<pre class="shell"><code>pi@raspberrypi:~ $ python
+
+&gt;&gt;&gt; import sys      # Exposes configuration used by the python interpreter.
+&gt;&gt;&gt; sys.path        # Lists all paths where interpreter looks for modules.
+['', '/usr/lib/python311.zip', '/usr/lib/python3.11', '/usr/lib/python3.11/lib-dynload', '/usr/local/lib/python3.11/dist-packages', '/usr/lib/python3/dist-packages', '/usr/lib/python3.11/dist-packages']</code></pre>
 </div>
 </div>
 </div>
 <p>If the output of <code>pip show seeed-python-reterminal</code> is not in this list, python will not find it when you import it.</p>
-<blockquote class="blockquote">
-<p><strong>Note:</strong> the python shell above was started as the user <code>pi</code>. If you start python as <strong>root</strong>, <code>sys.path</code> might have different paths.</p>
-</blockquote>
-<p>Note that the user <code>pi</code> does not have permission to add content inside <code>/usr</code>.</p>
-<p>Thus, all <code>pip</code> installations as the regular user go into <code>/home/pi/.local/lib/python3.11/site-packages</code>.</p>
+</section>
+<section id="using-packages-that-require-root-permissions" class="level3" data-number="6.3">
+<h3 data-number="6.3" class="anchored" data-anchor-id="using-packages-that-require-root-permissions"><span class="header-section-number">6.3</span> Using packages that require root permissions</h3>
+<p>The <code>venv</code> pattern is very useful for maintaining packages that do not require root permissions. This is a feature, not a bug – that way, you can have many developers independently install packages on one machine without needing to give them root permissions.</p>
+<p>Sometimes (and particularly, in this couse) the packages we install <em>require</em> root permissions to work. Consider the packages that edit LED <code>/sys/</code> files, like <code>seeed-python-reterminal</code> we install in Lab 2. We will run into an issue if we try to use these packages as normal users:</p>
+<pre class="shell"><code>(.venv) user@hostname:~/lab2/python $ python ./leds.py
+# ... output redacted
+&lt;Permissions error&gt;</code></pre>
+<p>It is unfortunately not fixable by simply using <code>sudo</code>:</p>
+<pre class="shell"><code>(.venv) user@hostname:~/lab2/python $ sudo python ./leds.py
+# ... output redacted
+&lt;Module seeed-python-terminal not included/available&gt;</code></pre>
+<p>Why isn’t the package available? Well, <code>sudo</code> runs <code>python</code> <em>as the root user</em>. The root user does not have your <code>venv</code> of python in its path. Try the commands below on your system to see if you understand what I mean.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">normal user</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">sudo user</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<pre class="shell"><code>(.venv)user@host:~ $ which python
+/home/user/path/to/.venv/bin/python</code></pre>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<pre class="shell"><code>(.venv)user@host:~ $ sudo su
+(.venv)root@host:~ # which python
+/usr/bin/python</code></pre>
+</div>
+</div>
+</div>
+<p>How to resolve this problem? It is similar to the <code>sudo echo &gt; file</code> problem we saw with Bash. We need to make sure <code>sudo</code> is applying to the <em>correct python executable</em>. There are a few ways we can do this, all of which will look something like this:</p>
+<pre class="shell"><code># use absolute path to virtual environment python
+(.venv)user@host:~ $ sudo /absolute/path/to/venv/python ./leds.py
+
+# use relative path to virtual environment python
+(.venv)user@host:~ $ sudo ./.venv/relative/path/to/venv/python ./leds.py
+
+# use command substitution
+(.venv)user@host:~ $ sudo $(shell command for finding where python is installed) ./leds.py</code></pre>
+<p>Try a few of these options out (will not work if you copy paste! Make sure you understand the commands)</p>
+</section>
+</section>
+<section id="further-reading" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="further-reading"><span class="header-section-number">7</span> Further reading</h2>
+<ul>
+<li>Short guide by python.org: <a href="https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/#installing-packages-using-pip-and-virtual-environments">Installing packages using pip and virtual environments</a></li>
+<li>Detailed guide by RealPython.com: <a href="https://realpython.com/python-virtual-environments-a-primer/">Python Virtual Environments: A Primer</a></li>
+</ul>
 
 
 </section>
-</section>
-
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div>CC BY-NC 4.0. ©2022-25 Mauricio Buschinelli &amp; Michael Haaf.
 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">(View License)</a></div></div></section></div></main> <!-- /main -->
@@ -1478,13 +1444,13 @@ Note
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../notes/course-hardware/index.html" class="pagination-link" aria-label="Course hardware">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Course hardware</span>
+      <a href="../../notes/analog-vs-digital/index.html" class="pagination-link" aria-label="Signals: Analog and digital">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Signals: Analog and digital</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../notes/iot-concepts/index.html" class="pagination-link" aria-label="Intro to the Internet of Things">
-        <span class="nav-page-text">Intro to the Internet of Things</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../notes/linux-package-management/index.html" class="pagination-link" aria-label="Linux package management">
+        <span class="nav-page-text">Linux package management</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

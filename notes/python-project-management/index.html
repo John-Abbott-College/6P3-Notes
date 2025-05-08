@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.29">
+<meta name="generator" content="quarto-1.7.30">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -85,8 +85,8 @@ div.csl-indent {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../notes/python-scripting/index.html" rel="next">
-<link href="../../notes/azure-cli-cheatsheet/index.html" rel="prev">
+<link href="../../notes/course-hardware/index.html" rel="next">
+<link href="../../notes/serial-protocols/index.html" rel="prev">
 <link href="../../assets/favicon_io/favicon.ico" rel="icon">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -94,14 +94,14 @@ div.csl-indent {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-499c96a24f2a291ef9bc75fd2f94d294.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-76023911c31467dce141f6e35d0a63e7.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-499c96a24f2a291ef9bc75fd2f94d294.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-994e4b8856f7f45380dc4610c9e8c6ff.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-1accdb772a835ed2a2aefeb3c6e399c0.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-994e4b8856f7f45380dc4610c9e8c6ff.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-4ef7393c7e44f340fd1359cdd701ebd4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-d0698a0cc84e0a494962846fd79f0c91.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-4ef7393c7e44f340fd1359cdd701ebd4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-13f8f73bb956a6e62072eb9d3f883997.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-1fdb536d0f1451bfcff7e167a4f99223.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-13f8f73bb956a6e62072eb9d3f883997.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="../../site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
@@ -131,12 +131,12 @@ div.csl-indent {
 
 
 <meta property="og:title" content="Python project management – Connected Objects">
-<meta property="og:description" content="Previously, we have focused on installing dependencies from other projects – we expand on that knowledge to learn how to create our own projects">
+<meta property="og:description" content="Python modules and packages. Python project file structure. Managing project dependencies. Configuring python project metadata. requirements.txt and pyproject.toml. Configuring python linters and formatters.">
 <meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/notes/python-project-management/assets/art_title_path_only.svg">
 <meta property="og:site_name" content="{{< var course.title >}}">
 </head>
 
-<body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar docked nav-fixed slimcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -290,6 +290,7 @@ div.csl-indent {
       toggleColorMode(toAlternate);
       setStyleSentinel(toAlternate);
       toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
     };
     // Switch to dark mode if need be
     if (hasAlternateSentinel()) {
@@ -331,116 +332,76 @@ div.csl-indent {
  <span class="dropdown-text">All course notes</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../../notes/device-calibrating/index.html">
+ <span class="dropdown-text">Device calibration</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../../notes/python-oop/index.html">
  <span class="dropdown-text">Python OOP</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/gpios/index.html">
- <span class="dropdown-text">GPIOs: Inputs and Outputs</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/iot-protocols/index.html">
- <span class="dropdown-text">IoT Communication Protocols</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/microcomputers/index.html">
- <span class="dropdown-text">Microcomputers</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/async-python/index.html">
- <span class="dropdown-text">Asynchronous progamming in Python</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/device-twins/index.html">
- <span class="dropdown-text">Device Twins</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/python-collections/index.html">
- <span class="dropdown-text">Python collection types and operations</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/azure-sdks/index.html">
- <span class="dropdown-text">Azure SDKs in Python and C#</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/python-environments/index.html">
- <span class="dropdown-text">Python environment management</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/linux-package-management/index.html">
- <span class="dropdown-text">Linux package management</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/azure-features/index.html">
- <span class="dropdown-text">Azure Features</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/serial-protocols/index.html">
- <span class="dropdown-text">Serial protocols</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/bash-scripting/index.html">
- <span class="dropdown-text">Bash scripting</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/debug-reterminal/index.html">
- <span class="dropdown-text">Debugging Reterminal Issues</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/course-hardware/index.html">
- <span class="dropdown-text">Course hardware</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/python-package-management/index.html">
- <span class="dropdown-text">Python package management</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/iot-concepts/index.html">
- <span class="dropdown-text">Intro to the Internet of Things</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../notes/azure-cli-cheatsheet/index.html">
  <span class="dropdown-text">Azure CLI Cheatsheet</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../notes/python-project-management/index.html">
- <span class="dropdown-text">Python project management</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/python-scripting/index.html">
- <span class="dropdown-text">Python scripting</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/eventhub-dotnet/index.html">
- <span class="dropdown-text">EventHubs &amp; .NET SDK</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/analog-vs-digital/index.html">
- <span class="dropdown-text">Signals: Analog and digital</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/github-basics/index.html">
- <span class="dropdown-text">GitHub basics</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/bash-essentials/index.html">
- <span class="dropdown-text">Bash essentials</span></a>
-  </li>  
-        <li>
     <a class="dropdown-item" href="../../notes/reterminal-devices/index.html">
  <span class="dropdown-text">reTerminal built-in devices</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../notes/reterminal-setup/index.html">
- <span class="dropdown-text">Reterminal setup</span></a>
+    <a class="dropdown-item" href="../../notes/bash-scripting/index.html">
+ <span class="dropdown-text">Bash scripting</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/iot-protocols/index.html">
+ <span class="dropdown-text">IoT Communication Protocols</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/gpios/index.html">
+ <span class="dropdown-text">GPIOs: Inputs and Outputs</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/azure-sdks/index.html">
+ <span class="dropdown-text">Azure SDKs in Python and C#</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../notes/azure-portal/index.html">
  <span class="dropdown-text">Azure Portal Setup</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../notes/developer-environment/index.html">
- <span class="dropdown-text">Developer environment setup</span></a>
+    <a class="dropdown-item" href="../../notes/analog-vs-digital/index.html">
+ <span class="dropdown-text">Signals: Analog and digital</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/python-package-management/index.html">
+ <span class="dropdown-text">Python package management</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/linux-package-management/index.html">
+ <span class="dropdown-text">Linux package management</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/github-basics/index.html">
+ <span class="dropdown-text">GitHub basics</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/iot-concepts/index.html">
+ <span class="dropdown-text">Intro to the Internet of Things</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/reterminal-setup/index.html">
+ <span class="dropdown-text">Reterminal setup</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/debug-reterminal/index.html">
+ <span class="dropdown-text">Debugging Reterminal Issues</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/python-extras/index.html">
+ <span class="dropdown-text">Python extras</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/device-twins/index.html">
+ <span class="dropdown-text">Device Twins</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../notes/circuitry/index.html">
@@ -449,6 +410,54 @@ div.csl-indent {
         <li>
     <a class="dropdown-item" href="../../notes/device-cloud-communication/index.html">
  <span class="dropdown-text">Device to Cloud Communication</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/async-python/index.html">
+ <span class="dropdown-text">Asynchronous progamming in Python</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/bash-essentials/index.html">
+ <span class="dropdown-text">Bash essentials</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/serial-protocols/index.html">
+ <span class="dropdown-text">Serial protocols</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/python-project-management/index.html">
+ <span class="dropdown-text">Python project management</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/course-hardware/index.html">
+ <span class="dropdown-text">Course hardware</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/developer-environment/index.html">
+ <span class="dropdown-text">Developer environment setup</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/python-scripting/index.html">
+ <span class="dropdown-text">Python scripting</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/python-collections/index.html">
+ <span class="dropdown-text">Python collection types and operations</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/microcomputers/index.html">
+ <span class="dropdown-text">Microcomputers</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/azure-storage/index.html">
+ <span class="dropdown-text">Azure Blob Storage</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/azure-features/index.html">
+ <span class="dropdown-text">Azure Features</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/eventhub-dotnet/index.html">
+ <span class="dropdown-text">EventHubs &amp; .NET SDK</span></a>
   </li>  
     </ul>
   </li>
@@ -500,104 +509,14 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../notes/device-calibrating/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Device calibration</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../notes/python-oop/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Python OOP</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/gpios/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">GPIOs: Inputs and Outputs</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/iot-protocols/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">IoT Communication Protocols</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/microcomputers/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Microcomputers</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/async-python/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Asynchronous progamming in Python</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/device-twins/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Device Twins</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/python-collections/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Python collection types and operations</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/azure-sdks/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Azure SDKs in Python and C#</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/python-environments/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Python environment management</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/linux-package-management/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Linux package management</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/azure-features/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Azure Features</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/serial-protocols/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Serial protocols</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/bash-scripting/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bash scripting</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/debug-reterminal/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Debugging Reterminal Issues</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/course-hardware/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Course hardware</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/python-package-management/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Python package management</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/iot-concepts/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Intro to the Internet of Things</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -608,50 +527,32 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notes/python-project-management/index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Python project management</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/python-scripting/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Python scripting</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/eventhub-dotnet/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">EventHubs &amp; .NET SDK</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/analog-vs-digital/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Signals: Analog and digital</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/github-basics/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">GitHub basics</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/bash-essentials/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bash essentials</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../../notes/reterminal-devices/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">reTerminal built-in devices</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notes/reterminal-setup/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Reterminal setup</span></a>
+  <a href="../../notes/bash-scripting/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bash scripting</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/iot-protocols/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">IoT Communication Protocols</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/gpios/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">GPIOs: Inputs and Outputs</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/azure-sdks/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Azure SDKs in Python and C#</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -662,8 +563,56 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notes/developer-environment/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Developer environment setup</span></a>
+  <a href="../../notes/analog-vs-digital/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Signals: Analog and digital</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/python-package-management/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python package management</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/linux-package-management/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linux package management</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/github-basics/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">GitHub basics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/iot-concepts/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Intro to the Internet of Things</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/reterminal-setup/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Reterminal setup</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/debug-reterminal/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Debugging Reterminal Issues</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/python-extras/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python extras</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/device-twins/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Device Twins</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -678,9 +627,81 @@ div.csl-indent {
  <span class="menu-text">Device to Cloud Communication</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/async-python/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Asynchronous progamming in Python</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/bash-essentials/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bash essentials</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/serial-protocols/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Serial protocols</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/python-project-management/index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Python project management</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/course-hardware/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Course hardware</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/developer-environment/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Developer environment setup</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/python-scripting/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python scripting</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/python-collections/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python collection types and operations</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/microcomputers/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Microcomputers</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/azure-storage/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Azure Blob Storage</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/azure-features/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Azure Features</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/eventhub-dotnet/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">EventHubs &amp; .NET SDK</span></a>
+  </div>
+</li>
     </ul>
     </div>
-    <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="1">
+    <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
@@ -690,8 +711,24 @@ div.csl-indent {
   <li><a href="#modules" id="toc-modules" class="nav-link" data-scroll-target="#modules"><span class="header-section-number">2.1</span> Modules</a></li>
   <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages"><span class="header-section-number">2.2</span> Packages</a></li>
   </ul></li>
-  <li><a href="#project-structure" id="toc-project-structure" class="nav-link" data-scroll-target="#project-structure"><span class="header-section-number">3</span> Project Structure</a></li>
-  <li><a href="#relative-import-statements" id="toc-relative-import-statements" class="nav-link" data-scroll-target="#relative-import-statements"><span class="header-section-number">4</span> Relative Import Statements</a></li>
+  <li><a href="#project-file-structure" id="toc-project-file-structure" class="nav-link" data-scroll-target="#project-file-structure"><span class="header-section-number">3</span> Project file structure</a></li>
+  <li><a href="#project-configuration" id="toc-project-configuration" class="nav-link" data-scroll-target="#project-configuration"><span class="header-section-number">4</span> Project configuration</a>
+  <ul>
+  <li><a href="#dependencies-with-requirements.txt" id="toc-dependencies-with-requirements.txt" class="nav-link" data-scroll-target="#dependencies-with-requirements.txt"><span class="header-section-number">4.1</span> Dependencies with <code>requirements.txt</code></a></li>
+  <li><a href="#formattinglinting-with-ruff" id="toc-formattinglinting-with-ruff" class="nav-link" data-scroll-target="#formattinglinting-with-ruff"><span class="header-section-number">4.2</span> Formatting/linting with ruff</a></li>
+  <li><a href="#pyproject.toml" id="toc-pyproject.toml" class="nav-link" data-scroll-target="#pyproject.toml"><span class="header-section-number">4.3</span> <code>pyproject.toml</code></a>
+  <ul class="collapse">
+  <li><a href="#basics" id="toc-basics" class="nav-link" data-scroll-target="#basics"><span class="header-section-number">4.3.1</span> Basics</a></li>
+  <li><a href="#replacing-requirements.txt" id="toc-replacing-requirements.txt" class="nav-link" data-scroll-target="#replacing-requirements.txt"><span class="header-section-number">4.3.2</span> Replacing <code>requirements.txt</code></a></li>
+  <li><a href="#replacing-configuration-files-e.g.-ruff.toml" id="toc-replacing-configuration-files-e.g.-ruff.toml" class="nav-link" data-scroll-target="#replacing-configuration-files-e.g.-ruff.toml"><span class="header-section-number">4.3.3</span> Replacing configuration files e.g.&nbsp;<code>ruff.toml</code></a></li>
+  <li><a href="#project-metadata" id="toc-project-metadata" class="nav-link" data-scroll-target="#project-metadata"><span class="header-section-number">4.3.4</span> Project metadata</a></li>
+  <li><a href="#advanced-features" id="toc-advanced-features" class="nav-link" data-scroll-target="#advanced-features"><span class="header-section-number">4.3.5</span> Advanced features</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#tips-and-tricks" id="toc-tips-and-tricks" class="nav-link" data-scroll-target="#tips-and-tricks"><span class="header-section-number">5</span> Tips and Tricks</a>
+  <ul>
+  <li><a href="#relative-import-statements" id="toc-relative-import-statements" class="nav-link" data-scroll-target="#relative-import-statements"><span class="header-section-number">5.1</span> Relative Import Statements</a></li>
+  </ul></li>
   </ul>
 </nav>
 </nav>
@@ -700,13 +737,13 @@ div.csl-indent {
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Python project management</h1>
-<p class="subtitle lead">Previously, we have focused on installing dependencies from other projects – we expand on that knowledge to learn how to create our own projects</p>
+<p class="subtitle lead"></p><p>Python modules and packages. Python project file structure. Managing project dependencies. Configuring python project metadata. requirements.txt and pyproject.toml. Configuring python linters and formatters.</p><p></p>
   <div class="quarto-categories">
     <div class="quarto-category">python</div>
   </div>
@@ -727,7 +764,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">May 4, 2025</p>
+      <p class="date-modified">May 8, 2025</p>
     </div>
   </div>
     
@@ -745,7 +782,7 @@ div.csl-indent {
 <ul>
 <li>Import statements</li>
 <li>Relative imports</li>
-<li>Configuration with dot files and project files</li>
+<li>Configuration of python projects</li>
 </ul>
 </section>
 <section id="modules-vs-packages" class="level2" data-number="2">
@@ -780,8 +817,8 @@ div.csl-indent {
 <p>Any names defined in the <code>__init__.py</code> will be available in: <code>a_package.a_name</code></p>
 </section>
 </section>
-<section id="project-structure" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="project-structure"><span class="header-section-number">3</span> Project Structure</h2>
+<section id="project-file-structure" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="project-file-structure"><span class="header-section-number">3</span> Project file structure</h2>
 <p>There are two conventions for structuring a python project: <strong>flat</strong> layout and <strong>src</strong> layout.</p>
 <p>Flat layout is a bit more intuitive, and most small projects use it. Src layout has a lot of benefits for larger projects. The two are compared below.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
@@ -829,9 +866,186 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="relative-import-statements" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="relative-import-statements"><span class="header-section-number">4</span> Relative Import Statements</h2>
+<section id="project-configuration" class="level2 page-columns page-full" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="project-configuration"><span class="header-section-number">4</span> Project configuration</h2>
+<p>This section explains configuring the following in a python project:</p>
+<ul>
+<li><strong>dependencies</strong> through <code>requirements.txt</code></li>
+<li><strong>linting/formatting</strong> through dotfiles like <code>ruff.toml</code></li>
+<li><strong>all of the above</strong> with <code>pyproject.toml</code></li>
+</ul>
+<section id="dependencies-with-requirements.txt" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="dependencies-with-requirements.txt"><span class="header-section-number">4.1</span> Dependencies with <code>requirements.txt</code></h3>
+<p>Project dependencies can be listed in a file for portability. By convention, the file <a href="https://pip.pypa.io/en/stable/reference/requirements-file-format/"><code>requirements.txt</code></a> contains all the dependencies of a project created with a <a href="../../notes/python-package-management/#how-virtual-environments-solve-the-pip-problem">virtual environment</a>.</p>
+<blockquote class="blockquote">
+<p>This is analogous to <code>package.json</code> for Node.Js projects</p>
+</blockquote>
+<p><strong>To generate</strong> a <code>requirements.txt</code> for an existing project:</p>
+<pre class="shell"><code>$ pip freeze &gt; requirements.txt</code></pre>
+<p><strong>To install</strong> packages from a <code>requirements.txt</code>:</p>
+<pre><code>$ pip install -r requirements.txt</code></pre>
+<p>The content of a <code>requirements.txt</code> file is a list of arguments that can be provided to the <code>pip install</code> command. Any syntax that is valid for <code>pip install</code> is valid for the <code>requirements.txt</code> file:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>sample-requirements.txt</strong></pre>
+</div>
+<div class="sourceCode" id="cb7" data-filename="sample-requirements.txt"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install the latest version of gpiozero published on pypi.org</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>gpiozero</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># You can pin the dependency to a specific version published on pypi.org</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># This is a good practise to make sure your project doesn't stop working when</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># breaking changes are introduced to the package you're depending on.</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>gpiod<span class="op">==</span><span class="fl">2.3.0</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Some packages aren't kept up to date on pypi.org, but can be installed from git directly</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>git<span class="op">+</span>https:<span class="op">//</span>github.com<span class="op">/</span>Seeed<span class="op">-</span>Studio<span class="op">/</span>Seeed_Python_RPi</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="co"># You can have requirements files automatically install the dependencies of other requirements files</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="co"># This is a nice way to separate requirements for different purposes.</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Note the `-r` flag to *recursively* install packages listed in the file.</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="op">-</span>r other<span class="op">-</span>requirements.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>See <a href="https://pip.pypa.io/en/stable/reference/requirements-file-format/">Requirements File Format from the pip documentation</a> for more details.</p>
+</section>
+<section id="formattinglinting-with-ruff" class="level3" data-number="4.2">
+<h3 data-number="4.2" class="anchored" data-anchor-id="formattinglinting-with-ruff"><span class="header-section-number">4.2</span> Formatting/linting with <a href="https://docs.astral.sh/ruff/">ruff</a></h3>
+<p>There are many <a href="https://realpython.com/python-code-quality/#code-formatters">formatters</a> and <a href="https://realpython.com/python-code-quality/#code-linters">linters</a> for Python (see the links for examples and explanations).</p>
+<p>For Assignment 1, we used <a href="https://docs.astral.sh/ruff/">ruff</a> to both <strong>format</strong> and <strong>lint</strong> our source code.</p>
+<p>To install ruff in a virtual environment:</p>
+<pre class="shell"><code>(.venv) $ pip install ruff</code></pre>
+<p>You can customize the behavior of tools like ruff command line arguments, as well as configuration files. For <code>ruff</code>, the file is <code>ruff.toml</code>.</p>
+<p>See the ruff documentation: <a href="https://docs.astral.sh/ruff/configuration/#__tabbed_1_2">“Configuring Ruff”</a>.</p>
+</section>
+<section id="pyproject.toml" class="level3 page-columns page-full" data-number="4.3">
+<h3 data-number="4.3" class="anchored" data-anchor-id="pyproject.toml"><span class="header-section-number">4.3</span> <code>pyproject.toml</code></h3>
+<p>For more advanced projects, more advanced configurations than just project dependencies need to be declared: linters, formatters, the build system for packaging the project, project metadata, and more.</p>
+<p>The <a href="https://packaging.python.org/en/latest/guides/writing-pyproject-toml/"><code>pyproject.toml</code></a> file is the recommended configuration file for packaging python projects. It can replace the functionality of <code>requirements.txt</code>. See <span class="citation" data-cites="WritingYourPyprojecttoml">(<a href="#ref-WritingYourPyprojecttoml" role="doc-biblioref"><span>“Writing Your Pyproject.toml - <span>Python Packaging User Guide</span>”</span> n.d.</a>)</span> for more detail – some of the notes below are adapted from it directly.</p>
+<p>These notes are adapted from <span class="citation" data-cites="CompleteGuidePyprojecttoml2024">(<a href="#ref-CompleteGuidePyprojecttoml2024" role="doc-biblioref"><span>“The <span>Complete Guide</span> to Pyproject.toml”</span> 2024</a>)</span>, a great blogpost explaining the <code>pyproject.toml</code> file.</p>
+<section id="basics" class="level4 page-columns page-full" data-number="4.3.1">
+<h4 data-number="4.3.1" class="anchored" data-anchor-id="basics"><span class="header-section-number">4.3.1</span> Basics</h4>
+<p>The only required information in the <code>pyproject.toml</code> file is the name of your project. This is entered under a <code>[project]</code> field in the <code>.toml</code> file.</p>
+<p>If/when your project is distributed on <a href="https://pypi.org/" class="uri">https://pypi.org/</a>, this field will be the name of the project there.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>Comparison of project names is <strong>case insensitive</strong> and treats runs of underscores, hyphens, and/or periods equivalently. For example, if you register a project named <code>cool-stuff</code>, users will be able to download it or declare a dependency on it using any of the following spellings: <code>Cool-Stuff</code>, <code>cool.stuff</code>, <code>COOL_STUFF</code>, <code>CoOl__-.-__sTuFF</code></p>
+</div></div><div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>sample-pyproject.toml</strong></pre>
+</div>
+<div class="sourceCode" id="cb9" data-filename="sample-pyproject.toml"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>[project]</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"sample-python-project"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The project name must consist of ASCII letters, digits, underscores “_”, hyphens “-” and periods “.” It must not start or end with an underscore, hyphen or period.</p>
+<p>There are many more metadata properties that can be set in the <code>[project]</code> section of the config file. See the <a href="#other-project-metadata">Other project metadata section</a> for more.</p>
+</section>
+<section id="replacing-requirements.txt" class="level4" data-number="4.3.2">
+<h4 data-number="4.3.2" class="anchored" data-anchor-id="replacing-requirements.txt"><span class="header-section-number">4.3.2</span> Replacing <code>requirements.txt</code></h4>
+<p>In the assignments, we separated <em>developer</em> and <em>production</em> dependencies into two different files. We can replace that functionality with a single file using <code>pyproject.toml</code>.</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>sample-pyproject.toml</strong></pre>
+</div>
+<div class="sourceCode" id="cb10" data-filename="sample-pyproject.toml"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>[project]</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># project fields go here</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># We can replace requirements.txt with the "dependencies" field of the [project] section</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>dependencies <span class="op">=</span> [</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Note the comma: "dependencies" has a list-like syntax.</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">"gpiozero"</span>,</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">"gpiod == 2.3.0"</span>,</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Note that the syntax for installing from a repository is slightly different</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># You must specify the package name first, then provide the protocol/url for the repository.</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  <span class="st">"seeed-python-rpi @ git+https://github.com/Seeed-Studio/Seeed_Python_RPi"</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="co"># We can replace requirements-dev.txt with the "optional-dependencies" subfield of the [project] section.</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a><span class="co"># You can make up your own categories: here, I have made "test", "lint", and "dev" categories.</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>[project.optional<span class="op">-</span>dependencies]</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>test <span class="op">=</span> [</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">"pytest"</span>,</span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>lint <span class="op">=</span> [</span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>    <span class="st">"ruff"</span></span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>dev <span class="op">=</span> [</span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Note that the name of the project (sample-python-project) must match exactly for this syntax to work.</span></span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>    <span class="st">"sample-python-project[test,lint]"</span>,</span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="replacing-configuration-files-e.g.-ruff.toml" class="level4" data-number="4.3.3">
+<h4 data-number="4.3.3" class="anchored" data-anchor-id="replacing-configuration-files-e.g.-ruff.toml"><span class="header-section-number">4.3.3</span> Replacing configuration files e.g.&nbsp;<code>ruff.toml</code></h4>
+<p>The <code>pyproject.toml</code> config file unifies the configuration for most python tooling.</p>
+<p>In Assignment 1, we used <a href="https://docs.astral.sh/ruff/">ruff</a> for linting and formatting. All of its configuration was placed in a <code>ruff.toml</code> file.</p>
+<p>We can move that configuration to <code>pyproject.toml</code>:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>sample-pyproject</strong></pre>
+</div>
+<div class="sourceCode" id="cb11" data-filename="sample-pyproject"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>[tool.ruff]</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>line<span class="op">-</span>length <span class="op">=</span> <span class="dv">120</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>indent<span class="op">-</span>width <span class="op">=</span> <span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>There are many other options you can specify, for example, some useful options I use:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>sample-pyproject.toml</strong></pre>
+</div>
+<div class="sourceCode" id="cb12" data-filename="sample-pyproject.toml"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>[tool.ruff.<span class="bu">format</span>]</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>quote<span class="op">-</span>style <span class="op">=</span> <span class="st">"double"</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>indent<span class="op">-</span>style <span class="op">=</span> <span class="st">"space"</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>line<span class="op">-</span>ending <span class="op">=</span> <span class="st">"auto"</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>docstring<span class="op">-</span>code<span class="op">-</span><span class="bu">format</span> <span class="op">=</span> true</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co"># This specifies the linting issues that ruff will catch when `ruff check` is run</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>[tool.ruff.lint]</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>select <span class="op">=</span> [</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"F"</span>,   <span class="co"># pyflakes</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"E"</span>,   <span class="co"># pycodestyle</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"I"</span>,   <span class="co"># isort</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">"ANN"</span>, <span class="co"># flake8 type annotations</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">"RUF"</span>, <span class="co"># ruff-specific rules</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>[tool.ruff.lint.pydocstyle]</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>convention <span class="op">=</span> <span class="st">"google"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>You can see more options in the <a href="https://docs.astral.sh/ruff/configuration/">ruff documentation</a>.</p>
+</section>
+<section id="project-metadata" class="level4" data-number="4.3.4">
+<h4 data-number="4.3.4" class="anchored" data-anchor-id="project-metadata"><span class="header-section-number">4.3.4</span> Project metadata</h4>
+<p>When reading a project on GitHub, you can find out important information about the code from the project README.md</p>
+<p>If your code is packaged to be used by others, for instance, by packaging it and publishing it on pypi.org, the metadata about the project (author, project description, etc.) can be specified in <code>pyproject.toml</code>.</p>
+<p>See <a href="https://devsjc.github.io/blog/20240627-the-complete-guide-to-pyproject-toml/#metadata">setting project metadata</a> formore explanation and an example.</p>
+<p>The official python documentation also shows examples:</p>
+<ul>
+<li><a href="https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#authors-maintainers">Setting project authors</a></li>
+<li><a href="https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#license-and-license-files">Setting project license</a></li>
+<li><a href="https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#version">Setting project version</a></li>
+<li><a href="https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#a-full-example">A full example</a></li>
+</ul>
+</section>
+<section id="advanced-features" class="level4" data-number="4.3.5">
+<h4 data-number="4.3.5" class="anchored" data-anchor-id="advanced-features"><span class="header-section-number">4.3.5</span> Advanced features</h4>
+<p>Here are a few features you can easily add to your projects, if you have the time or interest!</p>
+<ul>
+<li><a href="https://devsjc.github.io/blog/20240627-the-complete-guide-to-pyproject-toml/#entrypoints">Specifying entrypoints for the project</a></li>
+<li><a href="https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#creating-executable-scripts">Creating executable scripts</a></li>
+<li><a href="https://devsjc.github.io/blog/20240627-the-complete-guide-to-pyproject-toml/#packaging-for-distribution">Packaging your project for distribution</a>
+<ul>
+<li>I recommend using <a href="https://setuptools.pypa.io/en/latest/userguide/quickstart.html">setuptools</a></li>
+</ul></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="tips-and-tricks" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="tips-and-tricks"><span class="header-section-number">5</span> Tips and Tricks</h2>
+<p>This section has a few tips and tricks for understanding python projects better</p>
+<section id="relative-import-statements" class="level3" data-number="5.1">
+<h3 data-number="5.1" class="anchored" data-anchor-id="relative-import-statements"><span class="header-section-number">5.1</span> Relative Import Statements</h3>
 <p><em>Adapted from StackOverflow discussion <span class="citation" data-cites="ayaAnswerRelativeImports2013">(<a href="#ref-ayaAnswerRelativeImports2013" role="doc-biblioref">Aya 2013</a>)</span></em></p>
+<p>There are a few tricky aspects for using <code>import</code> statements in python projects.</p>
 <p>Consider the project layout below:</p>
 <pre class="shell"><code>main.py
 mypackage/
@@ -843,56 +1057,57 @@ mypackage/
 <div class="code-with-filename-file">
 <pre><strong>mymodule.py</strong></pre>
 </div>
-<div class="sourceCode" id="cb6" data-filename="mymodule.py"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exported function</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_temperature():</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fl">23.45</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">'__main__'</span>:</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(get_temperature())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14" data-filename="mymodule.py"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exported function</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_temperature():</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fl">23.45</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">'__main__'</span>:</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(get_temperature())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>In <code>myothermodule.py</code> :</p>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>myothermodule.py</strong></pre>
 </div>
-<div class="sourceCode" id="cb7" data-filename="myothermodule.py"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Relative import using `.` for current directory, `..` for parent directory.</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> .mymodule <span class="im">import</span> get_temperature</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Exported function</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> announce_weather():</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="ss">f"Outside temperature is </span><span class="sc">{</span>get_temperature()<span class="sc">}</span><span class="ss">"</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">'__main__'</span>:</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    announce_weather()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15" data-filename="myothermodule.py"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Relative import using `.` for current directory, `..` for parent directory.</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> .mymodule <span class="im">import</span> get_temperature</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Exported function</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> announce_weather():</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="ss">f"Outside temperature is </span><span class="sc">{</span>get_temperature()<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">'__main__'</span>:</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>    announce_weather()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>In <code>main.py</code> :</p>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>main.py</strong></pre>
 </div>
-<div class="sourceCode" id="cb8" data-filename="main.py"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mypackage.myothermodule <span class="im">import</span> announce_weather</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(announce_weather())</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">'__main__'</span>:</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16" data-filename="main.py"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mypackage.myothermodule <span class="im">import</span> announce_weather</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(announce_weather())</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">'__main__'</span>:</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>This works when running <code>main.py</code> or <code>mypackage/mymodule.py</code>, but fails with <code>mypackage/myothermodule.py</code>, due to the relative import:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> .mymodule <span class="im">import</span> as_int</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> .mymodule <span class="im">import</span> as_int</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <pre><code>Exception has occurred: ImportError
 attempted relative import with no known parent package</code></pre>
 <p><strong>Solution</strong></p>
 <p>When running <code>myothermodule.py</code> as a stand-alone script, run Python using the <code>-m</code> option to run the file as a module. This will execute all the <code>__init__.py</code> files and load the module dependency.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>python <span class="op">-</span>m mypackage.myothermodule</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Note the ".", NOT a "/"</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># the following WILL NOT work:</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>python <span class="op">-</span>m mypackage<span class="op">/</span>myothermodule</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>python <span class="op">-</span>m mypackage.myothermodule</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Note the ".", NOT a "/"</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co"># the following WILL NOT work:</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>python <span class="op">-</span>m mypackage<span class="op">/</span>myothermodule</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This will allow you to write modules that contain <code>main()</code> functions you can test separately – we took advantage of this pattern in Assignment 1.</p>
 
 
 
+</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
@@ -1342,13 +1557,13 @@ Python, Real. n.d. <span>“Python <span>Modules</span> and <span>Packages</span
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../notes/azure-cli-cheatsheet/index.html" class="pagination-link" aria-label="Azure CLI Cheatsheet">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Azure CLI Cheatsheet</span>
+      <a href="../../notes/serial-protocols/index.html" class="pagination-link" aria-label="Serial protocols">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Serial protocols</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../notes/python-scripting/index.html" class="pagination-link" aria-label="Python scripting">
-        <span class="nav-page-text">Python scripting</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../notes/course-hardware/index.html" class="pagination-link" aria-label="Course hardware">
+        <span class="nav-page-text">Course hardware</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

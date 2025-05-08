@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.29">
+<meta name="generator" content="quarto-1.7.30">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -37,14 +37,14 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-499c96a24f2a291ef9bc75fd2f94d294.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-76023911c31467dce141f6e35d0a63e7.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-499c96a24f2a291ef9bc75fd2f94d294.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-994e4b8856f7f45380dc4610c9e8c6ff.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-1accdb772a835ed2a2aefeb3c6e399c0.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-994e4b8856f7f45380dc4610c9e8c6ff.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-4ef7393c7e44f340fd1359cdd701ebd4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-d0698a0cc84e0a494962846fd79f0c91.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-4ef7393c7e44f340fd1359cdd701ebd4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-13f8f73bb956a6e62072eb9d3f883997.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-1fdb536d0f1451bfcff7e167a4f99223.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-13f8f73bb956a6e62072eb9d3f883997.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
@@ -233,6 +233,7 @@ ul.task-list li input[type="checkbox"] {
       toggleColorMode(toAlternate);
       setStyleSentinel(toAlternate);
       toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
     };
     // Switch to dark mode if need be
     if (hasAlternateSentinel()) {
@@ -274,116 +275,76 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">All course notes</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="./notes/device-calibrating/index.html">
+ <span class="dropdown-text">Device calibration</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="./notes/python-oop/index.html">
  <span class="dropdown-text">Python OOP</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./notes/gpios/index.html">
- <span class="dropdown-text">GPIOs: Inputs and Outputs</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./notes/iot-protocols/index.html">
- <span class="dropdown-text">IoT Communication Protocols</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./notes/microcomputers/index.html">
- <span class="dropdown-text">Microcomputers</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./notes/async-python/index.html">
- <span class="dropdown-text">Asynchronous progamming in Python</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./notes/device-twins/index.html">
- <span class="dropdown-text">Device Twins</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./notes/python-collections/index.html">
- <span class="dropdown-text">Python collection types and operations</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./notes/azure-sdks/index.html">
- <span class="dropdown-text">Azure SDKs in Python and C#</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./notes/python-environments/index.html">
- <span class="dropdown-text">Python environment management</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./notes/linux-package-management/index.html">
- <span class="dropdown-text">Linux package management</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./notes/azure-features/index.html">
- <span class="dropdown-text">Azure Features</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./notes/serial-protocols/index.html">
- <span class="dropdown-text">Serial protocols</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./notes/bash-scripting/index.html">
- <span class="dropdown-text">Bash scripting</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./notes/debug-reterminal/index.html">
- <span class="dropdown-text">Debugging Reterminal Issues</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./notes/course-hardware/index.html">
- <span class="dropdown-text">Course hardware</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./notes/python-package-management/index.html">
- <span class="dropdown-text">Python package management</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./notes/iot-concepts/index.html">
- <span class="dropdown-text">Intro to the Internet of Things</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./notes/azure-cli-cheatsheet/index.html">
  <span class="dropdown-text">Azure CLI Cheatsheet</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./notes/python-project-management/index.html">
- <span class="dropdown-text">Python project management</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./notes/python-scripting/index.html">
- <span class="dropdown-text">Python scripting</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./notes/eventhub-dotnet/index.html">
- <span class="dropdown-text">EventHubs &amp; .NET SDK</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./notes/analog-vs-digital/index.html">
- <span class="dropdown-text">Signals: Analog and digital</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./notes/github-basics/index.html">
- <span class="dropdown-text">GitHub basics</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./notes/bash-essentials/index.html">
- <span class="dropdown-text">Bash essentials</span></a>
-  </li>  
-        <li>
     <a class="dropdown-item" href="./notes/reterminal-devices/index.html">
  <span class="dropdown-text">reTerminal built-in devices</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./notes/reterminal-setup/index.html">
- <span class="dropdown-text">Reterminal setup</span></a>
+    <a class="dropdown-item" href="./notes/bash-scripting/index.html">
+ <span class="dropdown-text">Bash scripting</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./notes/iot-protocols/index.html">
+ <span class="dropdown-text">IoT Communication Protocols</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./notes/gpios/index.html">
+ <span class="dropdown-text">GPIOs: Inputs and Outputs</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./notes/azure-sdks/index.html">
+ <span class="dropdown-text">Azure SDKs in Python and C#</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./notes/azure-portal/index.html">
  <span class="dropdown-text">Azure Portal Setup</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./notes/developer-environment/index.html">
- <span class="dropdown-text">Developer environment setup</span></a>
+    <a class="dropdown-item" href="./notes/analog-vs-digital/index.html">
+ <span class="dropdown-text">Signals: Analog and digital</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./notes/python-package-management/index.html">
+ <span class="dropdown-text">Python package management</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./notes/linux-package-management/index.html">
+ <span class="dropdown-text">Linux package management</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./notes/github-basics/index.html">
+ <span class="dropdown-text">GitHub basics</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./notes/iot-concepts/index.html">
+ <span class="dropdown-text">Intro to the Internet of Things</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./notes/reterminal-setup/index.html">
+ <span class="dropdown-text">Reterminal setup</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./notes/debug-reterminal/index.html">
+ <span class="dropdown-text">Debugging Reterminal Issues</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./notes/python-extras/index.html">
+ <span class="dropdown-text">Python extras</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./notes/device-twins/index.html">
+ <span class="dropdown-text">Device Twins</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./notes/circuitry/index.html">
@@ -392,6 +353,54 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="./notes/device-cloud-communication/index.html">
  <span class="dropdown-text">Device to Cloud Communication</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./notes/async-python/index.html">
+ <span class="dropdown-text">Asynchronous progamming in Python</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./notes/bash-essentials/index.html">
+ <span class="dropdown-text">Bash essentials</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./notes/serial-protocols/index.html">
+ <span class="dropdown-text">Serial protocols</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./notes/python-project-management/index.html">
+ <span class="dropdown-text">Python project management</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./notes/course-hardware/index.html">
+ <span class="dropdown-text">Course hardware</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./notes/developer-environment/index.html">
+ <span class="dropdown-text">Developer environment setup</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./notes/python-scripting/index.html">
+ <span class="dropdown-text">Python scripting</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./notes/python-collections/index.html">
+ <span class="dropdown-text">Python collection types and operations</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./notes/microcomputers/index.html">
+ <span class="dropdown-text">Microcomputers</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./notes/azure-storage/index.html">
+ <span class="dropdown-text">Azure Blob Storage</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./notes/azure-features/index.html">
+ <span class="dropdown-text">Azure Features</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./notes/eventhub-dotnet/index.html">
+ <span class="dropdown-text">EventHubs &amp; .NET SDK</span></a>
   </li>  
     </ul>
   </li>
@@ -467,7 +476,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">May 4, 2025</p>
+      <p class="date-modified">May 8, 2025</p>
     </div>
   </div>
     

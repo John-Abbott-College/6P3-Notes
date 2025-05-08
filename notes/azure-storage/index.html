@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.29">
+<meta name="generator" content="quarto-1.7.30">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-03-10">
+<meta name="dcterms.date" content="2025-05-08">
 
-<title>Python environment management – Connected Objects</title>
+<title>Azure Blob Storage – Connected Objects</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../notes/linux-package-management/index.html" rel="next">
-<link href="../../notes/azure-sdks/index.html" rel="prev">
+<link href="../../notes/azure-features/index.html" rel="next">
+<link href="../../notes/microcomputers/index.html" rel="prev">
 <link href="../../assets/favicon_io/favicon.ico" rel="icon">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -39,15 +39,18 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-499c96a24f2a291ef9bc75fd2f94d294.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-76023911c31467dce141f6e35d0a63e7.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-499c96a24f2a291ef9bc75fd2f94d294.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-994e4b8856f7f45380dc4610c9e8c6ff.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-1accdb772a835ed2a2aefeb3c6e399c0.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-994e4b8856f7f45380dc4610c9e8c6ff.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-4ef7393c7e44f340fd1359cdd701ebd4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-d0698a0cc84e0a494962846fd79f0c91.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-4ef7393c7e44f340fd1359cdd701ebd4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-13f8f73bb956a6e62072eb9d3f883997.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-1fdb536d0f1451bfcff7e167a4f99223.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-13f8f73bb956a6e62072eb9d3f883997.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="../../site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": true,
@@ -75,10 +78,12 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="Python environment management – Connected Objects">
-<meta property="og:description" content="Managing python development and runtime dependencies. Using virtual environments. Configuring python linters and formatters.">
-<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/notes/python-environments/assets/art_title_path_only.svg">
+<meta property="og:title" content="Azure Blob Storage – Connected Objects">
+<meta property="og:description" content="Setting up blob storage on the Azure Portal">
+<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/notes/azure-storage/assets/blob-structure.png">
 <meta property="og:site_name" content="{{< var course.title >}}">
+<meta property="og:image:height" content="111">
+<meta property="og:image:width" content="331">
 </head>
 
 <body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -235,6 +240,7 @@ ul.task-list li input[type="checkbox"] {
       toggleColorMode(toAlternate);
       setStyleSentinel(toAlternate);
       toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
     };
     // Switch to dark mode if need be
     if (hasAlternateSentinel()) {
@@ -276,116 +282,76 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">All course notes</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../../notes/device-calibrating/index.html">
+ <span class="dropdown-text">Device calibration</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../../notes/python-oop/index.html">
  <span class="dropdown-text">Python OOP</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/gpios/index.html">
- <span class="dropdown-text">GPIOs: Inputs and Outputs</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/iot-protocols/index.html">
- <span class="dropdown-text">IoT Communication Protocols</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/microcomputers/index.html">
- <span class="dropdown-text">Microcomputers</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/async-python/index.html">
- <span class="dropdown-text">Asynchronous progamming in Python</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/device-twins/index.html">
- <span class="dropdown-text">Device Twins</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/python-collections/index.html">
- <span class="dropdown-text">Python collection types and operations</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/azure-sdks/index.html">
- <span class="dropdown-text">Azure SDKs in Python and C#</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/python-environments/index.html">
- <span class="dropdown-text">Python environment management</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/linux-package-management/index.html">
- <span class="dropdown-text">Linux package management</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/azure-features/index.html">
- <span class="dropdown-text">Azure Features</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/serial-protocols/index.html">
- <span class="dropdown-text">Serial protocols</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/bash-scripting/index.html">
- <span class="dropdown-text">Bash scripting</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/debug-reterminal/index.html">
- <span class="dropdown-text">Debugging Reterminal Issues</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/course-hardware/index.html">
- <span class="dropdown-text">Course hardware</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/python-package-management/index.html">
- <span class="dropdown-text">Python package management</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/iot-concepts/index.html">
- <span class="dropdown-text">Intro to the Internet of Things</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../notes/azure-cli-cheatsheet/index.html">
  <span class="dropdown-text">Azure CLI Cheatsheet</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../notes/python-project-management/index.html">
- <span class="dropdown-text">Python project management</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/python-scripting/index.html">
- <span class="dropdown-text">Python scripting</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/eventhub-dotnet/index.html">
- <span class="dropdown-text">EventHubs &amp; .NET SDK</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/analog-vs-digital/index.html">
- <span class="dropdown-text">Signals: Analog and digital</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/github-basics/index.html">
- <span class="dropdown-text">GitHub basics</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../notes/bash-essentials/index.html">
- <span class="dropdown-text">Bash essentials</span></a>
-  </li>  
-        <li>
     <a class="dropdown-item" href="../../notes/reterminal-devices/index.html">
  <span class="dropdown-text">reTerminal built-in devices</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../notes/reterminal-setup/index.html">
- <span class="dropdown-text">Reterminal setup</span></a>
+    <a class="dropdown-item" href="../../notes/bash-scripting/index.html">
+ <span class="dropdown-text">Bash scripting</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/iot-protocols/index.html">
+ <span class="dropdown-text">IoT Communication Protocols</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/gpios/index.html">
+ <span class="dropdown-text">GPIOs: Inputs and Outputs</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/azure-sdks/index.html">
+ <span class="dropdown-text">Azure SDKs in Python and C#</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../notes/azure-portal/index.html">
  <span class="dropdown-text">Azure Portal Setup</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../notes/developer-environment/index.html">
- <span class="dropdown-text">Developer environment setup</span></a>
+    <a class="dropdown-item" href="../../notes/analog-vs-digital/index.html">
+ <span class="dropdown-text">Signals: Analog and digital</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/python-package-management/index.html">
+ <span class="dropdown-text">Python package management</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/linux-package-management/index.html">
+ <span class="dropdown-text">Linux package management</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/github-basics/index.html">
+ <span class="dropdown-text">GitHub basics</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/iot-concepts/index.html">
+ <span class="dropdown-text">Intro to the Internet of Things</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/reterminal-setup/index.html">
+ <span class="dropdown-text">Reterminal setup</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/debug-reterminal/index.html">
+ <span class="dropdown-text">Debugging Reterminal Issues</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/python-extras/index.html">
+ <span class="dropdown-text">Python extras</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/device-twins/index.html">
+ <span class="dropdown-text">Device Twins</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../notes/circuitry/index.html">
@@ -394,6 +360,54 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="../../notes/device-cloud-communication/index.html">
  <span class="dropdown-text">Device to Cloud Communication</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/async-python/index.html">
+ <span class="dropdown-text">Asynchronous progamming in Python</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/bash-essentials/index.html">
+ <span class="dropdown-text">Bash essentials</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/serial-protocols/index.html">
+ <span class="dropdown-text">Serial protocols</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/python-project-management/index.html">
+ <span class="dropdown-text">Python project management</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/course-hardware/index.html">
+ <span class="dropdown-text">Course hardware</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/developer-environment/index.html">
+ <span class="dropdown-text">Developer environment setup</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/python-scripting/index.html">
+ <span class="dropdown-text">Python scripting</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/python-collections/index.html">
+ <span class="dropdown-text">Python collection types and operations</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/microcomputers/index.html">
+ <span class="dropdown-text">Microcomputers</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/azure-storage/index.html">
+ <span class="dropdown-text">Azure Blob Storage</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/azure-features/index.html">
+ <span class="dropdown-text">Azure Features</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/eventhub-dotnet/index.html">
+ <span class="dropdown-text">EventHubs &amp; .NET SDK</span></a>
   </li>  
     </ul>
   </li>
@@ -425,7 +439,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/python-environments/index.html">Python environment management</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/azure-storage/index.html">Azure Blob Storage</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -445,104 +459,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../notes/device-calibrating/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Device calibration</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../notes/python-oop/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Python OOP</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/gpios/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">GPIOs: Inputs and Outputs</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/iot-protocols/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">IoT Communication Protocols</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/microcomputers/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Microcomputers</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/async-python/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Asynchronous progamming in Python</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/device-twins/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Device Twins</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/python-collections/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Python collection types and operations</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/azure-sdks/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Azure SDKs in Python and C#</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/python-environments/index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Python environment management</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/linux-package-management/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Linux package management</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/azure-features/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Azure Features</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/serial-protocols/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Serial protocols</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/bash-scripting/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bash scripting</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/debug-reterminal/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Debugging Reterminal Issues</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/course-hardware/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Course hardware</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/python-package-management/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Python package management</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/iot-concepts/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Intro to the Internet of Things</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -553,50 +477,32 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notes/python-project-management/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Python project management</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/python-scripting/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Python scripting</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/eventhub-dotnet/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">EventHubs &amp; .NET SDK</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/analog-vs-digital/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Signals: Analog and digital</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/github-basics/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">GitHub basics</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/bash-essentials/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bash essentials</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../../notes/reterminal-devices/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">reTerminal built-in devices</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notes/reterminal-setup/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Reterminal setup</span></a>
+  <a href="../../notes/bash-scripting/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bash scripting</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/iot-protocols/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">IoT Communication Protocols</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/gpios/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">GPIOs: Inputs and Outputs</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/azure-sdks/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Azure SDKs in Python and C#</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -607,8 +513,56 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notes/developer-environment/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Developer environment setup</span></a>
+  <a href="../../notes/analog-vs-digital/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Signals: Analog and digital</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/python-package-management/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python package management</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/linux-package-management/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linux package management</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/github-basics/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">GitHub basics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/iot-concepts/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Intro to the Internet of Things</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/reterminal-setup/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Reterminal setup</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/debug-reterminal/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Debugging Reterminal Issues</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/python-extras/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python extras</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/device-twins/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Device Twins</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -623,23 +577,101 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Device to Cloud Communication</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/async-python/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Asynchronous progamming in Python</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/bash-essentials/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bash essentials</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/serial-protocols/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Serial protocols</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/python-project-management/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python project management</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/course-hardware/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Course hardware</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/developer-environment/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Developer environment setup</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/python-scripting/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python scripting</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/python-collections/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python collection types and operations</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/microcomputers/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Microcomputers</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/azure-storage/index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Azure Blob Storage</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/azure-features/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Azure Features</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/eventhub-dotnet/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">EventHubs &amp; .NET SDK</span></a>
+  </div>
+</li>
     </ul>
     </div>
     <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="1">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#virtual-environments" id="toc-virtual-environments" class="nav-link active" data-scroll-target="#virtual-environments"><span class="header-section-number">1</span> Virtual Environments</a>
+  <li><a href="#storage-accounts" id="toc-storage-accounts" class="nav-link active" data-scroll-target="#storage-accounts"><span class="header-section-number">1</span> Storage Accounts</a></li>
+  <li><a href="#blob-storage" id="toc-blob-storage" class="nav-link" data-scroll-target="#blob-storage"><span class="header-section-number">2</span> Blob Storage</a>
   <ul>
-  <li><a href="#why-virtual-environments" id="toc-why-virtual-environments" class="nav-link" data-scroll-target="#why-virtual-environments"><span class="header-section-number">1.1</span> Why Virtual Environments?</a></li>
-  <li><a href="#virtual-dependency-steps" id="toc-virtual-dependency-steps" class="nav-link" data-scroll-target="#virtual-dependency-steps"><span class="header-section-number">1.2</span> Virtual Dependency Steps</a></li>
-  <li><a href="#creating" id="toc-creating" class="nav-link" data-scroll-target="#creating"><span class="header-section-number">1.3</span> Creating</a></li>
-  <li><a href="#activate-deactivate" id="toc-activate-deactivate" class="nav-link" data-scroll-target="#activate-deactivate"><span class="header-section-number">1.4</span> Activate &amp; Deactivate</a></li>
-  <li><a href="#installing-packages-with-pip" id="toc-installing-packages-with-pip" class="nav-link" data-scroll-target="#installing-packages-with-pip"><span class="header-section-number">1.5</span> Installing Packages with <code>pip</code></a></li>
-  <li><a href="#using-requirements.txt" id="toc-using-requirements.txt" class="nav-link" data-scroll-target="#using-requirements.txt"><span class="header-section-number">1.6</span> Using <code>requirements.txt</code></a></li>
-  <li><a href="#moving-virtual-environments" id="toc-moving-virtual-environments" class="nav-link" data-scroll-target="#moving-virtual-environments"><span class="header-section-number">1.7</span> Moving Virtual Environments</a></li>
-  <li><a href="#virtual-env-exercises" id="toc-virtual-env-exercises" class="nav-link" data-scroll-target="#virtual-env-exercises"><span class="header-section-number">1.8</span> Virtual Env Exercises</a></li>
+  <li><a href="#storage-structure" id="toc-storage-structure" class="nav-link" data-scroll-target="#storage-structure"><span class="header-section-number">2.1</span> Storage Structure</a></li>
+  <li><a href="#creating-a-storage-account-container" id="toc-creating-a-storage-account-container" class="nav-link" data-scroll-target="#creating-a-storage-account-container"><span class="header-section-number">2.2</span> Creating a Storage Account &amp; Container</a>
+  <ul class="collapse">
+  <li><a href="#hierarchical-directories-data-lake-storage" id="toc-hierarchical-directories-data-lake-storage" class="nav-link" data-scroll-target="#hierarchical-directories-data-lake-storage"><span class="header-section-number">2.2.1</span> Hierarchical Directories &amp; Data Lake Storage</a></li>
   </ul></li>
+  </ul></li>
+  <li><a href="#blob-storage-sdks" id="toc-blob-storage-sdks" class="nav-link" data-scroll-target="#blob-storage-sdks"><span class="header-section-number">3</span> Blob Storage SDKs</a>
+  <ul>
+  <li><a href="#python-sdk" id="toc-python-sdk" class="nav-link" data-scroll-target="#python-sdk"><span class="header-section-number">3.0.1</span> Python SDK</a></li>
+  <li><a href="#net-sdk" id="toc-net-sdk" class="nav-link" data-scroll-target="#net-sdk"><span class="header-section-number">3.0.2</span> .NET SDK</a></li>
+  <li><a href="#notes-on-blob-storage-sdks" id="toc-notes-on-blob-storage-sdks" class="nav-link" data-scroll-target="#notes-on-blob-storage-sdks"><span class="header-section-number">3.0.3</span> Notes on Blob Storage SDKs:</a></li>
+  </ul></li>
+  <li><a href="#blog-storage-event-hubs" id="toc-blog-storage-event-hubs" class="nav-link" data-scroll-target="#blog-storage-event-hubs"><span class="header-section-number">4</span> Blog Storage &amp; Event Hubs</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">5</span> References</a></li>
   </ul>
 </nav>
 </nav>
@@ -653,10 +685,10 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Python environment management</h1>
-<p class="subtitle lead"></p><p>Managing python development and runtime dependencies. Using virtual environments. Configuring python linters and formatters.</p><p></p>
+<h1 class="title">Azure Blob Storage</h1>
+<p class="subtitle lead"></p><p>Setting up blob storage on the Azure Portal</p><p></p>
   <div class="quarto-categories">
-    <div class="quarto-category">python</div>
+    <div class="quarto-category">iot</div>
   </div>
   </div>
 
@@ -668,14 +700,14 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 10, 2025</p>
+      <p class="date">May 8, 2025</p>
     </div>
   </div>
   
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">May 4, 2025</p>
+      <p class="date-modified">May 8, 2025</p>
     </div>
   </div>
     
@@ -686,142 +718,158 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="virtual-environments" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="virtual-environments"><span class="header-section-number">1</span> Virtual Environments</h2>
-<p>This section shows the use the python virtual environments (virt. envs.) with the <code>venv</code> built-in tool.</p>
-<p><code>venv</code> is the officially recommended way to manage virt. envs. but it’s not the only one. Other tools such as <a href="https://docs.conda.io/en/latest/index.html">Conda</a>, <a href="https://pipenv.pypa.io/en/latest/">Pipenv</a>, <a href="https://python-poetry.org/">Poetry</a> and <a href="https://pdm.fming.dev/latest/">PDM</a> are other options.</p>
+<section id="storage-accounts" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="storage-accounts"><span class="header-section-number">1</span> Storage Accounts</h2>
+<p>As one can imagine, there are many types of storage accounts in Azure. In this course we’ll explored <strong>Blob Storage</strong> (object storage).</p>
 <blockquote class="blockquote">
-<p>Short guide by python.org**: <a href="https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/#installing-packages-using-pip-and-virtual-environments">Installing packages using pip and virtual environments</a></p>
-<p>Detailed guide by RealPython.com: <a href="https://realpython.com/python-virtual-environments-a-primer/">Python Virtual Environments: A Primer</a></p>
+<p>To know more about the other storage services offered by Azure see <strong><a href="https://docs.microsoft.com/en-us/azure/storage/common/storage-introduction#main">Introduction to Azure Storage</a></strong>.</p>
 </blockquote>
-<section id="why-virtual-environments" class="level3" data-number="1.1">
-<h3 data-number="1.1" class="anchored" data-anchor-id="why-virtual-environments"><span class="header-section-number">1.1</span> Why Virtual Environments?</h3>
-<p>Python is not good at dependency management. We want to:</p>
-<ol type="1">
-<li><p><strong>Avoid system pollution</strong></p>
+</section>
+<section id="blob-storage" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="blob-storage"><span class="header-section-number">2</span> Blob Storage</h2>
+<p>Azure Blob storage is an object storage solution optimized for storing massive amounts of text or binary data.</p>
+<p>Blob storage is designed for:</p>
 <ul>
-<li>Installing packages to the OS’s global Python will mix them with OS relevant packages. This could have unexpected side effects on OS tasks.</li>
-<li>Because of the reason above, updating OS packages might overwrite or delete global Python packages.</li>
-</ul></li>
-<li><p><strong>Avoid project dependency conflicts</strong></p>
-<ul>
-<li>Python projects might require different versions the same external library.</li>
-</ul></li>
-<li><p><strong>Making projects reproducible in other environments.</strong></p>
-<ul>
-<li>Since all dependencies are isolated to a specific project, it is easier to identify and document them.</li>
-<li>Once the dependencies are “locked”, the project dependency can be easily reproduced in other environments.</li>
-</ul></li>
-</ol>
-</section>
-<section id="virtual-dependency-steps" class="level3" data-number="1.2">
-<h3 data-number="1.2" class="anchored" data-anchor-id="virtual-dependency-steps"><span class="header-section-number">1.2</span> Virtual Dependency Steps</h3>
-<p>Creating and using virtual environments involved the following steps:</p>
-<ol type="1">
-<li>Creation</li>
-<li>Activation</li>
-<li>Installing dependencies</li>
-<li>Deactivation</li>
-<li>Locking dependencies</li>
-</ol>
-</section>
-<section id="creating" class="level3" data-number="1.3">
-<h3 data-number="1.3" class="anchored" data-anchor-id="creating"><span class="header-section-number">1.3</span> Creating</h3>
-<ol type="1">
-<li><p>Create a new folder for the project (if one doesn’t already exist).</p></li>
-<li><p><code>cd</code> into the folder and create a new virt. env.:</p></li>
-</ol>
-<pre class="shell"><code>$ python3 -m venv .venv</code></pre>
-<p>Note that <code>.venv</code> is the name of your virtual environment. <code>venv</code> is a popular choice.</p>
-</section>
-<section id="activate-deactivate" class="level3" data-number="1.4">
-<h3 data-number="1.4" class="anchored" data-anchor-id="activate-deactivate"><span class="header-section-number">1.4</span> Activate &amp; Deactivate</h3>
-<p>Once created, the virt. env. needs to be activated.</p>
-<pre class="shell"><code># Linux
-$ source .venv/bin/activate
-
-# Windows
-$ .venv/Scripts/activate.bat</code></pre>
-<blockquote class="blockquote">
-<p><strong>Note:</strong> You can work with virtual environments without activating it. To do this, <a href="https://realpython.com/python-virtual-environments-a-primer/#it-runs-from-anywhere-with-absolute-paths">provide the full path</a> to its Python interpreter when executing a command.</p>
-<p>Typically, you’ll want to activate the virtual environment to avoid repeatedly having to type long paths.</p>
-</blockquote>
-<p>To deactivate:</p>
-<pre class="shell"><code># Notice the shell prompt indicates a virt. env. is active
-$ (.venv) deactivate</code></pre>
-</section>
-<section id="installing-packages-with-pip" class="level3" data-number="1.5">
-<h3 data-number="1.5" class="anchored" data-anchor-id="installing-packages-with-pip"><span class="header-section-number">1.5</span> Installing Packages with <code>pip</code></h3>
-<p>Once a virtual environment is active, <strong>packages installed with <code>pip</code> will be local to that virtual environment.</strong></p>
-<p>By default, project packages are installed in:</p>
-<pre><code>project-folder
-    |- &lt;project-venv&gt;
-    |       |- lib
-    |           |- python3.X
-    |                   |- site-packages </code></pre>
-<p>For example, installing <code>aiohttp</code>:</p>
-<pre class="shell"><code># Notice the shell prompt indicates a virt. env. is active
-$ (.venv) pip install aiohttp</code></pre>
-</section>
-<section id="using-requirements.txt" class="level3" data-number="1.6">
-<h3 data-number="1.6" class="anchored" data-anchor-id="using-requirements.txt"><span class="header-section-number">1.6</span> Using <code>requirements.txt</code></h3>
-<p>Project dependencies can be listed in a file for portability. By convention, the file <code>requirements.txt</code> contains all the dependencies of a project created with a virtual environment.</p>
-<blockquote class="blockquote">
-<p>This is analogous to <code>package.json</code> for Node.Js projects</p>
-</blockquote>
-<p><strong>To generate</strong> a <code>requirements.txt</code> for an existing project:</p>
-<pre class="shell"><code>$ pip freeze &gt; requirements.txt</code></pre>
-<p><strong>To install</strong> packages from a <code>requirements.txt</code>:</p>
-<pre><code>$ pip install -r requirements.txt</code></pre>
-</section>
-<section id="moving-virtual-environments" class="level3" data-number="1.7">
-<h3 data-number="1.7" class="anchored" data-anchor-id="moving-virtual-environments"><span class="header-section-number">1.7</span> Moving Virtual Environments</h3>
-<p>If you move a project that uses virtual environments to a different folder, <strong>you must re-initialize the virtual environment.</strong></p>
-<p>From the <a href="https://docs.python.org/3/library/venv.html#how-venvs-work">official docs</a>:</p>
-<blockquote class="blockquote">
-<p>Scripts installed in environments contain the absolute paths to their environment’s interpreters.</p>
-<ul>
-<li>Because of this, environments are inherently non-portable. You should always have a simple means of recreating an environment (for example, have a requirements file <code>requirements.txt</code>, and invoke <code>pip install -r requirements.txt</code>.</li>
+<li>Serving images or documents directly to a browser.</li>
+<li>Storing files for distributed access.</li>
+<li>Streaming video and audio.</li>
+<li>Writing to log files.</li>
+<li>Storing data for backup and restore, disaster recovery, and archiving.</li>
+<li>Storing data for analysis by an on-premises or Azure-hosted service.</li>
 </ul>
-</blockquote>
-</section>
-<section id="virtual-env-exercises" class="level3" data-number="1.8">
-<h3 data-number="1.8" class="anchored" data-anchor-id="virtual-env-exercises"><span class="header-section-number">1.8</span> Virtual Env Exercises</h3>
-<p>The following exercises are meant for familiarization with <code>venv</code>.</p>
-<ol type="1">
-<li><p>Compare packages installed with <code>pip</code> inside and outside of a new virtual environment (virt. env.):</p>
-<ol type="1">
-<li>List all globally installed <code>pip</code> packages: <code>pip list</code></li>
-<li>Create a new folder and use <code>venv</code> to create a virtual environment inside.</li>
-<li>Activate the new virt. env..</li>
-<li>List the <code>pip</code> packages as seen from inside the active virtual environment.</li>
-<li>Deactivate the new virtual environment.</li>
-</ol></li>
-<li><p>Complete the following steps inside the virtual environment (virt. env.) you created in the previous question.</p>
-<ol type="1">
-<li>Activate the virt. env.</li>
-<li>install the following libraries:
+<section id="storage-structure" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="storage-structure"><span class="header-section-number">2.1</span> Storage Structure</h3>
+<p>Blob storage has the following structure:</p>
 <ul>
-<li><a href="https://pypi.org/project/howdoi/">howdoi</a></li>
-<li><a href="https://pyjok.es/">pyjokes</a></li>
-</ul></li>
-<li>List all pip packages to see the extra dependencies that got installed.</li>
-<li>Have some fun using both installed packages (see their docs).</li>
-<li>Export the dependency list to <code>requirements.txt</code> by using <code>pip freeze</code>.</li>
-<li>Deactivate the virt. env.</li>
-<li>Move <code>requirements.txt</code> to one folder level above the project folder (so it’s not deleted in the next step).</li>
-<li>Delete the project folder.</li>
-</ol></li>
-<li><p>Create a new project and virtual environment using the <code>requirements.txt</code> from the previous exercise.</p>
+<li><p><strong>Storage account</strong>: provides a unique address that includes your account name.</p></li>
+<li><p><strong>Containers:</strong> organizes a set of blobs, similar to a directory in a file system.</p></li>
+<li><p><strong>Blobs:</strong> the file being stored.</p></li>
+</ul>
+<div id="fig-blob-structure" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-blob-structure-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="assets/blob-structure.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: Structure of Blob storage From Microsoft Docs, introduction to Azure Blob storage."><img src="assets/blob-structure.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-blob-structure-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: <a href="https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction">Structure of Blob storage</a> From Microsoft Docs, introduction to Azure Blob storage.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="creating-a-storage-account-container" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="creating-a-storage-account-container"><span class="header-section-number">2.2</span> Creating a Storage Account &amp; Container</h3>
+<blockquote class="blockquote">
+<p>For details on how to create a storage account see <strong><a href="https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create?toc=%2Fazure%2Fstorage%2Fblobs%2Ftoc.json&amp;tabs=azure-portal">Create a storage account</a></strong>.</p>
+</blockquote>
+<p>The default setting for creating a Storage Account and Blob Container are sufficient for this course.</p>
+<p>However, if you would like your containers to have sub-folders, see the next section.</p>
+<section id="hierarchical-directories-data-lake-storage" class="level4" data-number="2.2.1">
+<h4 data-number="2.2.1" class="anchored" data-anchor-id="hierarchical-directories-data-lake-storage"><span class="header-section-number">2.2.1</span> Hierarchical Directories &amp; Data Lake Storage</h4>
+<p>By default, Blob storage has a flat file structure. This means that all blobs (files) sit at the same level inside the <strong>container</strong>.</p>
+<p>Azure Data Lake Storage Gen2 is built on top of Blob storage, but offers additional features designed for big data analytics.</p>
+<p>In particular, it offers hierarchical directory organisation at a marginal price increase.</p>
+<blockquote class="blockquote">
+<p>This simplifies storage retrieval and organisation so it will be the <strong>preferred storage</strong> option for IoT telemetry data.</p>
+<p>For more information see <a href="https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction"><strong>Introduction to Azure Data Lake Storage Gen2</strong></a>.</p>
+</blockquote>
+<p>Note: A Blob storage container is the Azure equivalent of an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/GetStartedWithS3.html">Amazon S3 bucket</a>.</p>
+</section>
+</section>
+</section>
+<section id="blob-storage-sdks" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="blob-storage-sdks"><span class="header-section-number">3</span> Blob Storage SDKs</h2>
+<p>As usual, Azure provides a SDK to interact with blob storage.</p>
+<section id="python-sdk" class="level4" data-number="3.0.1">
+<h4 data-number="3.0.1" class="anchored" data-anchor-id="python-sdk"><span class="header-section-number">3.0.1</span> Python SDK</h4>
+<blockquote class="blockquote">
+<p>Python SDK <strong><a href="https://docs.microsoft.com/en-us/python/api/overview/azure/storage-blob-readme?view=azure-python">documentation overview</a></strong> for: - Getting started. - Key concepts. - Examples.</p>
+</blockquote>
+<p><strong>Quick Links</strong> <a href="https://pypi.org/project/azure-storage-blob/">Package (PyPI)</a> | <a href="https://aka.ms/azsdk-python-storage-blob-ref">API reference documentation</a> | <a href="https://docs.microsoft.com/en-us/azure/storage/">Product documentation</a> | <a href="https://github.com/Azure/azure-sdk-for-python/tree/azure-storage-blob_12.11.0/sdk/storage/azure-storage-blob/samples">Samples</a></p>
+</section>
+<section id="net-sdk" class="level4" data-number="3.0.2">
+<h4 data-number="3.0.2" class="anchored" data-anchor-id="net-sdk"><span class="header-section-number">3.0.2</span> .NET SDK</h4>
+<blockquote class="blockquote">
+<p>.NET SDK <strong><a href="https://docs.microsoft.com/en-us/dotnet/api/overview/azure/storage.files.datalake-readme?view=azure-dotnet">documentation overview</a></strong> for: - Getting started. - Key concepts. - Examples.</p>
+</blockquote>
+<p><strong>Quick Links</strong> <a href="https://www.nuget.org/packages/Azure.Storage.Files.DataLake/">Package (NuGet)</a> | <a href="https://docs.microsoft.com/en-us/dotnet/api/azure.storage.files.datalake">API reference documentation</a> | <a href="https://docs.microsoft.com/en-us/rest/api/storageservices/datalakestoragegen2/filesystem">REST API documentation</a> | <a href="https://docs.microsoft.com/en-us/azure/storage/blobs/?toc=/azure/storage/blobs/toc.json">Product documentation</a></p>
+</section>
+<section id="notes-on-blob-storage-sdks" class="level4" data-number="3.0.3">
+<h4 data-number="3.0.3" class="anchored" data-anchor-id="notes-on-blob-storage-sdks"><span class="header-section-number">3.0.3</span> Notes on Blob Storage SDKs:</h4>
+<p><strong>Blob name</strong> is usually the path to the blob object relative to the container.</p>
+<div id="fig-blob-name" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-blob-name-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="assets/blob-name.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;2: Here we have the container name on the left and the blob name on the right."><img src="assets/blob-name.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-blob-name-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Here we have the container name on the left and the blob name on the right.
+</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="blog-storage-event-hubs" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="blog-storage-event-hubs"><span class="header-section-number">4</span> Blog Storage &amp; Event Hubs</h2>
+<p>When ingesting EventHub events using the Nuget package <code>Azure.Messaging.EventHubs</code>, you might require a <code>BlobContainerClient</code>.</p>
+<p>To create an instance of a <code>BlobContainerClient</code> , you must provide the following information:</p>
 <ol type="1">
-<li>Create a new project folder with a virtual environment inside.</li>
-<li>Move <code>requirements.txt</code> inside the new project folder.</li>
-<li>Install project packages using <code>requirements.txt</code></li>
+<li><strong>Storage account connection string</strong>
+<ol type="1">
+<li>Follow steps bellow (from section: <a href="https://learn.microsoft.com/en-us/azure/storage/common/storage-account-get-info?tabs=portal#get-a-connection-string-for-the-storage-account">Get a connection string for the storage account</a>.)
+<ol type="1">
+<li>Navigate to your storage account in the Azure portal.</li>
+<li>In the <strong>Security + networking section</strong>, locate the <strong>Access keys</strong> setting.</li>
+<li>To display the account keys and associated connection strings, select the Show keys button at the top of the page.</li>
+</ol></li>
+</ol></li>
+<li><strong>Blob Container Name.</strong>
+<ol type="1">
+<li>Simply the name of the container you created inside the storage account.</li>
 </ol></li>
 </ol>
-
-
+<div id="fig-blob-container-name" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-blob-container-name-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="assets/blob-container-name.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;3: Here we have checkpoint-blob as the name of the container."><img src="assets/blob-container-name.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-blob-container-name-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Here we have <code>checkpoint-blob</code> as the name of the container.
+</figcaption>
+</figure>
+</div>
 </section>
+<section id="references" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="references"><span class="header-section-number">5</span> References</h2>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction">Introduction to Azure Blob storage</a> by Microsoft.</li>
+<li><a href="https://www.mssqltips.com/sqlservertip/5891/create-azure-data-lake-database-schema-table-view-function-and-stored-procedure/">Create Azure Data Lake Database, Schema, Table, View, Function and Stored Procedure</a>, by: <a href="https://www.mssqltips.com/sqlserverauthor/329/ron-lesteve/" title="author profile for Ron L'Esteve">Ron L’Esteve</a></li>
+<li>Github Repo w/ Samples: <a href="https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/storage/Azure.Storage.Files.DataLake">Azure Storage Files Data Lake client library for .NET</a></li>
+<li>See the videos below.</li>
+</ul>
+<div id="fig-data-lake-storage" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-data-lake-storage-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2uSkjBEwwq0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-data-lake-storage-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Excellent introduction to Data Lake Storage
+</figcaption>
+</figure>
+</div>
+<div id="fig-data-lake-sdk" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-data-lake-sdk-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/JZWaWAU548g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-data-lake-sdk-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Examples of using Data Lake SDK with C#:
+</figcaption>
+</figure>
+</div>
+
+
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div>CC BY-NC 4.0. ©2022-25 Mauricio Buschinelli &amp; Michael Haaf.
@@ -1240,17 +1288,49 @@ $ (.venv) pip install aiohttp</code></pre>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../notes/azure-sdks/index.html" class="pagination-link" aria-label="Azure SDKs in Python and C#">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Azure SDKs in Python and C#</span>
+      <a href="../../notes/microcomputers/index.html" class="pagination-link" aria-label="Microcomputers">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Microcomputers</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../notes/linux-package-management/index.html" class="pagination-link" aria-label="Linux package management">
-        <span class="nav-page-text">Linux package management</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../notes/azure-features/index.html" class="pagination-link" aria-label="Azure Features">
+        <span class="nav-page-text">Azure Features</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

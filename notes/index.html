@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.29">
+<meta name="generator" content="quarto-1.7.30">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../notes/python-oop/index.html" rel="next">
+<link href="../notes/device-calibrating/index.html" rel="next">
 <link href="../assets/favicon_io/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-listing/list.min.js"></script>
 <script src="../site_libs/quarto-listing/quarto-listing.js"></script>
@@ -40,14 +40,14 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-499c96a24f2a291ef9bc75fd2f94d294.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-76023911c31467dce141f6e35d0a63e7.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-499c96a24f2a291ef9bc75fd2f94d294.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-994e4b8856f7f45380dc4610c9e8c6ff.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-1accdb772a835ed2a2aefeb3c6e399c0.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-994e4b8856f7f45380dc4610c9e8c6ff.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-4ef7393c7e44f340fd1359cdd701ebd4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-d0698a0cc84e0a494962846fd79f0c91.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-4ef7393c7e44f340fd1359cdd701ebd4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-13f8f73bb956a6e62072eb9d3f883997.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-1fdb536d0f1451bfcff7e167a4f99223.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-13f8f73bb956a6e62072eb9d3f883997.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
@@ -352,6 +352,7 @@ window.Quarto = {
       toggleColorMode(toAlternate);
       setStyleSentinel(toAlternate);
       toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
     };
     // Switch to dark mode if need be
     if (hasAlternateSentinel()) {
@@ -393,116 +394,76 @@ window.Quarto = {
  <span class="dropdown-text">All course notes</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../notes/device-calibrating/index.html">
+ <span class="dropdown-text">Device calibration</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../notes/python-oop/index.html">
  <span class="dropdown-text">Python OOP</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../notes/gpios/index.html">
- <span class="dropdown-text">GPIOs: Inputs and Outputs</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../notes/iot-protocols/index.html">
- <span class="dropdown-text">IoT Communication Protocols</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../notes/microcomputers/index.html">
- <span class="dropdown-text">Microcomputers</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../notes/async-python/index.html">
- <span class="dropdown-text">Asynchronous progamming in Python</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../notes/device-twins/index.html">
- <span class="dropdown-text">Device Twins</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../notes/python-collections/index.html">
- <span class="dropdown-text">Python collection types and operations</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../notes/azure-sdks/index.html">
- <span class="dropdown-text">Azure SDKs in Python and C#</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../notes/python-environments/index.html">
- <span class="dropdown-text">Python environment management</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../notes/linux-package-management/index.html">
- <span class="dropdown-text">Linux package management</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../notes/azure-features/index.html">
- <span class="dropdown-text">Azure Features</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../notes/serial-protocols/index.html">
- <span class="dropdown-text">Serial protocols</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../notes/bash-scripting/index.html">
- <span class="dropdown-text">Bash scripting</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../notes/debug-reterminal/index.html">
- <span class="dropdown-text">Debugging Reterminal Issues</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../notes/course-hardware/index.html">
- <span class="dropdown-text">Course hardware</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../notes/python-package-management/index.html">
- <span class="dropdown-text">Python package management</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../notes/iot-concepts/index.html">
- <span class="dropdown-text">Intro to the Internet of Things</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../notes/azure-cli-cheatsheet/index.html">
  <span class="dropdown-text">Azure CLI Cheatsheet</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../notes/python-project-management/index.html">
- <span class="dropdown-text">Python project management</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../notes/python-scripting/index.html">
- <span class="dropdown-text">Python scripting</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../notes/eventhub-dotnet/index.html">
- <span class="dropdown-text">EventHubs &amp; .NET SDK</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../notes/analog-vs-digital/index.html">
- <span class="dropdown-text">Signals: Analog and digital</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../notes/github-basics/index.html">
- <span class="dropdown-text">GitHub basics</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../notes/bash-essentials/index.html">
- <span class="dropdown-text">Bash essentials</span></a>
-  </li>  
-        <li>
     <a class="dropdown-item" href="../notes/reterminal-devices/index.html">
  <span class="dropdown-text">reTerminal built-in devices</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../notes/reterminal-setup/index.html">
- <span class="dropdown-text">Reterminal setup</span></a>
+    <a class="dropdown-item" href="../notes/bash-scripting/index.html">
+ <span class="dropdown-text">Bash scripting</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../notes/iot-protocols/index.html">
+ <span class="dropdown-text">IoT Communication Protocols</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../notes/gpios/index.html">
+ <span class="dropdown-text">GPIOs: Inputs and Outputs</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../notes/azure-sdks/index.html">
+ <span class="dropdown-text">Azure SDKs in Python and C#</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../notes/azure-portal/index.html">
  <span class="dropdown-text">Azure Portal Setup</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../notes/developer-environment/index.html">
- <span class="dropdown-text">Developer environment setup</span></a>
+    <a class="dropdown-item" href="../notes/analog-vs-digital/index.html">
+ <span class="dropdown-text">Signals: Analog and digital</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../notes/python-package-management/index.html">
+ <span class="dropdown-text">Python package management</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../notes/linux-package-management/index.html">
+ <span class="dropdown-text">Linux package management</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../notes/github-basics/index.html">
+ <span class="dropdown-text">GitHub basics</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../notes/iot-concepts/index.html">
+ <span class="dropdown-text">Intro to the Internet of Things</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../notes/reterminal-setup/index.html">
+ <span class="dropdown-text">Reterminal setup</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../notes/debug-reterminal/index.html">
+ <span class="dropdown-text">Debugging Reterminal Issues</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../notes/python-extras/index.html">
+ <span class="dropdown-text">Python extras</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../notes/device-twins/index.html">
+ <span class="dropdown-text">Device Twins</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../notes/circuitry/index.html">
@@ -511,6 +472,54 @@ window.Quarto = {
         <li>
     <a class="dropdown-item" href="../notes/device-cloud-communication/index.html">
  <span class="dropdown-text">Device to Cloud Communication</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../notes/async-python/index.html">
+ <span class="dropdown-text">Asynchronous progamming in Python</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../notes/bash-essentials/index.html">
+ <span class="dropdown-text">Bash essentials</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../notes/serial-protocols/index.html">
+ <span class="dropdown-text">Serial protocols</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../notes/python-project-management/index.html">
+ <span class="dropdown-text">Python project management</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../notes/course-hardware/index.html">
+ <span class="dropdown-text">Course hardware</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../notes/developer-environment/index.html">
+ <span class="dropdown-text">Developer environment setup</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../notes/python-scripting/index.html">
+ <span class="dropdown-text">Python scripting</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../notes/python-collections/index.html">
+ <span class="dropdown-text">Python collection types and operations</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../notes/microcomputers/index.html">
+ <span class="dropdown-text">Microcomputers</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../notes/azure-storage/index.html">
+ <span class="dropdown-text">Azure Blob Storage</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../notes/azure-features/index.html">
+ <span class="dropdown-text">Azure Features</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../notes/eventhub-dotnet/index.html">
+ <span class="dropdown-text">EventHubs &amp; .NET SDK</span></a>
   </li>  
     </ul>
   </li>
@@ -562,104 +571,14 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../notes/device-calibrating/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Device calibration</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../notes/python-oop/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Python OOP</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../notes/gpios/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">GPIOs: Inputs and Outputs</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../notes/iot-protocols/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">IoT Communication Protocols</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../notes/microcomputers/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Microcomputers</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../notes/async-python/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Asynchronous progamming in Python</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../notes/device-twins/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Device Twins</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../notes/python-collections/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Python collection types and operations</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../notes/azure-sdks/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Azure SDKs in Python and C#</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../notes/python-environments/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Python environment management</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../notes/linux-package-management/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Linux package management</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../notes/azure-features/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Azure Features</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../notes/serial-protocols/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Serial protocols</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../notes/bash-scripting/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bash scripting</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../notes/debug-reterminal/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Debugging Reterminal Issues</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../notes/course-hardware/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Course hardware</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../notes/python-package-management/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Python package management</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../notes/iot-concepts/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Intro to the Internet of Things</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -670,50 +589,32 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notes/python-project-management/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Python project management</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../notes/python-scripting/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Python scripting</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../notes/eventhub-dotnet/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">EventHubs &amp; .NET SDK</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../notes/analog-vs-digital/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Signals: Analog and digital</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../notes/github-basics/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">GitHub basics</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../notes/bash-essentials/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bash essentials</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../notes/reterminal-devices/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">reTerminal built-in devices</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notes/reterminal-setup/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Reterminal setup</span></a>
+  <a href="../notes/bash-scripting/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bash scripting</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/iot-protocols/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">IoT Communication Protocols</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/gpios/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">GPIOs: Inputs and Outputs</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/azure-sdks/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Azure SDKs in Python and C#</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -724,8 +625,56 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notes/developer-environment/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Developer environment setup</span></a>
+  <a href="../notes/analog-vs-digital/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Signals: Analog and digital</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/python-package-management/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python package management</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/linux-package-management/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linux package management</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/github-basics/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">GitHub basics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/iot-concepts/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Intro to the Internet of Things</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/reterminal-setup/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Reterminal setup</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/debug-reterminal/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Debugging Reterminal Issues</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/python-extras/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python extras</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/device-twins/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Device Twins</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -738,6 +687,78 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="../notes/device-cloud-communication/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Device to Cloud Communication</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/async-python/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Asynchronous progamming in Python</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/bash-essentials/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bash essentials</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/serial-protocols/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Serial protocols</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/python-project-management/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python project management</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/course-hardware/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Course hardware</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/developer-environment/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Developer environment setup</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/python-scripting/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python scripting</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/python-collections/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python collection types and operations</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/microcomputers/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Microcomputers</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/azure-storage/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Azure Blob Storage</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/azure-features/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Azure Features</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/eventhub-dotnet/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">EventHubs &amp; .NET SDK</span></a>
   </div>
 </li>
     </ul>
@@ -773,7 +794,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">May 4, 2025</p>
+      <p class="date-modified">May 8, 2025</p>
     </div>
   </div>
     
@@ -868,7 +889,7 @@ Subtitle
 </thead>
 <tbody class="list">
 
-<tr data-index="0" data-categories="aGFyZHdhcmU=" data-listing-date-sort="1737331200000" data-listing-file-modified-sort="1746402829839" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="590" data-listing-title-sort="Course hardware" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="0" data-categories="aGFyZHdhcmU=" data-listing-date-sort="1737331200000" data-listing-file-modified-sort="1746737823821" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="590" data-listing-title-sort="Course hardware" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
 <span class="listing-date">Jan 20</span>
@@ -880,12 +901,12 @@ Subtitle
 <span class="listing-subtitle">List of hardware available for the course as well as their respective specifications and documentation. </span>
 </td>
 <td>
-<span class="listing-file-modified">May 4</span>
+<span class="listing-file-modified">May 8</span>
 </td>
 
 </tr>
 
-<tr data-index="1" data-categories="YmFzaCUyQ2xpbnV4" data-listing-date-sort="1737331200000" data-listing-file-modified-sort="1746402829840" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1225" data-listing-title-sort="Developer environment setup" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="1" data-categories="YmFzaCUyQ2xpbnV4" data-listing-date-sort="1737331200000" data-listing-file-modified-sort="1746737823822" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1225" data-listing-title-sort="Developer environment setup" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
 <span class="listing-date">Jan 20</span>
@@ -897,12 +918,12 @@ Subtitle
 <span class="listing-subtitle">Instructions for setting up classroom and personal computers for programming in this course, including: setting up a Debian container on WSL; restoring your WSL container from backup quickly; installing needed dependencies on WSL, Mac/OSX, and Linux; verifying that needed dependencies have been installed. </span>
 </td>
 <td>
-<span class="listing-file-modified">May 4</span>
+<span class="listing-file-modified">May 8</span>
 </td>
 
 </tr>
 
-<tr data-index="2" data-categories="YmFzaA==" data-listing-date-sort="1738281600000" data-listing-file-modified-sort="1746402829836" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1494" data-listing-title-sort="Bash essentials" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="2" data-categories="YmFzaA==" data-listing-date-sort="1738281600000" data-listing-file-modified-sort="1746737823818" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1494" data-listing-title-sort="Bash essentials" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
 <span class="listing-date">Jan 31</span>
@@ -914,12 +935,12 @@ Subtitle
 <span class="listing-subtitle">Tips for using the bash interactive shell CLI effectively. The core bash commands everyone should know. How to combine commands using pipes and redirects. </span>
 </td>
 <td>
-<span class="listing-file-modified">May 4</span>
+<span class="listing-file-modified">May 8</span>
 </td>
 
 </tr>
 
-<tr data-index="3" data-categories="Z2l0JTJDYmFzaA==" data-listing-date-sort="1739145600000" data-listing-file-modified-sort="1746402829844" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1100" data-listing-title-sort="GitHub basics" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="3" data-categories="Z2l0JTJDYmFzaA==" data-listing-date-sort="1739145600000" data-listing-file-modified-sort="1746737823826" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1100" data-listing-title-sort="GitHub basics" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
 <span class="listing-date">Feb 10</span>
@@ -931,12 +952,12 @@ Subtitle
 <span class="listing-subtitle">Basics of cloning a repository hosted on Github and creating branches. Using a personal access token for authentication on GitHub outside of VSCode. Using the <code>pass</code> password manager to store access tokens safely. </span>
 </td>
 <td>
-<span class="listing-file-modified">May 4</span>
+<span class="listing-file-modified">May 8</span>
 </td>
 
 </tr>
 
-<tr data-index="4" data-categories="YmFzaA==" data-listing-date-sort="1739750400000" data-listing-file-modified-sort="1746402829836" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="21" data-listing-word-count-sort="4001" data-listing-title-sort="Bash scripting" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="4" data-categories="YmFzaA==" data-listing-date-sort="1739750400000" data-listing-file-modified-sort="1746737823818" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="21" data-listing-word-count-sort="4001" data-listing-title-sort="Bash scripting" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
 <span class="listing-date">Feb 17</span>
@@ -948,12 +969,12 @@ Subtitle
 <span class="listing-subtitle">Tips for scripting in bash effectively. Managing environment and permissions in bash. The capabilities and limitations of programming in bash. </span>
 </td>
 <td>
-<span class="listing-file-modified">May 4</span>
+<span class="listing-file-modified">May 8</span>
 </td>
 
 </tr>
 
-<tr data-index="5" data-categories="aGFyZHdhcmUlMkNsaW51eA==" data-listing-date-sort="1740355200000" data-listing-file-modified-sort="1746402829897" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="18" data-listing-word-count-sort="3495" data-listing-title-sort="Reterminal setup" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="5" data-categories="aGFyZHdhcmUlMkNsaW51eA==" data-listing-date-sort="1740355200000" data-listing-file-modified-sort="1746737823879" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="18" data-listing-word-count-sort="3495" data-listing-title-sort="Reterminal setup" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
 <span class="listing-date">Feb 24</span>
@@ -965,46 +986,12 @@ Subtitle
 <span class="listing-subtitle">Guide to setting up reterminal for the first time. </span>
 </td>
 <td>
-<span class="listing-file-modified">May 4</span>
+<span class="listing-file-modified">May 8</span>
 </td>
 
 </tr>
 
-<tr data-index="6" data-categories="cHl0aG9u" data-listing-date-sort="1741564800000" data-listing-file-modified-sort="1746402829893" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="802" data-listing-title-sort="Python environment management" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
- if (href) { window.location=href ; return false; }">
-<td>
-<span class="listing-date">Mar 10</span>
-</td>
-<td>
-<a href="../notes/python-environments/index.html" class="title listing-title">Python environment management</a>
-</td>
-<td>
-<span class="listing-subtitle">Managing python development and runtime dependencies. Using virtual environments. Configuring python linters and formatters. </span>
-</td>
-<td>
-<span class="listing-file-modified">May 4</span>
-</td>
-
-</tr>
-
-<tr data-index="7" data-categories="cHl0aG9u" data-listing-date-sort="1741564800000" data-listing-file-modified-sort="1746402829893" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2315" data-listing-title-sort="Python package management" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
- if (href) { window.location=href ; return false; }">
-<td>
-<span class="listing-date">Mar 10</span>
-</td>
-<td>
-<a href="../notes/python-package-management/index.html" class="title listing-title">Python package management</a>
-</td>
-<td>
-<span class="listing-subtitle">How to use OS package managers, virtual environments, and <code>pip</code> to manage python applications effectively.</span>
-</td>
-<td>
-<span class="listing-file-modified">May 4</span>
-</td>
-
-</tr>
-
-<tr data-index="8" data-categories="aGFyZHdhcmUlMkNsaW51eCUyQ2Jhc2g=" data-listing-date-sort="1741564800000" data-listing-file-modified-sort="1746402829897" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="936" data-listing-title-sort="reTerminal built-in devices" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="6" data-categories="aGFyZHdhcmUlMkNsaW51eCUyQ2Jhc2g=" data-listing-date-sort="1741564800000" data-listing-file-modified-sort="1746737823879" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="936" data-listing-title-sort="reTerminal built-in devices" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
 <span class="listing-date">Mar 10</span>
@@ -1016,12 +1003,29 @@ Subtitle
 <span class="listing-subtitle">Installing initial reTerminal packages. Reading and controlling the reTerminal hardware interfaces, e.g.&nbsp;touchscreen, LEDs, light sensor, screen backlight, etc.</span>
 </td>
 <td>
-<span class="listing-file-modified">May 4</span>
+<span class="listing-file-modified">May 8</span>
 </td>
 
 </tr>
 
-<tr data-index="9" data-categories="aGFyZHdhcmUlMkNzaWduYWxz" data-listing-date-sort="1741910400000" data-listing-file-modified-sort="1746402829848" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="796" data-listing-title-sort="GPIOs: Inputs and Outputs" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="7" data-categories="cHl0aG9u" data-listing-date-sort="1741564800000" data-listing-file-modified-sort="1746737823875" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2017" data-listing-title-sort="Python package management" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td>
+<span class="listing-date">Mar 10</span>
+</td>
+<td>
+<a href="../notes/python-package-management/index.html" class="title listing-title">Python package management</a>
+</td>
+<td>
+<span class="listing-subtitle">How to use install system python packages using apt. How to install project python libraries using pip. Using virtual environments to manage python dependencies. </span>
+</td>
+<td>
+<span class="listing-file-modified">May 8</span>
+</td>
+
+</tr>
+
+<tr data-index="8" data-categories="aGFyZHdhcmUlMkNzaWduYWxz" data-listing-date-sort="1741910400000" data-listing-file-modified-sort="1746737823830" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="796" data-listing-title-sort="GPIOs: Inputs and Outputs" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
 <span class="listing-date">Mar 14</span>
@@ -1033,29 +1037,12 @@ Subtitle
 <span class="listing-subtitle">Understanding the General Purpose Input and Output (GPIO) pins our reTerminal makes available to us. Voltage, digital vs.&nbsp;analog, python libraries for GPIO.</span>
 </td>
 <td>
-<span class="listing-file-modified">May 4</span>
+<span class="listing-file-modified">May 8</span>
 </td>
 
 </tr>
 
-<tr data-index="10" data-categories="aGFyZHdhcmUlMkNzaWduYWxz" data-listing-date-sort="1741910400000" data-listing-file-modified-sort="1746402829903" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1851" data-listing-title-sort="Serial protocols" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
- if (href) { window.location=href ; return false; }">
-<td>
-<span class="listing-date">Mar 14</span>
-</td>
-<td>
-<a href="../notes/serial-protocols/index.html" class="title listing-title">Serial protocols</a>
-</td>
-<td>
-<span class="listing-subtitle">A deeper dive into the protocols used to communicate between GPIO and the kernel</span>
-</td>
-<td>
-<span class="listing-file-modified">May 4</span>
-</td>
-
-</tr>
-
-<tr data-index="11" data-categories="aGFyZHdhcmU=" data-listing-date-sort="1741910400000" data-listing-file-modified-sort="1746402829830" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1770" data-listing-title-sort="Signals: Analog and digital" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="9" data-categories="aGFyZHdhcmU=" data-listing-date-sort="1741910400000" data-listing-file-modified-sort="1746737823811" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1623" data-listing-title-sort="Signals: Analog and digital" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
 <span class="listing-date">Mar 14</span>
@@ -1067,12 +1054,29 @@ Subtitle
 <span class="listing-subtitle">Comparing the two paradigms for measuring electronic information and understanding how each are used for distributed applications.</span>
 </td>
 <td>
-<span class="listing-file-modified">May 4</span>
+<span class="listing-file-modified">May 8</span>
 </td>
 
 </tr>
 
-<tr data-index="12" data-categories="cHl0aG9u" data-listing-date-sort="1743724800000" data-listing-file-modified-sort="1746402829893" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1356" data-listing-title-sort="Python OOP" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="10" data-categories="aGFyZHdhcmUlMkNzaWduYWxz" data-listing-date-sort="1741910400000" data-listing-file-modified-sort="1746737823885" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1851" data-listing-title-sort="Serial protocols" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td>
+<span class="listing-date">Mar 14</span>
+</td>
+<td>
+<a href="../notes/serial-protocols/index.html" class="title listing-title">Serial protocols</a>
+</td>
+<td>
+<span class="listing-subtitle">A deeper dive into the protocols used to communicate between GPIO and the kernel</span>
+</td>
+<td>
+<span class="listing-file-modified">May 8</span>
+</td>
+
+</tr>
+
+<tr data-index="11" data-categories="cHl0aG9u" data-listing-date-sort="1743724800000" data-listing-file-modified-sort="1746737823875" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1356" data-listing-title-sort="Python OOP" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
 <span class="listing-date">Apr 4</span>
@@ -1084,12 +1088,12 @@ Subtitle
 <span class="listing-subtitle">Basics of Object Oriented Programming in Python.</span>
 </td>
 <td>
-<span class="listing-file-modified">May 4</span>
+<span class="listing-file-modified">May 8</span>
 </td>
 
 </tr>
 
-<tr data-index="13" data-categories="cHl0aG9u" data-listing-date-sort="1743724800000" data-listing-file-modified-sort="1746402829830" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="693" data-listing-title-sort="Asynchronous progamming in Python" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="12" data-categories="cHl0aG9u" data-listing-date-sort="1743724800000" data-listing-file-modified-sort="1746737823811" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="693" data-listing-title-sort="Asynchronous progamming in Python" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
 <span class="listing-date">Apr 4</span>
@@ -1101,29 +1105,12 @@ Subtitle
 <span class="listing-subtitle">Using the asyncio library to control concurrentprocesses in Python.</span>
 </td>
 <td>
-<span class="listing-file-modified">May 4</span>
+<span class="listing-file-modified">May 8</span>
 </td>
 
 </tr>
 
-<tr data-index="14" data-categories="cHl0aG9u" data-listing-date-sort="1743724800000" data-listing-file-modified-sort="1746402829892" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="893" data-listing-title-sort="Python collection types and operations" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
- if (href) { window.location=href ; return false; }">
-<td>
-<span class="listing-date">Apr 4</span>
-</td>
-<td>
-<a href="../notes/python-collections/index.html" class="title listing-title">Python collection types and operations</a>
-</td>
-<td>
-<span class="listing-subtitle">Useful python collection types and operations</span>
-</td>
-<td>
-<span class="listing-file-modified">May 4</span>
-</td>
-
-</tr>
-
-<tr data-index="15" data-categories="cHl0aG9u" data-listing-date-sort="1743724800000" data-listing-file-modified-sort="1746402829893" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="579" data-listing-title-sort="Python project management" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="13" data-categories="cHl0aG9u" data-listing-date-sort="1743724800000" data-listing-file-modified-sort="1746737823875" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1507" data-listing-title-sort="Python project management" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
 <span class="listing-date">Apr 4</span>
@@ -1132,15 +1119,15 @@ Subtitle
 <a href="../notes/python-project-management/index.html" class="title listing-title">Python project management</a>
 </td>
 <td>
-<span class="listing-subtitle">Previously, we have focused on installing dependencies from other projects – we expand on that knowledge to learn how to create our own projects</span>
+<span class="listing-subtitle">Python modules and packages. Python project file structure. Managing project dependencies. Configuring python project metadata. requirements.txt and pyproject.toml. Configuring python linters and formatters. </span>
 </td>
 <td>
-<span class="listing-file-modified">May 4</span>
+<span class="listing-file-modified">May 8</span>
 </td>
 
 </tr>
 
-<tr data-index="16" data-categories="cHl0aG9u" data-listing-date-sort="1743724800000" data-listing-file-modified-sort="1746402829893" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="734" data-listing-title-sort="Python scripting" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="14" data-categories="cHl0aG9u" data-listing-date-sort="1743724800000" data-listing-file-modified-sort="1746737823875" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="734" data-listing-title-sort="Python scripting" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
 <span class="listing-date">Apr 4</span>
@@ -1152,12 +1139,29 @@ Subtitle
 <span class="listing-subtitle">Tips and tricks for effective scripting in Python </span>
 </td>
 <td>
-<span class="listing-file-modified">May 4</span>
+<span class="listing-file-modified">May 8</span>
 </td>
 
 </tr>
 
-<tr data-index="17" data-categories="bGludXglMkNiYXNo" data-listing-date-sort="1744502400000" data-listing-file-modified-sort="1746402829839" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="657" data-listing-title-sort="Debugging Reterminal Issues" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="15" data-categories="cHl0aG9u" data-listing-date-sort="1743724800000" data-listing-file-modified-sort="1746737823875" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="893" data-listing-title-sort="Python collection types and operations" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td>
+<span class="listing-date">Apr 4</span>
+</td>
+<td>
+<a href="../notes/python-collections/index.html" class="title listing-title">Python collection types and operations</a>
+</td>
+<td>
+<span class="listing-subtitle">Useful python collection types and operations</span>
+</td>
+<td>
+<span class="listing-file-modified">May 8</span>
+</td>
+
+</tr>
+
+<tr data-index="16" data-categories="bGludXglMkNiYXNo" data-listing-date-sort="1744502400000" data-listing-file-modified-sort="1746737823822" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="657" data-listing-title-sort="Debugging Reterminal Issues" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
 <span class="listing-date">Apr 13</span>
@@ -1169,29 +1173,12 @@ Subtitle
 <span class="listing-subtitle">Sometimes, the reTerminal display drivers fail. Here is an (incomplete) set of debugging steps you can take to try fixing the issue. </span>
 </td>
 <td>
-<span class="listing-file-modified">May 4</span>
+<span class="listing-file-modified">May 8</span>
 </td>
 
 </tr>
 
-<tr data-index="18" data-categories="aW90" data-listing-date-sort="1745020800000" data-listing-file-modified-sort="1746402829832" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1324" data-listing-title-sort="Azure Features" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
- if (href) { window.location=href ; return false; }">
-<td>
-<span class="listing-date">Apr 19</span>
-</td>
-<td>
-<a href="../notes/azure-features/index.html" class="title listing-title">Azure Features</a>
-</td>
-<td>
-<span class="listing-subtitle">An overview of the main feautres of Azure we will use for implementing an IoT system. Background information on “Platform as a Service” (PaaS), Azure IoT Hub vs IoT Central, Azure Resource Groups, Intro to Azure Dev Tools (Azure Portal, Azure CLI). </span>
-</td>
-<td>
-<span class="listing-file-modified">May 4</span>
-</td>
-
-</tr>
-
-<tr data-index="19" data-categories="aW90" data-listing-date-sort="1745020800000" data-listing-file-modified-sort="1746402829835" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1151" data-listing-title-sort="Azure Portal Setup" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="17" data-categories="aW90" data-listing-date-sort="1745020800000" data-listing-file-modified-sort="1746737823816" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1151" data-listing-title-sort="Azure Portal Setup" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
 <span class="listing-date">Apr 19</span>
@@ -1203,29 +1190,29 @@ Subtitle
 <span class="listing-subtitle">Creating an Azure account, managing your Azure account budget, Azure IoT Hub documentation, creating an Azure IoT Hub resource, and more. </span>
 </td>
 <td>
-<span class="listing-file-modified">May 4</span>
+<span class="listing-file-modified">May 8</span>
 </td>
 
 </tr>
 
-<tr data-index="20" data-categories="cHl0aG9uJTJDaW90" data-listing-date-sort="1745193600000" data-listing-file-modified-sort="1746402829835" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="424" data-listing-title-sort="Azure SDKs in Python and C#" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="18" data-categories="aW90" data-listing-date-sort="1745020800000" data-listing-file-modified-sort="1746737823813" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1324" data-listing-title-sort="Azure Features" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
-<span class="listing-date">Apr 21</span>
+<span class="listing-date">Apr 19</span>
 </td>
 <td>
-<a href="../notes/azure-sdks/index.html" class="title listing-title">Azure SDKs in Python and C#</a>
+<a href="../notes/azure-features/index.html" class="title listing-title">Azure Features</a>
 </td>
 <td>
-<span class="listing-subtitle">Azure Libraries in Python and C# Installation instructions for WSL, how to use the libraries in your code. </span>
+<span class="listing-subtitle">An overview of the main feautres of Azure we will use for implementing an IoT system. Background information on “Platform as a Service” (PaaS), Azure IoT Hub vs IoT Central, Azure Resource Groups, Intro to Azure Dev Tools (Azure Portal, Azure CLI). </span>
 </td>
 <td>
-<span class="listing-file-modified">May 4</span>
+<span class="listing-file-modified">May 8</span>
 </td>
 
 </tr>
 
-<tr data-index="21" data-categories="YmFzaCUyQ2lvdA==" data-listing-date-sort="1745193600000" data-listing-file-modified-sort="1746402829830" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="837" data-listing-title-sort="Azure CLI Cheatsheet" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="19" data-categories="YmFzaCUyQ2lvdA==" data-listing-date-sort="1745193600000" data-listing-file-modified-sort="1746737823811" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="837" data-listing-title-sort="Azure CLI Cheatsheet" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
 <span class="listing-date">Apr 21</span>
@@ -1237,12 +1224,29 @@ Subtitle
 <span class="listing-subtitle">Reference for common Azure commands</span>
 </td>
 <td>
-<span class="listing-file-modified">May 4</span>
+<span class="listing-file-modified">May 8</span>
 </td>
 
 </tr>
 
-<tr data-index="22" data-categories="c2lnbmFscyUyQ2lvdA==" data-listing-date-sort="1745798400000" data-listing-file-modified-sort="1746402829869" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="15" data-listing-word-count-sort="2888" data-listing-title-sort="IoT Communication Protocols" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="20" data-categories="cHl0aG9uJTJDaW90" data-listing-date-sort="1745193600000" data-listing-file-modified-sort="1746737823816" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="424" data-listing-title-sort="Azure SDKs in Python and C#" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td>
+<span class="listing-date">Apr 21</span>
+</td>
+<td>
+<a href="../notes/azure-sdks/index.html" class="title listing-title">Azure SDKs in Python and C#</a>
+</td>
+<td>
+<span class="listing-subtitle">Azure Libraries in Python and C# Installation instructions for WSL, how to use the libraries in your code. </span>
+</td>
+<td>
+<span class="listing-file-modified">May 8</span>
+</td>
+
+</tr>
+
+<tr data-index="21" data-categories="c2lnbmFscyUyQ2lvdA==" data-listing-date-sort="1745798400000" data-listing-file-modified-sort="1746737823851" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="14" data-listing-word-count-sort="2690" data-listing-title-sort="IoT Communication Protocols" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
 <span class="listing-date">Apr 28</span>
@@ -1254,46 +1258,12 @@ Subtitle
 <span class="listing-subtitle">How communication protocols can be optimized for device-cloud communication, i.e.&nbsp;why not everything should use HTTP</span>
 </td>
 <td>
-<span class="listing-file-modified">May 4</span>
+<span class="listing-file-modified">May 8</span>
 </td>
 
 </tr>
 
-<tr data-index="23" data-categories="aGFyZHdhcmU=" data-listing-date-sort="1745798400000" data-listing-file-modified-sort="1746402829892" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2253" data-listing-title-sort="Microcomputers" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
- if (href) { window.location=href ; return false; }">
-<td>
-<span class="listing-date">Apr 28</span>
-</td>
-<td>
-<a href="../notes/microcomputers/index.html" class="title listing-title">Microcomputers</a>
-</td>
-<td>
-<span class="listing-subtitle">Comparing the architectural paradigms for microcomputers to better understand our Pis.</span>
-</td>
-<td>
-<span class="listing-file-modified">May 4</span>
-</td>
-
-</tr>
-
-<tr data-index="24" data-categories="aW90" data-listing-date-sort="1745798400000" data-listing-file-modified-sort="1746402829842" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1753" data-listing-title-sort="Device Twins" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
- if (href) { window.location=href ; return false; }">
-<td>
-<span class="listing-date">Apr 28</span>
-</td>
-<td>
-<a href="../notes/device-twins/index.html" class="title listing-title">Device Twins</a>
-</td>
-<td>
-<span class="listing-subtitle">How to retrieve and configure IoT Devices using Device Twin metadata</span>
-</td>
-<td>
-<span class="listing-file-modified">May 4</span>
-</td>
-
-</tr>
-
-<tr data-index="25" data-categories="bGludXg=" data-listing-date-sort="1745798400000" data-listing-file-modified-sort="1746402829869" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1185" data-listing-title-sort="Linux package management" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="22" data-categories="bGludXg=" data-listing-date-sort="1745798400000" data-listing-file-modified-sort="1746737823851" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1185" data-listing-title-sort="Linux package management" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
 <span class="listing-date">Apr 28</span>
@@ -1305,12 +1275,12 @@ Subtitle
 <span class="listing-subtitle">Installing and configuring Linux packages on WSL / Raspberry Pi Debian using the <code>apt</code> package manager</span>
 </td>
 <td>
-<span class="listing-file-modified">May 4</span>
+<span class="listing-file-modified">May 8</span>
 </td>
 
 </tr>
 
-<tr data-index="26" data-categories="aW90" data-listing-date-sort="1745798400000" data-listing-file-modified-sort="1746402829867" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="867" data-listing-title-sort="Intro to the Internet of Things" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="23" data-categories="aW90" data-listing-date-sort="1745798400000" data-listing-file-modified-sort="1746737823850" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="867" data-listing-title-sort="Intro to the Internet of Things" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
 <span class="listing-date">Apr 28</span>
@@ -1322,29 +1292,29 @@ Subtitle
 <span class="listing-subtitle">Fundamental concepts and applications behind the ‘Internet of Things’ paradigm.</span>
 </td>
 <td>
-<span class="listing-file-modified">May 4</span>
+<span class="listing-file-modified">May 8</span>
 </td>
 
 </tr>
 
-<tr data-index="27" data-categories="Lk5FVA==" data-listing-date-sort="1745798400000" data-listing-file-modified-sort="1746402829842" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1407" data-listing-title-sort="EventHubs &amp; .NET SDK" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="24" data-categories="aW90" data-listing-date-sort="1745798400000" data-listing-file-modified-sort="1746737823824" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1753" data-listing-title-sort="Device Twins" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
 <span class="listing-date">Apr 28</span>
 </td>
 <td>
-<a href="../notes/eventhub-dotnet/index.html" class="title listing-title">EventHubs &amp; .NET SDK</a>
+<a href="../notes/device-twins/index.html" class="title listing-title">Device Twins</a>
 </td>
 <td>
-<span class="listing-subtitle">More notes on how to send and receive events in C#</span>
+<span class="listing-subtitle">How to retrieve and configure IoT Devices using Device Twin metadata</span>
 </td>
 <td>
-<span class="listing-file-modified">May 4</span>
+<span class="listing-file-modified">May 8</span>
 </td>
 
 </tr>
 
-<tr data-index="28" data-categories="aGFyZHdhcmUlMkNzaWduYWxz" data-listing-date-sort="1745798400000" data-listing-file-modified-sort="1746402829839" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="896" data-listing-title-sort="Electronics Basics" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="25" data-categories="aGFyZHdhcmUlMkNzaWduYWxz" data-listing-date-sort="1745798400000" data-listing-file-modified-sort="1746737823821" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="896" data-listing-title-sort="Electronics Basics" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
 <span class="listing-date">Apr 28</span>
@@ -1356,12 +1326,12 @@ Subtitle
 <span class="listing-subtitle">Review of Ohm’s Law, fundamental concepts for understanding electronic circuits and interfaces.</span>
 </td>
 <td>
-<span class="listing-file-modified">May 4</span>
+<span class="listing-file-modified">May 8</span>
 </td>
 
 </tr>
 
-<tr data-index="29" data-categories="aW90" data-listing-date-sort="1745798400000" data-listing-file-modified-sort="1746402829840" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1207" data-listing-title-sort="Device to Cloud Communication" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="26" data-categories="aW90" data-listing-date-sort="1745798400000" data-listing-file-modified-sort="1746737823822" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1207" data-listing-title-sort="Device to Cloud Communication" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
 <span class="listing-date">Apr 28</span>
@@ -1373,7 +1343,92 @@ Subtitle
 <span class="listing-subtitle">How to use Azure for bidrectional device-cloud communication</span>
 </td>
 <td>
-<span class="listing-file-modified">May 4</span>
+<span class="listing-file-modified">May 8</span>
+</td>
+
+</tr>
+
+<tr data-index="27" data-categories="aGFyZHdhcmU=" data-listing-date-sort="1745798400000" data-listing-file-modified-sort="1746737823875" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2253" data-listing-title-sort="Microcomputers" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td>
+<span class="listing-date">Apr 28</span>
+</td>
+<td>
+<a href="../notes/microcomputers/index.html" class="title listing-title">Microcomputers</a>
+</td>
+<td>
+<span class="listing-subtitle">Comparing the architectural paradigms for microcomputers to better understand our Pis.</span>
+</td>
+<td>
+<span class="listing-file-modified">May 8</span>
+</td>
+
+</tr>
+
+<tr data-index="28" data-categories="Lk5FVA==" data-listing-date-sort="1745798400000" data-listing-file-modified-sort="1746737823824" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1407" data-listing-title-sort="EventHubs &amp; .NET SDK" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td>
+<span class="listing-date">Apr 28</span>
+</td>
+<td>
+<a href="../notes/eventhub-dotnet/index.html" class="title listing-title">EventHubs &amp; .NET SDK</a>
+</td>
+<td>
+<span class="listing-subtitle">More notes on how to send and receive events in C#</span>
+</td>
+<td>
+<span class="listing-file-modified">May 8</span>
+</td>
+
+</tr>
+
+<tr data-index="29" data-categories="aGFyZHdhcmUlMkNiYXNoJTJDcHl0aG9u" data-listing-date-sort="1746403200000" data-listing-file-modified-sort="1746737823822" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="400" data-listing-title-sort="Device calibration" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td>
+<span class="listing-date">May 5</span>
+</td>
+<td>
+<a href="../notes/device-calibrating/index.html" class="title listing-title">Device calibration</a>
+</td>
+<td>
+<span class="listing-subtitle">Notes for getting your sensors/actuators to work. </span>
+</td>
+<td>
+<span class="listing-file-modified">May 8</span>
+</td>
+
+</tr>
+
+<tr data-index="30" data-categories="cHl0aG9u" data-listing-date-sort="1746403200000" data-listing-file-modified-sort="1746737823875" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="721" data-listing-title-sort="Python extras" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td>
+<span class="listing-date">May 5</span>
+</td>
+<td>
+<a href="../notes/python-extras/index.html" class="title listing-title">Python extras</a>
+</td>
+<td>
+<span class="listing-subtitle">Python tips and tricks that there wasn’t time to cover explicitly in the course, but are useful to know. Logging in Python with the logging module. Unit testing in python with pytest. </span>
+</td>
+<td>
+<span class="listing-file-modified">May 8</span>
+</td>
+
+</tr>
+
+<tr data-index="31" data-categories="aW90" data-listing-date-sort="1746662400000" data-listing-file-modified-sort="1746737823817" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="607" data-listing-title-sort="Azure Blob Storage" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td>
+<span class="listing-date">May 8</span>
+</td>
+<td>
+<a href="../notes/azure-storage/index.html" class="title listing-title">Azure Blob Storage</a>
+</td>
+<td>
+<span class="listing-subtitle">Setting up blob storage on the Azure Portal </span>
+</td>
+<td>
+<span class="listing-file-modified">May 8</span>
 </td>
 
 </tr>
@@ -1414,7 +1469,7 @@ Subtitle
     </div>
 </div>
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="aGFyZHdhcmU=" data-listing-date-sort="1737331200000" data-listing-file-modified-sort="1746402829839" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="590">
+<div class="quarto-post image-right" data-index="0" data-categories="aGFyZHdhcmU=" data-listing-date-sort="1737331200000" data-listing-file-modified-sort="1746737823821" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="590">
 <div class="thumbnail"><a href="../notes/course-hardware/index.html" class="no-external">
 
 <img loading="lazy" src="../notes/course-hardware/assets/iot-hardware.png" class="thumbnail-image" style="height: 150px;">
@@ -1440,12 +1495,12 @@ Jan 20, 2025
 </div>
 <div class="listing-reading-time">3 min</div>
 <div class="metadata-value listing-file-modified">
-May 4, 2025
+May 8, 2025
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="YmFzaCUyQ2xpbnV4" data-listing-date-sort="1737331200000" data-listing-file-modified-sort="1746402829840" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1225">
+<div class="quarto-post image-right" data-index="1" data-categories="YmFzaCUyQ2xpbnV4" data-listing-date-sort="1737331200000" data-listing-file-modified-sort="1746737823822" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1225">
 <div class="thumbnail"><a href="../notes/developer-environment/index.html" class="no-external">
 
 <p class="card-img-top"><img src="developer-environment/assets/vintage-drill-press.jpg" alt="Photo by Tima Miroshnichenko" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -1473,12 +1528,12 @@ Jan 20, 2025
 </div>
 <div class="listing-reading-time">7 min</div>
 <div class="metadata-value listing-file-modified">
-May 4, 2025
+May 8, 2025
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="YmFzaA==" data-listing-date-sort="1738281600000" data-listing-file-modified-sort="1746402829836" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1494">
+<div class="quarto-post image-right" data-index="2" data-categories="YmFzaA==" data-listing-date-sort="1738281600000" data-listing-file-modified-sort="1746737823818" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1494">
 <div class="thumbnail"><a href="../notes/bash-essentials/index.html" class="no-external">
 
 <img loading="lazy" src="https://tiswww.case.edu/php/chet/img/bash-logo-web.png" class="thumbnail-image" style="height: 150px;">
@@ -1504,12 +1559,12 @@ Jan 31, 2025
 </div>
 <div class="listing-reading-time">8 min</div>
 <div class="metadata-value listing-file-modified">
-May 4, 2025
+May 8, 2025
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="Z2l0JTJDYmFzaA==" data-listing-date-sort="1739145600000" data-listing-file-modified-sort="1746402829844" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1100">
+<div class="quarto-post image-right" data-index="3" data-categories="Z2l0JTJDYmFzaA==" data-listing-date-sort="1739145600000" data-listing-file-modified-sort="1746737823826" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1100">
 <div class="thumbnail"><a href="../notes/github-basics/index.html" class="no-external">
 
 <p class="card-img-top"><img src="github-basics/assets/github-mark.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -1537,12 +1592,12 @@ Feb 10, 2025
 </div>
 <div class="listing-reading-time">6 min</div>
 <div class="metadata-value listing-file-modified">
-May 4, 2025
+May 8, 2025
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-categories="YmFzaA==" data-listing-date-sort="1739750400000" data-listing-file-modified-sort="1746402829836" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="21" data-listing-word-count-sort="4001">
+<div class="quarto-post image-right" data-index="4" data-categories="YmFzaA==" data-listing-date-sort="1739750400000" data-listing-file-modified-sort="1746737823818" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="21" data-listing-word-count-sort="4001">
 <div class="thumbnail"><a href="../notes/bash-scripting/index.html" class="no-external">
 
 <img loading="lazy" src="https://tudoubaba.net/assets/img/shebang.72b91b53.png" class="thumbnail-image" style="height: 150px;">
@@ -1568,12 +1623,12 @@ Feb 17, 2025
 </div>
 <div class="listing-reading-time">21 min</div>
 <div class="metadata-value listing-file-modified">
-May 4, 2025
+May 8, 2025
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="5" data-categories="aGFyZHdhcmUlMkNsaW51eA==" data-listing-date-sort="1740355200000" data-listing-file-modified-sort="1746402829897" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="18" data-listing-word-count-sort="3495">
+<div class="quarto-post image-right" data-index="5" data-categories="aGFyZHdhcmUlMkNsaW51eA==" data-listing-date-sort="1740355200000" data-listing-file-modified-sort="1746737823879" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="18" data-listing-word-count-sort="3495">
 <div class="thumbnail"><a href="../notes/reterminal-setup/index.html" class="no-external">
 
 <img loading="lazy" src="https://files.seeedstudio.com/wiki/ReTerminal/wiki_thumb.png" class="thumbnail-image" style="height: 150px;">
@@ -1601,74 +1656,12 @@ Feb 24, 2025
 </div>
 <div class="listing-reading-time">18 min</div>
 <div class="metadata-value listing-file-modified">
-May 4, 2025
+May 8, 2025
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="6" data-categories="cHl0aG9u" data-listing-date-sort="1741564800000" data-listing-file-modified-sort="1746402829893" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="802">
-<div class="thumbnail"><a href="../notes/python-environments/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../notes/python-environments/index.html" class="no-external">Python environment management</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../notes/python-environments/index.html" class="no-external">Managing python development and runtime dependencies. Using virtual environments. Configuring python linters and formatters. </a>
-</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('cHl0aG9u'); return false;">python</div>
-
-</div>
-</div>
-<div class="metadata">
-<a href="../notes/python-environments/index.html" class="no-external">
-<div class="listing-date">
-Mar 10, 2025
-</div>
-<div class="listing-reading-time">5 min</div>
-<div class="metadata-value listing-file-modified">
-May 4, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="7" data-categories="cHl0aG9u" data-listing-date-sort="1741564800000" data-listing-file-modified-sort="1746402829893" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2315">
-<div class="thumbnail"><a href="../notes/python-package-management/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../notes/python-package-management/index.html" class="no-external">Python package management</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../notes/python-package-management/index.html" class="no-external">How to use OS package managers, virtual environments, and <code>pip</code> to manage python applications effectively.</a>
-</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('cHl0aG9u'); return false;">python</div>
-
-</div>
-</div>
-<div class="metadata">
-<a href="../notes/python-package-management/index.html" class="no-external">
-<div class="listing-date">
-Mar 10, 2025
-</div>
-<div class="listing-reading-time">12 min</div>
-<div class="metadata-value listing-file-modified">
-May 4, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="8" data-categories="aGFyZHdhcmUlMkNsaW51eCUyQ2Jhc2g=" data-listing-date-sort="1741564800000" data-listing-file-modified-sort="1746402829897" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="936">
+<div class="quarto-post image-right" data-index="6" data-categories="aGFyZHdhcmUlMkNsaW51eCUyQ2Jhc2g=" data-listing-date-sort="1741564800000" data-listing-file-modified-sort="1746737823879" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="936">
 <div class="thumbnail"><a href="../notes/reterminal-devices/index.html" class="no-external">
 
 <p class="card-img-top"><img src="reterminal-devices/assets/capacitive-touch.jpg" alt="A diagram showing how the electrostatic field changes caused by touch is processed by devices like the reTerminal. Image source" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -1698,12 +1691,43 @@ Mar 10, 2025
 </div>
 <div class="listing-reading-time">5 min</div>
 <div class="metadata-value listing-file-modified">
-May 4, 2025
+May 8, 2025
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="9" data-categories="aGFyZHdhcmUlMkNzaWduYWxz" data-listing-date-sort="1741910400000" data-listing-file-modified-sort="1746402829848" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="796">
+<div class="quarto-post image-right" data-index="7" data-categories="cHl0aG9u" data-listing-date-sort="1741564800000" data-listing-file-modified-sort="1746737823875" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2017">
+<div class="thumbnail"><a href="../notes/python-package-management/index.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../notes/python-package-management/index.html" class="no-external">Python package management</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../notes/python-package-management/index.html" class="no-external">How to use install system python packages using apt. How to install project python libraries using pip. Using virtual environments to manage python dependencies. </a>
+</div>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('cHl0aG9u'); return false;">python</div>
+
+</div>
+</div>
+<div class="metadata">
+<a href="../notes/python-package-management/index.html" class="no-external">
+<div class="listing-date">
+Mar 10, 2025
+</div>
+<div class="listing-reading-time">11 min</div>
+<div class="metadata-value listing-file-modified">
+May 8, 2025
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="8" data-categories="aGFyZHdhcmUlMkNzaWduYWxz" data-listing-date-sort="1741910400000" data-listing-file-modified-sort="1746737823830" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="796">
 <div class="thumbnail"><a href="../notes/gpios/index.html" class="no-external">
 
 <p class="card-img-top"><img src="gpios/assets/7-gpio-pi-40-pin-reference.png" alt="Diagram of Pi’s 40 GPIO pins" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -1731,12 +1755,43 @@ Mar 14, 2025
 </div>
 <div class="listing-reading-time">4 min</div>
 <div class="metadata-value listing-file-modified">
-May 4, 2025
+May 8, 2025
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="10" data-categories="aGFyZHdhcmUlMkNzaWduYWxz" data-listing-date-sort="1741910400000" data-listing-file-modified-sort="1746402829903" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1851">
+<div class="quarto-post image-right" data-index="9" data-categories="aGFyZHdhcmU=" data-listing-date-sort="1741910400000" data-listing-file-modified-sort="1746737823811" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1623">
+<div class="thumbnail"><a href="../notes/analog-vs-digital/index.html" class="no-external">
+
+<p class="card-img-top"><img src="analog-vs-digital/assets/6-analog-digital-analog-temperature.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../notes/analog-vs-digital/index.html" class="no-external">Signals: Analog and digital</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../notes/analog-vs-digital/index.html" class="no-external">Comparing the two paradigms for measuring electronic information and understanding how each are used for distributed applications.</a>
+</div>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('aGFyZHdhcmU='); return false;">hardware</div>
+
+</div>
+</div>
+<div class="metadata">
+<a href="../notes/analog-vs-digital/index.html" class="no-external">
+<div class="listing-date">
+Mar 14, 2025
+</div>
+<div class="listing-reading-time">9 min</div>
+<div class="metadata-value listing-file-modified">
+May 8, 2025
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="10" data-categories="aGFyZHdhcmUlMkNzaWduYWxz" data-listing-date-sort="1741910400000" data-listing-file-modified-sort="1746737823885" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1851">
 <div class="thumbnail"><a href="../notes/serial-protocols/index.html" class="no-external">
 
 <p class="card-img-top"><img src="serial-protocols/assets/9-serial-digital-reterminal-40-pin-header.png" alt="Breakout of 40-pin header for reTerminal" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -1764,43 +1819,12 @@ Mar 14, 2025
 </div>
 <div class="listing-reading-time">10 min</div>
 <div class="metadata-value listing-file-modified">
-May 4, 2025
+May 8, 2025
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="11" data-categories="aGFyZHdhcmU=" data-listing-date-sort="1741910400000" data-listing-file-modified-sort="1746402829830" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1770">
-<div class="thumbnail"><a href="../notes/analog-vs-digital/index.html" class="no-external">
-
-<p class="card-img-top"><img src="analog-vs-digital/assets/6-analog-digital-analog-temperature.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../notes/analog-vs-digital/index.html" class="no-external">Signals: Analog and digital</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../notes/analog-vs-digital/index.html" class="no-external">Comparing the two paradigms for measuring electronic information and understanding how each are used for distributed applications.</a>
-</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('aGFyZHdhcmU='); return false;">hardware</div>
-
-</div>
-</div>
-<div class="metadata">
-<a href="../notes/analog-vs-digital/index.html" class="no-external">
-<div class="listing-date">
-Mar 14, 2025
-</div>
-<div class="listing-reading-time">9 min</div>
-<div class="metadata-value listing-file-modified">
-May 4, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="12" data-categories="cHl0aG9u" data-listing-date-sort="1743724800000" data-listing-file-modified-sort="1746402829893" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1356">
+<div class="quarto-post image-right" data-index="11" data-categories="cHl0aG9u" data-listing-date-sort="1743724800000" data-listing-file-modified-sort="1746737823875" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1356">
 <div class="thumbnail"><a href="../notes/python-oop/index.html" class="no-external">
 
 <div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
@@ -1826,12 +1850,12 @@ Apr 4, 2025
 </div>
 <div class="listing-reading-time">7 min</div>
 <div class="metadata-value listing-file-modified">
-May 4, 2025
+May 8, 2025
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="13" data-categories="cHl0aG9u" data-listing-date-sort="1743724800000" data-listing-file-modified-sort="1746402829830" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="693">
+<div class="quarto-post image-right" data-index="12" data-categories="cHl0aG9u" data-listing-date-sort="1743724800000" data-listing-file-modified-sort="1746737823811" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="693">
 <div class="thumbnail"><a href="../notes/async-python/index.html" class="no-external">
 
 <div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
@@ -1857,43 +1881,12 @@ Apr 4, 2025
 </div>
 <div class="listing-reading-time">4 min</div>
 <div class="metadata-value listing-file-modified">
-May 4, 2025
+May 8, 2025
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="14" data-categories="cHl0aG9u" data-listing-date-sort="1743724800000" data-listing-file-modified-sort="1746402829892" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="893">
-<div class="thumbnail"><a href="../notes/python-collections/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../notes/python-collections/index.html" class="no-external">Python collection types and operations</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../notes/python-collections/index.html" class="no-external">Useful python collection types and operations</a>
-</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('cHl0aG9u'); return false;">python</div>
-
-</div>
-</div>
-<div class="metadata">
-<a href="../notes/python-collections/index.html" class="no-external">
-<div class="listing-date">
-Apr 4, 2025
-</div>
-<div class="listing-reading-time">5 min</div>
-<div class="metadata-value listing-file-modified">
-May 4, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="15" data-categories="cHl0aG9u" data-listing-date-sort="1743724800000" data-listing-file-modified-sort="1746402829893" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="579">
+<div class="quarto-post image-right" data-index="13" data-categories="cHl0aG9u" data-listing-date-sort="1743724800000" data-listing-file-modified-sort="1746737823875" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1507">
 <div class="thumbnail"><a href="../notes/python-project-management/index.html" class="no-external">
 
 <div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
@@ -1904,7 +1897,7 @@ May 4, 2025
 <a href="../notes/python-project-management/index.html" class="no-external">Python project management</a>
 </h3>
 <div class="listing-subtitle">
-<a href="../notes/python-project-management/index.html" class="no-external">Previously, we have focused on installing dependencies from other projects – we expand on that knowledge to learn how to create our own projects</a>
+<a href="../notes/python-project-management/index.html" class="no-external">Python modules and packages. Python project file structure. Managing project dependencies. Configuring python project metadata. requirements.txt and pyproject.toml. Configuring python linters and formatters. </a>
 </div>
 <div class="listing-categories">
 
@@ -1917,14 +1910,14 @@ May 4, 2025
 <div class="listing-date">
 Apr 4, 2025
 </div>
-<div class="listing-reading-time">3 min</div>
+<div class="listing-reading-time">8 min</div>
 <div class="metadata-value listing-file-modified">
-May 4, 2025
+May 8, 2025
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="16" data-categories="cHl0aG9u" data-listing-date-sort="1743724800000" data-listing-file-modified-sort="1746402829893" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="734">
+<div class="quarto-post image-right" data-index="14" data-categories="cHl0aG9u" data-listing-date-sort="1743724800000" data-listing-file-modified-sort="1746737823875" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="734">
 <div class="thumbnail"><a href="../notes/python-scripting/index.html" class="no-external">
 
 <div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
@@ -1950,12 +1943,43 @@ Apr 4, 2025
 </div>
 <div class="listing-reading-time">4 min</div>
 <div class="metadata-value listing-file-modified">
-May 4, 2025
+May 8, 2025
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="17" data-categories="bGludXglMkNiYXNo" data-listing-date-sort="1744502400000" data-listing-file-modified-sort="1746402829839" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="657">
+<div class="quarto-post image-right" data-index="15" data-categories="cHl0aG9u" data-listing-date-sort="1743724800000" data-listing-file-modified-sort="1746737823875" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="893">
+<div class="thumbnail"><a href="../notes/python-collections/index.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../notes/python-collections/index.html" class="no-external">Python collection types and operations</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../notes/python-collections/index.html" class="no-external">Useful python collection types and operations</a>
+</div>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('cHl0aG9u'); return false;">python</div>
+
+</div>
+</div>
+<div class="metadata">
+<a href="../notes/python-collections/index.html" class="no-external">
+<div class="listing-date">
+Apr 4, 2025
+</div>
+<div class="listing-reading-time">5 min</div>
+<div class="metadata-value listing-file-modified">
+May 8, 2025
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="16" data-categories="bGludXglMkNiYXNo" data-listing-date-sort="1744502400000" data-listing-file-modified-sort="1746737823822" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="657">
 <div class="thumbnail"><a href="../notes/debug-reterminal/index.html" class="no-external">
 
 <div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
@@ -1983,43 +2007,12 @@ Apr 13, 2025
 </div>
 <div class="listing-reading-time">4 min</div>
 <div class="metadata-value listing-file-modified">
-May 4, 2025
+May 8, 2025
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="18" data-categories="aW90" data-listing-date-sort="1745020800000" data-listing-file-modified-sort="1746402829832" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1324">
-<div class="thumbnail"><a href="../notes/azure-features/index.html" class="no-external">
-
-<p class="card-img-top"><img src="azure-features/assets/intro-azure-paas.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../notes/azure-features/index.html" class="no-external">Azure Features</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../notes/azure-features/index.html" class="no-external">An overview of the main feautres of Azure we will use for implementing an IoT system. Background information on “Platform as a Service” (PaaS), Azure IoT Hub vs IoT Central, Azure Resource Groups, Intro to Azure Dev Tools (Azure Portal, Azure CLI). </a>
-</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('aW90'); return false;">iot</div>
-
-</div>
-</div>
-<div class="metadata">
-<a href="../notes/azure-features/index.html" class="no-external">
-<div class="listing-date">
-Apr 19, 2025
-</div>
-<div class="listing-reading-time">7 min</div>
-<div class="metadata-value listing-file-modified">
-May 4, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="19" data-categories="aW90" data-listing-date-sort="1745020800000" data-listing-file-modified-sort="1746402829835" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1151">
+<div class="quarto-post image-right" data-index="17" data-categories="aW90" data-listing-date-sort="1745020800000" data-listing-file-modified-sort="1746737823816" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1151">
 <div class="thumbnail"><a href="../notes/azure-portal/index.html" class="no-external">
 
 <p class="card-img-top"><img src="azure-portal/assets/intro-azure-credit-check.png" alt="Credit check panel in Azure" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -2045,45 +2038,43 @@ Apr 19, 2025
 </div>
 <div class="listing-reading-time">6 min</div>
 <div class="metadata-value listing-file-modified">
-May 4, 2025
+May 8, 2025
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="20" data-categories="cHl0aG9uJTJDaW90" data-listing-date-sort="1745193600000" data-listing-file-modified-sort="1746402829835" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="424">
-<div class="thumbnail"><a href="../notes/azure-sdks/index.html" class="no-external">
+<div class="quarto-post image-right" data-index="18" data-categories="aW90" data-listing-date-sort="1745020800000" data-listing-file-modified-sort="1746737823813" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1324">
+<div class="thumbnail"><a href="../notes/azure-features/index.html" class="no-external">
 
-<p class="card-img-top"><img src="azure-sdks/assets/iot-hub-architecture.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img src="azure-features/assets/intro-azure-paas.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 
 </a></div>
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="../notes/azure-sdks/index.html" class="no-external">Azure SDKs in Python and C#</a>
+<a href="../notes/azure-features/index.html" class="no-external">Azure Features</a>
 </h3>
 <div class="listing-subtitle">
-<a href="../notes/azure-sdks/index.html" class="no-external">Azure Libraries in Python and C# Installation instructions for WSL, how to use the libraries in your code. </a>
+<a href="../notes/azure-features/index.html" class="no-external">An overview of the main feautres of Azure we will use for implementing an IoT system. Background information on “Platform as a Service” (PaaS), Azure IoT Hub vs IoT Central, Azure Resource Groups, Intro to Azure Dev Tools (Azure Portal, Azure CLI). </a>
 </div>
 <div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('cHl0aG9u'); return false;">python</div>
 
 <div class="listing-category" onclick="window.quartoListingCategory('aW90'); return false;">iot</div>
 
 </div>
 </div>
 <div class="metadata">
-<a href="../notes/azure-sdks/index.html" class="no-external">
+<a href="../notes/azure-features/index.html" class="no-external">
 <div class="listing-date">
-Apr 21, 2025
+Apr 19, 2025
 </div>
-<div class="listing-reading-time">3 min</div>
+<div class="listing-reading-time">7 min</div>
 <div class="metadata-value listing-file-modified">
-May 4, 2025
+May 8, 2025
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="21" data-categories="YmFzaCUyQ2lvdA==" data-listing-date-sort="1745193600000" data-listing-file-modified-sort="1746402829830" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="837">
+<div class="quarto-post image-right" data-index="19" data-categories="YmFzaCUyQ2lvdA==" data-listing-date-sort="1745193600000" data-listing-file-modified-sort="1746737823811" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="837">
 <div class="thumbnail"><a href="../notes/azure-cli-cheatsheet/index.html" class="no-external">
 
 <div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
@@ -2111,12 +2102,45 @@ Apr 21, 2025
 </div>
 <div class="listing-reading-time">5 min</div>
 <div class="metadata-value listing-file-modified">
-May 4, 2025
+May 8, 2025
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="22" data-categories="c2lnbmFscyUyQ2lvdA==" data-listing-date-sort="1745798400000" data-listing-file-modified-sort="1746402829869" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="15" data-listing-word-count-sort="2888">
+<div class="quarto-post image-right" data-index="20" data-categories="cHl0aG9uJTJDaW90" data-listing-date-sort="1745193600000" data-listing-file-modified-sort="1746737823816" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="424">
+<div class="thumbnail"><a href="../notes/azure-sdks/index.html" class="no-external">
+
+<p class="card-img-top"><img src="azure-sdks/assets/iot-hub-architecture.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../notes/azure-sdks/index.html" class="no-external">Azure SDKs in Python and C#</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../notes/azure-sdks/index.html" class="no-external">Azure Libraries in Python and C# Installation instructions for WSL, how to use the libraries in your code. </a>
+</div>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('cHl0aG9u'); return false;">python</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('aW90'); return false;">iot</div>
+
+</div>
+</div>
+<div class="metadata">
+<a href="../notes/azure-sdks/index.html" class="no-external">
+<div class="listing-date">
+Apr 21, 2025
+</div>
+<div class="listing-reading-time">3 min</div>
+<div class="metadata-value listing-file-modified">
+May 8, 2025
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="21" data-categories="c2lnbmFscyUyQ2lvdA==" data-listing-date-sort="1745798400000" data-listing-file-modified-sort="1746737823851" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="14" data-listing-word-count-sort="2690">
 <div class="thumbnail"><a href="../notes/iot-protocols/index.html" class="no-external">
 
 <p class="card-img-top"><img src="iot-protocols/assets/iot-protocols-last-will.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -2142,76 +2166,14 @@ May 4, 2025
 <div class="listing-date">
 Apr 28, 2025
 </div>
-<div class="listing-reading-time">15 min</div>
+<div class="listing-reading-time">14 min</div>
 <div class="metadata-value listing-file-modified">
-May 4, 2025
+May 8, 2025
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="23" data-categories="aGFyZHdhcmU=" data-listing-date-sort="1745798400000" data-listing-file-modified-sort="1746402829892" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2253">
-<div class="thumbnail"><a href="../notes/microcomputers/index.html" class="no-external">
-
-<p class="card-img-top"><img src="microcomputers/assets/8-arduino-vs-pi-code-loop.png" alt="block diagram for fetch-decode-execute-loop" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../notes/microcomputers/index.html" class="no-external">Microcomputers</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../notes/microcomputers/index.html" class="no-external">Comparing the architectural paradigms for microcomputers to better understand our Pis.</a>
-</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('aGFyZHdhcmU='); return false;">hardware</div>
-
-</div>
-</div>
-<div class="metadata">
-<a href="../notes/microcomputers/index.html" class="no-external">
-<div class="listing-date">
-Apr 28, 2025
-</div>
-<div class="listing-reading-time">12 min</div>
-<div class="metadata-value listing-file-modified">
-May 4, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="24" data-categories="aW90" data-listing-date-sort="1745798400000" data-listing-file-modified-sort="1746402829842" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1753">
-<div class="thumbnail"><a href="../notes/device-twins/index.html" class="no-external">
-
-<p class="card-img-top"><img src="device-twins/assets/17-device-twins-desired-flow.png" alt="Information flow for a desired property change" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../notes/device-twins/index.html" class="no-external">Device Twins</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../notes/device-twins/index.html" class="no-external">How to retrieve and configure IoT Devices using Device Twin metadata</a>
-</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('aW90'); return false;">iot</div>
-
-</div>
-</div>
-<div class="metadata">
-<a href="../notes/device-twins/index.html" class="no-external">
-<div class="listing-date">
-Apr 28, 2025
-</div>
-<div class="listing-reading-time">9 min</div>
-<div class="metadata-value listing-file-modified">
-May 4, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="25" data-categories="bGludXg=" data-listing-date-sort="1745798400000" data-listing-file-modified-sort="1746402829869" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1185">
+<div class="quarto-post image-right" data-index="22" data-categories="bGludXg=" data-listing-date-sort="1745798400000" data-listing-file-modified-sort="1746737823851" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1185">
 <div class="thumbnail"><a href="../notes/linux-package-management/index.html" class="no-external">
 
 <div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
@@ -2237,12 +2199,12 @@ Apr 28, 2025
 </div>
 <div class="listing-reading-time">6 min</div>
 <div class="metadata-value listing-file-modified">
-May 4, 2025
+May 8, 2025
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="26" data-categories="aW90" data-listing-date-sort="1745798400000" data-listing-file-modified-sort="1746402829867" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="867">
+<div class="quarto-post image-right" data-index="23" data-categories="aW90" data-listing-date-sort="1745798400000" data-listing-file-modified-sort="1746737823850" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="867">
 <div class="thumbnail"><a href="../notes/iot-concepts/index.html" class="no-external">
 
 <p class="card-img-top"><img src="iot-concepts/assets/iot-banner.webp" alt="The Interconnection of communicating devices defines the “Internet of Things”" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -2268,43 +2230,43 @@ Apr 28, 2025
 </div>
 <div class="listing-reading-time">5 min</div>
 <div class="metadata-value listing-file-modified">
-May 4, 2025
+May 8, 2025
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="27" data-categories="Lk5FVA==" data-listing-date-sort="1745798400000" data-listing-file-modified-sort="1746402829842" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1407">
-<div class="thumbnail"><a href="../notes/eventhub-dotnet/index.html" class="no-external">
+<div class="quarto-post image-right" data-index="24" data-categories="aW90" data-listing-date-sort="1745798400000" data-listing-file-modified-sort="1746737823824" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1753">
+<div class="thumbnail"><a href="../notes/device-twins/index.html" class="no-external">
 
-<p class="card-img-top"><img src="https://learn.microsoft.com/en-us/azure/event-hubs/media/event-hubs-features/partition_offset.png" alt="partition offser" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img src="device-twins/assets/17-device-twins-desired-flow.png" alt="Information flow for a desired property change" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 
 </a></div>
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="../notes/eventhub-dotnet/index.html" class="no-external">EventHubs &amp; .NET SDK</a>
+<a href="../notes/device-twins/index.html" class="no-external">Device Twins</a>
 </h3>
 <div class="listing-subtitle">
-<a href="../notes/eventhub-dotnet/index.html" class="no-external">More notes on how to send and receive events in C#</a>
+<a href="../notes/device-twins/index.html" class="no-external">How to retrieve and configure IoT Devices using Device Twin metadata</a>
 </div>
 <div class="listing-categories">
 
-<div class="listing-category" onclick="window.quartoListingCategory('Lk5FVA=='); return false;">.NET</div>
+<div class="listing-category" onclick="window.quartoListingCategory('aW90'); return false;">iot</div>
 
 </div>
 </div>
 <div class="metadata">
-<a href="../notes/eventhub-dotnet/index.html" class="no-external">
+<a href="../notes/device-twins/index.html" class="no-external">
 <div class="listing-date">
 Apr 28, 2025
 </div>
-<div class="listing-reading-time">8 min</div>
+<div class="listing-reading-time">9 min</div>
 <div class="metadata-value listing-file-modified">
-May 4, 2025
+May 8, 2025
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="28" data-categories="aGFyZHdhcmUlMkNzaWduYWxz" data-listing-date-sort="1745798400000" data-listing-file-modified-sort="1746402829839" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="896">
+<div class="quarto-post image-right" data-index="25" data-categories="aGFyZHdhcmUlMkNzaWduYWxz" data-listing-date-sort="1745798400000" data-listing-file-modified-sort="1746737823821" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="896">
 <div class="thumbnail"><a href="../notes/circuitry/index.html" class="no-external">
 
 <p class="card-img-top"><img src="circuitry/assets/ohms-source-symbol.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -2332,12 +2294,12 @@ Apr 28, 2025
 </div>
 <div class="listing-reading-time">5 min</div>
 <div class="metadata-value listing-file-modified">
-May 4, 2025
+May 8, 2025
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="29" data-categories="aW90" data-listing-date-sort="1745798400000" data-listing-file-modified-sort="1746402829840" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1207">
+<div class="quarto-post image-right" data-index="26" data-categories="aW90" data-listing-date-sort="1745798400000" data-listing-file-modified-sort="1746737823822" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1207">
 <div class="thumbnail"><a href="../notes/device-cloud-communication/index.html" class="no-external">
 
 <p class="card-img-top"><img src="device-cloud-communication/assets/iot-hub-communication.drawio.svg" alt="Communication options between IoT Hub and devices" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -2363,7 +2325,166 @@ Apr 28, 2025
 </div>
 <div class="listing-reading-time">7 min</div>
 <div class="metadata-value listing-file-modified">
-May 4, 2025
+May 8, 2025
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="27" data-categories="aGFyZHdhcmU=" data-listing-date-sort="1745798400000" data-listing-file-modified-sort="1746737823875" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2253">
+<div class="thumbnail"><a href="../notes/microcomputers/index.html" class="no-external">
+
+<p class="card-img-top"><img src="microcomputers/assets/8-arduino-vs-pi-code-loop.png" alt="block diagram for fetch-decode-execute-loop" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../notes/microcomputers/index.html" class="no-external">Microcomputers</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../notes/microcomputers/index.html" class="no-external">Comparing the architectural paradigms for microcomputers to better understand our Pis.</a>
+</div>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('aGFyZHdhcmU='); return false;">hardware</div>
+
+</div>
+</div>
+<div class="metadata">
+<a href="../notes/microcomputers/index.html" class="no-external">
+<div class="listing-date">
+Apr 28, 2025
+</div>
+<div class="listing-reading-time">12 min</div>
+<div class="metadata-value listing-file-modified">
+May 8, 2025
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="28" data-categories="Lk5FVA==" data-listing-date-sort="1745798400000" data-listing-file-modified-sort="1746737823824" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1407">
+<div class="thumbnail"><a href="../notes/eventhub-dotnet/index.html" class="no-external">
+
+<p class="card-img-top"><img src="https://learn.microsoft.com/en-us/azure/event-hubs/media/event-hubs-features/partition_offset.png" alt="partition offser" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../notes/eventhub-dotnet/index.html" class="no-external">EventHubs &amp; .NET SDK</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../notes/eventhub-dotnet/index.html" class="no-external">More notes on how to send and receive events in C#</a>
+</div>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('Lk5FVA=='); return false;">.NET</div>
+
+</div>
+</div>
+<div class="metadata">
+<a href="../notes/eventhub-dotnet/index.html" class="no-external">
+<div class="listing-date">
+Apr 28, 2025
+</div>
+<div class="listing-reading-time">8 min</div>
+<div class="metadata-value listing-file-modified">
+May 8, 2025
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="29" data-categories="aGFyZHdhcmUlMkNiYXNoJTJDcHl0aG9u" data-listing-date-sort="1746403200000" data-listing-file-modified-sort="1746737823822" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="400">
+<div class="thumbnail"><a href="../notes/device-calibrating/index.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../notes/device-calibrating/index.html" class="no-external">Device calibration</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../notes/device-calibrating/index.html" class="no-external">Notes for getting your sensors/actuators to work. </a>
+</div>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('aGFyZHdhcmU='); return false;">hardware</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('YmFzaA=='); return false;">bash</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('cHl0aG9u'); return false;">python</div>
+
+</div>
+</div>
+<div class="metadata">
+<a href="../notes/device-calibrating/index.html" class="no-external">
+<div class="listing-date">
+May 5, 2025
+</div>
+<div class="listing-reading-time">2 min</div>
+<div class="metadata-value listing-file-modified">
+May 8, 2025
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="30" data-categories="cHl0aG9u" data-listing-date-sort="1746403200000" data-listing-file-modified-sort="1746737823875" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="721">
+<div class="thumbnail"><a href="../notes/python-extras/index.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../notes/python-extras/index.html" class="no-external">Python extras</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../notes/python-extras/index.html" class="no-external">Python tips and tricks that there wasn’t time to cover explicitly in the course, but are useful to know. Logging in Python with the logging module. Unit testing in python with pytest. </a>
+</div>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('cHl0aG9u'); return false;">python</div>
+
+</div>
+</div>
+<div class="metadata">
+<a href="../notes/python-extras/index.html" class="no-external">
+<div class="listing-date">
+May 5, 2025
+</div>
+<div class="listing-reading-time">4 min</div>
+<div class="metadata-value listing-file-modified">
+May 8, 2025
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="31" data-categories="aW90" data-listing-date-sort="1746662400000" data-listing-file-modified-sort="1746737823817" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="607">
+<div class="thumbnail"><a href="../notes/azure-storage/index.html" class="no-external">
+
+<p class="card-img-top"><img src="azure-storage/assets/blob-structure.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../notes/azure-storage/index.html" class="no-external">Azure Blob Storage</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../notes/azure-storage/index.html" class="no-external">Setting up blob storage on the Azure Portal </a>
+</div>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('aW90'); return false;">iot</div>
+
+</div>
+</div>
+<div class="metadata">
+<a href="../notes/azure-storage/index.html" class="no-external">
+<div class="listing-date">
+May 8, 2025
+</div>
+<div class="listing-reading-time">4 min</div>
+<div class="metadata-value listing-file-modified">
+May 8, 2025
 </div>
 </a>
 </div>
@@ -2403,7 +2524,7 @@ May 4, 2025
     </div>
 </div>
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="aGFyZHdhcmU=" data-listing-date-sort="1737331200000" data-listing-file-modified-sort="1746402829839" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="590">
+<div class="g-col-1" data-index="0" data-categories="aGFyZHdhcmU=" data-listing-date-sort="1737331200000" data-listing-file-modified-sort="1746737823821" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="590">
 <a href="../notes/course-hardware/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -2429,11 +2550,11 @@ Jan 20, 2025
 </div>
 </div>
 <div class="card-footer">
-<div class="card-file-modified listing-file-modified">May 4, 2025</div>
+<div class="card-file-modified listing-file-modified">May 8, 2025</div>
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="YmFzaCUyQ2xpbnV4" data-listing-date-sort="1737331200000" data-listing-file-modified-sort="1746402829840" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1225">
+<div class="g-col-1" data-index="1" data-categories="YmFzaCUyQ2xpbnV4" data-listing-date-sort="1737331200000" data-listing-file-modified-sort="1746737823822" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1225">
 <a href="../notes/developer-environment/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top"><img src="developer-environment/assets/vintage-drill-press.jpg" alt="Photo by Tima Miroshnichenko" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -2459,11 +2580,11 @@ Jan 20, 2025
 </div>
 </div>
 <div class="card-footer">
-<div class="card-file-modified listing-file-modified">May 4, 2025</div>
+<div class="card-file-modified listing-file-modified">May 8, 2025</div>
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="YmFzaA==" data-listing-date-sort="1738281600000" data-listing-file-modified-sort="1746402829836" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1494">
+<div class="g-col-1" data-index="2" data-categories="YmFzaA==" data-listing-date-sort="1738281600000" data-listing-file-modified-sort="1746737823818" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1494">
 <a href="../notes/bash-essentials/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -2489,11 +2610,11 @@ Jan 31, 2025
 </div>
 </div>
 <div class="card-footer">
-<div class="card-file-modified listing-file-modified">May 4, 2025</div>
+<div class="card-file-modified listing-file-modified">May 8, 2025</div>
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="3" data-categories="Z2l0JTJDYmFzaA==" data-listing-date-sort="1739145600000" data-listing-file-modified-sort="1746402829844" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1100">
+<div class="g-col-1" data-index="3" data-categories="Z2l0JTJDYmFzaA==" data-listing-date-sort="1739145600000" data-listing-file-modified-sort="1746737823826" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1100">
 <a href="../notes/github-basics/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top"><img src="github-basics/assets/github-mark.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -2519,11 +2640,11 @@ Feb 10, 2025
 </div>
 </div>
 <div class="card-footer">
-<div class="card-file-modified listing-file-modified">May 4, 2025</div>
+<div class="card-file-modified listing-file-modified">May 8, 2025</div>
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="4" data-categories="YmFzaA==" data-listing-date-sort="1739750400000" data-listing-file-modified-sort="1746402829836" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="21" data-listing-word-count-sort="4001">
+<div class="g-col-1" data-index="4" data-categories="YmFzaA==" data-listing-date-sort="1739750400000" data-listing-file-modified-sort="1746737823818" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="21" data-listing-word-count-sort="4001">
 <a href="../notes/bash-scripting/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -2549,11 +2670,11 @@ Feb 17, 2025
 </div>
 </div>
 <div class="card-footer">
-<div class="card-file-modified listing-file-modified">May 4, 2025</div>
+<div class="card-file-modified listing-file-modified">May 8, 2025</div>
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="5" data-categories="aGFyZHdhcmUlMkNsaW51eA==" data-listing-date-sort="1740355200000" data-listing-file-modified-sort="1746402829897" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="18" data-listing-word-count-sort="3495">
+<div class="g-col-1" data-index="5" data-categories="aGFyZHdhcmUlMkNsaW51eA==" data-listing-date-sort="1740355200000" data-listing-file-modified-sort="1746737823879" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="18" data-listing-word-count-sort="3495">
 <a href="../notes/reterminal-setup/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -2581,67 +2702,11 @@ Feb 24, 2025
 </div>
 </div>
 <div class="card-footer">
-<div class="card-file-modified listing-file-modified">May 4, 2025</div>
+<div class="card-file-modified listing-file-modified">May 8, 2025</div>
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="6" data-categories="cHl0aG9u" data-listing-date-sort="1741564800000" data-listing-file-modified-sort="1746402829893" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="802">
-<a href="../notes/python-environments/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Python environment management
-</h5>
-<div class="card-subtitle listing-subtitle">
-<p>Managing python development and runtime dependencies. Using virtual environments. Configuring python linters and formatters.</p>
-</div>
-<div class="listing-reading-time card-text text-muted">5 min</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('cHl0aG9u'); return false;">python</div>
-
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-Mar 10, 2025
-</div>
-</div>
-</div>
-<div class="card-footer">
-<div class="card-file-modified listing-file-modified">May 4, 2025</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="7" data-categories="cHl0aG9u" data-listing-date-sort="1741564800000" data-listing-file-modified-sort="1746402829893" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2315">
-<a href="../notes/python-package-management/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Python package management
-</h5>
-<div class="card-subtitle listing-subtitle">
-How to use OS package managers, virtual environments, and <code>pip</code> to manage python applications effectively.
-</div>
-<div class="listing-reading-time card-text text-muted">12 min</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('cHl0aG9u'); return false;">python</div>
-
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-Mar 10, 2025
-</div>
-</div>
-</div>
-<div class="card-footer">
-<div class="card-file-modified listing-file-modified">May 4, 2025</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="8" data-categories="aGFyZHdhcmUlMkNsaW51eCUyQ2Jhc2g=" data-listing-date-sort="1741564800000" data-listing-file-modified-sort="1746402829897" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="936">
+<div class="g-col-1" data-index="6" data-categories="aGFyZHdhcmUlMkNsaW51eCUyQ2Jhc2g=" data-listing-date-sort="1741564800000" data-listing-file-modified-sort="1746737823879" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="936">
 <a href="../notes/reterminal-devices/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top"><img src="reterminal-devices/assets/capacitive-touch.jpg" alt="A diagram showing how the electrostatic field changes caused by touch is processed by devices like the reTerminal. Image source" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -2669,11 +2734,39 @@ Mar 10, 2025
 </div>
 </div>
 <div class="card-footer">
-<div class="card-file-modified listing-file-modified">May 4, 2025</div>
+<div class="card-file-modified listing-file-modified">May 8, 2025</div>
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="9" data-categories="aGFyZHdhcmUlMkNzaWduYWxz" data-listing-date-sort="1741910400000" data-listing-file-modified-sort="1746402829848" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="796">
+<div class="g-col-1" data-index="7" data-categories="cHl0aG9u" data-listing-date-sort="1741564800000" data-listing-file-modified-sort="1746737823875" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2017">
+<a href="../notes/python-package-management/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Python package management
+</h5>
+<div class="card-subtitle listing-subtitle">
+<p>How to use install system python packages using apt. How to install project python libraries using pip. Using virtual environments to manage python dependencies.</p>
+</div>
+<div class="listing-reading-time card-text text-muted">11 min</div>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('cHl0aG9u'); return false;">python</div>
+
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+Mar 10, 2025
+</div>
+</div>
+</div>
+<div class="card-footer">
+<div class="card-file-modified listing-file-modified">May 8, 2025</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="8" data-categories="aGFyZHdhcmUlMkNzaWduYWxz" data-listing-date-sort="1741910400000" data-listing-file-modified-sort="1746737823830" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="796">
 <a href="../notes/gpios/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top"><img src="gpios/assets/7-gpio-pi-40-pin-reference.png" alt="Diagram of Pi’s 40 GPIO pins" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -2699,11 +2792,39 @@ Mar 14, 2025
 </div>
 </div>
 <div class="card-footer">
-<div class="card-file-modified listing-file-modified">May 4, 2025</div>
+<div class="card-file-modified listing-file-modified">May 8, 2025</div>
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="10" data-categories="aGFyZHdhcmUlMkNzaWduYWxz" data-listing-date-sort="1741910400000" data-listing-file-modified-sort="1746402829903" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1851">
+<div class="g-col-1" data-index="9" data-categories="aGFyZHdhcmU=" data-listing-date-sort="1741910400000" data-listing-file-modified-sort="1746737823811" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1623">
+<a href="../notes/analog-vs-digital/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img src="analog-vs-digital/assets/6-analog-digital-analog-temperature.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Signals: Analog and digital
+</h5>
+<div class="card-subtitle listing-subtitle">
+Comparing the two paradigms for measuring electronic information and understanding how each are used for distributed applications.
+</div>
+<div class="listing-reading-time card-text text-muted">9 min</div>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('aGFyZHdhcmU='); return false;">hardware</div>
+
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+Mar 14, 2025
+</div>
+</div>
+</div>
+<div class="card-footer">
+<div class="card-file-modified listing-file-modified">May 8, 2025</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="10" data-categories="aGFyZHdhcmUlMkNzaWduYWxz" data-listing-date-sort="1741910400000" data-listing-file-modified-sort="1746737823885" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1851">
 <a href="../notes/serial-protocols/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top"><img src="serial-protocols/assets/9-serial-digital-reterminal-40-pin-header.png" alt="Breakout of 40-pin header for reTerminal" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -2729,39 +2850,11 @@ Mar 14, 2025
 </div>
 </div>
 <div class="card-footer">
-<div class="card-file-modified listing-file-modified">May 4, 2025</div>
+<div class="card-file-modified listing-file-modified">May 8, 2025</div>
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="11" data-categories="aGFyZHdhcmU=" data-listing-date-sort="1741910400000" data-listing-file-modified-sort="1746402829830" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1770">
-<a href="../notes/analog-vs-digital/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="analog-vs-digital/assets/6-analog-digital-analog-temperature.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Signals: Analog and digital
-</h5>
-<div class="card-subtitle listing-subtitle">
-Comparing the two paradigms for measuring electronic information and understanding how each are used for distributed applications.
-</div>
-<div class="listing-reading-time card-text text-muted">9 min</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('aGFyZHdhcmU='); return false;">hardware</div>
-
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-Mar 14, 2025
-</div>
-</div>
-</div>
-<div class="card-footer">
-<div class="card-file-modified listing-file-modified">May 4, 2025</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="12" data-categories="cHl0aG9u" data-listing-date-sort="1743724800000" data-listing-file-modified-sort="1746402829893" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1356">
+<div class="g-col-1" data-index="11" data-categories="cHl0aG9u" data-listing-date-sort="1743724800000" data-listing-file-modified-sort="1746737823875" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1356">
 <a href="../notes/python-oop/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
@@ -2785,11 +2878,11 @@ Apr 4, 2025
 </div>
 </div>
 <div class="card-footer">
-<div class="card-file-modified listing-file-modified">May 4, 2025</div>
+<div class="card-file-modified listing-file-modified">May 8, 2025</div>
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="13" data-categories="cHl0aG9u" data-listing-date-sort="1743724800000" data-listing-file-modified-sort="1746402829830" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="693">
+<div class="g-col-1" data-index="12" data-categories="cHl0aG9u" data-listing-date-sort="1743724800000" data-listing-file-modified-sort="1746737823811" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="693">
 <a href="../notes/async-python/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
@@ -2813,39 +2906,11 @@ Apr 4, 2025
 </div>
 </div>
 <div class="card-footer">
-<div class="card-file-modified listing-file-modified">May 4, 2025</div>
+<div class="card-file-modified listing-file-modified">May 8, 2025</div>
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="14" data-categories="cHl0aG9u" data-listing-date-sort="1743724800000" data-listing-file-modified-sort="1746402829892" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="893">
-<a href="../notes/python-collections/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Python collection types and operations
-</h5>
-<div class="card-subtitle listing-subtitle">
-Useful python collection types and operations
-</div>
-<div class="listing-reading-time card-text text-muted">5 min</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('cHl0aG9u'); return false;">python</div>
-
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-Apr 4, 2025
-</div>
-</div>
-</div>
-<div class="card-footer">
-<div class="card-file-modified listing-file-modified">May 4, 2025</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="15" data-categories="cHl0aG9u" data-listing-date-sort="1743724800000" data-listing-file-modified-sort="1746402829893" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="579">
+<div class="g-col-1" data-index="13" data-categories="cHl0aG9u" data-listing-date-sort="1743724800000" data-listing-file-modified-sort="1746737823875" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1507">
 <a href="../notes/python-project-management/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
@@ -2854,9 +2919,9 @@ Apr 4, 2025
 Python project management
 </h5>
 <div class="card-subtitle listing-subtitle">
-Previously, we have focused on installing dependencies from other projects – we expand on that knowledge to learn how to create our own projects
+<p>Python modules and packages. Python project file structure. Managing project dependencies. Configuring python project metadata. requirements.txt and pyproject.toml. Configuring python linters and formatters.</p>
 </div>
-<div class="listing-reading-time card-text text-muted">3 min</div>
+<div class="listing-reading-time card-text text-muted">8 min</div>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('cHl0aG9u'); return false;">python</div>
@@ -2869,11 +2934,11 @@ Apr 4, 2025
 </div>
 </div>
 <div class="card-footer">
-<div class="card-file-modified listing-file-modified">May 4, 2025</div>
+<div class="card-file-modified listing-file-modified">May 8, 2025</div>
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="16" data-categories="cHl0aG9u" data-listing-date-sort="1743724800000" data-listing-file-modified-sort="1746402829893" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="734">
+<div class="g-col-1" data-index="14" data-categories="cHl0aG9u" data-listing-date-sort="1743724800000" data-listing-file-modified-sort="1746737823875" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="734">
 <a href="../notes/python-scripting/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
@@ -2897,11 +2962,39 @@ Apr 4, 2025
 </div>
 </div>
 <div class="card-footer">
-<div class="card-file-modified listing-file-modified">May 4, 2025</div>
+<div class="card-file-modified listing-file-modified">May 8, 2025</div>
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="17" data-categories="bGludXglMkNiYXNo" data-listing-date-sort="1744502400000" data-listing-file-modified-sort="1746402829839" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="657">
+<div class="g-col-1" data-index="15" data-categories="cHl0aG9u" data-listing-date-sort="1743724800000" data-listing-file-modified-sort="1746737823875" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="893">
+<a href="../notes/python-collections/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Python collection types and operations
+</h5>
+<div class="card-subtitle listing-subtitle">
+Useful python collection types and operations
+</div>
+<div class="listing-reading-time card-text text-muted">5 min</div>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('cHl0aG9u'); return false;">python</div>
+
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+Apr 4, 2025
+</div>
+</div>
+</div>
+<div class="card-footer">
+<div class="card-file-modified listing-file-modified">May 8, 2025</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="16" data-categories="bGludXglMkNiYXNo" data-listing-date-sort="1744502400000" data-listing-file-modified-sort="1746737823822" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="657">
 <a href="../notes/debug-reterminal/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
@@ -2927,39 +3020,11 @@ Apr 13, 2025
 </div>
 </div>
 <div class="card-footer">
-<div class="card-file-modified listing-file-modified">May 4, 2025</div>
+<div class="card-file-modified listing-file-modified">May 8, 2025</div>
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="18" data-categories="aW90" data-listing-date-sort="1745020800000" data-listing-file-modified-sort="1746402829832" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1324">
-<a href="../notes/azure-features/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="azure-features/assets/intro-azure-paas.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Azure Features
-</h5>
-<div class="card-subtitle listing-subtitle">
-<p>An overview of the main feautres of Azure we will use for implementing an IoT system. Background information on “Platform as a Service” (PaaS), Azure IoT Hub vs IoT Central, Azure Resource Groups, Intro to Azure Dev Tools (Azure Portal, Azure CLI).</p>
-</div>
-<div class="listing-reading-time card-text text-muted">7 min</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('aW90'); return false;">iot</div>
-
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-Apr 19, 2025
-</div>
-</div>
-</div>
-<div class="card-footer">
-<div class="card-file-modified listing-file-modified">May 4, 2025</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="19" data-categories="aW90" data-listing-date-sort="1745020800000" data-listing-file-modified-sort="1746402829835" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1151">
+<div class="g-col-1" data-index="17" data-categories="aW90" data-listing-date-sort="1745020800000" data-listing-file-modified-sort="1746737823816" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1151">
 <a href="../notes/azure-portal/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top"><img src="azure-portal/assets/intro-azure-credit-check.png" alt="Credit check panel in Azure" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -2983,41 +3048,39 @@ Apr 19, 2025
 </div>
 </div>
 <div class="card-footer">
-<div class="card-file-modified listing-file-modified">May 4, 2025</div>
+<div class="card-file-modified listing-file-modified">May 8, 2025</div>
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="20" data-categories="cHl0aG9uJTJDaW90" data-listing-date-sort="1745193600000" data-listing-file-modified-sort="1746402829835" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="424">
-<a href="../notes/azure-sdks/index.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="18" data-categories="aW90" data-listing-date-sort="1745020800000" data-listing-file-modified-sort="1746737823813" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1324">
+<a href="../notes/azure-features/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="azure-sdks/assets/iot-hub-architecture.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img src="azure-features/assets/intro-azure-paas.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
-Azure SDKs in Python and C#
+Azure Features
 </h5>
 <div class="card-subtitle listing-subtitle">
-<p>Azure Libraries in Python and C# Installation instructions for WSL, how to use the libraries in your code.</p>
+<p>An overview of the main feautres of Azure we will use for implementing an IoT system. Background information on “Platform as a Service” (PaaS), Azure IoT Hub vs IoT Central, Azure Resource Groups, Intro to Azure Dev Tools (Azure Portal, Azure CLI).</p>
 </div>
-<div class="listing-reading-time card-text text-muted">3 min</div>
+<div class="listing-reading-time card-text text-muted">7 min</div>
 <div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('cHl0aG9u'); return false;">python</div>
 
 <div class="listing-category" onclick="window.quartoListingCategory('aW90'); return false;">iot</div>
 
 </div>
 <div class="card-attribution card-text-small end">
 <div class="listing-date">
-Apr 21, 2025
+Apr 19, 2025
 </div>
 </div>
 </div>
 <div class="card-footer">
-<div class="card-file-modified listing-file-modified">May 4, 2025</div>
+<div class="card-file-modified listing-file-modified">May 8, 2025</div>
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="21" data-categories="YmFzaCUyQ2lvdA==" data-listing-date-sort="1745193600000" data-listing-file-modified-sort="1746402829830" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="837">
+<div class="g-col-1" data-index="19" data-categories="YmFzaCUyQ2lvdA==" data-listing-date-sort="1745193600000" data-listing-file-modified-sort="1746737823811" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="837">
 <a href="../notes/azure-cli-cheatsheet/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
@@ -3043,11 +3106,41 @@ Apr 21, 2025
 </div>
 </div>
 <div class="card-footer">
-<div class="card-file-modified listing-file-modified">May 4, 2025</div>
+<div class="card-file-modified listing-file-modified">May 8, 2025</div>
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="22" data-categories="c2lnbmFscyUyQ2lvdA==" data-listing-date-sort="1745798400000" data-listing-file-modified-sort="1746402829869" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="15" data-listing-word-count-sort="2888">
+<div class="g-col-1" data-index="20" data-categories="cHl0aG9uJTJDaW90" data-listing-date-sort="1745193600000" data-listing-file-modified-sort="1746737823816" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="424">
+<a href="../notes/azure-sdks/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img src="azure-sdks/assets/iot-hub-architecture.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Azure SDKs in Python and C#
+</h5>
+<div class="card-subtitle listing-subtitle">
+<p>Azure Libraries in Python and C# Installation instructions for WSL, how to use the libraries in your code.</p>
+</div>
+<div class="listing-reading-time card-text text-muted">3 min</div>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('cHl0aG9u'); return false;">python</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('aW90'); return false;">iot</div>
+
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+Apr 21, 2025
+</div>
+</div>
+</div>
+<div class="card-footer">
+<div class="card-file-modified listing-file-modified">May 8, 2025</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="21" data-categories="c2lnbmFscyUyQ2lvdA==" data-listing-date-sort="1745798400000" data-listing-file-modified-sort="1746737823851" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="14" data-listing-word-count-sort="2690">
 <a href="../notes/iot-protocols/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top"><img src="iot-protocols/assets/iot-protocols-last-will.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -3058,7 +3151,7 @@ IoT Communication Protocols
 <div class="card-subtitle listing-subtitle">
 How communication protocols can be optimized for device-cloud communication, i.e.&nbsp;why not everything should use HTTP
 </div>
-<div class="listing-reading-time card-text text-muted">15 min</div>
+<div class="listing-reading-time card-text text-muted">14 min</div>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('c2lnbmFscw=='); return false;">signals</div>
@@ -3073,67 +3166,11 @@ Apr 28, 2025
 </div>
 </div>
 <div class="card-footer">
-<div class="card-file-modified listing-file-modified">May 4, 2025</div>
+<div class="card-file-modified listing-file-modified">May 8, 2025</div>
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="23" data-categories="aGFyZHdhcmU=" data-listing-date-sort="1745798400000" data-listing-file-modified-sort="1746402829892" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2253">
-<a href="../notes/microcomputers/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="microcomputers/assets/8-arduino-vs-pi-code-loop.png" alt="block diagram for fetch-decode-execute-loop" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Microcomputers
-</h5>
-<div class="card-subtitle listing-subtitle">
-Comparing the architectural paradigms for microcomputers to better understand our Pis.
-</div>
-<div class="listing-reading-time card-text text-muted">12 min</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('aGFyZHdhcmU='); return false;">hardware</div>
-
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-Apr 28, 2025
-</div>
-</div>
-</div>
-<div class="card-footer">
-<div class="card-file-modified listing-file-modified">May 4, 2025</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="24" data-categories="aW90" data-listing-date-sort="1745798400000" data-listing-file-modified-sort="1746402829842" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1753">
-<a href="../notes/device-twins/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="device-twins/assets/17-device-twins-desired-flow.png" alt="Information flow for a desired property change" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Device Twins
-</h5>
-<div class="card-subtitle listing-subtitle">
-How to retrieve and configure IoT Devices using Device Twin metadata
-</div>
-<div class="listing-reading-time card-text text-muted">9 min</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('aW90'); return false;">iot</div>
-
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-Apr 28, 2025
-</div>
-</div>
-</div>
-<div class="card-footer">
-<div class="card-file-modified listing-file-modified">May 4, 2025</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="25" data-categories="bGludXg=" data-listing-date-sort="1745798400000" data-listing-file-modified-sort="1746402829869" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1185">
+<div class="g-col-1" data-index="22" data-categories="bGludXg=" data-listing-date-sort="1745798400000" data-listing-file-modified-sort="1746737823851" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1185">
 <a href="../notes/linux-package-management/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
@@ -3157,11 +3194,11 @@ Apr 28, 2025
 </div>
 </div>
 <div class="card-footer">
-<div class="card-file-modified listing-file-modified">May 4, 2025</div>
+<div class="card-file-modified listing-file-modified">May 8, 2025</div>
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="26" data-categories="aW90" data-listing-date-sort="1745798400000" data-listing-file-modified-sort="1746402829867" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="867">
+<div class="g-col-1" data-index="23" data-categories="aW90" data-listing-date-sort="1745798400000" data-listing-file-modified-sort="1746737823850" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="867">
 <a href="../notes/iot-concepts/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top"><img src="iot-concepts/assets/iot-banner.webp" alt="The Interconnection of communicating devices defines the “Internet of Things”" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -3185,25 +3222,25 @@ Apr 28, 2025
 </div>
 </div>
 <div class="card-footer">
-<div class="card-file-modified listing-file-modified">May 4, 2025</div>
+<div class="card-file-modified listing-file-modified">May 8, 2025</div>
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="27" data-categories="Lk5FVA==" data-listing-date-sort="1745798400000" data-listing-file-modified-sort="1746402829842" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1407">
-<a href="../notes/eventhub-dotnet/index.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="24" data-categories="aW90" data-listing-date-sort="1745798400000" data-listing-file-modified-sort="1746737823824" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1753">
+<a href="../notes/device-twins/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="https://learn.microsoft.com/en-us/azure/event-hubs/media/event-hubs-features/partition_offset.png" alt="partition offser" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img src="device-twins/assets/17-device-twins-desired-flow.png" alt="Information flow for a desired property change" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
-EventHubs &amp; .NET SDK
+Device Twins
 </h5>
 <div class="card-subtitle listing-subtitle">
-More notes on how to send and receive events in C#
+How to retrieve and configure IoT Devices using Device Twin metadata
 </div>
-<div class="listing-reading-time card-text text-muted">8 min</div>
+<div class="listing-reading-time card-text text-muted">9 min</div>
 <div class="listing-categories">
 
-<div class="listing-category" onclick="window.quartoListingCategory('Lk5FVA=='); return false;">.NET</div>
+<div class="listing-category" onclick="window.quartoListingCategory('aW90'); return false;">iot</div>
 
 </div>
 <div class="card-attribution card-text-small end">
@@ -3213,11 +3250,11 @@ Apr 28, 2025
 </div>
 </div>
 <div class="card-footer">
-<div class="card-file-modified listing-file-modified">May 4, 2025</div>
+<div class="card-file-modified listing-file-modified">May 8, 2025</div>
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="28" data-categories="aGFyZHdhcmUlMkNzaWduYWxz" data-listing-date-sort="1745798400000" data-listing-file-modified-sort="1746402829839" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="896">
+<div class="g-col-1" data-index="25" data-categories="aGFyZHdhcmUlMkNzaWduYWxz" data-listing-date-sort="1745798400000" data-listing-file-modified-sort="1746737823821" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="896">
 <a href="../notes/circuitry/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top"><img src="circuitry/assets/ohms-source-symbol.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -3243,11 +3280,11 @@ Apr 28, 2025
 </div>
 </div>
 <div class="card-footer">
-<div class="card-file-modified listing-file-modified">May 4, 2025</div>
+<div class="card-file-modified listing-file-modified">May 8, 2025</div>
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="29" data-categories="aW90" data-listing-date-sort="1745798400000" data-listing-file-modified-sort="1746402829840" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1207">
+<div class="g-col-1" data-index="26" data-categories="aW90" data-listing-date-sort="1745798400000" data-listing-file-modified-sort="1746737823822" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1207">
 <a href="../notes/device-cloud-communication/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top"><img src="device-cloud-communication/assets/iot-hub-communication.drawio.svg" alt="Communication options between IoT Hub and devices" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -3271,7 +3308,151 @@ Apr 28, 2025
 </div>
 </div>
 <div class="card-footer">
-<div class="card-file-modified listing-file-modified">May 4, 2025</div>
+<div class="card-file-modified listing-file-modified">May 8, 2025</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="27" data-categories="aGFyZHdhcmU=" data-listing-date-sort="1745798400000" data-listing-file-modified-sort="1746737823875" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2253">
+<a href="../notes/microcomputers/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img src="microcomputers/assets/8-arduino-vs-pi-code-loop.png" alt="block diagram for fetch-decode-execute-loop" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Microcomputers
+</h5>
+<div class="card-subtitle listing-subtitle">
+Comparing the architectural paradigms for microcomputers to better understand our Pis.
+</div>
+<div class="listing-reading-time card-text text-muted">12 min</div>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('aGFyZHdhcmU='); return false;">hardware</div>
+
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+Apr 28, 2025
+</div>
+</div>
+</div>
+<div class="card-footer">
+<div class="card-file-modified listing-file-modified">May 8, 2025</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="28" data-categories="Lk5FVA==" data-listing-date-sort="1745798400000" data-listing-file-modified-sort="1746737823824" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1407">
+<a href="../notes/eventhub-dotnet/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img src="https://learn.microsoft.com/en-us/azure/event-hubs/media/event-hubs-features/partition_offset.png" alt="partition offser" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+EventHubs &amp; .NET SDK
+</h5>
+<div class="card-subtitle listing-subtitle">
+More notes on how to send and receive events in C#
+</div>
+<div class="listing-reading-time card-text text-muted">8 min</div>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('Lk5FVA=='); return false;">.NET</div>
+
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+Apr 28, 2025
+</div>
+</div>
+</div>
+<div class="card-footer">
+<div class="card-file-modified listing-file-modified">May 8, 2025</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="29" data-categories="aGFyZHdhcmUlMkNiYXNoJTJDcHl0aG9u" data-listing-date-sort="1746403200000" data-listing-file-modified-sort="1746737823822" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="400">
+<a href="../notes/device-calibrating/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Device calibration
+</h5>
+<div class="card-subtitle listing-subtitle">
+<p>Notes for getting your sensors/actuators to work.</p>
+</div>
+<div class="listing-reading-time card-text text-muted">2 min</div>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('aGFyZHdhcmU='); return false;">hardware</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('YmFzaA=='); return false;">bash</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('cHl0aG9u'); return false;">python</div>
+
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+May 5, 2025
+</div>
+</div>
+</div>
+<div class="card-footer">
+<div class="card-file-modified listing-file-modified">May 8, 2025</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="30" data-categories="cHl0aG9u" data-listing-date-sort="1746403200000" data-listing-file-modified-sort="1746737823875" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="721">
+<a href="../notes/python-extras/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Python extras
+</h5>
+<div class="card-subtitle listing-subtitle">
+<p>Python tips and tricks that there wasn’t time to cover explicitly in the course, but are useful to know. Logging in Python with the logging module. Unit testing in python with pytest.</p>
+</div>
+<div class="listing-reading-time card-text text-muted">4 min</div>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('cHl0aG9u'); return false;">python</div>
+
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+May 5, 2025
+</div>
+</div>
+</div>
+<div class="card-footer">
+<div class="card-file-modified listing-file-modified">May 8, 2025</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="31" data-categories="aW90" data-listing-date-sort="1746662400000" data-listing-file-modified-sort="1746737823817" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="607">
+<a href="../notes/azure-storage/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img src="azure-storage/assets/blob-structure.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Azure Blob Storage
+</h5>
+<div class="card-subtitle listing-subtitle">
+<p>Setting up blob storage on the Azure Portal</p>
+</div>
+<div class="listing-reading-time card-text text-muted">4 min</div>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('aW90'); return false;">iot</div>
+
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+May 8, 2025
+</div>
+</div>
+</div>
+<div class="card-footer">
+<div class="card-file-modified listing-file-modified">May 8, 2025</div>
 </div>
 </div></a>
 </div>
@@ -3703,8 +3884,8 @@ Apr 28, 2025
   <div class="nav-page nav-page-previous">
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../notes/python-oop/index.html" class="pagination-link" aria-label="Python OOP">
-        <span class="nav-page-text">Python OOP</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../notes/device-calibrating/index.html" class="pagination-link" aria-label="Device calibration">
+        <span class="nav-page-text">Device calibration</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-03-14">
+<meta name="dcterms.date" content="2025-05-05">
 
-<title>Signals: Analog and digital – Connected Objects</title>
+<title>Python extras – Connected Objects</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,7 +21,62 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -30,8 +85,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../notes/python-package-management/index.html" rel="next">
-<link href="../../notes/azure-portal/index.html" rel="prev">
+<link href="../../notes/device-twins/index.html" rel="next">
+<link href="../../notes/debug-reterminal/index.html" rel="prev">
 <link href="../../assets/favicon_io/favicon.ico" rel="icon">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -47,10 +102,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/bootstrap/bootstrap-13f8f73bb956a6e62072eb9d3f883997.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../../site_libs/bootstrap/bootstrap-dark-1fdb536d0f1451bfcff7e167a4f99223.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../../site_libs/bootstrap/bootstrap-13f8f73bb956a6e62072eb9d3f883997.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.css" rel="stylesheet">
 <script src="../../site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
-<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": true,
@@ -78,12 +131,10 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="Signals: Analog and digital – Connected Objects">
-<meta property="og:description" content="Comparing the two paradigms for measuring electronic information and understanding how each are used for distributed applications.">
-<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/notes/analog-vs-digital/assets/6-analog-digital-analog-temperature.png">
+<meta property="og:title" content="Python extras – Connected Objects">
+<meta property="og:description" content="Python tips and tricks that there wasn’t time to cover explicitly in the course, but are useful to know. Logging in Python with the logging module. Unit testing in python with pytest.">
+<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/notes/python-extras/assets/art_title_path_only.svg">
 <meta property="og:site_name" content="{{< var course.title >}}">
-<meta property="og:image:height" content="395">
-<meta property="og:image:width" content="930">
 </head>
 
 <body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -439,7 +490,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/analog-vs-digital/index.html">Signals: Analog and digital</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/python-extras/index.html">Python extras</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -513,7 +564,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notes/analog-vs-digital/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../notes/analog-vs-digital/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Signals: Analog and digital</span></a>
   </div>
 </li>
@@ -555,7 +606,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notes/python-extras/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/python-extras/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Python extras</span></a>
   </div>
 </li>
@@ -651,28 +702,23 @@ ul.task-list li input[type="checkbox"] {
 </li>
     </ul>
     </div>
-    <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="1">
+    <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#analog-the-natural-world" id="toc-analog-the-natural-world" class="nav-link active" data-scroll-target="#analog-the-natural-world"><span class="header-section-number">1</span> Analog: the natural world</a>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><span class="header-section-number">1</span> Overview</a></li>
+  <li><a href="#logging" id="toc-logging" class="nav-link" data-scroll-target="#logging"><span class="header-section-number">2</span> Logging</a></li>
+  <li><a href="#unit-testing" id="toc-unit-testing" class="nav-link" data-scroll-target="#unit-testing"><span class="header-section-number">3</span> Unit testing</a>
   <ul>
-  <li><a href="#temperature" id="toc-temperature" class="nav-link" data-scroll-target="#temperature"><span class="header-section-number">1.1</span> Temperature</a></li>
-  <li><a href="#sound" id="toc-sound" class="nav-link" data-scroll-target="#sound"><span class="header-section-number">1.2</span> Sound</a></li>
-  <li><a href="#analog-signals-graphs" id="toc-analog-signals-graphs" class="nav-link" data-scroll-target="#analog-signals-graphs"><span class="header-section-number">1.3</span> Analog Signals Graphs</a></li>
+  <li><a href="#installing-pytest" id="toc-installing-pytest" class="nav-link" data-scroll-target="#installing-pytest"><span class="header-section-number">3.1</span> Installing <code>pytest</code></a></li>
+  <li><a href="#creating-and-running-tests" id="toc-creating-and-running-tests" class="nav-link" data-scroll-target="#creating-and-running-tests"><span class="header-section-number">3.2</span> Creating and running tests</a></li>
+  <li><a href="#dependency-injection-with-pytest-fixutres" id="toc-dependency-injection-with-pytest-fixutres" class="nav-link" data-scroll-target="#dependency-injection-with-pytest-fixutres"><span class="header-section-number">3.3</span> Dependency injection with <code>pytest</code> fixutres</a>
+  <ul class="collapse">
+  <li><a href="#conftest.py" id="toc-conftest.py" class="nav-link" data-scroll-target="#conftest.py"><span class="header-section-number">3.3.1</span> <code>conftest.py</code></a></li>
   </ul></li>
-  <li><a href="#digital-discrete-values" id="toc-digital-discrete-values" class="nav-link" data-scroll-target="#digital-discrete-values"><span class="header-section-number">2</span> Digital: discrete values</a>
-  <ul>
-  <li><a href="#digital-simulating-analogue" id="toc-digital-simulating-analogue" class="nav-link" data-scroll-target="#digital-simulating-analogue"><span class="header-section-number">2.1</span> Digital Simulating Analogue</a></li>
-  </ul></li>
-  <li><a href="#analog-to-digital-conversion-adc" id="toc-analog-to-digital-conversion-adc" class="nav-link" data-scroll-target="#analog-to-digital-conversion-adc"><span class="header-section-number">3</span> Analog to Digital Conversion (ADC)</a></li>
-  <li><a href="#sampling" id="toc-sampling" class="nav-link" data-scroll-target="#sampling"><span class="header-section-number">4</span> Sampling</a>
-  <ul>
-  <li><a href="#sampling-rate" id="toc-sampling-rate" class="nav-link" data-scroll-target="#sampling-rate"><span class="header-section-number">4.1</span> Sampling rate</a></li>
-  <li><a href="#encoding-bit-resolution" id="toc-encoding-bit-resolution" class="nav-link" data-scroll-target="#encoding-bit-resolution"><span class="header-section-number">4.2</span> Encoding &amp; Bit resolution</a></li>
-  <li><a href="#encoding-procedure" id="toc-encoding-procedure" class="nav-link" data-scroll-target="#encoding-procedure"><span class="header-section-number">4.3</span> Encoding Procedure</a></li>
-  <li><a href="#sensor-voltages-bit-resolution" id="toc-sensor-voltages-bit-resolution" class="nav-link" data-scroll-target="#sensor-voltages-bit-resolution"><span class="header-section-number">4.4</span> Sensor voltages &amp; bit resolution</a></li>
-  <li><a href="#video-reference" id="toc-video-reference" class="nav-link" data-scroll-target="#video-reference"><span class="header-section-number">4.5</span> Video Reference</a></li>
+  <li><a href="#using-pytest-on-asynchronous-code" id="toc-using-pytest-on-asynchronous-code" class="nav-link" data-scroll-target="#using-pytest-on-asynchronous-code"><span class="header-section-number">3.4</span> using <code>pytest</code> on asynchronous code</a></li>
+  <li><a href="#using-logot-to-test-logs" id="toc-using-logot-to-test-logs" class="nav-link" data-scroll-target="#using-logot-to-test-logs"><span class="header-section-number">3.5</span> using <code>logot</code> to test logs</a></li>
+  <li><a href="#further-pytest-reference" id="toc-further-pytest-reference" class="nav-link" data-scroll-target="#further-pytest-reference"><span class="header-section-number">3.6</span> Further <code>pytest</code> reference</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -687,10 +733,10 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Signals: Analog and digital</h1>
-<p class="subtitle lead">Comparing the two paradigms for measuring electronic information and understanding how each are used for distributed applications.</p>
+<h1 class="title">Python extras</h1>
+<p class="subtitle lead"></p><p>Python tips and tricks that there wasn’t time to cover explicitly in the course, but are useful to know. Logging in Python with the logging module. Unit testing in python with pytest.</p><p></p>
   <div class="quarto-categories">
-    <div class="quarto-category">hardware</div>
+    <div class="quarto-category">python</div>
   </div>
   </div>
 
@@ -702,7 +748,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 14, 2025</p>
+      <p class="date">May 5, 2025</p>
     </div>
   </div>
   
@@ -720,241 +766,205 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>We will use analog and digital signals to communicate with sensors.</p>
-<p>This section briefly compares these two types of signals and illustrates how we might encounter while using IoT hardware.</p>
-<p>To compare analog and digital signals, let’s look at how we can track 3 different sources of information:</p>
+<section id="overview" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="overview"><span class="header-section-number">1</span> Overview</h2>
+<p>These notes cover useful <code>python</code> skills, particularly for finalizing your team’s project.</p>
+</section>
+<section id="logging" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="logging"><span class="header-section-number">2</span> Logging</h2>
+<p><em>These notes were adapted from <span class="citation" data-cites="pythonLoggingPythonReal">(<a href="#ref-pythonLoggingPythonReal" role="doc-biblioref"><span>“Logging in <span>Python</span> – <span>Real Python</span>”</span> n.d.</a>)</span></em></p>
+<p>See <a href="https://realpython.com/python-logging/">this article from Real Python for a complete explanation</a>.</p>
+<p>Important notes:</p>
 <ul>
-<li>Temperature</li>
-<li>Sound</li>
-<li>Electricity (voltages)</li>
+<li><a href="https://realpython.com/python-logging/#instantiating-your-logger">Instantiating the logger in each file</a></li>
+<li><a href="https://realpython.com/python-logging/#formatting-the-output">Formatting log output</a></li>
+<li><a href="https://realpython.com/python-logging/#logging-to-a-file">Logging to a file</a></li>
+<li><a href="https://realpython.com/python-logging/#using-handlers">Using handlers to customize format and output</a></li>
 </ul>
-<section id="analog-the-natural-world" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="analog-the-natural-world"><span class="header-section-number">1</span> Analog: the natural world</h2>
-<p>We live in an analog world. Most of the naturally occurring events that we experience happen in an analog form.</p>
+</section>
+<section id="unit-testing" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="unit-testing"><span class="header-section-number">3</span> Unit testing</h2>
 <blockquote class="blockquote">
-<p>Analog signals varies continuously in time and amplitude.</p>
-<p>This means that changes happen over a range of values with infinite “in between” steps.</p>
-</blockquote>
-<p>For example, the following events have an infinite number of transitions. It only depends on how accurately you can track them:</p>
+<p>These notes were adapted from:</p>
 <ul>
-<li>The colors in a rainbow.</li>
-<li>The position of a swinging pendulum.</li>
-<li>The exact time of the day.</li>
-</ul>
-<section id="temperature" class="level3" data-number="1.1">
-<h3 data-number="1.1" class="anchored" data-anchor-id="temperature"><span class="header-section-number">1.1</span> Temperature</h3>
-<p>The A/C and heating systems in a house are typically activated once the temperature reaches some minimum and maximum values.</p>
-<p>The chart below is tracking the temperature in a room as the A/C and heating systems are activated over a few days.</p>
-<p><a href="assets/6-analog-digital-analog-temperature.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="assets/6-analog-digital-analog-temperature.png" class="img-fluid"></a></p>
-<p class="img-info">
-<a href="https://info.sparkfun.com/hubfs/Poster%20Downloads/Analog%20vs%20Digital/Concept%20Poster%20Analog%20vs%20Digital%20WEB.pdf"> Temperature changes over time </a>&nbsp; Adapted from poster: Analog and Digital Signals by Digikey.
-</p>
-<p>Let’s say the maximum temperature reached in the room is 30C and the minimum temperature is 15C. A person in the room would have observed every possible temperature in between that range (15.01, 15.0101, 15.0102, 15.01021, etc).</p>
-<p>The change in temperature produces analog information since it is changing over an infinite range of values.</p>
-</section>
-<section id="sound" class="level3" data-number="1.2">
-<h3 data-number="1.2" class="anchored" data-anchor-id="sound"><span class="header-section-number">1.2</span> Sound</h3>
-<p>Sound is also an example of an analog signal.</p>
-<p>When a volume of air is displaced quickly, air molecules are compressed against each other creating a high-pressure region. The high pressure region expands and compresses the air in the neighbouring area. Sound can travel thanks to this “chain effect”.</p>
-<blockquote class="blockquote">
-<p>By observing how the air pressure changes over time, we can draw a sound wave.</p>
-<p>This is how speakers and microphones interact with air to generate sound.</p>
-</blockquote>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="http://resource.isvr.soton.ac.uk/spcg/tutorial/tutorial/Tutorial_files/longipatm.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Animation of acoustic wave travelling in air"><img src="http://resource.isvr.soton.ac.uk/spcg/tutorial/tutorial/Tutorial_files/longipatm.gif" class="img-fluid figure-img" alt="Animation of acoustic wave travelling in air"></a></p>
-<figcaption>Animation of acoustic wave travelling in air</figcaption>
-</figure>
-</div>
-<p class="img-info">
-<a href="http://resource.isvr.soton.ac.uk/spcg/tutorial/tutorial/Tutorial_files/Web-basics-sound.htm"> Sound waves travelling through air </a>&nbsp; - Waves and Acoustics Animations by isvr.
-</p>
-<p>Sound waves are also an example of an analog signal because the amplitude of the wave transitions through the entire range of possible values between the Min and Max.</p>
-</section>
-<section id="analog-signals-graphs" class="level3" data-number="1.3">
-<h3 data-number="1.3" class="anchored" data-anchor-id="analog-signals-graphs"><span class="header-section-number">1.3</span> Analog Signals Graphs</h3>
-<p>A signal varies over time. It’s helpful to plot it on a graph where time is plotted on the horizontal, <em>x</em>-axis, and the value being tracked on the vertical, <em>y</em>-axis.</p>
-<p>Looking at a graph of a signal is usually the easiest way to identify if it’s analog or digital.</p>
-<blockquote class="blockquote">
-<p>When dealing with electricity we track voltage levels (amplitude).</p>
-<p>A time-versus-voltage graph of an analog signal should be <strong>smooth</strong> and <strong>continuous</strong>.</p>
-</blockquote>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://cdn.sparkfun.cassets/3/7/6/6/0/51c48875ce395f745a000000.png" class="img-fluid figure-img"></p>
-<figcaption>Analog Sine Wave</figcaption>
-</figure>
-</div>
-<p>While these signals may be limited to a <strong>range</strong> of maximum and minimum values, there are still an infinite number of possible values within that range.</p>
-<p>For example, the analog voltage coming out of your wall socket oscillates between -120V and +120V. As you increase the resolution more and more, you discover an infinite number of values that the signal can actually be (64.4V, 64.42V, 64.424V, and other increasingly precise values).</p>
-</section>
-</section>
-<section id="digital-discrete-values" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="digital-discrete-values"><span class="header-section-number">2</span> Digital: discrete values</h2>
-<p>Digital signals are discrete, which means that at any given moment, the signal strength must be represented by a integer number. There are no half numbers.</p>
-<p>Typically, digital signals will be one of <strong>two values</strong>, a high voltage and a low voltage.</p>
-<blockquote class="blockquote">
-<p>The specific values of the <strong>high</strong> and <strong>low</strong> voltages depend on the hardware being used.</p>
-</blockquote>
-<p>Below is a the timing graph of a signal whose <strong>low voltage is 0 volts</strong> and <strong>high voltage is 5 volts</strong>.</p>
-<p>This type of signal is also known as a <strong>square waves</strong>.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://cdn.sparkfun.cassets/c/8/5/b/e/51c495ebce395f1b5a000000.png" class="img-fluid figure-img"></p>
-<figcaption>Square wave signal. Two values, either 0V or 5V.</figcaption>
-</figure>
-</div>
-<p class="img-info">
-<a href="https://learn.sparkfun.com/tutorials/analog-vs-digital/all"> 0 to 5 volt “pulses” forming a square ware </a>&nbsp; - Analog vs.&nbsp;Digital by Digikey.
-</p>
-<section id="digital-simulating-analogue" class="level3" data-number="2.1">
-<h3 data-number="2.1" class="anchored" data-anchor-id="digital-simulating-analogue"><span class="header-section-number">2.1</span> Digital Simulating Analogue</h3>
-<p>A digital signal might be a discrete representation of an analog waveform.</p>
-<p>Viewed from afar, the wave function below may seem smooth and analog, but when you look closely there are tiny discrete <strong>steps</strong> as the signal tries to approximate analog values.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://cdn.sparkfun.cassets/0/2/8/4/6/51c85fbece395fbc03000000.png" class="img-fluid figure-img"></p>
-<figcaption>Digital Sine Wave</figcaption>
-</figure>
-</div>
-<p class="img-info">
-<a href="https://learn.sparkfun.com/tutorials/analog-vs-digital/all"> Oscillating voltage from -120V to 120V represented as a digital signal </a>&nbsp; - Analog vs.&nbsp;Digital by Digikey.
-</p>
-<p>The number of <strong>discrete steps</strong> that a digital signal can use depends on how many bits are available for each recorded value. This is also called <strong>bit resolution</strong> (see <em>Sampling</em> below).</p>
-<p>For example, if a data point can only use one bit of definition, then it can only track on/off states, resulting in the red square wave seen above.</p>
-<p>However, if a data point can use 8 bits to store a value, then it can represent a value ranging from 0 to 255 (see the green sinusoidal voltage wave above).</p>
-</section>
-</section>
-<section id="analog-to-digital-conversion-adc" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="analog-to-digital-conversion-adc"><span class="header-section-number">3</span> Analog to Digital Conversion (ADC)</h2>
-<p>If most natural events are analog, how do we represent them in digital format? For example, if audio is analog, how can we get a computer to play music?</p>
-<blockquote class="blockquote">
-<p>An <strong>analog to digital converter (ADC)</strong> is a device that can read a analog signal and generate a digital representation of this signal.</p>
-</blockquote>
-<p>ADC’s are specific to the type of analog signal they are trying to read (sound, voltage, temperature, light, etc).</p>
-<p>Referring to the room temperature example used earlier, if we used a digital thermometer to record the temperature, our graph might look like the following:</p>
-<p><a href="assets/6-analog-digital-temp-sampling.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="assets/6-analog-digital-temp-sampling.png" class="img-fluid"></a></p>
-<p class="img-info">
-<a href="https://info.sparkfun.com/hubfs/Poster%20Downloads/Analog%20vs%20Digital/Concept%20Poster%20Analog%20vs%20Digital%20WEB.pdf"> Temperature represented as a digital reading </a>&nbsp; Poster: Analog and Digital Signals by Digikey.
-</p>
-<p>In the example above, a digital temperature reading was taken <strong>every 3hr</strong>.</p>
-<blockquote class="blockquote">
-<p>The digital signal representation of the temperature <strong>is not smooth or accurate</strong>.</p>
-<p>However, depending on the application <strong>it might be sufficient</strong>.</p>
-</blockquote>
-<p>To make the signal smoother or more representative of the real analog signal we need to take samples more regularly (eg. every 1min).</p>
-<p>The process of reading an analog signal over time to generate its digital representation is called <strong>sampling.</strong></p>
-</section>
-<section id="sampling" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="sampling"><span class="header-section-number">4</span> Sampling</h2>
-<p>Sampling is the process of inspecting the value of an analog signal at regular time intervals.</p>
-<p>When an ADC is sampling an analog signal, there are two variables that will characterize the digital output:</p>
-<ul>
-<li>Sampling rate.</li>
-<li>Bit resolution.</li>
-</ul>
-<blockquote class="blockquote">
-<p><strong>Music sampling</strong> Some music genres like rap and hip-hop commonly sample song segments from other artists to play in the background.</p>
-<ul>
-<li>The term <strong>sampling</strong> is used because traditionally song segments were extracted from vinyl records which produce analog sound and saved in digital formats.</li>
+<li><span class="citation" data-cites="pythonEffectivePythonTesting">(<a href="#ref-pythonEffectivePythonTesting" role="doc-biblioref"><span>“Effective <span>Python Testing With</span> Pytest – <span>Real Python</span>”</span> n.d.</a>)</span></li>
+<li><span class="citation" data-cites="PytestDocumentation">(<a href="#ref-PytestDocumentation" role="doc-biblioref"><span>“Pytest Documentation”</span> n.d.</a>)</span></li>
 </ul>
 </blockquote>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/hT_2kUx0AcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="">
-</iframe>
-<section id="sampling-rate" class="level3" data-number="4.1">
-<h3 data-number="4.1" class="anchored" data-anchor-id="sampling-rate"><span class="header-section-number">4.1</span> Sampling rate</h3>
-<p>The time between samples is the <strong>sample period</strong> (T, in seconds), and the number of samples taken per second is the <strong>sample frequency or sample rate</strong> (fs, in samples/second or Hz).</p>
-<p>Basically, <strong>sampling is taking snap-shot values of the analog signal at regular time intervals.</strong></p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="assets/6-analog-digital-sample-period.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Analog signal showing sample period and sample frequency"><img src="assets/6-analog-digital-sample-period.png" class="img-fluid figure-img" alt="Analog signal showing sample period and sample frequency"></a></p>
-<figcaption>Analog signal showing sample period and sample frequency</figcaption>
-</figure>
-</div>
-<p class="img-info">
-<a href="https://www.usna.edu/ECE/ec312/Lessons/wireless/EC312_Lesson_20_Analog_to_Digital_Course_Notes.pdf"> Sample period and fequency for an electric signal </a>&nbsp; - US Naval Academy.
-</p>
-<p><strong>Sampling period examples:</strong></p>
+<p>There are two main libraries for unit tests in python:</p>
 <ul>
-<li>If a signal is sampled every half second (0.5s sampling period, <strong><em>T</em></strong>), the sample frequency (<strong>*f**</strong>) is 1/0.5s = 2 Hz (times per second).</li>
-<li>If the sample frequency (<strong><em>f</em></strong>) is 2000 Hz, the sampling period (<strong><em>T</em></strong>) is = 1/2000Hz = 0.0005 secs (0.5 milliseconds).</li>
+<li><a href="https://docs.python.org/3/library/unittest.html">unittest</a>: included in the standard python library</li>
+<li><a href="https://docs.pytest.org/en/stable/">pytest</a>: a very popular third party library for writing unit tests in python</li>
 </ul>
-<p>The higher the sample rate, the more accurate the digital signal is.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="assets/6-analog-digital-increasing-sample-rate.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Signals of increasing sample rate"><img src="assets/6-analog-digital-increasing-sample-rate.png" class="img-fluid figure-img" alt="Signals of increasing sample rate"></a></p>
-<figcaption>Signals of increasing sample rate</figcaption>
-</figure>
+<p>I’ve used both before, and they’re both great. In this course, we’ll be using <code>pytest</code>. There’s a few reasons for that, which mostly aren’t that important, but in general, compared to <code>unittest</code>, <code>pytest</code> requires far less <strong>boilerplate</strong> code to accomplish the same things. For example:</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true"><code>unittest</code></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false"><code>pytest</code></a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p>To create one unit test that always passes, and one that always fails, using <code>unittest</code>:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>unittest</strong></pre>
 </div>
-<p class="img-info">
-<a href="https://www.usna.edu/ECE/ec312/Lessons/wireless/EC312_Lesson_20_Analog_to_Digital_Course_Notes.pdf"> Same signal sampled with different sample rates </a>&nbsp; - US Naval Academy.
-</p>
-</section>
-<section id="encoding-bit-resolution" class="level3" data-number="4.2">
-<h3 data-number="4.2" class="anchored" data-anchor-id="encoding-bit-resolution"><span class="header-section-number">4.2</span> Encoding &amp; Bit resolution</h3>
-<p>Encoding is the process of mapping the sampled analog signal value to discrete binary numbers (digital information).</p>
-<blockquote class="blockquote">
-<p>ADC devices are characterized by the <strong>number of bits available</strong> to represent a signal.</p>
-</blockquote>
-<p>For example, consider an electrical signal that ranges <strong>from -1 volts to to +1 volts</strong> and must be converted to a <strong>3 bit number</strong>.</p>
-</section>
-<section id="encoding-procedure" class="level3" data-number="4.3">
-<h3 data-number="4.3" class="anchored" data-anchor-id="encoding-procedure"><span class="header-section-number">4.3</span> Encoding Procedure</h3>
-<p>To approximate the numeric conversion from a voltage signal to a digital output, follow the steps below:</p>
-<ol type="1">
-<li><p>Identify the minimum and maximum voltage values that can be observed in the input.</p>
+<div class="sourceCode" id="cb1" data-filename="unittest" data-code-line-numbers=""><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> unittest <span class="im">import</span> TestCase</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> TryTesting(TestCase):</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> test_always_passes(<span class="va">self</span>):</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.assertTrue(<span class="va">True</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> test_always_fails(<span class="va">self</span>):</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.assertTrue(<span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The following steps were necessary:</p>
 <ul>
-<li>Example: -1 to +1 volts (2 volt range)</li>
+<li>Import the <code>TestCase</code> class from <code>unittest</code></li>
+<li>Create <code>TryTesting</code>, a subclass of <code>TestCase</code></li>
+<li>Write a method in <code>TryTesting</code> for each test</li>
+<li>Use one of the <code>self.assert</code> methods from <code>unittest.TestCase</code> to make assertions</li>
+</ul>
+<p>This boilerplate code is required for every single test.</p>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p>To create one unit test that always passes, and one that always fails, using <code>pytest</code>:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>pytest</strong></pre>
+</div>
+<div class="sourceCode" id="cb2" data-filename="pytest" data-code-line-numbers=""><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_always_passes():</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> <span class="va">True</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_always_fails():</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> <span class="va">False</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The following steps were necessary:</p>
+<ul>
+<li>define functions beginning with the name <code>test_</code></li>
+<li>use Python’s built-in <code>assert</code> keyword directly</li>
+</ul>
+<p>Much less boilerplate code required!</p>
+</div>
+</div>
+</div>
+<section id="installing-pytest" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="installing-pytest"><span class="header-section-number">3.1</span> Installing <code>pytest</code></h3>
+<p>In your <a href="../../notes/python-package-management#virtual-environments">virtual environment</a>, use <code>pip</code> to install <code>pytest</code>:</p>
+<pre class="shell" data-code-line-numbers=""><code>$ pip install pytest</code></pre>
+</section>
+<section id="creating-and-running-tests" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="creating-and-running-tests"><span class="header-section-number">3.2</span> Creating and running tests</h3>
+<p>Create a new file called <code>test_sample.py</code>, containing a function, and a test:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>test_sample.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb4" data-filename="test_sample.py" data-code-line-numbers=""><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> func(x):</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_answer():</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> func(<span class="dv">3</span>) <span class="op">==</span> <span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Run the test:</p>
+<pre class="shell" data-code-line-numbers=""><code>$ pytest</code></pre>
+<p>See <a href="https://docs.pytest.org/en/stable/getting-started.html#get-started">pytest: Getting Started</a> documentation for more details.</p>
+<p>See <a href="https://github.com/420-6A6-6P3-W25/final-project-upstream/tree/main/iot_subsystems/tests/example_system">my example_system unit tests</a> for examles relevant to our project.</p>
+</section>
+<section id="dependency-injection-with-pytest-fixutres" class="level3" data-number="3.3">
+<h3 data-number="3.3" class="anchored" data-anchor-id="dependency-injection-with-pytest-fixutres"><span class="header-section-number">3.3</span> Dependency injection with <code>pytest</code> fixutres</h3>
+<p><code>pytest</code> is designed to follow a variant of the “functional” testing paradigm called Arrange-Act-Assert:</p>
+<ul>
+<li><strong>Arrange</strong>, or set up, the conditions for the test</li>
+<li><strong>Act</strong> by calling some function or method</li>
+<li><strong>Assert</strong> that some end condition is true</li>
+</ul>
+<p><code>pytest</code> enables the creation of <a href="">fixtures</a>, that is, test objects, that can be used across tests to simplify the <strong>Arrange</strong> step:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>fixture_demo.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb6" data-filename="fixture_demo.py" data-code-line-numbers=""><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pytest</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># This annotation marks the function as a fixture generator</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="at">@pytest.fixture</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> example_fixture():</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">1</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Make tests use that fixture by providing the name as a parameter of the test function:</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_with_fixture(example_fixture):</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> example_fixture <span class="op">==</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>You can see how I use fixtures in the <a href="https://github.com/420-6A6-6P3-W25/final-project-upstream/blob/main/iot_subsystems/tests/example_system/conftest.py">example_system conftest.py</a> files of the sample test code in the final-project-upstream.</p>
+<section id="conftest.py" class="level4" data-number="3.3.1">
+<h4 data-number="3.3.1" class="anchored" data-anchor-id="conftest.py"><span class="header-section-number">3.3.1</span> <code>conftest.py</code></h4>
+<p>You’ll notice in the <a href="https://github.com/420-6A6-6P3-W25/final-project-upstream/blob/main/iot_subsystems/tests/example_system/conftest.py">example_system tests</a> that I define fixtures in files named <code>conftest.py</code>:</p>
+<div class="cell" data-source-line-numbers="2,4">
+<div class="sourceCode cell-code" id="cb7" data-source-line-numbers="2,4" data-code-line-numbers="2,4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>final<span class="sc">-</span>project<span class="sc">-</span>upstream<span class="sc">/</span>iot_subsystems<span class="sc">/</span>tests<span class="sc">/</span>example_system<span class="sc">/</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>├── conftest.py</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>├── integration</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>│&nbsp;&nbsp; ├── conftest.py</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>│&nbsp;&nbsp; ├── __init__.py</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>│&nbsp;&nbsp; └── test_system.py</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>└── unit</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    ├── __init__.py</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    ├── test_aht20.py</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    └── test_fan.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This is a pytest convention for sharing fixtures across multiple test files, allowing you to keep your test files concise and to avoid needing to recreate dependencies. This is very useful for our project, where we have many custom classes we are creating and mocking.</p>
+<p>You can see more about <code>conftest.py</code> in the <a href="https://docs.pytest.org/en/stable/reference/fixtures.html#conftest-py-sharing-fixtures-across-multiple-files">pytest documentation</a></p>
+</section>
+</section>
+<section id="using-pytest-on-asynchronous-code" class="level3" data-number="3.4">
+<h3 data-number="3.4" class="anchored" data-anchor-id="using-pytest-on-asynchronous-code"><span class="header-section-number">3.4</span> using <code>pytest</code> on asynchronous code</h3>
+<p>In our final project, there are quite a few <a href="../../notes/async-python">asynchronous</a> functions to test.</p>
+<p>See the <a href="https://github.com/420-6A6-6P3-W25/final-project-upstream/blob/main/iot_subsystems/tests/example_system/integration/test_system.py#L61">example_system.py unit tests</a> from the <a href="https://github.com/420-6A6-6P3-W25/final-project-upstream/">final-project-upstream</a> code for an example.</p>
+</section>
+<section id="using-logot-to-test-logs" class="level3" data-number="3.5">
+<h3 data-number="3.5" class="anchored" data-anchor-id="using-logot-to-test-logs"><span class="header-section-number">3.5</span> using <code>logot</code> to test logs</h3>
+<p><code>pytest</code> does include a fixture called <code>caplog</code> for testing if logs were written.</p>
+<p>I found that the 3rd party package <code>logot</code> was much simpler to use.</p>
+<p>See the <a href="https://github.com/420-6A6-6P3-W25/final-project-upstream/blob/main/iot_subsystems/tests/example_system/integration/test_system.py#L62">example_system.py unit tests</a> from the <a href="https://github.com/420-6A6-6P3-W25/final-project-upstream/">final-project-upstream</a> code for an example:</p>
+<ul>
+<li><a href="https://logot.readthedocs.io/stable/installing.html">Installing <code>logot</code></a>
+<ul>
+<li><a href="https://logot.readthedocs.io/stable/installing.html#installing-package-extras">Ensure <code>logot</code> is compatible with <code>pytest</code></a></li>
 </ul></li>
-<li><p>Identify the minimum and maximum binary values that can generated as the output. Note the amount of unique numbers represented by this range</p>
-<ul>
-<li>Example: For a 3-bit number: 000 (decimal 0) is the minimum and 111 (decimal 7) is the maximum, making a total of 8 unique numbers.</li>
-</ul></li>
-<li><p>Divide the voltage range that will be observed (max voltage - min voltage) by the amount of unique binary numbers available. This will determine the voltage increment that each binary number represents.</p>
-<ul>
-<li>Example: (+1V - (-1V)) / 8 = 2V/8 = 0.25V</li>
-</ul></li>
-<li><p>Layout each binary number and their increments and read where the voltage values lie.</p></li>
-</ol>
-<p>Assuming the ADC has a resolution of 3 bits, all voltage values (-1V to 1V) must be represented with at most 3 bits, or 2^3 = 8 unique values (0 is a unique value).</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="assets/6-analog-digital-bit-resolution.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="voltage signal converted to a bit resolution of 3 bits"><img src="assets/6-analog-digital-bit-resolution.png" class="img-fluid figure-img" alt="voltage signal converted to a bit resolution of 3 bits"></a></p>
-<figcaption>voltage signal converted to a bit resolution of 3 bits</figcaption>
-</figure>
-</div>
-<p class="img-info">
-<a href="https://www.usna.edu/ECE/ec312/Lessons/wireless/EC312_Lesson_20_Analog_to_Digital_Course_Notes.pdf"> Voltage signal between -1V and 1V converted to digital with a 3 bit resolution </a>&nbsp; - US Naval Academy.
-</p>
-<p>In this case:</p>
-<ul>
-<li>000 is assigned to the voltages from -0.75 V to -1.0 V,</li>
-<li>001 is assigned to the voltages from -0.5 V to -0.749 V,</li>
-<li>010 is assigned to the voltages from -0.25 V to -0.49 V,</li>
-<li>and so on.</li>
+<li><a href="https://logot.readthedocs.io/stable/index.html">Basics of using <code>logot</code></a></li>
+<li><a href="https://logot.readthedocs.io/stable/using-pytest.html">Using <code>logot</code> with `pytest</a></li>
+<li><a href="https://logot.readthedocs.io/stable/index.html#testing-asynchronous-code">Using <code>logot</code> on asynchronous tests</a></li>
+<li><a href="https://logot.readthedocs.io/stable/log-message-matching.html">Using “message matching” to match log messages with placeholders</a></li>
 </ul>
-<p>The binary representation of the above signal is:</p>
-<p>110 101 100 011 011 100 110 110 100 010 000 000 001</p>
-<p>If the sampling is happening 2000 times per second (Hz) and for every sample we generate 3 bits, we are generating 2000 x 3 bits = 6000 bits/sec of information. This is also know as the bitrate.</p>
-<p>If a song of 3 minutes is sampled with the same specs, how big will this file be in kB?</p>
-<p>What is the <a href="https://www.tunefab.com/tutorials/spotify-bitrate.html">bitrate of music on Spotify</a>?</p>
 </section>
-<section id="sensor-voltages-bit-resolution" class="level3" data-number="4.4">
-<h3 data-number="4.4" class="anchored" data-anchor-id="sensor-voltages-bit-resolution"><span class="header-section-number">4.4</span> Sensor voltages &amp; bit resolution</h3>
-<p>IoT systems typically work with electrical signals encoded in voltage levels.</p>
-<p>Every hardware that converts from analog to digital (and vice-versa) needs to have an appropriate ACD device.</p>
-<p>Microcontrollers are often used to process these signals because they often have an integrated ACD and they are very inexpensive.</p>
-</section>
-<section id="video-reference" class="level3" data-number="4.5">
-<h3 data-number="4.5" class="anchored" data-anchor-id="video-reference"><span class="header-section-number">4.5</span> Video Reference</h3>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/64FSgQdWHrE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
-</iframe>
+<section id="further-pytest-reference" class="level3" data-number="3.6">
+<h3 data-number="3.6" class="anchored" data-anchor-id="further-pytest-reference"><span class="header-section-number">3.6</span> Further <code>pytest</code> reference</h3>
+<p>I found the following documentation really useful when I was making the <code>example_system/</code> starter code tests:</p>
+<ul>
+<li><a href="https://docs.pytest.org/en/stable/how-to/usage.html">How to use <code>pytest</code> on the command line, choosing which files to test</a></li>
+<li><a href="https://docs.pytest.org/en/stable/explanation/goodpractices.html#conventions-for-python-test-discovery">Conventions for Python test discovery: file, module, class and function names</a></li>
+<li><a href="https://docs.pytest.org/en/stable/explanation/goodpractices.html#tests-outside-application-code">Best practises for test file structure layout</a></li>
+<li><a href="https://docs.pytest.org/en/stable/how-to/fixtures.html">How to use fixtures</a>
+<ul>
+<li><a href="https://docs.pytest.org/en/stable/explanation/fixtures.html">More explanation of what fixtures are</a></li>
+<li><a href="https://docs.pytest.org/en/stable/reference/fixtures.html#fixtures">More detailed reference for fixtures</a></li>
+</ul></li>
+<li><a href="https://docs.pytest.org/en/stable/how-to/monkeypatch.html">How to adjust the behavior of mock test classes using “monkeypatch”</a></li>
+</ul>
+
 
 
 </section>
 </section>
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div>CC BY-NC 4.0. ©2022-25 Mauricio Buschinelli &amp; Michael Haaf.
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-pythonEffectivePythonTesting" class="csl-entry" role="listitem">
+<span>“Effective <span>Python Testing With</span> Pytest – <span>Real Python</span>.”</span> n.d. Accessed May 5, 2025. <a href="https://realpython.com/pytest-python-testing/">https://realpython.com/pytest-python-testing/</a>.
+</div>
+<div id="ref-pythonLoggingPythonReal" class="csl-entry" role="listitem">
+<span>“Logging in <span>Python</span> – <span>Real Python</span>.”</span> n.d. Accessed May 5, 2025. <a href="https://realpython.com/python-logging/">https://realpython.com/python-logging/</a>.
+</div>
+<div id="ref-PytestDocumentation" class="csl-entry" role="listitem">
+<span>“Pytest Documentation.”</span> n.d. Accessed May 5, 2025. <a href="https://docs.pytest.org/en/stable/">https://docs.pytest.org/en/stable/</a>.
+</div>
+</div></section><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div>CC BY-NC 4.0. ©2022-25 Mauricio Buschinelli &amp; Michael Haaf.
 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">(View License)</a></div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -1370,51 +1380,20 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../notes/azure-portal/index.html" class="pagination-link" aria-label="Azure Portal Setup">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Azure Portal Setup</span>
+      <a href="../../notes/debug-reterminal/index.html" class="pagination-link" aria-label="Debugging Reterminal Issues">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Debugging Reterminal Issues</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../notes/python-package-management/index.html" class="pagination-link" aria-label="Python package management">
-        <span class="nav-page-text">Python package management</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../notes/device-twins/index.html" class="pagination-link" aria-label="Device Twins">
+        <span class="nav-page-text">Device Twins</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
-(function() {
-  let previousOnload = window.onload;
-  window.onload = () => {
-    if (previousOnload) {
-      previousOnload();
-    }
-    lightboxQuarto.on('slide_before_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      const href = trigger.getAttribute('href');
-      if (href !== null) {
-        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-        if (imgEl !== null) {
-          const srcAttr = imgEl.getAttribute("src");
-          if (srcAttr && srcAttr.startsWith("data:")) {
-            slideConfig.href = srcAttr;
-          }
-        }
-      } 
-    });
-  
-    lightboxQuarto.on('slide_after_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(slideNode);
-      }
-    });
-  
-  };
-  
-})();
-          </script>
 
 
 
 
+<script src="../../site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.js" defer="true"></script>
 </body></html>

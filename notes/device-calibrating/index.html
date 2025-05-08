@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-03-14">
+<meta name="dcterms.date" content="2025-05-05">
 
-<title>Signals: Analog and digital – Connected Objects</title>
+<title>Device calibration – Connected Objects</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../notes/python-package-management/index.html" rel="next">
-<link href="../../notes/azure-portal/index.html" rel="prev">
+<link href="../../notes/python-oop/index.html" rel="next">
+<link href="../../notes/index.html" rel="prev">
 <link href="../../assets/favicon_io/favicon.ico" rel="icon">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -48,9 +48,6 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/bootstrap/bootstrap-dark-1fdb536d0f1451bfcff7e167a4f99223.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../../site_libs/bootstrap/bootstrap-13f8f73bb956a6e62072eb9d3f883997.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="../../site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
-<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": true,
@@ -78,12 +75,10 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="Signals: Analog and digital – Connected Objects">
-<meta property="og:description" content="Comparing the two paradigms for measuring electronic information and understanding how each are used for distributed applications.">
-<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/notes/analog-vs-digital/assets/6-analog-digital-analog-temperature.png">
+<meta property="og:title" content="Device calibration – Connected Objects">
+<meta property="og:description" content="Notes for getting your sensors/actuators to work.">
+<meta property="og:image" content="https://john-abbott-college.github.io/6P3-Notes/notes/device-calibrating/assets/art_title_path_only.svg">
 <meta property="og:site_name" content="{{< var course.title >}}">
-<meta property="og:image:height" content="395">
-<meta property="og:image:width" content="930">
 </head>
 
 <body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -439,7 +434,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/analog-vs-digital/index.html">Signals: Analog and digital</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/device-calibrating/index.html">Device calibration</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -459,7 +454,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notes/device-calibrating/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/device-calibrating/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Device calibration</span></a>
   </div>
 </li>
@@ -513,7 +508,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notes/analog-vs-digital/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../notes/analog-vs-digital/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Signals: Analog and digital</span></a>
   </div>
 </li>
@@ -651,28 +646,24 @@ ul.task-list li input[type="checkbox"] {
 </li>
     </ul>
     </div>
-    <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="1">
+    <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#analog-the-natural-world" id="toc-analog-the-natural-world" class="nav-link active" data-scroll-target="#analog-the-natural-world"><span class="header-section-number">1</span> Analog: the natural world</a>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><span class="header-section-number">1</span> Overview</a>
   <ul>
-  <li><a href="#temperature" id="toc-temperature" class="nav-link" data-scroll-target="#temperature"><span class="header-section-number">1.1</span> Temperature</a></li>
-  <li><a href="#sound" id="toc-sound" class="nav-link" data-scroll-target="#sound"><span class="header-section-number">1.2</span> Sound</a></li>
-  <li><a href="#analog-signals-graphs" id="toc-analog-signals-graphs" class="nav-link" data-scroll-target="#analog-signals-graphs"><span class="header-section-number">1.3</span> Analog Signals Graphs</a></li>
+  <li><a href="#to-just-make-progress-on-a2m4" id="toc-to-just-make-progress-on-a2m4" class="nav-link" data-scroll-target="#to-just-make-progress-on-a2m4"><span class="header-section-number">1.1</span> To just make progress on A2/M4</a>
+  <ul class="collapse">
+  <li><a href="#sensors" id="toc-sensors" class="nav-link" data-scroll-target="#sensors"><span class="header-section-number">1.1.1</span> Sensors</a></li>
   </ul></li>
-  <li><a href="#digital-discrete-values" id="toc-digital-discrete-values" class="nav-link" data-scroll-target="#digital-discrete-values"><span class="header-section-number">2</span> Digital: discrete values</a>
-  <ul>
-  <li><a href="#digital-simulating-analogue" id="toc-digital-simulating-analogue" class="nav-link" data-scroll-target="#digital-simulating-analogue"><span class="header-section-number">2.1</span> Digital Simulating Analogue</a></li>
+  <li><a href="#to-get-the-device-working" id="toc-to-get-the-device-working" class="nav-link" data-scroll-target="#to-get-the-device-working"><span class="header-section-number">1.2</span> To get the device working</a>
+  <ul class="collapse">
+  <li><a href="#i2c-devices" id="toc-i2c-devices" class="nav-link" data-scroll-target="#i2c-devices"><span class="header-section-number">1.2.1</span> I2C devices</a></li>
   </ul></li>
-  <li><a href="#analog-to-digital-conversion-adc" id="toc-analog-to-digital-conversion-adc" class="nav-link" data-scroll-target="#analog-to-digital-conversion-adc"><span class="header-section-number">3</span> Analog to Digital Conversion (ADC)</a></li>
-  <li><a href="#sampling" id="toc-sampling" class="nav-link" data-scroll-target="#sampling"><span class="header-section-number">4</span> Sampling</a>
-  <ul>
-  <li><a href="#sampling-rate" id="toc-sampling-rate" class="nav-link" data-scroll-target="#sampling-rate"><span class="header-section-number">4.1</span> Sampling rate</a></li>
-  <li><a href="#encoding-bit-resolution" id="toc-encoding-bit-resolution" class="nav-link" data-scroll-target="#encoding-bit-resolution"><span class="header-section-number">4.2</span> Encoding &amp; Bit resolution</a></li>
-  <li><a href="#encoding-procedure" id="toc-encoding-procedure" class="nav-link" data-scroll-target="#encoding-procedure"><span class="header-section-number">4.3</span> Encoding Procedure</a></li>
-  <li><a href="#sensor-voltages-bit-resolution" id="toc-sensor-voltages-bit-resolution" class="nav-link" data-scroll-target="#sensor-voltages-bit-resolution"><span class="header-section-number">4.4</span> Sensor voltages &amp; bit resolution</a></li>
-  <li><a href="#video-reference" id="toc-video-reference" class="nav-link" data-scroll-target="#video-reference"><span class="header-section-number">4.5</span> Video Reference</a></li>
+  <li><a href="#to-use-the-device-in-your-project-code" id="toc-to-use-the-device-in-your-project-code" class="nav-link" data-scroll-target="#to-use-the-device-in-your-project-code"><span class="header-section-number">1.3</span> To use the device in your project code</a>
+  <ul class="collapse">
+  <li><a href="#sensors-1" id="toc-sensors-1" class="nav-link" data-scroll-target="#sensors-1"><span class="header-section-number">1.3.1</span> Sensors</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -687,10 +678,12 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Signals: Analog and digital</h1>
-<p class="subtitle lead">Comparing the two paradigms for measuring electronic information and understanding how each are used for distributed applications.</p>
+<h1 class="title">Device calibration</h1>
+<p class="subtitle lead"></p><p>Notes for getting your sensors/actuators to work.</p><p></p>
   <div class="quarto-categories">
     <div class="quarto-category">hardware</div>
+    <div class="quarto-category">bash</div>
+    <div class="quarto-category">python</div>
   </div>
   </div>
 
@@ -702,7 +695,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 14, 2025</p>
+      <p class="date">May 5, 2025</p>
     </div>
   </div>
   
@@ -720,237 +713,59 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>We will use analog and digital signals to communicate with sensors.</p>
-<p>This section briefly compares these two types of signals and illustrates how we might encounter while using IoT hardware.</p>
-<p>To compare analog and digital signals, let’s look at how we can track 3 different sources of information:</p>
+<section id="overview" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="overview"><span class="header-section-number">1</span> Overview</h2>
+<p>These notes group together various tips and tricks for calibrating and coding the sensors and actuators for your project.</p>
+<section id="to-just-make-progress-on-a2m4" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="to-just-make-progress-on-a2m4"><span class="header-section-number">1.1</span> To just make progress on A2/M4</h3>
+<section id="sensors" class="level4" data-number="1.1.1">
+<h4 data-number="1.1.1" class="anchored" data-anchor-id="sensors"><span class="header-section-number">1.1.1</span> Sensors</h4>
+<p>Make a file very similar to the one I made for the <a href="https://github.com/420-6A6-6P3-W25/final-project-upstream/blob/main/iot_subsystems/src/example_system/devices/aht20.py">aht20</a>, suggestions:</p>
 <ul>
-<li>Temperature</li>
-<li>Sound</li>
-<li>Electricity (voltages)</li>
-</ul>
-<section id="analog-the-natural-world" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="analog-the-natural-world"><span class="header-section-number">1</span> Analog: the natural world</h2>
-<p>We live in an analog world. Most of the naturally occurring events that we experience happen in an analog form.</p>
-<blockquote class="blockquote">
-<p>Analog signals varies continuously in time and amplitude.</p>
-<p>This means that changes happen over a range of values with infinite “in between” steps.</p>
-</blockquote>
-<p>For example, the following events have an infinite number of transitions. It only depends on how accurately you can track them:</p>
+<li>name the python file after the device, for e.g., <code>tmg39931.py</code> for the the TMG39931.</li>
+<li>make a Mock class very similar to the <code>MockGrove...</code> class I made, e.g.&nbsp;<code>MockTMG39931</code>
 <ul>
-<li>The colors in a rainbow.</li>
-<li>The position of a swinging pendulum.</li>
-<li>The exact time of the day.</li>
-</ul>
-<section id="temperature" class="level3" data-number="1.1">
-<h3 data-number="1.1" class="anchored" data-anchor-id="temperature"><span class="header-section-number">1.1</span> Temperature</h3>
-<p>The A/C and heating systems in a house are typically activated once the temperature reaches some minimum and maximum values.</p>
-<p>The chart below is tracking the temperature in a room as the A/C and heating systems are activated over a few days.</p>
-<p><a href="assets/6-analog-digital-analog-temperature.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="assets/6-analog-digital-analog-temperature.png" class="img-fluid"></a></p>
-<p class="img-info">
-<a href="https://info.sparkfun.com/hubfs/Poster%20Downloads/Analog%20vs%20Digital/Concept%20Poster%20Analog%20vs%20Digital%20WEB.pdf"> Temperature changes over time </a>&nbsp; Adapted from poster: Analog and Digital Signals by Digikey.
-</p>
-<p>Let’s say the maximum temperature reached in the room is 30C and the minimum temperature is 15C. A person in the room would have observed every possible temperature in between that range (15.01, 15.0101, 15.0102, 15.01021, etc).</p>
-<p>The change in temperature produces analog information since it is changing over an infinite range of values.</p>
-</section>
-<section id="sound" class="level3" data-number="1.2">
-<h3 data-number="1.2" class="anchored" data-anchor-id="sound"><span class="header-section-number">1.2</span> Sound</h3>
-<p>Sound is also an example of an analog signal.</p>
-<p>When a volume of air is displaced quickly, air molecules are compressed against each other creating a high-pressure region. The high pressure region expands and compresses the air in the neighbouring area. Sound can travel thanks to this “chain effect”.</p>
-<blockquote class="blockquote">
-<p>By observing how the air pressure changes over time, we can draw a sound wave.</p>
-<p>This is how speakers and microphones interact with air to generate sound.</p>
-</blockquote>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="http://resource.isvr.soton.ac.uk/spcg/tutorial/tutorial/Tutorial_files/longipatm.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Animation of acoustic wave travelling in air"><img src="http://resource.isvr.soton.ac.uk/spcg/tutorial/tutorial/Tutorial_files/longipatm.gif" class="img-fluid figure-img" alt="Animation of acoustic wave travelling in air"></a></p>
-<figcaption>Animation of acoustic wave travelling in air</figcaption>
-</figure>
-</div>
-<p class="img-info">
-<a href="http://resource.isvr.soton.ac.uk/spcg/tutorial/tutorial/Tutorial_files/Web-basics-sound.htm"> Sound waves travelling through air </a>&nbsp; - Waves and Acoustics Animations by isvr.
-</p>
-<p>Sound waves are also an example of an analog signal because the amplitude of the wave transitions through the entire range of possible values between the Min and Max.</p>
-</section>
-<section id="analog-signals-graphs" class="level3" data-number="1.3">
-<h3 data-number="1.3" class="anchored" data-anchor-id="analog-signals-graphs"><span class="header-section-number">1.3</span> Analog Signals Graphs</h3>
-<p>A signal varies over time. It’s helpful to plot it on a graph where time is plotted on the horizontal, <em>x</em>-axis, and the value being tracked on the vertical, <em>y</em>-axis.</p>
-<p>Looking at a graph of a signal is usually the easiest way to identify if it’s analog or digital.</p>
-<blockquote class="blockquote">
-<p>When dealing with electricity we track voltage levels (amplitude).</p>
-<p>A time-versus-voltage graph of an analog signal should be <strong>smooth</strong> and <strong>continuous</strong>.</p>
-</blockquote>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://cdn.sparkfun.cassets/3/7/6/6/0/51c48875ce395f745a000000.png" class="img-fluid figure-img"></p>
-<figcaption>Analog Sine Wave</figcaption>
-</figure>
-</div>
-<p>While these signals may be limited to a <strong>range</strong> of maximum and minimum values, there are still an infinite number of possible values within that range.</p>
-<p>For example, the analog voltage coming out of your wall socket oscillates between -120V and +120V. As you increase the resolution more and more, you discover an infinite number of values that the signal can actually be (64.4V, 64.42V, 64.424V, and other increasingly precise values).</p>
-</section>
-</section>
-<section id="digital-discrete-values" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="digital-discrete-values"><span class="header-section-number">2</span> Digital: discrete values</h2>
-<p>Digital signals are discrete, which means that at any given moment, the signal strength must be represented by a integer number. There are no half numbers.</p>
-<p>Typically, digital signals will be one of <strong>two values</strong>, a high voltage and a low voltage.</p>
-<blockquote class="blockquote">
-<p>The specific values of the <strong>high</strong> and <strong>low</strong> voltages depend on the hardware being used.</p>
-</blockquote>
-<p>Below is a the timing graph of a signal whose <strong>low voltage is 0 volts</strong> and <strong>high voltage is 5 volts</strong>.</p>
-<p>This type of signal is also known as a <strong>square waves</strong>.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://cdn.sparkfun.cassets/c/8/5/b/e/51c495ebce395f1b5a000000.png" class="img-fluid figure-img"></p>
-<figcaption>Square wave signal. Two values, either 0V or 5V.</figcaption>
-</figure>
-</div>
-<p class="img-info">
-<a href="https://learn.sparkfun.com/tutorials/analog-vs-digital/all"> 0 to 5 volt “pulses” forming a square ware </a>&nbsp; - Analog vs.&nbsp;Digital by Digikey.
-</p>
-<section id="digital-simulating-analogue" class="level3" data-number="2.1">
-<h3 data-number="2.1" class="anchored" data-anchor-id="digital-simulating-analogue"><span class="header-section-number">2.1</span> Digital Simulating Analogue</h3>
-<p>A digital signal might be a discrete representation of an analog waveform.</p>
-<p>Viewed from afar, the wave function below may seem smooth and analog, but when you look closely there are tiny discrete <strong>steps</strong> as the signal tries to approximate analog values.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://cdn.sparkfun.cassets/0/2/8/4/6/51c85fbece395fbc03000000.png" class="img-fluid figure-img"></p>
-<figcaption>Digital Sine Wave</figcaption>
-</figure>
-</div>
-<p class="img-info">
-<a href="https://learn.sparkfun.com/tutorials/analog-vs-digital/all"> Oscillating voltage from -120V to 120V represented as a digital signal </a>&nbsp; - Analog vs.&nbsp;Digital by Digikey.
-</p>
-<p>The number of <strong>discrete steps</strong> that a digital signal can use depends on how many bits are available for each recorded value. This is also called <strong>bit resolution</strong> (see <em>Sampling</em> below).</p>
-<p>For example, if a data point can only use one bit of definition, then it can only track on/off states, resulting in the red square wave seen above.</p>
-<p>However, if a data point can use 8 bits to store a value, then it can represent a value ranging from 0 to 255 (see the green sinusoidal voltage wave above).</p>
-</section>
-</section>
-<section id="analog-to-digital-conversion-adc" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="analog-to-digital-conversion-adc"><span class="header-section-number">3</span> Analog to Digital Conversion (ADC)</h2>
-<p>If most natural events are analog, how do we represent them in digital format? For example, if audio is analog, how can we get a computer to play music?</p>
-<blockquote class="blockquote">
-<p>An <strong>analog to digital converter (ADC)</strong> is a device that can read a analog signal and generate a digital representation of this signal.</p>
-</blockquote>
-<p>ADC’s are specific to the type of analog signal they are trying to read (sound, voltage, temperature, light, etc).</p>
-<p>Referring to the room temperature example used earlier, if we used a digital thermometer to record the temperature, our graph might look like the following:</p>
-<p><a href="assets/6-analog-digital-temp-sampling.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="assets/6-analog-digital-temp-sampling.png" class="img-fluid"></a></p>
-<p class="img-info">
-<a href="https://info.sparkfun.com/hubfs/Poster%20Downloads/Analog%20vs%20Digital/Concept%20Poster%20Analog%20vs%20Digital%20WEB.pdf"> Temperature represented as a digital reading </a>&nbsp; Poster: Analog and Digital Signals by Digikey.
-</p>
-<p>In the example above, a digital temperature reading was taken <strong>every 3hr</strong>.</p>
-<blockquote class="blockquote">
-<p>The digital signal representation of the temperature <strong>is not smooth or accurate</strong>.</p>
-<p>However, depending on the application <strong>it might be sufficient</strong>.</p>
-</blockquote>
-<p>To make the signal smoother or more representative of the real analog signal we need to take samples more regularly (eg. every 1min).</p>
-<p>The process of reading an analog signal over time to generate its digital representation is called <strong>sampling.</strong></p>
-</section>
-<section id="sampling" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="sampling"><span class="header-section-number">4</span> Sampling</h2>
-<p>Sampling is the process of inspecting the value of an analog signal at regular time intervals.</p>
-<p>When an ADC is sampling an analog signal, there are two variables that will characterize the digital output:</p>
-<ul>
-<li>Sampling rate.</li>
-<li>Bit resolution.</li>
-</ul>
-<blockquote class="blockquote">
-<p><strong>Music sampling</strong> Some music genres like rap and hip-hop commonly sample song segments from other artists to play in the background.</p>
-<ul>
-<li>The term <strong>sampling</strong> is used because traditionally song segments were extracted from vinyl records which produce analog sound and saved in digital formats.</li>
-</ul>
-</blockquote>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/hT_2kUx0AcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="">
-</iframe>
-<section id="sampling-rate" class="level3" data-number="4.1">
-<h3 data-number="4.1" class="anchored" data-anchor-id="sampling-rate"><span class="header-section-number">4.1</span> Sampling rate</h3>
-<p>The time between samples is the <strong>sample period</strong> (T, in seconds), and the number of samples taken per second is the <strong>sample frequency or sample rate</strong> (fs, in samples/second or Hz).</p>
-<p>Basically, <strong>sampling is taking snap-shot values of the analog signal at regular time intervals.</strong></p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="assets/6-analog-digital-sample-period.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Analog signal showing sample period and sample frequency"><img src="assets/6-analog-digital-sample-period.png" class="img-fluid figure-img" alt="Analog signal showing sample period and sample frequency"></a></p>
-<figcaption>Analog signal showing sample period and sample frequency</figcaption>
-</figure>
-</div>
-<p class="img-info">
-<a href="https://www.usna.edu/ECE/ec312/Lessons/wireless/EC312_Lesson_20_Analog_to_Digital_Course_Notes.pdf"> Sample period and fequency for an electric signal </a>&nbsp; - US Naval Academy.
-</p>
-<p><strong>Sampling period examples:</strong></p>
-<ul>
-<li>If a signal is sampled every half second (0.5s sampling period, <strong><em>T</em></strong>), the sample frequency (<strong>*f**</strong>) is 1/0.5s = 2 Hz (times per second).</li>
-<li>If the sample frequency (<strong><em>f</em></strong>) is 2000 Hz, the sampling period (<strong><em>T</em></strong>) is = 1/2000Hz = 0.0005 secs (0.5 milliseconds).</li>
-</ul>
-<p>The higher the sample rate, the more accurate the digital signal is.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="assets/6-analog-digital-increasing-sample-rate.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Signals of increasing sample rate"><img src="assets/6-analog-digital-increasing-sample-rate.png" class="img-fluid figure-img" alt="Signals of increasing sample rate"></a></p>
-<figcaption>Signals of increasing sample rate</figcaption>
-</figure>
-</div>
-<p class="img-info">
-<a href="https://www.usna.edu/ECE/ec312/Lessons/wireless/EC312_Lesson_20_Analog_to_Digital_Course_Notes.pdf"> Same signal sampled with different sample rates </a>&nbsp; - US Naval Academy.
-</p>
-</section>
-<section id="encoding-bit-resolution" class="level3" data-number="4.2">
-<h3 data-number="4.2" class="anchored" data-anchor-id="encoding-bit-resolution"><span class="header-section-number">4.2</span> Encoding &amp; Bit resolution</h3>
-<p>Encoding is the process of mapping the sampled analog signal value to discrete binary numbers (digital information).</p>
-<blockquote class="blockquote">
-<p>ADC devices are characterized by the <strong>number of bits available</strong> to represent a signal.</p>
-</blockquote>
-<p>For example, consider an electrical signal that ranges <strong>from -1 volts to to +1 volts</strong> and must be converted to a <strong>3 bit number</strong>.</p>
-</section>
-<section id="encoding-procedure" class="level3" data-number="4.3">
-<h3 data-number="4.3" class="anchored" data-anchor-id="encoding-procedure"><span class="header-section-number">4.3</span> Encoding Procedure</h3>
-<p>To approximate the numeric conversion from a voltage signal to a digital output, follow the steps below:</p>
-<ol type="1">
-<li><p>Identify the minimum and maximum voltage values that can be observed in the input.</p>
-<ul>
-<li>Example: -1 to +1 volts (2 volt range)</li>
+<li>(for now) have it inherit the same <code>Grove...</code> class, since it’s also an I2C-using module, the behaviour is similar enough for us to be happy, we can replace it later</li>
+<li>Ensure you use the correct default bus (1) and address (depends on the device)</li>
+<li>define a read method that returns a tuple with random numbers for all the readings</li>
 </ul></li>
-<li><p>Identify the minimum and maximum binary values that can generated as the output. Note the amount of unique numbers represented by this range</p>
+<li>Make a <code>Sensor</code> class for each reading in a similar style to my Temperature and Humidity sensors
 <ul>
-<li>Example: For a 3-bit number: 000 (decimal 0) is the minimum and 111 (decimal 7) is the maximum, making a total of 8 unique numbers.</li>
+<li>the <code>device</code> type should be the same (<code>Grove...</code>), so it can be the same type as your Mock class.</li>
+<li>the <code>measurement</code> should be a new <code>Measurement</code> type you create for that device.</li>
 </ul></li>
-<li><p>Divide the voltage range that will be observed (max voltage - min voltage) by the amount of unique binary numbers available. This will determine the voltage increment that each binary number represents.</p>
-<ul>
-<li>Example: (+1V - (-1V)) / 8 = 2V/8 = 0.25V</li>
-</ul></li>
-<li><p>Layout each binary number and their increments and read where the voltage values lie.</p></li>
-</ol>
-<p>Assuming the ADC has a resolution of 3 bits, all voltage values (-1V to 1V) must be represented with at most 3 bits, or 2^3 = 8 unique values (0 is a unique value).</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="assets/6-analog-digital-bit-resolution.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="voltage signal converted to a bit resolution of 3 bits"><img src="assets/6-analog-digital-bit-resolution.png" class="img-fluid figure-img" alt="voltage signal converted to a bit resolution of 3 bits"></a></p>
-<figcaption>voltage signal converted to a bit resolution of 3 bits</figcaption>
-</figure>
-</div>
-<p class="img-info">
-<a href="https://www.usna.edu/ECE/ec312/Lessons/wireless/EC312_Lesson_20_Analog_to_Digital_Course_Notes.pdf"> Voltage signal between -1V and 1V converted to digital with a 3 bit resolution </a>&nbsp; - US Naval Academy.
-</p>
-<p>In this case:</p>
-<ul>
-<li>000 is assigned to the voltages from -0.75 V to -1.0 V,</li>
-<li>001 is assigned to the voltages from -0.5 V to -0.749 V,</li>
-<li>010 is assigned to the voltages from -0.25 V to -0.49 V,</li>
-<li>and so on.</li>
+<li>Use your new <code>Sensor</code> classes the same way I used the Temperature and Humidity ones, that is, make sure the <code>device</code> controller gets them when the system is initiated</li>
+<li>You can now do everything you need to do to meet 100% of the A2/M4 requirements</li>
 </ul>
-<p>The binary representation of the above signal is:</p>
-<p>110 101 100 011 011 100 110 110 100 010 000 000 001</p>
-<p>If the sampling is happening 2000 times per second (Hz) and for every sample we generate 3 bits, we are generating 2000 x 3 bits = 6000 bits/sec of information. This is also know as the bitrate.</p>
-<p>If a song of 3 minutes is sampled with the same specs, how big will this file be in kB?</p>
-<p>What is the <a href="https://www.tunefab.com/tutorials/spotify-bitrate.html">bitrate of music on Spotify</a>?</p>
 </section>
-<section id="sensor-voltages-bit-resolution" class="level3" data-number="4.4">
-<h3 data-number="4.4" class="anchored" data-anchor-id="sensor-voltages-bit-resolution"><span class="header-section-number">4.4</span> Sensor voltages &amp; bit resolution</h3>
-<p>IoT systems typically work with electrical signals encoded in voltage levels.</p>
-<p>Every hardware that converts from analog to digital (and vice-versa) needs to have an appropriate ACD device.</p>
-<p>Microcontrollers are often used to process these signals because they often have an integrated ACD and they are very inexpensive.</p>
 </section>
-<section id="video-reference" class="level3" data-number="4.5">
-<h3 data-number="4.5" class="anchored" data-anchor-id="video-reference"><span class="header-section-number">4.5</span> Video Reference</h3>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/64FSgQdWHrE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
-</iframe>
+<section id="to-get-the-device-working" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="to-get-the-device-working"><span class="header-section-number">1.2</span> To get the device working</h3>
+<section id="i2c-devices" class="level4" data-number="1.2.1">
+<h4 data-number="1.2.1" class="anchored" data-anchor-id="i2c-devices"><span class="header-section-number">1.2.1</span> I2C devices</h4>
+<ul>
+<li>Use one of the three ports labelled “I2C” on your raspberry pi, plug the sensor in</li>
+<li>on your reterminal, run <code>i2cdetect -y 1</code>. The devices’ address should be “in use” once the device is plugged in</li>
+<li>See if you can get readings from the device using python. Try to find an <a href="https://github.com/ControlEverythingCommunity/TMG39931/blob/master/Python/TMG39931.py">example using the device in python</a></li>
+</ul>
+</section>
+</section>
+<section id="to-use-the-device-in-your-project-code" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="to-use-the-device-in-your-project-code"><span class="header-section-number">1.3</span> To use the device in your project code</h3>
+<section id="sensors-1" class="level4" data-number="1.3.1">
+<h4 data-number="1.3.1" class="anchored" data-anchor-id="sensors-1"><span class="header-section-number">1.3.1</span> Sensors</h4>
+<ul>
+<li>Make a new device class (e.g.&nbsp;<code>TMG39931</code> class in your device file e.g.&nbsp;<code>tmg39931.py</code>. It’s going to be really similar to the <code>Grove...</code> class in the <code>grove.py</code> library, except:
+<ul>
+<li><code>__init__</code> : the same, but use the correct default address and bus.</li>
+<li><code>read</code>: same idea, but customize according to the previous steps where you got readings from the device.</li>
+</ul></li>
+<li>Make your <code>Mock</code> class inherit from your new class instead</li>
+<li>Make your <code>Sensor</code> classes use your new class as the <code>device</code> instead</li>
+</ul>
 
 
+</section>
 </section>
 </section>
 
@@ -1370,49 +1185,17 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../notes/azure-portal/index.html" class="pagination-link" aria-label="Azure Portal Setup">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Azure Portal Setup</span>
+      <a href="../../notes/index.html" class="pagination-link" aria-label="All course notes">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">All course notes</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../notes/python-package-management/index.html" class="pagination-link" aria-label="Python package management">
-        <span class="nav-page-text">Python package management</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../notes/python-oop/index.html" class="pagination-link" aria-label="Python OOP">
+        <span class="nav-page-text">Python OOP</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
-(function() {
-  let previousOnload = window.onload;
-  window.onload = () => {
-    if (previousOnload) {
-      previousOnload();
-    }
-    lightboxQuarto.on('slide_before_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      const href = trigger.getAttribute('href');
-      if (href !== null) {
-        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-        if (imgEl !== null) {
-          const srcAttr = imgEl.getAttribute("src");
-          if (srcAttr && srcAttr.startsWith("data:")) {
-            slideConfig.href = srcAttr;
-          }
-        }
-      } 
-    });
-  
-    lightboxQuarto.on('slide_after_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(slideNode);
-      }
-    });
-  
-  };
-  
-})();
-          </script>
 
 
 
