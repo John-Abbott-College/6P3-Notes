@@ -5,6 +5,8 @@ subtitle: |
   Logging in Python with the logging module.
   Unit testing in python with pytest.
 date: 2025-05-05
+execute:
+  eval: false
 categories: [python]
 toc-expand: 2
 filters:
