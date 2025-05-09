@@ -201,7 +201,7 @@ az iot hub connection-string show \
   --hub-name ${IOTHUB_NAME}
 ```
 
-### EventHub connection string
+### IoT Hub EventHub-compatible connection string
 
 Needed for certain applications.
 
@@ -211,12 +211,30 @@ az iot hub connection-string show \
   --default-eventhub
 ```
 
+### EventHub Connection string
+
+Prerequisites:
+
+- you have an eventhub namespace
+- you have an eventhub
+- you have a shared access policy set for the eventhub
+
+```shell
+az eventhubs eventhub authorization-rule keys list \
+  --resource-group ${AZURE_RESOURCE_GROUP} \
+  --namespace-name ${AZURE_EVENTHUB_NAMESPACE} \
+  --eventhub-name ${AZURE_EVENTHUB_NAME} \
+  --name ${AZURE_SAS_POLICY}
+```
+
+See <https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-get-connection-string#azure-cli> for more details.
+
 ### Owner connection string
 
 NOT recommended, provides access to entire resource group.
 
 ```shell
-az iot hub connection-string  show --hub-name ${IOTHUB_NAME}
+az iot hub connection-string show --hub-name ${IOTHUB_NAME}
 ```
 
 See detailed documentation at learn.microsoft.com:
