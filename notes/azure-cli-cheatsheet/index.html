@@ -368,6 +368,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">Python package management</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../../notes/azure-message-routing/index.html">
+ <span class="dropdown-text">Message Routing</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../../notes/linux-package-management/index.html">
  <span class="dropdown-text">Linux package management</span></a>
   </li>  
@@ -573,6 +577,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../notes/azure-message-routing/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Message Routing</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../notes/linux-package-management/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Linux package management</span></a>
   </div>
@@ -703,8 +713,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#device-connection-string" id="toc-device-connection-string" class="nav-link" data-scroll-target="#device-connection-string"><span class="header-section-number">6.1</span> Device connection string</a></li>
   <li><a href="#service-connection-string" id="toc-service-connection-string" class="nav-link" data-scroll-target="#service-connection-string"><span class="header-section-number">6.2</span> Service connection string</a></li>
-  <li><a href="#eventhub-connection-string" id="toc-eventhub-connection-string" class="nav-link" data-scroll-target="#eventhub-connection-string"><span class="header-section-number">6.3</span> EventHub connection string</a></li>
-  <li><a href="#owner-connection-string" id="toc-owner-connection-string" class="nav-link" data-scroll-target="#owner-connection-string"><span class="header-section-number">6.4</span> Owner connection string</a></li>
+  <li><a href="#iot-hub-eventhub-compatible-connection-string" id="toc-iot-hub-eventhub-compatible-connection-string" class="nav-link" data-scroll-target="#iot-hub-eventhub-compatible-connection-string"><span class="header-section-number">6.3</span> IoT Hub EventHub-compatible connection string</a></li>
+  <li><a href="#eventhub-connection-string" id="toc-eventhub-connection-string" class="nav-link" data-scroll-target="#eventhub-connection-string"><span class="header-section-number">6.4</span> EventHub Connection string</a></li>
+  <li><a href="#owner-connection-string" id="toc-owner-connection-string" class="nav-link" data-scroll-target="#owner-connection-string"><span class="header-section-number">6.5</span> Owner connection string</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -742,7 +753,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">May 8, 2025</p>
+      <p class="date-modified">May 9, 2025</p>
     </div>
   </div>
     
@@ -936,17 +947,32 @@ Note
   --policy-name service \
   --hub-name ${IOTHUB_NAME}</code></pre>
 </section>
-<section id="eventhub-connection-string" class="level3" data-number="6.3">
-<h3 data-number="6.3" class="anchored" data-anchor-id="eventhub-connection-string"><span class="header-section-number">6.3</span> EventHub connection string</h3>
+<section id="iot-hub-eventhub-compatible-connection-string" class="level3" data-number="6.3">
+<h3 data-number="6.3" class="anchored" data-anchor-id="iot-hub-eventhub-compatible-connection-string"><span class="header-section-number">6.3</span> IoT Hub EventHub-compatible connection string</h3>
 <p>Needed for certain applications.</p>
 <pre class="shell"><code>az iot hub connection-string show \
   -n ${IOTHUB_NAME} \
   --default-eventhub</code></pre>
 </section>
-<section id="owner-connection-string" class="level3" data-number="6.4">
-<h3 data-number="6.4" class="anchored" data-anchor-id="owner-connection-string"><span class="header-section-number">6.4</span> Owner connection string</h3>
+<section id="eventhub-connection-string" class="level3" data-number="6.4">
+<h3 data-number="6.4" class="anchored" data-anchor-id="eventhub-connection-string"><span class="header-section-number">6.4</span> EventHub Connection string</h3>
+<p>Prerequisites:</p>
+<ul>
+<li>you have an eventhub namespace</li>
+<li>you have an eventhub</li>
+<li>you have a shared access policy set for the eventhub</li>
+</ul>
+<pre class="shell"><code>az eventhubs eventhub authorization-rule keys list \
+  --resource-group ${AZURE_RESOURCE_GROUP} \
+  --namespace-name ${AZURE_EVENTHUB_NAMESPACE} \
+  --eventhub-name ${AZURE_EVENTHUB_NAME} \
+  --name ${AZURE_SAS_POLICY}</code></pre>
+<p>See <a href="https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-get-connection-string#azure-cli" class="uri">https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-get-connection-string#azure-cli</a> for more details.</p>
+</section>
+<section id="owner-connection-string" class="level3" data-number="6.5">
+<h3 data-number="6.5" class="anchored" data-anchor-id="owner-connection-string"><span class="header-section-number">6.5</span> Owner connection string</h3>
 <p>NOT recommended, provides access to entire resource group.</p>
-<pre class="shell"><code>az iot hub connection-string  show --hub-name ${IOTHUB_NAME}</code></pre>
+<pre class="shell"><code>az iot hub connection-string show --hub-name ${IOTHUB_NAME}</code></pre>
 <p>See detailed documentation at learn.microsoft.com:</p>
 <ul>
 <li><a href="https://learn.microsoft.com/en-us/cli/azure/iot/hub/connection-string?view=azure-cli-latest"><code>az iot hub connection-string</code></a></li>
