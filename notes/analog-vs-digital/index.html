@@ -791,7 +791,7 @@ ul.task-list li input[type="checkbox"] {
 </blockquote>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://cdn.sparkfun.cassets/3/7/6/6/0/51c48875ce395f745a000000.png" class="img-fluid figure-img"></p>
+<p><img src="https://cdn.sparkfun.com/assets/3/7/6/6/0/51c48875ce395f745a000000.png" class="img-fluid figure-img"></p>
 <figcaption>Analog Sine Wave</figcaption>
 </figure>
 </div>
@@ -808,28 +808,40 @@ ul.task-list li input[type="checkbox"] {
 </blockquote>
 <p>Below is a the timing graph of a signal whose <strong>low voltage is 0 volts</strong> and <strong>high voltage is 5 volts</strong>.</p>
 <p>This type of signal is also known as a <strong>square waves</strong>.</p>
+<div id="fig-square-wave" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-square-wave-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://cdn.sparkfun.cassets/c/8/5/b/e/51c495ebce395f1b5a000000.png" class="img-fluid figure-img"></p>
+<p><img src="https://cdn.sparkfun.com/assets/c/8/5/b/e/51c495ebce395f1b5a000000.png" class="img-fluid figure-img"></p>
 <figcaption>Square wave signal. Two values, either 0V or 5V.</figcaption>
 </figure>
 </div>
-<p class="img-info">
-<a href="https://learn.sparkfun.com/tutorials/analog-vs-digital/all"> 0 to 5 volt “pulses” forming a square ware </a>&nbsp; - Analog vs.&nbsp;Digital by Digikey.
-</p>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-square-wave-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: 0 to 5 volt “pulses” forming a square wave. <a href="https://learn.sparkfun.com/tutorials/analog-vs-digital/all">Analog vs.&nbsp;Digital by Digikey</a>
+</figcaption>
+</figure>
+</div>
 <section id="digital-simulating-analogue" class="level3" data-number="2.1">
 <h3 data-number="2.1" class="anchored" data-anchor-id="digital-simulating-analogue"><span class="header-section-number">2.1</span> Digital Simulating Analogue</h3>
 <p>A digital signal might be a discrete representation of an analog waveform.</p>
 <p>Viewed from afar, the wave function below may seem smooth and analog, but when you look closely there are tiny discrete <strong>steps</strong> as the signal tries to approximate analog values.</p>
+<div id="fig-digital-simulating-analogue" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-digital-simulating-analogue-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://cdn.sparkfun.cassets/0/2/8/4/6/51c85fbece395fbc03000000.png" class="img-fluid figure-img"></p>
+<p><img src="https://cdn.sparkfun.com/assets/0/2/8/4/6/51c85fbece395fbc03000000.png" class="img-fluid figure-img"></p>
 <figcaption>Digital Sine Wave</figcaption>
 </figure>
 </div>
-<p class="img-info">
-<a href="https://learn.sparkfun.com/tutorials/analog-vs-digital/all"> Oscillating voltage from -120V to 120V represented as a digital signal </a>&nbsp; - Analog vs.&nbsp;Digital by Digikey.
-</p>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-digital-simulating-analogue-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Oscillating voltage from -120V to 120V approximated by overlapping digital signals. <a href="https://learn.sparkfun.com/tutorials/analog-vs-digital/all">Analog vs.&nbsp;Digital by Digikey</a>
+</figcaption>
+</figure>
+</div>
 <p>The number of <strong>discrete steps</strong> that a digital signal can use depends on how many bits are available for each recorded value. This is also called <strong>bit resolution</strong> (see <em>Sampling</em> below).</p>
 <p>For example, if a data point can only use one bit of definition, then it can only track on/off states, resulting in the red square wave seen above.</p>
 <p>However, if a data point can use 8 bits to store a value, then it can represent a value ranging from 0 to 255 (see the green sinusoidal voltage wave above).</p>
