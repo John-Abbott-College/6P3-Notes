@@ -1,0 +1,25 @@
+$if(has-frontmatter)$
+\frontmatter
+$endif$
+$if(title)$
+\maketitle
+$if(abstract)$
+\begin{abstract}
+$abstract$
+\end{abstract}
+$endif$
+$endif$
+
+\hrule
+
+\begin{table}[!h]
+%%%\centering
+{\def\arraystretch{1.5}\tabcolsep=0pt
+\begin{tabular}{p{0.4\linewidth}p{0.6\linewidth}}
+  \textbf{Student Name:} &  \\
+  \textbf{Student Number:} & \\ 
+\end{tabular}%
+}
+\end{table}
+
+\hrule
