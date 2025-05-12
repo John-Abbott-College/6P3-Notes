@@ -94,7 +94,7 @@ analog or digital.
 > A time-versus-voltage graph of an analog signal should be **smooth** and
 > **continuous**.
 
-[![Analog Sine Wave](https://cdn.sparkfun.cassets/3/7/6/6/0/51c48875ce395f745a000000.png)](https://cdn.sparkfun.com/assets/3/7/6/6/0/51c48875ce395f745a000000.png)
+[![Analog Sine Wave](https://cdn.sparkfun.com/assets/3/7/6/6/0/51c48875ce395f745a000000.png)](https://cdn.sparkfun.com/assets/3/7/6/6/0/51c48875ce395f745a000000.png)
 
 While these signals may be limited to a **range** of maximum and minimum values,
 there are still an infinite number of possible values within that range.
@@ -120,11 +120,13 @@ Below is a the timing graph of a signal whose **low voltage is 0 volts** and
 
 This type of signal is also known as a **square waves**.
 
-[![Square wave signal. Two values, either 0V or 5V.](https://cdn.sparkfun.cassets/c/8/5/b/e/51c495ebce395f1b5a000000.png)](https://cdn.sparkfun.com/assets/c/8/5/b/e/51c495ebce395f1b5a000000.png)
+::: {#fig-square-wave}
 
-<p class=img-info>
-	<a href="https://learn.sparkfun.com/tutorials/analog-vs-digital/all"> 0 to 5 volt "pulses" forming a square ware </a>&nbsp; - Analog vs. Digital by Digikey.
-</p>
+[![Square wave signal. Two values, either 0V or 5V.](https://cdn.sparkfun.com/assets/c/8/5/b/e/51c495ebce395f1b5a000000.png)](https://cdn.sparkfun.com/assets/c/8/5/b/e/51c495ebce395f1b5a000000.png)
+
+0 to 5 volt "pulses" forming a square wave. [Analog vs. Digital by Digikey](https://learn.sparkfun.com/tutorials/analog-vs-digital/all)
+
+:::
 
 ### Digital Simulating Analogue
 
@@ -134,11 +136,14 @@ Viewed from afar, the wave function below may seem smooth and analog, but when
 you look closely there are tiny discrete **steps** as the signal tries to
 approximate analog values.
 
-[![Digital Sine Wave](https://cdn.sparkfun.cassets/0/2/8/4/6/51c85fbece395fbc03000000.png)](https://cdn.sparkfun.com/assets/0/2/8/4/6/51c85fbece395fbc03000000.png)
+::: {#fig-digital-simulating-analogue}
 
-<p class=img-info>
-	<a href="https://learn.sparkfun.com/tutorials/analog-vs-digital/all"> Oscillating voltage from -120V to 120V represented as a digital signal </a>&nbsp; - Analog vs. Digital by Digikey.
-</p>
+[![Digital Sine Wave](https://cdn.sparkfun.com/assets/0/2/8/4/6/51c85fbece395fbc03000000.png)](https://cdn.sparkfun.com/assets/0/2/8/4/6/51c85fbece395fbc03000000.png)
+
+Oscillating voltage from -120V to 120V approximated by overlapping digital signals. [Analog vs. Digital by Digikey](https://learn.sparkfun.com/tutorials/analog-vs-digital/all)
+
+
+:::
 
 The number of **discrete steps** that a digital signal can use depends on how
 many bits are available for each recorded value. This is also called **bit
