@@ -195,32 +195,24 @@ failed. For example, turning on a light from a phone.
 The life-cycle of a Direct Method is as follows:
 
 1. A service application (such as a back-end or mobile app) sends a Direct
-   Method request to the device.
-
-   - This is typically done using a SDK library running on the application or
-     "manually" via a HTTPS call to IoT Hub.
-
-2. The device receives the Direct Method, processes it and prepares a response.
-
-   - Also typically done using a SDK library running on the device.
-
-3. The response is sent back to the sender of the Direct Method.
-
-4. The application inspects the response using a call-back function and decides
+   Method request to the device. This is typically done using a SDK library running on the application or "manually" via a HTTPS call to IoT Hub.
+    - For example using a C# app, see the sample C# repository we used in Lab 6, particularly
+    [`azure-iot-sdk-csharp/iothub/service/samples/getting started/InvokeDeviceMethod`](https://github.com/Azure/azure-iot-sdk-csharp/tree/86065001a92fedb42877722c6a57ae37e45eed30/iothub/service/samples/getting%20started/InvokeDeviceMethod).
+    - For example using the azure cli, see the Azure CLI cheatsheet notes: [`az iot invoke-device-method`](/notes/azure-cli-cheatsheet/#invoke-direct-method-on-device)
+1. The device receives the Direct Method, processes it and prepares a response.
+    - The [`IotHubDeviceClient`](https://learn.microsoft.com/en-us/python/api/azure-iot-device/azure.iot.device.iothubdeviceclient?view=azure-python)
+    from the `azure.iot.device.aio` library is used in python device code for asynchronous applications like ours.
+    - You can see an example using it in the sample python repository we used in Lab 6, particularly
+    [`azure-iot-sdk-python/samples/async-hub-scenarios/receive_direct_method.py`](https://github.com/Azure/azure-iot-sdk-python/blob/e75d1c2026eab939d5d31097fd0c22924c53abf8/samples/async-hub-scenarios/receive_direct_method.py) sample code.
+1. The response is sent back to the sender of the Direct Method.
+1. The application inspects the response using a call-back function and decides
    what to do next.
-   - Callback calls are typically provided by a SDK library running on the
-     application or "manually" by processing the HTTP response.
 
 For details see
 [Understand and invoke direct methods from IoT Hub](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-direct-methods)
 
 For examples of how to use Direct Methods, see
 [Quickstart: Control a device connected to an IoT hub](https://learn.microsoft.com/en-us/azure/iot-hub/quickstart-control-device?pivots=programming-language-csharp).
-
-You can also review [Lab 6]({{< var course.assessments.lab6 >}})
-we used the **InvokeDeviceMethod** sample service in this lab. You can use this
-code in your own project, modifying the direct method name to correspond to your
-use case (e.g. **lights-on** or **door-unlock**).
 
 ## Diving Deeper 🤿
 
