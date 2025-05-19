@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+cd /autograder/source
+python3.11 run_tests.py
