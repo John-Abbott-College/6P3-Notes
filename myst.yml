@@ -1,0 +1,15 @@
+# See docs at: https://mystmd.org/guide/frontmatter
+version: 1
+project:
+  id: 81312f60-1d04-4ca5-9bd8-cea636a69e66
+  # title:
+  # description:
+  # keywords: []
+  # authors: []
+  github: https://github.com/John-Abbott-College/6P3-Notes
+  # To autogenerate a Table of Contents, run "myst init --write-toc"
+site:
+  template: book-theme
+  # options:
+  #   favicon: favicon.ico
+  #   logo: site_logo.png

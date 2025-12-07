@@ -20,3 +20,6 @@ shell.nix
 /.quarto/
 **/_site/
 
+
+# MyST build outputs
+_build

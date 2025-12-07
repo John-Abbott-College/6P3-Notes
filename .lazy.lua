@@ -9,7 +9,7 @@ return {
 				["*"] = { "codespell" },
 			},
 			formatters = {
-        mdformat = {},
+				mdformat = {},
 				injected = {
 					options = {
 						ignore_errors = false,
