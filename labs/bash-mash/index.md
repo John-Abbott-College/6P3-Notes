@@ -1,6 +1,8 @@
-______________________________________________________________________
-
-## title: "Lab 2: Bash Mash" subtitle: Review bash fundamentals by completing the bandit game. date: 2025-02-01
+---
+title: 'Lab 2: Bash Mash'
+subtitle: Review bash fundamentals by completing the bandit game.
+date: 2025-02-01
+---
 
 ## Objectives
 
