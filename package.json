@@ -9,5 +9,11 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "packageManager": "pnpm@10.24.0"
+  "packageManager": "pnpm@10.24.0",
+  "dependencies": {
+    "commander": "^14.0.2",
+    "glob": "^13.0.0",
+    "js-yaml": "^4.1.1",
+    "myst-parser": "^1.6.3"
+  }
 }

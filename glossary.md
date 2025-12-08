@@ -8,6 +8,5 @@ description: Key concepts and jargon used throughout this course.
 [reTerminal](https://wiki.seeedstudio.com/reTerminal/)
 : The single-board-computer device we will be using this semester.
 
-
 :::
 

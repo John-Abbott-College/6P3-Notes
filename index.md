@@ -1,6 +1,5 @@
 ---
 title: "420-6P3: Connected Objects"
-subtitle: "John Abbott College | Winter 2026"
 ---
 
 ::::{grid} 1 2 2 2
@@ -36,33 +35,6 @@ Capstone project milestone instructions.
 :::
 
 ::::
-
-## Assessment Overview
-
-:::{list-table} Timeline
-
-* - Assessment
-  - Duration
-  - Core Concepts
-  - Key
-* - [](labs/digital-devices/index)
-  - 1.5 weeks
-  - GPIO digital interface
-  - Buttons, switches, toggles
-* - **Analog Device Labs**
-  - 1.5 weeks
-  - GPIO analog interface
-  - Joysticks, measurements
-* - **Assignment 1**
-  - 3 weeks
-  - Raspberry PI OS, GPIO devices, Bash/Python scripting
-  - CLI/Touchscreen app for managing a Pi and connected devices
-* - **Assignment 2**
-  - 3 weeks
-  - Advanced Python application development, GPIO protocols, Azure IoT Hub
-  - Extend Pi app for asynchronous functionality, remote deployment, advanced devices, and Azure IoT Hub API
-
-:::
 
 ```{mermaid}
 flowchart LR

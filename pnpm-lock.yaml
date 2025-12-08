@@ -6,4 +6,523 @@ settings:
 
 importers:
 
-  .: {}
+  .:
+    dependencies:
+      commander:
+        specifier: ^14.0.2
+        version: 14.0.2
+      glob:
+        specifier: ^13.0.0
+        version: 13.0.0
+      js-yaml:
+        specifier: ^4.1.1
+        version: 4.1.1
+      myst-parser:
+        specifier: ^1.6.3
+        version: 1.6.3
+
+packages:
+
+  '@isaacs/balanced-match@4.0.1':
+    resolution: {integrity: sha512-yzMTt9lEb8Gv7zRioUilSglI0c0smZ9k5D65677DLWLtWJaXIS3CqcGyUFByYKlnUj6TkjLVs54fBl6+TiGQDQ==}
+    engines: {node: 20 || >=22}
+
+  '@isaacs/brace-expansion@5.0.0':
+    resolution: {integrity: sha512-ZT55BDLV0yv0RBm2czMiZ+SqCGO7AvmOM3G/w2xhVPH+te0aKgFjmBvGlL1dH+ql2tgGO3MVrbb3jCKyvpgnxA==}
+    engines: {node: 20 || >=22}
+
+  '@types/linkify-it@3.0.5':
+    resolution: {integrity: sha512-yg6E+u0/+Zjva+buc3EIb+29XEg4wltq7cSmd4Uc2EE/1nUVmxyzpX6gUXD0V8jIrG0r7YeOGVIbYRkxeooCtw==}
+
+  '@types/markdown-it@13.0.9':
+    resolution: {integrity: sha512-1XPwR0+MgXLWfTn9gCsZ55AHOKW1WN+P9vr0PaQh5aerR9LLQXUbjfEAFhjmEmyoYFWAyuN2Mqkn40MZ4ukjBw==}
+
+  '@types/mdurl@1.0.5':
+    resolution: {integrity: sha512-6L6VymKTzYSrEf4Nev4Xa1LCHKrlTlYCBMTlQKFuddo1CvQcE52I0mwfOJayueUC7MJuXOeHTcIU683lzd0cUA==}
+
+  '@types/unist@2.0.11':
+    resolution: {integrity: sha512-CmBKiL6NNo/OqgmMn95Fk9Whlp2mtvIv+KNpQKN2F4SjvrEesubTRWGYSg+BnWZOnlCaSTU1sMpsBOzgbYhnsA==}
+
+  argparse@2.0.1:
+    resolution: {integrity: sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q==}
+
+  bail@2.0.2:
+    resolution: {integrity: sha512-0xO6mYd7JB2YesxDKplafRpsiOzPt9V02ddPCLbY1xYGPOX24NTyN50qnUxgCPcSoYMhKpAuBTjQoRZCAkUDRw==}
+
+  boolbase@1.0.0:
+    resolution: {integrity: sha512-JZOSA7Mo9sNGB8+UjSgzdLtokWAky1zbztM3WRLCbZ70/3cTANmQmOdR7y2g+J0e2WXywy1yS468tY+IruqEww==}
+
+  classnames@2.5.1:
+    resolution: {integrity: sha512-saHYOzhIQs6wy2sVxTM6bUDsQO4F50V9RQ22qBpEdCW+I+/Wmke2HOl6lS6dTpdxVhb88/I6+Hs+438c3lfUow==}
+
+  commander@14.0.2:
+    resolution: {integrity: sha512-TywoWNNRbhoD0BXs1P3ZEScW8W5iKrnbithIl0YH+uCmBd0QpPOA8yc82DS3BIE5Ma6FnBVUsJ7wVUDz4dvOWQ==}
+    engines: {node: '>=20'}
+
+  credit-roles@2.1.0:
+    resolution: {integrity: sha512-wt1jw7lDnzY1Ob4cDHpXboN4Bfu6l7reKal0zxtKnxogqw916l+Iu862LxIze4U4y44ssAd0TOQqVg2cXY2V6Q==}
+
+  css-selector-parser@1.4.1:
+    resolution: {integrity: sha512-HYPSb7y/Z7BNDCOrakL4raGO2zltZkbeXyAd6Tg9obzix6QhzxCotdBl6VT0Dv4vZfJGVz3WL/xaEI9Ly3ul0g==}
+
+  csv-parse@5.6.0:
+    resolution: {integrity: sha512-l3nz3euub2QMg5ouu5U09Ew9Wf6/wQ8I++ch1loQ0ljmzhmfZYrH9fflS22i/PQEvsPvxCwxgz5q7UB8K1JO4Q==}
+
+  doi-utils@2.0.6:
+    resolution: {integrity: sha512-QkaDmWbr5lIugDgl9fCxDMos2OJJ9Rp4c9XB7wgRGm6hJQ+hgeqI78DqToU8+vmtU+1XAyyVYJoLZUAgBdsFtg==}
+
+  entities@3.0.1:
+    resolution: {integrity: sha512-WiyBqoomrwMdFG1e0kqvASYfnlb0lp8M5o5Fw2OFq1hNZxxcNk8Ik0Xm7LxzBhuidnZB/UtBqVCgUz3kBOP51Q==}
+    engines: {node: '>=0.12'}
+
+  extend@3.0.2:
+    resolution: {integrity: sha512-fjquC59cD7CyW6urNXK0FBufkZcoiGG80wTuPujX590cB5Ttln20E2UB4S/WARVqhXffZl2LNgS+gQdPIIim/g==}
+
+  glob@13.0.0:
+    resolution: {integrity: sha512-tvZgpqk6fz4BaNZ66ZsRaZnbHvP/jG3uKJvAZOwEVUL4RTA5nJeeLYfyN9/VA8NX/V3IBG+hkeuGpKjvELkVhA==}
+    engines: {node: 20 || >=22}
+
+  he@1.2.0:
+    resolution: {integrity: sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==}
+    hasBin: true
+
+  is-buffer@2.0.5:
+    resolution: {integrity: sha512-i2R6zNFDwgEHJyQUtJEk0XFi1i0dPFn/oqjK3/vPCcDeJvW5NQ83V8QbicfF1SupOaB0h8ntgBC2YiE7dfyctQ==}
+    engines: {node: '>=4'}
+
+  is-plain-obj@4.1.0:
+    resolution: {integrity: sha512-+Pgi+vMuUNkJyExiMBt5IlFoMyKnr5zhJ4Uspz58WOhBF5QoIZkFyNHIbBAtHwzVAgk5RtndVNsDRN61/mmDqg==}
+    engines: {node: '>=12'}
+
+  js-yaml@4.1.1:
+    resolution: {integrity: sha512-qQKT4zQxXl8lLwBtHMWwaTcGfFOZviOJet3Oy/xmGk2gZH677CJM9EvtfdSkgWcATZhj/55JZ0rmy3myCT5lsA==}
+    hasBin: true
+
+  linkify-it@4.0.1:
+    resolution: {integrity: sha512-C7bfi1UZmoj8+PQx22XyeXCuBlokoyWQL5pWSP+EI6nzRylyThouddufc2c1NDIcP9k5agmN9fLpA7VNJfIiqw==}
+
+  lru-cache@11.2.4:
+    resolution: {integrity: sha512-B5Y16Jr9LB9dHVkh6ZevG+vAbOsNOYCX+sXvFWFu7B3Iz5mijW3zdbMyhsh8ANd2mSWBYdJgnqi+mL7/LrOPYg==}
+    engines: {node: 20 || >=22}
+
+  markdown-it-amsmath@0.4.0:
+    resolution: {integrity: sha512-wWGX5bpHu9iq4cqi/U58srCH0js5ws7X3BrQZcN2/anQ9S4P8MpvTxHLCZC2rmGHA6mSZf4PKWF6caBc+nxH2g==}
+    engines: {node: '>=16', npm: '>=6'}
+    peerDependencies:
+      markdown-it: ^12 || ^13
+
+  markdown-it-deflist@2.1.0:
+    resolution: {integrity: sha512-3OuqoRUlSxJiuQYu0cWTLHNhhq2xtoSFqsZK8plANg91+RJQU1ziQ6lA2LzmFAEes18uPBsHZpcX6We5l76Nzg==}
+
+  markdown-it-dollarmath@0.5.0:
+    resolution: {integrity: sha512-W+8se6cx6vowjzRAfDbHDPBQ+Y9G/8M/JZSFiaYvT0HqfwyFK1hIA1Xj360Nc3ymknKgdDVoL5fI8XjAqZF3tg==}
+    engines: {node: '>=16', npm: '>=6'}
+    peerDependencies:
+      markdown-it: ^12 || ^13
+
+  markdown-it-footnote@4.0.0:
+    resolution: {integrity: sha512-WYJ7urf+khJYl3DqofQpYfEYkZKbmXmwxQV8c8mO/hGIhgZ1wOe7R4HLFNwqx7TjILbnC98fuyeSsin19JdFcQ==}
+
+  markdown-it-front-matter@0.2.4:
+    resolution: {integrity: sha512-25GUs0yjS2hLl8zAemVndeEzThB1p42yxuDEKbd4JlL3jiz+jsm6e56Ya8B0VREOkNxLYB4TTwaoPJ3ElMmW+w==}
+
+  markdown-it-myst-extras@0.3.0:
+    resolution: {integrity: sha512-678qviK97MEzSM9Hr0jlX5nBPzMcKZo6Ixgh4nEf/WYpii8LXQ72FametoXkzyDy77qNKDE3vlqYhqfbbCGHrw==}
+    engines: {node: '>=16', npm: '>=6'}
+    peerDependencies:
+      markdown-it: ^12 || ^13
+
+  markdown-it-myst@1.0.14:
+    resolution: {integrity: sha512-Kmo+EtY6Oku0RmDJA4FOSPGRvlOAzwoCjdWDRWMSKw8tN8cNx1HEpshfFHZDlrRlmtt5UySJwT4ABWtbLgaZHQ==}
+    peerDependencies:
+      '@types/markdown-it': ^13.0.1
+      markdown-it: ^13.0.1
+
+  markdown-it-task-lists@2.1.1:
+    resolution: {integrity: sha512-TxFAc76Jnhb2OUu+n3yz9RMu4CwGfaT788br6HhEDlvWfdeJcLUsxk1Hgw2yJio0OXsxv7pyIPmvECY7bMbluA==}
+
+  markdown-it@13.0.2:
+    resolution: {integrity: sha512-FtwnEuuK+2yVU7goGn/MJ0WBZMM9ZPgU9spqlFs7/A/pDIUNSOQZhUgOqYCficIuR2QaFnrt8LHqBWsbTAoI5w==}
+    hasBin: true
+
+  mdast@3.0.0:
+    resolution: {integrity: sha512-xySmf8g4fPKMeC07jXGz971EkLbWAJ83s4US2Tj9lEdnZ142UP5grN73H1Xd3HzrdbU5o9GYYP/y8F9ZSwLE9g==}
+    deprecated: '`mdast` was renamed to `remark`'
+
+  mdurl@1.0.1:
+    resolution: {integrity: sha512-/sKlQJCBYVY9Ers9hqzKou4H6V5UWc/M59TH2dvkt+84itfnq7uFOMLpOiOS4ujvHP4etln18fmIxA5R5fll0g==}
+
+  minimatch@10.1.1:
+    resolution: {integrity: sha512-enIvLvRAFZYXJzkCYG5RKmPfrFArdLv+R+lbQ53BmIMLIry74bjKzX6iHAm8WYamJkhSSEabrWN5D97XnKObjQ==}
+    engines: {node: 20 || >=22}
+
+  minipass@7.1.2:
+    resolution: {integrity: sha512-qOOzS1cBTWYF4BH8fVePDBOO9iptMnGUEZwNc/cMWnTV2nVLZ7VoNWEPHkYczZA0pdoA7dl6e7FL659nX9S2aw==}
+    engines: {node: '>=16 || 14 >=14.17'}
+
+  myst-common@1.9.2:
+    resolution: {integrity: sha512-m5Gznow6c7Q6uFp3lP4xKp0GBSWMQTgAHxGoQaWw44mSORNFWWw9RXe68k8MIMyvGCITEdKdBrK2HRM756DzYw==}
+
+  myst-directives@1.6.3:
+    resolution: {integrity: sha512-gfBc5USPfNpRn8qtRylvYNvdioRqpMMgyO4Tcgy+SvJZ8LvgGSEszKGLB/RYep4ahJrML2j8RdwLc3/0uuAe/Q==}
+
+  myst-frontmatter@1.9.2:
+    resolution: {integrity: sha512-99u6vbiNEeOSbdgoS5lzJ4ARhdIaWtAeg4AoIY85Ycl0mzA9SCttz+cD4f7SRMjxo3WWqb1LJ5Iy4oLTteyDDQ==}
+
+  myst-parser@1.6.3:
+    resolution: {integrity: sha512-MeZf9qR++4XXVe7vNgmcKGG6jpjZZzfuJgPjfzf3OeeZNJsv34yaKuIY0BNYM/vc6aRQ9UhNvP4YOA8nICGqNA==}
+
+  myst-roles@1.6.3:
+    resolution: {integrity: sha512-FMcVe/jjwlM+V/rzNH+A0pbYUfTYZM00YyvWAfT5OjfrWwYBracUJO9xprULlbhEm6vpFqGiKMj1hdRRXzvvJA==}
+
+  myst-spec-ext@1.9.2:
+    resolution: {integrity: sha512-twI4+56hMAygAAZPTNiY7PAyiI08T9WBXZumag915axOHw+zx6XXej6QrVb6M12urvANI3dygZWfIy0NJaa6wA==}
+
+  myst-spec@0.0.5:
+    resolution: {integrity: sha512-L/4TV1l5ZbWUOgSnXqiYrx192SV4I+HqjX7TBQ4k02/heeNFckpkUIyLulraap5heTyLcJs8UYBxu+Kv5JiiRw==}
+
+  myst-toc@0.1.3:
+    resolution: {integrity: sha512-X5MrAeR+jlanAd7xNsDeC+A8GDQRjhj5u9lmwtsIMzHuxzZ5ttt/91ZJKCh0MfeQUgtHPzp1ZAeeEHMLjXAsUQ==}
+
+  nanoid@5.1.6:
+    resolution: {integrity: sha512-c7+7RQ+dMB5dPwwCp4ee1/iV/q2P6aK1mTZcfr1BTuVlyW9hJYiMPybJCcnBlQtuSmTIWNeazm/zqNoZSSElBg==}
+    engines: {node: ^18 || >=20}
+    hasBin: true
+
+  nth-check@2.1.1:
+    resolution: {integrity: sha512-lqjrjmaOoAnWfMmBPL+XNnynZh2+swxiX3WUE0s4yEHI6m+AwrK2UZOimIRl3X/4QctVqS8AiZjFqyOGrMXb/w==}
+
+  orcid@1.0.0:
+    resolution: {integrity: sha512-zdRFh+1FAZt0Vy9XaKNu+5h4zXC2pkunZH8MV7tSGoq54skik8nxn5ks3E9f33m+tPxuliSRzEHz7owb1Z0HYg==}
+    hasBin: true
+
+  path-scurry@2.0.1:
+    resolution: {integrity: sha512-oWyT4gICAu+kaA7QWk/jvCHWarMKNs6pXOGWKDTr7cw4IGcUbW+PeTfbaQiLGheFRpjo6O9J0PmyMfQPjH71oA==}
+    engines: {node: 20 || >=22}
+
+  simple-validators@1.1.1:
+    resolution: {integrity: sha512-/+gpAy4BVCR1zk1Pf8q1lvEQMeTC8a1vEiGnTjfe45MTgqerZzNHAxbnS+72jJvv5FCUanyKT4QfZT3cUFpbDw==}
+
+  spdx-correct@3.2.0:
+    resolution: {integrity: sha512-kN9dJbvnySHULIluDHy32WHRUu3Og7B9sbY7tsFLctQkIqnMh3hErYgdMjTYuqmcXX+lK5T1lnUt3G7zNswmZA==}
+
+  spdx-exceptions@2.5.0:
+    resolution: {integrity: sha512-PiU42r+xO4UbUS1buo3LPJkjlO7430Xn5SVAhdpzzsPHsjbYVflnnFdATgabnLude+Cqu25p6N+g2lw/PFsa4w==}
+
+  spdx-expression-parse@3.0.1:
+    resolution: {integrity: sha512-cbqHunsQWnJNE6KhVSMsMeH5H/L9EpymbzqTQ3uLwNCLZ1Q481oWaofqH7nO6V07xlXwY6PhQdQ2IedWx/ZK4Q==}
+
+  spdx-license-ids@3.0.22:
+    resolution: {integrity: sha512-4PRT4nh1EImPbt2jASOKHX7PB7I+e4IWNLvkKFDxNhJlfjbYlleYQh285Z/3mPTHSAK/AvdMmw5BNNuYH8ShgQ==}
+
+  trough@2.2.0:
+    resolution: {integrity: sha512-tmMpK00BjZiUyVyvrBK7knerNgmgvcV/KLVyuma/SC+TQN167GrMRciANTz09+k3zW8L8t60jWO1GpfkZdjTaw==}
+
+  uc.micro@1.0.6:
+    resolution: {integrity: sha512-8Y75pvTYkLJW2hWQHXxoqRgV7qb9B+9vFEtidML+7koHUFapnVJAZ6cKs+Qjz5Aw3aZWHMC6u0wJE3At+nSGwA==}
+
+  unified@10.1.2:
+    resolution: {integrity: sha512-pUSWAi/RAnVy1Pif2kAoeWNBa3JVrx0MId2LASj8G+7AiHWoKZNTomq6LG326T68U7/e263X6fTdcXIy7XnF7Q==}
+
+  unist-builder@3.0.1:
+    resolution: {integrity: sha512-gnpOw7DIpCA0vpr6NqdPvTWnlPTApCTRzr+38E6hCWx3rz/cjo83SsKIlS1Z+L5ttScQ2AwutNnb8+tAvpb6qQ==}
+
+  unist-util-is@5.2.1:
+    resolution: {integrity: sha512-u9njyyfEh43npf1M+yGKDGVPbY/JWEemg5nH05ncKPfi+kBbKBJoTdsogMu33uhytuLlv9y0O7GH7fEdwLdLQw==}
+
+  unist-util-remove@3.1.1:
+    resolution: {integrity: sha512-kfCqZK5YVY5yEa89tvpl7KnBBHu2c6CzMkqHUrlOqaRgGOMp0sMvwWOVrbAtj03KhovQB7i96Gda72v/EFE0vw==}
+
+  unist-util-select@4.0.3:
+    resolution: {integrity: sha512-1074+K9VyR3NyUz3lgNtHKm7ln+jSZXtLJM4E22uVuoFn88a/Go2pX8dusrt/W+KWH1ncn8jcd8uCQuvXb/fXA==}
+
+  unist-util-stringify-position@3.0.3:
+    resolution: {integrity: sha512-k5GzIBZ/QatR8N5X2y+drfpWG8IDBzdnVj6OInRNWm1oXrzydiaAT2OQiA8DPRRZyAKb9b6I2a6PxYklZD0gKg==}
+
+  unist-util-visit-parents@5.1.3:
+    resolution: {integrity: sha512-x6+y8g7wWMyQhL1iZfhIPhDAs7Xwbn9nRosDXl7qoPTSCy0yNxnKc+hWokFifWQIDGi154rdUqKvbCa4+1kLhg==}
+
+  unist-util-visit@4.1.2:
+    resolution: {integrity: sha512-MSd8OUGISqHdVvfY9TPhyK2VdUrPgxkUtWSuMHF6XAAFuL4LokseigBnZtPnJMu+FbynTkFNnFlyjxpVKujMRg==}
+
+  vfile-message@3.1.4:
+    resolution: {integrity: sha512-fa0Z6P8HUrQN4BZaX05SIVXic+7kE3b05PWAtPuYP9QLHsLKYR7/AlLW3NtOrpXRLeawpDLMsVkmk5DG0NXgWw==}
+
+  vfile@5.3.7:
+    resolution: {integrity: sha512-r7qlzkgErKjobAmyNIkkSpizsFPYiUPuJb5pNW1RB4JcYVZhs4lIbVqk8XPk033CV/1z8ss5pkax8SuhGpcG8g==}
+
+  zwitch@2.0.4:
+    resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
+
+snapshots:
+
+  '@isaacs/balanced-match@4.0.1': {}
+
+  '@isaacs/brace-expansion@5.0.0':
+    dependencies:
+      '@isaacs/balanced-match': 4.0.1
+
+  '@types/linkify-it@3.0.5': {}
+
+  '@types/markdown-it@13.0.9':
+    dependencies:
+      '@types/linkify-it': 3.0.5
+      '@types/mdurl': 1.0.5
+
+  '@types/mdurl@1.0.5': {}
+
+  '@types/unist@2.0.11': {}
+
+  argparse@2.0.1: {}
+
+  bail@2.0.2: {}
+
+  boolbase@1.0.0: {}
+
+  classnames@2.5.1: {}
+
+  commander@14.0.2: {}
+
+  credit-roles@2.1.0: {}
+
+  css-selector-parser@1.4.1: {}
+
+  csv-parse@5.6.0: {}
+
+  doi-utils@2.0.6: {}
+
+  entities@3.0.1: {}
+
+  extend@3.0.2: {}
+
+  glob@13.0.0:
+    dependencies:
+      minimatch: 10.1.1
+      minipass: 7.1.2
+      path-scurry: 2.0.1
+
+  he@1.2.0: {}
+
+  is-buffer@2.0.5: {}
+
+  is-plain-obj@4.1.0: {}
+
+  js-yaml@4.1.1:
+    dependencies:
+      argparse: 2.0.1
+
+  linkify-it@4.0.1:
+    dependencies:
+      uc.micro: 1.0.6
+
+  lru-cache@11.2.4: {}
+
+  markdown-it-amsmath@0.4.0(markdown-it@13.0.2):
+    dependencies:
+      markdown-it: 13.0.2
+
+  markdown-it-deflist@2.1.0: {}
+
+  markdown-it-dollarmath@0.5.0(markdown-it@13.0.2):
+    dependencies:
+      markdown-it: 13.0.2
+
+  markdown-it-footnote@4.0.0: {}
+
+  markdown-it-front-matter@0.2.4: {}
+
+  markdown-it-myst-extras@0.3.0(markdown-it@13.0.2):
+    dependencies:
+      markdown-it: 13.0.2
+
+  markdown-it-myst@1.0.14(@types/markdown-it@13.0.9)(markdown-it@13.0.2):
+    dependencies:
+      '@types/markdown-it': 13.0.9
+      js-yaml: 4.1.1
+      markdown-it: 13.0.2
+      vfile: 5.3.7
+
+  markdown-it-task-lists@2.1.1: {}
+
+  markdown-it@13.0.2:
+    dependencies:
+      argparse: 2.0.1
+      entities: 3.0.1
+      linkify-it: 4.0.1
+      mdurl: 1.0.1
+      uc.micro: 1.0.6
+
+  mdast@3.0.0: {}
+
+  mdurl@1.0.1: {}
+
+  minimatch@10.1.1:
+    dependencies:
+      '@isaacs/brace-expansion': 5.0.0
+
+  minipass@7.1.2: {}
+
+  myst-common@1.9.2:
+    dependencies:
+      mdast: 3.0.0
+      myst-frontmatter: 1.9.2
+      myst-spec: 0.0.5
+      nanoid: 5.1.6
+      unified: 10.1.2
+      unist-util-remove: 3.1.1
+      unist-util-select: 4.0.3
+      unist-util-visit: 4.1.2
+      vfile: 5.3.7
+      vfile-message: 3.1.4
+
+  myst-directives@1.6.3:
+    dependencies:
+      classnames: 2.5.1
+      csv-parse: 5.6.0
+      js-yaml: 4.1.1
+      myst-common: 1.9.2
+      myst-spec-ext: 1.9.2
+      nanoid: 5.1.6
+      unist-util-select: 4.0.3
+      vfile: 5.3.7
+
+  myst-frontmatter@1.9.2:
+    dependencies:
+      credit-roles: 2.1.0
+      doi-utils: 2.0.6
+      myst-toc: 0.1.3
+      orcid: 1.0.0
+      simple-validators: 1.1.1
+      spdx-correct: 3.2.0
+
+  myst-parser@1.6.3:
+    dependencies:
+      '@types/markdown-it': 13.0.9
+      he: 1.2.0
+      markdown-it: 13.0.2
+      markdown-it-amsmath: 0.4.0(markdown-it@13.0.2)
+      markdown-it-deflist: 2.1.0
+      markdown-it-dollarmath: 0.5.0(markdown-it@13.0.2)
+      markdown-it-footnote: 4.0.0
+      markdown-it-front-matter: 0.2.4
+      markdown-it-myst: 1.0.14(@types/markdown-it@13.0.9)(markdown-it@13.0.2)
+      markdown-it-myst-extras: 0.3.0(markdown-it@13.0.2)
+      markdown-it-task-lists: 2.1.1
+      myst-common: 1.9.2
+      myst-directives: 1.6.3
+      myst-roles: 1.6.3
+      myst-spec: 0.0.5
+      unified: 10.1.2
+      unist-builder: 3.0.1
+      unist-util-remove: 3.1.1
+      unist-util-select: 4.0.3
+      unist-util-visit: 4.1.2
+      vfile: 5.3.7
+
+  myst-roles@1.6.3:
+    dependencies:
+      myst-common: 1.9.2
+      myst-spec-ext: 1.9.2
+
+  myst-spec-ext@1.9.2:
+    dependencies:
+      myst-spec: 0.0.5
+
+  myst-spec@0.0.5: {}
+
+  myst-toc@0.1.3:
+    dependencies:
+      simple-validators: 1.1.1
+
+  nanoid@5.1.6: {}
+
+  nth-check@2.1.1:
+    dependencies:
+      boolbase: 1.0.0
+
+  orcid@1.0.0: {}
+
+  path-scurry@2.0.1:
+    dependencies:
+      lru-cache: 11.2.4
+      minipass: 7.1.2
+
+  simple-validators@1.1.1: {}
+
+  spdx-correct@3.2.0:
+    dependencies:
+      spdx-expression-parse: 3.0.1
+      spdx-license-ids: 3.0.22
+
+  spdx-exceptions@2.5.0: {}
+
+  spdx-expression-parse@3.0.1:
+    dependencies:
+      spdx-exceptions: 2.5.0
+      spdx-license-ids: 3.0.22
+
+  spdx-license-ids@3.0.22: {}
+
+  trough@2.2.0: {}
+
+  uc.micro@1.0.6: {}
+
+  unified@10.1.2:
+    dependencies:
+      '@types/unist': 2.0.11
+      bail: 2.0.2
+      extend: 3.0.2
+      is-buffer: 2.0.5
+      is-plain-obj: 4.1.0
+      trough: 2.2.0
+      vfile: 5.3.7
+
+  unist-builder@3.0.1:
+    dependencies:
+      '@types/unist': 2.0.11
+
+  unist-util-is@5.2.1:
+    dependencies:
+      '@types/unist': 2.0.11
+
+  unist-util-remove@3.1.1:
+    dependencies:
+      '@types/unist': 2.0.11
+      unist-util-is: 5.2.1
+      unist-util-visit-parents: 5.1.3
+
+  unist-util-select@4.0.3:
+    dependencies:
+      '@types/unist': 2.0.11
+      css-selector-parser: 1.4.1
+      nth-check: 2.1.1
+      zwitch: 2.0.4
+
+  unist-util-stringify-position@3.0.3:
+    dependencies:
+      '@types/unist': 2.0.11
+
+  unist-util-visit-parents@5.1.3:
+    dependencies:
+      '@types/unist': 2.0.11
+      unist-util-is: 5.2.1
+
+  unist-util-visit@4.1.2:
+    dependencies:
+      '@types/unist': 2.0.11
+      unist-util-is: 5.2.1
+      unist-util-visit-parents: 5.1.3
+
+  vfile-message@3.1.4:
+    dependencies:
+      '@types/unist': 2.0.11
+      unist-util-stringify-position: 3.0.3
+
+  vfile@5.3.7:
+    dependencies:
+      '@types/unist': 2.0.11
+      is-buffer: 2.0.5
+      unist-util-stringify-position: 3.0.3
+      vfile-message: 3.1.4
+
+  zwitch@2.0.4: {}

@@ -22,10 +22,22 @@ project:
     content: CC-BY-4.0
     code: GPL-3.0-or-later
 
+  plugins:
+    - type: javascript
+      path: _static/plugins/listing.mjs
+
+  toc:
+    - file: index.md
+    - file: lectures/index.md
+    - file: labs/index.md
+    - file: assignments/index.md
+    - file: project/index.md
+    - file: glossary.md
+
 site:
   template: book-theme
   title: "420-6P3: Connected Objects"
   options:
     folders: true
     favicon: _static/favicon_io/favicon.ico
-    logo: _static/favicon_io/favicon-32x32.png
+    logo: _static/media/full-logo.svg
