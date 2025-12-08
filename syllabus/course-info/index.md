@@ -1,12 +1,8 @@
 ---
-title: Syllabus
-subtitle: >
+title: Course Info
+description: |
   Course description outlining goals, expectations, resources, and other
   important information.
-format:
-  html:
-    toc: true
-    date-modified: last-modified
 date: 2025-01-20
 ---
 

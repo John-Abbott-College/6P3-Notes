@@ -28,6 +28,11 @@ project:
 
   toc:
     - file: index.md
+    - title: Syllabus
+      children:
+        - file: syllabus/course-info/index.md
+        - file: syllabus/schedule/index.md
+        - file: syllabus/about/index.md
     - file: lectures/index.md
     - file: labs/index.md
     - file: assignments/index.md

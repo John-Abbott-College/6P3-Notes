@@ -1,45 +1,60 @@
 ---
-title: Calendar
-subtitle: >
+title: Schedule
+description: |
   Roadmap for course deliverables; record of lectures & activites we have
   covered along the way.
-format:
-  html:
-    toc: true
-    date-modified: last-modified
 date: 2025-01-20
 ---
 
 This is the authoritative calendar for content covered in class, and for content
 you should expect to see covered as we continue through the course.
 
-::: {.column-margin}
-![The focused pupil keeps watch on Time](assets/ticktock.jpg)
+:::{figure} assets/ticktock.jpg
+:figclass: float-right ml-4
+
+The focused pupil keeps watch on Time
+
 :::
 
-You can compare this calendar with the calendar from the [Course Outline]({{< var course.outline >}})
-to see where this course has deviated from the original outline.
+:::{list-table}
+:header-rows: 1
+:widths: auto
 
-## Deliverables
+* - **Monday**
+  - **Friday**
+* - Jan 19
+  - Jan 23
+* - Jan 26
+  - Jan 30
+* - Feb 2
+  - Feb 6
+* - Feb 9
+  - Feb 13
+* - Feb 16
+  - Feb 20
+* - Feb 23
+  - Feb 27
+* - Mar 2: March Break
+  - Mar 6: March Break
+* - Mar 9
+  - Mar 13
+* - Mar 16
+  - Mar 20
+* - Mar 23
+  - Mar 27
+* - Mar 30
+  - Apr 3: Good Friday
+* - Apr 6: Good Friday
+  - Apr 10
+* - Apr 13
+  - Apr 17
+* - Apr 20
+  - Apr 24
+* - Apr 27
+  - May 1
+* - May 4
+  - May 8
+* - May 11
+  - May 12
 
-1. [Lab 0: dev env setup and bash review][lab-0]: Due January 31 (Demo: in-class. Code: end of day 11:59pm)
-1. [Lab 1: git good, bash better][lab-1]: Due February 10 end of day 11:59pm
-1. [Lab 2: Reusing functions in bash][lab-2]: Due February 24 end of day 11:59pm
-
-[lab-0]: https://www.gradescope.ca/courses/24517/assignments/127573
-[lab-1]: https://www.gradescope.ca/courses/24517/assignments/127640
-[lab-2]: https://www.gradescope.ca/courses/24517/assignments/130309
-
-## Lectures
-
-- Jan 20: Introduction to course
-- Jan 24: Setting up developer environment
-- Jan 27: Review bash, begin Lab 0
-- Jan 31: Work on Lab 0
-- Feb 3: Begin Lab 1
-- Feb 7: (class cancelled, continue lab 1)
-- Feb 10: Finish Lab 1
-- Feb 14: Start Lab 2
-- Feb 17: Class cancelled due to storm
-- Feb 21: Continue work on Lab 2
-- Feb 24: Begin Lab 3
+:::

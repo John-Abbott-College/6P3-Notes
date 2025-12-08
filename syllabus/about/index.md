@@ -1,11 +1,8 @@
 ---
 title: About this website
-subtitle:
+description: |
   Description of technologies and resources used to build this website.
   Acknowledgements, copyright, terms of use, etc. can be found on this page.
-format:
-  html:
-    toc: true
 date: 2025-01-20
 ---
 
