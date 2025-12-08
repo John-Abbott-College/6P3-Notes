@@ -1,8 +1,43 @@
-# Drafting things out
+---
+title: "420-6P3: Connected Objects"
+subtitle: "John Abbott College | Winter 2026"
+---
 
-## Project Timeline & Core Concepts
+::::{grid} 1 2 2 2
 
-- [](./labs/digital-devices/index.md)
+:::{grid-item-card} 📋 **Syllabus**
+:link: about/syllabus
+Course policies & expectations.
+:::
+
+:::{grid-item-card} 📋 **Calendar**
+:link: about/calendar
+Tentative schedule of major course events.
+:::
+
+:::{grid-item-card} 🛠️ **Lectures**
+:link: lectures/index
+Course material notes.
+:::
+
+:::{grid-item-card} 🎯 **Labs**
+:link: labs/index
+In-class lab instructions.
+:::
+
+:::{grid-item-card} 🎯 **Assignments**
+:link: assignments/index
+Take-home assignment instructions.
+:::
+
+:::{grid-item-card} 🎯 **Project Milestones**
+:link: project/index
+Capstone project milestone instructions.
+:::
+
+::::
+
+## Assessment Overview
 
 :::{list-table} Timeline
 
@@ -10,7 +45,7 @@
   - Duration
   - Core Concepts
   - Key
-* - **[](/labs/digital-devices/index.md)**
+* - [](labs/digital-devices/index)
   - 1.5 weeks
   - GPIO digital interface
   - Buttons, switches, toggles

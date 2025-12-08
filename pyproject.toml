@@ -23,7 +23,6 @@ format = [
     "mdformat-ruff>=0.1.3",
     "mdformat-beautysh>=0.1.1",
     "mdformat-config>=0.2.1",
-    "mdformat-frontmatter>=2.0.8",
     "mdformat-footnote>=0.1.1",
     "mdformat-deflist>=0.1.3",
     "mdformat-simple-breaks>=0.0.1",

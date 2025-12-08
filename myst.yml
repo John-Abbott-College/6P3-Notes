@@ -2,14 +2,26 @@
 version: 1
 project:
   id: 81312f60-1d04-4ca5-9bd8-cea636a69e66
-  # title:
-  # description:
+  title: "420-6P3: Connected Objects"
+  description: |
+    This course will introduce students to the principles of the Internet of Things (IoT).
+    Students will use Python on Raspberry Pi in order to read data from sensors and control actuators.
   # keywords: []
-  # authors: []
+  authors:
+    - name: Michael Haaf
+      email: michael.haaf@johnabbott.qc.ca
+      affiliations:
+        - John Abbott College
+      # orcid: 0000-0002-5236-598X
+
+  subject: Connected Objects
+
   github: https://github.com/John-Abbott-College/6P3-Notes
   # To autogenerate a Table of Contents, run "myst init --write-toc"
 site:
   template: book-theme
-  # options:
-  #   favicon: favicon.ico
-  #   logo: site_logo.png
+  title: "420-6P3: Connected Objects"
+  options:
+    folders: true
+    favicon: _static/favicon_io/favicon.ico
+    logo: _static/favicon_io/favicon-32x32.png
