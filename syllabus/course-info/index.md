@@ -39,6 +39,8 @@ date: 2026-01-01
 - 35% Project Milestones
 
 ```{mermaid}
+:class: col-page-right
+
 flowchart LR
 
     subgraph Labs
