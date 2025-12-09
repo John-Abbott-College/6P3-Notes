@@ -61,15 +61,15 @@ There are many ways to do this:
 - Using VSCode
 - Using the command line
 
-#### Using the GitHub website<a name="using-the-github-website"></a>
+#### Using the GitHub website
 
 See [the "using GitHub" section of the course notes on this topic](https://john-abbott-college.github.io/6P3-Notes/notes/github-basics/#creating-a-branch-using-the-github-website).
 
-#### Using VSCode<a name="using-vscode"></a>
+#### Using VSCode
 
 See [the "using VSCode" section of the course notes on this topic](https://john-abbott-college.github.io/6P3-Notes/notes/github-basics/#creating-a-branch-using-vscode).
 
-#### Using the command line<a name="using-the-command-line"></a>
+#### Using the command line
 
 See [the "using the command line" section of the course notes on this topic](https://john-abbott-college.github.io/6P3-Notes/notes/github-basics/#creating-a-branch-using-the-command-line).
 
@@ -77,7 +77,7 @@ See [the "using the command line" section of the course notes on this topic](htt
 
 As the semester progresses, new labs will appear in this repository on the `instructions` branch.
 
-![Synchronizing your repo fork when instructions update.](assets/README/sync-instructions.png)
+![Synchronizing your repo fork when instructions update.](assets/sync-instructions.png)
 
 *A "Sync fork" dropdown will appear whenever the upstream repository has instruction updates*
 
@@ -93,27 +93,27 @@ Once you have made a few commits to your `lab-*` working branch, you can set up 
 
 First, created a branch called `completed-labs` in this repo.
 
-![Creating a completed labs branch](assets/README/completed-labs-branch.png)
+![Creating a completed labs branch](assets/completed-labs-branch.png)
 
 *Creating this branch is the same as creating any other branch. Just make sure the source branch is still `instructions` on your repo.*
 
 Next, create a pull request between your `lab-*` branch and the `completed-labs` branch:
 
-![Creating pull request](assets/README/completed-labs-pull-request.png)
+![Creating pull request](assets/completed-labs-pull-request.png)
 
 *Here is what your lab-0 (and all other lab) pull requests should look like: **your-username** wants to merge n commits into `completed-labs` from `lab-*`*
 
 You don't have to wait until you're finished your lab to make the pull request. As you continue pushing to `lab-*`, your commits will automatically show in the pull request:
 
-![Updating a pull request](assets/README/labwork-branch-update.png)
+![Updating a pull request](assets/labwork-branch-update.png)
 
 *After creating a 4th commit and pushing that commit to the `lab-0` branch, the pull request was  updated automatically.*
 
 After the lab deadline, I will put feedback in the pull request between your lab work branch and the `completed-labs` branch.
 
-## Troubleshooting<a name="troubleshooting"></a>
+## Troubleshooting
 
-### `instructions` branch has conflicts<a name="instructions-branch-has-conflicts"></a>
+### `instructions` branch has conflicts
 
 In general, you should not make ANY commits to the `instructions` branch.
 
@@ -150,7 +150,7 @@ You can skip the above steps if you don't care about your changes.
 
 Click "Sync fork" and choose the "Discard commits" option.
 
-![If you make any commits to instructions, you'll have to discard them when there are updates.](assets/README/keep-instructions-branch-clean.png)
+![If you make any commits to instructions, you'll have to discard them when there are updates.](assets/keep-instructions-branch-clean.png)
 
 *On the `instructions` branch, you should Discard any commits you accidentally make to ensure your instructions are up to date*
 

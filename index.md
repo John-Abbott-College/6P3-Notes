@@ -5,32 +5,32 @@ title: "420-6P3: Connected Objects"
 ::::{grid} 1 2 2 2
 
 :::{grid-item-card} 📋 **Syllabus**
-:link: about/syllabus
+:link: syllabus/course-info
 Course policies & expectations.
 :::
 
-:::{grid-item-card} 📋 **Calendar**
-:link: about/calendar
+:::{grid-item-card} 📋 **Schedule**
+:link: syllabus/schedule
 Tentative schedule of major course events.
 :::
 
 :::{grid-item-card} 🛠️ **Lectures**
-:link: lectures/index
+:link: lectures
 Course material notes.
 :::
 
 :::{grid-item-card} 🎯 **Labs**
-:link: labs/index
+:link: labs
 In-class lab instructions.
 :::
 
 :::{grid-item-card} 🎯 **Assignments**
-:link: assignments/index
+:link: assignments
 Take-home assignment instructions.
 :::
 
 :::{grid-item-card} 🎯 **Project Milestones**
-:link: project/index
+:link: project
 Capstone project milestone instructions.
 :::
 
