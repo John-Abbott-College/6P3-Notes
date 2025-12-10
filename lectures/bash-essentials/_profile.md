@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 Every time you log in to a linux user, the `~/.profile` file is read and executed.
 
 The typical usecases for customizing `~/.profile` are:

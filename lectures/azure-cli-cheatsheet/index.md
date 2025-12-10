@@ -11,7 +11,7 @@ Here is a list of commands we'll commonly use with Azure CLI.
 
 ### Requirements
 
-- Azure CLI is installed: see [Azure CLI Installation Instructions](/notes/azure-features/#azure-cli)
+- Azure CLI is installed: see [Azure CLI Installation Instructions](/lectures/azure-features/index.md#azure-cli)
 - Azure IoT extension enabled: `az extension add --name azure-iot`
 
 You can check that both requirements are met with the command `az --version`.
@@ -22,8 +22,8 @@ To register a [device](https://learn.microsoft.com/en-us/azure/iot/iot-glossary?
 on IoTHub in Azure CLI, use the `az iot hub device-identity create` command:
 
 ::: {.callout-note .column-margin}
-Recall that [Bash environment variables](/notes/bash-scripting/#environment-variables) allow you to store strings in a shell session.
-You can save environment variables in a project `.env` file that you can [`source`](/notes/bash-scripting#code-reuse) later.
+Recall that [Bash environment variables](/lectures/bash-scripting/index.md#environment-variables) allow you to store strings in a shell session.
+You can save environment variables in a project `.env` file that you can [`source`](/lectures/bash-scripting/index.md#code-reuse) later.
 :::
 
 ```bash
@@ -47,7 +47,7 @@ $ az iot device simulate -d ${IOT_DEVICE_NAME} -n ${IOTHUB_NAME}
 
 ::: {.callout-note .column-margin}
 The `az iot device simulate` command runs for a few minutes unless interrupted by the user.
-Use [Bash Process Control keyboard shortcuts](/notes/bash-essentials/#process-control)
+Use [Bash Process Control keyboard shortcuts](/lectures/bash-essentials/index.md#keyboard-shortcuts)
 to suspend, resume, scroll through the output, etc.!
 :::
 
@@ -64,8 +64,8 @@ See `az iot device simulate`
 You can monitor all actions in an Azure IOT Hub using the `az iot hub monitor-events` command:
 
 ::: {.callout-note .column-margin}
-[Bash Process Control keyboard shortcuts](/notes/bash-essentials/#process-control)
-and [Bash redirection and pipes](/notes/bash-essentials/#redirection-and-pipes) are useful for
+[Bash Process Control keyboard shortcuts](/lectures/bash-essentials/index.md#keyboard-shortcuts)
+and [Bash redirection and pipes](/lectures/bash-essentials/index.md#redirection-and-pipes) are useful for
 pausing/continuing/scrolling/parsing the `az iot hub monitor-events` command.
 :::
 
@@ -83,7 +83,7 @@ If you are having `uamqp` errors when using this command, try installing it in `
 (.venv) $ pip install uamqp
 ```
 
-If the above is giving you issues, see the [course notes on installing azure cli](/notes/azure-features#azure-cli)
+If the above is giving you issues, see the [course notes on installing azure cli](/lectures/azure-features#azure-cli)
 for more troubleshooting info.
 :::
 
@@ -171,14 +171,14 @@ az iot hub device-twin show -d ${IOT_DEVICE_NAME} --query properties.reported -n
 
 ## Connection Strings
 
-Connection Strings provide authentication for most [Azure SDK](/notes/azure-sdks) commands, both in Python and C#.
+Connection Strings provide authentication for most [Azure SDK](/lectures/azure-sdks/index.md) commands, both in Python and C#.
 
 The sections below give example commands for Azure CLI connection strings retrieval.
 
 ::: {.callout-note .column-margin}
-[Bash redirection and pipes](/notes/bash-essentials/#redirection-and-pipes) are useful
-tools for saving the output of these connection string commands as [environment variables](/notes/bash-scripting/#environment-variables).
-You can save environment variables in a project `.env` file that you can [`source`](/notes/bash-scripting#code-reuse) later.
+[Bash redirection and pipes](/lectures/bash-essentials/index.md#redirection-and-pipes) are useful
+tools for saving the output of these connection string commands as [environment variables](/lectures/bash-scripting/index.md#environment-variables).
+You can save environment variables in a project `.env` file that you can [`source`](/lectures/bash-scripting/index.md#code-reuse) later.
 :::
 
 ### Device connection string

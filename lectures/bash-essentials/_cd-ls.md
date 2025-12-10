@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 #### `cd`
 
 Useful shorthands for `cd` to know:

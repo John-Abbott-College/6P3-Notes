@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 
 _This section was adapted from [@IllustratedRedirectionTutorial2023]_
 

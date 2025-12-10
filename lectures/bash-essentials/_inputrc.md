@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 _This section was adapted from [@HowToBashStartup]._
 
 The library that is used to implement a command line interface for bash is called the

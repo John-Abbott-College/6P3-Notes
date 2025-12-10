@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 #### `sort`
 
 _The following section was adapted from [@CLITextProcessing]_

@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 Every time you open a new terminal window/tab in the bash shell, the `~/.bashrc` file is
 read and executed.
 

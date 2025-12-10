@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 _This section was adapted from [@GNUTar135]._
 
 The specific usecases for `tar`/`zip`/`unzip` are similar but vary slightly.

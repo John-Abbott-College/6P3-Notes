@@ -1,18 +1,13 @@
 ---
 title: Bash essentials
-subtitle: >
+description: |
   Tips for using the bash interactive shell CLI effectively.
   The core bash commands everyone should know.
   How to combine commands using pipes and redirects.
-date: 2025-01-31
-categories: [bash]
-bibliography: references.bib
-nocite: |
-  @*
-image: https://tiswww.case.edu/php/chet/img/bash-logo-web.png
+date: 2026-01-01
 ---
 
-::: {.column-margin}
+:::{margin}
 
 ![[Image source](https://tiswww.case.edu/php/chet/bash/bashtop.html)](https://tiswww.case.edu/php/chet/img/bash-logo-web.png)
 

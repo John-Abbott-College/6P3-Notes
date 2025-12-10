@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 _This section was adapted from [@BashKeyboardShortcuts]._
 
 #### Completions

@@ -49,7 +49,7 @@ myst_enable_extensions = [
     "tasklist",
 ]
 myst_title_to_header = True
-myst_heading_anchors = 3
+myst_heading_anchors = 4
 myst_enable_checkboxes = True
 
 templates_path = ['_templates']
@@ -59,6 +59,7 @@ exclude_patterns = [
     '.DS_Store',
     ".venv",
     "README.md",
+    "**/_*",
 ]
 
 
