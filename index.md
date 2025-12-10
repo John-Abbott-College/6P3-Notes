@@ -2,6 +2,18 @@
 title: "420-6P3: Connected Objects"
 ---
 
+```{toctree}
+:hidden:
+:glob:
+
+syllabus/*
+lectures/*
+labs/*
+assignments/*
+project/*
+```
+
+
 ::::{grid} 1 2 2 2
 
 :::{grid-item-card} 📋 **Syllabus**

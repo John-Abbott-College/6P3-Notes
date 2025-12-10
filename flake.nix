@@ -15,23 +15,6 @@
             python314
             uv # Modern Python dependency manager replacing virtualenv and pip
           ];
-          nodeEnvPkgs = with pkgs; [
-            nodejs_24 # Required for myst
-            nodePackages.pnpm
-            (yarn.override { nodejs = nodejs_24; })
-          ];
-
-          tex = pkgs.texlive.combine {
-            inherit (pkgs.texlive)
-              scheme-small latex-bin latexmk xelatex-dev exam minted enumitem
-              titlesec wrapfig changepage framed;
-          };
-          documentationPkgs = with pkgs; [
-            typst # Used for PDF generation
-            imagemagick # Required to process SVGs for PDFs
-            tex
-          ];
-
           pythonCLibraries = with pkgs; [
             # On Nix at least, a few C-libraries are needed explicitly for LD path.
             gcc
@@ -48,8 +31,7 @@
             libxcb-cursor
             wayland
           ];
-          allPackages = pythonEnvPkgs ++ nodeEnvPkgs ++ pythonCLibraries
-            ++ documentationPkgs;
+          allPackages = pythonEnvPkgs ++ pythonCLibraries;
         in {
           default = pkgs.mkShell {
             packages = allPackages;
@@ -62,7 +44,6 @@
               unset PYTHONPATH
               uv sync
               . .venv/bin/activate
-              pnpm install --prefer-frozen-lockfile
             '';
           };
         });

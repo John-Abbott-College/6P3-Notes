@@ -35,8 +35,8 @@ date: 2025-03-14
 - On your developer machine:
   - [Clone this repository onto your developer environment](https://code.visualstudio.com/docs/sourcecontrol/intro-to-git#_clone-a-repository-locally)
 - On this repository:
-  - [Pull in the latest instruction changes](../README.md#keep-instructions-up-to-date)
-  - [Create the lab-0 branch](../README.md#create-a-branch-for-each-lab)
+  - [Pull in the latest instruction changes](../index.md#keep-instructions-up-to-date)
+  - [Create the lab-0 branch](../index.md#create-a-branch-for-each-lab)
   - Once you've finished the linked instructions, the **CAUTION** note at the top of these instructions (`lab-0/README.md`) will disappear.
 
 > [!NOTE]

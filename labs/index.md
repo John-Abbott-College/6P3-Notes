@@ -12,11 +12,9 @@ This year should be similar (there may be more labs, but each worth less).
 
 ## Lab listing
 
-:::{listing}
-:contents: labs/*/*.md
-:type: table
-:table-columns: title, description, date
-
+:::{toctree}
+:glob:
+*/*
 :::
 
 
