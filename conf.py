@@ -19,7 +19,6 @@ extensions = [
     "sphinx.ext.githubpages",
     "sphinx_design",
     "sphinx_favicon",
-    # "sphinx_tags",
     "sphinx_prompt",
     "sphinx_comments",
     "sphinxext.opengraph",
@@ -30,8 +29,6 @@ extensions = [
     "sphinxemoji.sphinxemoji",
 ]
 
-tags_create_tags = True
-tags_extension = ["md"]
 hoverxref_auto_ref = True
 # bibtex_bibfiles = ["references.bib"]
 
@@ -68,10 +65,14 @@ exclude_patterns = [
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_theme = "sphinx_book_theme"
-html_logo = "_static/media/full-logo.svg"
 html_title = "Connected Objects"
 html_theme_options = {
     "repository_url": "https://github.com/john-abbott-college/6P3-Notes",
     "use_repository_button": True,
+    "use_download_button": False,
+    "logo": {
+        "image_light": "_static/media/full-logo.svg",
+        "image_dark": "_static/media/full-logo.svg",
+    },
 }
 html_static_path = ['_static']
