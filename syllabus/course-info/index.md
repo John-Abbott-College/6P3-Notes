@@ -17,7 +17,7 @@ date: 2026-01-01
     - Mon/Fri 11:00 - 12:30pm or so
 * - **Contact**
   - - Email: <michael.haaf@johnabbott.qc.ca>
-    - Teams: [by appointment](example.org)
+    - Teams: [by appointment](https://outlook.office.com/bookwithme/user/bb6851a40ff04274b1ff9235a53689a2@johnabbott.qc.ca/meetingtype/Hx2ErZEHCU2qd7CHXikwSQ2?bookingcode=cad3aaae-2f64-466b-bb46-052ad43fbe92&anonymous&ismsaljsauthenabled&ep=mlink)
 * - **Websites**
   - - Course content: <https://john-abbott-college.github.io/6P3-Notes>
     - GitHub organization: [420-6P3-W26](https://github.com/420-6P3-W26)
