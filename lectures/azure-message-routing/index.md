@@ -17,7 +17,7 @@ Message routing involves the following steps:
 3. Set a routing query that will "catch" the message into the route.
 	- The default routing query is `true`, which matches all messages.
 
-::: {#fig-message-routing .column-margin}
+::: {#fig-message-routing margin}
 
 ![](assets/storage-message-routing.png)
 

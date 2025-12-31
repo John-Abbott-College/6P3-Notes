@@ -23,7 +23,7 @@ twin_:
 Note that **Device Twins are not appropriate for high-frequency communication**
 such as sending telemetry data from device to cloud. For this, use **D2C
 messages** (see
-[the course notes about device-cloud communication](/notes/device-cloud-communication)).
+[the course notes about device-cloud communication](/lectures/device-cloud-communication)).
 
 ## Device Twin Anatomy
 
@@ -66,7 +66,7 @@ The inverse is true for the device app.
 
 The following example shows a device twin JSON document:
 
-```json
+```{code-block} json
 {
     "deviceId": "devA",
     "etag": "AAAAAAAAAAc=",
@@ -143,7 +143,7 @@ collection on the device.
 configuration value. Below is the portion of the document with the desired
 property:
 
-```json
+```{code-block} json
 "desired": {
     "telemetryConfig": {
 	    "sendFrequency": "5m"
@@ -167,7 +167,7 @@ according to the application logic.
 (or an error condition using the `status` property). Below is the portion of the
 document with the reported property:
 
-```json
+```{code-block} json
 "reported": {
     "telemetryConfig": {
         "sendFrequency": "5m",

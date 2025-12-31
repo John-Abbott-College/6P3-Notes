@@ -57,7 +57,7 @@ cloud or solution back end:
 
 - [Device twin's reported properties](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-device-twins)
   for reporting device state information such as configuration or last known
-  state. [Course notes on Device twins](/notes/device-twins)
+  state. [Course notes on Device twins](/lectures/device-twins)
 
 ## Cloud to Device (C2D) Communication
 
@@ -74,7 +74,7 @@ from the cloud or back-end app:
 - [Twin's desired properties](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-device-twins)
   for long-running commands intended to put the device into a certain desired
   state. For example, set the telemetry send interval to 30 minutes.
-  [Course notes on Device twins](/notes/device-twins)
+  [Course notes on Device twins](/lectures/device-twins)
 
 ## End-points
 
@@ -198,7 +198,7 @@ The life-cycle of a Direct Method is as follows:
    Method request to the device. This is typically done using a SDK library running on the application or "manually" via a HTTPS call to IoT Hub.
     - For example using a C# app, see the sample C# repository we used in Lab 6, particularly
     [`azure-iot-sdk-csharp/iothub/service/samples/getting started/InvokeDeviceMethod`](https://github.com/Azure/azure-iot-sdk-csharp/tree/86065001a92fedb42877722c6a57ae37e45eed30/iothub/service/samples/getting%20started/InvokeDeviceMethod).
-    - For example using the azure cli, see the Azure CLI cheatsheet notes: [`az iot invoke-device-method`](/notes/azure-cli-cheatsheet/#invoke-direct-method-on-device)
+    - For example using the azure cli, see the Azure CLI cheatsheet notes: [`az iot invoke-device-method`](/lectures/azure-cli-cheatsheet/#invoke-direct-method-on-device)
 1. The device receives the Direct Method, processes it and prepares a response.
     - The [`IotHubDeviceClient`](https://learn.microsoft.com/en-us/python/api/azure-iot-device/azure.iot.device.iothubdeviceclient?view=azure-python)
     from the `azure.iot.device.aio` library is used in python device code for asynchronous applications like ours.

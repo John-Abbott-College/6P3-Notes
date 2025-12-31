@@ -33,7 +33,7 @@ There is a bit of set-up for `lab-0`, but it will be re-used for future labs.
 Your repository begins with just one branch:
 
 - `instructions`:
-  - This branch is set to track my [Labwork-Upstream](https://github.com/420-6P3-W25/Labwork-Upstream)[^upstream] repository.
+  - This branch is set to track my [Labwork-Upstream](https://github.com/420-6P3-W26/Labwork-Upstream)[^upstream] repository.
   - **DO NOT commit any work to this branch!**
   - Your `instructions` branch will be overwritten by any changes I make to the upstream `instructions` branch.
 
@@ -61,15 +61,15 @@ There are many ways to do this:
 
 #### Using the GitHub website
 
-See [the "using GitHub" section of the course notes on this topic](https://john-abbott-college.github.io/6P3-Notes/notes/github-basics/#creating-a-branch-using-the-github-website).
+See [the "using GitHub" section of the course notes on this topic](/lectures/github-basics/#creating-a-branch-using-the-github-website).
 
 #### Using VSCode
 
-See [the "using VSCode" section of the course notes on this topic](https://john-abbott-college.github.io/6P3-Notes/notes/github-basics/#creating-a-branch-using-vscode).
+See [the "using VSCode" section of the course notes on this topic](/lectures/github-basics/#creating-a-branch-using-vscode).
 
 #### Using the command line
 
-See [the "using the command line" section of the course notes on this topic](https://john-abbott-college.github.io/6P3-Notes/notes/github-basics/#creating-a-branch-using-the-command-line).
+See [the "using the command line" section of the course notes on this topic](/lectures/github-basics/#creating-a-branch-using-the-command-line).
 
 ### Keep `instructions` up to date
 

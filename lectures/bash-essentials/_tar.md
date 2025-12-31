@@ -58,7 +58,7 @@ $ tar -c -z -f collection.tar.gz music
 $ tar -cjf collection.tar.bz2 music
 ```
 
-::: {.callout-important .column-margin}
+::: {note margin}
 
 When using `--create` or `-c`, `tar` will **overwrite** current contents of the file named
 by `-f`. To add files to an existing archive, you need to use `--append` or `-r`.

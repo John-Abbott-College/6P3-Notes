@@ -211,7 +211,7 @@ Quick Start
 IoT Example
 : [Create an IoT hub with Azure portal](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal)
 
-::: {#fig-azure-portal .column-margin}
+::: {#fig-azure-portal margin}
 
 ![](assets/azure-portal-example.png)
 
@@ -227,7 +227,7 @@ One very useful feature of Azure Portal is the data analysis and presentation so
 Without any extra configuration, all IoT commands and actions are logged and stored on the Azure Portal, and
 visualizations of data usage can be easily displayed for verification/debugging/analysis.
 
-::: {#fig-azure-metrics .column-margin}
+::: {#fig-azure-metrics margin}
 
 ![](assets/azure-metrics.png)
 
@@ -263,9 +263,9 @@ Documentation
 Installation
 : `azure-cli` is a python package we can install in a virtual environment:
 
-::: {.callout-note .column-margin}
+::: {note margin}
 If you're having issues installing `azure-cli`, make sure your system `python` is up to date.
-Revist the [course notes for installing developer environment dependencies](/notes/developer-environment/#install-dependencies),
+Revist the [course notes for installing developer environment dependencies](/lectures/developer-environment/#install-dependencies),
 and make sure your system packages and python libraries are up to date.
 Then, delete your existing virtual environment and recreate it with the updated `python`.
 :::
@@ -279,7 +279,7 @@ $ python -m venv .venv
 (.venv) $ pip install azure-cli
 ```
 
-::: {.callout-warning}
+::: {warning margin}
 If you are having errors installing `uamqp`, try the following:
 
 ```bash

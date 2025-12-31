@@ -13,7 +13,7 @@ working:
 1. System update using `apt`: during the semester, some changes that break
    raspberry pi and reTerminal compatibility are introduced, necessitating another update
    and another run of the
-   [Display driver fix scripts.](/notes/reterminal-setup/#display-driver-fix)
+   [Display driver fix scripts.](/lectures/reterminal-setup/#display-driver-fix)
 2. Errors introduced from mistakes when editing firmware files like
    `/boot/firmware/*.txt` and/or `/boot/cmdline.txt` and/or `/boot/config.txt`
 3. Errors introduced from an incomplete upgrade (interrupted before finishing).
@@ -31,7 +31,7 @@ Most likely it is the case that your reterminal is still connecting to the inter
 1. Double check that you can see your reterminal in tailscale by running `tailscale status` on your developer machine. `ssh` into the device using this IP address.
     1. If for some reason your device is offline on tailscale, try to determine its local ip address using your router webpage (at home). `ssh` into reterminal using this ip address
 1. Once you have an `ssh` connection, follow the steps from the course notes:
-   [Display driver fix scripts](/notes/reterminal-setup/#display-driver-fix)
+   [Display driver fix scripts](/lectures/reterminal-setup/#display-driver-fix)
 
 ## If you cannot `ssh` into your reTerminal
 
@@ -60,7 +60,7 @@ reTerminal storage_ on to a workstation and then _fix the firmware files
 directly on that workstation_.
 
 The steps will look similar to Lab 1, except we won't be reimaging the device at
-the end. You should open [Reterminal Setup instructons](/notes/reterminal-setup)
+the end. You should open [Reterminal Setup instructons](/lectures/reterminal-setup)
 for reference while you are working. The following steps will be necessary:
 
 0. Make sure your reTerminal is entirely unplugged and powered off.

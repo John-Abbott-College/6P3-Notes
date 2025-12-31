@@ -145,7 +145,7 @@ This section explains configuring the following in a python project:
 Project dependencies can be listed in a file for portability. By convention, the file
 [`requirements.txt`](https://pip.pypa.io/en/stable/reference/requirements-file-format/)
 contains all the dependencies of a project created with a
-[virtual environment](/notes/python-package-management/#how-virtual-environments-solve-the-pip-problem).
+[virtual environment](/lectures/python-package-management/#how-virtual-environments-solve-the-pip-problem).
 
 > This is analogous to `package.json` for Node.Js projects
 
@@ -222,7 +222,7 @@ This is entered under a `[project]` field in the `.toml` file.
 
 If/when your project is distributed on <https://pypi.org/>, this field will be the name of the project there.
 
-::: {.column-margin}
+::: {margin}
 Comparison of project names is **case insensitive** and treats runs of underscores, hyphens, and/or periods equivalently.
 For example, if you register a project named `cool-stuff`, users will be able to download it or declare a dependency on it
 using any of the following spellings: `Cool-Stuff`, `cool.stuff`, `COOL_STUFF`, `CoOl__-.-__sTuFF`
@@ -237,7 +237,7 @@ The project name must consist of ASCII letters, digits, underscores “_”, hyp
 It must not start or end with an underscore, hyphen or period.
 
 There are many more metadata properties that can be set in the `[project]` section of the config file.
-See the [Other project metadata section](#other-project-metadata) for more.
+See the [Other project metadata section](#project-metadata) for more.
 
 #### Replacing `requirements.txt`
 
@@ -360,7 +360,7 @@ mypackage/
 
 In `mymodule.py` :
 
-```{.python filename=mymodule.py}
+```python {filename=mymodule.py}
 # Exported function
 def get_temperature():
     return 23.45
@@ -371,7 +371,7 @@ if __name__ == '__main__':
 
 In `myothermodule.py` :
 
-```{.python filename=myothermodule.py}
+```python {filename=myothermodule.py}
 # Relative import using `.` for current directory, `..` for parent directory.
 from .mymodule import get_temperature
 
@@ -385,7 +385,7 @@ if __name__ == '__main__':
 
 In `main.py` :
 
-```{.python filename=main.py}
+```python {filename=main.py}
 from mypackage.myothermodule import announce_weather
 
 def main():

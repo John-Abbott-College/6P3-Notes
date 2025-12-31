@@ -148,7 +148,7 @@ SYNOPSIS
 
 ## The five fingers of death
 
-:::{.column-margin}
+:::{margin}
 
 ![*Five Fingers of Death*, or *King Boxer* as it is known on Wikipedia, is a martial-arts movie I have not seen, but I have heard referenced in many songs. It speaks to me that the mastery of a seemlingly small set tools (five fingers) can lead to drastic increases in capability (the ability to inflict death) and I believe this spirit applies directly to working with unix tools. [Image source](https://theactionelite.com/five-fingers-of-death-1972-review/)](https://theactionelite.com/wp-content/uploads/2019/04/GetAttachmentThumbnail.jpg)
 

@@ -15,7 +15,7 @@ format:
     toc-expand: 2
 ---
 
-:::{.column-margin}
+:::{margin}
 ![Image source: [tudoubaba.net](https://tudoubaba.net/ProgrammingHandbook/python/python_shebang.html)](https://tudoubaba.net/assets/img/shebang.72b91b53.png)
 :::
 
@@ -72,7 +72,7 @@ echo ${hello}
 375
 ```
 
-:::{.callout-note .column-margin}
+:::{note margin}
 No spaces are permitted on either side of `=` sign when initializing variables.
 :::
 
@@ -449,7 +449,7 @@ test expression
 [ expression ]
 ```
 
-::: {.column-margin}
+::: {margin}
 Notice the spaces between the `[` `]` braces and the `expression` -- the whitespace is required.
 :::
 

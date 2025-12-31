@@ -10,7 +10,7 @@ nocite: |
   @*
 ---
 
-:::{.column-margin}
+:::{margin}
 ![[Image source](https://www.intigia.com/technologies/industrial-iot/)](./assets/iot-hardware.png)
 :::
 
@@ -67,7 +67,7 @@ device is flipped upside down.
 
 ### Power Supply
 
-:::{.column-margin}
+:::{margin}
 ![RPI USB-C POWER SUPPLY BLACK US](https://media.digikey.com/Photos/Raspberry%20Pi/MFG_RPI%20USB-C%20POWER%20SUPPLY%20BLACK%20US.jpg)
 :::
 
@@ -77,7 +77,7 @@ in included in the kit.
 
 ## Compute Module 4
 
-:::{.column-margin}
+:::{margin}
 ![Raspberry PI CM 4](https://images.prismic.io/rpf-products/bfe15853-d10f-4ed9-b9f0-32540bd76e55_CM4%20Featured%20Image.jpg?ixlib=gatsbyFP&auto=compress%2Cformat&fit=max&q=50&w=600&h=400 ":size=300")
 :::
 
@@ -98,7 +98,7 @@ for more info on the different ARM architectures.
 
 ### Grove Base Hat for Raspberry Pi
 
-:::{.column-margin}
+:::{margin}
 ![Grove Base Hat for GPIO connections](https://files.seeedstudio.com/wiki/Grove_Base_Hat_for_Raspberry_Pi/img/main.jpg ":size=300")
 :::
 
@@ -120,7 +120,7 @@ the Raspberry Pi) includes the following types of connection:
 
 ### AHT20 I2C Temperature & Humidity
 
-:::{.column-margin}
+:::{margin}
 ![AHT20 I2C temperature/humidity sensor](https://files.seeedstudio.com/wiki/Grove-AHT20_I2C_Industrial_Grade_Temperature_and_Humidity_Sensor/101990644_4_.png ":size=300")
 :::
 
@@ -159,7 +159,7 @@ instantiate an I2C bus instance, install and use the `adafruit-extended-bus` lib
 
 ### LED Socket
 
-:::{.column-margin}
+:::{margin}
 ![LED](https://files.seeedstudio.com/wiki/Raspi_wiki/img/red_led.jpg)
 :::
 
@@ -170,7 +170,7 @@ See [LED wiki page](https://wiki.seeedstudio.com/Grove-Red_LED/) for details.
 
 ### Cooling Fan
 
-:::{.column-margin}
+:::{margin}
 ![Cooling Fan](https://abra-electronics.com/images/thumbnails/280/280/detailed/182/fan-3d-5v.png)
 :::
 
@@ -181,7 +181,7 @@ See [LED wiki page](https://wiki.seeedstudio.com/Grove-Red_LED/) for details.
 
 ### Relay
 
-:::{.column-margin}
+:::{margin}
 ![Relay switch](https://files.seeedstudio.com/wiki/Grove-Relay/img/Twig-Relay.jpg) 
 :::
 

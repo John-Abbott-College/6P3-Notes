@@ -7,7 +7,7 @@ categories: ["hardware", "linux", "bash"]
 date: 2025-03-10
 ---
 
-::: {.column-margin}
+::: {margin}
 
 ![A diagram showing how the electrostatic field changes caused by touch is processed by devices like the reTerminal. [Image source](wiringfixsecessions.z21.web.core.windows.net)](assets/capacitive-touch.jpg)
 
@@ -26,7 +26,7 @@ a file streams.
 The reTerminal has 3 programmable LED's and a light sensor that can be
 **controlled like a regular file**.
 
-::: {.column-margin}
+::: {margin}
 ![reTerminal interface overview. [Image source](https://wiki.seeedstudio.com/reTerminal-hardware-interfaces-usage/)](assets/reterminal-buttons-light-sensor.png)
 :::
 
@@ -35,7 +35,7 @@ You can see, there are 3 programmable LEDs in the reTerminal:
 - **STA** light can be turned on as **red or green**.
 - **USR** light can only be turned on as **green**.
 
-::: {.column-margin}
+::: {margin}
 ![The reTerminal LEDs and their corresponding filenames. [Image source](https://wiki.seeedstudio.com/reTerminal-hardware-interfaces-usage/)](assets/reterminal-leds.png)
 :::
 
@@ -50,8 +50,8 @@ drwxr-xr-x 8 root root    0 Jan 25 20:33 ..
 -rw-r--r-- 1 root root 4096 Jan 26 22:02 brightness
 ```
 
-::: {.column-margin}
-![Unix Permissions cheatsheet by Julia Evans. See more about permissions in the [bash course notes](/notes/bash-scripting/index.html#permissions)](assets/unix-permissions-cheatsheet.png).
+::: {margin}
+![Unix Permissions cheatsheet by Julia Evans. See more about permissions in the [bash course notes](/lectures/bash-scripting/index.html#permissions)](assets/unix-permissions-cheatsheet.png).
 :::
 
 The `brightness` file inide the `usr_led0` controls the brightness of LED0. But,
@@ -224,10 +224,6 @@ actuators of the reTerminal.
 Install the library `seeed-python-reterminal` (see official
 [Github repo](https://github.com/Seeed-Studio/Seeed_Python_ReTerminal)) using
 `pip`:
-
-**NOTE:** See
-[Package Management in Python](/notes/python-environments/)
-for a clear explanation of how to use `venv` and `pip`.
 
 ```bash
 # NOTE: run this with a venv activated! 

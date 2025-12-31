@@ -13,7 +13,7 @@ format:
 categories: ["bash", "linux"]
 ---
 
-::: {.column-margin}
+::: {margin}
 
 ![[Photo by Tima Miroshnichenko](https://www.pexels.com/photo/a-vintage-drilling-machine-5846273/)](./assets/vintage-drill-press.jpg)
 
@@ -80,7 +80,7 @@ Enter new UNIX username:
 New password:
 ```
 
-::: {.callout-note .column-margin}
+::: {note margin}
 
 If you forget the password for your WSL container, you can easily reset it.
 
@@ -103,7 +103,7 @@ Follow the steps in
 [Set up Windows Terminal](https://learn.microsoft.com/en-us/windows/wsl/setup/environment#set-up-windows-terminal),
 particularly:
 
-::: {.column-margin}
+::: {margin}
 
 ![We're going to spend a lot of time in terminal environments -- you might as well enjoy using it. I find it motivating to use terminals that look and feel good to use. [Image source](https://learn.microsoft.com/en-us/windows/wsl/setup/environment#set-up-windows-terminal)](https://learn.microsoft.com/en-us/windows/wsl/media/terminal.png)
 
@@ -285,7 +285,7 @@ For more detail: https://superuser.com/a/1627461
 After [setting up WSL](#classroom-computers-linux-wsl) on a classroom computer, and
 [backing up your WSL](#backup-command) to OneDrive, the easiest way to set up WSL on your
 personal computer is to
-[import your backup WSL image](http://localhost:7848/notes/developer-environment/#restore-command)
+[import your backup WSL image](/lectures/developer-environment/#restore-command)
 on your personal computer.
 
 Note that any changes made to either container, after the import, will not be

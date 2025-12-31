@@ -9,7 +9,7 @@ date: 2025-04-19
 categories: [iot]
 ---
 
-::: {.column-margin}
+::: {margin}
 
 ![](https://images.seeklogo.com/logo-png/35/2/microsoft-azure-logo-png_seeklogo-352823.png)
 
@@ -77,7 +77,7 @@ As you experiment with Azure you might want to know your current balance.
 1. Select **Payment methods**
 1. Check your **Azure credits** panel.
 
-::: {.column-margin}
+::: {margin}
 ![Credit check panel in Azure](assets/intro-azure-credit-check.png)
 :::
 
@@ -98,7 +98,7 @@ This avoids unexpected spending of Azure credits.
    notification.
 1. Click **_Create_**.
 
-::: {.column-margin}
+::: {margin}
 ![Menu for creating a budget for a resource group.](assets/budget-resource-group.png)
 :::
 
@@ -120,7 +120,7 @@ Familiarize yourself with the left-hand menu, including the "Quickstarts" and "H
 There are two ways to create resources in Azure:
 
 - using the Azure portal website: <https://portal.azure.com>
-- using [Azure CLI](/notes/azure-features/#azure-cli)
+- using [Azure CLI](/lectures/azure-features/#azure-cli)
 
 The Azure documentation typically has instructions for *both* methods in all their
 tutorials -- you can select which method you want to choose by clicking the tabset button

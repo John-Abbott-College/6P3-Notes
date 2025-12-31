@@ -8,7 +8,7 @@ date: 2025-02-10
 categories: [git, bash]
 ---
 
-::: {.column-margin}
+::: {margin}
 
 ![](assets/github-mark.svg)
 

@@ -10,7 +10,7 @@ nocite: |
   @*
 ---
 
-:::{.column-margin}
+:::{margin}
 ![The reTerminal device. [Image source](https://wiki.seeedstudio.com/reTerminal/)](https://files.seeedstudio.com/wiki/ReTerminal/wiki_thumb.png)
 :::
 
@@ -161,7 +161,7 @@ After the following the above steps, you will have:
 
 Your reTerminal is now ready for a firmware flash.
 
-::: {#fig-flash-mode .column-margin}
+::: {#fig-flash-mode margin}
 
 ![](https://files.seeedstudio.com/wiki/ReTerminal/wiki1/boot-switch-2.jpg)
 
@@ -303,7 +303,7 @@ Once your are logged into the reTerminal and you can see the display on the lab 
     - Make sure your Pi is connected to the wall power supply, NOT to your computer (the
         pi screen needs more power than your lab computer can provide).
 
-::: {.callout-note .column-margin}
+::: {note margin}
 If your keyboard is in French mode on the raspberry pi, you can
 [follow the instructions here](https://thelinuxcode.com/change-keyboard-layout-raspberry-pi/)
 to set it back into English (US) mode.

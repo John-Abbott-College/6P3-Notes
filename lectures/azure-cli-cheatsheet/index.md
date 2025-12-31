@@ -21,7 +21,7 @@ You can check that both requirements are met with the command `az --version`.
 To register a [device](https://learn.microsoft.com/en-us/azure/iot/iot-glossary?toc=%2Fazure%2Fiot-hub%2Ftoc.json&bc=%2Fazure%2Fiot-hub%2Fbreadcrumb%2Ftoc.json#device)
 on IoTHub in Azure CLI, use the `az iot hub device-identity create` command:
 
-::: {.callout-note .column-margin}
+::: {note margin}
 Recall that [Bash environment variables](/lectures/bash-scripting/index.md#environment-variables) allow you to store strings in a shell session.
 You can save environment variables in a project `.env` file that you can [`source`](/lectures/bash-scripting/index.md#code-reuse) later.
 :::
@@ -45,7 +45,7 @@ using the commands below:
 $ az iot device simulate -d ${IOT_DEVICE_NAME} -n ${IOTHUB_NAME}
 ```
 
-::: {.callout-note .column-margin}
+::: {note margin}
 The `az iot device simulate` command runs for a few minutes unless interrupted by the user.
 Use [Bash Process Control keyboard shortcuts](/lectures/bash-essentials/index.md#keyboard-shortcuts)
 to suspend, resume, scroll through the output, etc.!
@@ -63,7 +63,7 @@ See `az iot device simulate`
 
 You can monitor all actions in an Azure IOT Hub using the `az iot hub monitor-events` command:
 
-::: {.callout-note .column-margin}
+::: {note margin}
 [Bash Process Control keyboard shortcuts](/lectures/bash-essentials/index.md#keyboard-shortcuts)
 and [Bash redirection and pipes](/lectures/bash-essentials/index.md#redirection-and-pipes) are useful for
 pausing/continuing/scrolling/parsing the `az iot hub monitor-events` command.
@@ -77,7 +77,7 @@ $ az iot hub monitor-events --output table -p all -n ${IOTHUB_NAME}
 $ az iot hub monitor-events --output table --device-id ${IOT_DEVICE_NAME} --hub-name ${IOTHUB_NAME}
 ```
 
-::: {.callout-warning}
+::: {warning}
 If you are having `uamqp` errors when using this command, try installing it in `pip` first.
 ```bash
 (.venv) $ pip install uamqp
@@ -175,7 +175,7 @@ Connection Strings provide authentication for most [Azure SDK](/lectures/azure-s
 
 The sections below give example commands for Azure CLI connection strings retrieval.
 
-::: {.callout-note .column-margin}
+::: {note margin}
 [Bash redirection and pipes](/lectures/bash-essentials/index.md#redirection-and-pipes) are useful
 tools for saving the output of these connection string commands as [environment variables](/lectures/bash-scripting/index.md#environment-variables).
 You can save environment variables in a project `.env` file that you can [`source`](/lectures/bash-scripting/index.md#code-reuse) later.

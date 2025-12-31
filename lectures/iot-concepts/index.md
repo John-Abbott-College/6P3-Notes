@@ -13,7 +13,7 @@ The **Internet of Things (IoT)** is comprised of equipment, machines, products,
 and devices that are connected to the cloud and **periodically collect, send
 and/or receive data.**
 
-::: {.column-margin}
+::: {margin}
 ![The Interconnection of communicating devices defines the "Internet of Things"](assets/iot-banner.webp)
 :::
 
@@ -49,7 +49,7 @@ The use of IoT can be organised in two fields of application:
 - **Industrial IoT (IIoT)**
 - **Consumer IoT**
 
-::: {.column-margin}
+::: {margin}
 ![Examples of industrial and consumer IoT applications. Image source: ["The Internet of Things and its Benefit to U.S. Water Customers"][source-location]](assets/1-iot-intro-industrial-vs-consumer.png)
 :::
 
@@ -144,7 +144,7 @@ IoT systems are compromised of five high-level components:
     - Configure automatic actions;
     - Facilitate device management.
 
-::: {.column-margin}
+::: {margin}
 ![Icons of IoT High level components](assets/iot-high-components.png)
 :::
 

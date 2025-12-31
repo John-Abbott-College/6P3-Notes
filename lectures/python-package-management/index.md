@@ -216,7 +216,7 @@ to control the python dependencies for each project independently.
 
 To **activate** your virtual environment and make that version of Python the one
 you're currently using, `python -m venv` creates a bash environment script called `activate`
-that you can run with the bash command [`source`](/notes/bash-scripting/#function-library-with-source):
+that you can run with the bash command [`source`](/lectures/bash-scripting/#function-library-with-source):
 
 ```shell
 $ source .venv/bin/activate
@@ -280,7 +280,7 @@ $ pip freeze
 This command is useful for a few reasons:
 
 - verifying that the package you attempted to install is the version you expect it to be
-- creating a [requirements.txt](/notes/python-project-management#dependencies-with-requirements.txt)
+- creating a [requirements.txt](/lectures/python-project-management#dependencies-with-requirements.txt)
   file from the output of the `pip freeze` command.
 
 
@@ -301,7 +301,7 @@ For example, create a requirements file `requirements.txt`, and invoke `pip inst
 to recreate your virtual environment dependencies.
 
 You can see more about managing your projects dependencies in the
-[course notes on project configuration](/notes/python-project-management#project-configuration)
+[course notes on project configuration](/lectures/python-project-management#project-configuration)
 
 
 
