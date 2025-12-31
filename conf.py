@@ -7,7 +7,7 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = '6P3-Notes'
-copyright = '2021-2025, Michael Haaf, Mauricio Bushinelli'
+copyright = '2021-2026, Michael Haaf, Mauricio Bushinelli'
 author = 'Michael Haaf, Mauricio Bushinelli'
 
 # -- General configuration ---------------------------------------------------
