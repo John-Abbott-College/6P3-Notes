@@ -1,5 +1,5 @@
 ---
-title: "Lab 1: Developer Environment Setup"
+title: "L1: Developer Environment Setup"
 subtitle:
   Setting up the development stacks and hardware we will use throughout the semester.
 date: 2025-03-14

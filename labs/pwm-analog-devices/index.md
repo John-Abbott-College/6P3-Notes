@@ -1,5 +1,5 @@
 ---
-title: "Lab 5: Analog Output and Input"
+title: "L5: Analog Output and Input"
 subtitle:
   Producing Analog-like output with digital GPIO ports using PWM.
   Reading Analog measurements using the built-in ADC.
