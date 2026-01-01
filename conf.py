@@ -28,6 +28,7 @@ extensions = [
     "sphinxemoji.sphinxemoji",
     "sphinxext.opengraph",
     "sphinx_tippy",
+    "sphinx_togglebutton",
     # "ablog",
     # "sphinxcontrib.bibtex",
     # "drafts",

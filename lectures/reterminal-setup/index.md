@@ -146,7 +146,7 @@ Below is a brief overview of the **three step process** for reimaging the reTerm
 
 :::{figure-md} fig-dissasembly
 
-<https://www.youtube.com/watch?v=hAfdb603emw>
+![](https://www.youtube.com/watch?v=hAfdb603emw)
 
 **Only remove the heatsink** in order to access the memory switch. It is *not* necessary
 fully disassemble the reTerminal like they do in the video.

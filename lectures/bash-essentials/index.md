@@ -7,9 +7,11 @@ description: |
 date: 2026-01-01
 ---
 
-:::{margin}
+:::{image} https://tiswww.case.edu/php/chet/img/bash-logo-web.png
+:align: right
+:width: 300px
 
-![[Image source](https://tiswww.case.edu/php/chet/bash/bashtop.html)](https://tiswww.case.edu/php/chet/img/bash-logo-web.png)
+[Image source](https://tiswww.case.edu/php/chet/bash/bashtop.html)
 
 :::
 
@@ -21,37 +23,37 @@ Each section below is some set of tips for using the interactive bash CLI effect
 
 ### Keyboard shortcuts
 
-::: {.callout-note collapse="false"}
+::: {admonition} Keyboard shortcuts: details & examples
+:class: dropdown tip
 
-## Keyboard Shortcuts: details & examples
-
-{{< include _keyboard-shortcuts.qmd >}}
+```{include} _keyboard-shortcuts.md
+```
 
 :::
 
 ### Configuration
 
-::: {.callout-note collapse="true"}
+::: {admonition} `.bashrc` details & examples
+:class: dropdown tip
 
-## `.bashrc` details & examples
-
-{{< include _bashrc.qmd >}}
-
-:::
-
-::: {.callout-note collapse="true"}
-
-## `.profile` details & examples
-
-{{< include _profile.qmd >}}
+```{include} _bashrc.md
+```
 
 :::
 
-::: {.callout-note collapse="true"}
+::: {admonition} `.profile` details & examples
+:class: dropdown tip
 
-## `.inputrc` details & examples
+```{include} _profile.md
+```
 
-{{< include _inputrc.qmd >}}
+:::
+
+::: {admonition} `.inputrc` details & examples
+:class: dropdown tip
+
+```{include} _inputrc.md
+```
 
 :::
 
@@ -75,11 +77,11 @@ SYNOPSIS
   ls [OPTION]... [FILE]...
 ```
 
-::: {.callout-note collapse="true"}
+::: {admonition} `cd` & `ls` details & examples
+:class: dropdown tip
 
-## `cd` & `ls` details & examples
-
-{{< include _cd-ls.qmd >}}
+```{include} _cd-ls.md
+```
 
 :::
 
@@ -110,8 +112,6 @@ SYNOPSIS
 
 ### Moving files: `mv` and `cp`
 
-:::{.column-page-right}
-
 ```sh
 NAME
   mv - Move `SOURCE` to `DEST`, or multiple `SOURCE`(s) to `DIRECTORY`.
@@ -121,8 +121,6 @@ SYNOPSIS
   mv  [-f/--force] [-i/--interactive] [-g/--progress] [SOURCE]... [DEST]
   cp  [-f/--force] [-i/--interactive] [-g/--progress] [-R/--recursive] [SOURCE]... [DEST]
 ```
-
-:::
 
 ### Managing permissions: `chmod` and `chown`
 
@@ -148,9 +146,11 @@ SYNOPSIS
 
 ## The five fingers of death
 
-:::{margin}
+:::{image} https://theactionelite.com/wp-content/uploads/2019/04/GetAttachmentThumbnail.jpg
+:width: 300px
+:align: right
 
-![*Five Fingers of Death*, or *King Boxer* as it is known on Wikipedia, is a martial-arts movie I have not seen, but I have heard referenced in many songs. It speaks to me that the mastery of a seemlingly small set tools (five fingers) can lead to drastic increases in capability (the ability to inflict death) and I believe this spirit applies directly to working with unix tools. [Image source](https://theactionelite.com/five-fingers-of-death-1972-review/)](https://theactionelite.com/wp-content/uploads/2019/04/GetAttachmentThumbnail.jpg)
+<!-- *Five Fingers of Death*, or *King Boxer* as it is known on Wikipedia, is a martial-arts movie I have not seen, but I have heard referenced in many songs. It speaks to me that the mastery of a seemlingly small set tools (five fingers) can lead to drastic increases in capability (the ability to inflict death) and I believe this spirit applies directly to working with unix tools. [Image source](https://theactionelite.com/five-fingers-of-death-1972-review/) -->
 
 :::
 
@@ -179,19 +179,19 @@ SYNOPSIS
   grep [OPTION...] PATTERNS [FILE...]
 ```
 
-::: {.callout-note collapse="true"}
+::: {admonition} `find` details & examples
+:class: dropdown tip
 
-## `find` details & examples
-
-{{< include _find.qmd >}}
+```{include} _find.md
+```
 
 :::
 
-::: {.callout-note collapse="true"}
+::: {admonition} `grep` details & examples
+:class: dropdown tip
 
-## `grep` details & examples
-
-{{< include _grep.qmd >}}
+```{include} _grep.md
+```
 
 :::
 
@@ -208,19 +208,19 @@ SYNOPSIS
   cut [-d/--delimiter] [-f/--fields] [FILE]
 ```
 
-::: {.callout-note collapse="true"}
+::: {admonition} `tr` details & examples
+:class: dropdown tip
 
-## `tr` details & examples
-
-{{< include _tr.qmd >}}
+```{include} _tr.md
+```
 
 :::
 
-::: {.callout-note collapse="true"}
+::: {admonition} `cut` details & examples
+:class: dropdown tip
 
-## `cut` details & examples
-
-{{< include _cut.qmd >}}
+```{include} _cut.md
+```
 
 :::
 
@@ -237,19 +237,19 @@ SYNOPSIS
   uniq [-d/--repeated] [FILE]...
 ```
 
-::: {.callout-note collapse="true"}
+::: {admonition} `sort` details & examples
+:class: dropdown tip
 
-## `sort` details & examples
-
-{{< include _sort.qmd >}}
+```{include} _sort.md
+```
 
 :::
 
-::: {.callout-note collapse="true"}
+::: {admonition} `uniq` details & examples
+:class: dropdown tip
 
-## `uniq` details & examples
-
-{{< include _uniq.qmd >}}
+```{include} _uniq.md
+```
 
 :::
 
@@ -267,11 +267,11 @@ SYNOPSIS
   tail [-n/--lines] [-f/--follow] [FILE]...
 ```
 
-::: {.callout-note collapse="true"}
+::: {admonition} `head` & `tail` details & examples
+:class: dropdown tip
 
-## `head` & `tail` details & examples
-
-{{< include _head-tail.qmd >}}
+```{include} _head-tail.md
+```
 
 :::
 
@@ -287,11 +287,11 @@ SYNOPSIS
   tee [FILE]...
 ```
 
-::: {.callout-note collapse="true"}
+::: {admonition} `tree` & `tee` details & examples
+:class: dropdown tip
 
-## `tree` & `tee` details & examples
-
-{{< include _tree-tee.qmd >}}
+```{include} _tree-tee.md
+```
 
 :::
 
@@ -320,11 +320,11 @@ commandA | commandB       Pipe stdout of commandA to commandB
 commandA | tee filename   Pipe stdout of commandA into filename AND stdout
 ```
 
-::: {.callout-note collapse="true"}
+::: {admonition} Redirection explained further
+:class: dropdown tip
 
-## Redirection explained further
-
-{{< include _redirection.qmd >}}
+```{include} _redirection.md
+```
 
 :::
 
@@ -350,11 +350,11 @@ ssh connects and logs into the specified destination, which may be specified as 
 If a `command` is specified, it will be executed on the remote host instead of a login
 shell.
 
-::: {.callout-note collapse="true"}
+::: {admonition} `ssh` details & examples
+:class: dropdown tip
 
-## `ssh` details & examples
-
-<!-- {{< include _ssh.qmd >}} -->
+<!-- ```{include} _ssh.md -->
+<!-- ``` -->
 
 There's nothing here yet... stay tuned!
 
@@ -386,11 +386,11 @@ source and destination.
 Rsync is widely used for backups and mirroring, and as an improved `cp` command for
 everyday use.
 
-::: {.callout-note collapse="true"}
+::: {admonition} `rsync` details & examples
+:class: dropdown tip
 
-## `rsync` details & examples
-
-<!-- {{< include _rsync.qmd >}} -->
+<!-- ```{include} _rsync.md -->
+<!-- ``` -->
 
 There's nothing here yet... stay tuned!
 
@@ -414,10 +414,11 @@ The `tar`, `zip`, and `unzip` programs provide the ability to create, extract, a
 otherwise manipulate **archives** of files, where an **archive** of files is simply a file
 that stores a collection of other files.
 
-:::{note} `tar`, `zip`, and `unzip`
-:class: dropdown
+:::{admonition} `tar`, `zip`, and `unzip` details & examples
+:class: dropdown tip
 
-Some content in the dropdown.
+```{include} _tar.md
+```
 
 :::
 
@@ -443,11 +444,11 @@ command set that provides both high-level operations and full access to internal
 See `man 7 gittutorial` to get started, then see `man 7 giteveryday` for a useful minimum
 set of commands.
 
-::: {.callout-note collapse="true"}
+::: {admonition} `git` details & examples
+:class: dropdown tip
 
-## `git` details & examples
-
-<!-- {{< include _git.qmd >}} -->
+<!-- ```{include} _git.md > -->
+<!-- ``` -->
 
 There's nothing here yet... stay tuned!
 

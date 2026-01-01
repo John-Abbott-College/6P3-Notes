@@ -25,6 +25,7 @@ dependencies = [
     "sphinx-tags>=0.4",
     "sphinx-tagtoctree>=1.0.0",
     "sphinx-tippy>=0.4.3",
+    "sphinx-togglebutton>=0.3.2",
     "sphinxcontrib-bibtex>=2.6.5",
     "sphinxcontrib-httpdomain>=1.8.1",
     "sphinxcontrib-mermaid>=1.2.3",

@@ -117,6 +117,7 @@ docutils==0.21.2 \
     #   pydata-sphinx-theme
     #   sphinx
     #   sphinx-prompt
+    #   sphinx-togglebutton
     #   sphinxcontrib-bibtex
 feedgen==1.0.0 \
     --hash=sha256:d9bd51c3b5e956a2a52998c3708c4d2c729f2fcc311188e1e5d3b9726393546a
@@ -512,6 +513,10 @@ ruff==0.14.10 \
     --hash=sha256:d85713d522348837ef9df8efca33ccb8bd6fcfc86a2cde3ccb4bc9d28a18003d \
     --hash=sha256:e51d046cf6dda98a4633b8a8a771451107413b0f07183b2bef03f075599e44e6 \
     --hash=sha256:f24b47993a9d8cb858429e97bdf8544c78029f09b520af615c1d261bf827001d
+setuptools==80.9.0 \
+    --hash=sha256:062d34222ad13e0cc312a4c02d73f059e86a4acbfbdea8f8f76b28c99f306922 \
+    --hash=sha256:f36b47402ecde768dbfafc46e8e4207b4360c654f1f3bb84475f0a28628fb19c
+    # via sphinx-togglebutton
 six==1.17.0 \
     --hash=sha256:4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274 \
     --hash=sha256:ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81
@@ -546,6 +551,7 @@ sphinx==8.2.3 \
     #   sphinx-tags
     #   sphinx-tagtoctree
     #   sphinx-tippy
+    #   sphinx-togglebutton
     #   sphinxcontrib-bibtex
     #   sphinxcontrib-httpdomain
     #   sphinxcontrib-jquery
@@ -603,6 +609,10 @@ sphinx-tagtoctree==1.0.0 \
 sphinx-tippy==0.4.3 \
     --hash=sha256:255abee0aed8085fdb9ab0cc595cd7a45748ae7f4662156e500a17a3f73ad63d \
     --hash=sha256:572b0e001baec9b03e2b19ec4e9760ca1a853f4c3226b5cea251f477b2c2b096
+    # via 6p3-notes
+sphinx-togglebutton==0.3.2 \
+    --hash=sha256:9647ba7874b7d1e2d43413d8497153a85edc6ac95a3fea9a75ef9c1e08aaae2b \
+    --hash=sha256:ab0c8b366427b01e4c89802d5d078472c427fa6e9d12d521c34fa0442559dc7a
     # via 6p3-notes
 sphinxcontrib-applehelp==2.0.0 \
     --hash=sha256:2f29ef331735ce958efa4734873f084941970894c6090408b079c61b2e1c06d1 \
@@ -804,4 +814,6 @@ websockets==15.0.1 \
 wheel==0.45.1 \
     --hash=sha256:661e1abd9198507b1409a20c02106d9670b2576e916d58f520316666abca6729 \
     --hash=sha256:708e7481cc80179af0e556bbf0cc00b8444c7321e2700b8d8580231d13017248
-    # via sphinx-tagtoctree
+    # via
+    #   sphinx-tagtoctree
+    #   sphinx-togglebutton
