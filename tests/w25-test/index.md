@@ -1,5 +1,6 @@
 ---
 title: Connected Objects Test
+orphan: true
 categories: [hardware, bash, linux, git, python, signals, iot]
 date: 2025-05-12
 format:
@@ -47,7 +48,7 @@ questions:
 ## Python
 
 
-:::: {.callout-question}
+:::: {note}
 #### Python libraries
 For many 3rd party python libraries that we have used in our projects, the "official" instructions to install those packages were to use root with the command: sudo pip3 install <package-name>.
 
@@ -66,7 +67,7 @@ We were not able to follow these instructions. Which of the following answers is
 
 ## Hardware
 
-:::: {.callout-question}
+:::: {note}
 #### Hardware
 What computing hardware is the reTerminal built upon?
 
@@ -80,7 +81,7 @@ What computing hardware is the reTerminal built upon?
 
 ::::
 
-:::: {.callout-question}
+:::: {note}
 #### Hardware
 What operating system does the reTerminal use?
 
@@ -93,7 +94,7 @@ What operating system does the reTerminal use?
 :::
 ::::
 
-:::: {.callout-question}
+:::: {note}
 #### Plugging in a device
 The Analog Joystick from Lab 3 has the following electrical connections:
 
@@ -114,7 +115,7 @@ Explain in a few sentences how you could connect this device to the Raspberry Pi
 ## IoT
 
 
-:::: {.callout-question}
+:::: {note}
 #### IoT Components
 An IoT system has the following high level components:
 
@@ -149,7 +150,7 @@ Match each of these with the following:
 
 ## Signal Processing
 
-:::: {.callout-question}
+:::: {note}
 #### ADC
 
 The Grove Base Hat has an Analog to Digital Converter (ADC) with 12 bit resolution. It outputs readings using an unsigned integer and the supported analog voltage range is from 0 to 3.3V.
@@ -166,7 +167,7 @@ If a joystick is plugged into the ADC of the basehat, and generates an output va
 ::::
 
 
-:::: {.callout-question}
+:::: {note}
 #### Device protocols
 
 SPI and I2C use a Clock, why?
@@ -181,7 +182,7 @@ SPI and I2C use a Clock, why?
 ::::
 
 
-:::: {.callout-question}
+:::: {note}
 #### Digital vs Analog
 
 Digital vs Analog?
@@ -196,7 +197,7 @@ Digital vs Analog?
 ::::
 
 
-:::: {.callout-question}
+:::: {note}
 #### reTerminal pins
 
 The reTerminal has 40 pins designed to carry a variety of signals. Which of the following are NOT pins you can find on the reTerminal? Select ALL that apply (i.e., select all pins that you would NOT find on a reTerminal).
@@ -219,7 +220,7 @@ The reTerminal has 40 pins designed to carry a variety of signals. Which of the 
 ::::
 
 
-:::: {.callout-question}
+:::: {note}
 ## ADC
 
 The signal below is being sampled by an ADC that has a 8-bit resolution. What values are returned by the ADC at times 1s and 2s respectively? Assume an unsigned integer is returned by the ADC.
@@ -236,7 +237,7 @@ Separate your values with commas, and don't include units. For example: 111, 222
 
 ::::
 
-:::: {.callout-question}
+:::: {note}
 
 Match the prompts below to the correct communication protocol (either HTTP, MQTT, or none of the above)
 
@@ -260,7 +261,7 @@ Match the prompts below to the correct communication protocol (either HTTP, MQTT
 
 ::::
 
-:::: {.callout-question}
+:::: {note}
 ## MQTT vs HTTP
 
 Why is MQTT more energy efficient than HTTP as a protocol for IoT? Explain your answer using the devices and cloud that we are using in our project.
@@ -277,7 +278,7 @@ Why is MQTT more energy efficient than HTTP as a protocol for IoT? Explain your 
 
 ::::
 
-:::: {.callout-question}
+:::: {note}
 #### Applying concepts to new devices
 
 Consider a stovetop (the device, usually on top of an oven, used to heat food at home or work). Underneath the surface, a stovetop is a metal coil that, when a large amount of current is applied, heat is produced. The temperature of the stovetop is set by a dial from 0-10.
@@ -301,7 +302,7 @@ Apply knowledge we have learned in this course to answer the following questions
 
 
 
-:::: {.callout-question}
+:::: {note}
 
 Suppose you are troubleshooting a reTerminal connection to I2C devices. You run the following commands, and see the following results:
 
@@ -367,7 +368,7 @@ Select ALL of the following answers that are true, given the above results.
 
 ## Coding Exercise
 
-:::: {.callout-question}
+:::: {note}
 
 A developer is creating a Python script that uses several modules installed with pip. When running the script, the Python interpreter is not finding one of the modules installed with pip.
 
@@ -390,7 +391,7 @@ pip list
 
 ::::
 
-:::: {.callout-question}
+:::: {note}
 #### Preparing a linux system
 
 A developer is preparing a **RaspberryPi OS** for Python development. The developer has a user account with `sudo` permissions on the raspberry pi.
@@ -427,7 +428,7 @@ pip install azure-cli
 
 ::::
 
-:::: {.callout-question}
+:::: {note}
 
 Assume `library/module.py` is a file you have installed in your virtual environment.
 

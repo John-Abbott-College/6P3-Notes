@@ -38,7 +38,7 @@ find . -name '*.png' -or -perm '664' -delete
 ```
 
 This will recursively search the current directory for all files that EITHER have a filename ending with
-`.png` OR that has the permissions `664`, then will delete those files. (see the course notes on [permissions](/lectures/bash-scripting#permissions) for more details on
+`.png` OR that has the permissions `664`, then will delete those files. (see the course notes on [permissions](/lectures/bash-scripting/index.md#permissions) for more details on
 the meaning of `664` here.)
 
 Let's see what category each of these expressions is:

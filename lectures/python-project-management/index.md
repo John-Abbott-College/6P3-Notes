@@ -145,7 +145,7 @@ This section explains configuring the following in a python project:
 Project dependencies can be listed in a file for portability. By convention, the file
 [`requirements.txt`](https://pip.pypa.io/en/stable/reference/requirements-file-format/)
 contains all the dependencies of a project created with a
-[virtual environment](/lectures/python-package-management/#how-virtual-environments-solve-the-pip-problem).
+[virtual environment](/lectures/python-package-management/index.md#how-virtual-environments-solve-the-pip-problem).
 
 > This is analogous to `package.json` for Node.Js projects
 

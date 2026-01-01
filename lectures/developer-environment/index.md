@@ -285,7 +285,7 @@ For more detail: https://superuser.com/a/1627461
 After [setting up WSL](#classroom-computers-linux-wsl) on a classroom computer, and
 [backing up your WSL](#backup-command) to OneDrive, the easiest way to set up WSL on your
 personal computer is to
-[import your backup WSL image](/lectures/developer-environment/#restore-command)
+[import your backup WSL image](/lectures/developer-environment/index.md#restore-command)
 on your personal computer.
 
 Note that any changes made to either container, after the import, will not be

@@ -72,7 +72,7 @@ Below are some useful account management how-tos.
 
 As you experiment with Azure you might want to know your current balance.
 
-1. Sign in to the [Azure portal](https//portal.azure.com)
+1. Sign in to the [Azure portal](https://portal.azure.com)
 1. Search for **Cost Management**
 1. Select **Payment methods**
 1. Check your **Azure credits** panel.
@@ -120,7 +120,7 @@ Familiarize yourself with the left-hand menu, including the "Quickstarts" and "H
 There are two ways to create resources in Azure:
 
 - using the Azure portal website: <https://portal.azure.com>
-- using [Azure CLI](/lectures/azure-features/#azure-cli)
+- using [Azure CLI](/lectures/azure-features/index.md#azure-cli)
 
 The Azure documentation typically has instructions for *both* methods in all their
 tutorials -- you can select which method you want to choose by clicking the tabset button

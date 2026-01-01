@@ -51,7 +51,7 @@ drwxr-xr-x 8 root root    0 Jan 25 20:33 ..
 ```
 
 ::: {margin}
-![Unix Permissions cheatsheet by Julia Evans. See more about permissions in the [bash course notes](/lectures/bash-scripting/index.html#permissions)](assets/unix-permissions-cheatsheet.png).
+![Unix Permissions cheatsheet by Julia Evans. See more about permissions in the [bash course notes](/lectures/bash-scripting/index.md#permissions)](assets/unix-permissions-cheatsheet.png).
 :::
 
 The `brightness` file inide the `usr_led0` controls the brightness of LED0. But,

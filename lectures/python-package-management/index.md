@@ -37,7 +37,7 @@ distribution:
 - `apt` to install pre-configured system python packages distributed by Debian
 - `pip` to install cross-platform packages from <https://pypi.org/>
 
-::: {.callout-note}
+::: {note}
 
 Installing packages using `apt` is the preferred method
 for using python applications in Raspberry Pi OS / Debian.
@@ -78,7 +78,7 @@ native dependencies including a Fortran compiler), _much simpler and more
 predictable_ than installing individual packages using Python's own
 package-management system.
 
-::: {.callout-note}
+::: {note}
 In `apt`, Python packages have a consistent naming scheme: you'll
 find that the a given package "foobar" is going to be called `python-foobar` or
 `python3-foobar` in the `apt` repositories -- this helps distinguish python
@@ -216,7 +216,7 @@ to control the python dependencies for each project independently.
 
 To **activate** your virtual environment and make that version of Python the one
 you're currently using, `python -m venv` creates a bash environment script called `activate`
-that you can run with the bash command [`source`](/lectures/bash-scripting/#function-library-with-source):
+that you can run with the bash command [`source`](/lectures/bash-scripting/index.md#function-library-with-source):
 
 ```shell
 $ source .venv/bin/activate
@@ -280,7 +280,7 @@ $ pip freeze
 This command is useful for a few reasons:
 
 - verifying that the package you attempted to install is the version you expect it to be
-- creating a [requirements.txt](/lectures/python-project-management#dependencies-with-requirements.txt)
+- creating a [requirements.txt](/lectures/python-project-management/index.md#project-configuration)
   file from the output of the `pip freeze` command.
 
 
@@ -301,7 +301,7 @@ For example, create a requirements file `requirements.txt`, and invoke `pip inst
 to recreate your virtual environment dependencies.
 
 You can see more about managing your projects dependencies in the
-[course notes on project configuration](/lectures/python-project-management#project-configuration)
+[course notes on project configuration](/lectures/python-project-management/index.md#project-configuration)
 
 
 
@@ -339,9 +339,9 @@ python will look for installed modules/libraries.
 See the paths where python is looking for libraries with `sys.path`. They should
 look something like:
 
-::: {.panel-tabset}
+:::: {tab-set}
 
-## venv
+::: {tab-item} venv
 
 ```shell
 (.venv) pi@raspberrypi:~ $ python
@@ -351,7 +351,9 @@ look something like:
 ['', '/usr/lib/python311/site-packages']
 ```
 
-## system
+:::
+
+::: {tab-item} system
 
 ```shell
 pi@raspberrypi:~ $ python
@@ -362,6 +364,8 @@ pi@raspberrypi:~ $ python
 ```
 
 :::
+
+::::
 
 If the output of `pip show seeed-python-reterminal` is not in this list, python
 will not find it when you import it.
@@ -396,16 +400,18 @@ Why isn't the package available? Well, `sudo` runs `python` _as the root user_.
 The root user does not have your `venv` of python in its path. Try the commands
 below on your system to see if you understand what I mean.
 
-::: {.panel-tabset}
+:::: {tab-set}
 
-## normal user
+::: {tab-item} normal user
 
 ```shell
 (.venv)user@host:~ $ which python
 /home/user/path/to/.venv/bin/python
 ```
 
-## sudo user
+:::
+
+::: {tab-item} sudo user
 
 ```shell
 (.venv)user@host:~ $ sudo su
@@ -414,6 +420,8 @@ below on your system to see if you understand what I mean.
 ```
 
 :::
+
+::::
 
 How to resolve this problem? It is similar to the `sudo echo > file` problem we
 saw with Bash. We need to make sure `sudo` is applying to the _correct python

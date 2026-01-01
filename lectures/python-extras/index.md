@@ -99,7 +99,7 @@ Much less boilerplate code required!
 
 ### Installing `pytest`
 
-In your [virtual environment](/lectures/python-package-management#virtual-environments),
+In your [virtual environment](/lectures/python-package-management/index.md#virtual-environments),
 use `pip` to install `pytest`:
 
 ```shell
@@ -137,7 +137,7 @@ See [my example_system unit tests](https://github.com/420-6A6-6P3-W25/final-proj
 - **Act** by calling some function or method
 - **Assert** that some end condition is true
 
-`pytest` enables the creation of [fixtures](), that is, test objects, that can be used across tests
+`pytest` enables the creation of **fixtures**, that is, test objects, that can be used across tests
 to simplify the **Arrange** step:
 
 ```python {filename=fixture_demo.py}
@@ -184,7 +184,7 @@ You can see more about `conftest.py` in the
 
 ### using `pytest` on asynchronous code
 
-In our final project, there are quite a few [asynchronous](/lectures/async-python) functions to test.
+In our final project, there are quite a few [asynchronous](/lectures/async-python/index.md) functions to test.
 
 See the [example_system.py unit tests](https://github.com/420-6A6-6P3-W25/final-project-upstream/blob/main/iot_subsystems/tests/example_system/integration/test_system.py#L61)
 from the [final-project-upstream](https://github.com/420-6A6-6P3-W25/final-project-upstream/) code for an example.

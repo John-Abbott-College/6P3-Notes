@@ -83,7 +83,7 @@ If you are having `uamqp` errors when using this command, try installing it in `
 (.venv) $ pip install uamqp
 ```
 
-If the above is giving you issues, see the [course notes on installing azure cli](/lectures/azure-features#azure-cli)
+If the above is giving you issues, see the [course notes on installing azure cli](/lectures/azure-features/index.md#azure-cli)
 for more troubleshooting info.
 :::
 

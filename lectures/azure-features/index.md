@@ -265,7 +265,7 @@ Installation
 
 ::: {note margin}
 If you're having issues installing `azure-cli`, make sure your system `python` is up to date.
-Revist the [course notes for installing developer environment dependencies](/lectures/developer-environment/#install-dependencies),
+Revist the [course notes for installing developer environment dependencies](/lectures/developer-environment/index.md#install-dependencies),
 and make sure your system packages and python libraries are up to date.
 Then, delete your existing virtual environment and recreate it with the updated `python`.
 :::

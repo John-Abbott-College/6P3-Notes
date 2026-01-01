@@ -52,11 +52,11 @@ See [Specifications](https://wiki.seeedstudio.com/reTerminal/#specifications) on
 
 ![pir](https://files.seeedstudio.com/wiki/ReTerminal/hw-overview-internal-v1.3.jpg)
 
-#### Block Diagram[​](index.html#block-diagram "Direct link to Block Diagram")
+#### Block Diagram
 
 ![pir](https://files.seeedstudio.com/wiki/ReTerminal/reTerminal_block_diagram-v1.3.png)
 
-#### Pinout Diagram[​](index.html#pinout-diagram "Direct link to Pinout Diagram")
+#### Pinout Diagram
 
 ![Please carefully pay attention to the orientation of the reTerminal in
 the above diagram. The LCD and the onboard buttons are on the right side

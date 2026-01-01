@@ -1,5 +1,6 @@
 ---
 title: Quiz 2
+orphan: true
 subtitle: >
   Two questions covering some key course material in a short, open-book quiz.
 categories: [bash, linux, python, iot]
@@ -21,32 +22,32 @@ This ADC can handle up to 8V signals.
 
 \newpage
 
-::: {.callout-note}
+::: {note}
 ## Q1. Starting from Time 0, what are the readings measured in volts?
 \vspace{0.25in}
 :::
 
-::: {.callout-note}
+::: {note}
 ## Q2. Starting from Time 0, what values does the ADC convert these readings to?
 \vspace{0.25in}
 :::
 
-::: {.callout-note}
+::: {note}
 ## Q3. Draw on the provided graph the values of the ADC readings
 (your answer should be on the graph itself).
 :::
 
-::: {.callout-note}
+::: {note}
 ## Q4. Using the drawing you've made, you should see that the ADC has not captured the movement of the joystick accurately. Why not? What fix can be made to the program reading the signal?
 \vspace{0.9in}
 :::
 
-::: {.callout-note}
+::: {note}
 ## Q5. There is no way that these measurements could have been taken on our reTerminal -- why not?
 \vspace{0.9in}
 :::
 
-::: {.callout-note}
+::: {note}
 ## Q6. If these readings were to be used in an IoT system, why would MQTT be a better choice than HTTP for the communication protocol? Give a few reasons.
 \vspace{0.9in}
 :::
