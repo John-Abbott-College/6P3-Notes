@@ -13,6 +13,7 @@ This year should be similar (there may be more labs, but each worth less).
 ## Lab listing
 
 :::{toctree}
+:maxdepth: 1
 :glob:
 */*
 :::

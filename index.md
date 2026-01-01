@@ -7,10 +7,10 @@ title: "420-6P3: Connected Objects"
 :glob:
 
 syllabus/*
-lectures/*
 labs/*
 assignments/*
 project/*
+lectures/*
 ```
 
 ::::{grid} 1 2 2 2

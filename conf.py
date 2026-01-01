@@ -16,17 +16,22 @@ author = 'Michael Haaf, Mauricio Bushinelli'
 extensions = [
     "myst_parser",
     "notfound.extension",
-    "sphinx.ext.githubpages",
+    "sphinx.ext.graphviz",
+    "sphinx.ext.intersphinx",
+    "sphinx.ext.todo",
+    "sphinx.ext.viewcode",
+    "sphinx_comments",
+    "sphinx_copybutton",
     "sphinx_design",
     "sphinx_favicon",
     "sphinx_prompt",
-    "sphinx_comments",
-    "sphinxext.opengraph",
+    "sphinx_tagtoctree",
     "sphinxcontrib.httpdomain",
     "sphinxcontrib.mermaid",
-    # "sphinxcontrib.bibtex",
-    "hoverxref.extension",
     "sphinxemoji.sphinxemoji",
+    "sphinxext.opengraph",
+    "sphinx_tippy",
+    # "sphinxcontrib.bibtex",
 ]
 
 hoverxref_auto_ref = True
@@ -76,3 +81,4 @@ html_theme_options = {
     },
 }
 html_static_path = ['_static']
+html_css_files = ["tippy.css"]

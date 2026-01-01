@@ -31,7 +31,13 @@ babel==2.17.0 \
 beautifulsoup4==4.14.3 \
     --hash=sha256:0918bfe44902e6ad8d57732ba310582e98da931428d231a5ecb9e7c703a735bb \
     --hash=sha256:6292b1c5186d356bba669ef9f7f051757099565ad9ada5dd630bd9de5fa7fb86
-    # via pydata-sphinx-theme
+    # via
+    #   pydata-sphinx-theme
+    #   sphinx-tippy
+boolean-py==5.0 \
+    --hash=sha256:60cbc4bad079753721d32649545505362c754e121570ada4658b852a3a318d95 \
+    --hash=sha256:ef28a70bd43115208441b53a045d1549e2f0ec6e3d08a9d142cbc41c1938e8d9
+    # via sphinx-tagtoctree
 certifi==2025.11.12 \
     --hash=sha256:97de8790030bbd5c2d96b7ec782fc2f7820ef8dba6db909ccf95449f2d062d4b \
     --hash=sha256:d8ab5478f2ecd78af242878415affce761ca6bc54a22a27e026d7c25357c3316
@@ -137,6 +143,7 @@ jinja2==3.1.6 \
     #   myst-parser
     #   sphinx
     #   sphinx-prompt
+    #   sphinx-tippy
 latexcodec==3.0.1 \
     --hash=sha256:a9eb8200bff693f0437a69581f7579eb6bca25c4193515c09900ce76451e452e \
     --hash=sha256:e78a6911cd72f9dec35031c6ec23584de6842bfbc4610a9678868d14cdfb0357
@@ -391,6 +398,7 @@ requests==2.32.5 \
     # via
     #   sphinx
     #   sphinx-prompt
+    #   sphinx-tippy
 roman-numerals==4.1.0 \
     --hash=sha256:1af8b147eb1405d5839e78aeb93131690495fe9da5c91856cb33ad55a7f1e5b2 \
     --hash=sha256:647ba99caddc2cc1e55a51e4360689115551bf4476d90e8162cf8c345fe233c7
@@ -457,6 +465,8 @@ sphinx==8.2.3 \
     #   sphinx-notfound-page
     #   sphinx-prompt
     #   sphinx-tags
+    #   sphinx-tagtoctree
+    #   sphinx-tippy
     #   sphinxcontrib-bibtex
     #   sphinxcontrib-httpdomain
     #   sphinxcontrib-jquery
@@ -506,6 +516,14 @@ sphinx-prompt==1.10.2 \
 sphinx-tags==0.4 \
     --hash=sha256:3065219bacf47567c706f2237d5665b22f3a5167367b4c4568bcda4371a5359d \
     --hash=sha256:af31203fe4e0ebd39cb95d4fef38720185def6af9fdb921b70275ff659a5dac5
+    # via 6p3-notes
+sphinx-tagtoctree==1.0.0 \
+    --hash=sha256:491fd5fef192fc0083d322b0468751e645ea6a7e0673ed878c1ab6a9bfe01e48 \
+    --hash=sha256:4cdcb9b9fd65cb142856c9b392b5384b53b28a965303645dd46f60474961157f
+    # via 6p3-notes
+sphinx-tippy==0.4.3 \
+    --hash=sha256:255abee0aed8085fdb9ab0cc595cd7a45748ae7f4662156e500a17a3f73ad63d \
+    --hash=sha256:572b0e001baec9b03e2b19ec4e9760ca1a853f4c3226b5cea251f477b2c2b096
     # via 6p3-notes
 sphinxcontrib-applehelp==2.0.0 \
     --hash=sha256:2f29ef331735ce958efa4734873f084941970894c6090408b079c61b2e1c06d1 \
@@ -688,3 +706,7 @@ websockets==15.0.1 \
     --hash=sha256:ee443ef070bb3b6ed74514f5efaa37a252af57c90eb33b956d35c8e9c10a1931 \
     --hash=sha256:f7a866fbc1e97b5c617ee4116daaa09b722101d4a3c170c787450ba409f9736f
     # via sphinx-autobuild
+wheel==0.45.1 \
+    --hash=sha256:661e1abd9198507b1409a20c02106d9670b2576e916d58f520316666abca6729 \
+    --hash=sha256:708e7481cc80179af0e556bbf0cc00b8444c7321e2700b8d8580231d13017248
+    # via sphinx-tagtoctree
