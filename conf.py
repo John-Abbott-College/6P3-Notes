@@ -1,10 +1,7 @@
-# Configuration file for the Sphinx documentation builder.
-#
-# For the full list of built-in configuration values, see the documentation:
-# https://www.sphinx-doc.org/en/master/usage/configuration.html
+import sys
+from pathlib import Path
 
-# -- Project information -----------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
+sys.path.append(str(Path('_exts').resolve()))
 
 project = '6P3-Notes'
 copyright = '2021-2026, Michael Haaf, Mauricio Bushinelli'
@@ -31,7 +28,9 @@ extensions = [
     "sphinxemoji.sphinxemoji",
     "sphinxext.opengraph",
     "sphinx_tippy",
+    # "ablog",
     # "sphinxcontrib.bibtex",
+    # "drafts",
 ]
 
 hoverxref_auto_ref = True
@@ -51,7 +50,7 @@ myst_enable_extensions = [
     "tasklist",
 ]
 myst_title_to_header = True
-myst_heading_anchors = 4
+myst_heading_anchors = 6
 myst_enable_checkboxes = True
 
 templates_path = ['_templates']
