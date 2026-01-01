@@ -3,7 +3,7 @@ title: About this website
 description: |
   Description of technologies and resources used to build this website.
   Acknowledgements, copyright, terms of use, etc. can be found on this page.
-date: 2025-01-20
+date: 2026-01-20
 ---
 
 ## Course content
@@ -46,12 +46,10 @@ Details about how this website was built follow.
 
 ### Colophon
 
-:::{.column-margin}
+:::{margin}
 ![From Wikipedia: In publishing, a colophon is a brief statement containing information about the publication of a book... Some web pages also have colophons, which frequently contain (X)HTML, CSS, or usability standards compliance information and links to website validation tests.](assets/colophon.jpg)
 :::
 
 - Markup: [Markdown](https://daringfireball.net/projects/markdown/)
 - Framework: [Quarto](https://quarto.org/)
 - Deployment: [GitHub Pages](https://pages.github.com/)
-
-You can follow along directly with course updates at the [course repository]({{< var site.repository >}}).

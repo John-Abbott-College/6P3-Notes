@@ -121,7 +121,7 @@ by default in Raspberry Pi OS.
 $ pinout
 ```
 
-::: {.callout-important}
+::: {important}
 While connecting up simple components to the GPIO pins
 is perfectly safe, it's important to be careful how you wire things up. LEDs
 should have resistors to limit the current passing through them. Do not use 5V

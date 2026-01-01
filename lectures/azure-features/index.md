@@ -32,7 +32,7 @@ benefitting from infrastructure and analysis services.
 
 See the graphic below:
 
-::: {#fig-saas-paas-iaas}
+:::{figure-md} fig-saas-paas-iaas
 
 ![](assets/intro-azure-paas.png)
 
@@ -72,7 +72,7 @@ flows between them:
   email or SMS, integration with CRM, and more.
 
 
-::: {#fig-iot-subsystems}
+:::{figure-md} fig-iot-subsystems
 
 ![](https://docs.microsoft.com/en-us/learn/wwl-azure/introduction-iot-solution-architecture/media/m01-l02-core-subsystems-iot-architecture-8158ad9e.png)
 
@@ -89,7 +89,7 @@ We will use Microsoft Azure to manage each sub-system individually.
 Azure offers many IoT-related services (see image below). In this course we'll only
 explore a few.
 
-::: {#fig-azure-architecture}
+:::{figure-md} fig-azure-architecture
 
 ![](https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/iot/images/iot-refarch.svg)
 
@@ -170,7 +170,7 @@ Azure resources and their groups must be deployed to a particular **region**.
 Azure operates in multiple datacenters around the world. These datacenters are
 grouped in to **geographic regions**.
 
-::: {#fig-azure-regions}
+:::{figure-md} fig-azure-regions
 
 ![](https://www.poppelgaard.com/wp-content/uploads/2017/03/azure_datacenters.png)
 
@@ -211,7 +211,7 @@ Quick Start
 IoT Example
 : [Create an IoT hub with Azure portal](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal)
 
-::: {#fig-azure-portal margin}
+:::{figure-md} fig-azure-portal
 
 ![](assets/azure-portal-example.png)
 
@@ -227,7 +227,7 @@ One very useful feature of Azure Portal is the data analysis and presentation so
 Without any extra configuration, all IoT commands and actions are logged and stored on the Azure Portal, and
 visualizations of data usage can be easily displayed for verification/debugging/analysis.
 
-::: {#fig-azure-metrics margin}
+:::{figure-md} fig-azure-metrics
 
 ![](assets/azure-metrics.png)
 
@@ -252,7 +252,7 @@ To find the metrics page for a given **Azure resource**, do the following:
 **Azure CLI** is a terminal tool to manage Azure services offered as Bash and
 PowerShell shells.
 
-::: {.callout-warning}
+::: {warning}
 An old version of this document recommended using the [official installation instructions](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli).
 Unfortunately, these methods (using `apt`) depend on unmaintained packages. Instead, install `azure-cli` in a python virtual environment as described below.
 :::

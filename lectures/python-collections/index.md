@@ -7,7 +7,7 @@ categories: [python]
 
 ![Image: <https://realpython.com/python-lambda/>](https://realpython.com/cdn-cgi/image/width=960,format=auto/https://files.realpython.com/media/How-to-Use-Python-Lambda-Functions_Watermarked.2afa4f5ea5d4.jpg)
 
-::: {.callout-note}
+::: {note}
 
 These notes have been adapted from <https://www.learnpython.org/> with very few
 modifications.
@@ -182,8 +182,6 @@ Here we are assigning the lambda function to the variable **sum**, and upon givi
 arguments i.e. a and b, it works like a normal function.
 
 ## Dictionaries
-
-______________________________________________________________________
 
 A dictionary is a data type similar to arrays, but works with keys and values instead of
 indexes. Each value stored in a dictionary can be accessed using a key, which is any type

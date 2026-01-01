@@ -120,7 +120,7 @@ Below is a the timing graph of a signal whose **low voltage is 0 volts** and
 
 This type of signal is also known as a **square waves**.
 
-::: {#fig-square-wave}
+:::{figure-md} fig-square-wave
 
 [![Square wave signal. Two values, either 0V or 5V.](https://cdn.sparkfun.com/assets/c/8/5/b/e/51c495ebce395f1b5a000000.png)](https://cdn.sparkfun.com/assets/c/8/5/b/e/51c495ebce395f1b5a000000.png)
 
@@ -136,7 +136,7 @@ Viewed from afar, the wave function below may seem smooth and analog, but when
 you look closely there are tiny discrete **steps** as the signal tries to
 approximate analog values.
 
-::: {#fig-digital-simulating-analogue}
+:::{figure-md} fig-digital-simulating-analogue
 
 [![Digital Sine Wave](https://cdn.sparkfun.com/assets/0/2/8/4/6/51c85fbece395fbc03000000.png)](https://cdn.sparkfun.com/assets/0/2/8/4/6/51c85fbece395fbc03000000.png)
 

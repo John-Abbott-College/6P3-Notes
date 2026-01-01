@@ -193,9 +193,7 @@ We're going to need the following packages:
 sudo apt install man ssh wget ca-certificates rsync pass pass-extension-otp zbar-tools vim
 ```
 
-*Last update to this command: {{< meta date-modified >}}*
-
-::: {.callout-note}
+::: {note}
 
 If, when running `sudo apt install`, you have an error like this:
 
@@ -257,7 +255,7 @@ the backup image you created:
 PS > wsl --import Debian .\Debian "C:\Users\<your-username>\OneDrive\debian.tar"
 ```
 
-::: {.callout-note}
+::: {note}
 
 After restoring WSL, you will find that you are automatically logged in as `root` instead of your username.
 
@@ -310,8 +308,6 @@ python3 -m pip install --upgrade pip
 # Install other dependencies
 brew install wget ca-certificates rsync pass pass-otp zbar vim
 ```
-
-*Last update to this command: {{< meta date-modified >}}*
 
 Also ensure you have [installed VSCode and configured its extensions](#vs-code-extensions)
 

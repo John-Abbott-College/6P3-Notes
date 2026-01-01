@@ -90,9 +90,9 @@ You can find all instructions in the README of the repository for the software: 
 I've adapted those instructions for each possible operating system in the section below.
 
 
-::: {.panel-tabset}
+:::: {tab-set}
 
-## Windows (recommended)
+::: {tab-item} Windows
 
 - Download the [repository source code](https://github.com/raspberrypi/usbboot/) using `git clone`.
     - Use your developer environment, i.e. your WSL instance, to do this (not git bash)
@@ -106,16 +106,23 @@ I've adapted those instructions for each possible operating system in the sectio
     - This process takes a few minutes. Keep the window open and move on to the next steps in the lab.
 - When this process is finished, you should now have the folder `C:\Program Files (x86)\Raspberry Pi\` on your computer.
 
-## macOS/Linux
+:::
+
+::: {tab-item} macOS/Linux
 
   - (On macOS / Linux): read the README of the repository and follow those instructions
       instead.
 
-## WSL
+:::
 
-  Not recommended at this time.
+
+::: {tab-item} WSL
+
+Not recommended at this time.
 
 :::
+
+::::
 
 #### Raspberry Pi Imager installation
 
@@ -137,9 +144,9 @@ Below is a brief overview of the **three step process** for reimaging the reTerm
 
 ### reTerminal Disassembly
 
-::: {#fig-dissasembly}
+:::{figure-md} fig-dissasembly
 
-{{< video https://www.youtube.com/watch?v=hAfdb603emw >}}
+<https://www.youtube.com/watch?v=hAfdb603emw>
 
 **Only remove the heatsink** in order to access the memory switch. It is *not* necessary
 fully disassemble the reTerminal like they do in the video.

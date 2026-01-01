@@ -130,11 +130,11 @@ az iot hub invoke-device-method --mn ${METHOD_NAME} -d ${IOT_DEVICE_NAME} -n ${I
 If `simDevice` is the default simulated device as seen in the [Simulate a Device](#simulate-a-device) section,
 then you should see the following log printed when the `SetTelemetryInterval` direct method is invoked:
 
-::: {.panel-tabset}
+:::: {tab-set}
 
-## Device console
+::: {tab-item} Device console
 
-```bash
+```text
 Method Request Handler [Received direct method invocation request]:
 { 'Device Id': 'simDevice',
   'Method Request Id': '1',
@@ -142,9 +142,11 @@ Method Request Handler [Received direct method invocation request]:
   'Method Request Payload': {}}
 ```
 
-## Service console
+:::
 
-```json
+::: {tab-item} Service console
+
+```text
 {
   "payload": {
     "methodName": "SetTelemetryInterval",
@@ -156,6 +158,8 @@ Method Request Handler [Received direct method invocation request]:
 ```
 
 :::
+
+::::
 
 ### Update Device Twin Properties
 

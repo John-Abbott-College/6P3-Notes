@@ -86,9 +86,9 @@ Flat layout is a bit more intuitive, and most small projects use it.
 Src layout has a lot of benefits for larger projects.
 The two are compared below.
 
-::: {.panel-tabset}
+:::: {tab-set}
 
-## flat layout
+::: {tab-item} flat layout
 
 *example adapted from [@SrcLayoutVsa]*
 
@@ -108,7 +108,9 @@ The two are compared below.
 The "flat layout" refers to organising a project’s files in a folder or repository,
 such that the various configuration files and import packages are all in the top-level directory.
 
-## src layout
+:::
+
+::: {tab-item} src layout
 
 *example adapted from [@SrcLayoutVsa]*
 
@@ -131,6 +133,8 @@ The "src layout" deviates from the flat layout by moving the code that is intend
 This subdirectory is typically named `src/`, hence "src layout".
 
 :::
+
+::::
 
 ## Project configuration
 

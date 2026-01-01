@@ -170,7 +170,7 @@ https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html_
 This section is a quick cheat sheet showing how to use type annotations for various common
 types in Python.
 
-::: {.callout-note}
+::: {note}
 The Python runtime does not enforce function and variable type
 annotations. They can be used by third party tools such as type checkers, IDEs, linters,
 etc.

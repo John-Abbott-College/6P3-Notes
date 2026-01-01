@@ -414,11 +414,10 @@ The `tar`, `zip`, and `unzip` programs provide the ability to create, extract, a
 otherwise manipulate **archives** of files, where an **archive** of files is simply a file
 that stores a collection of other files.
 
-::: {.callout-note collapse="true"}
+:::{note} `tar`, `zip`, and `unzip`
+:class: dropdown
 
-## `tar`, `zip`, and `unzip` details & examples
-
-{{< include _tar.qmd >}}
+Some content in the dropdown.
 
 :::
 

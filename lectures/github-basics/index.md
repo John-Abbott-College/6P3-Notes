@@ -4,7 +4,7 @@ subtitle: >
   Basics of cloning a repository hosted on Github and creating branches.
   Using a personal access token for authentication on GitHub outside of VSCode.
   Using the `pass` password manager to store access tokens safely.
-date: 2025-02-10
+date: 2026-02-10
 categories: [git, bash]
 ---
 
@@ -45,7 +45,7 @@ The user interface for creating branches on GitHub.
 You can create branches within your project using VSCode:
 
 
-::: {#fig-vscode-new-branch}
+:::{figure-md} fig-vscode-new-branch
 
 ![](assets/vscode-create-branch.png)
 
@@ -128,7 +128,7 @@ This scheme is not only useful for private communication (something similar is u
 
 To get started, you'll need to generated a `gpg` key-pair in order to use `pass`. 
 
-:::{.callout-note}
+:::{note}
 The GitHub instructions mention using `git bash` -- ignore them, you have a developer environment to use instead.
 
 In general, when I link to external instructions, you will need to pay attention to what parts of them may be different

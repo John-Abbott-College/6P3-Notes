@@ -50,9 +50,9 @@ There's a few reasons for that, which mostly aren't that important, but in gener
 compared to `unittest`, `pytest` requires far less **boilerplate** code to accomplish the same things.
 For example:
 
-::: {.panel-tabset}
+:::: {tab-set}
 
-## `unittest`
+::: {tab-item} `unittest`
 
 To create one unit test that always passes, and one that always fails, using `unittest`:
 
@@ -76,7 +76,9 @@ The following steps were necessary:
 
 This boilerplate code is required for every single test.
 
-## `pytest`
+:::
+
+::: {tab-item} `pytest`
 
 To create one unit test that always passes, and one that always fails, using `pytest`:
 
@@ -96,6 +98,8 @@ The following steps were necessary:
 Much less boilerplate code required!
 
 :::
+
+::::
 
 ### Installing `pytest`
 
@@ -161,7 +165,7 @@ files of the sample test code in the final-project-upstream.
 You'll notice in the [example_system tests](https://github.com/420-6A6-6P3-W25/final-project-upstream/blob/main/iot_subsystems/tests/example_system/conftest.py)
 that I define fixtures in files named `conftest.py`:
 
-```{r}
+```{text}
 #| source-line-numbers: "2,4"
 final-project-upstream/iot_subsystems/tests/example_system/
 ├── conftest.py

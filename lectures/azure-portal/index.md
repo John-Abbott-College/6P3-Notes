@@ -126,21 +126,25 @@ The Azure documentation typically has instructions for *both* methods in all the
 tutorials -- you can select which method you want to choose by clicking the tabset button
 for it:
 
-::: {.panel-tabset}
+:::: {tab-set}
 
-## Azure Portal
+::: {tab-item} Azure Portal
 
 [Create and manage Azure IoT Hubs using Azure Portal](https://learn.microsoft.com/en-us/azure/iot-hub/create-hub?tabs=portal).
 
 Note that each section has the "Azure Portal" option selected.
 
-## Azure CLI
+:::
+
+::: {tab-item} Azure CLI
 
 [Create and manage Azure IoT Hubs using Azure CLI](https://learn.microsoft.com/en-us/azure/iot-hub/create-hub?tabs=cli).
 
 Note that each section has an "Azure CLI" option selected.
 
 :::
+
+::::
 
 No matter which method you choose, you should make sure the resource you're making is **free** and in a nearby region.
 
@@ -157,7 +161,7 @@ You can keep the defaults for all subsequent menus (Networking, Management, Add-
 
 Once you're done creating your IoT Hub, it should appear in your Azure portal. See the figure below:
 
-::: {#fig-sample-iot-hub}
+:::{figure-md} fig-sample-iot-hub
 
 ![](assets/sample-resource-group-iot-hub.png)
 
