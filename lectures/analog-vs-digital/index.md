@@ -138,10 +138,9 @@ approximate analog values.
 
 :::{figure-md} fig-digital-simulating-analogue
 
-[![Digital Sine Wave](https://cdn.sparkfun.com/assets/0/2/8/4/6/51c85fbece395fbc03000000.png)](https://cdn.sparkfun.com/assets/0/2/8/4/6/51c85fbece395fbc03000000.png)
+![](https://cdn.sparkfun.com/assets/0/2/8/4/6/51c85fbece395fbc03000000.png)
 
 Oscillating voltage from -120V to 120V approximated by overlapping digital signals. [Analog vs. Digital by Digikey](https://learn.sparkfun.com/tutorials/analog-vs-digital/all)
-
 
 :::
 

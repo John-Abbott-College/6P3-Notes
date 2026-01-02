@@ -23,7 +23,7 @@ you will find references to the SDKs used in the course.
 Azure IoT provides SDKs for several languages such as Python, Java, .NET, C and
 Node.js.
 
-::: {#fig-iot-hub-architecture margin}
+:::{figure} fig-iot-hub-architecture
 
 ![](assets/iot-hub-architecture.svg)
 
@@ -44,7 +44,7 @@ Service SDKs
 IoT Hub Management SDKs
 : Help build back-end applications that manage an IoT Hub.
 
-::: {.callout-note}
+::: {note}
 Remember that the IoT Hub is only managing the device registration,
 authentication and routing of messages and data.
 

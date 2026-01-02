@@ -29,9 +29,9 @@ There are two main operations of interest for archiving programs:
 
 Examples of each follow below:
 
-::: {.panel-tabset}
+:::: {tab-set}
 
-## Create
+::: {tab-item} Create
 
 ```bash
 # Assume you have a directory called music/ and three folders inside it:
@@ -58,14 +58,9 @@ $ tar -c -z -f collection.tar.gz music
 $ tar -cjf collection.tar.bz2 music
 ```
 
-::: {note margin}
-
-When using `--create` or `-c`, `tar` will **overwrite** current contents of the file named
-by `-f`. To add files to an existing archive, you need to use `--append` or `-r`.
-
 :::
 
-## Extract
+::: {tab-item} Extract
 
 ```bash
 # Assume you have the archives from the Create example:
@@ -98,6 +93,8 @@ $ tar -xjf collection.tar.bz2 -C /tmp/music
 ```
 
 :::
+
+::::
 
 Each of these operations is **mutually exclusive**, which makes some sense. You cannot
 **create** and **extract** an archive at the same time, that doesn't make sense!

@@ -7,7 +7,7 @@ description: |
 date: 2026-01-01
 ---
 
-:::{image} https://tiswww.case.edu/php/chet/img/bash-logo-web.png
+:::{figure} https://tiswww.case.edu/php/chet/img/bash-logo-web.png
 :align: right
 :width: 300px
 
@@ -146,11 +146,9 @@ SYNOPSIS
 
 ## The five fingers of death
 
-:::{image} https://theactionelite.com/wp-content/uploads/2019/04/GetAttachmentThumbnail.jpg
-:width: 300px
-:align: right
+:::{figure} https://theactionelite.com/wp-content/uploads/2019/04/GetAttachmentThumbnail.jpg
 
-<!-- *Five Fingers of Death*, or *King Boxer* as it is known on Wikipedia, is a martial-arts movie I have not seen, but I have heard referenced in many songs. It speaks to me that the mastery of a seemlingly small set tools (five fingers) can lead to drastic increases in capability (the ability to inflict death) and I believe this spirit applies directly to working with unix tools. [Image source](https://theactionelite.com/five-fingers-of-death-1972-review/) -->
+*Five Fingers of Death*, or *King Boxer* as it is known on Wikipedia, is a martial-arts movie I have not seen, but I have heard referenced in many songs. It speaks to me that the mastery of a seemlingly small set tools (five fingers) can lead to drastic increases in capability (the ability to inflict death) and I believe this spirit applies directly to working with unix tools. [Image source](https://theactionelite.com/five-fingers-of-death-1972-review/)
 
 :::
 

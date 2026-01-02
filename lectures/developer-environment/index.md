@@ -263,7 +263,8 @@ The way to set a default user in a WSL container instance is to create a `[user]
 
 Open your wsl instance and add the following entry to `/etc/wsl.conf`:
 
-``` {filename=/etc/wsl.conf}
+```{code-block}
+:caption: /etc/wsl.conf
 [user]
 default=username
 ```

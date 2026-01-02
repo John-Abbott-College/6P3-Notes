@@ -35,7 +35,7 @@ Blob storage has the following structure:
 
 - **Blobs:** the file being stored.
 
-::: {#fig-blob-structure}
+:::{figure-md} fig-blob-structure
 
 ![](assets/blob-structure.png)
 
@@ -54,7 +54,7 @@ The default setting for creating a Storage Account and Blob Container are suffic
 However, if you would like your containers to have sub-folders, see the next section.
 
 
-#### Hierarchical Directories & Data Lake Storage
+### Hierarchical Directories & Data Lake Storage
 
 By default, Blob storage has a flat file structure. This means that all blobs (files) sit at the same level inside the **container**.
 
@@ -73,7 +73,8 @@ Note: A Blob storage container is the Azure equivalent of an [Amazon S3 bucket](
 
 As usual, Azure provides a SDK to interact with blob storage.
 
-#### Python SDK
+### Python SDK
+
 > Python SDK **[documentation overview](https://docs.microsoft.com/en-us/python/api/overview/azure/storage-blob-readme?view=azure-python)** for:
 >- Getting started.
 >- Key concepts.
@@ -82,7 +83,8 @@ As usual, Azure provides a SDK to interact with blob storage.
 **Quick Links**
 [Package (PyPI)](https://pypi.org/project/azure-storage-blob/) | [API reference documentation](https://aka.ms/azsdk-python-storage-blob-ref) | [Product documentation](https://docs.microsoft.com/en-us/azure/storage/) | [Samples](https://github.com/Azure/azure-sdk-for-python/tree/azure-storage-blob_12.11.0/sdk/storage/azure-storage-blob/samples)
 
-#### .NET SDK
+### .NET SDK
+
 > .NET SDK **[documentation overview](https://docs.microsoft.com/en-us/dotnet/api/overview/azure/storage.files.datalake-readme?view=azure-dotnet)** for:
 >- Getting started.
 >- Key concepts.
@@ -92,11 +94,11 @@ As usual, Azure provides a SDK to interact with blob storage.
 [Package (NuGet)](https://www.nuget.org/packages/Azure.Storage.Files.DataLake/) | [API reference documentation](https://docs.microsoft.com/en-us/dotnet/api/azure.storage.files.datalake) | [REST API documentation](https://docs.microsoft.com/en-us/rest/api/storageservices/datalakestoragegen2/filesystem) | [Product documentation](https://docs.microsoft.com/en-us/azure/storage/blobs/?toc=/azure/storage/blobs/toc.json)
 
 
-#### Notes on Blob Storage SDKs:
+### Notes on Blob Storage SDKs:
 
 **Blob name** is usually the path to the blob object relative to the container.
 
-::: {#fig-blob-name}
+:::{figure-md} fig-blob-name
 
 ![](assets/blob-name.png)
 
@@ -120,7 +122,7 @@ To create an instance of a  `BlobContainerClient` , you must provide the followi
 2. **Blob Container Name.**
 	1. Simply the name of the container you created inside the storage account.
 
-::: {#fig-blob-container-name}
+:::{figure-md} fig-blob-container-name
 
 ![](assets/blob-container-name.png)
 
@@ -134,19 +136,3 @@ Here we have `checkpoint-blob` as the name of the container.
 - [Create Azure Data Lake Database, Schema, Table, View, Function and Stored Procedure](https://www.mssqltips.com/sqlservertip/5891/create-azure-data-lake-database-schema-table-view-function-and-stored-procedure/), by: [Ron L'Esteve](https://www.mssqltips.com/sqlserverauthor/329/ron-lesteve/ "author profile for Ron L'Esteve")
 - Github Repo w/ Samples: [Azure Storage Files Data Lake client library for .NET](https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/storage/Azure.Storage.Files.DataLake)
 - See the videos below.
-
-::: {#fig-data-lake-storage}
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/2uSkjBEwwq0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-Excellent introduction to Data Lake Storage
-
-:::
-
-::: {#fig-data-lake-sdk}
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/JZWaWAU548g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-Examples of using Data Lake SDK with C#:
-:::
-

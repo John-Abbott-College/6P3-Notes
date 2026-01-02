@@ -165,7 +165,7 @@ files of the sample test code in the final-project-upstream.
 You'll notice in the [example_system tests](https://github.com/420-6A6-6P3-W25/final-project-upstream/blob/main/iot_subsystems/tests/example_system/conftest.py)
 that I define fixtures in files named `conftest.py`:
 
-```{text}
+```text
 #| source-line-numbers: "2,4"
 final-project-upstream/iot_subsystems/tests/example_system/
 ├── conftest.py
