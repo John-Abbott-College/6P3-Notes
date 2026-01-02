@@ -27,14 +27,13 @@ extensions = [
     "sphinxcontrib.mermaid",
     "sphinxemoji.sphinxemoji",
     "sphinxext.opengraph",
-    "sphinx_tippy",
+    # "sphinx_tippy",
     "sphinx_togglebutton",
-    # "ablog",
+    "ablog",
     # "sphinxcontrib.bibtex",
     # "drafts",
 ]
 
-hoverxref_auto_ref = True
 # bibtex_bibfiles = ["references.bib"]
 
 myst_enable_extensions = [
@@ -83,3 +82,7 @@ html_theme_options = {
 }
 html_static_path = ['_static']
 html_css_files = ["tippy.css"]
+# html_sidebars = {
+#    "**": ['globaltoc.html', 'sourcelink.html', 'searchbox.html'],
+#    "lectures/index": ["ablog/categories.html"],
+# }
