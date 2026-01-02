@@ -122,7 +122,7 @@ This type of signal is also known as a **square waves**.
 
 :::{figure-md} fig-square-wave
 
-[![Square wave signal. Two values, either 0V or 5V.](https://cdn.sparkfun.com/assets/c/8/5/b/e/51c495ebce395f1b5a000000.png)](https://cdn.sparkfun.com/assets/c/8/5/b/e/51c495ebce395f1b5a000000.png)
+![Square wave signal. Two values, either 0V or 5V.](https://cdn.sparkfun.com/assets/c/8/5/b/e/51c495ebce395f1b5a000000.png)
 
 0 to 5 volt "pulses" forming a square wave. [Analog vs. Digital by Digikey](https://learn.sparkfun.com/tutorials/analog-vs-digital/all)
 

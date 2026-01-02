@@ -23,7 +23,7 @@ you will find references to the SDKs used in the course.
 Azure IoT provides SDKs for several languages such as Python, Java, .NET, C and
 Node.js.
 
-:::{figure} fig-iot-hub-architecture
+:::{figure-md} fig-iot-hub-architecture
 
 ![](assets/iot-hub-architecture.svg)
 
@@ -56,9 +56,9 @@ end-points.
 
 ## SDKs by language
 
-::: {.panel-tabset}
+:::: {tab-set}
 
-## Python
+::: {tab-item} Python
 
 Packages (pip)
 : Device: [azure-iot-device](https://pypi.org/project/azure-iot-device/)
@@ -82,7 +82,9 @@ Reference
 : Service: [learn.microsoft.com](https://learn.microsoft.com/en-us/python/api/azure-iot-hub/?view=azure-python)
 : IoTHub Management: [learn.microsoft.com](https://learn.microsoft.com/en-us/python/api/azure-mgmt-iothub/?view=azure-python)
 
-## C\#
+:::
+
+::: {tab-item} Typescript
 
 Package (NuGet)
 : Device: [Microsoft.Azure.Devices.Client](https://www.nuget.org/packages/Microsoft.Azure.Devices.Client)
@@ -106,56 +108,4 @@ Reference
 
 :::
 
-## Installing `dotnet` on developer environment
-
-### WSL
-
-These instructions were adatped from [learn.microsoft.com](https://learn.microsoft.com/en-us/dotnet/core/install/linux-debian?tabs=dotnet8#dependencies)
--- see the linked document for more details if you run into issues.
-
-```bash
-# Update system
-$ sudo apt update && sudo apt upgrade -y
-
-# Install required dependencies
-$ sudo apt install libc6 libgcc-s1 libgssapi-krb5-2 libicu72 libssl3 libstdc++6 zlib1g
-
-# Add dotnet repository to debian package manager
-wget https://packages.microsoft.com/config/debian/12/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
-sudo dpkg -i packages-microsoft-prod.deb
-rm packages-microsoft-prod.deb
-
-# Install .NET 8
-sudo apt update && sudo apt install -y dotnet-sdk-8.0
-
-# Verify .NET8 installed
-dotnet --version
-```
-
-#### Setup tab completions using `.bashrc`
-
-To get tab completions set up for `dotnet`, add the following snippet to your `.bashrc`:
-
-```bash
-
-function _dotnet_bash_complete()
-{
-  local cur="${COMP_WORDS[COMP_CWORD]}" IFS=$'\n' # On Windows you may need to use use IFS=$'\r\n'
-  local candidates
-  read -d '' -ra candidates < <(dotnet complete --position "${COMP_POINT}" "${COMP_LINE}" 2>/dev/null)
-  read -d '' -ra COMPREPLY < <(compgen -W "${candidates[*]:-}" -- "$cur")
-}
-
-complete -f -F _dotnet_bash_complete dotnet
-```
-
-See [learn.miscrosoft.com](https://learn.microsoft.com/en-us/dotnet/core/tools/enable-tab-autocomplete#bash)
-for more details.
-
-### OSX
-
-Try the instructions here <https://learn.microsoft.com/en-us/dotnet/core/install/macos>
-
-NOTE: I haven't tested these instructions myself.
-
-
+::::
