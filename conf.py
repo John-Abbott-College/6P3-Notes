@@ -4,8 +4,11 @@ from pathlib import Path
 sys.path.append(str(Path('_exts').resolve()))
 
 project = '6P3-Notes'
-copyright = '2021-2026, Michael Haaf, Mauricio Bushinelli'
-author = 'Michael Haaf, Mauricio Bushinelli'
+project_copyright = [
+    '2021-2023, Mauricio Bushinelli',
+    "2023-%Y, Michael Haaf",
+]
+author = "John Abbott College Department of Computer Science"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -64,10 +67,15 @@ exclude_patterns = [
     "**/_*",
 ]
 
+favicons = [
+    "favicon_io/favicon-16x16.png",
+    "favicon_io/favicon-32x32.png",
+    "favicon_io/favicon.ico",
+    "favicon_io/apple-touch-icon.ng",
+    "favicon_io/android-chrome-192x192.png",
+    "favicon_io/android-chrome-512x512.png",
+]
 
-
-# -- Options for HTML output -------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_theme = "sphinx_book_theme"
 html_title = "Connected Objects"
@@ -99,3 +107,4 @@ html_sidebars = {
 }
 
 blog_path = "lectures"
+post_auto_image = 0 # could set to 1, but need to do some css magic before this is worth it
