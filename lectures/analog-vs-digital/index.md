@@ -3,10 +3,11 @@ title: "Signals: Analog and digital"
 subtitle:
   Comparing the two paradigms for measuring electronic information and
   understanding how each are used for distributed applications.
-date: 2025-03-14
+date: 2026-01-01
 blogpost: true
 category: Hardware
 tags: Hardware
+location: Lecture
 ---
 
 We will use analog and digital signals to communicate with sensors.

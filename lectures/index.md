@@ -12,6 +12,7 @@ date: 2026-01-30
 :::
 
 :::{postlist}
+:location: Lecture
 :date: %A, %B %d, %Y
 :format: {title} on {date}
 :list-style: circle
