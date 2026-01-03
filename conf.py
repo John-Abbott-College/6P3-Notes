@@ -99,7 +99,7 @@ html_sidebars = {
         'navbar-logo.html',
         'icon-links.html',
         'search-button-field.html',
-        'sbt-sidebar-nav.html'
+        'sbt-sidebar-nav.html',
         "ablog/categories.html",
     ],
 }
