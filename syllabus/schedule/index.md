@@ -3,7 +3,9 @@ title: Schedule
 description: |
   Roadmap for course deliverables; record of lectures & activites we have
   covered along the way.
-date: 2025-01-20
+date: 2026-01-02
+blogpost: true
+location: Syllabus
 ---
 
 This is the authoritative calendar for content covered in class, and for content

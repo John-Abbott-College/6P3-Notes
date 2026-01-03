@@ -4,6 +4,8 @@ description: |
   Course description outlining goals, expectations, resources, and other
   important information.
 date: 2026-01-01
+blogpost: true
+location: Syllabus
 ---
 
 ## Logistics
