@@ -93,13 +93,9 @@ html_sidebars = {
         'navbar-logo.html',
         'icon-links.html',
         'search-button-field.html',
-        'sbt-sidebar-nav.html'
-    ],
-   "lectures/index": [
-        'navbar-logo.html',
-        'icon-links.html',
-        'search-button-field.html',
         'sbt-sidebar-nav.html',
         "ablog/categories.html",
     ],
 }
+
+blog_path = "lectures"
