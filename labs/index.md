@@ -14,20 +14,20 @@ This year should be similar (there may be more labs, but each worth less).
 
 :::{toctree}
 :maxdepth: 1
-
-dev-env-setup/index
-bash-mash/index
-reterminal-devices/index
-digital-devices/index
-pwm-analog-devices/index
-iot-communication-protocols/index
-serial-devices-basic/index
-serial-devices-advanced/index
-asynchronous-programming/index
-azure-sdk/index
-device-calibration/index
+:glob:
+:hidden:
+*/*
 :::
 
+:::{postlist}
+:location: Lab
+:date: %A, %B %d, %Y
+:format: {title} (Due: {language}; Worth: {author})
+:list-style: circle
+:excerpts:
+:sort:
+:expand: Read more ...
+:::
 
 ## General Lab Instructions
 
