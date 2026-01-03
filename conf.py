@@ -79,6 +79,8 @@ html_theme_options = {
         "image_light": "_static/media/full-logo.svg",
         "image_dark": "_static/media/full-logo.svg",
     },
+    "collapse_navbar": True,
+    "max_navbar_depth": 1,
 }
 html_static_path = ['_static']
 html_css_files = ["tippy.css"]
@@ -86,3 +88,18 @@ html_css_files = ["tippy.css"]
 #    "**": ['globaltoc.html', 'sourcelink.html', 'searchbox.html'],
 #    "lectures/index": ["ablog/categories.html"],
 # }
+html_sidebars = {
+   "**": [
+        'navbar-logo.html',
+        'icon-links.html',
+        'search-button-field.html',
+        'sbt-sidebar-nav.html'
+    ],
+   "lectures/index": [
+        'navbar-logo.html',
+        'icon-links.html',
+        'search-button-field.html',
+        'sbt-sidebar-nav.html'
+        "ablog/categories.html",
+    ],
+}
