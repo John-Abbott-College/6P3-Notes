@@ -6,7 +6,17 @@ date: 2026-01-30
 
 :::{toctree}
 :maxdepth: 1
+:glob:
+:hidden:
+*/*
+:::
 
-reterminal-control-center/index
-azure-iot-hub/index
+:::{postlist}
+:location: Assignment
+:date: %A, %B %d, %Y
+:format: {title} (Due: {language}; Worth: {author})
+:list-style: circle
+:excerpts:
+:sort:
+:expand: Read more ...
 :::
