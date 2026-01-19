@@ -48,21 +48,32 @@ Part of getting comfortable with `bash` is simply getting in the habit of *using
 Complete each of the following tasks:
 
 1. On Moodle, complete the Lab 1 [Hardware & stuff survey](https://moodle.johnabbott.qc.ca/course/section.php?id=12074)
-2. Complete the [Developer environment prerequisites](/lectures/developer-environment/index)
+1. Complete the [Developer environment prerequisites](/lectures/developer-environment/index)
 
     ```{note}
     If you will use a personal computer for this class, you need to do the developer environment set up on BOTH (1) a lab computer and (2) your personal computer(s).
     ```
 
-3. Sign up for the {{ '[course repository on GitHub Classrooms]({})'.format(course_repository) }}
-4. Clone the coursework repository onto your developer environment
+1. Sign up for the {{ '[course repository on GitHub Classrooms]({})'.format(course_repository) }}
+1. **CHECK THE EMAIL ASSOCIATED WITH YOUR GITHUB**: accept the invitation to join the class GitHub organization.
+1. Clone the coursework repository onto your developer environment
 
-## Tracking your labwork progress
+![](./assets/invitation.png)
+*You need to find this email and accept the invitation in order to access your coursework repository.*
 
-Open your courework repository in VSCode, and do the following:
+## Tracking your coursework progress
+
+Throughout this class, we are going to make extensive use of git and GitHub to track our work, starting with this lab.
+
+Open your coursework repository in VSCode, and do the following:
 
 1. [Create a branch](/lectures/github-basics/index) called `lab-1`
+2. in VSCode, open the `lab-1/bandit-instructions.txt` file
+3. Change the 2nd line `Prepared by: <write your name here>` such that your name is written.
+4. Immediately make a commit of that change
+5. Push that change, and the `lab-1` branch, to your github repo
 
+You've now begun the "flow" that both tracks the progress of your work and saves your work in a location independent of your developer environment -- we are regularly going to be sharing code across devices.
 
 ## bash bandit
 
@@ -111,12 +122,13 @@ For more detail, see [https://askubuntu.com/questions/1364984/dns-not-working-on
 
 ### Documenting your progress<a name="documenting-your-progress"></a>
 
-As you complete each level, write down in `lab-0/bandit-instructions.txt` the following:
+As you complete each level, write down in `lab-1/bandit-instructions.txt` the following:
 
-- the password needed to start the next level
-- the commands used to find the file
+- the password needed to start the level
+    - i.e., `Level 0-1` should have `Password: bandit0`, because `bandit0` is the password needed to enter the `Level0-1` server.
+- the commands used to find the next password
 - comments explaining the commands
-  - e.g. necessary paramaters/flags
+  - e.g. necessary paramaters/flags, idea behind the command, why it works, etc.
 
 ```{note}
 In each level, the password is a long string of random characters stored in a file on the server. You will need to copy and paste the password frequently -- from your `bandit-instructions.txt` and to your bandit game terminal.
@@ -129,6 +141,8 @@ Copy/paste is a bit different on terminals than you may be used to:
 ```
 
 Follow the format in the `bandit-instructions.txt` file. Make sure you read and follow the instructions given in the comments (marked by `#`).
+
+As you complete the `bandit-instructions.txt` file, track your progress on the `lab-1` branch using `git commit`. Before you finish working, make sure you `git push` your commits to upstream `lab-1` branch of this repository.
 
 **Don't be shy**: you should be `committing` and `pushing` your progress to your branch regularly, even if it is not finished -- this will let you continue where you left off easily no matter what computer you are working on.
 
