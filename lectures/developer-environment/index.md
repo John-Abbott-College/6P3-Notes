@@ -41,7 +41,8 @@ to set up Windows Subsystem for Linux (WSL).
 
 ### Install Debian WSL
 
-```powershell {filename=Powershell}
+```{code-block}
+:caption: powershell
 # Verify that Debian is an available OS to install
 PS > wsl --list --online # Debian should be one of the results
 
@@ -51,7 +52,8 @@ PS > wsl --install -d Debian
 
 You will be prompted to create a username and password:
 
-```powershell {filename=Powershell}
+```{code-block}
+:caption: powershell
 # Recommended: All lower case. Something easy to type, e.g. your first name
 Enter new UNIX username:
 # Don't overthink this, you can always change it later
@@ -186,15 +188,17 @@ Recommendation: store WSL images on your college OneDrive account. That way, you
 easily share your image with your personal computer, and restore your image automatically
 using any college computer.
 
-```powershell {filename=Powershell}
-PS > md -Force "C:\Users\<your-username>\OneDrive\420-6P3-W26"
+```{code-block}
+:caption: powershell
+PS > md -Force "C:\Users\<your-username>\<your-OneDrive-folder>\420-6P3-W26"
 ```
 
 Then, we'll use `wsl --export` to make a backup copy of your WSL container:
 
-```powershell {filename=Powershell}
+```{code-block}
+:caption: powershell
 # This can take around 5 minutes to finish.
-PS > wsl --export Debian "C:\Users\<your-username\OneDrive\420-6P3-W26\debian.tar
+PS > wsl --export Debian "C:\Users\<your-username>\<your-OneDrive-folder>\420-6P3-W26\debian.tar
 ```
 
 ```{note}
@@ -206,12 +210,13 @@ If you are getting an ACCESS DENIED error, double check that you are writing the
 On a new machine (or on a machine with a freshly wiped hard drive...) you can `--import`
 the backup image you created:
 
-```powershell {filename=Powershell}
+```{code-block}
+:caption: powershell
 # This can take around 5 minutes to finish.
-PS > wsl --import Debian .\Debian "C:\Users\<your-username>\OneDrive\debian.tar"
+PS > wsl --import Debian .\Debian "C:\Users\<your-username\OneDrive\debian.tar"
 ```
 
-::: {note}
+:::{note}
 
 After restoring WSL, you will find that you are automatically logged in as `root` instead of your username.
 
