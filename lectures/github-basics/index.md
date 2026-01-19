@@ -15,15 +15,9 @@ location: Lecture
 
 These notes cover the basics for using GitHub in this class.
 
-::: {margin}
-
-![](assets/github-mark.svg)
-
-:::
-
 ## Branch management
 
-Almost all of our lab and assignment work will take place on **branches**. 
+How to create repository branches using various tools.
 
 ### Creating a branch using the GitHub website
 
@@ -31,17 +25,25 @@ You can add branches to your repository directly by clicking the "Branches" icon
 
 You'll need the following information:
 
-- **New branch name**: the lab name (e.g. `lab-0`).
+- **New branch name**: the lab name (e.g. `lab-1`).
 - **Source**: the `instructions` branch from your own repository
 
-::: {#fig-new-branch layout-ncol=2}
+::::{subfigure} AB
 
-<img src="assets/new-branch-1.png" alt="Creating a new branch" />  
+  :::{image} assets/new-branch-1.png
+  ---
+  alt: Creating a new branch
+  ---
+  :::
 
-<img src="assets/new-branch.png" alt="Naming a new branch" /> 
+  :::{image} assets/new-branch.png
+  ---
+  alt: Naming a new branch
+  ---
+  :::
 
-The user interface for creating branches on GitHub.
-:::
+  The user interface for creating branches on GitHub.
+::::
 
 ### Creating a branch using VSCode
 
@@ -61,14 +63,14 @@ Clicking on the branch button (bottom left) launches a dialog which allows for a
 # make sure you are on the `instructions` branch before proceeding
 git status
 # the switch command switches branches, -c flag stands for "create"
-git switch -c lab-0
+git switch -c lab-1
 # upload your branch to the remote repository
 git push -u origin
 # ensure your new lab-0 branch is up to date with new remote lab-0 branch
 git status
 ```
 
-## Authentication
+## GitHub Authentication
 
 Many `git` operations require authentication to get permission. Some
 examples:

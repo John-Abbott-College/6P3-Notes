@@ -57,6 +57,13 @@ Complete each of the following tasks:
 3. Sign up for the {{ '[course repository on GitHub Classrooms]({})'.format(course_repository) }}
 4. Clone the coursework repository onto your developer environment
 
+## Tracking your labwork progress
+
+Open your courework repository in VSCode, and do the following:
+
+1. [Create a branch](/lectures/github-basics/index) called `lab-1`
+
+
 ## bash bandit
 
 To get us warmed up with using `ssh` to connect to a remote computer, and using the various `bash` tools at our disposal, the [bash bandit] game is great practise.
@@ -131,7 +138,8 @@ During class on Monday/Friday, I will take note of your progress. Let me know if
 
 ## Finished early?
 
-Try to complete more of the bash bandit game! We will be returning to this in future labs, so your time won't be wasted.
+- Try to complete more of the bash bandit game! We will be returning to this in future labs, so your time won't be wasted.
+- If you haven't already, set up creating and storing a GitHub Personal Access token on your developer environment using `pass` (see [the github course notes](/lectures/github-basics/index) for more details.)
 
 ## Rubric
 

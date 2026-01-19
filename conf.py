@@ -30,6 +30,7 @@ extensions = [
     "sphinxemoji.sphinxemoji",
     "sphinx_togglebutton",
     "ablog",
+    "sphinx_subfigure",
     # "sphinxcontrib.bibtex",
     # "drafts",
 ]
