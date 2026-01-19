@@ -6,7 +6,8 @@ title: "420-6P3: Connected Objects"
 :hidden:
 :glob:
 
-syllabus/*
+about/syllabus/index
+about/schedule/index
 labs/*
 assignments/*
 project/*

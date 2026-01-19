@@ -8,6 +8,7 @@ project_copyright = [
     '2021-2023, Mauricio Bushinelli',
     "2023-%Y, Michael Haaf",
 ]
+author = "Michael Haaf"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -85,6 +86,7 @@ html_theme_options = {
     },
     "collapse_navbar": True,
     "max_navbar_depth": 1,
+    "show_prev_next": False,
 }
 html_static_path = ['_static']
 html_css_files = ["tippy.css"]
@@ -104,3 +106,9 @@ html_sidebars = {
 
 blog_path = "lectures"
 post_auto_image = 0 # could set to 1, but need to do some css magic before this is worth it
+
+myst_substitutions = {
+    "course_outline": "https://moodle.johnabbott.qc.ca/pluginfile.php/125547/mod_resource/content/4/WINTER%202026.COMPUTER%20SCIENCE.420-6P3-AB.HAAFM.pdf",
+    "course_repository": "https://classroom.github.com/a/pRCPaajX",
+    "course_moodle": "https://moodle.johnabbott.qc.ca/course/view.php?id=1753"
+}

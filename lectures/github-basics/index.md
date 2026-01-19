@@ -1,22 +1,25 @@
 ---
 title: GitHub basics
-subtitle: >
+description: |
   Basics of cloning a repository hosted on Github and creating branches.
   Using a personal access token for authentication on GitHub outside of VSCode.
   Using the `pass` password manager to store access tokens safely.
-date: 2026-02-10
-categories: [git, bash]
+date: 2026-01-19
+blogpost: true
+category: Bash
+tags: git, bash
+location: Lecture
 ---
+
+## Overview
+
+These notes cover the basics for using GitHub in this class.
 
 ::: {margin}
 
 ![](assets/github-mark.svg)
 
 :::
-
-## Overview
-
-These notes cover the basics for using GitHub in this class.
 
 ## Branch management
 

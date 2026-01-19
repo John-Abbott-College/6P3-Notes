@@ -1,7 +1,7 @@
 ---
 title: Device to Cloud Communication
 subtitle: "How to use Azure for bidrectional device-cloud communication"
-date: 2025-04-28
+date: 2027-04-28
 categories: [iot]
 ---
 

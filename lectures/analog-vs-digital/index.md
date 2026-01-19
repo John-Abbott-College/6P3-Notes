@@ -3,7 +3,7 @@ title: "Signals: Analog and digital"
 subtitle:
   Comparing the two paradigms for measuring electronic information and
   understanding how each are used for distributed applications.
-date: 2026-01-01
+date: 2027-03-01
 blogpost: true
 category: Hardware
 tags: Hardware

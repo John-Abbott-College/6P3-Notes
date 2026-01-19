@@ -1,31 +1,27 @@
 ---
 title: Developer environment setup
-subtitle: >
+description: >
   Instructions for setting up classroom and personal computers for programming in this course, including:
   setting up a Debian container on WSL;
   restoring your WSL container from backup quickly;
   installing needed dependencies on WSL, Mac/OSX, and Linux;
   verifying that needed dependencies have been installed.
-date: 2025-01-20
-format:
-  html:
-    toc-expand: 2
-categories: ["bash", "linux"]
+date: 2026-01-19
+blogpost: true
+category: Linux
+tags: Linux
+location: Lecture
 ---
-
-::: {margin}
-
-![[Photo by Tima Miroshnichenko](https://www.pexels.com/photo/a-vintage-drilling-machine-5846273/)](./assets/vintage-drill-press.jpg)
-
-:::
 
 ## Overview
 
+This lecture covers setting up a developer environment such that,
+no matter what hardware you have available at home, you are comfortable
+completing coding assignments for this class on your personal computer
+and on classroom computers.
+
 Throughout this semester, we will make regular use of `bash`, `python`, `git`, and other
 3rd party command line tools such as `azure-cli` and `gh-cli`.
-
-No matter what hardware you have available at home, everyone should be comfortable
-completing coding assignments on their personal computers and on classroom computers.
 
 Everyone will need the following set up:
 

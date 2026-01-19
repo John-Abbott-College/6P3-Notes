@@ -1,7 +1,7 @@
 ---
 title: Azure CLI Cheatsheet
 subtitle: "Reference for common Azure commands"
-date: 2025-04-21
+date: 2027-04-21
 categories: [bash, iot]
 ---
 

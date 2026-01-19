@@ -2,12 +2,11 @@
 title: Course hardware
 subtitle: >
   List of hardware available for the course as well as their respective specifications and documentation.
-date: 2025-01-20
-categories: [hardware]
-image: ./assets/iot-hardware.png
-bibliography: references.bib
-nocite: |
-  @*
+date: 2026-01-24
+blogpost: true
+category: Hardware
+tags: Hardware
+location: Lecture
 ---
 
 :::{margin}

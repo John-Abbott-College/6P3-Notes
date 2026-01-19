@@ -4,19 +4,7 @@ description: |
   Roadmap for course deliverables; record of lectures & activites we have
   covered along the way.
 date: 2026-01-02
-blogpost: true
-location: Syllabus
 ---
-
-This is the authoritative calendar for content covered in class, and for content
-you should expect to see covered as we continue through the course.
-
-:::{figure} assets/ticktock.jpg
-:figclass: float-right ml-4
-
-The focused pupil keeps watch on Time
-
-:::
 
 :::{list-table}
 :header-rows: 1
@@ -25,7 +13,10 @@ The focused pupil keeps watch on Time
 * - **Monday**
   - **Friday**
 * - Jan 19
+    - Review the {{ '[course outline]({})'.format(course_outline) }}
+    - Begin [Lab 1](/labs/dev-env-setup/index.md)
   - Jan 23
+    - Finish [Lab 1](/labs/dev-env-setup/index.md)
 * - Jan 26
   - Jan 30
 * - Feb 2
@@ -49,10 +40,13 @@ The focused pupil keeps watch on Time
 * - Apr 6: Good Friday
   - Apr 10
 * - Apr 13
+    - TENTATIVE: Quiz 1
   - Apr 17
 * - Apr 20
+    - TENTATIVE: Quiz 2
   - Apr 24
 * - Apr 27
+    - TENTATIVE: Test
   - May 1
 * - May 4
   - May 8

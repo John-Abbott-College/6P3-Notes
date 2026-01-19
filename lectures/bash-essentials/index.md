@@ -4,7 +4,11 @@ description: |
   Tips for using the bash interactive shell CLI effectively.
   The core bash commands everyone should know.
   How to combine commands using pipes and redirects.
-date: 2026-01-01
+date: 2026-01-19
+blogpost: true
+category: Bash
+tags: Bash
+location: Lecture
 ---
 
 :::{figure} https://tiswww.case.edu/php/chet/img/bash-logo-web.png
