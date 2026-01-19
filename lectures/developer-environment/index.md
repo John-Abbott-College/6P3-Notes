@@ -39,24 +39,6 @@ The sections below show how to do that, and how to verify the installation, in e
 If using a Windows machine (lab computers and/or personal) for this course, you will need
 to set up Windows Subsystem for Linux (WSL).
 
-### Ensure necessary Windows software installed
-
-These programs should already be installed on your Windows machine, but in case they are
-not:
-
-- [Link for installing git on Windows](https://git-scm.com/downloads/win)
-- [Link for installing Windows Terminal](https://www.microsoft.com/store/apps/9n0dx20hk701)
-
-#### VS Code Extensions
-
-If you have not already, [install VSCode](https://code.visualstudio.com/download).
-
-Then, install the following extensions:
-
-1. [Remote Development extension pack by Microsoft](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack)
-1. [Python language support extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
-1. [Python formatter/linter extension (ruff)](https://marketplace.visualstudio.com/items?itemName=charliermarsh.ruff)
-
 ### Install Debian WSL
 
 ```powershell {filename=Powershell}
@@ -72,18 +54,9 @@ You will be prompted to create a username and password:
 ```powershell {filename=Powershell}
 # Recommended: All lower case. Something easy to type, e.g. your first name
 Enter new UNIX username:
-# Recommended: Don't overthink this, you can always change this later
+# Don't overthink this, you can always change it later
 New password:
 ```
-
-::: {note margin}
-
-If you forget the password for your WSL container, you can easily reset it.
-
-See the Microsoft article
-[Set up your linux username and password](https://learn.microsoft.com/en-us/windows/wsl/setup/environment#set-up-your-linux-username-and-password).
-
-:::
 
 After this, your installation is complete.
 
@@ -99,35 +72,18 @@ Follow the steps in
 [Set up Windows Terminal](https://learn.microsoft.com/en-us/windows/wsl/setup/environment#set-up-windows-terminal),
 particularly:
 
-::: {margin}
-
-![We're going to spend a lot of time in terminal environments -- you might as well enjoy using it. I find it motivating to use terminals that look and feel good to use. [Image source](https://learn.microsoft.com/en-us/windows/wsl/setup/environment#set-up-windows-terminal)](https://learn.microsoft.com/en-us/windows/wsl/media/terminal.png)
-
-:::
-
-- Ensure your `Debian` WSL instance is the
-    [default profile](https://learn.microsoft.com/en-us/windows/terminal/customize-settings/startup#default-profile)
-    
-
+- Ensure your `Debian` WSL instance is the [default profile](https://learn.microsoft.com/en-us/windows/terminal/customize-settings/startup#default-profile)
     - Then, pin Windows Terminal to your taskbar, ideally as the first app
     - Use `Win+1` to open Windows Terminal automatically.
-
 - [Choose a theme](https://learn.microsoft.com/en-us/windows/terminal/customize-settings/appearance#theme)
-
 - [Choose a color scheme](https://learn.microsoft.com/en-us/windows/terminal/customize-settings/color-schemes)
-
     - [Customizing a color scheme](https://learn.microsoft.com/en-us/windows/terminal/custom-terminal-gallery/custom-schemes)
-
 - [Practise searching through terminal output using `Ctrl+Shift+F`](https://learn.microsoft.com/en-us/windows/terminal/search)
-
 - [Make sure you know how to copy/paste text in Windows Terminal](https://learn.microsoft.com/en-us/windows/terminal/tips-and-tricks#copypaste)
-
     - You can also use `Ctrl+Shift+c` and `Ctrl+Shift+v` to copy/paste in terminals
     - You can also use `Ctrl+Insert` and `Shift+Insert` to copy paste in terminals
-
 - Use `Ctrl+Shift+P` to open the command palette to do almost any terminal config command
     (very similar to VSCode).
-
     - This is very useful for learning hotkeys for the following things:
         - making terminal panes
         - changing focus
@@ -294,7 +250,7 @@ On a terminal on your computer, install the packages below.
 
 On OS X we'll use `brew`, on Linux you can use your system's package manager:
 
-```bash {filename=bash}
+```bash
 # Update system:
 brew update && brew upgrade
 # Verify python version is >= 3.9:
@@ -306,14 +262,12 @@ python3 -m pip install --upgrade pip
 brew install wget ca-certificates rsync pass pass-otp zbar vim
 ```
 
-Also ensure you have [installed VSCode and configured its extensions](#vs-code-extensions)
-
 ## Verify environment
 
 Your developer environment, whether on WSL, macOS, or Linux, should be able to run the
 following commands with the following results:
 
-```bash {filename=bash}
+```bash
 # Verify python version is >= 3.9 and pip is installed
 python3 --version
 pip3 --version # or pip --version
@@ -332,3 +286,4 @@ pass otp --version
 zbarimg --version
 vim --version
 ```
+
