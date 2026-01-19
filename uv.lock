@@ -23,14 +23,12 @@ dependencies = [
     { name = "sphinx-notfound-page" },
     { name = "sphinx-prompt" },
     { name = "sphinx-tags" },
-    { name = "sphinx-tagtoctree" },
     { name = "sphinx-tippy" },
     { name = "sphinx-togglebutton" },
     { name = "sphinxcontrib-bibtex" },
     { name = "sphinxcontrib-httpdomain" },
     { name = "sphinxcontrib-mermaid" },
     { name = "sphinxemoji" },
-    { name = "sphinxext-opengraph" },
 ]
 
 [package.dev-dependencies]
@@ -62,14 +60,12 @@ requires-dist = [
     { name = "sphinx-notfound-page", specifier = ">=1.1.0" },
     { name = "sphinx-prompt", specifier = ">=1.10.2" },
     { name = "sphinx-tags", specifier = ">=0.4" },
-    { name = "sphinx-tagtoctree", specifier = ">=1.0.0" },
     { name = "sphinx-tippy", specifier = ">=0.4.3" },
     { name = "sphinx-togglebutton", specifier = ">=0.3.2" },
     { name = "sphinxcontrib-bibtex", specifier = ">=2.6.5" },
     { name = "sphinxcontrib-httpdomain", specifier = ">=1.8.1" },
     { name = "sphinxcontrib-mermaid", specifier = ">=1.2.3" },
     { name = "sphinxemoji", specifier = ">=0.3.1" },
-    { name = "sphinxext-opengraph", specifier = ">=0.13.0" },
 ]
 
 [package.metadata.requires-dev]
@@ -205,15 +201,6 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/c3/b0/1c6a16426d389813b48d95e26898aff79abbde42ad353958ad95cc8c9b21/beautifulsoup4-4.14.3.tar.gz", hash = "sha256:6292b1c5186d356bba669ef9f7f051757099565ad9ada5dd630bd9de5fa7fb86", size = 627737, upload-time = "2025-11-30T15:08:26.084Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/1a/39/47f9197bdd44df24d67ac8893641e16f386c984a0619ef2ee4c51fbbc019/beautifulsoup4-4.14.3-py3-none-any.whl", hash = "sha256:0918bfe44902e6ad8d57732ba310582e98da931428d231a5ecb9e7c703a735bb", size = 107721, upload-time = "2025-11-30T15:08:24.087Z" },
-]
-
-[[package]]
-name = "boolean-py"
-version = "5.0"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/c4/cf/85379f13b76f3a69bca86b60237978af17d6aa0bc5998978c3b8cf05abb2/boolean_py-5.0.tar.gz", hash = "sha256:60cbc4bad079753721d32649545505362c754e121570ada4658b852a3a318d95", size = 37047, upload-time = "2025-04-03T10:39:49.734Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/e5/ca/78d423b324b8d77900030fa59c4aa9054261ef0925631cd2501dd015b7b7/boolean_py-5.0-py3-none-any.whl", hash = "sha256:ef28a70bd43115208441b53a045d1549e2f0ec6e3d08a9d142cbc41c1938e8d9", size = 26577, upload-time = "2025-04-03T10:39:48.449Z" },
 ]
 
 [[package]]
@@ -2091,20 +2078,6 @@ wheels = [
 ]
 
 [[package]]
-name = "sphinx-tagtoctree"
-version = "1.0.0"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "boolean-py" },
-    { name = "sphinx" },
-    { name = "wheel" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/47/cf/5535a5e50402f01edc6c65a726f976c7bf0ffc66dfa1267742fd365b64dd/sphinx_tagtoctree-1.0.0.tar.gz", hash = "sha256:4cdcb9b9fd65cb142856c9b392b5384b53b28a965303645dd46f60474961157f", size = 83664, upload-time = "2024-05-09T19:14:46.806Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/37/5e/4c1dba446a21f95efba3376f42ddab2e481730d9517f422b799fcf0276ad/sphinx_tagtoctree-1.0.0-py3-none-any.whl", hash = "sha256:491fd5fef192fc0083d322b0468751e645ea6a7e0673ed878c1ab6a9bfe01e48", size = 16358, upload-time = "2024-05-09T19:14:45.279Z" },
-]
-
-[[package]]
 name = "sphinx-tippy"
 version = "0.4.3"
 source = { registry = "https://pypi.org/simple" }
@@ -2251,18 +2224,6 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/ad/05/d531d8ce28eeb364e900dab98b8e236cf664a1b7f5fa93c212a5e87313aa/sphinxemoji-0.3.2.tar.gz", hash = "sha256:814da89a9a7603b7e4d85c487c7381656fa83632f20065e5ed782ab1dbbb5083", size = 45999, upload-time = "2025-12-15T12:01:56.885Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/32/12/ff5e52d884b218ee9807e25ebb779a544809d7f0da9e01326a6d273c0aa1/sphinxemoji-0.3.2-py3-none-any.whl", hash = "sha256:0fb07a95bca5960a3b312bc05b65b0c3040456414a076c363f4ecaf546c6e09e", size = 45454, upload-time = "2025-12-15T12:01:55.635Z" },
-]
-
-[[package]]
-name = "sphinxext-opengraph"
-version = "0.13.0"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "sphinx" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/f6/c0/eb6838e3bae624ce6c8b90b245d17e84252863150e95efdb88f92c8aa3fb/sphinxext_opengraph-0.13.0.tar.gz", hash = "sha256:103335d08567ad8468faf1425f575e3b698e9621f9323949a6c8b96d9793e80b", size = 1026875, upload-time = "2025-08-29T12:20:31.066Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/bf/a4/66c1fd4f8fab88faf71cee04a945f9806ba0fef753f2cfc8be6353f64508/sphinxext_opengraph-0.13.0-py3-none-any.whl", hash = "sha256:936c07828edc9ad9a7b07908b29596dc84ed0b3ceaa77acdf51282d232d4d80e", size = 1004152, upload-time = "2025-08-29T12:20:29.072Z" },
 ]
 
 [[package]]

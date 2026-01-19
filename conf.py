@@ -8,7 +8,6 @@ project_copyright = [
     '2021-2023, Mauricio Bushinelli',
     "2023-%Y, Michael Haaf",
 ]
-author = "John Abbott College Department of Computer Science"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -25,12 +24,9 @@ extensions = [
     "sphinx_design",
     "sphinx_favicon",
     "sphinx_prompt",
-    "sphinx_tagtoctree",
     "sphinxcontrib.httpdomain",
     "sphinxcontrib.mermaid",
     "sphinxemoji.sphinxemoji",
-    "sphinxext.opengraph",
-    # "sphinx_tippy",
     "sphinx_togglebutton",
     "ablog",
     # "sphinxcontrib.bibtex",
