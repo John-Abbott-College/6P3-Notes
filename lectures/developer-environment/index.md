@@ -187,14 +187,18 @@ easily share your image with your personal computer, and restore your image auto
 using any college computer.
 
 ```powershell {filename=Powershell}
-PS > md -Force "C:\Users\<your-username>\OneDrive\420-6P3-W25"
+PS > md -Force "C:\Users\<your-username>\OneDrive\420-6P3-W26"
 ```
 
 Then, we'll use `wsl --export` to make a backup copy of your WSL container:
 
 ```powershell {filename=Powershell}
 # This can take around 5 minutes to finish.
-PS > wsl --export Debian "C:\Users\<your-username\OneDrive\420-6P3-W25\debian.tar
+PS > wsl --export Debian "C:\Users\<your-username\OneDrive\420-6P3-W26\debian.tar
+```
+
+```{note}
+If you are getting an ACCESS DENIED error, double check that you are writing the full export path correctly! You need to specify a `.tar` file for this command to work.
 ```
 
 #### Restore command

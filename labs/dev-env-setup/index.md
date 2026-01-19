@@ -96,6 +96,7 @@ For this lab, we will aim to complete all levels up to and including **Level 5->
   - Then, proceed to Level 0
     - **IMPORTANT** read **Level Goal** and the **Commands you may need to solve this level** for each level. They're helpful!
     - **IMPORTANT** Use **man <command>** to see what the suggested command can do for you. Use `Ctrl + d` and `Ctrl + u` to scroll up and down the terminal efficiently, and `/` to search.
+    - **IMPORTANT** There are [lecture notes about bash essentials](/lectures/bash-essentials/index) that cover the main commands you need for bash bandit -- try looking at these if you're stuck.
 
 
 ````{note}
