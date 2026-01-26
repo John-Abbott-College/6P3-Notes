@@ -18,6 +18,7 @@ date: 2026-01-02
   - Jan 23
     - Finish [Lab 1](/labs/dev-env-setup/index.md)
 * - Jan 26
+    - Begin [Lab 1 Part 2](/labs/bash-better/index.md)
   - Jan 30
 * - Feb 2
   - Feb 6
