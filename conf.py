@@ -31,6 +31,7 @@ extensions = [
     "sphinx_togglebutton",
     "ablog",
     "sphinx_subfigure",
+    "sphinxcontrib.youtube",
     # "sphinxcontrib.bibtex",
     # "drafts",
 ]
@@ -88,6 +89,7 @@ html_theme_options = {
     "collapse_navbar": True,
     "max_navbar_depth": 1,
     "show_prev_next": False,
+    "use_sidenotes": True,
 }
 html_static_path = ['_static']
 html_css_files = ["tippy.css"]

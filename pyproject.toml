@@ -31,6 +31,7 @@ dependencies = [
     "sphinxcontrib-bibtex>=2.6.5",
     "sphinxcontrib-httpdomain>=1.8.1",
     "sphinxcontrib-mermaid>=1.2.3",
+    "sphinxcontrib-youtube>=1.4.1",
     "sphinxemoji>=0.3.1",
 ]
 
