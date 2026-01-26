@@ -1,166 +1,271 @@
 ---
-title: 'L2: Bash Mash'
-subtitle: Review bash fundamentals by completing the bandit game.
-date: 2025-02-01
+title: 'L1 Part 2: Bash Better'
+description: |
+  Polish developer environment setup
+  Review bash fundamentals by completing the bandit game.
+  Review bash scripting/function re-use
+date: 2026-01-26
+blogpost: true
+location: Lab
+author: 1%
+language: 2026-01-31
 ---
 
-## Objectives
+## Deliverables<a name="deliverables"></a>
 
-1. Review Bash essentials
+For each deliverable, click the hyperlink to navigate to the complete instruction set.
 
-   1. Using bash on the command line
-   1. Creating and running bash scripts
-   1. Review/Learn bash shell commands / operations
+- [0% Configure VSCode](#configure-vscode)
+  - Deadline: Monday Jan 31 (beginning of class)
+- [0.25% Using git](#using-git)
+  - Goal: Authenticate `git` commands in dev env terminal without VS Code.
+  - Deadline: Monday Jan 31 (end of class)
+- [0.75% Better bash bandit](#better-bash-bandit)
+  - Goal: Complete `lab-1/bandit-instructions.txt` up to Level 11-12
+  - Deadline: Monday Jan 31 (11:59pm)
 
-## Overview
+## Overview<a name="overview"></a>
 
-This lab walks through setting up the developer environment we will use throughout the
-semester, followed a short lab reviewing and developing `bash` skills.
+It is very natural, when taking on a new project, to discover new needs only after beginning work on that project.
 
-### Context
+Documenting our progress on the [bandit](https://overthewire.org/wargames/bandit/) game has revealed a few areas we could improve our workflow:
 
-In this course, we will frequently run code and commands on a raspberry pi.
+- Ensure VSCode is configured to use your developer environment.
+    1. Install necessary VSCode extensions
+- Keeping your `git` repo confidently in sync across many machines and in the face of changing upstream
+    1. Set up a [personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) for using `git` outside of VSCode
+    1. Use [`pass`](https://www.passwordstore.org/) to securely store and access your GitHub personal access token
+    1. Use `git` on the command line to keep your `instructions` branch in sync with the lab upstream
+    1. Use `git` to keep your `lab-1` branch up to date when new `instructions` arrive
+- Taking advantage of bash **text-processing** utilities to create beautiful and useful scripts.
+    1. Solve a few more levels of bandit
+    1. Review/write bash scripts for reusing useful text-processing command patterns
+    1. Understand the difference between *interactive* and *scripted* bash usage.
 
-An efficient way to work on a remote computer like the pis is to setup a remote `bash`
-connection using `ssh`.
+This lab will address each of these needs in turn with a few instructions and exercises.
 
-That way, you can *write* code on a preferred computer, while *running* code and other
-commands directly on the raspberry pi as you work.
+## Configure VSCode
 
-Using `ssh` effectively requires getting comfortable with the CLI shell -- in this course,
-our shell will be `bash`.
+- Install the WSL Extension on VSCode
+- From now on, ensure all of your projects are done in your developer environment
+- A few more clarifications to come shortly, but it's pretty straightforward.
 
-Part of getting comfortable with `bash` is simply getting in the habit of *using* it for
-*useful* things.
+## Using git<a name="using-git"></a>
 
-### Deliverables
+For this deliverable, you'll need to show me that:
 
-- [Documenting your progress](#documenting-your-progress): Progress on
-  `bandit-instructions.txt` committed to the `lab-0` branch of this repository
-  - A completed `bandit-instructions.txt` up to and including Level 7 is worth 100%.
-  - Some marks will be docked for missing levels/information in the `.txt`
-  - Feedback will be given directly in the `lab-0` pull request.
-- [In-class demo](#in-class-demo): Use `less` to preview progress documenting the
-  `bandit-instructions.txt`
-  - The `bandit-instructions.txt` *does not* have to be complete to get full marks for the
-    in-person demo.
+- You have `pass` set up with your personal GitHub Access token
+- You can use `git` to keep your repository up to date when the remote `instructions` branch changes.
 
-### Deadline
+The following paragraphs show you how.
 
-- In class demos: Friday Jan 31 (beginning of class)
-- `bandit-instructions.txt` progress committed: Friday Jan 31 (end of day)
+Many `git` operations require authentication to get permission. Some
+examples:
 
-## Using bash: complete the Bandit game
+- Pushing to a repository
+- Pulling from a private repository
+- Using [*GitHub CLI*](https://cli.github.com/)
 
-To get us warmed up with using `ssh` to connect to a remote computer, and using the
-various `bash` tools at our disposal, the [bandit] game is great practise.
+Since July 2021, [*GitHub no longer accepts account
+passwords*](https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/#what-you-need-to-do-today)
+to authenticate git operations. You have probably run into this error many times when trying to push changes or clone your private repositories on a new machine.
 
-For this lab, we will aim to complete **up to Level 8**.
+The only reason VSCode works out of the box is because VSCode and GitHub are integrated by default, both being owned by Microsoft.
 
-[![](./assets/bandit-screenshot.png)][bandit] *Each level of the bandit game requires you
-use one or more bash commands to complete the level.*
+The following tasks gives us more flexible and useful ways to authenticate `git` commands with GitHub.
 
-### Getting started
+### Part 1: Set up `pass`<a name="part-1-set-up-pass"></a>
 
-- Open a terminal on your developer environment. All `ssh` commands for the game will be
-  done here.
-  - On Windows, use your WSL container
-  - If working on OSX or Linux, use your default terminal
-- Open `lab-0/bandit-instructions.txt` in your editor
-  - You will use this file to record your progress through the lab.
-  - The rubric for this lab is based on completing this file.
-- The instructions for the lab are contained in the game itself.
-  - To start the lab, read the [Note for beginners][bandit]
-  - Then proceed to Level 0
+We will use [*pass*](https://www.passwordstore.org/) to securely manage our personal access tokens on our developer environment.
 
-> [!NOTE] if you are getting “hostname not resolved” issues in WSL, follow the steps
-> below:
+First, ensure `pass` and some useful related dependencies are installed:
+
+```bash
+# On WSL / Linux
+sudo apt install pass pass-extension-otp zbar-tools
+
+# On macOS
+brew install pass pass-otp zbar
+```
+
+You probably already did this in the previous lab.
+
+You'll need to generated a `gpg` key-pair in order to use `pass`. Follow the instructions below:
+
+> [!NOTE]
+> The GitHub instructions mention using `git bash` -- ignore them, you have a developer environment to use instead.
 >
-> 1. sudo vim /etc/wsl.conf , add the following:
->
-> > [network]
-> >
-> > generateResolvConf = false
->
-> 2. sudo vim /etc/resolv.conf , add the following:
->
-> > nameserver 8.8.8.8
->
-> 3. sudo chattr -f +i /etc/resolv.conf
->
-> For more detail, see
-> [https://askubuntu.com/questions/1364984/dns-not-working-on-wsl](https://askubuntu.com/questions/1364984/dns-not-working-on-wsl)
+> In general, when I link to external instructions, you will need to pay attention to what parts of them may be different
+> in our class. This is a good skill in general for making effective use of resources posted online when learning a new skill.
 
-#### Extra info & Hints
+1. Create the gpg key-pair following the instructions on GitHub: [*Generating a new GPG key*](https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key)
+1. run `gpg --full-generate-key` to get started.
+1. Recommended: You can accept the default key type (RSA)
+1. Recommended: Choose 4096 bits for the keysize.
+1. Recommended: You can accept the default "does not expire" option.
+1. Enter user ID information. This information should match what you have provided to GitHub already (username/email address)
+1. You have to choose a password for GPG keys. Choose something strong that you can remember.
+1. Add the public key to your GitHub account following the instructions: [*Adding a GPG Key to your GitHub account*](https://docs.github.com/en/authentication/managing-commit-signature-verification/adding-a-gpg-key-to-your-github-account).
 
-- Each `level` of the game challenges you to log in to a given `user` on a linux server
-  hosted at bandit.labs.overthewire.org.
-  - We'll be doing this a lot when we `ssh` into our raspberry pis throughout the lab.
-- To complete each level, you need to find the password for that user. This password is
-  stored on a file in that `user` account on the server.
-- Each level, you are given **Commands you may need to solve this level** -- the levels
-  can be solved in many different ways, using *one or more of those commands*.
-  - That is: you will never need a command that is NOT listed in the **Commands** section.
-    But, you do not have to use all of them; there are many ways to solve each puzzle.
-  - Make sure you look at the commands available to you at each step, the hints are given
-    for good reason.
-- Use **man <command>** to see what the suggested command can do for you. Use `Ctrl + d`
-  and `Ctrl + u` to scroll up and down the terminal efficiently, and `/` to search.
+The name of the key on GitHub does not matter (Personal GPG Key is fine)
 
-### Documenting your progress
+The command: `gpg --armor --export` prints your key to the console, you can copy/paste this output for GitHub
 
-As you complete each level, write down in `lab-0/bandit-instructions.txt` the following:
+Even better: use a pipe to `clip.exe` to put the key in your clipboard automatically with `gpg --armor --export | clip.exe`
 
-- the password needed to start the next level
-- the commands used to find the file
-- comments explaining the commands
-  - e.g. necessary parameters/flags
+- on macOS: use `pbcopy` instead of `clip.exe`
+- on Linux: use `xclip` or `wl-copy` instead of `clip.exe`
 
-> [!NOTE] In each level, the password is a long string of random characters stored in a
-> file on the server. You will need to copy and paste the password frequently -- from your
-> `bandit-instructions.txt` and to your bandit game terminal.
->
-> Copy/paste is a bit different on terminals than you may be used to:
->
-> - Highlight the text holding `Left+click`
-> - Copy the text using `Ctrl+Shift+C`
-> - Paste the text using `Ctrl+Shift+V`
+Once you've created the `gpg` key-pair, we can now set up `pass`:
 
-Follow the format in the `bandit-instructions.txt` file. Make sure you read and follow the
-instructions given in the comments (marked by `#`).
+```bash
+pass init <the-email-you-used-for-gpg-key>
+```
 
-As you complete the `bandit-instructions.txt` file, track your progress on the `lab-0`
-branch using `git commit`. Before you finish working, make sure you `git push` your
-commits to upstream `lab-0` branch of this repository.
+In the next step, we're going to create a GitHub Personal Access Token and store it in your `pass` store for easy and secure access.
 
-**Don't be shy**: you should be `committing` and `pushing` your progress to your branch
-regularly, even if it is not finished -- this will let you continue where you left off
-easily no matter what computer you are working on.
+### Part 2: Getting a personal access token and storing it in `pass`<a name="part-2-getting-a-personal-access-token-and-storing-it-in-pass"></a>
 
-The rubric for this lab is based on completing this file:
+Read [*"Managing your personal access tokens"*](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)
+on Github, and create a **classic** (not fine-grained) **personal access
+token**.
 
-- 100%: All levels up to and including Level 7 are documented correctly
-- Marks off for mistakes or missing levels.
+At the very least, select the **repo** scope -- this will give your
+token the ability to authenticate using git on the CLI. You can select
+all other scopes as well if you like.
 
-### In-class demo
+Once you're finished, you'll see your token is a string of the following form:
 
-> [!NOTE] Wait until you have completed, documented, committed, and pushed at least 2 or 3
-> steps of the bandit game before beginning these instructions.
+```
+ghp_<long string of letters and numbers
+```
 
-Another good use for `bash` and the terminal is not just commands and remote connections
--- it's actually a great tool for documentation, too.
+Copy this string to your clipboard. Then, open your developer terminal:
 
-To get a sense for that, I want you to show me that you can use `less` to do the
-following:
+```bash
+$ pass insert github/token
+Enter password for github/token: # paste your token here, then press enter
+```
 
-- navigate through your `bandit-instructions.txt` without needing my instructions
-- find commands/passwords for a given level by searching
-- copy/paste information from your file to another terminal
+Once you've done this, you should be able to access your token using `pass github/token`, or `pass github/token | clip.exe` to place it on your clipboard directly.
 
-Remember that the `man` command USES `less` by default -- so if you have been using `man`,
-you will be used to the interface. If not, practise! See **TODO** for more information.
+## Better Bash Bandit<a name="better-bash-bandit"></a>
 
-You do not have to be finished the whole lab to get full marks on the demo -- you just
-have to have done a few of the levels.
+For this deliverable, your grade will be based on:
 
-[bandit]: https://overthewire.org/wargames/bandit/
+- The completeness of `lab-1/bandit-instructions.txt`
+  - Full marks for completing **Level 0-1 through Level 11-12**, part marks for some missing or incorrect commands
+- Finishing `functions.bashrc`
+  - Full marks for completed `grepcmd` and `banditsolve` functions
+
+See the instructions below for requirements to complete each part.
+
+### Part 0: Step-by-step to quickly solving bandit levels<a name="part-0-step-by-step-to-quickly-solving-bandit-levels"></a>
+
+There are a few concepts that will be useful to know for finishing these tasks:
+
+- Running commands over `ssh`
+- Combining bash commands using pipes and redirects
+- Reusing bash commands by writing them in a script or library
+
+I've provided some video demonstrations below, **try them out on your own terminal and see if you can replicate them!**
+
+#### Running a command over ssh:<a name="running-a-command-over-ssh"></a>
+
+Here's the syntax for running a command directly over `ssh`:
+
+```bash
+# General syntax
+ssh [-l login_name] [-p port] DESTINATION [command [argument...]
+
+# Example: `tac` the readme (tac is reverse of cat)
+ssh -p 2220 bandit0@bandit.labs.overthewire.org tac readme
+```
+
+Here's a demonstration of what it should look like -- first running `ssh` without any extra arguments, and then running it with `ls`, `cat`, and `tac`. This shows how you can solve bandit levels without without launching an interactive `ssh` shell:
+
+![](./assets/ssh-eg.gif)
+*Demonstration of using the optional `command [argument...]` when invoking ssh.*
+
+#### Combining bash commands using pipes<a name="combining-bash-commands-using-pipes"></a>
+
+We can go further than this -- let's try cutting the output from our `ssh` command to JUST the password. How? We can use `|` to combine various bash commands.
+
+Here's an example of a first step you might take. There's a few blank lines in the output, by default.
+
+How can we get rid of blank lines using bash? There's [at least three different tools, each with a few different options](https://stackoverflow.com/a/39139322), that can get the job done.
+
+The simplest to reason about is probably `grep -v`. What does the `-v` argument do? Run `man grep` and use `/` to search for `-v`!
+
+Here's the syntax for how you might do it:
+
+```bash
+# General syntax: pipe stdout of command1 to command2
+command1 | command2
+
+# Example: only grab the first two lines of previous command
+ssh -p 2220 bandit0@bandit.labs.overthewire.org tac readme | grep -v '^$'
+```
+
+And here's a demo of it in action:
+
+![](./assets/pipe-eg.gif)
+*Demonstration of combining bash commands with `|`, in this case piping the result into `grep -v` to remove blank lines.*
+
+What happened here? `grep -v <pattern>` means *remove* any lines from `stdin` that match the pattern. In this case, the pattern was `^$` -- `^` matches the beginning of the line, and `$` the end of the line, so this can only match with lines that *have no content in them* -- blank lines.
+
+Once we have that, there's nothing stopping us from chaining together more bash commands with `|`! Try these commands out yourself to get the hang of it -- the nice thing is you get immediate feedback.
+
+![](./assets/building-blocks-eg.gif)
+*Iterating on bash combinations to build complex behavior using pipes.*
+
+#### Using the CLI clipboard to store commands & results<a name="using-the-cli-clipboard-to-store-commands--results"></a>
+
+The nice part about running commands over `ssh` like this is that we can quickly put the results in our clipboard using `| clip.exe`:
+
+- Note: use `| pbcopy` on macOS\`
+
+![](./assets/clipboard-eg.gif)
+*Using `| clip.exe` (`| pbcopy` on macOS) to store password results, and commands, in our clipboard for convenient pasting into `bandit-instructions.txt`*
+
+### Part 1: Better bandit-instructions.txt<a name="part-1-better-bandit-instructionstxt"></a>
+
+The demonstrations above show how I got the solution for `Level 0-1` of the lab.
+
+Your job will be to do the same thing for all following levels, up to `Level 11-12`.
+
+##### Requirements<a name="requirements"></a>
+
+- Except for `Level 0`, all levels should use the format `Level N-N+1`.
+
+- For each `Level N-N+1`, the `Password:` field should be the password for getting into `Level N`
+
+  - e.g., the password for `Level 0-1` is `bandit0` for logging into `bandit0`; the provided command gets the password for the next level (`bandit1`).
+
+- For each level, the `Command:` field should with **just one line**.
+
+  - On some levels (`Level 1-2` and `Level 2-3` for example) that can done easily with just one command.
+  - On other levels (like `Level 0-1`), you will need to chain together a few commands in a series of pipes
+
+- The result of running the command for each level should prints *only the password* to stdout, and no other extra text.
+
+- For each level, you are also required to explain your work! There are many ways to solve all of these problems so no one's solutions should be exactly the same -- particularly not your comments, which should explain each command in the pipe chain.
+
+Here is an example of what all of your levels should look like when you are finished:
+
+```
+Level 0-1
+  - Password: bandit0
+  - Commands:
+    - `tac readme | sed '/./,$!d' | head -n 1 | cut -d ':' -f2 | tr -d '[:blank:]'`
+  - Comments:
+    - `tac readme`: read the readme backwards with tac
+    - `sed '/./,$!d'`: <your explanation goes here>
+    - `head -n 1`: <your explanation goes here>
+    - `cut -d : -f 2`: <your explanation goes here>
+    - `tr -d '[:blank:]'`: <your explanation goes here>
+```
+
+You will need to do the same thing for each level up to `Level 11-12`.
+
+Keep commiting your progress on `bandit-instructions.txt` to the `lab-1` branch of your repository.

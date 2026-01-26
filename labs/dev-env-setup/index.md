@@ -1,6 +1,6 @@
 ---
 title: "L1: Developer Environment Setup"
-subtitle:
+description: |
   Setting up the development stacks and hardware we will use throughout the semester.
 date: 2026-01-19
 blogpost: true
