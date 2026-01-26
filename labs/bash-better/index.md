@@ -161,7 +161,7 @@ For this deliverable, your grade will be based on:
 
 See the instructions below for requirements to complete each part.
 
-### Part 0: Step-by-step to quickly solving bandit levels<a name="part-0-step-by-step-to-quickly-solving-bandit-levels"></a>
+### Part 1: Step-by-step to quickly solving bandit levels<a name="part-0-step-by-step-to-quickly-solving-bandit-levels"></a>
 
 There are a few concepts that will be useful to know for finishing these tasks:
 
@@ -229,7 +229,7 @@ The nice part about running commands over `ssh` like this is that we can quickly
 ![](./assets/clipboard-eg.gif)
 *Using `| clip.exe` (`| pbcopy` on macOS) to store password results, and commands, in our clipboard for convenient pasting into `bandit-instructions.txt`*
 
-### Part 1: Better bandit-instructions.txt<a name="part-1-better-bandit-instructionstxt"></a>
+### Part 2: Better bandit-instructions.txt<a name="part-1-better-bandit-instructionstxt"></a>
 
 The demonstrations above show how I got the solution for `Level 0-1` of the lab.
 
