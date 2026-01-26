@@ -297,7 +297,7 @@ There are a couple functions already written for you in `functions.bashrc`: `gre
 Try using these functions by running `source` on the `functions.bashrc` file:
 
 ```bash
-# NOTE: make sure you are in the `lab-2` directory when you run these commands!
+# NOTE: make sure you are in the `lab-1` directory when you run these commands!
 $ greppwd "Level 0-1"
 -bash: greppwd: command not found
 
@@ -307,7 +307,7 @@ $ greppwd "Level 0-1"
 bandit0
 ```
 
-### Useful course notes
+### Useful course notes for Part 3
 
 Here are parts of the course notes that will be particularly useful for this lab:
 
@@ -318,7 +318,7 @@ Here are parts of the course notes that will be particularly useful for this lab
 - [bash functions](https://john-abbott-college.github.io/6P3-Notes/notes/bash-scripting/#functions)
 - [bash redirects](https://john-abbott-college.github.io/6P3-Notes/notes/bash-essentials/#redirection-and-pipes)
 
-### Tasks
+### Tasks for Part 3
 
 Complete the following tasks to finish this lab.
 
