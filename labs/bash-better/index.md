@@ -92,11 +92,12 @@ You probably already did this in the previous lab.
 
 You'll need to generated a `gpg` key-pair in order to use `pass`. Follow the instructions below:
 
-> [!NOTE]
-> The GitHub instructions mention using `git bash` -- ignore them, you have a developer environment to use instead.
->
-> In general, when I link to external instructions, you will need to pay attention to what parts of them may be different
-> in our class. This is a good skill in general for making effective use of resources posted online when learning a new skill.
+:::{note}
+The GitHub instructions mention using `git bash` -- **ignore that, never use git bash**, you have a developer environment to use instead.
+
+In general, when I link to external instructions, you will need to pay attention to what parts of them may be different
+in our class. This is a good skill in general for making effective use of resources posted online when learning a new skill.
+:::
 
 1. Create the gpg key-pair following the instructions on GitHub: [*Generating a new GPG key*](https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key)
 1. run `gpg --full-generate-key` to get started.
