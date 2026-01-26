@@ -17,11 +17,12 @@ For each deliverable, click the hyperlink to navigate to the complete instructio
 
 - [0% Configure VSCode](#configure-vscode)
   - Deadline: Monday Jan 31 (beginning of class)
-- [0.25% Using git](#using-git)
+- [0.2% Using git](#using-git)
   - Goal: Authenticate `git` commands in dev env terminal without VS Code.
   - Deadline: Monday Jan 31 (end of class)
-- [0.75% Better bash bandit](#better-bash-bandit)
+- [0.8% Better bash bandit](#better-bash-bandit)
   - Goal: Complete `lab-1/bandit-instructions.txt` up to Level 11-12
+  - Goal: Complete the `functions.bashrc` file
   - Deadline: Monday Jan 31 (11:59pm)
 
 ## Overview<a name="overview"></a>
@@ -35,8 +36,7 @@ Documenting our progress on the [bandit](https://overthewire.org/wargames/bandit
 - Keeping your `git` repo confidently in sync across many machines and in the face of changing upstream
     1. Set up a [personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) for using `git` outside of VSCode
     1. Use [`pass`](https://www.passwordstore.org/) to securely store and access your GitHub personal access token
-    1. Use `git` on the command line to keep your `instructions` branch in sync with the lab upstream
-    1. Use `git` to keep your `lab-1` branch up to date when new `instructions` arrive
+    1. Use `git` on the command line to manage your repository branches
 - Taking advantage of bash **text-processing** utilities to create beautiful and useful scripts.
     1. Solve a few more levels of bandit
     1. Review/write bash scripts for reusing useful text-processing command patterns
@@ -234,7 +234,7 @@ The demonstrations above show how I got the solution for `Level 0-1` of the lab.
 
 Your job will be to do the same thing for all following levels, up to `Level 11-12`.
 
-##### Requirements<a name="requirements"></a>
+#### Requirements<a name="requirements"></a>
 
 - Except for `Level 0`, all levels should use the format `Level N-N+1`.
 
@@ -268,4 +268,200 @@ Level 0-1
 
 You will need to do the same thing for each level up to `Level 11-12`.
 
+
+
 Keep commiting your progress on `bandit-instructions.txt` to the `lab-1` branch of your repository.
+
+**HINT**: some commands you will find useful. Check the `man` page for each.
+
+```bash
+sort
+uniq
+tr
+strings
+base64
+```
+
+### Part 3: Defining and re-using bash functions
+
+In this part of the lab, we're learning how to generalize useful bash snippets we write into re-usable functions.
+
+We will do this by writing our functions in a file that we can later `source`. In a sense, we are creating a library, rather than a single script.
+
+#### Getting started
+
+There are a couple functions already written for you in `functions.bashrc`: `greppwd` and
+`banditstart`.
+
+Try using these functions by running `source` on the `functions.bashrc` file:
+
+```bash
+# NOTE: make sure you are in the `lab-2` directory when you run these commands!
+$ greppwd "Level 0-1"
+-bash: greppwd: command not found
+
+$ source functions.bashrc
+
+$ greppwd "Level 0-1"
+bandit0
+```
+
+### Useful course notes
+
+Here are parts of the course notes that will be particularly useful for this lab:
+
+- [bash `source`](https://john-abbott-college.github.io/6P3-Notes/notes/bash-scripting/#source)
+- [bash variables](https://john-abbott-college.github.io/6P3-Notes/notes/bash-scripting/#variables)
+- [bash conditionals](https://john-abbott-college.github.io/6P3-Notes/notes/bash-scripting/#conditionals)
+- [bash exit codes](https://john-abbott-college.github.io/6P3-Notes/notes/bash-scripting/#exit-codes)
+- [bash functions](https://john-abbott-college.github.io/6P3-Notes/notes/bash-scripting/#functions)
+- [bash redirects](https://john-abbott-college.github.io/6P3-Notes/notes/bash-essentials/#redirection-and-pipes)
+
+### Tasks
+
+Complete the following tasks to finish this lab.
+
+Note: many of these tasks are explained further in the comments included in
+`functions.bashrc`.
+
+#### Set `DOMAIN` and `PORT` values from `bandit-instructions.txt`
+
+Currently the `DOMAIN` and `PORT` are hard-coded in `functions.bashrc`. These should
+instead be dynamically loaded from `bandit-instructions.txt`.
+
+There are further hints included in `functions.bashrc` comments already.
+
+##### Requirements
+
+- `DOMAIN` and `PORT` variables use the values specified in `bandit-instructions.txt`
+  instead of hard-coded values.
+
+#### Implement the `grepcmd` function
+
+Similar to the `greppwd` function, create a `grepcmd` function that returns the *command*
+from `bandit-instructions.txt` that solves the given level.
+
+Sample usage:
+
+```bash
+$ grepcmd "Level 0-1"
+tac readme | sed '/./,$!d' | head -n 1 | cut -d ':' -f2 | tr -d '[:blank:]'
+
+$ grepcmd
+Error: no level argument provided. Usage: grepcmd "Level 0-1"
+
+# if INSTRUCTIONS_FILE is not defined (e.g. when run outside of the `lab-2` directory)
+$ grepcmd
+Error: ./bandit-instructions.txt is not defined. Are you sure you are in the right directory?
+```
+
+##### Requirements
+
+- Prints an error to `stderr` if the `INSTRUCTIONS_FILE` variable does not exist, or is
+  not a file, and exits with error code 1
+- Prints an error to `stderr` if no positional argument is provided and exits with error
+  code 1
+- Otherwise, gets the command for solving a specific level in the instructions file and
+  prints it to `stdout`.
+
+See the samples above. Your error messages do not have to match these suggestions exactly,
+but your `stdout` MUST give the same command as what you have defined in
+`bandit-instructions.txt`.
+
+See the (#useful-course-notes) section for course notes that will be useful to solving
+these requirements.
+
+#### Implement the `banditsolve` function
+
+Somewhat similar to the `banditstart` function, create a `banditsolve` function that
+returns the result of *running the command* from `bandit-instructions.txt` that solves the
+given level. You should reuse the `greppwd` and grepcmd\` functions to complete this
+function.
+
+Sample usage:
+
+```bash
+$ banditsolve "Level 0-1"
+
+                         _                     _ _ _
+                        | |__   __ _ _ __   __| (_) |_
+                        | '_ \ / _` | '_ \ / _` | | __|
+                        | |_) | (_| | | | | (_| | | |_
+                        |_.__/ \__,_|_| |_|\__,_|_|\__|
+
+
+                      This is an OverTheWire game server.
+            More information on http://www.overthewire.org/wargames
+
+bandit0@bandit.labs.overthewire.org password:
+ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
+
+$ banditsolve
+Error: no level argument provided. Usage: banditsolve "Level 0-1"
+
+# if INSTRUCTIONS_FILE is not defined (e.g. when run outside of the `lab-2` directory)
+$ banditsolve
+Error: ./bandit-instructions.txt is not defined. Are you sure you are in the right directory?
+```
+
+##### Requirements
+
+- Prints an error to `stderr` if the `INSTRUCTIONS_FILE` variable does not exist, or is
+  not a file, and exits with error code 1
+- Prints an error to `stderr` if no positional argument is provided and exits with error
+  code 1
+- Otherwise, solves the provided bandit level by running the command for that level using
+  your `bandit-instructions.txt` file as a source of the command, and prints the resulting
+  password to `stdout`.
+  - Also, you must put the password you defined in `bandit-instructions.txt` into the
+    clipboard to make logging into the server easier.
+
+See the (#useful-course-notes) section for course notes that will be useful to solving
+these requirements.
+
+#### Improve `greppwd`
+
+This task should be easy once you've completed `grepcmd`. We are simply going to apply the
+same error-handling required for `grepcmd` in `greppwd`.
+
+Sample usage after this improvement:
+
+```bash
+$ greppwd
+Error: no level argument provided. Usage: grepcmd "Level 0-1"
+
+# if INSTRUCTIONS_FILE is not defined (e.g. when run outside of the `lab-2` directory)
+$ greppwd "Level 0-1"
+Error: ./bandit-instructions.txt is not defined. Are you sure you are in the right directory?
+```
+
+##### Requirements
+
+- Prints an error to `stderr` if the `INSTRUCTIONS_FILE` variable does not exist, or is
+  not a file, and exits with error code 1
+- Prints an error to `stderr` if no positional argument is provided and exits with error
+  code 1
+
+#### Improve `banditstart`
+
+This task should be easy once you've completed `banditsolve`. We are simply going to apply
+the same error-handling required for `banditsolve` in `banditstart`.
+
+Sample usage after this improvement:
+
+```bash
+$ banditstart
+Error: no level argument provided. Usage: grepcmd "Level 0-1"
+
+# if INSTRUCTIONS_FILE is not defined (e.g. when run outside of the `lab-2` directory)
+$ banditstart "Level 0-1"
+Error: ./bandit-instructions.txt is not defined. Are you sure you are in the right directory?
+```
+
+##### Requirements
+
+- Prints an error to `stderr` if the `INSTRUCTIONS_FILE` variable does not exist, or is
+  not a file, and exits with error code 1
+- Prints an error to `stderr` if no positional argument is provided and exits with error
+  code 1
+

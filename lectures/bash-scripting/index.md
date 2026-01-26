@@ -1,18 +1,14 @@
 ---
 title: Bash scripting
-subtitle: >
+description: |
   Tips for scripting in bash effectively.
   Managing environment and permissions in bash.
   The capabilities and limitations of programming in bash.
-date: 2025-02-17
-categories: [bash]
-bibliography: references.bib
-nocite: |
-  @*
-image: https://tudoubaba.net/assets/img/shebang.72b91b53.png
-format:
-  html:
-    toc-expand: 2
+date: 2026-01-26
+blogpost: true
+location: Lecture
+category: Bash
+tags: Bash
 ---
 
 :::{margin}
