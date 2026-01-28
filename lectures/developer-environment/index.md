@@ -273,13 +273,29 @@ brew install wget ca-certificates rsync pass pass-otp zbar vim
 
 ## Verify environment
 
+As we progress in the labs of this class, you will install and configure new applications. The sections below verify that your developer environment is up to date.
+
+::::{important}
+After each lab where new applications are installed and configured, make sure you make a new backup of your WSL image (overwrite the previous one).
+
+```{code-block}
+:caption: powershell
+PS > wsl --export Debian "C:\Users\<your-username>\<your-OneDrive-folder>\420-6P3-W26\debian.tar
+```
+::::
+
+
 Your developer environment, whether on WSL, macOS, or Linux, should be able to run the
 following commands with the following results:
 
+### After Lab 1
+
+If any of the commands below do not give the expected output, **fix them** using the [Lab 1 instructions](/labs/dev-env-setup/index.md).
+
 ```bash
 # Verify python version is >= 3.9 and pip is installed
-python3 --version
-pip3 --version # or pip --version
+python --version
+pip --version
 
 # Verify git config set up: ensure the output makes sense for you
 git config user.name
@@ -294,5 +310,17 @@ pass --version
 pass otp --version
 zbarimg --version
 vim --version
+```
+
+### After Lab 2
+
+If any of the commands below do not give the expected output, **fix them** using the [Lab 2 instructions](/labs/dev-env-setup/index.md).
+
+```bash
+# Verify you have a gpg key configured correctly
+gpg --list-keys
+
+# Verify your github PAT token can be found using pass
+pass github/token
 ```
 

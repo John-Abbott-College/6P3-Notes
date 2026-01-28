@@ -218,7 +218,8 @@ $ gpgconf --kill gpg-agent
 
 If that doesn't work, try restarting your WSL instance. In powershell:
 
-```powershell {filename=Powershell}
+```{codeblock}
+:caption: powershell
 PS > wsl --shutdown <distro-name>
 ```
 
