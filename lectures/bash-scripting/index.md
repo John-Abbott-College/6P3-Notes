@@ -11,21 +11,16 @@ category: Bash
 tags: Bash
 ---
 
-:::{margin}
-![Image source: [tudoubaba.net](https://tudoubaba.net/ProgrammingHandbook/python/python_shebang.html)](https://tudoubaba.net/assets/img/shebang.72b91b53.png)
-:::
-
-
 ## Bash theory
+
+These notes will cover the basic programming concepts you need to know to get the most out of writing scripts in Bash.
 
 Bash (and other shell languages) isn't really a programming language -- it is a *command
 interpreter* that's best used for organizing the inputs and outputs of programs written in
-other languages. Historically this would be the C programming language. In our class, we will be writing "real" programs in Python. 
+other languages. Historically this would be the C programming language. In our class, we will be writing "real" programs in Python.
 
 But I digress. Despite the fact that Bash isn't a programming language like C or Python,
 you can still program in it. What do you need to know to write Bash programs?
-
-These notes will cover the basic programming concepts you need to know to get the most out of writing scripts in Bash.
 
 ### Variables
 

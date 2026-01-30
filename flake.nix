@@ -42,6 +42,8 @@
               }:$LD_LIBRARY_PATH
               export QT_QPA_PLATFORM="wayland"
               unset PYTHONPATH
+              # https://github.com/NixOS/nixpkgs/issues/374125#issuecomment-2593856843
+              unset SOURCE_DATE_EPOCH
               uv sync
               . .venv/bin/activate
             '';

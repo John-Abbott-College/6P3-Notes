@@ -1,13 +1,27 @@
 ---
-title: "Linux package management"
-subtitle:
-  Installing and configuring Linux packages on WSL / Raspberry Pi Debian using the
-  `apt` package manager
-reference-location: margin
-citation-location: margin
-date: 2025-04-28
-categories: [linux]
+title: "Linux basics"
+description: |
+  Installing and configuring Linux packages on WSL / Raspberry Pi Debian.
+  Using the `apt` package manager.
+date: 2026-01-30
+blogpost: true
+location: Lecture
+category: Linux
+tags: Linux
 ---
+
+## What is WSL?
+
+*These notes are adapted from <https://learn.microsoft.com/en-us/windows/wsl/about>*
+
+Windows Subsystem for Linux (WSL) is a feature of Windows that allows you to run a Linux environment on your Windows machine, 
+*without the need for a separate virtual machine or dual booting*. 
+
+
+## Linux Filesystem Hierarchy Standard (FHS)
+
+*These notes are adapted from <https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard>*
+
 
 ## Raspberry Pi OS and Debian
 

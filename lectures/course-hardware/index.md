@@ -2,7 +2,7 @@
 title: Course hardware
 subtitle: >
   List of hardware available for the course as well as their respective specifications and documentation.
-date: 2026-01-30
+date: 2026-02-2
 blogpost: true
 category: Hardware
 tags: Hardware
