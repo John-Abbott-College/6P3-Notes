@@ -412,33 +412,11 @@ You can do so running `ifconfig` command in an ssh session, and checking the pro
 
 You can use VS Code in your lab workstation to create a development environment inside the Raspberry Pi which will be controlled from the lab workstation.
 
-If you would like to know more about how this extension works, visit [Remote Development using SSH](https://code.visualstudio.com/docs/remote/ssh).
-
-Below is a 5min video that illustrates how the *Remote \- SSH extension* works:
-
-[VS Code Remote Development using SSH to a Raspberry Pi](https://youtu.be/z0j4hV9zLNY)
-
-1. In your **lab workstation**, ensure you have installed the following VS Code
-    extensions:
-
-    1. [**Remote - SSH**](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh),
+1. In your **developer environment**, install the following VS Code
+    extensions [**Remote - SSH**](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh),
         by Microsoft.
-    1. [**Python extension**](https://marketplace.visualstudio.com/items?itemName=ms-python.python),
-        by Microsoft.
-
-1. Connect your lab workstation to your Raspberry Pi by following the *Remote - SSH*
-    extension’s official instructions:
-    [**Getting started**](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh#getting-started).
-    Once VS Code is connected to the reTerminal, you are now in a new development
-    environment inside the reTerminal. Complete the following tasks:
-
-1. Install the VS Code
-    [**Python extension**](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
-    (this time inside the reTerminal, not in your lab workstation like in step 1).
-
-    1. If necessary, follow the guide:
-        [**Getting Started with Python in VS Code**](https://code.visualstudio.com/docs/python/python-tutorial#_prerequisites)
-
+1. Connect your lab workstation to your Raspberry Pi by following these instructions from stack overflow: [Connecting to SSH from WSL in VSCode](https://stackoverflow.com/a/79634708)
+1. You should now be able to enter an ssh session on VSCode by using `Ctrl-Shift-P` --> `Remote-SSH: Connect to Host...`
 
 ## Appendix
 
