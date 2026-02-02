@@ -61,6 +61,12 @@ There are two tools required for this lab:
 
 **These programs are already installed on the Lab computers**. In case you need to perform these steps at home, [see instructions in the Appendix section below](#appendix)
 
+## Verify the equipment in your reTerminal kit
+
+See the [reTerminal Kit](/lectures/reterminal-kit/index.md) lecture notes, and the ReTerminal Kit signout form given in class.
+
+Make sure that all of the pieces on the sign-out form are in your kit. Refer to the [reTerminal Kit](/lectures/reterminal-setup/index.md) lecture notes.
+
 
 ## Reimage the reTerminal
 
