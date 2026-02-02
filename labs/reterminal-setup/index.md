@@ -26,7 +26,7 @@ To complete this lab, complete **all of the steps below**. Make sure you read **
 At the end of the lab, there are two other deliverables:
 
 - reTerminal kit sign out sheet (given in class)
-- Moodle reTerminal metadata (link TBA soon)
+- [Moodle reTerminal metadata][moodle_lab_2]
 
 ## Prerequisites
 
@@ -210,8 +210,7 @@ Basically, unless the program is stuck in a loop, you should continue to the nex
     - Set locale settings: `America/Montreal`
     - Disable telemetry.
     - Enable “eject media” and “play sound when finished”.
-    - Take note of your hostname, username, and password (see Moodle for place to enter
-        this information)
+    - Take note of your hostname, username, and password on the [Lab 2 assignment on Moodle](https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=68921)
         - You will be responsible for maintaining your system.
         - *If you get locked out, you may have to re-image the system.*
     - **Press "SAVE" when finished.**
@@ -365,7 +364,9 @@ where `hostname` and `user-name` correspond to the choices you made during your 
 > Follow the official Raspberry Pi instructions (NOTE: Linux instructions apply to WSL!)
 > [**Secure Shell from Linux or Mac OS**](https://www.raspberrypi.com/documentation/computers/remote-access.html#secure-shell-from-linux-or-mac-os)
 
-For [Lab 2][moodle_lab_2], I ask you to obtain the reTerminal’s MAC address.
+#### Document device metadata
+
+See [Lab 2][moodle_lab_2], I ask you to obtain the reTerminal’s MAC address.
 
 You can do so running `ifconfig` command in an ssh session, and checking the properties of the wireless network card (`wlan0`):
 
@@ -373,8 +374,6 @@ You can do so running `ifconfig` command in an ssh session, and checking the pro
 - Look for the wireless network adapter `wlan0:`
 - The MAC address will be listed there.I
     - Style points: use grep and pipe to grab the MAC address directly to your clipboard
-
-
 
 #### Connecting over VSCode
 
@@ -463,4 +462,4 @@ Not recommended at this time.
     Pi Imager is an application you can open before installing.
 
 <!-- TODO: fix link -->
-[moodle_lab_2]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=50829
+[moodle_lab_2]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=68921
