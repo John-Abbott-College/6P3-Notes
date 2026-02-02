@@ -2,7 +2,7 @@
 title: Reterminal setup
 description: |
   Guide to setting up reterminal for the first time.
-date: 2026-02-02
+date: 2026-02-01
 blogpost: true
 category: Linux
 tags: Linux
@@ -42,6 +42,7 @@ reTerminal:
 
 - Ethernet cable or Wi-Fi connection
 - USB Type-C cable
+- Micro HDMI to HDMI converter
 - reTerminal kit case, containing
     - small screw driver (black handle)
     - reTerminal power adapter
@@ -109,10 +110,11 @@ Your reTerminal is now ready for a firmware flash.
 
 ### New OS image & Configuration
 
-To re-image the reTerminal, follow the steps below.
+To re-image the reTerminal, follow the steps below on the **lab computer**.
 
 #### Launch `rpiboot`
 
+There is a program called `rpiboot` used to mount the reTerminal for OS flashing.
 Launch the `C:\Program Files (x86)\Raspberry Pi\rpiboot`[^rpiboot-executable] executable file with [elevated permissions](#elevated-permissions)
 
 ::: {admonition} Elevated Permissions
@@ -188,13 +190,11 @@ Basically, unless the program is stuck in a loop, you should continue to the nex
 - Make the following customizations (you will need to click through all 3 tabs at the top).
     - Set a unique username and password.
         - **Do not use the defaults or forget these**. *You will need to reimage your reTerminal if you do.*
-    - Set a hostname (suggestion: `username-pi`)
+    - Set a hostname (suggestion: `RE-XX`, matching the code on your reTerminal kit.)
     - Enable SSH with password authentication.
-    - Configure the wireless LAN for the lab network:
-        - SSID: `P326-hotspot`
-            - NOTE: there is no whitespace. Take care your SSID matches exactly.
-        - Password: `420-6P3-ill-subliminal`
-            - NOTE: take care your password matches exactly
+    - Try configure the wireless LAN to connect to the JAC wifi network:
+        - SSID: `jac-BYOD` (double check the spelling of this)
+        - Password: (your JAC password)
         - Wireless LAN country: `CA`
     - Set locale settings: `America/Montreal`
     - Disable telemetry.
@@ -202,7 +202,7 @@ Basically, unless the program is stuck in a loop, you should continue to the nex
     - Take note of your hostname, username, and password (see Moodle for place to enter
         this information)
         - You will be responsible for maintaining your system.
-        - If you get locked out, you may have to re-image the system.
+        - *If you get locked out, you may have to re-image the system.*
     - **Press "SAVE" when finished.**
 - Once you've finished making the above customizations, there are three main
     configuration choices to make:
@@ -235,7 +235,7 @@ At this point, we are now going to start running commands directly on the reTerm
 
 - Plug your reTerminal into the wall using the power supply. There are power bars in the lab that you can use if you need more outlets.
     - In general, the reTerminal is powered using the provided power supply in your lab kit.
-- Plug your reTerminal into the lab monitor using the provided microHDMI to HDMI converter
+- Plug your reTerminal into the lab monitor using the provided **microHDMI to HDMI converter**
 - Plug your reTerminal into the ethernet using the lab computer ethernet.
 - Plug the lab keyboard and mouse into your reterminal USB.
 
@@ -257,7 +257,7 @@ Once your are logged into the reTerminal and you can see the display on the lab 
     - Make sure your Pi is connected to the wall power supply, NOT to your computer (the
         pi screen needs more power than your lab computer can provide).
 
-::: {note margin}
+:::{note}
 If your keyboard is in French mode on the raspberry pi, you can
 [follow the instructions here](https://thelinuxcode.com/change-keyboard-layout-raspberry-pi/)
 to set it back into English (US) mode.
@@ -354,7 +354,7 @@ where `hostname` and `user-name` correspond to the choices you made during your 
 > Follow the official Raspberry Pi instructions (NOTE: Linux instructions apply to WSL!)
 > [**Secure Shell from Linux or Mac OS**](https://www.raspberrypi.com/documentation/computers/remote-access.html#secure-shell-from-linux-or-mac-os)
 
-For [Lab 3](https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=50829), I ask you to obtain the reTerminal’s MAC address.
+For [Lab 2][moodle_lab_2], I ask you to obtain the reTerminal’s MAC address.
 
 You can do so running `ifconfig` command in an ssh session, and checking the properties of the wireless network card (`wlan0`):
 
@@ -450,3 +450,6 @@ Not recommended at this time.
     is straightforward to install.
 - NOTE: this *should* already be installed on the Lab computers. Check to see if Raspberry
     Pi Imager is an application you can open before installing.
+
+<!-- TODO: fix link -->
+[moodle_lab_2]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=50829

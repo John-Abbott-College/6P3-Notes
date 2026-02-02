@@ -30,6 +30,7 @@ dependencies = [
     "sphinx-togglebutton>=0.3.2",
     "sphinxcontrib-bibtex>=2.6.5",
     "sphinxcontrib-httpdomain>=1.8.1",
+    "sphinxcontrib-images>=1.0.1",
     "sphinxcontrib-mermaid>=1.2.3",
     "sphinxcontrib-youtube>=1.4.1",
     "sphinxemoji>=0.3.1",

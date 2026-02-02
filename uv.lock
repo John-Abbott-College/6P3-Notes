@@ -28,6 +28,7 @@ dependencies = [
     { name = "sphinx-togglebutton" },
     { name = "sphinxcontrib-bibtex" },
     { name = "sphinxcontrib-httpdomain" },
+    { name = "sphinxcontrib-images" },
     { name = "sphinxcontrib-mermaid" },
     { name = "sphinxcontrib-youtube" },
     { name = "sphinxemoji" },
@@ -67,6 +68,7 @@ requires-dist = [
     { name = "sphinx-togglebutton", specifier = ">=0.3.2" },
     { name = "sphinxcontrib-bibtex", specifier = ">=2.6.5" },
     { name = "sphinxcontrib-httpdomain", specifier = ">=1.8.1" },
+    { name = "sphinxcontrib-images", specifier = ">=1.0.1" },
     { name = "sphinxcontrib-mermaid", specifier = ">=1.2.3" },
     { name = "sphinxcontrib-youtube", specifier = ">=1.4.1" },
     { name = "sphinxemoji", specifier = ">=0.3.1" },
@@ -2167,6 +2169,18 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/be/ef/82d3cfafb7febce4f7df8dcf3cde9d072350b41066e05a4f559b4e9105d0/sphinxcontrib-httpdomain-1.8.1.tar.gz", hash = "sha256:6c2dfe6ca282d75f66df333869bb0ce7331c01b475db6809ff9d107b7cdfe04b", size = 19266, upload-time = "2022-11-14T17:22:13.425Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/02/49/aad47b8cf27a0d7703f1311aad8c368bb22866ddee1a2d2cd3f69bc45e0c/sphinxcontrib_httpdomain-1.8.1-py2.py3-none-any.whl", hash = "sha256:21eefe1270e4d9de8d717cc89ee92cc4871b8736774393bafc5e38a6bb77b1d5", size = 25513, upload-time = "2022-11-14T17:22:10.555Z" },
+]
+
+[[package]]
+name = "sphinxcontrib-images"
+version = "1.0.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "requests" },
+    { name = "sphinx" },
+]
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/08/c5/402cce1cc18caff306effa09e77fdb3872289edc956a5c1bf53c03799b3b/sphinxcontrib_images-1.0.1-py3-none-any.whl", hash = "sha256:3cc9738dc15bacb3ab153b411a1b50dbfaa2535b49853ef3eae4d22adbbffa26", size = 119672, upload-time = "2025-06-07T22:42:48.954Z" },
 ]
 
 [[package]]

@@ -32,6 +32,7 @@ extensions = [
     "ablog",
     "sphinx_subfigure",
     "sphinxcontrib.youtube",
+    "sphinxcontrib.images",
     # "sphinxcontrib.bibtex",
     # "drafts",
 ]
@@ -114,4 +115,8 @@ myst_substitutions = {
     "course_outline": "https://moodle.johnabbott.qc.ca/pluginfile.php/125547/mod_resource/content/4/WINTER%202026.COMPUTER%20SCIENCE.420-6P3-AB.HAAFM.pdf",
     "course_repository": "https://classroom.github.com/a/pRCPaajX",
     "course_moodle": "https://moodle.johnabbott.qc.ca/course/view.php?id=1753"
+}
+
+images_config = {
+    "override_image_directive": True,
 }
