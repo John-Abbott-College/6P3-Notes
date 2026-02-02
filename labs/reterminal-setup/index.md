@@ -126,6 +126,7 @@ To re-image the reTerminal, follow the steps below on the **lab computer**.
 #### Launch `rpiboot`
 
 There is a program called `rpiboot` used to mount the reTerminal for OS flashing.
+
 Launch the `C:\Program Files (x86)\Raspberry Pi\rpiboot`[^rpiboot-executable] executable file with [elevated permissions](#elevated-permissions)
 
 ::: {admonition} Elevated Permissions
@@ -134,8 +135,8 @@ Launch the `C:\Program Files (x86)\Raspberry Pi\rpiboot`[^rpiboot-executable] ex
 
 We will sometimes need **elevated permissions** in order to install or operate software.
 
-- On the Lab Computers, you can achieve elevated permissions by right-clicking on the
-    executable and selecting the option: **"Run with elevated access"**.
+- On the Lab Computers, you can achieve elevated permissions by **right-clicking on the
+    executable** and selecting the option: **"Run with elevated access"**.
     - You will be asked for your college username and password.
         - **Click on the password field to get focus**
             (the program doesn't focus on the password by default, which is very annoying)
@@ -193,6 +194,14 @@ Your output will not exactly match the example I have provided. Here are some gu
         make sure you pay attention to details.
 
 Basically, unless the program is stuck in a loop, you should continue to the next step.
+
+:::{note}
+IF, after trying all of the above instructions again, you are stuck with the `Sending bootcode4.bin...` loop, you have the following options:
+
+- Try another lab computer -- about 50% of them seem to have issues with this step.
+- Install `Raspberry Pi Imager` and `rpiboot` on your personal computer. See the <project:/labs/reterminal-setup/index.md#appendix> for instructions.
+
+:::
 
 #### Run Rasperry Pi (RPi) Imager
 
@@ -278,9 +287,13 @@ to set it back into English (US) mode.
 A good first step for any OS installation is to ensure all system packages
 are at the latest version.
 
-Follow the three steps in the official guide for the reTerminal FAQ Wiki:
-[How to upgrade Raspberry Pi OS and the installed packages](https://wiki.seeedstudio.com/reTerminal-FAQ/#q3-how-to-upgrade-raspberry-pi-os-and-the-installed-packages)
-    - For any steps that ask you to make a choice, just pick the defaults.
+Raspberry PI OS is also based on Debian, like our WSL developer environments.
+That means we can use the `apt` package manager:
+
+```bash
+$ sudo apt update
+$ sudo apt upgrade
+```
 
 ## Set up Remote connections
 
@@ -349,8 +362,10 @@ Take note of these IP addresses before moving on to the next steps.
 
 The SSH server inside your Raspberry Pi should already be enabled by default.
 
-> To double check that the ssh server is enabled on your Pi: follow the official instructions on
-> [Setting up the SSH Server on the Raspberry Pi](https://www.raspberrypi.com/documentation/computers/remote-access.html#ssh).
+:::{important}
+If you are having issues connecting by SSH, double check that the ssh server is enabled on your pi: follow the official instructions on
+[Setting up the SSH Server on the Raspberry Pi](https://www.raspberrypi.com/documentation/computers/remote-access.html#ssh).
+:::
 
 #### Connecting over CLI
 
