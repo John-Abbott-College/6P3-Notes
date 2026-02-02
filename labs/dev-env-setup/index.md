@@ -48,7 +48,7 @@ Part of getting comfortable with `bash` is simply getting in the habit of *using
 Complete each of the following tasks:
 
 1. On Moodle, complete the Lab 1 [Hardware & stuff survey](https://moodle.johnabbott.qc.ca/course/section.php?id=12074)
-1. Complete the [Developer environment prerequisites](/lectures/developer-environment/index)
+1. Complete all of the steps in <project:/lectures/developer-environment/index.md>
 
     ```{note}
     If you will use a personal computer for this class, you need to do the developer environment set up on BOTH (1) a lab computer and (2) your personal computer(s).
@@ -58,8 +58,11 @@ Complete each of the following tasks:
 1. **CHECK THE EMAIL ASSOCIATED WITH YOUR GITHUB**: accept the invitation to join the class GitHub organization.
 1. Clone the coursework repository onto your developer environment
 
-![](./assets/invitation.png)
-*You need to find this email and accept the invitation in order to access your coursework repository.*
+:::{figure} ./assets/invitation.png
+
+You need to find this email and accept the invitation in order to access your coursework repository.
+
+:::
 
 ## Tracking your coursework progress
 
@@ -67,7 +70,7 @@ Throughout this class, we are going to make extensive use of git and GitHub to t
 
 Open your coursework repository in VSCode, and do the following:
 
-1. [Create a branch](/lectures/github-basics/index) called `lab-1`
+1. [Create a branch](/lectures/github-basics/index.md#branch-management) called `lab-1`
 2. in VSCode, open the `lab-1/bandit-instructions.txt` file
 3. Change the 2nd line `Prepared by: <write your name here>` such that your name is written.
 4. Immediately make a commit of that change
@@ -81,8 +84,11 @@ To get us warmed up with using `ssh` to connect to a remote computer, and using 
 
 For this lab, we will aim to complete all levels up to and including **Level 5->6**.
 
-[![](./assets/bandit-screenshot.png)][bash bandit]
-*Each level of the bandit game requires you use one or more bash commands to complete the level.*
+:::{figure} ./assets/bandit-screenshot.png
+
+Each level of the bandit game requires you use one or more bash commands to complete the level.
+
+:::
 
 ### Getting started
 

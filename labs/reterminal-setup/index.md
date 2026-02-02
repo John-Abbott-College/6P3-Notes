@@ -65,7 +65,7 @@ There are two tools required for this lab:
 
 See the [reTerminal Kit](/lectures/reterminal-kit/index.md) lecture notes, and the ReTerminal Kit signout form given in class.
 
-Make sure that all of the pieces on the sign-out form are in your kit. Refer to the [reTerminal Kit](/lectures/reterminal-setup/index.md) lecture notes.
+Make sure that all of the pieces on the sign-out form are in your kit. Refer to the [reTerminal Kit](/lectures/reterminal-kit/index.md) lecture notes.
 
 
 ## Reimage the reTerminal
