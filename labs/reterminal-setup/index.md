@@ -195,7 +195,25 @@ Your output will not exactly match the example I have provided. Here are some gu
 
 Basically, unless the program is stuck in a loop, you should continue to the next step.
 
+IF the program is stuck in a loop, try the following:
+
+1. Find the location of the Windows Powershell Executable
+    - Windows key button -> Powershell -> Open File Location
+1. Run that with elevated access
+1. In that powershell, run the following commands:
+
+    ```powershell
+    PS > cd C:\Users\<your-student-number>
+    PS > git clone https://github.com/raspberrypi/usbboot
+    PS > cd usbboot
+    PS > cd win32
+    PS > .\rpiboot_setup.exe
+    ```
+1. Follow the instructions to reinstall rpiboot
+1. Once that is done, you can try the previous steps again and they should work.
+
 :::{note}
+
 IF, after trying all of the above instructions again, you are stuck with the `Sending bootcode4.bin...` loop, you have the following options:
 
 - Try another lab computer -- about 50% of them seem to have issues with this step.
