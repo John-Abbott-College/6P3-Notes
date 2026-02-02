@@ -1,17 +1,17 @@
 ---
-title: Reterminal setup
+title: "L2: Reterminal setup"
 description: |
   Guide to setting up reterminal for the first time.
 date: 2026-02-01
 blogpost: true
-category: Linux
-tags: Linux
-location: Lecture
+location: Lab
+author: 1%
+language: 2026-01-24
 ---
 
 ## Overview
 
-This page documents the general steps needed to perform an initial set up, or reset, of
+This lab documents the general steps needed to perform an initial set up, or reset, of
 the [reTerminal](https://wiki.seeedstudio.com/reTerminal/#for-linux) device that we will be using throughout the class.
 
 The general steps are:
@@ -21,7 +21,12 @@ The general steps are:
 1. Connect to the reTerminal remotely and ensure the remote connection services are
     working.
 
-These instructions are mostly adapted from the instructions available at [@GettingStartedReTerminal2023].
+To complete this lab, complete **all of the steps below**. Make sure you read **every instruction carefully**.
+
+At the end of the lab, there are two other deliverables:
+
+- reTerminal kit sign out sheet (given in class)
+- Moodle reTerminal metadata (link TBA soon)
 
 ## Prerequisites
 
