@@ -234,7 +234,7 @@ Exit your distro/instance, then run a `wsl --terminate <distroname>` from PowerS
 
 When you restart, the default user should be set to `username`.
 
-For more detail: https://superuser.com/a/1627461
+For more detail: <https://superuser.com/a/1627461>
 
 :::
 
