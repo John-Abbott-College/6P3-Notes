@@ -310,11 +310,14 @@ pass --version
 pass otp --version
 zbarimg --version
 vim --version
+
+# (If WSL) double check you are the default user on your system
+grep default /etc/wsl.conf
 ```
 
-### After Lab 2
+### After Lab 1 Part 2
 
-If any of the commands below do not give the expected output, **fix them** using the [Lab 2 instructions](/labs/dev-env-setup/index.md).
+If any of the commands below do not give the expected output, **fix them** using the [Lab 1 part 2 instructions](/labs/dev-env-setup/index.md).
 
 ```bash
 # Verify you have a gpg key configured correctly
@@ -324,3 +327,34 @@ gpg --list-keys
 pass github/token
 ```
 
+Verify that your VSCode is setup using your WSL, and your `coursework` repo is saved in the WSL home:
+
+:::{figure} assets/vscode-devenv.png
+
+Note the bottom left (remote connection): **blue, WSL:Debian**. Note the console: the repository location is in `/home/username`, NOT in `/mnt/c/...`
+
+:::
+
+### After Lab 2
+
+If any of the commands below do not give the expected output, **fix them** using the [Lab 2 instructions](/labs/reterminal-setup/index.md).
+
+```{code-block}
+:caption: Developer environment
+# Verify you can see your reTerminal on tailscale
+tailscale status
+
+# Verify you can ssh into your reTerminal environment
+ssh <reterminal-username>@<reterminal-hostname>
+```
+
+```{code-block}
+:caption: reTerminal environment
+
+# Verify you can see your developer environment on tailscale
+tailscale status
+
+# Verify your reTerminal python is >=3.9 and pip is installed
+python --version
+pip --version
+```
