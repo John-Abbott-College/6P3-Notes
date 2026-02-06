@@ -324,6 +324,12 @@ If any of the commands below do not give the expected output, **fix them** using
 gpg --list-keys
 
 # Verify your github PAT token can be found using pass
+pass # expected: github/token
+
+# Verify you are actually storing the token
+# NOTE: when taking a screenshot to show me proof of completion,
+# DO NOT share the actual result of running this command (it is a secret).
+# Just double check that it works on your end.
 pass github/token
 ```
 
