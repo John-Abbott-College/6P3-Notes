@@ -1,10 +1,12 @@
 ---
-title: "reTerminal built-in devices"
-subtitle:
+title: "(DRAFT) reTerminal built-in devices"
+description: |
   Installing initial reTerminal packages. Reading and controlling the reTerminal
   hardware interfaces, e.g. touchscreen, LEDs, light sensor, screen backlight, etc.
-categories: ["hardware", "linux", "bash"]
-date: 2025-03-10
+date: 2026-02-06
+category: Hardware
+tags: Hardware
+location: Lecture
 ---
 
 ::: {margin}
