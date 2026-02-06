@@ -418,6 +418,13 @@ You can use VS Code in your lab workstation to create a development environment 
 1. Connect your lab workstation to your Raspberry Pi by following these instructions from stack overflow: [Connecting to SSH from WSL in VSCode](https://stackoverflow.com/a/79634708)
 1. You should now be able to enter an ssh session on VSCode by using `Ctrl-Shift-P` --> `Remote-SSH: Connect to Host...`
 
+## Submission
+
+- Complete the [moodle questionnaire][moodle_lab_2]
+- [Verify your environment (Lab 1, Lab 1 Part 2, and Lab 2)](/lectures/developer-environment/index.md#verify-environment) and send me **screenshots of your results on Teams**.
+- Your reterminal should visibly work on Monday (the reterminal touchscreen works).
+
+
 ## Appendix
 
 
@@ -472,5 +479,4 @@ Not recommended at this time.
 - NOTE: this *should* already be installed on the Lab computers. Check to see if Raspberry
     Pi Imager is an application you can open before installing.
 
-<!-- TODO: fix link -->
 [moodle_lab_2]: https://moodle.johnabbott.qc.ca/mod/assign/view.php?id=68921
