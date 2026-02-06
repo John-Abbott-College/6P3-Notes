@@ -12,11 +12,33 @@ tags: Linux
 
 ## What is WSL?
 
-*These notes are adapted from <https://learn.microsoft.com/en-us/windows/wsl/about>*
+*These notes are adapted from <https://learn.microsoft.com/en-us/windows/wsl/about> and <https://learn.microsoft.com/en-us/virtualization/windowscontainers/about/containers-vs-vm>*
 
 Windows Subsystem for Linux (WSL) is a feature of Windows that allows you to run a Linux environment on your Windows machine, 
 *without the need for a separate virtual machine or dual booting*. 
 
+The following sections compare/contrast containers and VMs.
+
+### Container architecture
+
+A container is an isolated, lightweight silo for running an application
+on the host operating system. Containers build on top of the host
+operating system\'s kernel (which can be thought of as the buried
+plumbing of the operating system), and contain only apps and some
+lightweight operating system APIs and services that run in user mode, as
+shown in this diagram.
+
+![Architectural diagram showing how containers run on top of the
+kernel](assets/container-diagram.svg){linktype="relative-path"}
+
+### Virtual machine architecture
+
+In contrast to containers, VMs run a complete operating
+system--including its own kernel--as shown in this diagram.
+
+![Architectural diagram showing how VMs run a complete operating system
+beside the host operating
+system](assets/virtual-machine-diagram.svg){linktype="relative-path"}
 
 ## Linux Filesystem Hierarchy Standard (FHS)
 
