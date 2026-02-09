@@ -37,8 +37,9 @@ ensure you have finished `lab-2`, particularly the `tailscale` setup.
 Once you are connected to your reTerminal, read the
 [course notes on reTerminal built-in devices](/lectures/reterminal-devices/index.md).
 
-Work through the examples provided in the course notes. Before completing this section,
-you should be able to:
+**Work through the examples provided in the course notes**. The lab instructions that follow assume you've done this.
+
+Before completing this section, you should be able to:
 
 - Turn on/off each of the LEDs using `bash`, both by editing the device file directly AND
   by using `cat` or a similar text-processing tool
@@ -73,12 +74,11 @@ input-sanitation, and even better, we can re-use this script in the future.
 - Create a file using VSCode / your favourite editor called `backlight` (no file
   extension). Make sure that file is located in your `lab-3/bash` directory
 
-Create a script that edits the backlight of your reTerminal. Requirements and hints to
-follow:
-
 ### Requirements<a name="requirements"></a>
 
-- Your script should take one positional argument that is an integer between 0-255
+In this part of the lab, we create a script that controls the backlight (screen dimness) of your reTerminal.
+
+- Your script should take one [positional argument](/lectures/bash-scripting/index.md#positional-parameters) that is an integer between 0-255
 - Your script should be able to be run directly from the terminal without a bash
   interpreter
 - (i.e. `$ ./lab-3/bash/backlight 255` should just work)
@@ -131,7 +131,7 @@ interact with shell scripts very naturally, as we will see in this section.
 
 - SSH into your Raspberry Pi, either over VSCode or a terminal (or both).
 - Create a `lab-3/python/` directory
-- Create a file using VSCode / your favourite editor called `lab-4/python/backlight.py`
+- Create a file using VSCode / your favourite editor called `lab-3/python/backlight.py`
   (with file extension).
 - Read this
   [article on using the python `subprocess` module to run bash scripts](https://realpython.com/python-subprocess/#introduction-to-the-shell-and-text-based-programs-with-subprocess)
@@ -148,8 +148,8 @@ scripts.
 - Your script should be able to be run directly from the terminal without a bash
   interpreter
   - (i.e. `$ lab-3/python/backlight.py ON` should just work)
-- Your script must use the backlight script you wrote in Part 2 inside of a Python
-  subprocess -- the goal is to **re-use** the script you wrote that works already, NOT to
+- **Your script must use the backlight script you wrote in Part 2 inside of a Python
+  subprocess** -- the goal is to **re-use** the script you wrote that works already, NOT to
   re-write it.
   - NOTE: use a path *relative* to the python directory (e.g. `../bash/backlight`) to specify the location of the bash file.
 
@@ -196,7 +196,7 @@ write in bash.
 In this part, we will control the reTerminal LEDs using the `seeed-python-reterminal`
 library written by the reTerminal team. These libraries are basically more-robust versions
 of what we wrote in Part 3 -- you can see how they are implemented if you click the
-library link and navigate to the source folder.
+[view the source code](https://github.com/Seeed-Studio/Seeed_Python_RPi) and navigate to the source folder.
 
 ### Setup<a name="setup-2"></a>
 
