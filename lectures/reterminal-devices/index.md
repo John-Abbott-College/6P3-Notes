@@ -227,13 +227,13 @@ rw-r--r-- 1 root root 4096 Jan 30 22:16 in_illuminance_input
 Seeed Studio provided a python library to access most of the sensors and
 actuators of the reTerminal.
 
-Install the library `seeed-python-reterminal` (see official
+Install the library `seeed-python-rpi` (see official
 [Github repo](https://github.com/Seeed-Studio/Seeed_Python_ReTerminal)) using
 `pip`:
 
 ```bash
 # NOTE: run this with a venv activated! 
-pip install seeed-python-reterminal
+pip install git+https://github.com/Seeed-Studio/Seeed_Python_RPi/
 
 # NOTE: you will also need this dependency
 pip install RPi-GPIO
@@ -242,7 +242,7 @@ pip install RPi-GPIO
 Now you can import it to a test script (eg. `buzz.py`)
 
 ```python
-import seeed_python_reterminal.core as rt
+import seeed_python_rpi.core as rt
 import time
 
 print("BUZZER ON")

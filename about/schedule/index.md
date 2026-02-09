@@ -38,6 +38,8 @@ date: 2026-01-02
   - Feb 13
   - - <project:/lectures/reterminal-devices/index.md>
     - <project:/lectures/bash-scripting/index.md>
+    - <project:/lectures/python-package-management/index.md>
+    - <project:/lectures/python-scripting/index.md>
 * - Feb 16
   - Feb 20
   -

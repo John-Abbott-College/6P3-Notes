@@ -2,8 +2,11 @@
 title: Python scripting
 subtitle: >
   Tips and tricks for effective scripting in Python
-categories: [python]
-date: 2025-04-4
+date: 2026-02-09
+blogpost: true
+category: Python
+tags: Python
+location: Lecture
 ---
 
 ## Overview

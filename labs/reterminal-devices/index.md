@@ -9,13 +9,13 @@ author: 3%
 language: 2026-02-13
 ---
 
-## Overview<a name="overview"></a>
+## Overview
 
 The reTerminal comes with a variety of built-in devices (the touchscreen, LEDs, a buzzer,
 and more). In this lab we are going to practise interfacing with those devices using
 `bash` and `python`.
 
-### Objectives<a name="objectives"></a>
+### Objectives
 
 - Control the built-in reTerminal devices:
   - turn on/off its LED
@@ -28,7 +28,7 @@ and more). In this lab we are going to practise interfacing with those devices u
 - Practise remote development workflow using VSCode, `ssh`, `scp`
 - Prepare reTerminal for data collection and processing
 
-## Part 0: Warm-up<a name="part-0-warm-up"></a>
+## Part 0: Warm-up
 
 Make sure you can connect to the reTerminal from your developer environment using `ssh`.
 You can either use VSCode or a terminal environment (try both!). If you cannot do this,
@@ -49,7 +49,7 @@ Before completing this section, you should be able to:
 - Read the amount of light flux detected by the backlight sensor (Hint: use your cellphone
   flashlight to subject your reTerminal to more light).
 
-## (1%) Part 1: Bash Scripting<a name="1%25-part-1-bash-scripting"></a>
+## (1%) Part 1: Bash Scripting
 
 When we get tired of entering commands interactively, or when we want to re-use those
 commands at-will, we create scripts!
@@ -58,7 +58,7 @@ We will create a quick script to demonstrate the idea in this part of the lab --
 command and the behavior is relatively simple, but we can add some protective
 input-sanitation, and even better, we can re-use this script in the future.
 
-### Setup<a name="setup"></a>
+### Setup
 
 - SSH into your Raspberry Pi, either over VSCode or a terminal (or both).
 - **Clone your `coursework` repo onto the reTerminal**
@@ -74,7 +74,7 @@ input-sanitation, and even better, we can re-use this script in the future.
 - Create a file using VSCode / your favourite editor called `backlight` (no file
   extension). Make sure that file is located in your `lab-3/bash` directory
 
-### Requirements<a name="requirements"></a>
+### Requirements
 
 In this part of the lab, we create a script that controls the backlight (screen dimness) of your reTerminal.
 
@@ -121,13 +121,13 @@ Commands/bash concepts that will be useful:
 The course notes on
 <project:/lectures/bash-scripting/index.md> explain all of the above concepts.
 
-## (1%) Part 2: Wrap Bash in Python<a name="1%25-part-2-wrap-bash-in-python"></a>
+## (1%) Part 2: Wrap Bash in Python
 
 Sometimes it is useful to call bash scripts from a more sophisticated programming
 language. This can be a tedious/janky process in some languages. Python was written to
 interact with shell scripts very naturally, as we will see in this section.
 
-### Setup<a name="setup-1"></a>
+### Setup
 
 - SSH into your Raspberry Pi, either over VSCode or a terminal (or both).
 - Create a `lab-3/python/` directory
@@ -141,7 +141,7 @@ interact with shell scripts very naturally, as we will see in this section.
 Here we will re-use the script you created in Part 2 to see how Python interacts with bash
 scripts.
 
-### Requirements<a name="requirements-1"></a>
+### Requirements
 
 - Your script should take one positional argument that is a string.
   - There are three valid strings: `ON`, `OFF`, `DIM`
@@ -182,7 +182,7 @@ Commands/python concepts that will be useful:
   [`argparse`](https://realpython.com/command-line-interfaces-python-argparse/#creating-a-cli-with-argparse)
 - Make file executable with [`chmod`](/lectures/bash-scripting/index.md#permissions)
 
-## (1%) Part 3: Python scripting with libraries and venv<a name="1%25-part-3-python-scripting-with-libraries-and-venv"></a>
+## (1%) Part 3: Python scripting with libraries and venv
 
 In the previous part we saw how we can efficiently re-use working bash scripts in Python,
 and even change the interface of those scripts in an elegant and safe manner (i.e. replace
@@ -193,29 +193,30 @@ functional programming, etc.) that aren’t in Bash. In addition, this allows us
 use 3rd-party python libraries to perform more complicated behavior than we could ever
 write in bash.
 
-In this part, we will control the reTerminal LEDs using the `seeed-python-reterminal`
+In this part, we will control the reTerminal LEDs using the `seeed-python-rpi`
 library written by the reTerminal team. These libraries are basically more-robust versions
 of what we wrote in Part 3 -- you can see how they are implemented if you click the
 [view the source code](https://github.com/Seeed-Studio/Seeed_Python_RPi) and navigate to the source folder.
 
-### Setup<a name="setup-2"></a>
+### Setup
 
 - SSH into your Raspberry Pi, either over VSCode or a terminal (or both).
-- Setup a venv in the `lab-3/python/` directory.
+- **Setup a `venv`** in the `lab-3/python/` directory.
   - See the
-    [course notes on python environments](https://john-abbott-college.github.io/6P3-Notes/notes/python-environments/)
+    [course notes on python environments](/lectures/python-packae-management/index.md)
     for more information.
-- Activate the your python venv.
+- **Activate the your python `venv`**.
 - Install the packages `seeed-python-reterminal` and `RPi-GPIO` using pip.
   - This will install these dependencies in your venv.
   - See the
-    [course notes on the Python library for reTerminal](https://john-abbott-college.github.io/6P3-Notes/notes/reterminal-devices#python-library-for-reterminal)
+    [course notes on the Python library for reTerminal](/lectures/reterminal-devices/index.md#python-library-for-reterminal)
 - Create a file using VSCode / your favourite editor called `lab-3/python/leds.py`
 
-> [!NOTE]
-> Make sure you do not commit your `.venv` folder to your lab repo! Use `.gitignore`.
+:::{note}
+Make sure you do not commit your `.venv` folder to your lab repo! Use `.gitignore`.
+:::
 
-### Requirements<a name="requirements-2"></a>
+### Requirements
 
 Write a short python script that, while running, repeatedly turns on your LEDS in the
 following sequence:
@@ -225,10 +226,10 @@ following sequence:
 - USR: Green Wait one second, turn off
 - Repeat
 
-Your script should use the `seeed-python-reterminal` API:
+Your script should use the `seeed-python-rpi` API:
 
 ```
-import seeed_python_reterminal.core as rt
+import seeed_python_rpi.core as rt
 import time
 
 print("STA OFF, USR OFF")
@@ -244,10 +245,6 @@ You can see more
 examples at the [project github](https://github.com/Seeed-Studio/Seeed_Python_RPi) if
 you’re not sure how to use the library.
 
-> [!NOTE]
-> The `seeed-python-reterminal` project examples use a different package name (`seeed-python-rpi`) in its examples.
-> Continue to use `seeed-python-reterminal` in your scripts.
-
 ### Hints
 
 In order to edit the LED files, your script will need to run with root permissions.
@@ -256,13 +253,13 @@ permissions will be insufficient, but if you run `sudo python leds.py` your venv
 be used. What to do?
 
 Read the
-[course notes (Pip python packaging: run app with root permission)](https://github.com/notes/python-package-management/#using-packages-that-require-root-permissions)
+[course notes (Pip python packaging: run app with root permission)](/lectures/python-package-management/index.md#using-packages-that-require-root-permissions)
 about this problem. There are a few different ways to make sure you run the venv install
 of python with sudo, but it’s not obvious at first. You may find the command which and
 bash process substitution useful, or you may find knowing the actual path of the venv
 install of python useful.
 
-## Deliverables<a name="deliverables"></a>
+## Deliverables
 
 You should have the following scripts on your `lab-3` branch:
 
