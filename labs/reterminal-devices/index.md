@@ -203,7 +203,7 @@ of what we wrote in Part 3 -- you can see how they are implemented if you click 
 - SSH into your Raspberry Pi, either over VSCode or a terminal (or both).
 - **Setup a `venv`** in the `lab-3/python/` directory.
   - See the
-    [course notes on python environments](/lectures/python-packae-management/index.md)
+    [course notes on python environments](/lectures/python-package-management/index.md)
     for more information.
 - **Activate the your python `venv`**.
 - Install the packages `seeed-python-reterminal` and `RPi-GPIO` using pip.
