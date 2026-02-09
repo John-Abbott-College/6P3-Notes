@@ -34,8 +34,10 @@ date: 2026-01-02
     - Finish <project:/labs/reterminal-setup/index.md>
   - - <project:/lectures/reterminal-kit/index.md>
 * - Feb 9
+    - Begin <project:/labs/reterminal-devices/index.md>
   - Feb 13
-  -
+  - - <project:/lectures/reterminal-devices/index.md>
+    - <project:/lectures/bash-scripting/index.md>
 * - Feb 16
   - Feb 20
   -

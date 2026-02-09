@@ -1,19 +1,15 @@
 ---
-title: "(DRAFT) reTerminal built-in devices"
+title: "reTerminal built-in devices"
 description: |
   Installing initial reTerminal packages. Reading and controlling the reTerminal
   hardware interfaces, e.g. touchscreen, LEDs, light sensor, screen backlight, etc.
-date: 2026-02-06
+date: 2026-02-09
+blogpost: true
 category: Hardware
 tags: Hardware
 location: Lecture
 ---
 
-::: {margin}
-
-![A diagram showing how the electrostatic field changes caused by touch is processed by devices like the reTerminal. [Image source](wiringfixsecessions.z21.web.core.windows.net)](assets/capacitive-touch.jpg)
-
-:::
 
 ## Programmable interfaces
 
@@ -22,39 +18,41 @@ _This section is based on the official documentation for the reTerminal:
 
 All programmable data can be passed in file streams that can be read and/or written to.
 
+::: {figure} assets/capacitive-touch.jpg
+:scale: 50%
+
+A diagram showing how the electrostatic field changes caused by touch is processed by devices like the reTerminal.
+
+:::
+
 For example, keyboard inputs and communication over web-sockets are all read as
 a file streams.
 
 The reTerminal has 3 programmable LED's and a light sensor that can be
 **controlled like a regular file**.
 
-::: {margin}
-![reTerminal interface overview. [Image source](https://wiki.seeedstudio.com/reTerminal-hardware-interfaces-usage/)](assets/reterminal-buttons-light-sensor.png)
-:::
-
 You can see, there are 3 programmable LEDs in the reTerminal:
 
 - **STA** light can be turned on as **red or green**.
 - **USR** light can only be turned on as **green**.
 
-::: {margin}
-![The reTerminal LEDs and their corresponding filenames. [Image source](https://wiki.seeedstudio.com/reTerminal-hardware-interfaces-usage/)](assets/reterminal-leds.png)
+::: {figure} assets/reterminal-leds.png
+:scale: 50%
+
+The reTerminal LEDs and their corresponding filenames. [Image source](https://wiki.seeedstudio.com/reTerminal-hardware-interfaces-usage/)
+
 :::
 
 The lights can be controlled at the OS level by editing files in the
 `/sys/class/leds/` directory. Use `ls -al` to list the files in this directory:
 
-```bash {filename=bash}
+```bash
 username@hostname:/sys/class/leds/usr_led0 $ ls -al
 total 0
 drwxr-xr-x 3 root root    0 Jan 25 20:33 .
 drwxr-xr-x 8 root root    0 Jan 25 20:33 ..
 -rw-r--r-- 1 root root 4096 Jan 26 22:02 brightness
 ```
-
-::: {margin}
-![Unix Permissions cheatsheet by Julia Evans. See more about permissions in the [bash course notes](/lectures/bash-scripting/index.md#permissions)](assets/unix-permissions-cheatsheet.png).
-:::
 
 The `brightness` file inide the `usr_led0` controls the brightness of LED0. But,
 because only `root` has write permissions to this file, we will likely run into
@@ -70,6 +68,12 @@ Permission denied
 $ sudo echo 255 > /sys/class/leds/usr_led0/brightness
 Permission denied
 ```
+
+::: {figure} assets/unix-permissions-cheatsheet.png
+
+Unix Permissions cheatsheet by Julia Evans. See more about permissions in the [bash course notes](/lectures/bash-scripting/index.md#permissions).
+
+:::
 
 There are a few possible approaches to this problem:
 

@@ -1,11 +1,11 @@
 ---
-title: "L3 (DRAFT): Programming the ReTerminal"
+title: "L3: Programming the ReTerminal"
 subtitle:
   Learn how to control the devices built-in to the reTerminal chassis and the pi.
-date: 2026-02-06
+date: 2026-02-09
 blogpost: true
 location: Lab
-author: 2%
+author: 3%
 language: 2026-02-13
 ---
 
@@ -17,6 +17,10 @@ and more). In this lab we are going to practise interfacing with those devices u
 
 ### Objectives<a name="objectives"></a>
 
+- Control the built-in reTerminal devices:
+  - turn on/off its LED
+  - turn on/off its buzzer
+  - control the backlight dim setting
 - Read and write to `/sys/class` device files to manipulate reTerminal sensor and LED
   interfaces
 - Script sensor and control manipulation in `bash` and `python`
@@ -56,18 +60,18 @@ input-sanitation, and even better, we can re-use this script in the future.
 ### Setup<a name="setup"></a>
 
 - SSH into your Raspberry Pi, either over VSCode or a terminal (or both).
-- Clone your lab repo onto the raspberry pi
+- **Clone your `coursework` repo onto the reTerminal**
   - The location is up to you -- I like to make a directory called `~/repositories/` and
     clone all of my repositories in there.
   - NOTE: make sure you are NOT logged in as `root` or are in a root shell when you create
     the directory!
   - The unix owner of your lab and ALL files in it should be your username, NOT root.
   - Hint: use `ls -l` to check the owner of a file/folder. See the course notes for
-    [permissions](https://john-abbott-college.github.io/6P3-Notes/notes/bash-scripting/index.html#permissions).
-- Create a `lab-4` branch in this repository to do all of your lab-4 work.
-- Create a directory `bash` in the `lab-4` directory of this repository
+    [permissions](/lectures/bash-scripting/index.md#permissions).
+- **Create a branch called `lab-3` in your coursework repository** to do all of your work for this lab.
+- Create a directory `bash` in the `lab-3` directory of this repository
 - Create a file using VSCode / your favourite editor called `backlight` (no file
-  extension). Make sure that file is located in your `lab-4/bash` directory
+  extension). Make sure that file is located in your `lab-3/bash` directory
 
 Create a script that edits the backlight of your reTerminal. Requirements and hints to
 follow:
@@ -77,7 +81,7 @@ follow:
 - Your script should take one positional argument that is an integer between 0-255
 - Your script should be able to be run directly from the terminal without a bash
   interpreter
-- (i.e. `$ ./lab-4/bash/backlight 255` should just work)
+- (i.e. `$ ./lab-3/bash/backlight 255` should just work)
 - Your script should fail gracefully if bad input is provided (non integer/missing
   parameter/too big/too small)
 - Your script should work without needing to call sudo nor be a root user. You will need
@@ -109,17 +113,13 @@ $ backlight 0
 
 Commands/bash concepts that will be useful:
 
-- [Bash shebangs](https://john-abbott-college.github.io/6P3-Notes/notes/bash-scripting/#shebangs)
-- Compare integers, combine [conditional statements with AND/OR in Bash](https://john-abbott-college.github.io/6P3-Notes/notes/bash-scripting/#conditionals)
-- Use [positional arguments](https://john-abbott-college.github.io/6P3-Notes/notes/bash-scripting/#positional-parameters) in bash scripts
-- Require positional parameters using [`set`](https://john-abbott-college.github.io/6P3-Notes/notes/bash-scripting/index.html#debugging)
-- Make file executable with [`chmod`](https://john-abbott-college.github.io/6P3-Notes/notes/bash-scripting/index.html#permissions)
+- [Bash shebangs](/lectures/bash-scripting/index.md#shebangs)
+- Compare integers, combine [conditional statements with AND/OR in Bash](/lectures/bash-scripting/index.md#conditionals)
+- Use [positional arguments](/lectures/bash-scripting/index.md#positional-parameters) in bash scripts
+- Make file executable with [`chmod`](/lectures/bash-scripting/index.md#permissions)
 
 The course notes on
-[bash scripting](https://john-abbott-college.github.io/6P3-Notes/notes/bash-scripting/)
-explain all of the above concepts.
-
-Your lab will be graded on Gradescope, using the `lab-4` branch.
+<project:/lectures/bash-scripting/index.md> explain all of the above concepts.
 
 ## (1%) Part 2: Wrap Bash in Python<a name="1%25-part-2-wrap-bash-in-python"></a>
 
@@ -130,7 +130,7 @@ interact with shell scripts very naturally, as we will see in this section.
 ### Setup<a name="setup-1"></a>
 
 - SSH into your Raspberry Pi, either over VSCode or a terminal (or both).
-- Create a `lab-4/python` directory
+- Create a `lab-3/python/` directory
 - Create a file using VSCode / your favourite editor called `lab-4/python/backlight.py`
   (with file extension).
 - Read this
@@ -147,7 +147,7 @@ scripts.
   - There are three valid strings: `ON`, `OFF`, `DIM`
 - Your script should be able to be run directly from the terminal without a bash
   interpreter
-  - (i.e. `$ lab-4/python/backlight.py ON` should just work)
+  - (i.e. `$ lab-3/python/backlight.py ON` should just work)
 - Your script must use the backlight script you wrote in Part 2 inside of a Python
   subprocess -- the goal is to **re-use** the script you wrote that works already, NOT to
   re-write it.
@@ -174,15 +174,13 @@ $ backlight.py DIM
 
 Commands/python concepts that will be useful:
 
-- [Python shebang](https://john-abbott-college.github.io/6P3-Notes/notes/bash-scripting/#shebangs)
+- [Python shebang](/lectures/bash-scripting/index.md#shebangs)
 - Python
   [`subprocess`](https://realpython.com/python-subprocess/#introduction-to-the-shell-and-text-based-programs-with-subprocess)
   for calling bash from a python script
 - Positional parameters in Python using
   [`argparse`](https://realpython.com/command-line-interfaces-python-argparse/#creating-a-cli-with-argparse)
-- Make file executable with [`chmod`](https://john-abbott-college.github.io/6P3-Notes/notes/bash-scripting/index.html#permissions)
-
-Your lab will be graded on Gradescope, using the `lab-4` branch.
+- Make file executable with [`chmod`](/lectures/bash-scripting/index.md#permissions)
 
 ## (1%) Part 3: Python scripting with libraries and venv<a name="1%25-part-3-python-scripting-with-libraries-and-venv"></a>
 
@@ -203,7 +201,7 @@ library link and navigate to the source folder.
 ### Setup<a name="setup-2"></a>
 
 - SSH into your Raspberry Pi, either over VSCode or a terminal (or both).
-- Setup a venv in the `lab-4/python/` directory.
+- Setup a venv in the `lab-3/python/` directory.
   - See the
     [course notes on python environments](https://john-abbott-college.github.io/6P3-Notes/notes/python-environments/)
     for more information.
@@ -212,7 +210,7 @@ library link and navigate to the source folder.
   - This will install these dependencies in your venv.
   - See the
     [course notes on the Python library for reTerminal](https://john-abbott-college.github.io/6P3-Notes/notes/reterminal-devices#python-library-for-reterminal)
-- Create a file using VSCode / your favourite editor called `lab-4/python/leds.py`
+- Create a file using VSCode / your favourite editor called `lab-3/python/leds.py`
 
 > [!NOTE]
 > Make sure you do not commit your `.venv` folder to your lab repo! Use `.gitignore`.
@@ -266,8 +264,8 @@ install of python useful.
 
 ## Deliverables<a name="deliverables"></a>
 
-You should have the following scripts on your `lab-4` branch:
+You should have the following scripts on your `lab-3` branch:
 
-- Part 1) `lab-4/bash/backlight`
-- Part 2) `lab-4/python/backlight.py`
-- Part 3) `lab-4/python/leds.py`
+- Part 1) `lab-3/bash/backlight`
+- Part 2) `lab-3/python/backlight.py`
+- Part 3) `lab-3/python/leds.py`

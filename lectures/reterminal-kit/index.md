@@ -165,9 +165,7 @@ The sections below describe the sensors that are included in your reTerminal kit
 
 The AHT20 is a combined temperature and humidity sensor that communicates over GPIO using the I2C protocol.
 
-:::{figure-md}
-
-![](https://files.seeedstudio.com/wiki/Grove-AHT20_I2C_Industrial_Grade_Temperature_and_Humidity_Sensor/101990644_4_.png)
+:::{figure} https://files.seeedstudio.com/wiki/Grove-AHT20_I2C_Industrial_Grade_Temperature_and_Humidity_Sensor/101990644_4_.png
 
 AHT20 I2C temperature/humidity sensor
 
@@ -192,15 +190,11 @@ The sections below describe the actuators that are included in your reTerminal k
 An LED in a removable socket with a potentiometer for power adjustment.
 LED can be swapped with different colors.
 
-::::{margin}
-:::{figure-md}
-
-![](https://files.seeedstudio.com/wiki/Raspi_wiki/img/red_led.jpg)
+:::{figure} https://files.seeedstudio.com/wiki/Raspi_wiki/img/red_led.jpg
 
 The LED socket actuator with a red LED in the socket.
 
 :::
-::::{margin}
 
 See [LED wiki page](https://wiki.seeedstudio.com/Grove-Red_LED/) for details.
 
