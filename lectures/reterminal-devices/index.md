@@ -224,6 +224,12 @@ rw-r--r-- 1 root root 4096 Jan 30 22:16 in_illuminance_input
 
 ## Python Library for reTerminal
 
+:::{note}
+
+This section assumes you are already familiar with [python virtual environments](/lectures/python-package-management/index.md), which are covered for the first time in [Part 3 of Lab 3](/labs/reterminal-devices/index.md#part-3)
+
+:::
+
 Seeed Studio provided a python library to access most of the sensors and
 actuators of the reTerminal.
 
