@@ -36,13 +36,15 @@ date: 2026-01-02
 * - Feb 9
     - Begin <project:/labs/reterminal-devices/index.md>
   - Feb 13
+    - Class cancelled
   - - <project:/lectures/reterminal-devices/index.md>
     - <project:/lectures/bash-scripting/index.md>
     - <project:/lectures/python-package-management/index.md>
     - <project:/lectures/python-scripting/index.md>
 * - Feb 16
+    - Begin <project:/labs/grove-base-hat/index.md>
   - Feb 20
-  -
+  - - <project:/lectures/signals/index.md>
 * - Feb 23
   - Feb 27
   -
