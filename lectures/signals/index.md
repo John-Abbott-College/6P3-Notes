@@ -1,26 +1,30 @@
 ---
-title: "Signals: Analog and digital"
+title: "Signals: Digital and Analog"
 subtitle:
-  Comparing the two paradigms for measuring electronic information and
+  Comparing two paradigms for measuring electronic information and
   understanding how each are used for distributed applications.
-date: 2027-03-01
+date: 2026-02-16
 blogpost: true
 category: Hardware
 tags: Hardware
 location: Lecture
 ---
 
-We will use analog and digital signals to communicate with sensors.
+## Binary represents a Digital Signal
 
-This section briefly compares these two types of signals and illustrates how we
-might encounter while using IoT hardware.
+Modern computer science depends on electricity to physicially store and transfer information.
+In this program, you have learned about the *binary* representation of information,
+which depends upon the electrical *transistor* to store the "values" 0 and 1.
 
-To compare analog and digital signals, let's look at how we can track 3
-different sources of information:
+The binary representation of information using electricity is a canonical example of a
+**digital** signal: that is, a **digital signal** is any means of communicating information
+that only distinguishes between high (1) and low (0) voltage.
 
-- Temperature
-- Sound
-- Electricity (voltages)
+What other ways can information be transmitted using electriciy? In this class, we will use low-power
+hardware that does not have complex operating system or CPU capabilities to represent information for us --
+we will become familiar with "lower level" protocols for transmitting information electrically.
+
+We will begin by understanding the difference between digital and **analog** signals. 
 
 ## Analog: the natural world
 
