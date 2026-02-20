@@ -350,18 +350,6 @@ Write 3-4 epic user stories that should be fulfilled by the end of the project, 
 
 In milestone 2, you have created a project proposal which represents a storyboard of how you want your app to function. It will be your roadmap as you proceed to the next step. It is perfectly normal as you proceed in this and the upcoming milestones to have changes and updates on the app design and features. This milestone will serve a skeleton app for the project. 
 
-### App Setup {#app-setup}
-
-Create a new `.NET MAUI App` project. Choose a proper name for the project, which will become your app's name.
-
-DO NOT CALL IT `Project`.
-
-### Link to GitHub {#link-to-github}
-
-* **Synchronize your github with the upstream repo to get the latest updates.**   
-* In the GitHub repository assigned to your team, create a new folder called `Mobile_App`.  
-* Link\\push the created `.NET MAUI app` to the folder.
-
 ### Project Organization {#project-organization}
 
 Create different folders within the app project to keep all the files organized. Use what is relevant to your project from the list below and add any needed ones.

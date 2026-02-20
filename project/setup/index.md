@@ -1,5 +1,5 @@
 ---
-title: 'Milestone 1: Project Setup'
+title: '(DRAFT) Milestone 1: Project Setup'
 description: |
   TBD
 date: 2026-02-23
@@ -29,12 +29,19 @@ directory.
 
 ### Ideas for GitHub Things to Do
 
+This could be part of Milestone 2 instead.
+
 **Github Actions for verifying code quality**:
 
 (course outline note about testing/requirements/code quality)
 
 - <https://docs.expo.dev/build/building-on-ci>
 - <https://docs.github.com/en/actions/tutorials/build-and-test-code/python>
+
+**Versioning**:
+
+- <https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository>
+- <https://devtoolhub.com/git-tags-releases-best-practices/>
 
 **Generating code documentation (Typescript)**:
 

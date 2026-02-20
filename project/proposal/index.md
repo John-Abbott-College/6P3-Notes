@@ -1,5 +1,5 @@
 ---
-title: "Milestone 2: Project Proposal"
+title: "(DRAFT) Milestone 2: Project Proposal"
 description: |
   TBD
 date: 2026-02-23
