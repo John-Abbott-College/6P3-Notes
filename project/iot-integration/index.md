@@ -23,7 +23,7 @@ By the end of Milestone 5 your team should deliver the following:
 * **The code organization statements stated below are suggestions to have a better and clean code.**  
 * **Your code design could adapt the concepts as is or change them as needed.**
 
-### Pre-requisites  
+## Pre-requisites  
 
 Before starting this milestone, ensure that you have the following steps completed:
 
@@ -33,7 +33,7 @@ Before starting this milestone, ensure that you have the following steps complet
 * Hardware subsystems are completed and sending telemetry data on the IoT Hub
 
 
-### Authentication 
+## Authentication 
 
 In this milestone your Login page should be fully functional, allowing a user to be authenticated. You do not have to implement a sign up page, but this is a nice nice to have if time permits it.
 
@@ -41,7 +41,7 @@ You should also route the user according to who they are (based on user profile)
 
 Provide the user credentials in your README.md file to allow me to test your app.
 
-### Connection to Azure IoT Hub 
+## Connection to Azure IoT Hub 
 
 You should start the process of connecting your app to `Azure IoT Hub`. The key objective in this step is to keep the **code as organized as possible**.
 
@@ -58,7 +58,7 @@ Here is a suggestion on how to organize the code:
 
 ![][image2]
 
-#### Fixed Values 
+## Fixed Values 
 
 * Any fixed data values such as *connection strings*, *server settings*, *credentials*, etc. should be inside an `appsettings.json` file. You should have a `Config` or `Settings` class which helps deserialize the json.  
 * This class (`Config` or `Settings`) should probably be static or instantiated in the `App` class, **so the values can be easily accessed throughout the app.**  
@@ -66,27 +66,27 @@ Here is a suggestion on how to organize the code:
 * Provide meaningful names.  
 * Use constants where applicable.
 
-#### Handling multiple devices 
+## Handling multiple devices 
 
 * The app should be able to support multiple devices even if the demo is done on a single device.   
 * Each device will have a different device id to be stored either in a local embedded file or a database.   
 * The app should be designed in a way to be able to handle **connections to all three devices at once**. 
 
-#### Use of Data Repositories 
+## Use of Data Repositories 
 
 * Retrieving data from any source should be done through a data repository class. (similar to the databases example lab)  
 * Your app will eventually receive the telemetry data of each subsystem. Start planning for this as you design the repo.  
 * **Keep in mind the OOP abstraction pillar: a single class should describe a single entity and should not include unrelated code.**  
 * **A single instance of the data repos should exist, you can either use singletons or create a static instance.**
 
-#### Use of View Models (if applicable) 
+## Use of View Models (if applicable) 
 
 * Ensure that your view models are not containing the data, but rather providing public accessors for the data repositories and models.  
 * If a view model depends on a data repository, it should be passed through its constructor.  
 * Ensure that the view model of each page is set as its binding context (similar to the assignment)  
 * It's also preferable to register the View Model and the View as singletons as per [Microsoft's documentation](https://learn.microsoft.com/en-us/dotnet/maui/fundamentals/dependency-injection?view=net-maui-8.0) and similar to what was done in previous assessments. 
 
-### Error handling 
+## Error handling 
 
 **Defensive Programming**: *is a form of defensive design intended to ensure the continuing function of a piece of software under unforeseen circumstances. ([Wikipedia](https://en.wikipedia.org/wiki/Defensive_programming))*
 
@@ -97,11 +97,11 @@ Here is a suggestion on how to organize the code:
 * Refer to [`Network Connectivity`](https://learn.microsoft.com/en-us/dotnet/maui/platform-integration/communication/networking?view=net-maui-7.0&tabs=android) documentation (and the lab on authentication) to check if the network is available before proceeding to connect to any network resource.  
 * You are encouraged to unit test the parsing of the telemetry payload and the models correct updates on data being received, if time permits it.  
 
-### Update of Data Models 
+## Update of Data Models 
 
 In the current `Connected Objects` milestone, the telemetry payload is being well established and **clearly formed**. Revisit the `Models` created in the previous milestone and make any needed adjustments.
 
-### Display of Data 
+## Display of Data 
 
 Start the process of connecting the backend, the data, with the frontend user interface.
 
@@ -113,11 +113,11 @@ Start the process of connecting the backend, the data, with the frontend user in
   * You may start working on advanced views (if you have not already started).  
 * As you are not required to include information about the actuators in your message, any UI control that is supposed to **send data back to the IoT hub is not required to function in this milestone.**
 
-### Code Quality & Comments 
+## Code Quality & Comments 
 
 Refer to Milestone 3 for the details of [Code Quality](#code-quality) and [Comments](#comments-and-documentation).
 
-### Deliverables 
+## Deliverables 
 
 * Schedule a meeting with me to demonstrate your progress. The booking link will be provided at the start of the presentation week.   
 * **All team members must attend the meeting.**  

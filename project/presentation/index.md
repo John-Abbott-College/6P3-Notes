@@ -68,7 +68,7 @@ This is the final Milestone for the project. By the end of this milestone, your 
 
   * ## Maps. 
 
-#### Documentation (Due on May 28\) 
+### Documentation (Due on May 28\) 
 
 In the `README.md` file at the root of your GitHub repo, include the following sections:
 
@@ -129,7 +129,7 @@ In the `README.md` file at the root of your GitHub repo, include the following s
 
    
 
-#### Grading Rubric (Total 30\) 
+### Grading Rubric (Total 30\) 
 
 | Evaluation Criteria | Worth |
 | :---- | :---- |
