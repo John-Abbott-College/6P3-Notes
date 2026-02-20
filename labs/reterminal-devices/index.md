@@ -182,6 +182,7 @@ Commands/python concepts that will be useful:
   [`argparse`](https://realpython.com/command-line-interfaces-python-argparse/#creating-a-cli-with-argparse)
 - Make file executable with [`chmod`](/lectures/bash-scripting/index.md#permissions)
 
+(part-3)=
 ## (1%) Part 3: Python scripting with libraries and venv
 
 In the previous part we saw how we can efficiently re-use working bash scripts in Python,
