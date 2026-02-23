@@ -108,10 +108,9 @@ values that can be understood by the reTerminal, and used for mouse movement?
 
 The Grove Base Hat has an 
 [Analog to Digital Converter
-(ADC)](https://en.wikipedia.org/wiki/Analog-to-digital_converter) built in. How does it
-work?
+(ADC)](https://en.wikipedia.org/wiki/Analog-to-digital_converter) built in, and 4 ports we
+can plug in to use it:
 
-The following information is adapted from the [Grove Base Hat documentation](https://wiki.seeedstudio.com/Grove_Base_Hat_for_Raspberry_Pi/):
 
 
 :::{figure} https://files.seeedstudio.com/wiki/Grove_Base_Hat_for_Raspberry_Pi/img/pin-out/5.jpg
@@ -121,13 +120,80 @@ The 4 Analog ports of the Grove Base Hat ADC are highlighted. These ports includ
 
 :::
 
+From the [Grove Base Hat documentation](https://wiki.seeedstudio.com/Grove_Base_Hat_for_Raspberry_Pi/):
+
+> ... there is no ADC in the Raspberry Pi, so it can not work with analog sensors directly.
+> The Grove Base Hat works as an external 12-bit ADC, which means you can use analog sensor with your Raspberry Pi.
+>
+> Devices connected to the Grove Base Hat analog ports sensor inputs the analog voltage into the 12-bit ADC. 
+> After the ADC converts the analog data to digital data, it inputs the digital data to the Raspberry Pi through **the I2C interface.**
+
+This process of converting an analog signal to a digital input using an n-bit interface is called [encoding](project:/lectures/signals/index.md#encoding-bit-resolution).
+
+In order to use it on our devices, we need to enable the I2C Interface on our raspberry
+pi.
+
+#### Enable I2C Interface
+
+Follow these instructions: <https://www.raspberrypi-spy.co.uk/2014/11/enabling-the-i2c-interface-on-the-raspberry-pi/>
+ 
+ 
+Once complete, you should be able to run `i2cdetect` on I2C bus #1 (command shown below):
+ 
+```text
+$ i2cdetect -y 1
+ 
+0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00:                         -- -- -- -- -- -- -- --
+10: -- -- -- -- -- -- -- -- -- UU -- -- -- -- -- --
+20: -- -- -- -- -- -- -- -- -- UU -- -- -- -- -- --
+30: -- -- -- -- -- -- -- -- UU -- -- -- -- -- -- --
+40: -- -- -- -- -- UU -- -- -- -- -- -- -- -- -- --
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+70: -- -- -- -- -- -- -- --
+```
 
 
 ### Lab virtual environment
 
-- Make sure your **coursework** repository is up to date with upstream
+- Make sure your **coursework** repository is up to date with upstream **instructions**
+branch (sync fork)
 - All of the work for this lab will take place in the **lab-4** directory.
 - cd into the **lab-4** directory and
   [create a virtual environment](https://john-abbott-college.github.io/6P3-Notes/notes/python-package-management/#using-pip-with-virtual-environments)
   for this lab.
 - Create a branch called **lab-4** for the work you do in this lab.
+- activate the venv using source `.venv/bin/activate`
+- install the dependencies in `requirements.txt` using `pip install -r requirements.txt`
+
+## Joystick program
+
+In this lab you will write and demo a program called `joystick.py`, using the libraries we
+installed in `requirements.txt`
+
+- use `grove.adc` to read the analog voltage <https://seeed-studio.github.io/grove.py/grove.adc.html>
+- use `gpiozero` to read the SEL/SW "button" on the joystick: <https://gpiozero.readthedocs.io/en/stable/recipes.html>
+ 
+Your `joystick.py` file should include the following boilerplate:
+ 
+```python
+from grove.adc import ADC
+from gpiozero import Button
+import subprocess
+# Any constants/functions you define should go here
+
+if __name__ == "__main__":
+    # the code that uses your functions should go down here
+```
+ 
+### Requirements
+
+- The joystick moves the mouse of the graphical desktop session in the x and y directions.
+- The speed of the mouse depends on the voltage sent by the joystick.
+- There must be at least two speeds: slow and regular.
+- Eg.: the higher the banking angle of the joystick, the faster the mouse will move.
+- A click of the joystick SEL/SW triggers a left-click of the mouse
+- NOTES:
+- you will need to use the subprocess module to call the ydotool like we did in Lab 3 with the bash commands
+
