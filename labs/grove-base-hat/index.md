@@ -191,9 +191,31 @@ if __name__ == "__main__":
 
 - The joystick moves the mouse of the graphical desktop session in the x and y directions.
 - The speed of the mouse depends on the voltage sent by the joystick.
-- There must be at least two speeds: slow and regular.
-- Eg.: the higher the banking angle of the joystick, the faster the mouse will move.
+    - There must be at least two speeds: slow and regular.
+    - Eg.: the higher the banking angle of the joystick, the faster the mouse will move.
 - A click of the joystick SEL/SW triggers a left-click of the mouse
-- NOTES:
-- you will need to use the subprocess module to call the ydotool like we did in Lab 3 with the bash commands
+
+NOTES:
+
+- you will need to use the subprocess module to call the `ydotool` like we did in Lab 3 with the bash commands
+
+TROUBLESHOOTING:
+
+- if you're having "EDGE DETECTION" issues, try installing the following programs on your
+reterminal:reTerminal
+
+
+```
+sudo apt install swig liblgpio-dev build-essential
+sudo apt install python3-lgpio
+```
+
+And make sure the following program is included in your `requirements.txt`:
+
+```
+lgpio
+```
+
+(you will need to run `pip install -r requirements.txt` again)
+
 

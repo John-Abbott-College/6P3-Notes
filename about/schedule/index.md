@@ -46,6 +46,8 @@ date: 2026-01-02
   - Feb 20
   - - <project:/lectures/signals/index.md>
 * - Feb 23
+    - Finish <project:/labs/grove-base-hat/index.md>
+    - Begin <project:/labs/pwm-relays-i2c/index.md>
   - Feb 27
   -
 * - Mar 2: March Break
