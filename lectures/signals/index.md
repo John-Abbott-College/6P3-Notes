@@ -61,6 +61,9 @@ one for each of the X and Y directions. (Image source: [Panama Hightek](https://
 :::
 
 
+With a potentiometer, we can actually convert most physical phenomena to a 
+range of voltages -- see the examples below.
+
 ### Temperature
 
 The A/C and heating systems in a house are typically activated once the
