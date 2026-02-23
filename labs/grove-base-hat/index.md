@@ -8,9 +8,9 @@ author: 3%
 language: 2026-02-23
 ---
 
-:::{important}
+:::{note}
 
-These notes are currently an incomplete draft. The full instructions are still on Teams.
+These instructions are now up to date (as of Feb 23).
 
 :::
 
@@ -32,53 +32,57 @@ works quite well to simulate motion and clicking!
 - To use an analog to digital converter (ADC) using the ***seeed-grove*** library.
 - To calibrate an electronic device (a joystick) that uses digital and analog signals
 
-## Part 0: Setup
+## reTerminal system dependencies
 
-There are a few programs we need to install and practise using before we are ready to
+There are a few programs we need to install and configure and practise using before we are ready to
 program the joystick.
 
-### reTerminal system dependencies
+First, we will need `ydotool`; we will also need to ensure that the I2C interface is
+enabled. Instructions follow below.
+
+### `ydotool`
 
 In order to control the mouse movement and clicks, we will install a program called
 `ydotool` ("y do tool") on the reTerminal. This will let us control the mouse/keyboard
 programmatically.
 
-`ydotool` is not included in the debian package repository by default, so we will compile
+`ydotool` is not included in the debian package repository by default, but we can compile
 it ourselves:
 
 ```bash
 # Ensure your apt repos are up to date
-sudo apt update
+$ sudo apt update
 # Prerequisite dependencies to install
-sudo apt install git cmake scdoc pkg-config
-git clone https://github.com/ReimuNotMoe/ydotool.git
-cd ydotool
-mkdir build
-cd build
-cmake ..
-time make -j "$(nproc)"
-sudo make install
+$ sudo apt install git cmake scdoc pkg-config
+$ git clone https://github.com/ReimuNotMoe/ydotool.git
+$ cd ydotool
+$ mkdir build
+$ cd build
+$ cmake ..
+$ time make -j "$(nproc)"
+$ sudo make install
 ```
 
 Add the following line to your `~/.bashrc` file on your reTerminal:
 
-```bash
+```sh
 export YDOTOOL_SOCKET=/tmp/.ydotool_socket
-make sure you source your ~/.bashrc for the change to take effect.
 ```
+
+Make sure you source your `~/.bashrc` for the change to take effect.
 
 Then, you will need the `ydotoold` program running as a background process for `ydotool`
 to work:
 
-```
-sudo ydotoold & disown
+```sh
+$ sudo ydotoold & disown
 # press enter a couple times
 # keep this terminal window open
 ```
 
-:::\{important}
+:::{important}
 
-The `ydotoold` program MUST be running in the background for `ydotool` to work.
+The `ydotoold` program MUST be running as background process for `ydotool` to work.
 
 :::
 
@@ -97,26 +101,62 @@ Now we can try using `ydotool`:
 - What are the boundaries for moving the mouse? (min/max x/y)
 - What happens when you move the mouse outside the boundary?
 
-Now that we have mouse movements working, we are ready to set up the Joystick interface.
+### I2C Interface
 
-### Grove Base Hat analog interface setup
+We will see that the reTerminal needs an extra interface enabled in order to take
+analog measurements using the Grove Base Hat.
 
-A joystick's motion in the X and Y directions is an example of an
-[analog signal](project:/lectures/signals/index.md): there are infinitely many different
-positions that the Joystick could be. How are these positions converted to **digital**
-values that can be understood by the reTerminal, and used for mouse movement?
+To enable the I2C interface, follow the steps in these instructions:
+<https://www.raspberrypi-spy.co.uk/2014/11/enabling-the-i2c-interface-on-the-raspberry-pi/>
+ 
+Once complete, you should be able to run `i2cdetect` on I2C bus #1 (command shown below):
+ 
+```{code-block} text
+
+$ i2cdetect -y 1
+ 
+0   1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00:                         -- -- -- -- -- -- -- --
+10: -- -- -- -- -- -- -- -- -- UU -- -- -- -- -- --
+20: -- -- -- -- -- -- -- -- -- UU -- -- -- -- -- --
+30: -- -- -- -- -- -- -- -- UU -- -- -- -- -- -- --
+40: -- -- -- -- -- UU -- -- -- -- -- -- -- -- -- --
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+70: -- -- -- -- -- -- -- --
+
+```
+
+The `UU` indicates that the address at that position (`0x1a`, `0x2a`, `0x39`, and `0x46` in the results above)
+are in use, which is what we're hoping to see. We'll learn more about the I2C protocol later.
+
+## Cabling
+
+We'll be using the Grove Base Hat to connect the joysticks. Details about the cabling 
+for each component follow below:
+
+### Grove Base Hat
+
+First, let's make sure that the hat is connected to the reTerminal correctly.
+See the figure below:
+
+:::{figure} assets/ribbon-cable.png
+
+It is possible to plug the ribbon cable of the hat up-side-down.
+Ensure that the red line of the ribbon cable is aligned with the green button of the
+reterminal, and the PWM port of the base hat.
+
+:::
 
 The Grove Base Hat has an 
 [Analog to Digital Converter
 (ADC)](https://en.wikipedia.org/wiki/Analog-to-digital_converter) built in, and 4 ports we
 can plug in to use it:
 
-
-
-:::{figure} https://files.seeedstudio.com/wiki/Grove_Base_Hat_for_Raspberry_Pi/img/pin-out/5.jpg
+:::{figure} assets/analog-ports.jpg
 
 The 4 Analog ports of the Grove Base Hat ADC are highlighted. These ports include different 8 channels (A0,
-        A1, ... A6, A7) that we can read from.
+A1, ... A6, A7) that we can read from.
 
 :::
 
@@ -126,38 +166,78 @@ From the [Grove Base Hat documentation](https://wiki.seeedstudio.com/Grove_Base_
 > The Grove Base Hat works as an external 12-bit ADC, which means you can use analog sensor with your Raspberry Pi.
 >
 > Devices connected to the Grove Base Hat analog ports sensor inputs the analog voltage into the 12-bit ADC. 
-> After the ADC converts the analog data to digital data, it inputs the digital data to the Raspberry Pi through **the I2C interface.**
+> After the ADC converts the analog data to digital data, it inputs the digital data to the Raspberry Pi through **the I2C interface[^i2c].**
+
+[^i2c]: This is why we needed to enabled I2C in the previous section of this lab.
 
 This process of converting an analog signal to a digital input using an n-bit interface is called [encoding](project:/lectures/signals/index.md#encoding-bit-resolution).
 
-In order to use it on our devices, we need to enable the I2C Interface on our raspberry
-pi.
+### Joystick Wiring
 
-#### Enable I2C Interface
+A joystick's motion in the X and Y directions is an example of an
+[analog signal](project:/lectures/signals/index.md): there are infinitely many different
+positions that the joystick could be.
 
-Follow these instructions: <https://www.raspberrypi-spy.co.uk/2014/11/enabling-the-i2c-interface-on-the-raspberry-pi/>
- 
- 
-Once complete, you should be able to run `i2cdetect` on I2C bus #1 (command shown below):
- 
-```text
-$ i2cdetect -y 1
- 
-0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
-00:                         -- -- -- -- -- -- -- --
-10: -- -- -- -- -- -- -- -- -- UU -- -- -- -- -- --
-20: -- -- -- -- -- -- -- -- -- UU -- -- -- -- -- --
-30: -- -- -- -- -- -- -- -- UU -- -- -- -- -- -- --
-40: -- -- -- -- -- UU -- -- -- -- -- -- -- -- -- --
-50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
-60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
-70: -- -- -- -- -- -- -- --
-```
+Meanwhile, the joystick also allows you to *press*, representing a click of the mouse.
+This is an example of a [digital
+signal](project:/lectures/signals/index.md##digital-discrete-values).
 
+You will have one of two possible joystick models. Both have 5 pins:
 
-### Lab virtual environment
+:::{figure} assets/joystick-pins.png
+:align: left
 
-- Make sure your **coursework** repository is up to date with upstream **instructions**
+Top view of the two joystick models with the 5 pins highlighted. Take note of the labels
+for each pin -- you must ensure your connections are correct for your circuits to work.
+
+:::
+
+The pin labels in the figure above have the following meanings:
+
+- GND: Electrical ground -- 0V by definition. It is important that electrical components
+share the same ground, since voltage is a relative measure.
+- Vcc / +5V: Power source. Despite the label of +5V, this will be the same as the amount
+of voltage provided (so 3.3V when powered by the ports on the Grove Base Hat).
+- VRx / Xout: Analog Voltage for x-position. Between Vcc (see above) and 0V, depending on the position of the joystick.
+- VRy / Yout: Analog Voltage for y-position. Same as VRx/Xout.
+- SW / Sel: Switch signal. This is a simple button clicked with the joystick. Will produce on/off digital signal between Vcc and 0V. 
+
+Now that we know the meaning of the joystick labels, lets connect them to the base hat.
+The figure below shows how you match the pins correctly for the analog port:
+
+:::{figure} assets/joystick-wiring.png
+
+A joystick connected to channel A0 and A1 of a grove base hat.
+Note that the digital connection for the button press is not shown.
+
+:::
+
+For the button press, we will want to use one of the digital ports on the grove base
+hat:
+
+::::{subfigure} AB
+
+:::{image} assets/digital-ports.jpg
+:::
+
+:::{image} assets/digital-pin.png
+:::
+
+Left: the 6 digital ports. Right: a zoom-in on port D22,
+one of the possible ports you could use to read the button
+presses of the joystick. Take note of the number of the port
+you connect to the SW/SEL pin for the jopystick.
+
+::::
+
+Now that we have the system dependencies installed, and the cabling is correct,
+we can begin coding.
+
+## Lab code and environment
+
+We will continue using the **coursework** repository:
+
+- Make sure your coursework repository is up to date with upstream **instructions**
 branch (sync fork)
 - All of the work for this lab will take place in the **lab-4** directory.
 - cd into the **lab-4** directory and
@@ -167,13 +247,16 @@ branch (sync fork)
 - activate the venv using source `.venv/bin/activate`
 - install the dependencies in `requirements.txt` using `pip install -r requirements.txt`
 
-## Joystick program
-
 In this lab you will write and demo a program called `joystick.py`, using the libraries we
 installed in `requirements.txt`
 
-- use `grove.adc` to read the analog voltage <https://seeed-studio.github.io/grove.py/grove.adc.html>
-- use `gpiozero` to read the SEL/SW "button" on the joystick: <https://gpiozero.readthedocs.io/en/stable/recipes.html>
+### Requirements
+
+Your `joystick.py` program should use the following libraries:
+
+- `grove.adc` to read the analog voltage <https://seeed-studio.github.io/grove.py/grove.adc.html>
+- `gpiozero` to read the SEL/SW "button" on the joystick: <https://gpiozero.readthedocs.io/en/stable/recipes.html>
+- `subprocess` to give the `ydotool` commands that move/click the mouse.
  
 Your `joystick.py` file should include the following boilerplate:
  
@@ -186,24 +269,19 @@ import subprocess
 if __name__ == "__main__":
     # the code that uses your functions should go down here
 ```
- 
-### Requirements
 
+Then, implement the following behavior:
+ 
 - The joystick moves the mouse of the graphical desktop session in the x and y directions.
 - The speed of the mouse depends on the voltage sent by the joystick.
     - There must be at least two speeds: slow and regular.
     - Eg.: the higher the banking angle of the joystick, the faster the mouse will move.
 - A click of the joystick SEL/SW triggers a left-click of the mouse
 
-NOTES:
+## Troubleshooting
 
-- you will need to use the subprocess module to call the `ydotool` like we did in Lab 3 with the bash commands
-
-TROUBLESHOOTING:
-
-- if you're having "EDGE DETECTION" issues, try installing the following programs on your
-reterminal:reTerminal
-
+If you're having "EDGE DETECTION" issues, try installing the following programs on your
+reterminal:
 
 ```
 sudo apt install swig liblgpio-dev build-essential
@@ -216,6 +294,4 @@ And make sure the following program is included in your `requirements.txt`:
 lgpio
 ```
 
-(you will need to run `pip install -r requirements.txt` again)
-
-
+(you will need to run `pip install -r requirements.txt` again in your virtual environment)

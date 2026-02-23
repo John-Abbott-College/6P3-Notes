@@ -4,8 +4,11 @@ subtitle:
   Understanding the General Purpose Input and Output (GPIO) pins our reTerminal
   makes available to us. Voltage, digital vs. analog, python
   libraries for GPIO.
-date: 2025-03-14
-categories: ["hardware", "signals"]
+date: 2026-02-23
+blogpost: true
+category: Hardware
+tags: Hardware
+location: Lecture
 ---
 
 ## Intro to Pi's GPIOs 🥧

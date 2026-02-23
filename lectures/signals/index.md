@@ -43,6 +43,24 @@ only depends on how accurately you can track them:
 - The position of a swinging pendulum.
 - The exact time of the day.
 
+### Voltage
+
+One of the primary methods for measuring any analog signal with electronics
+is to convert the physical phenomena to a *voltage* -- that is, an electric potential
+that can easily be measured and converted to a digital value.
+
+An example is a joystick: a joystick controls the position of a _potentiometer_,
+which increases or decreases the voltage drop across a resistor between high (Vcc) and low (GND).
+
+:::{figure} assets/potentiometer.gif
+
+Potentiometer position increasing and decreasing voltage.
+Under the hood, a joystick is a device that controls two potentiometers,
+one for each of the X and Y directions. (Image source: [Panama Hightek](https://panamahitek.com/en/what-is-and-how-does-a-potentiometer-work/))
+
+:::
+
+
 ### Temperature
 
 The A/C and heating systems in a house are typically activated once the
@@ -113,14 +131,18 @@ discover an infinite number of values that the signal can actually be (64.4V,
 
 ## Digital: discrete values
 
-Digital signals are discrete, which means that at any given moment, the signal
-strength must be represented by a integer number. There are no half numbers.
+Digital signals are discrete, which means that the only distinction is between
+off and on: a high voltage and a low voltage, like a binary number.
 
-Typically, digital signals will be one of **two values**, a high voltage and a
-low voltage.
+:::{note}
 
-> The specific values of the **high** and **low** voltages depend on the
-> hardware being used.
+The specific values of the **high** and **low** voltages depend on the
+power source -- a circuit powered by 3.3V will have a 3.3V high,
+while a circuit powered by a 5V source will have a 5V high.
+Ground is always zero volts (like ground in real life, is always 0 meters -- a relatve
+measure).
+
+:::
 
 Below is a the timing graph of a signal whose **low voltage is 0 volts** and
 **high voltage is 5 volts**.

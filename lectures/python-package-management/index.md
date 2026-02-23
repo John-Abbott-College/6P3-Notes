@@ -4,7 +4,7 @@ subtitle: |
   How to use install system python packages using apt.
   How to install project python libraries using pip.
   Using virtual environments to manage python dependencies.
-date: 2025-02-09
+date: 2026-02-09
 blogpost: true
 category: Python
 tags: Python
