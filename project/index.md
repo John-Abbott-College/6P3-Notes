@@ -18,18 +18,29 @@ The IoT solution will use the following tech stack:
 * 3x reTerminal for the IoT computing devices.
 * Python/Bash for the on-device programming logic.
 * Microsoft Azure for the cloud infrastructure and IoT gateway.
-* TypeScript and Expo for the multi-platform user interface application.
+* TypeScript and Expo for the multi-platform control center application.
 
 :::{figure} assets/infrastructure.png
 
-Cloud infrastructure that will be used for the final project.
+Cloud infrastructure that will be used for the final project. Pretend that it says
+"Typscript App" instead of MAUI App!
 
 :::
 
+With some constraints, the goals and objectives of the IoT system
+will be up to your team.
+
+Your final product will be a codebase that is inheritable by future students
+and teachers in this program!
+
 ## Milestones
 
-The course project will consist of 5 milestones. More information about each of
-the milestones will be posted here soon.
+The course project will consist of 5 milestones.
+
+NOTE: the **Worth** percentage is a percentage of the project portion of your grade.
+
+- In connected objects: the project grade is 35% of your overall grade.
+- In app dev III: the project grade is 50% of your overall grade.
 
 :::{postlist}
 :location: Project
@@ -40,3 +51,11 @@ the milestones will be posted here soon.
 :sort:
 :expand: Read more ...
 :::
+
+## Hardware
+
+More information will appear here soon!
+
+## Example Projects
+
+More information will appear here soon!

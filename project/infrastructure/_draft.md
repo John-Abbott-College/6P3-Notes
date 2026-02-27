@@ -1,27 +1,53 @@
----
-title: "(DRAFT) Milestone 2: Project Proposal"
-description: |
-  TBD
-date: 2026-02-23
-blogpost: true
-location: Project
-author: 5%
-language: 2026-04-01
----
+Draft ideas:
+
+### Ideas for GitHub Things to Do
+
+This could be part of Milestone 2 instead.
+
+**Github Actions for verifying code quality**:
+
+(course outline note about testing/requirements/code quality)
+
+- <https://docs.expo.dev/build/building-on-ci>
+- <https://docs.github.com/en/actions/tutorials/build-and-test-code/python>
+
+**Versioning**:
+
+- <https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository>
+- <https://devtoolhub.com/git-tags-releases-best-practices/>
+
+**Generating code documentation (Typescript)**:
+
+(motivational note about leaving behind a project that others can understand/use)
+
+- <https://brianward.dev/blog/2025/02/polyglot-sphinx>
+- <https://jsdoc.app>
+- <https://github.com/jsdoc2md/jsdoc-to-markdown> 
+- <https://gitub.com/pyodide/sphinx-js>
+
+**Generating code documentation (Python)**:
+
+(motivational note about leaving behind a project that others can understand/use)
+
+- <https://spinx-doc.org>
+- <https://myst-parser.readthedocs.io/en/latest>
+
+
+2025 instructions:
 
 ## Milestone 2: Project proposal
 
 Once your project idea has been approved by the teachers, you must create a complete project proposal and a wireframe design for the app. This should be documented in a document in the folder */docs/milestone2,*  and present it **briefly** within 5-10 minutes in class.  [Here is](https://docs.google.com/presentation/d/1HOXBHxM1Wf3iUwRaCZHZ4qoBHXxRaSVD_GhH8SgVU9E/edit#slide=id.g33822c9e93b_0_201) an example of what level of detail is expected in the proposal.
 
-### Context  {#context}
+### Context 
 
 Explain the context behind this project idea. What is the current state of affairs? 
 
-### User needs {#user-needs}
+### User needs 
 
 In this section, you must provide a detailed explanation of the various users, their needs and how these could translate into different user profiles. 
 
-### Proposed solution {#proposed-solution}
+### Proposed solution 
 
 Brief description of the idea and the IoT solution, used sensors and actuators for the project.  
 
@@ -31,13 +57,13 @@ Brief description of the idea and the IoT solution, used sensors and actuators f
   
 **Connected Objects**
 
-### Hardware subsystems {#hardware-subsystems}
+### Hardware subsystems 
 
 Split the various sensors and actuators required by your solution into 2-3 independent subsystems. You should list any additional sensor or actuator required by your project.
 
 **App Dev III**
 
-### Screen Design {#screen-design}
+### Screen Design 
 
 Create a wireframe for each screen: draw how you expect each screen to look like. Include buttons, text, and images that the user will see and use.
 
@@ -50,11 +76,11 @@ Create a wireframe for each screen: draw how you expect each screen to look like
 
 Draw arrows and add notes that show how a user navigates between the screens. 
 
-### Epic User Stories {#epic-user-stories}
+### Epic User Stories 
 
 Write 3-4 epic user stories that should be fulfilled by the end of the project, which must be added as Github Issues within your Github repo.  
 
-### Rubric {#rubric}
+### Rubric 
 
 | Element | Criteria | Points |
 | :---- | :---- | :---- |
