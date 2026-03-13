@@ -78,4 +78,10 @@ questions!
 
 ## Example Projects
 
-More information will appear here soon!
+- Winter 2025 projects: <https://github.com/orgs/420-6A6-6P3-W25/repositories>
+  - Here, each team came up with their own subsystem and device capabilities.
+  - This will be a good reference for seeing what different ideas are possible.
+- Winter 2024 projects: <https://github.com/orgs/JAC-Final-Project-W24-6A6-6P3/repositories>
+  - In this semester, ALL teams had the same subsystems (Plant, Geo, and Security).
+  - Here, you can see polished ideas for subsystems.
+  - I can particularly recommend the `CropCare` project -- very high quality.
