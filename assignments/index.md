@@ -17,12 +17,12 @@ There will be **2** assignments, each worth 9%.
 
 More information about the course assignments will appear here soon.
 
-<!-- :::{postlist} -->
-<!-- :location: Assignment -->
-<!-- :date: %A, %B %d, %Y -->
-<!-- :format: {title} (Due: {language}; Worth: {author}) -->
-<!-- :list-style: circle -->
-<!-- :excerpts: -->
-<!-- :sort: -->
-<!-- :expand: Read more ... -->
-<!-- ::: -->
+:::{postlist}
+:location: Assignment
+:date: %A, %B %d, %Y
+:format: {title} (Due: {language}; Worth: {author})
+:list-style: circle
+:excerpts:
+:sort:
+:expand: Read more ...
+:::

@@ -122,7 +122,7 @@ Together, complete the `docs/milestone-1/teamContractTemplate.md` file. Push it 
 The goal here is to try to envision the project you're creating -- get creative and
 ambitious, come up wiht cool ideas!
 
-Complete the `docs/milestone-1/teamContractTemplate.md` file.
+Complete the `docs/milestone-1/brainstorm.md` file.
 
 For reference:
 
