@@ -78,6 +78,7 @@ questions!
 
 ## Example Projects
 
+
 - Winter 2025 projects: <https://github.com/orgs/420-6A6-6P3-W25>
   - Here, each team came up with their own subsystem and device capabilities.
   - This will be a good reference for seeing what different ideas are possible.
@@ -85,3 +86,17 @@ questions!
   - In this semester, ALL teams had the same subsystems (Plant, Geo, and Security).
   - Here, you can see polished ideas for subsystems.
   - I can particularly recommend the `CropCare` project -- very high quality.
+
+::::{note}
+
+The first time you click the GitHub links above,
+you will be prompted to accept an organization invitation.
+Accepting this gives you permission to view the repositories within.
+
+:::{figure} assets/org-invite-reminder.png
+
+Click "View invitation" to accept the invitation.
+
+:::
+
+::::
