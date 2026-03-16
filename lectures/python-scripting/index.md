@@ -167,7 +167,7 @@ None
 - Article
     [10 tips for passing arguments to Python script](https://www.codeforests.com/2020/10/18/passing-arguments-to-python-script/)
 
-## `__main__` & top-level environment
+## Top-level environment
 
 Why include a `if __name__ == "__main__":` in your script?
 
