@@ -253,6 +253,40 @@ For marks for this part of the assignment:
 - push working code to `a1` branch of your repository
 - In person demo of the API working (instructions TBA)
 
+:::::{tab-set}
+
+::::{tab-item} Read Sensor
+
+:::{figure} assets/fastapi-temperature-eg.png
+
+Example showing a temperature reading using FastAPI
+
+:::
+
+::::
+
+::::{tab-item} Turn actuator on
+
+:::{figure} assets/fastapi-fan-on-eg.png
+
+Example showing a fan turned on using FastAPI.
+
+:::
+
+::::
+
+::::{tab-item} Turn actuator off
+
+:::{figure} assets/fastapi-fan-off-eg.png
+
+Example showing a fan turned off using FastAPI.
+
+:::
+
+::::
+
+:::::
+
 ## (35) Dashboard
 
 Instructions TBA

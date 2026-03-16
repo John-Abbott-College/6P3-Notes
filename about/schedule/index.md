@@ -47,7 +47,6 @@ date: 2026-01-02
   - - <project:/lectures/signals/index.md>
 * - Feb 23
     - Finish <project:/labs/grove-base-hat/index.md>
-    - Begin <project:/labs/pwm-relays-i2c/index.md>
   - Feb 27
   - - <project:/lectures/gpios/index.md>
     - <project:/lectures/circuitry/index.md>

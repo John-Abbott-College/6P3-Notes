@@ -170,7 +170,7 @@ From the [Grove Base Hat documentation](https://wiki.seeedstudio.com/Grove_Base_
 
 [^i2c]: This is why we needed to enabled I2C in the previous section of this lab.
 
-This process of converting an analog signal to a digital input using an n-bit interface is called [encoding](project:/lectures/signals/index.md#encoding-bit-resolution).
+This process of converting an analog signal to a digital input using an n-bit interface is called [encoding](project:/lectures/signals/index.md#encoding).
 
 ### Joystick Wiring
 
@@ -180,7 +180,7 @@ positions that the joystick could be.
 
 Meanwhile, the joystick also allows you to *press*, representing a click of the mouse.
 This is an example of a [digital
-signal](project:/lectures/signals/index.md##digital-discrete-values).
+signal](project:/lectures/signals/index.md#digital-discrete-values).
 
 You will have one of two possible joystick models. Both have 5 pins:
 

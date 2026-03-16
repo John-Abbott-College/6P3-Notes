@@ -226,7 +226,7 @@ rw-r--r-- 1 root root 4096 Jan 30 22:16 in_illuminance_input
 
 :::{note}
 
-This section assumes you are already familiar with [python virtual environments](/lectures/python-package-management/index.md), which are covered for the first time in [Part 3 of Lab 3](/labs/reterminal-devices/index.md#part-3)
+This section assumes you are already familiar with [python virtual environments](/lectures/python-package-management/index.md), which are covered for the first time in [Part 3 of Lab 3](project:#reterminal-devices-lab-part-3)
 
 :::
 

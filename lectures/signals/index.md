@@ -269,7 +269,7 @@ The higher the sample rate, the more accurate the digital signal is.
 	<a href="https://www.usna.edu/ECE/ec312/Lessons/wireless/EC312_Lesson_20_Analog_to_Digital_Course_Notes.pdf"> Same signal sampled with different sample rates </a>&nbsp; - US Naval Academy.
 </p>
 
-### Encoding & Bit resolution
+### Encoding
 
 Encoding is the process of mapping the sampled analog signal value to discrete
 binary numbers (digital information).
@@ -279,8 +279,6 @@ binary numbers (digital information).
 
 For example, consider an electrical signal that ranges **from -1 volts to to +1
 volts** and must be converted to a **3 bit number**.
-
-### Encoding Procedure
 
 To approximate the numeric conversion from a voltage signal to a digital output,
 follow the steps below:
