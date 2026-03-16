@@ -1,5 +1,5 @@
 ---
-title: "(DRAFT) A1: reTerminal Control Center"
+title: "A1: reTerminal Control Center"
 description: |
   Creating a prototype reTerminal with connected devices.
 date: 2026-03-13
@@ -135,6 +135,20 @@ To get marks for this part of the lab:
 - Sometime before the deadline, **In-person demo** your scripts to me, showing that all
 three devices work.
 
+:::{note}
+
+Make sure you are using `uv` to manage your dependencies. Your `pyproject.toml` file
+should have a complete list of all the dependencies needed for this project.
+
+```
+uv add <dependency name>
+uv remove <dependency name>
+```
+
+See <https://docs.astral.sh/uv/getting-started/features/>
+
+:::
+
 ## (45) Device Controller Backend
 
 For this part of the assignment, we will be setting up a Python backend for communicating
@@ -208,7 +222,36 @@ the functions of its parent class.
 
 ### Using FASTAPI
 
+:::{note}
+
+These instructions are a bit thread-bare at the moment: I will improve them soon.
+
+:::
+
 We will make the devices externally accessible using a library called FastAPI.
+
+First, add the dependency to your project using `uv`:
+
+```
+uv add fastapi['standard']
+```
+
+You can then modify `app.py` so that you can add endpoints to your python backend: <https://fastapi.tiangolo.com/tutorial/first-steps/>
+
+### Requirements
+
+You should have the following endpoints:
+
+- `/read/{sensor-id}`: a GET request for a reading from the given sensor
+- `/control/{actuator_id}`: a PUT request to change the state of the actuator
+
+You should have unique ids for 1 temperature sensor, 1 humidity sensor, 1 fan actuator,
+and 1 LED actuator.
+
+For marks for this part of the assignment:
+
+- push working code to `a1` branch of your repository
+- In person demo of the API working (instructions TBA)
 
 ## (35) Dashboard
 
