@@ -176,18 +176,9 @@ This will allow you to test the file directly:
 :::{note}
 
 To see the point of the `if __name__=="__main__"` statement, see the
-[course notes on python scripting]<project:/lectures/python-scripting/index.md#top-level-environment>
+course notes on python <project:/lectures/python-scripting/index.md#top-level-environment>
 
 :::
-
-```python
-if __name___ == "__main__":
-    # your code for each device goes here 
-    # This should be a simple loop that shows the device turning on/off
-    # or, in the case of a sensor, showing readings from the device.
-
-
-```
 
 ### Requirements
 
@@ -264,17 +255,25 @@ Create **python classes** in your `led.py`, `fan.py`, and `aht20.py` files. Thes
 should be:
 
 ```python
-
 class TemperatureSensor(Sensor);
-    pass
+    device: AHT20 # see Hardware Setup instructions for explanation of the AHT20 class
+    UNIT = "°C" # unit of measurement for Temperature
+
+    def read_sensor(self):
+        """TODO: implement this method@"""
+        # Should return the temperature and the unit of measurement as a string
+        pass
 
 class HumiditySensor(Sensor):
-    pass
+    # Similar to above
+    UNIT = "%" # unit of measurement for Humidity
 
 class Fan(Actuator):
+    # similar to above
     pass
 
 class LED(Actuator):
+    # similar to above
     pass
 ```
 
