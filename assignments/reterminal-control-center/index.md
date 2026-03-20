@@ -99,12 +99,74 @@ For each of the three devices there is a bit of custom set up.
 Instructions for setting up device can be found here:
 <https://docs.google.com/document/d/1KQtT8Uj5ExVKaLA7Ey5N58Vd93QWsowbqu-CDyIw36s/edit?usp=sharing>
 
-:::{note}
-
 The instructions above are from an old lab -- don't focus on making the code match the
 requirements exactly. We will be making changes to it in the following steps.
 
-:::
+
+:::::{important}
+
+The `Seeed-grove.py` library is no longer recommended -- it does not work.
+
+Instead, include the following code in your `aht20.py` file:
+
+````{dropdown} AHT20 Sensor Code
+
+```python
+from gpiozero import Device
+from time import sleep
+from smbus2 import SMBus
+
+# Adapted from https://github.com/Seeed-Studio/grove.py/blob/master/grove/grove_temperature_humidity_aht20.py
+# Credits to Brandon/Emile/Vlad/Others for helping with this solution.
+class AHT20(Device):
+    def __init__(self, address=0x38, bus=4):
+        self.address = address
+
+        # I2C bus
+        self.bus = SMBus(bus)
+
+        # init sensor
+        self.bus.write_i2c_block_data(self.address, 0xBE, [0x08, 0x00])
+        sleep(0.02)
+
+    def read(self):
+        self.bus.write_i2c_block_data(self.address, 0xAC, [0x33, 0x00])
+        sleep(0.08)
+
+        data = self.bus.read_i2c_block_data(self.address, 0x00, 7)
+
+        humidity = ((data[1] << 16) | (data[2] << 8) | data[3]) >> 4
+        humidity = humidity * 100 / 1048576.0
+
+        temperature = ((data[3] & 0x0F) << 16) | (data[4] << 8) | data[5]
+        temperature = temperature * 200 / 1048576.0 - 50
+
+        return temperature, humidity
+
+# ... 
+
+# Example of using the above class
+class TemperatureSensor(Sensor)
+    device: AHT20
+    # ... rest of class definition ...    
+
+# ...
+
+if __name__ == "__main__":
+
+    # You can only have one of these devices instantiated at a time
+    aht20_device = AHT20(bus=4)
+
+    # But the device can be shared across two Sensor classes.
+    TemperatureSensor(device=aht20_device) 
+    HumiditySensor(device=aht20_device)
+```
+
+
+````
+
+:::::
+
 
 ### Scripts
 
