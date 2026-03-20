@@ -54,18 +54,22 @@ date: 2026-01-02
   - Mar 6: March Break
   -
 * - Mar 9
+    - Begin <project:/project/setup/index.md>
   - Mar 13
   -
 * - Mar 16
+    - Begin <project:/assignments/reterminal-control-center/index.md>
   - Mar 20
+    - Finish <project:/project/setup/index.md>
   -
 * - Mar 23
   - Mar 27
   -
 * - Mar 30
+    - Finish <project:/assignments/reterminal-control-center/index.md>
   - Apr 3: Good Friday
   -
-* - Apr 6: Good Friday
+* - Apr 6: Easter Monday
   - Apr 10
   -
 * - Apr 13

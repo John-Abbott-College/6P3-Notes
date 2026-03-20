@@ -6,7 +6,7 @@ date: 2026-03-13
 blogpost: true
 location: Assignment
 author: 9%
-language: 2026-03-31
+language: 2026-03-30
 ---
 
 :::{important}
@@ -289,10 +289,50 @@ Example showing a fan turned off using FastAPI.
 
 ## (35) Dashboard
 
-Instructions TBA
+To use the API we've created, we'll set up a quick prototype frontend.
 
-- Electrobun
-- OR, react-native-for-web using Expo
+This isn't a UI or App-Dev course, so the choice of the frontend framework is up to you.
+I will provide hints/structure for a few different choices:
+
+- Typescript: [React Web](https://react.dev/) (I'm doing this: it uses html/css/ts components instead of react-native)
+- Typescript: [React-Native for Web](https://necolas.github.io/react-native-web/) (same components/architecture as App Dev III)
+- Python: [Python GTK](https://www.gtk.org/docs/language-bindings/python/), [PythonQT](https://doc.qt.io/qtforpython-6/), [Python tkinter][(https://docs.python.org/3/library/tkinter.html) [^1]
+
+**You're also free to use a framework not listed here, but you are on your own in that case.**
+
+### Structure
+
+Initialize a `dashboard` subdirectory using the framework of your choice:
+
+<!-- ````{tab-set} -->
+<!-- :sync-group: frontend -->
+<!---->
+<!-- ```{tab-item} React -->
+<!-- :sync: react -->
+<!---->
+<!-- coursework-<your-repo-name>/ -->
+<!-- ├── a1 -->
+<!-- │   └── controller/ -->
+<!-- │   └── dashboard/ -->
+<!-- │       ├── main.py -->
+<!-- │       ├── pyproject.toml -->
+<!-- │       └── README.mdoursework-<your-repo-name> -->
+<!-- ``` -->
+<!---->
+<!-- ```{tab-item} Python -->
+<!-- :sync: python -->
+<!---->
+<!-- coursework-<your-repo-name>/ -->
+<!-- ├── a1 -->
+<!-- │   └── controller/ -->
+<!-- │   └── dashboard/ -->
+<!-- │       ├── main.py -->
+<!-- │       ├── pyproject.toml -->
+<!-- │       └── README.mdoursework-<your-repo-name> -->
+<!-- ``` -->
+<!-- ``` -->
+<!---->
+<!-- ```` -->
 
 ## Rubric
 
