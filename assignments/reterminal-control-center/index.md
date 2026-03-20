@@ -395,6 +395,34 @@ Initialize a `dashboard` subdirectory using the framework of your choice:
 <!---->
 <!-- ```` -->
 
+### Result
+
+:::::{tab-set}
+
+::::{tab-item} React
+
+:::{figure} assets/react-dashboard-eg.png
+
+Example dashboard with the React library.
+
+:::
+
+::::
+
+::::{tab-item} React-Native
+
+TBD!
+
+::::
+
+::::{tab-item} Python GTK
+
+TBD!
+
+::::
+
+:::::
+
 ## Rubric
 
 - TBA
