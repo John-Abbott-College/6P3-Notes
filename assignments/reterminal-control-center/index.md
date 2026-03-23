@@ -61,7 +61,7 @@ coursework-<your-repo-name>/
 │   └── controller
 │       ├── main.py
 │       ├── pyproject.toml
-│       └── README.mdoursework-<your-repo-name>
+│       └── README.md
 ├── <other-lab-directories>
 ```
 
@@ -350,7 +350,12 @@ This isn't a UI or App-Dev course, so the choice of the frontend framework is up
 I will provide hints/structure for a few different choices:
 
 - Typescript: [React Web](https://react.dev/) (I'm doing this: it uses html/css/ts components instead of react-native)
+    - Quickstart: `bunx electrobun init dashboard`. When asked for a template, I chose the `react-tailwind-vite` template, and it has been working well so far.
+    - Note: you will need to install all of the applications listed in the Linux section
+    of the [electrobun install instructions](https://github.com/blackboardsh/electrobun?tab=readme-ov-file#development-setup)
 - Typescript: [React-Native for Web](https://necolas.github.io/react-native-web/) (same components/architecture as App Dev III)
+    - Quickstart: `bunx create expo-app dashboard --template`
+    - Note: follow the documentation for creating a `react-native-web` app on expo: <https://docs.expo.dev/workflow/web/>
 - Python: [Python GTK](https://www.gtk.org/docs/language-bindings/python/), [PythonQT](https://doc.qt.io/qtforpython-6/), [Python tkinter][(https://docs.python.org/3/library/tkinter.html) [^1]
 
 **You're also free to use a framework not listed here, but you are on your own in that case.**
