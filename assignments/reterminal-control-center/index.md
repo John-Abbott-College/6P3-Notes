@@ -9,12 +9,6 @@ author: 9%
 language: 2026-03-30
 ---
 
-:::{important}
-
-These instructions are a work-in-progress: stay tuned for updates.
-
-:::
-
 ## Overview
 
 In this assignment, you will make a **prototype** of the applications you deploy on your
@@ -283,12 +277,6 @@ the functions of its parent class.
 
 ### Using FASTAPI
 
-:::{note}
-
-These instructions are a bit thread-bare at the moment: I will improve them soon.
-
-:::
-
 We will make the devices externally accessible using a library called FastAPI.
 
 First, add the dependency to your project using `uv`:
@@ -312,8 +300,14 @@ and 1 LED actuator.
 For marks for this part of the assignment:
 
 - push working code to `a1` branch of your repository
-- In person demo of the API working (instructions TBA)
+- In person demo of the API working
 
+### Example
+
+Using the `docs/` endpoint of the fastapi server, you should be able to control your
+devices using an interface that looks like the figures below:
+
+(fastapi-demo)=
 :::::{tab-set}
 
 ::::{tab-item} Read Sensor
@@ -348,7 +342,7 @@ Example showing a fan turned off using FastAPI.
 
 :::::
 
-## (35) Dashboard
+## (25) Dashboard
 
 To use the API we've created, we'll set up a quick prototype frontend.
 
@@ -365,38 +359,76 @@ I will provide hints/structure for a few different choices:
 
 Initialize a `dashboard` subdirectory using the framework of your choice:
 
-<!-- ````{tab-set} -->
-<!-- :sync-group: frontend -->
-<!---->
-<!-- ```{tab-item} React -->
-<!-- :sync: react -->
-<!---->
-<!-- coursework-<your-repo-name>/ -->
-<!-- ├── a1 -->
-<!-- │   └── controller/ -->
-<!-- │   └── dashboard/ -->
-<!-- │       ├── main.py -->
-<!-- │       ├── pyproject.toml -->
-<!-- │       └── README.mdoursework-<your-repo-name> -->
-<!-- ``` -->
-<!---->
-<!-- ```{tab-item} Python -->
-<!-- :sync: python -->
-<!---->
-<!-- coursework-<your-repo-name>/ -->
-<!-- ├── a1 -->
-<!-- │   └── controller/ -->
-<!-- │   └── dashboard/ -->
-<!-- │       ├── main.py -->
-<!-- │       ├── pyproject.toml -->
-<!-- │       └── README.mdoursework-<your-repo-name> -->
-<!-- ``` -->
-<!-- ``` -->
-<!---->
-<!-- ```` -->
+`````{tab-set}
+:sync-group: frontend
 
-### Result
+````{tab-item} React
+:sync: react
 
+```
+coursework-<your-repo-name>/
+├── a1
+│   └── controller/
+│   └── dashboard/
+│       ├── <source folders>*
+│       ├── bun.lock
+│       ├── package.json
+│       └── <other configuration files>*
+```
+
+*Note: the names of the `<source folders>` and the `<other configuration files>` can vary,
+depending on whether you use React Web or React-Native for web. The exact names of the
+source folders and extra configuration files don't matter; what matters is the project
+files (package.json, bun.lock) are in the dashboard directory along with the dashboard
+source code, and are separate from the controller project files/source code.
+
+````
+
+````{tab-item} Python
+:sync: python
+
+```
+coursework-<your-repo-name>/
+├── a1
+│   └── controller/
+│   └── dashboard/
+│       ├── main.py
+│       ├── pyproject.toml
+│       └── README.md
+```
+
+````
+
+`````
+
+### Requirements
+
+The only requirements for the dashboard are:
+
+- A toggle switch (or equivalent UI, like a button) for each actuator (the LED and the Fan)
+    - Part marks: dummy interface that "toggles" but does not interact with the controller
+      backent
+    - Full marks: sends a PUT request to turn on/off the correct actuator
+- A live graph for the sensor temperature/humidity readings that
+    - Part marks: dummy interface that displays a fake sequence of humidity/temperature
+    data over time
+    - Full marks: sends a GET requests every 2 seconds[^timing] for humidity/temperature
+    and updates the graph accordingly
+    
+[^timing]: Play around with this value to find a delay that gives a pleasant experience.
+
+Depending on which UI framework you choose, you should have readily available components
+you can add to your `dashboard` dependencies to implement the above features.
+
+For example, to render a live graph from sequences of data:
+
+- React: <https://mui.com/x/react-charts/>
+- React Native: <https://www.npmjs.com/package/react-native-graph>
+- Python: TBD
+
+### Example
+
+(dashboard-demo)=
 :::::{tab-set}
 
 ::::{tab-item} React
@@ -425,6 +457,49 @@ TBD!
 
 ## Rubric
 
-- TBA
+For each section, your grade will be determined by the following rubric:
 
+- (10) [Device Scripts](#device-scripts)
+    - In-class demo of the scripts for each device: LED, AHT20, and Fan with Relay
+    - Relevant code pushed to a1 branch of coursework repository
+- (45) [Device Controller Backend](#device-controller-backend)
+    - In-class demo of the API interface scripts for each device: LED, AHT20, and Fan with Relay
+        - See [API usage example figure](#fastapi-demo)
+    - Code pushed to a1 branch of coursework repository
+- (25) [Dashboard](#dashboard)
+    - In-class demo of the dashboard interface working for each device: LED, AHT20, and Fan with Relay
+        - See [Dashboard usage example figure](#dashboard-demo)
+    - Code pushed to a1 branch of coursework repository
+- (10) Overall
+    - Assignment structure followed (`a1/controller` and `a1/dashboard` contain expected
+    files)
+    - use of `uv` and `pyproject.toml` to maintain required dependencies for python backened
+    - use of `bun` and `package.json` to maintain required dependencies for typescript
+    frontend
+
+### In-class demo
+
+Any time before the due date, you can demo any of the above tasks to me in person. On the
+due date during class (Monday March 30), you will demo your progress for partial marks if
+not complete.
+
+
+## Tips & Tricks
+
+:::{note}
+
+Let me know if you encounter any useful tips & tricks for completing this assignment,
+I will add to this list as we go.
+
+:::
+
+- Backend API preview: Use `fastapi run` to run your API in production mode -- this will let you access the web
+  interface using the **tailscale IP address** of your reTerminal
+    - The lab computers have tailscale installed on them, you can log into Tailscale
+    directly in order to access your reterminal
+
+- Dashboard preview: 
+    - [Enable the VNC server on your reterminal](https://www.raspberrypi.com/documentation/computers/remote-access.html#vnc)
+    - Use the program [TigerVNC](https://tigervnc.org/) to connect to your reterminal over
+      tailscale. (TigerVNC is already installed on the lab computers)
 
