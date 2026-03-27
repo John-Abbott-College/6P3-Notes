@@ -369,7 +369,7 @@ I will provide hints/structure for a few different choices:
     - Note: you will need to install all of the applications listed in the Linux section
     of the [electrobun install instructions](https://github.com/blackboardsh/electrobun?tab=readme-ov-file#development-setup)
 - Typescript: [React-Native for Web](https://necolas.github.io/react-native-web/) (same components/architecture as App Dev III)
-    - Quickstart: `bunx create expo-app dashboard --template`
+    - Quickstart: `bunx create-expo-app dashboard --template`
     - Note: follow the documentation for creating a `react-native-web` app on expo: <https://docs.expo.dev/workflow/web/>
 - Python: [Python GTK](https://www.gtk.org/docs/language-bindings/python/), [PythonQT](https://doc.qt.io/qtforpython-6/), [Python tkinter][(https://docs.python.org/3/library/tkinter.html) [^1]
 
@@ -521,17 +521,38 @@ I will add to this list as we go.
 
 :::
 
-- Backend API preview: Use `fastapi run` to run your API in production mode -- this will let you access the web
+### Backend API preview:
+
+Use `fastapi run` to run your API in production mode -- this will let you access the web
   interface using the **tailscale IP address** of your reTerminal
     - The lab computers have tailscale installed on them, you can log into Tailscale
     directly in order to access your reterminal
 
-- Dashboard preview: 
+### Dashboard preview: 
     - [Enable the VNC server on your reterminal](https://www.raspberrypi.com/documentation/computers/remote-access.html#vnc)
     - Use the program [TigerVNC](https://tigervnc.org/) to connect to your reterminal over
       tailscale. (TigerVNC is already installed on the lab computers)
 
-- Landscape mode on the reTerminal
+### Landscape mode on the reTerminal
+
+There are two ways to enable Landscape orientation on your reTerminal:
+
+```{figure} assets/control-centre.png
+---
+figclass: margin
+name: control-centre
+---
+
+Getting to the control center on the reTerminal desktop.
+
+```
+
+1. Using the GUI:
+    - Navigate to the **Control Centre** of the reTerminal
+    - Scroll down to the "Screens" submenu
+    - Right-click on the display, update the **orientation** of the display.
+
+2. Using the command line:
     - the reTerminal uses [wayland](https://wayland-book.com/) for its display backend, meaning that the
     orientation of the screen can be controlled using the [`wlr-randr`](https://man.archlinux.org/man/wlr-randr.1.en) utitlity that
     comes pre-installed on the reterminal
@@ -547,4 +568,21 @@ I will add to this list as we go.
 
         ```
 
+### `cannot open display:` error
+
+If you are faced with the following error when running your dashboard code over `ssh`:
+
+```text
+[1] (bun:3887): Gtk-WARNING **: 11:54:23.186: cannot open display:
+[1] Child process exited with code: 1
+[1] error: script "start" exited with code 1
+```
+
+you can fix this by updating the `DISPLAY` environment variable in your `ssh` session
+BEFORE running your dashboard code:
+
+```
+$ export DISPLAY=:0
+$ <run your dashboard app>
+````
 
