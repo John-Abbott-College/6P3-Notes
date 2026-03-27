@@ -516,3 +516,20 @@ I will add to this list as we go.
     - Use the program [TigerVNC](https://tigervnc.org/) to connect to your reterminal over
       tailscale. (TigerVNC is already installed on the lab computers)
 
+- Landscape mode on the reTerminal
+    - the reTerminal uses [wayland](https://wayland-book.com/) for its display backend, meaning that the
+    orientation of the screen can be controlled using the [`wlr-randr`](https://man.archlinux.org/man/wlr-randr.1.en) utitlity that
+    comes pre-installed on the reterminal
+    - Using `wlr-randr`:
+
+        ```
+        # Display all connected displays (the reTerminal screen)
+        $ wlr-randr
+        ...
+
+        # 'transform' the reterminal screen to flip by 270 degrees
+        $ wlr-randr --output <name of reterminal screen> --transform 270
+
+        ```
+
+
