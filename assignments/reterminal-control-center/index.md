@@ -427,13 +427,15 @@ you can add to your `dashboard` dependencies to implement the above features.
 
 For example, to render a live graph from sequences of data:
 
+- Generic Typescript:
+    - <https://chartjs.org>
+    - <https://plotly.com/javascript/streaming/>
 - React:
-    - <https://mui.com/x/react-charts/>
+    - <https://mui.com/x/react-charts/> NOTE: I haven't figured out how to stream data
+    with this library yet.
 - React Native:
     - <https://www.npmjs.com/package/react-native-graph>
     - Thanks to Leon for this recommendation: <https://nearform.com/open-source/victory/>
-- Generic Typescript:
-    - <https://chartjs.org>
 - Python:
     - <https://dash.plotly.com/>
 
