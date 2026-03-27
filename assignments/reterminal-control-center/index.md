@@ -446,42 +446,34 @@ For example, to render a live graph from sequences of data:
     - <https://chartjs.org>
     - <https://plotly.com/javascript/streaming/>
 - React:
-    - <https://mui.com/x/react-charts/> NOTE: I haven't figured out how to stream data
-    with this library yet.
+    - <https://mui.com/x/react-charts/>
 - React Native:
     - <https://www.npmjs.com/package/react-native-graph>
     - Thanks to Leon for this recommendation: <https://nearform.com/open-source/victory/>
 - Python:
     - <https://dash.plotly.com/>
 
+
+```{note}
+---
+class: margin
+---
+
+Hint: if using React, you will need to use `useState` to manage the state of the actuators
+and to store the sensor readings. You will also need to use `useEffect` and `setInterval`
+to periodically request new sensor readings and to update your existing readings.
+
+```
+
 ### Example
-
-(dashboard-demo)=
-:::::{tab-set}
-
-::::{tab-item} React
 
 :::{figure} assets/react-dashboard-eg.png
 
-Example dashboard with the React library.
+Example dashboard with the React library. Your UI does not need to look exactly like this,
+but it should have the same basic elements: actuator toggles, and a live reading of the
+sensor data.
 
 :::
-
-::::
-
-::::{tab-item} React-Native
-
-TBD!
-
-::::
-
-::::{tab-item} Python GTK
-
-TBD!
-
-::::
-
-:::::
 
 ## Rubric
 
@@ -497,6 +489,10 @@ For each section, your grade will be determined by the following rubric:
 - (25) [Dashboard](#dashboard)
     - In-class demo of the dashboard interface working for each device: LED, AHT20, and Fan with Relay
         - See [Dashboard usage example figure](#dashboard-demo)
+        - **NOTE**: your Dashboard app must run and be usable on the reTerminal device
+        itself. Make sure your buttons are big enough to press. See
+        [Landscape mode on the reterminal](#landscape-mode-on-the-reterminal) to manage
+        the orientation of the reterminal device.
     - Code pushed to a1 branch of coursework repository
 - (10) Overall
     - Assignment structure followed (`a1/controller` and `a1/dashboard` contain expected
@@ -529,9 +525,10 @@ Use `fastapi run` to run your API in production mode -- this will let you access
     directly in order to access your reterminal
 
 ### Dashboard preview: 
-    - [Enable the VNC server on your reterminal](https://www.raspberrypi.com/documentation/computers/remote-access.html#vnc)
-    - Use the program [TigerVNC](https://tigervnc.org/) to connect to your reterminal over
-      tailscale. (TigerVNC is already installed on the lab computers)
+
+- [Enable the VNC server on your reterminal](https://www.raspberrypi.com/documentation/computers/remote-access.html#vnc)
+- Use the program [TigerVNC](https://tigervnc.org/) to connect to your reterminal over
+  tailscale. (TigerVNC is already installed on the lab computers)
 
 ### Landscape mode on the reTerminal
 
