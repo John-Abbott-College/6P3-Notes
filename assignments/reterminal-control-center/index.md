@@ -408,28 +408,34 @@ coursework-<your-repo-name>/
 
 ### Requirements
 
-The only requirements for the dashboard are:
+The requirements for the dashboard are:
 
-- A toggle switch (or equivalent UI, like a button) for each actuator (the LED and the Fan)
+1. A toggle switch (or equivalent UI, like a button) **for each actuator** (the LED and the Fan)
     - Part marks: dummy interface that "toggles" but does not interact with the controller
       backent
     - Full marks: sends a PUT request to turn on/off the correct actuator
-- A live graph for the sensor temperature/humidity readings that
-    - Part marks: dummy interface that displays a fake sequence of humidity/temperature
+2. Live readings generated every 1-2 seconds **for each sensor** (Temperature and Humidity)
+    - Minimum: dummy interface that displays a fake sequence of humidity/temperature
     data over time
-    - Full marks: sends a GET requests every 2 seconds[^timing] for humidity/temperature
+    - Decent: Live readings in the form of a textbox that updates every 1-2 seconds
+    (retrieved using a GET request to the local server)
+    - Best: a line/scatter plot that sends GET requests for humidity/temperature
     and updates the graph accordingly
     
-[^timing]: Play around with this value to find a delay that gives a pleasant experience.
-
 Depending on which UI framework you choose, you should have readily available components
 you can add to your `dashboard` dependencies to implement the above features.
 
 For example, to render a live graph from sequences of data:
 
-- React: <https://mui.com/x/react-charts/>
-- React Native: <https://www.npmjs.com/package/react-native-graph>
-- Python: TBD
+- React:
+    - <https://mui.com/x/react-charts/>
+- React Native:
+    - <https://www.npmjs.com/package/react-native-graph>
+    - Thanks to Leon for this recommendation: <https://nearform.com/open-source/victory/>
+- Generic Typescript:
+    - <https://chartjs.org>
+- Python:
+    - <https://dash.plotly.com/>
 
 ### Example
 
