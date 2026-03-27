@@ -45,7 +45,22 @@ here, as well as using a similar tool called `uv` for our python dependencies
 - [Instructions for installing `uv` on your developer environment/reTerminal](https://docs.astral.sh/uv/getting-started/installation/#installation-methods)
 - [Instructions for installing `bun` on your developer environment/reTerminal](https://bun.com/docs/installation)
 
-Make sure you install `bun` and `uv` on both your reterminal and your developer
+:::{note}
+
+You may also need `node` separate from `bun`, you can install this with the
+following command:
+
+```bash
+$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+$ nvm install node
+```
+
+See <https://github.com/nvm-sh/nvm?tab=readme-ov-file#install--update-script> and <https://github.com/nvm-sh/nvm?tab=readme-ov-file#usage>
+for more information.
+
+:::
+
+Make sure you install `uv`, `bun`, and `node` on both your reterminal and your developer
 environment.
 
 ### Project structure
