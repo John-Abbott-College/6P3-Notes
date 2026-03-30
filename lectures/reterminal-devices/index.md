@@ -285,3 +285,66 @@ reference on how to control:
 - Accelerometer
 - Programmable Buttons
 - Light Sensor
+
+## Screen orientation
+
+In
+<project:/assignments/reterminal-control-center/index.md#landscape-mode-on-the-reterminal>,
+we were able to temporarily set the orientation of the reTerminal screen to be in
+landscape mode.
+
+To make the change permanent, we need to update the configuration for the reterminal
+window manager.
+
+### 1. `wlr-randr`
+
+First, run the command `wlr-randr` on your reterminal:
+
+```
+DSI-1 "(null) (null) (DSI-1)"
+  Make: (null)
+  Model: (null)
+  Serial: (null)
+  Physical size: 62x110 mm
+  Enabled: yes
+  Modes:
+    720x1280 px, 60.000000 Hz (preferred, current)
+  Position: 0,0
+  Transform: normal
+  Scale: 1.000000
+  Adaptive Sync: disabled
+```
+
+Take a look at the `Modes` and `Transform` keys in the output above. We see that there's
+only one possible mode -- but, we can use `Transform` to make rotations.
+
+
+### 2. `kanshi` configuration
+
+`kanshi` is a program used for setting display prerefences for Wayland window managers on
+linux. We can set a preferred `Transform` setting using the `kanshi` config file, located
+at `~/.config/kanshi/config`:
+
+```
+profile {
+		output DSI-1 enable scale 1.000000 mode 720x1280@60.000 position 0,0 transform normal
+}
+```
+
+Change the `transform` argument to 270 to flip the orientation to landscape mode (90
+results in an upside-down orientation relative to the reterminal interface.)
+
+When you restart the reterminal the change will take place automatically.
+
+### 3. `labwc` configuration
+
+Rotating the screen unfortunately does not automatically rotate the "touch" features of
+the screen -- you'll find that the touchscreen will behave strangely (in fact, the "touch" is still oriented in portrait)
+unless you make the change below to the window manager configuration file `~/.config/labwc/rc.xml`:
+
+```
+<?xml version="1.0"?>
+<openbox_config xmlns="http://openbox.org/3.4/rc">
+    <touch deviceName="seeed-tp" mapToOutput="DSI-1" mouseEmulation="yes"/>
+</openbox_config>
+```
