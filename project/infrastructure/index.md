@@ -96,7 +96,7 @@ The tasks:
 - Participate in the discussion about what tasks are important for your group on April 10
 - Participate in the discussion (after deeper reflection) about what tasks are important for your group on April 13
 - Complete the [microsoft form
-about your personal/team preferences for project management tasks](https://forms.office.com/Pages/DesignPageV2.aspx?origin=NeoPortalPage&subpage=design&id=wgLCIiw4e0SgI9CoZtHUJoKYL__HEmVMktV9Tu6NMmhUMUMyUlIyWEhRU0JBT0RSNjRXMkExMFEyQy4u&analysis=true&topview=SurveyResults&qid=rfcf8e1b1c1954d4e948374422876aa5b&ridx=1) by Friday April 10
+about your personal/team preferences for project management tasks](https://forms.office.com/r/HmcjW9ACKn) by Friday April 10
 - Delegate tasks among team members
     - Create GitHub Issues for this, tag the group member(s) assigned to the task
 - Each partner should have at least started their tasks by Monday April 13
