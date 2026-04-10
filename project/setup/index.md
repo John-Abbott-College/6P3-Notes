@@ -59,15 +59,14 @@ The teams will be:
   - Massimo	
   - Nas
 - - **Team 9**
-  - Carolina	
+  - Vithusa	
   - Ahmed	
   - Khizer
 - - **Team 10**
   - Joshua	
-  - Vithusa	
+  - Carolina	
   - Saul
 - - **Team 11**
-  - Leon	
   - Tristan	
   - Aris
 - - **Team 12**
@@ -77,7 +76,10 @@ The teams will be:
 - - **Team 13**	
   - Gregory	
   - Vlad	
-  - 
+  - Leon
+- - **Teacher Team**	
+  - Michael
+  - Vik
 :::
 
 ## Getting Started: GitHub Repo
