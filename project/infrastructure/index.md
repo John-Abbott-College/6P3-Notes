@@ -6,7 +6,7 @@ date: 2026-02-27
 blogpost: true
 location: Project
 author: 20%
-language: 2026-04-10
+language: 2026-04-13
 ---
 
 In this milestone, you will set up your github monorepo
@@ -27,7 +27,7 @@ README.md
 docs/
 ├── <documentation code>
 app/
-├── <code for your App Dev II project work>
+├── <code for your App Dev III project work>
 reterminal/
 ├── <subsystem1>
 ├── <subsystem2>
@@ -48,26 +48,19 @@ subsystem/
 │   └── ...
 ```
 
-## Roadmap
+If you're not sure how to **to start**, each team member should add their **assignment 1** code to a
+`reterminal/subsystem/` directory. You will adapt your assignment 1 code to meet the
+requirements of your project in assignment 2 and future milestones.
 
-Write 3-4 epic user stories that should be fulfilled by the end of the project,
-which must be added as Github Issues within your Github repo.  
+## Repository Management Tasks
 
-## Documentation
+In class on April 10, we collaboratively filled the following forms with project
+management tasks for each team and each group member: <https://forms.office.com/r/HmcjW9ACKn>
 
+## Requirements
 
-## CI/CD
-
-
-### GitHub Actions
-
-- <https://docs.expo.dev/build/building-on-ci>
-- <https://docs.github.com/en/actions/tutorials/build-and-test-code/python>
-- 
-
-### Versioning
- 
-- <https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository>
-- <https://devtoolhub.com/git-tags-releases-best-practices/>
-
-
+- Participate in the discussion about what tasks are important for your group on April 10
+- Complete the form above by Friday April 10
+- Delegate tasks among team members
+    - Use GitHub Issues for this, tag the group member(s) assigned to the task
+- Each partner should have at least started their tasks by Monday April 13

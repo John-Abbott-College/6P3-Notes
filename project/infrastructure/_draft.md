@@ -90,3 +90,32 @@ Write 3-4 epic user stories that should be fulfilled by the end of the project, 
 | Application Screen Design | The app’s various screens are described and illustrated, along with their relationships. The design aligns well with the user needs, ensuring a clear distinction in layout for different user types.  | 10 |
 | Epic User Stories | Each epic user story is well-defined, clearly describing the feature or functionality, its purpose, and the user’s goal. The scope is appropriate for an epic (not too broad or too narrow). | 5 |
 
+
+## Stuff from previous version of this milestone
+
+See below
+
+## Planning
+
+Write 3-4 epic user stories that should be fulfilled by the end of the project,
+which must be added as Github Issues within your Github repo.  
+
+## Documentation
+
+
+
+## CI/CD
+
+
+### GitHub Actions
+
+- <https://docs.expo.dev/build/building-on-ci>
+- <https://docs.github.com/en/actions/tutorials/build-and-test-code/python>
+- 
+
+### Versioning
+ 
+- <https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository>
+- <https://devtoolhub.com/git-tags-releases-best-practices/>
+
+
