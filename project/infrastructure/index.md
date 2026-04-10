@@ -57,6 +57,40 @@ requirements of your project in assignment 2 and future milestones.
 In class on April 10, we collaboratively filled the following forms with project
 management tasks for each team and each group member: <https://forms.office.com/r/HmcjW9ACKn>
 
+The tasks:
+
+:::{list-table}
+
+- - Task
+  - Short description
+  - Example skills/techniques
+- - 1. Documentation
+  - Creating documemtation that usefully summarizes your project and how to use it.
+  - GitHub Readmes, static site generator, automated API documentation 
+- - 2. Project Versioning
+  - Keeping track of your projects history through an explicit versioning scheme
+  - Semantic versioning, changelogs, integration with github/build process
+- - 3. Project building / packaging
+  - Making your project code easy to distribute to others, both from source code and from
+    a package manager
+  - Creating a usable CLI/API for building/running from source, making a python project available on `pypi.org`, automating with github actions,
+  integrating with versioning scheme
+- - 4. Project code quality 
+  - Creating and enforcing project standards for formatting, linting, functionality
+  - writing unit tests for python/typescript, configuring tools for formatting/linting, automating with GitHub Actions
+- - 5. Project history management
+  - how to write git commits and use branching, along with versioning, that makes reverting to previous changes / contributing to your project sane rather than stressful/annoying
+  -
+- - 6. Project task management
+  - tracking work over time, and remaining work, using issue management. Ideally,
+  associating pull requests with issues
+  - GitHub Issues, Jira
+- - 7. Other?
+  - ?
+  - ?
+
+:::
+
 ## Requirements
 
 - Participate in the discussion about what tasks are important for your group on April 10
