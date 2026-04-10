@@ -91,10 +91,12 @@ The tasks:
 
 :::
 
-## Requirements
+## Requirements (due April 13)
 
 - Participate in the discussion about what tasks are important for your group on April 10
 - Complete the form above by Friday April 10
 - Delegate tasks among team members
-    - Use GitHub Issues for this, tag the group member(s) assigned to the task
+    - Create GitHub Issues for this, tag the group member(s) assigned to the task
 - Each partner should have at least started their tasks by Monday April 13
+- Each partner should have pushed their assignment 1 code to a `reterminal/subsystem`
+directory (see the File Structure section above)
