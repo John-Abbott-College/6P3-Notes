@@ -3,8 +3,11 @@ title: "Serial protocols"
 subtitle:
   "A deeper dive into the protocols used to communicate between GPIO and the
   kernel"
-date: 2025-03-14
-categories: [hardware, signals]
+date: 2026-04-13
+blogpost: true
+category: Hardware
+tags: Hardware
+location: Lecture
 ---
 
 ## Serial Protocols

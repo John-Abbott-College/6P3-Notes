@@ -69,6 +69,7 @@ The teams will be:
 - - **Team 11**
   - Tristan	
   - Aris
+  - 
 - - **Team 12**
   - JJ	
   - Omar	
@@ -80,6 +81,7 @@ The teams will be:
 - - **Teacher Team**	
   - Michael
   - Vik
+  - 
 :::
 
 ## Getting Started: GitHub Repo
