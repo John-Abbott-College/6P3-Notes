@@ -98,6 +98,48 @@ subsystem/
 │   └── ...
 ```
 
+The requirements for the reTerminal code are similar to assignment 1, but adapted to
+**your devices**:
+
+#### (20%) Device classes and scripts
+
+For each of your subsystem devices, you should have a python file that:
+
+- defines any `Sensor`/`Actuator` implementations you will use in your backend
+- includes an `if __name__ == "__main__"` statement to permit the script to be tested
+indepdendent of the rest of the project.
+
+This is very similar to the requirements for `aht20.py`, `led.py`, etc. in Assignment 1,
+but adapted for the devices for your subsystem.
+
+#### (40%) Reterminal Backend
+
+Each of your subsystem devices must be included in the reTerminal backend for your
+subsystem.
+
+- adapt your assignemt1 fastapi code to include the sensors and actuators from your
+subssystem
+- you should be able to read from each of the sensors, and control each of the actuators,
+  from the `fastapi` `/docs` api.
+
+This is very similar to the requirements for the backend in Assignment 1,
+but adapted for the devices for your subsystem.
+
+#### (30%) Reterminal Dashboard
+
+Each of your subsystem devices must be included in the reTerminal dashboard for your
+subsystem.
+
+- adapt your assignment1 dashboard code to include the sensors and actuators from your
+subssystem
+- you should be able to read from each of the sensors, and control each of the actuators,
+  from the dashboard. The exact UI is up to you.
+- the dashboard **must run and be usuable on your reterminal**. Make sure you test this
+out to ensure the buttons are big enough, etc.
+
+This is very similar to the requirements for the dashboard in Assignment 1,
+but adapted for the devices for your subsystem.
+
 ### Application
 
 The exact requirements are TBD, but the big picture is:
