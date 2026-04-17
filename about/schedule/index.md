@@ -73,18 +73,16 @@ date: 2026-01-02
   - Apr 10
   -
 * - Apr 13
-    - TENTATIVE: Quiz 1
   - Apr 17
   -
 * - Apr 20
-    - TENTATIVE: Quiz 2
   - Apr 24
   -
 * - Apr 27
-    - TENTATIVE: Test
   - May 1
   -
 * - May 4
+    - Test (more information will be shared about this very soon)
   - May 8
   -
 * - May 11
