@@ -72,13 +72,13 @@ not set in stone, is subject to change in the future.
 
 ## Code Requirements
 
-### Overall
+Overall, your project repository should look like this
 
 ```
 app/
 ├── <code for your App Dev III project work>
 reterminal/
-├── common/
+├── common/         # Up to your team: you can share common code here (model.py for e.g.)
 ├── <subsystem1>
 ├── <subsystem2>
 ├── <subsystem3>
@@ -91,7 +91,7 @@ subsystem/
 ├── controller
 │   ├── pyproject.toml
 │   ├── README.md
-│   └── ...
+│   └── ...             # The structure of your reTerminal code is up to you
 ├── dashboard
 │   ├── package.json
 │   ├── README.md
@@ -101,7 +101,7 @@ subsystem/
 The requirements for the reTerminal code are similar to assignment 1, but adapted to
 **your devices**:
 
-#### (20%) Device classes and scripts
+#### (30%) Device classes and scripts
 
 For each of your subsystem devices, you should have a python file that:
 
@@ -112,7 +112,21 @@ indepdendent of the rest of the project.
 This is very similar to the requirements for `aht20.py`, `led.py`, etc. in Assignment 1,
 but adapted for the devices for your subsystem.
 
-#### (40%) Reterminal Backend
+*However*, there is extra complication here: the task of determining *how* to make your
+device work is left up to you.
+
+Some hints:
+
+- Find the *datasheet* for all of your devices (this is a `.pdf` that includes detailed
+information about the electronic components of your device).
+- Use the course notes:
+    - <project:/lectures/gpios/index.md>
+    - <project:/lectures/signals/index.md>
+    - <project:/lectures/serial-protocols/index.md>
+- Let the teacher know if you're stuck! Message me on Teams or ask in class.
+
+
+#### (20%) Reterminal Backend
 
 Each of your subsystem devices must be included in the reTerminal backend for your
 subsystem.
@@ -125,7 +139,7 @@ subssystem
 This is very similar to the requirements for the backend in Assignment 1,
 but adapted for the devices for your subsystem.
 
-#### (30%) Reterminal Dashboard
+#### (20%) Reterminal Dashboard
 
 Each of your subsystem devices must be included in the reTerminal dashboard for your
 subsystem.
@@ -139,6 +153,29 @@ out to ensure the buttons are big enough, etc.
 
 This is very similar to the requirements for the dashboard in Assignment 1,
 but adapted for the devices for your subsystem.
+
+#### (30%) Documentation / Milestone 2 Follow-up
+
+One new requirement for this milestone is to *continue your work started in Milestone 2*.
+
+One important component of this will be to document your devices for each subsystem.
+
+You should aim to make it be the case that someone else on your team could take over your
+reTerminal subsystem and be able to run your code/make it work.
+
+Important components of this:
+
+- Document the usage of your device scripts
+    - Wiring instructions (where to plug the device in, etc.)
+    - How to run your device scripts, expected results, etc.
+- Include device datasheets
+    - Google the name and serial number and product information for your devices.
+    You should be able to find `.pdf` files that contain detailed information about the
+    device, its electronic properties, etc. This is called a *datasheet*, and a link to it
+    should be included for each of the devices you are using.
+
+
+are easy to find)
 
 ### Application
 
