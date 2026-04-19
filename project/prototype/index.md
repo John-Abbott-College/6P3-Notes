@@ -185,3 +185,22 @@ The exact requirements are TBD, but the big picture is:
 - There should be UI for interaction with actuators / viewing sensors for each subsystem
 - You should for now use mock data/interactions -- we will add IoT to connect the App and
   the Reterminal in Milestone 4
+
+
+#### Route Plan
+
+Adapt the [Route Plan
+instructions](https://john-abbott-college.github.io/6A6-Notes/chapter-2/assignment-2/#1-route-plan)
+from App Dev Assignment 2
+
+#### UI State Diagram Sketch
+
+Adapt the [UI Sketches instructions](https://john-abbott-college.github.io/6A6-Notes/chapter-3/assignment-3/#2-ui-sketches)
+from App Dev Assignment 3
+
+
+:::{figure} assets/live-collaboration.png
+
+You will find the live collaboration tool on Excalidraw useful.
+
+:::
