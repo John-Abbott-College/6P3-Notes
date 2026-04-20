@@ -6,7 +6,7 @@ date: 2026-02-27
 blogpost: true
 location: Project
 author: 20%
-language: 2026-04-24
+language: 2026-04-27
 ---
 
 In this milestone, you will adapt your course assignment
@@ -179,13 +179,10 @@ are easy to find)
 
 ### Application
 
-The exact requirements are TBD, but the big picture is:
-
 - Each subsystem should have at least one page in your App Dev III App
 - There should be UI for interaction with actuators / viewing sensors for each subsystem
 - You should for now use mock data/interactions -- we will add IoT to connect the App and
   the Reterminal in Milestone 4
-
 
 #### Route Plan
 
@@ -200,6 +197,9 @@ from App Dev Assignment 3
 
 
 :::{figure} assets/live-collaboration.png
+---
+width: 300px
+---
 
 You will find the live collaboration tool on Excalidraw useful.
 

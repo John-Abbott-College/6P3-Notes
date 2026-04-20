@@ -73,16 +73,19 @@ date: 2026-01-02
   - Apr 10
   -
 * - Apr 13
+    - Begin <project:/project/prototype/index.md>
   - Apr 17
   -
 * - Apr 20
+    - Continue <project:/project/prototype/index.md>
   - Apr 24
   -
 * - Apr 27
+    - Finish <project:/project/prototype/index.md>
   - May 1
   -
 * - May 4
-    - Test (more information will be shared about this very soon)
+    - Test
   - May 8
   -
 * - May 11
