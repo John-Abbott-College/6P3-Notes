@@ -13,7 +13,6 @@ bin/
 obj/
 
 # For Nix environment
-.envrc
 .direnv
 shell.nix
 
