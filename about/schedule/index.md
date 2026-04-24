@@ -82,13 +82,20 @@ date: 2026-01-02
   -
 * - Apr 27
     - Finish <project:/project/prototype/index.md>
+    - Begin <project:/project/iot-integration/index.md>
+    - Begin <project:/assignments/azure-iot-hub/index.md>
   - May 1
-  -
+  - <project:/lectures/azure-portal/index.md>
+  - <project:/lectures/azure-features/index.md>
+  - <project:/lectures/azure-sdks/index.md>
 * - May 4
-    - Test
+    - Test (Part 1: device setup / data collection)
   - May 8
+    - Test (Part 2: in-class questions)
   -
 * - May 11
+    - Finish <project:/project/iot-integration/index.md>
+    - Finish <project:/assignments/azure-iot-hub/index.md>
   - May 12
   -
 

@@ -6,8 +6,10 @@ subtitle: |
   Azure IoT Hub vs IoT Central,
   Azure Resource Groups,
   Intro to Azure Dev Tools (Azure Portal, Azure CLI).
-date: 2025-04-19
-categories: [iot]
+blogpost: true
+category: IoT
+tags: IoT
+location: Lecture
 ---
 
 ## Platform as a Service (PaaS)

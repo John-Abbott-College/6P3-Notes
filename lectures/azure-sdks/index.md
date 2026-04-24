@@ -4,8 +4,11 @@ subtitle: |
   Azure Libraries in Python and C#
   Installation instructions for WSL,
   how to use the libraries in your code.
-date: 2025-04-21
-categories: [python, iot]
+date: 2026-04-24
+blogpost: true
+category: IoT
+tags: IoT
+location: Lecture
 ---
 
 Azure offers Software Development Kits (SDKs) for most of its services. Below
