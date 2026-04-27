@@ -204,3 +204,17 @@ width: 300px
 You will find the live collaboration tool on Excalidraw useful.
 
 :::
+
+## Rubric
+
+On Monday April 27, the following will take place:
+
+- In class: 
+    - Quick demo of each subsystem (however far each teammember is with incorporating new devices)
+    - Quick demo of project process (documentation, CI/CD, group work, etc.)
+    
+- After class
+    - For final grading, the code quality of your work will be assessed based on your
+    latest commit by end of day
+        - I will make sure you tell me which branch(es) you are working on if your work
+        will not be merged into your team `main` branch by the deadline
