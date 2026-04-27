@@ -11,23 +11,32 @@ language: 2026-05-11
 
 ## Overview
 
-In this assignment, we will build on the
+In this assignment, we will build on the project work. This is an individual task done in
+your project repo.
 
-## (%30) Subsystem improvements
+## (30%) Subsystem improvements
 
-### (%10) Dashboard/backend autostart
+### (10%) Dashboard/backend autostart
 
-- `systemctl`
-- `firefox kiosk`
+- autostart backend and dashboard processes at boot with `systemd`
+    - Adapt these instructions from Adafruit for **enabling a systemd process that runs on
+      boot**:
+    <https://learn.adafruit.com/running-programs-automatically-on-your-tiny-computer/systemd-writing-and-enabling-a-service>
+    - to run a web app in fullscreen from a script: use `firefox kiosk` along with `bun`
+    to start your dashboard
 
-### (%20) Choose your adventure
+### (20%) Choose your adventure
 
+Choose one of the following options:
 - Unit testing for all devices, incorporated into CI/CD
 - reTerminal features
+    -
 
-## (%50) IoT Features
+Contribute them to the 
 
-### (%20) Telemetry
+## (50%) IoT Features
+
+### (20%) Telemetry
 
 IoTHub Device to Cloud (D2C) for Sensor Readings (1%)
 
@@ -39,7 +48,7 @@ The example_system shows how you should use the Azure Device Client in your syst
 You can monitor D2C messages and their properties using the Azure CLI command. You should see D2C messages recorded as events in this output.
 az iot hub monitor-events --properties all --output table --hub-name <iot-hub-name>
 
-### (%20) Direct Methods
+### (20%) Direct Methods
 
 Each subsystem must receive and respond to the following direct method:
 
@@ -79,7 +88,7 @@ Payload: { "details": "method name unknown" }
 Payload: { "details": "method name unknown" }
 
 
-### (%10) Device Twin
+### (10%) Device Twin
 
 The farm must include the ability to receive Device Twin updates from the IoT Hub.
 
@@ -95,7 +104,7 @@ The int value represents the time interval to upload D2C messages in seconds. Wh
 
 The farm should get the desired twin property as soon as it starts as well as any time there is a new update (patch).
 
-## (%20) Documentation
+## (20%) Documentation
 
 - README for subsystem
 - README for each device
