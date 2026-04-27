@@ -1,8 +1,12 @@
 ---
 title: Asynchronous progamming in Python
-subtitle: Using the asyncio library to control concurrentprocesses in Python.
-date: 2027-04-04
-categories: [python]
+description: |
+    Using the asyncio library to control concurrentprocesses in Python.
+date: 2026-04-27
+blogpost: true
+category: Python
+tags: Python
+location: Lecture
 ---
 
 ## Asynch with `asyncio`

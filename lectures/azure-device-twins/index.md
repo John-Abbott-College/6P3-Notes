@@ -1,8 +1,12 @@
 ---
 title: Device Twins
-subtitle: "How to retrieve and configure IoT Devices using Device Twin metadata"
-date: 2025-04-28
-categories: [iot]
+description: |
+    How to retrieve and configure IoT Devices using Device Twin metadata
+date: 2026-04-27
+blogpost: true
+category: IoT
+tags: IoT
+location: Lecture
 ---
 
 For each device that you connecte to IoT Hub, Azure IoT Hub maintains a _device

@@ -1,10 +1,13 @@
 ---
 title: IoT Communication Protocols
-subtitle:
-  "How communication protocols can be optimized for device-cloud communication,
-  i.e. why not everything should use HTTP"
-date: 2025-04-28
-categories: [signals, iot]
+description: |
+  How communication protocols can be optimized for device-cloud communication,
+  i.e. why not everything should use HTTP
+date: 2026-04-27
+blogpost: true
+category: IoT
+tags: IoT
+location: Lecture
 ---
 
 IoT devices typically exchange data with a cloud service using a specific

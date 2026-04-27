@@ -1,9 +1,12 @@
 ---
 title: Azure Blob Storage
-subtitle: | 
+description: | 
   Setting up blob storage on the Azure Portal
-date: 2025-05-08
-categories: [iot]
+date: 2026-04-27
+blogpost: true
+category: IoT
+tags: IoT
+location: Lecture
 ---
 
 ## Storage Accounts

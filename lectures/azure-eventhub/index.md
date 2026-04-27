@@ -1,8 +1,12 @@
 ---
 title: Azure EventHubs
-subtitle: "More notes on how to send and receive events in C#"
-date: 2025-04-28
-categories: ["iot", ".NET"]
+description: |
+    More notes on how to send and receive events in C#
+date: 2026-04-27
+blogpost: true
+category: IoT
+tags: IoT
+location: Lecture
 ---
 
 _The notes below were taken from the official Microsoft documentation page

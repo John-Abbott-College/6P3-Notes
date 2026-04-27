@@ -1,10 +1,13 @@
 ---
 title: Intro to the Internet of Things
-subtitle:
-  "Fundamental concepts and applications behind the 'Internet of Things'
-  paradigm."
-date: 2025-04-28
-categories: [iot]
+description: |
+  Fundamental concepts and applications behind the 'Internet of Things'
+  paradigm.
+date: 2026-04-27
+blogpost: true
+category: IoT
+tags: IoT
+location: Lecture
 ---
 
 ## Internet of Things (IoT)

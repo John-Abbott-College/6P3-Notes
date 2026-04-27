@@ -1,8 +1,12 @@
 ---
 title: Azure CLI Cheatsheet
-subtitle: "Reference for common Azure commands"
-date: 2027-04-21
-categories: [bash, iot]
+description: |
+    Reference for common Azure commands
+date: 2026-04-27
+blogpost: true
+category: IoT
+tags: IoT
+location: Lecture
 ---
 
 ## Azure CLI Cheatsheet

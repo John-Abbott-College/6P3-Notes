@@ -79,16 +79,24 @@ date: 2026-01-02
 * - Apr 20
     - Continue <project:/project/prototype/index.md>
   - Apr 24
-  -
+  - 
+    - <project:/lectures/azure-portal/index.md>
+    - <project:/lectures/azure-features/index.md>
+    - <project:/lectures/azure-sdks/index.md>
 * - Apr 27
     - Finish <project:/project/prototype/index.md>
     - Begin <project:/project/iot-integration/index.md>
     - Begin <project:/assignments/azure-iot-hub/index.md>
   - May 1
   - 
-    - <project:/lectures/azure-portal/index.md>
-    - <project:/lectures/azure-features/index.md>
-    - <project:/lectures/azure-sdks/index.md>
+    - <project:/lectures/iot-concepts/index.md>
+    - <project:/lectures/iot-protocols/index.md>
+    - <project:/lectures/async-python/index.md>
+    - <project:/lectures/azure-cli-cheatsheet/index.md>
+    - <project:/lectures/azure-d2c/index.md>
+    - <project:/lectures/azure-device-twins/index.md>
+    - <project:/lectures/azure-eventhub/index.md>
+    - <project:/lectures/azure-storage/index.md>
 * - May 4
     - Test (Part 1: device setup / data collection)
   - May 8
