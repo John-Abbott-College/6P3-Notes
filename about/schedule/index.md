@@ -98,14 +98,15 @@ date: 2026-01-02
     - <project:/lectures/azure-eventhub/index.md>
     - <project:/lectures/azure-storage/index.md>
 * - May 4
-    - Test (Part 1: device setup / data collection)
+    - Continue <project:/project/iot-integration/index.md>
+    - Continue <project:/assignments/azure-iot-hub/index.md>
   - May 8
-    - Test (Part 2: in-class questions)
   -
 * - May 11
+    - Test (In-class: details provided on May 4)
+  - May 12
     - Finish <project:/project/iot-integration/index.md>
     - Finish <project:/assignments/azure-iot-hub/index.md>
-  - May 12
   -
 
 :::
