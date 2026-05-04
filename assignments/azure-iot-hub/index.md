@@ -90,6 +90,30 @@ instructions (Debian)](https://learn.microsoft.com/en-us/cli/azure/install-azure
     az extension add --name azure-iot
     ```
 
+To test that your azure cli is authenticated, try getting your device connection string from the
+cli:
+
+```bash
+# Note: for the code below to work exactly as printed
+# you need to define environment variables in your shell.
+az iot hub device-identity connection-string show --device-id ${IOTHUB_DEVICE_NAME} --hub-name ${IOTHUB_NAME}
+```
+
+See the [Azure CLI cheatsheet in the course
+notes](https://john-abbott-college.github.io/6P3-Notes/lectures/azure-cli-cheatsheet/index.html#connection-strings)
+for more detail on how to get your device connection string from the CLI.
+
+:::{note}
+
+Getting fancy: you can pipe commands like the above to your clipboard like we learned in
+the beginning of the semester:
+
+```
+command | grep connectionString | cut -f 4 -d " " | <wl-copy OR clip.exe>
+```
+
+:::
+
 ### Sample Device Code
 
 Before we change the code of our own subsystems, lets use a "Plug-n-Play" implementation
@@ -111,12 +135,20 @@ Follow the steps below:
 - You will need to create a virtual environment in this directory (use either `uv` or
   `python -m venv`) to install any needed dependencies
 - In that virtual environment, install the package `azure-iot-device`
-- You will need to set the following environment variables:
+- You will need to set the following environment variables. Run these commands in the same
+shell that you will execute the python code:
     ```bash
     $ export IOTHUB_DEVICE_CONNECTION_STRING="<your connection string here>"
     $ export IOTHUB_DEVICE_SECURITY_TYPE="connectionString"
     ```
 - Run the provided sample (`temp_controller_with_thermostats.py`)
+
+:::{note}
+
+You can set environment variables like `IOTHUB_DEVICE_CONNECTION_STRING` in a `.env` file.
+Instructions for this follow later in this assignment instruction set.
+
+:::
 
 You should see console output similar to the following:
 
