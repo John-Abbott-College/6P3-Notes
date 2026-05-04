@@ -143,16 +143,82 @@ Sent message
 ...
 ```
 
+
 Keep this process running -- what we're going to do now is verify that this device code is
 indeed connected to the Azure IoT Hub.
 
 ### Verify the telemetry
 
-See the following azure documentation: [Viewing telemetry](https://learn.microsoft.com/en-us/previous-versions/azure/iot/tutorial-send-telemetry-iot-hub?pivots=programming-language-python#view-telemetry)
+When the device is running, it should be sending telemetry updates every 8 seconds. You
+can see this in the device code console.
+
+Let's verify that these messages are being sent to your IOT Hub.
+In another terminal, run the `az iot hub monitor-events` command to monitor events sent from the device to your IoT hub. 
+
+```bash
+# Note: for the code below to work exactly as printed
+# you need to define environment variables in your shell.
+$ az iot hub monitor-events --output table -d ${IOT_DEVICE_NAME} -n ${IOTHUB_NAME}
+
+Starting event monitor, filtering on device: mydevice, use ctrl-c to stop...
+event:
+  component: ''
+  interface: dtmi:com:example:TemperatureController;1
+  module: ''
+  origin: mydevice
+  payload: '{"workingSet":1251}'
+
+event:
+  component: thermostat1
+  interface: dtmi:com:example:TemperatureController;1
+  module: ''
+  origin: mydevice
+  payload: '{"temperature":22.00}'
+```
+
+See the [Azure CLI cheatsheet in the course
+notes](https://john-abbott-college.github.io/6P3-Notes/lectures/azure-cli-cheatsheet/index.html#monitor-messages)
+for more detail on how to monitor messages sent to your Azure IoT Hub
 
 ### Verify the direct methods invocations
 
-Instructions TBD
+From the initial logs of the sample code, we can see the following lines:
+
+```
+Command name is: reboot
+Command name is: thermostat1*getMaxMinReport
+Command name is: thermostat2*getMaxMinReport
+```
+
+These are three different [**direct methods**](https://john-abbott-college.github.io/6P3-Notes/lectures/azure-d2c/index.html#direct-methods)
+that the device code is configured to respond to requests for.
+
+We are going to *invoke* each of these direct methods to see how they work.
+
+While the device code is running, in another terminal, use Azure CLI to invoke the direct
+methods.
+
+```bash
+# Note: for the code below to work exactly as printed
+# you need to define environment variables in your shell.
+$ az iot hub invoke-device-method --mn ${METHOD_NAME} -d ${IOT_DEVICE_NAME} -n ${IOTHUB_NAME}
+```
+
+You should see logs in BOTH your device code terminal session AND the azure cli terminal,
+indicating that the method was called and handled successfully.
+
+Try all three of the defined direct methods:
+
+```
+Command name is: reboot
+Command name is: thermostat1*getMaxMinReport
+Command name is: thermostat2*getMaxMinReport
+```
+
+See the [Azure CLI cheatsheet in the course
+notes](https://john-abbott-college.github.io/6P3-Notes/lectures/azure-cli-cheatsheet/index.html#invoke-direct-method-on-device)
+for more detail on how to invoke the direct method and the expected response.
+
 
 ## (50%) IoT Features to Implement
 
