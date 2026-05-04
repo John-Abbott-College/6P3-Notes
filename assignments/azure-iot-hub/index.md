@@ -47,13 +47,13 @@ Choose one of the following options:
 
 1. Read the context: [App Dev Milestone
 4](https://john-abbott-college.github.io/6A6-Notes/project/milestone-4/)
-    - Read and complete up to Part 1: Azure Setup
-2. Tutorial: [Send telemetry from an IoT Plug and Play device to Azure IoT Hub](https://learn.microsoft.com/en-us/previous-versions/azure/iot/tutorial-send-telemetry-iot-hub?pivots=programming-language-python#run-the-device-sample)
-    - Read and complete up to: Run the device sample 
-    - NOTE: you do not need to re-do the Create Iot Hub setps, because they are done in
-    Azure Setup from the App Dev notes
-3. Sample code to use during the tutorial: [Sample Plug-n-PLay code in Python](https://github.com/Azure/azure-iot-sdk-python/tree/main/samples/pnp)
-    - Git clone this repo, either on your reterminal or your developer environment
+    - Read and complete up to and including Part 1: Azure Setup. You should have:
+        - [ ] an IoT Hub
+        - [ ] A named device on your IoT Hub
+        - [ ] A connection string for that IoT Hub
+2. Next, download the sample code to use during the tutorial: 
+    - Git clone the following repo, either on your reterminal or your developer environment
+        - [Sample Plug-n-PLay code in Python](https://github.com/Azure/azure-iot-sdk-python/)
     - Navigate to the `samples/pnp/` directory
     - in the `README.md`, follow the `Configuring the samples` steps using the "connection
       string"
