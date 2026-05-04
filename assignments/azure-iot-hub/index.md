@@ -43,45 +43,183 @@ Choose one of the following options:
     dashboard/backend.
 - Other extra cool features of a similar complexity to above
 
-## (50%) IoT Features
+## Learning to use IoT Features
 
-1. Read the context: [App Dev Milestone
-4](https://john-abbott-college.github.io/6A6-Notes/project/milestone-4/)
-    - Read and complete up to and including Part 1: Azure Setup. You should have:
-        - [ ] an IoT Hub
-        - [ ] A named device on your IoT Hub
-        - [ ] A connection string for that IoT Hub
-2. Next, download the sample code to use during the tutorial: 
-    - Git clone the following repo, either on your reterminal or your developer environment
-        - [Sample Plug-n-PLay code in Python](https://github.com/Azure/azure-iot-sdk-python/)
-    - Navigate to the `samples/pnp/` directory
-    - in the `README.md`, follow the `Configuring the samples` steps using the "connection
-      string"
-    - You will need to create a virtual environment in this directory (use either `uv` or
-      `python -m venv`) to install any needed dependencies
-    - In that virtual environment, install the package `azure-iot-device`
-    - You will need to set the following environment variables:
-        ```bash
-        $ export IOTHUB_DEVICE_CONNECTION_STRING="<your connection string here>"
-        $ export IOTHUB_DEVICE_SECURITY_TYPE="connectionString"
-        ```
-    - Run the provided sample (`temp_controller_with_thermostats.py`)
-4. Verify the telemetry
-    - See the following azure documentation: [Viewing
-    telemetry](https://learn.microsoft.com/en-us/previous-versions/azure/iot/tutorial-send-telemetry-iot-hub?pivots=programming-language-python#view-telemetry)
-5. Verify the direct methods invocations
-    - Instructions TBD
+To begin implementing the IoT Features on your subsystem, follow the following
+instructional steps:
 
-### (20%) Telemetry
+### Setup
+
+Read and complete **up to and including** Part 1: Azure Setup of the App Dev Milestone 4: [App Dev Milestone 4 instructions](https://john-abbott-college.github.io/6A6-Notes/project/milestone-4/)
+
+Afterwards, you should have:
+
+- [ ] an IoT Hub
+- [ ] At least one named device on your IoT Hub
+    - [ ] Eventually, everyone should three devices (one for each teammate in the
+project). See the figure below.
+- [ ] A connection string for that IoT Hub
+
+:::{figure} assets/hub-devices-example.png
+
+Your Azure IoT Hub should look something like this when you are done creating devices for
+yourself and your teammates.
+
+Every team member should create devices for each of the subsystems in your project on
+their own Azure IoT Hub.
+
+:::
+
+### Install Azure CLI
+
+One tool that will be invaluable for us is the Azure CLI. You can install it on your
+developer environment and/or your reterminal.
+
+1. First, install azure CLI. See [installation
+instructions (Debian)](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-linux?view=azure-cli-latest&pivots=apt)
+    - Recommended: "Option 1: Install with one command"
+2. Login to azure cli on the machine you have installed it:
+    ```
+    $ az login
+
+    # If the above doesn't work:
+    $ az login --use-device-code
+    ```
+3. Install the `azure-iot` extention:
+    ```
+    az extension add --name azure-iot
+    ```
+
+### Sample Device Code
+
+Before we change the code of our own subsystems, lets use a "Plug-n-Play" implementation
+from Azure to see how everything should work.
+
+The goal here is to:
+
+- [ ] run python code that sends [telemetry](https://en.wikipedia.org/wiki/Telemetry)
+updates to Azure IoT about a subsystem
+- [ ] run python code that can receive [direct method
+requests](https://learn.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-direct-methods)
+and respond to them.
+
+Follow the steps below:
+
+- Git clone the following repo, either on your reterminal or your developer environment
+    - [Sample Plug-n-Play code in Python](https://github.com/Azure/azure-iot-sdk-python/)
+- Navigate to the `samples/pnp/` directory
+- You will need to create a virtual environment in this directory (use either `uv` or
+  `python -m venv`) to install any needed dependencies
+- In that virtual environment, install the package `azure-iot-device`
+- You will need to set the following environment variables:
+    ```bash
+    $ export IOTHUB_DEVICE_CONNECTION_STRING="<your connection string here>"
+    $ export IOTHUB_DEVICE_SECURITY_TYPE="connectionString"
+    ```
+- Run the provided sample (`temp_controller_with_thermostats.py`)
+
+You should see console output similar to the following:
+
+```
+Connecting using Connection String <redacted>
+Updating pnp properties for root interface
+{'serialNumber': 'some_serial_number'}
+Updating pnp properties for thermostat1
+{'thermostat1': {'maxTempSinceLastReboot': 98.34, '__t': 'c'}}
+Updating pnp properties for thermostat2
+{'thermostat2': {'maxTempSinceLastReboot': 48.92, '__t': 'c'}}
+Updating pnp properties for deviceInformation
+{'deviceInformation': {'swVersion': '5.5', 'manufacturer': 'Contoso Device Corporation', 'model': 'Contoso 4762B-turbo', 'osName': 'Mac Os', 'processorArchitecture': 'x86-64', 'processorManufacturer': 'Intel', 'totalStorage': 1024, 'totalMemory': 32, '__t': 'c'}}
+Listening for command requests and property updates
+Press Q to quit
+Command name is: reboot
+Command name is: thermostat1*getMaxMinReport
+Command name is: thermostat2*getMaxMinReport
+Sending telemetry from various components
+Sent message
+{"temperature": 29}
+Sent message
+{"temperature": 45}
+...
+```
+
+Keep this process running -- what we're going to do now is verify that this device code is
+indeed connected to the Azure IoT Hub.
+
+### Verify the telemetry
+
+See the following azure documentation: [Viewing telemetry](https://learn.microsoft.com/en-us/previous-versions/azure/iot/tutorial-send-telemetry-iot-hub?pivots=programming-language-python#view-telemetry)
+
+### Verify the direct methods invocations
+
+Instructions TBD
+
+## (50%) IoT Features to Implement
+
+Before beginning these features, **make sure you have done all the steps of the Learning
+to Use Azure IoT above!**.
+
+### (10%) Azure IoT Device Client setup
+
+In the backend of your reterminal code, you will need to initialize an
+[`IoTHubDeviceClient` (link to documentation)](https://learn.microsoft.com/en-us/python/api/azure-iot-device/azure.iot.device.aio.iothubdeviceclient?view=azure-python).
+
+This object will connect to your Azure IoT hub using a connection string.
+See the
+[`create_from_connection_string`](https://learn.microsoft.com/en-us/python/api/azure-iot-device/azure.iot.device.aio.iothubdeviceclient?view=azure-python#azure-iot-device-aio-iothubdeviceclient-create-from-connection-string)
+method in the documentation.
+
+#### Connection String
+
+You should set
+this connection string in a `.env` file accessible to your subsystem.
+
+:::{important}
+
+DO NOT commit `.env` with your connection string to github!
+You should add `.env` to your `.gitignore`.
+
+You can create a `.env_example` file to document what environment variable keys you are
+expecting someone running your system to have handy.
+
+:::
+
+```
+IOTHUB_DEVICE_CONNECTION_STRING="<your connection string here>"
+IOTHUB_DEVICE_SECURITY_TYPE="connectionString"
+```
+
+:::{note}
+
+Suggestion: you can also set other useful environment variables in `.env` too --
+`IOTHUB_NAME`, `IOTHUB_DEVICE_NAME`, etc.
+
+:::
+
+### (20%) Subsystem Telemetry
 
 Each subsystem should sent sensor and actautor status reports on a regular basis (once
 every 15 minutes).
 
-See the above tutorials for how to send telemetry to Azure IoT Hub.
+Helpful examples:
+
+- From the tutorial: [`send_telemetry_from_temp_controller`](https://github.com/Azure/azure-iot-sdk-python/blob/main/samples/pnp/temp_controller_with_thermostats.py#L150)
+  and [`create_telemetry`](https://github.com/Azure/azure-iot-sdk-python/blob/main/samples/pnp/pnp_helper.py#L32)
+- Project code from [previous iterations of this
+class](https://github.com/jac-cs-capstone-w25)
 
 Your subsystem should implement this technique for all of its sensors.
 
 ### (20%) Direct Methods
+
+Use the [`on_method_request_received`](https://learn.microsoft.com/en-us/python/api/azure-iot-device/azure.iot.device.iothubdeviceclient?view=azure-python#azure-iot-device-iothubdeviceclient-on-method-request-received)(https://learn.microsoft.com/en-us/python/api/azure-iot-device/azure.iot.device.iothubdeviceclient?view=azure-python#azure-iot-device-iothubdeviceclient-on-method-request-received)(https://learn.microsoft.com/en-us/python/api/azure-iot-device/azure.iot.device.iothubdeviceclient?view=azure-python#azure-iot-device-iothubdeviceclient-on-method-request-received)(https://learn.microsoft.com/en-us/python/api/azure-iot-device/azure.iot.device.iothubdeviceclient?view=azure-python#azure-iot-device-iothubdeviceclient-on-method-request-received)(https://learn.microsoft.com/en-us/python/api/azure-iot-device/azure.iot.device.iothubdeviceclient?view=azure-python#azure-iot-device-iothubdeviceclient-on-method-request-received)(https://learn.microsoft.com/en-us/python/api/azure-iot-device/azure.iot.device.iothubdeviceclient?view=azure-python#azure-iot-device-iothubdeviceclient-on-method-request-received)(https://learn.microsoft.com/en-us/python/api/azure-iot-device/azure.iot.device.iothubdeviceclient?view=azure-python#azure-iot-device-iothubdeviceclient-on-method-request-received)(https://learn.microsoft.com/en-us/python/api/azure-iot-device/azure.iot.device.iothubdeviceclient?view=azure-python#azure-iot-device-iothubdeviceclient-on-method-request-received)(https://learn.microsoft.com/en-us/python/api/azure-iot-device/azure.iot.device.iothubdeviceclient?view=azure-python#azure-iot-device-iothubdeviceclient-on-method-request-received)
+property of the `IoTHubDeviceClient` to implement the following direct methods:
+
+
+Helpful examples:
+
+- Project code from [previous iterations of this
+class](https://github.com/jac-cs-capstone-w25)
 
 Each subsystem must receive and respond to the following direct methods:
 

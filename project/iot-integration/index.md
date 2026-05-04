@@ -20,8 +20,7 @@ Your milestone grade will be determined by your individual work on [Assignment
 
 ## App Dev III
 
-TBD, but broadly speaking:
+Instructions can be found here: 
 
-- your app should now use [the Azure SDK](/lectures/azure-sdks/index.md) as a data
-source/sink.
+[App Dev Milestone 4 instructions](https://john-abbott-college.github.io/6A6-Notes/project/milestone-4/)
 
