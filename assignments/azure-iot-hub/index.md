@@ -45,10 +45,26 @@ Choose one of the following options:
 
 ## (50%) IoT Features
 
-- Context: [App Dev Milestone
+1. Read the context: [App Dev Milestone
 4](https://john-abbott-college.github.io/6A6-Notes/project/milestone-4/)
-- Tutorial: [Send telemetry from an IoT Plug and Play device to Azure IoT Hub](https://learn.microsoft.com/en-us/previous-versions/azure/iot/tutorial-send-telemetry-iot-hub?pivots=programming-language-python#run-the-device-sample)
-- Sample code to use during the tutorial: [Sample Plug-n-PLay code in Python](https://github.com/Azure/azure-iot-sdk-python/tree/main/samples/pnp)
+    - Read and complete up to Part 1: Azure Setup
+2. Tutorial: [Send telemetry from an IoT Plug and Play device to Azure IoT Hub](https://learn.microsoft.com/en-us/previous-versions/azure/iot/tutorial-send-telemetry-iot-hub?pivots=programming-language-python#run-the-device-sample)
+    - Read and complete up to: Run the device sample 
+    - NOTE: you do not need to re-do the Create Iot Hub setps, because they are done in
+    Azure Setup from the App Dev notes
+3. Sample code to use during the tutorial: [Sample Plug-n-PLay code in Python](https://github.com/Azure/azure-iot-sdk-python/tree/main/samples/pnp)
+    - Git clone this repo, either on your reterminal or your developer environment
+    - Navigate to the `samples/pnp/` directory
+    - in the `README.md`, follow the `Configuring the samples` steps using the "connection
+      string"
+    - You may need to create a virtual environment in this directory (use either `uv` or
+      `python -m venv`) to install any needed dependencies
+    - Run the provided sample (`temp_controller_with_thermostats.py`)
+4. Verify the telemetry
+    - See the following azure documentation: [Viewing
+    telemetry](https://learn.microsoft.com/en-us/previous-versions/azure/iot/tutorial-send-telemetry-iot-hub?pivots=programming-language-python#view-telemetry)
+5. Verify the direct methods invocations
+    - Instructions TBD
 
 ### (20%) Telemetry
 
