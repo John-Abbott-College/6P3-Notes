@@ -57,8 +57,14 @@ Choose one of the following options:
     - Navigate to the `samples/pnp/` directory
     - in the `README.md`, follow the `Configuring the samples` steps using the "connection
       string"
-    - You may need to create a virtual environment in this directory (use either `uv` or
+    - You will need to create a virtual environment in this directory (use either `uv` or
       `python -m venv`) to install any needed dependencies
+    - In that virtual environment, install the package `azure-iot-device`
+    - You will need to set the following environment variables:
+        ```bash
+        $ export IOTHUB_DEVICE_CONNECTION_STRING="<your connection string here>"
+        $ export IOTHUB_DEVICE_SECURITY_TYPE="connectionString"
+        ```
     - Run the provided sample (`temp_controller_with_thermostats.py`)
 4. Verify the telemetry
     - See the following azure documentation: [Viewing
