@@ -12,6 +12,7 @@ labs/*
 assignments/*
 project/*
 lectures/*
+test/*
 ```
 
 ::::{grid} 1 2 2 2
@@ -45,6 +46,12 @@ Take-home assignment instructions.
 :link: project
 Capstone project milestone instructions.
 :::
+
+:::{grid-item-card} 🎯 **Test**
+:link: test
+Description of the in-class end-of-semester test
+:::
+
 
 ::::
 
