@@ -190,7 +190,7 @@ In another terminal, run the `az iot hub monitor-events` command to monitor even
 ```bash
 # Note: for the code below to work exactly as printed
 # you need to define environment variables in your shell.
-$ az iot hub monitor-events --output table -d ${IOT_DEVICE_NAME} -n ${IOTHUB_NAME}
+$ az iot hub monitor-events --output table -d ${IOTHUB_DEVICE_NAME} -n ${IOTHUB_NAME}
 
 Starting event monitor, filtering on device: mydevice, use ctrl-c to stop...
 event:
@@ -233,7 +233,7 @@ methods.
 ```bash
 # Note: for the code below to work exactly as printed
 # you need to define environment variables in your shell.
-$ az iot hub invoke-device-method --mn ${METHOD_NAME} -d ${IOT_DEVICE_NAME} -n ${IOTHUB_NAME}
+$ az iot hub invoke-device-method --mn ${METHOD_NAME} -d ${IOTHUB_DEVICE_NAME} -n ${IOTHUB_NAME}
 ```
 
 You should see logs in BOTH your device code terminal session AND the azure cli terminal,
