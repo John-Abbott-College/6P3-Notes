@@ -20,7 +20,7 @@ These notes cover useful `python` skills, particularly for finalizing your team'
 The general-purpose console `print()` statement has served us well throughout this course
 for making program outut available to `stdout` when running our programs.
 
-It does have some limitations, in particular:The output shows the severity level before each message along with root, which is the name the logging module gives to its default logger. This output shows the default format that can be configured to include things like a timestamp or other details.
+It does have some limitations, in particular:
 
 - it is difficult to distinguish between important vs informational vs error messages
 - it is difficult to configure whether output should or should not be printed (i.e., to
@@ -53,6 +53,22 @@ with these three properties below:The output shows the severity level before eac
 `logging` is an old package, with many possible methods for changing its configuration.
 The one I will recommend is the `dictConfig` method:
 
+:::{margin}
+
+A great feature of the `dictConfig` method is that it will allow us to optionally
+write our config as an external configuration file.
+
+For example, if we stored our logging
+configurations in a JSON file:
+
+```python
+with open('logging_config.json', 'r') as config_file:
+    config = json.load(config_file)
+    logging.config.dictConfig(config)
+```
+
+:::
+
 ```python
 import logging
 logging.config.dictConfig(config={
@@ -64,21 +80,6 @@ logging.config.dictConfig(config={
 })
 ```
 
-:::{margin}
-
-A great feature of the `dictConfig` method is that it will allow us to optionally
-write our config as an external configuration file.
-
-For example, if we stored our logging
-configurations in a JSON file:
-
-```python
-with open('logging_config.json', 'r') as config_file:
-        config = json.load(config_file)
-    logging.config.dictConfig(config)
-```
-
-:::
 
 We will see how to use each of these options in the subsequent sections.
 
@@ -156,9 +157,53 @@ header-rows: 1
 :::
 
 
-### Log Targets
+### Log Handlers
+
+For example:
+
+```json
+"handlers": {
+    "stderr": {
+        "class": "logging.StreamHandler",
+        "level": "WARNING",
+        "formatter": "simple",
+        "stream": "ext://sys.stderr"
+    },
+    "file": {
+        "class": "logging.handlers.RotatingFileHandler",
+        "level": "DEBUG",
+        "formatter": "detailed",
+        "filename": "connected_objects_test.log",
+        "maxBytes": 10000,
+        "backupCount": 3
+    }
+},
+"loggers": {
+    "root": {
+        "level": "DEBUG",
+        "handlers": [
+            "stderr",
+            "file"
+        ]
+    }
+}
+```
 
 ### Log Formatters
+
+For example:
+
+```json
+"formatters": {
+    "simple": {
+        "format": "%(levelname)s: %(message)s"
+    },
+    "detailed": {
+        "format": "[%(levelname)s|%(module)s|L%(lineno)d] %(asctime)s: %(message)s",
+        "datefmt": "%Y-%m-%dT%H:%M:%S%z"
+    }
+},
+```
 
 ### Example
 
@@ -168,8 +213,44 @@ import logging
 
 logger = logging.getLogger(__name__)
 
+# NOTE: in the test, we put this in a separate file and loaded it using the json module.
 logging_config = {
-
+    "version": 1,
+    "disable_existing_loggers": false,
+    "formatters": {
+        "simple": {
+            "format": "%(levelname)s: %(message)s"
+        },
+        "detailed": {
+            "format": "[%(levelname)s|%(module)s|L%(lineno)d] %(asctime)s: %(message)s",
+            "datefmt": "%Y-%m-%dT%H:%M:%S%z"
+        }
+    },
+    "handlers": {
+        "stderr": {
+            "class": "logging.StreamHandler",
+            "level": "WARNING",
+            "formatter": "simple",
+            "stream": "ext://sys.stderr"
+        },
+        "file": {
+            "class": "logging.handlers.RotatingFileHandler",
+            "level": "DEBUG",
+            "formatter": "detailed",
+            "filename": "connected_objects_test.log",
+            "maxBytes": 10000,
+            "backupCount": 3
+        }
+    },
+    "loggers": {
+        "root": {
+            "level": "DEBUG",
+            "handlers": [
+                "stderr",
+                "file"
+            ]
+        }
+    }
 }
 
 def main():
