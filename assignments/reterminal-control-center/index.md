@@ -371,7 +371,7 @@ I will provide hints/structure for a few different choices:
 - Typescript: [React-Native for Web](https://necolas.github.io/react-native-web/) (same components/architecture as App Dev III)
     - Quickstart: `bunx create-expo-app dashboard --template`
     - Note: follow the documentation for creating a `react-native-web` app on expo: <https://docs.expo.dev/workflow/web/>
-- Python: [Python GTK](https://www.gtk.org/docs/language-bindings/python/), [PythonQT](https://doc.qt.io/qtforpython-6/), [Python tkinter][(https://docs.python.org/3/library/tkinter.html) [^1]
+- Python: [Python GTK](https://www.gtk.org/docs/language-bindings/python/), [PythonQT](https://doc.qt.io/qtforpython-6/), [Python tkinter][(https://docs.python.org/3/library/tkinter.html)
 
 **You're also free to use a framework not listed here, but you are on your own in that case.**
 

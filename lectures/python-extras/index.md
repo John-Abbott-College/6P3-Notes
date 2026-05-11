@@ -4,16 +4,11 @@ subtitle: |
   Python tips and tricks that there wasn't time to cover explicitly in the course, but are useful to know.
   Logging in Python with the logging module.
   Unit testing in python with pytest.
-date: 2025-05-05
-execute:
-  eval: false
-categories: [python]
-toc-expand: 2
-filters:
-  - line-highlight
-bibliography: references.bib
-nocite: |-
-  @*
+date: 2026-05-10
+blogpost: true
+category: Python
+tags: Python
+location: Lecture
 ---
 
 ## Overview
@@ -22,16 +17,77 @@ These notes cover useful `python` skills, particularly for finalizing your team'
 
 ## Logging
 
-*These notes were adapted from [@pythonLoggingPythonReal]*
+The general-purpose console `print()` statement has served us well throughout this course
+for making program outut available to `stdout` when running our programs.
 
-See [this article from Real Python for a complete explanation](https://realpython.com/python-logging/).
+It does have some limitations, in particular:
 
-Important notes:
+- it is difficult to distinguish between important vs informational vs error messages
+- it is difficult to configure whether output should or should not be printed (i.e., to
+implement a DEBUG mode)
+- it is difficult to modify the format of the print statement universally across your
+program.
+- it is impossible to control the `print` output of any dependencies you are using
+(for this reason, python libraries that use `print` are VERY annoying!)
+
+Luckily, the built-in [`logging`](https://docs.python.org/3/library/logging.html) module
+fixes all of these issues, and more. Generally, once you have a program of a certain sophistication
+in python, you can entirely replace `print` statements with `logging` statements to better
+configure your program's outputs to `stdout` and `stderr`.
+
+### Need-to-know
+
+For our course, the main need-to-know features of the `logging` library are as follows:
+
+- getting the correct logger
+- setting the log level
+- log to stdout and to a file at the same time
+
+You can see an example of how to replace a `print` statement with a `logging` statement
+with these three properties below:
+
+```python
+
+import logging
+
+logger = logging.getLogger(__name__)
+
+logging_config = {
+
+}
+
+def main():
+    logging.config.dictConfig(config=logging_config)
+    logger.addHandler(logging.StreamHandler(...))
+
+    # Let's get rid of print statements!
+    # print("hello world!")
+    # Replace them with:
+    logging.debug("hello world!")
+    logging.info("hello world!")
+    logging.warning("hello world!")
+    logging.error("hello world!")
+    logging.exception("hello world!")
+    logging.critical("hello world!")
+
+
+```
+
+### Reference
+
+The notes above were largely adapted from [this article from realpython.com](https://realpython.com/python-logging/),
+in particular:
+
 
 - [Instantiating the logger in each file](https://realpython.com/python-logging/#instantiating-your-logger)
 - [Formatting log output](https://realpython.com/python-logging/#formatting-the-output)
 - [Logging to a file](https://realpython.com/python-logging/#logging-to-a-file)
 - [Using handlers to customize format and output](https://realpython.com/python-logging/#using-handlers)
+
+This is also a nice video explaining python logging overall:
+
+:::{youtube} 9L77QExPmI0
+:::
 
 ## Unit testing
 
