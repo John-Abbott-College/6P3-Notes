@@ -20,7 +20,7 @@ These notes cover useful `python` skills, particularly for finalizing your team'
 The general-purpose console `print()` statement has served us well throughout this course
 for making program outut available to `stdout` when running our programs.
 
-It does have some limitations, in particular:
+It does have some limitations, in particular:The output shows the severity level before each message along with root, which is the name the logging module gives to its default logger. This output shows the default format that can be configured to include things like a timestamp or other details.
 
 - it is difficult to distinguish between important vs informational vs error messages
 - it is difficult to configure whether output should or should not be printed (i.e., to
@@ -39,12 +39,128 @@ configure your program's outputs to `stdout` and `stderr`.
 
 For our course, the main need-to-know features of the `logging` library are as follows:
 
-- getting the correct logger
-- setting the log level
-- log to stdout and to a file at the same time
+- adjusting the Logging Config
+- using the correct logger (Logging Hierarchy)
+- setting the Log Level
+- log to stdout and to a file at the same time (Logging Handlers)
+- controlling the format of the logs (Logging Formatters)
 
 You can see an example of how to replace a `print` statement with a `logging` statement
-with these three properties below:
+with these three properties below:The output shows the severity level before each message along with root, which is the name the logging module gives to its default logger. This output shows the default format that can be configured to include things like a timestamp or other details.
+
+### Logging Config
+
+`logging` is an old package, with many possible methods for changing its configuration.
+The one I will recommend is the `dictConfig` method:
+
+```python
+import logging
+logging.config.dictConfig(config={
+    "version": 1, # required boilerplate
+    "disable_existing_loggers": False, # recommended boilerplate
+    "formatters": {...},    
+    "handlers": {...},
+    "loggers": {...},
+})
+```
+
+:::{margin}
+
+A great feature of the `dictConfig` method is that it will allow us to optionally
+write our config as an external configuration file.
+
+For example, if we stored our logging
+configurations in a JSON file:
+
+```python
+with open('logging_config.json', 'r') as config_file:
+        config = json.load(config_file)
+    logging.config.dictConfig(config)
+```
+
+:::
+
+We will see how to use each of these options in the subsequent sections.
+
+### Logging Hierarchy
+
+All loggers in python are descendants of a "root" logger.
+
+We can quickly see the
+difference between using the "root" logger, and using module-level logger, by running
+a quick interactive python session:
+
+```python
+$ python
+>>> import logging
+>>> logging.warning("hello world!") # The root logger, uses the logging module directly
+WARNING:root:hello world!
+>>> logger = logging.getLogger("app_name") # RECOMMENDED:
+                                           # create one shared logger for your entire app
+>>> logger.warning("hello world!")
+WARNING:app_name:hello world!
+```
+
+:::{important}
+
+Note that descendent loggers will inherit the configuration of the root logger.
+This sets up an important pattern:
+
+- **Make common configuration changes to the root logger** (`logging.basicConfig`). Then, all
+  loggers in your project will inherit these changes.
+- **Write logs using module-level loggers** (`logger.<loglevel>(<message>)`). Then, all
+logs can be easily traced to their source in code.
+:::
+
+### Log Level
+
+There are 5 primary log levels for the various types of messages you may wish to log:
+
+:::{margin}
+
+Why are most logging levels suppressed by default?
+And why are errors logged to `stderr`, instead of `stdout`, by default?
+
+There is an [insightful comment on stackoverflow](https://stackoverflow.com/questions/58971197/why-python-logging-writes-to-stderr-by-default#comment104196409_58971197)
+that makes a helpful analogy:
+
+> "...logging is not considered to be the output of the program, but kind of like "running
+> commentary" the program is doing. Just like a director's commentary is not merged into
+> the default audio stream on a DVD, logging too is kept separate from stdout so that it
+> does not interfere with the program's output"
+
+:::
+
+:::{list-table} Table adapted from [RealPython](https://realpython.com/python-logging/)
+---
+header-rows: 1
+---
+- - Log Level
+  - Function
+  - Description
+- - DEBUG (Suppressed by default)	
+  - `logging.debug()` 	
+  - Provides detailed information that’s valuable to you as a developer.
+- - INFO (Suppressed by default)	
+  - `logging.info()` 	
+  - Provides general information about what’s going on with your program.
+- - WARNING (Visible in STDOUT by default)
+  - `logging.warning()` 	
+  - Indicates that there’s something you should look into.
+- - ERROR (Visible in STDERR by default)
+  - `logging.error()` 	
+  - Alerts you to an unexpected problem that’s occurred in your program.
+- - CRITICAL (Visible in STDERR by default)
+  - `logging.critical()` 	
+  - Tells you that a serious error has occurred and may have crashed your app.
+:::
+
+
+### Log Targets
+
+### Log Formatters
+
+### Example
 
 ```python
 
@@ -62,15 +178,14 @@ def main():
 
     # Let's get rid of print statements!
     # print("hello world!")
-    # Replace them with:
-    logging.debug("hello world!")
-    logging.info("hello world!")
-    logging.warning("hello world!")
+
+    # Replace them with one of the following:
+    logging.debug("hello world!")       # Suppressed by default
+    logging.info("hello world!")        # Suppressed by default
+    logging.warning("hello world!")     # Lowest level shown by default
     logging.error("hello world!")
     logging.exception("hello world!")
     logging.critical("hello world!")
-
-
 ```
 
 ### Reference
