@@ -310,52 +310,49 @@ Your subsystem should implement this technique for all of its sensors.
 
 ### (20%) Direct Methods
 
-Use the [`on_method_request_received`](https://learn.microsoft.com/en-us/python/api/azure-iot-device/azure.iot.device.iothubdeviceclient?view=azure-python#azure-iot-device-iothubdeviceclient-on-method-request-received)(https://learn.microsoft.com/en-us/python/api/azure-iot-device/azure.iot.device.iothubdeviceclient?view=azure-python#azure-iot-device-iothubdeviceclient-on-method-request-received)(https://learn.microsoft.com/en-us/python/api/azure-iot-device/azure.iot.device.iothubdeviceclient?view=azure-python#azure-iot-device-iothubdeviceclient-on-method-request-received)(https://learn.microsoft.com/en-us/python/api/azure-iot-device/azure.iot.device.iothubdeviceclient?view=azure-python#azure-iot-device-iothubdeviceclient-on-method-request-received)(https://learn.microsoft.com/en-us/python/api/azure-iot-device/azure.iot.device.iothubdeviceclient?view=azure-python#azure-iot-device-iothubdeviceclient-on-method-request-received)(https://learn.microsoft.com/en-us/python/api/azure-iot-device/azure.iot.device.iothubdeviceclient?view=azure-python#azure-iot-device-iothubdeviceclient-on-method-request-received)(https://learn.microsoft.com/en-us/python/api/azure-iot-device/azure.iot.device.iothubdeviceclient?view=azure-python#azure-iot-device-iothubdeviceclient-on-method-request-received)(https://learn.microsoft.com/en-us/python/api/azure-iot-device/azure.iot.device.iothubdeviceclient?view=azure-python#azure-iot-device-iothubdeviceclient-on-method-request-received)(https://learn.microsoft.com/en-us/python/api/azure-iot-device/azure.iot.device.iothubdeviceclient?view=azure-python#azure-iot-device-iothubdeviceclient-on-method-request-received)
+Use the [`on_method_request_received`](https://learn.microsoft.com/en-us/python/api/azure-iot-device/azure.iot.device.iothubdeviceclient?view=azure-python#azure-iot-device-iothubdeviceclient-on-method-request-received)
 property of the `IoTHubDeviceClient` to implement the following direct methods:
 
 
-Helpful examples:
+1. `is_online`:
+
+    > - Name: `is_online`
+    > - Payload: No payload required.
+    > 
+    > The direct method response should include:
+    > 
+    > - `200 code` if the method name matches `is_online` (No payload required).
+    > - `400 code` if a different method name is used. Payload: `{ "details": "method name unknown" }`
+    >
+    > The direct method request should also be logged to the console of the reTerminal.
+
+2. `control_actuator`:
+
+    > Name: `control_actuator`
+    >
+    > Payload: JSON with the actuator name and the action to take
+    > 
+    > For example, if your IOT subsystem has a fan, then a direct method invocation similar to below using azure cli should work:
+    > 
+    > `az iot hub invoke-device-method --mn control_actuator -d ${IOTHUB_DEVICE_NAME} -n ${IOTHUB_NAME} --payload "{action: FAN_TOGGLE, value: 1}"`
+    > 
+    > This should result in the fan turning on.
+    > 
+    > The direct method response should include:
+    > 
+    > - `200 code` if the control_actuator method is called successfully. Payload: `{ "actuator_name": "new_state" }`
+    > - `400 code` if the action or value, or anything about the --payload , is invalid.
+
+**Helpful examples:**
 
 - Project code from [previous iterations of this
 class](https://github.com/jac-cs-capstone-w25)
 
-Each subsystem must receive and respond to the following direct methods:
-
-> Name: `is_online`
-> Payload: No payload required.
-> 
-> The direct method response should include:
-> 
-> 200 code if the method name matches `is_online`
-> No payload required.
-> 
-> 400 code if a different method name is used.
-> Payload: `{ "details": "method name unknown" }`
-> The direct method request should also be logged to the console of the reTerminal.
-
-> Name: `control_actuator`
-> Payload: JSON describing the command
-> 
-> For example, if your IOT subsystem has a fan, then the following direct method invocation using azure cli should work:
-> 
-> `az iot hub invoke-device-method --mn control_actuator -d ${IOT_DEVICE_NAME} -n ${IOTHUB_NAME} --payload "{action: FAN_TOGGLE, value: 1}"`
-> 
-> This should result in:
-> The fan turning on
-> The Command being logged to the console of your reTerminal.
-> 
-> The direct method response should include:
-> 
-> 200 code if the control_actuator method returns True (meaning the state changed)
-> Payload: `{ "details": "method name unknown" }
-> 201 code if the control_actuator method returns False (meaning the state did NOT change)
-> Payload: `{ "details": "method name unknown" }
-> 400 code if the action or value, or anything about the --payload , is invalid.
-> Payload: `{ "details": "method name unknown" }```
-
 ## (20%) Documentation
 
 - README for subsystem
+    - includes documentation about device telemetry
+    - includes documentation about direct method invocation
 - README for each device
-- `pyproject.toml` up to date with dependencies
+- `pyproject.toml` up to date with all required dependencies
 - linting/formatting

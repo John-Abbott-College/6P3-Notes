@@ -91,7 +91,7 @@ We can quickly see the
 difference between using the "root" logger, and using module-level logger, by running
 a quick interactive python session:
 
-```python
+```sh
 $ python
 >>> import logging
 >>> logging.warning("hello world!") # The root logger, uses the logging module directly
