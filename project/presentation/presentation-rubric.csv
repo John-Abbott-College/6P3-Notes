@@ -1,13 +1,13 @@
-"Demo: readyness, flow, and organization",2,IoT integration,2,Subsystems functionality,2
-IoT Hub wasn't ready for use by all 3 team members,-0.2,Direct methods not implemented,-0.5,1 sensor/actuator not working properly,-0.3
-reTerminal app crashes.,-0.2,Direct methods partially implemented with issues,-0.25,2 sensors/actuators not working properly,-0.6
-Minor device setup issues,-0.2,Significant issues with live IoT readings,-0.5,3 or more sensors/actuators not working properly,-1
-Connection string setup issues,-0.2,Some issues with live IoT readings,-0.25,1 or 2 issues with sensor calibration/unit choices,-0.3
-"Device autostart/quickstart not implemented, so time taken to initialize all 3 devices",-0.2,,,Multiple sensor calibration / unit choice issues,-0.6
-,,Issues running multiple devices on same IoT Hub,-0.15,No integration with reTerminal dashboard,-0.5
-Presentation plan/configuration not ready in advance,-0.2,,,Issues with integration with reTerminal dashboard,-0.2
-Able to quickly demo device features when asked,0,Direct methods to control actuators with UI or app-side rules,0,Subsystem has sufficient sensors/actuators/complexity,0
-Able to quickly query Azure using CLI when asked,0,Live readings for all sensor devices,0,Subsystem relatively few sensors/actuators/complexity,-0.3
-Lack of familiarity with devices during demo,-0.2,Able to determine if device online/offline using direct method call,0,Subsystem does not have enough sensors/actuators/complexity,-0.5
-Unable to quickly query using Azure CLI during demo,-0.3,,,Good sensor calibration and unit choices,0
-Not ready to return all borrowed devices at end of lab,-0.3,,,,
+"Demo: readyness, flow, and organization",20,IoT integration,20,Subsystems functionality,20
+IoT Hub wasn't ready for use by all 3 team members,-2,Direct methods not implemented,-5,1 sensor/actuator not working properly,-3
+reTerminal app crashes.,-2,Direct methods partially implemented with issues,-2,2 sensors/actuators not working properly,-6
+Minor device setup issues,-2,Significant issues with live IoT readings,-5,3 or more sensors/actuators not working properly,-1
+Connection string setup issues,-2,Some issues with live IoT readings,-2,1 or 2 issues with sensor calibration/unit choices,-3
+"Device autostart/quickstart not implemented, so time taken to initialize all 3 devices",-2,,,Multiple sensor calibration / unit choice issues,-6
+,,Issues running multiple devices on same IoT Hub,-2,No integration with reTerminal dashboard,-5
+Presentation plan/configuration not ready in advance,-2,,,Issues with integration with reTerminal dashboard,-2
+Able to quickly demo device features when asked,0,Direct methods to control actuators with UI or app-side rules,0,,
+Able to quickly query Azure using CLI when asked,0,Live readings for all sensor devices,0,,
+Lack of familiarity with devices during demo,-2,Able to determine if device online/offline using direct method call,0,,
+Unable to quickly query using Azure CLI during demo,-3,,,Good sensor calibration and unit choices,0
+Not ready to return all borrowed devices at end of lab,-3,,,,

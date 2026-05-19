@@ -22,7 +22,7 @@ Make sure you read those too!*
 ## 🔍 Context
 
 Milestone 5 is the culmination of your App Dev III project.
-In [Milestone 4](project:project/iot-integration/index.md)
+In [Milestone 4](project:/project/iot-integration/index.md)
 you incorporated your reTerminals as *IoT devices* within an Azure IoT Hub instance.
 
 This milestone will test the integration of all your subsystems with your multi-platform application.
@@ -38,52 +38,76 @@ Below is what will determine your **Connected Objects** grade.
 
 What follows is an explanation of the requirements.
 
-You can see the weight of these requirements in the <#grading-rubric> section below.
+You can see the weight of these requirements in the <project:#grading-rubric> section below.
 
 ### Presentation
 
 The bulk of your marks for this milestone will come from the in-person presentation taking
-place on May 21/22/26/27 (see <#schedule> below).
+place on May 21/22/26/27 (see <project:#schedule> below).
 
 #### Demo: readiness, flow, and organization
 
 Your team should be **ready to present** by the time of the beginning of your demonstration. There are a few components to this:
 
-- Your team should have some plan for how to present the main features of the subsystem and the app
+- Your team **must have a plan** for how to present the main features of the subsystem and the app
     - Vik and I will ask questions throughout, but you should not need use to prompt you
     to show off what your subsystems can do. Have a plan to show us what you've done
     already!
-- All team members should be able to quickly demo device features when asked
-    - **Recommendation: practise in advance!**
-
-**Subsystems**
-
-- Live readings for all sensor devices,0,Subsystem relatively few sensors/actuators/complexity,-0.3
-- Lack of familiarity with devices during demo,-0.2,Able to determine if device online/offline using direct method call,0,Subsystem does not have enough sensors/actuators/complexity,-0.5
-- Unable to quickly query using Azure CLI during demo,-0.3,,,Good sensor calibration and unit choices,0
-- Not ready to return all borrowed devices at end of lab,-0.3,,,,
+- All team members **must be able to quickly demo subsystem features** when asked
+    - Recommendation: **practise in advance!** Be familiar with how your system and
+    devices work beforehand.
+- [Pizzazz](https://en.wiktionary.org/wiki/pizzazz): does your project feel like it solves
+  real problems? Does it work well? Is it interesting? Have you added cool features?
 
 #### IoT integration
 
 - You have already set up your reterminals to use the same IoT Hub as your application
     - Your reterminals are using the correct connection string / device id
-- That IoT Hub is ready to use (you don't run into message limiting issues)
-- Able to quickly query Azure using CLI when asked
- 
+    - That IoT Hub is ready to use (you don't run into message limiting issues)
+- Able to quickly query Azure using CLI when asked:
+    - **Recommendation** [practise using the Azure CLI cheatsheet commands](project:/lectures/azure-cli-cheatsheet/index.md)
+    - For example, during the demo, I will ask you to:
+        - **call the `is_online` direct method using Azure CLI**, observe the status
+        response
+        - **call the `control_actuator` direct method using Azure CLI** on one or more of
+          your actuators
+        - **Observe the IoT Hub status of your devices using the `monitor-events` Azure
+        CLI command.**, confirm that there are live sensor readings.
+
 #### Subsystem functionality
 
-- Device autostart/quickstart: you should be able to quickly start your reterminal
+- **Device autostart/quickstart:** you should be able to quickly start your reterminal
     - That means: we shouldn't have to watch you set up the several terminal instaces
     required to start the backend/dashboard/etc.
     - Ideally, your reterminals should autostart and be connected to the IoT Hub and ready
       to use
     - Alternatively, wrap the startup into a single script that can be quickly executed
     over SSH.
-- your reTerminal apps should be robust, not crash
-- Device setup issues
+- your reTerminal backend/dashboard apps should be robust, not crash
+- **Live readings for all sensor devices**
+    - Event-based readings can be triggered and observed in reTerminal dashboard / IoT
+    Hub / application
+    - Telemetry readings can be observed in reTerminal dashboard / IoT Hub / application
+    - Telemetry readings should be **quick enough to observe during the demo**
+    (recommendation: 30 seconds or less between telemetry readings)
+- **Good sensor calibration and unit choices**
+    - All telemetry/readings should have units of measurements and calibration that make
+      sense.
+- **Live actuator usage**
+    - Actuators should be triggerable using the reTerminal dashboard
+    - Actuators should be triggerable using IoT direct methods
+    - Actuators should be triggerable using the App Dev app
 
 #### After the demo
 
+After the demo, you will need to return all of the devices you have borrowed. That
+includes:
+
+- the <project:/lectures/reterminal-kit/index.md>
+    - The kit must be returned in its original condition -- ensure all pieces are present
+      and put away neatly.
+- all extra external devices you have borrowed
+- all extra wires/cables/accessories/etc.
 
 ### Repository content
 
@@ -121,11 +145,14 @@ Your `main` branch root-directory `README.md` does not itself need to contain al
 Vik & I should be able to open the main link to your repository and immediately be able to
 find links and/or information about your application, subsystem, and IoT documentation.
 
+You may find the [example projects from previous years](#reminder-example-projects)
+useful for seeing what to do/what not to do.
+
 :::
 
 - Subsystem documentation for devices
     - **Setup Instructions**: How to run the app per subsystem
-        - Device wiring, 
+        - Device wiring, IoT setup
     - **Usage Instructions**: How to run the app per subsystem
         - Instructions for setting up autostart / quickstart on a new machine
         - Dependencies installation steps
@@ -135,7 +162,6 @@ find links and/or information about your application, subsystem, and IoT documen
 - Known issues or limitations
 
 The goal is that another team or instructor should be able to clone your repo and configure their own IoT Hub to test your app with your suite of devices.
-
 
 ## 🎬 Demo Format
 
@@ -205,20 +231,40 @@ See the relevant sections above for explanation of the main categories.
 
 ### Peer & Self Assessment
 
-We will use the same Peer & Self Assessment as in App Dev III; please [see the relevant
+We use the same Peer & Self Assessment form as in App Dev III; please [see the relevant
 instructions here](https://john-abbott-college.github.io/6A6-Notes/project/milestone-5/#peer--self-assessment-3-points)
+
+However, because the Presentation for Connected Objects has individual components (e.g.
+you will not be penalized if your partner's devices don't work), *there will be no
+multiplier* -- there will simply be a raw number of marks added to your total.
 
 ## 📝 Summary
 
-| Component                           | Points | Notes                                                                      |
-| ----------------------------------- | ------ | -------------------------------------------------------------------------- |
-| Presentation: demo/readiness/flow   | 20     | All three reterminal devices working                                       |
-| Presentation: IoT Integration       | 20     | All tabs unified, 2+ user roles with authorization, professional interface |
-| Presentation: Subsystem             | 20     | Airplane mode test required during demo                                    |
-| Code Quality, Git, & Documentation  | 20     | Clean code, types, Git coordination, README                                |
-| **Project Subtotal**                | **80** | Shared grade for entire team (with exceptions, see IoT Int. and Subsystem) |
-| Peer & Self Assessment              | 10*    | Multiplier + direct points (see App Dev III formula)                       |
-| **TOTAL**                           | **90** | Project Subtotal × Peer Factor + Peer Points                               |
+| Component                          | Points | Notes                                                                       |
+| ---------------------------------- | ------ | --------------------------------------------------------------------------- |
+| Presentation: demo/readiness/flow  | 20     | <project:#demo-readiness-flow-and-organization> & <project:#after-the-demo> |
+| Presentation: IoT Integration      | 20     | <project:#iot-integration>                                                  |
+| Presentation: Subsystem            | 20     | <project:#subsystem-functionality>                                          |
+| Code Quality, Git, & Documentation | 20     | Clean code, types, Git coordination, README                                 |
+| **Project Subtotal**               | **80** | Shared grade for entire team (with exceptions, see IoT Int. and Subsystem)  |
+| Peer & Self Assessment             | 10*    | See above                                                                   |
+| **TOTAL**                          | **90** | Project Subtotal + Peer Points                                              |
+
+## ❗Reminder: Example Projects
+
+**All of you have been re-invited to the organizations below.** Click the link to accept the
+invite if you have not already.
+
+**These are good references for Documentation quality**. What do these projects do well to
+convey how to use the systems? What can be improved upon? Etc.
+
+- Winter 2025 projects: <https://github.com/orgs/jac-cs-capstone-w25>
+  - Here, each team came up with their own subsystem and device capabilities.
+  - This will be a good reference for seeing what different ideas are possible.
+- Winter 2024 projects: <https://github.com/orgs/jac-cs-capstone-w24>
+  - In this semester, ALL teams had the same subsystems (Plant, Geo, and Security).
+  - Here, you can see polished ideas for subsystems.
+  - I can particularly recommend the `CropCare` project -- very high quality.
 
 ## ❓FAQ
 
