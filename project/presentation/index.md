@@ -29,6 +29,47 @@ This milestone will test the integration of all your subsystems with your multi-
 Your reTerminal devices should robustly measure data, send regular telemetry,
 and act upon instructions from your applications, reTerminal dashboard, and Azure IoT Hub control commands.
 
+## 🎬 Demo Format
+
+:::{note}
+Your scheduled demo slot is also your final deadline for this milestone.
+:::
+
+During your in-person demo, your team will demonstrate the complete system functionality. All team members **must** be present.
+You will be asked to go through each of the requirements stated above and will be graded on the spot.
+Failure to meet any of the criteria will result in deductions, and you will not have any opportunities after the demo to fix them.
+
+### Presentation Schedule
+
+::::{subfigure} AB|CD
+:layout-sm: A|B|C|D
+:gap: 8px
+:subcaptions: above
+:name: schedules
+:class-grid: outline
+
+:::{image} assets/schedule-thurs21.png
+:alt: Thursday May 21st
+:::
+
+:::{image} assets/schedule-friday22.png
+:alt: Friday May 22nd
+:::
+
+:::{image} assets/schedule-tues26.png
+:alt: Tuesday May 26th
+:::
+
+:::{image} assets/schedule-wed27.png
+:alt: Wednesday May 27th
+:::
+
+Note: the time on the left hand side of each image is in 24h format.
+There is space for more presentations on May 26/27 if teams need more time,
+see <project:#faq>.
+
+::::
+
 ## ✅ Requirements
 
 :::{note}
@@ -38,12 +79,12 @@ Below is what will determine your **Connected Objects** grade.
 
 What follows is an explanation of the requirements.
 
-You can see the weight of these requirements in the <project:#grading-rubric> section below.
+You can see the weight of these requirements in the <project:#grading-rubric> section.
 
 ### Presentation
 
 The bulk of your marks for this milestone will come from the in-person presentation taking
-place on May 21/22/26/27 (see <project:#schedule> below).
+place on May 21/22/26/27 (see <project:#schedule>).
 
 #### Demo: readiness, flow, and organization
 
@@ -117,7 +158,7 @@ repository.
 #### Git Integration
 
 - **All work must be merged to the `main` branch and easily accessible**
-- Aim to incorporate or remove ALL branches in `main`
+- ALL branches incorporated in `main`, and removed afterwards, OR removed if not used
     - NOTE: I'm not expecting perfection, but a good effort to clean up the branches is
     expected.
 - Git history shows good coordination (meaningful commit messages, proper branching)
@@ -163,53 +204,22 @@ useful for seeing what to do/what not to do.
 
 The goal is that another team or instructor should be able to clone your repo and configure their own IoT Hub to test your app with your suite of devices.
 
-## 🎬 Demo Format
-
-:::note
-Your scheduled demo slot is also your final deadline for this milestone.
-:::
-
-During your in-person demo, your team will demonstrate the complete system functionality. All team members **must** be present.
-You will be asked to go through each of the requirements stated above and will be graded on the spot.
-Failure to meet any of the criteria will result in deductions, and you will not have any opportunities after the demo to fix them.
-
-### Presentation Schedule
-
-::::{subfigure} AB|CD
-:layout-sm: A|B|C|D
-:gap: 8px
-:subcaptions: above
-:name: schedules
-:class-grid: outline
-
-:::{image} assets/schedule-thurs21.png
-:alt: Thursday May 21st
-:::
-
-:::{image} assets/schedule-thurs21.png
-:alt: Friday May 22nd
-:::
-
-:::{image} assets/schedule-thurs21.png
-:alt: Tuesday May 26th
-:::
-
-:::{image} assets/schedule-thurs21.png
-:alt: Wednesday May 27th
-:::
-
-Presentation Schedule
-
-::::
-
-### After the demo
 
 ## 📊 Grading Rubric
+
+The weights for each of the requirements above is shown below.
 
 ### Presentation
 
 See the table below for the rubric I will be applying during your presentation.
 See the relevant section above for explanation of the main categories.
+
+:::{note}
+:class: margin
+
+The exact weights for each of these rubric items is subject to small changes.
+
+:::
 
 :::{csv-table}
 :file: presentation-rubric.csv
@@ -222,12 +232,12 @@ See the relevant section above for explanation of the main categories.
 See the table below for the rubric I will be applying after your presentation.
 See the relevant sections above for explanation of the main categories.
 
-| Points | Criteria                                                                                                                                          |
-| ------ | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **3**  | Clean, well-organized code. TypeScript types properly defined and integrated (union types). Meaningful commit messages showing good coordination. Complete README documentation. No console errors.               |
-| **2**  | Generally clean code with minor issues. Most types defined. Git history adequate. Documentation mostly complete. Minor console warnings.                      |
-| **1**  | Acceptable code with multiple issues. Some type conflicts. Poor Git coordination. Incomplete documentation. Console errors present.                                    |
-| **0**  | Poor code quality. Major type conflicts. No Git coordination. Missing documentation. Major console errors.                                                          |
+| Points    | Criteria                                                                                                                                          |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **18-20** | Clean, well-organized code. TypeScript types properly defined and integrated (union types). Meaningful commit messages showing good coordination. Complete README documentation. No console errors.               |
+| **15-18** | Generally clean code with minor issues. Most types defined. Git history adequate. Documentation mostly complete. Minor console warnings.                      |
+| **10-15** | Acceptable code with multiple issues. Some type conflicts. Poor Git coordination. Incomplete documentation. Console errors present.                                    |
+| **0-10**  | Poor code quality. Major type conflicts. No Git coordination. Missing documentation. Major console errors.                                                          |
 
 ### Peer & Self Assessment
 
